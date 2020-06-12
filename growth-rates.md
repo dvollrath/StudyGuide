@@ -13,3 +13,7 @@ $$
 Add some text to see if things scale properly
 
 <div class="embed-container"><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=rtnY&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden;" allowTransparency="true" loading="lazy"></iframe></div><script src="https://fred.stlouisfed.org/graph/js/embed.js" type="text/javascript"></script>
+
+And add another figure to see if FRED needs separate links
+
+<div class="embed-container"><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=rtpH&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden;" allowTransparency="true" loading="lazy"></iframe></div><script src="https://fred.stlouisfed.org/graph/js/embed.js" type="text/javascript"></script>
