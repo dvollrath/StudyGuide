@@ -21,7 +21,11 @@ Here's a table showing some made-up data on GDP for several different years. The
 
 The growth rate of GDP in this table is the *percent change* in GDP from one year to the next. So from 2018 to 2019, the growth rate was $(104 - 100)/100 = .04$, or 4%. The next year, the absolute change in GDP was negative, so the growth rate was $(98-104)/104 = -.0577$, or -5.77%. And so on. Remember that when calculating the growth rate, you have to use the earlier year in the denominator of the calculation. 
 
-Reminder {: .label } A percent is just 100 times a decimal. Saying "7%" is the same thing as saying "0.07". In the study guide we'll flip back and forth between these two. 
+___
+Reminder 
+{: .label } 
+A percent is just 100 times a decimal. Saying "7%" is the same thing as saying "0.07". In the study guide we'll flip back and forth between these two. 
+___
 
 There are a few interesting things to notice about how levels, growth, and growth rates work together. Take a look at the years 2022, 2023, and 2024. In each of these years, the absolute growth of GDP is 2, meaning that GDP goes up by exactly the same amount each year. But when we calculate the *growth rate* of GDP in those years, the growth rate declines from 1.94% to 1.90% to 1.87%. Why? Because the level of GDP is increasing, and so the absolute growth (2) represents a smaller percent change in GDP than before. 
 
