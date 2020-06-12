@@ -1,5 +1,5 @@
 ---
-title: Preliminaries
+title: Logs and percents
 parent: Preliminaries
 nav_order: 1
 ---
