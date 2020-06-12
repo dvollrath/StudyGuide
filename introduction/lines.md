@@ -1,7 +1,7 @@
 ---
-title: Logs and percents
+title: Logs and lines
 parent: Preliminaries
-nav_order: 2
+nav_order: 3
 ---
 
 Do stuff
