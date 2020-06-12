@@ -1,9 +1,4 @@
 # Study Guide
 Materials for course in economic growth
 
-Can you do $$y = x$$ or
-
-$$
-y = x
-$$
-
+[Source Code](https://github.com/dvollrath/StudyGuide){: .btn .btn-green }
