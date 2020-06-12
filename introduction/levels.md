@@ -57,8 +57,8 @@ $$
 $$
 
 ___
-Warning 
-{: .label-red } 
+Reminder 
+{: .label } 
 You'll have to be comfortable with this level of algebra to make any sense of this study guide. If you can't follow what we just went through, you probably want to do a math review before taking this course.
 
 ___
@@ -132,4 +132,3 @@ or 4%, just as we thought.
 This means that an *annual* growth rate is just an *annualized* growth rate, calculated for a one-year difference. 
 
 In studying economic growth, we are almost always talking about annualized growth rates, because we are almost always talking about growth over long periods of time. Our interest may be more in the 1.45% annualized rate, and less in the fluctuations in the growth rate (-5.77%, +5.0%) that hide behind that annualized rate.
-
