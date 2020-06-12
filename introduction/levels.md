@@ -23,7 +23,8 @@ The growth rate of GDP in this table is the *percent change* in GDP from one yea
 
 ___
 Reminder 
-{: .label } A percent is just 100 times a decimal. Saying "7%" is the same thing as saying "0.07". In the study guide we'll flip back and forth between these two. 
+{: .label } 
+A percent is just 100 times a decimal. Saying "7%" is the same thing as saying "0.07". In the study guide we'll flip back and forth between these two. 
 
 ___
 
@@ -57,7 +58,8 @@ $$
 
 ___
 Warning 
-{: .label-red } You'll have to be comfortable with this level of algebra to make any sense of this study guide. If you can't follow what we just went through, you probably want to do a math review before taking this course.
+{: .label-red } 
+You'll have to be comfortable with this level of algebra to make any sense of this study guide. If you can't follow what we just went through, you probably want to do a math review before taking this course.
 
 ___
 
