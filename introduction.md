@@ -6,7 +6,7 @@ nav_order: 1
 ## Testing Plotly
 Let's give this a shot
 
-<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/1.embed"></iframe>
+<iframe width="600" height="400" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/5.embed"></iframe>
 
 ## Comparing levels and growth rates
 Rich versus poor, but growing at similar rates?
