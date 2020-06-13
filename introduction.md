@@ -3,6 +3,11 @@ title: Introduction
 nav_order: 1
 ---
 
+## Comparing levels and growth rates
+Rich versus poor, but growing at similar rates?
+
+<iframe src="https://ourworldindata.org/grapher/real-gdp-per-capita-PWT?yScale=log&country=CRI~BOL~GNB~USA" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+
 ## Productivity drives growth
 One of the big ideas we'll cover is that productivity - better technology, better organization, better blueprints - is what drives economic growth in the long run. Growth occurs because we find ways to get more value out of fewer inputs like time, capital, and natural resources. 
 
