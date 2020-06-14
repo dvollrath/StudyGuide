@@ -37,7 +37,7 @@ p <-
   p %>%
   group_by(isocode) %>%
   mutate(lag10.lngdppc = dplyr::lag(lngdppc, n = 10, default = NA))
-p$g10.lngdppc <- (p$lngdppc - p$lag10.lngdppc)
+p$g10.lngdppc <- (p$lngdppc - p$lag10.lngdppc)/10
 
 # just need the catchup group
 catchup <- p[ which(p$isocode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
