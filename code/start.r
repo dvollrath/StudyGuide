@@ -2,9 +2,6 @@ library(devtools)
 library(plotly)
 library(pwt9)
 
-Sys.setenv("plotly_username"="dvollrath")
-Sys.setenv("plotly_api_key"="g86hGs9hiBrHVnbWlYGr")
-
 data("pwt9.1")
 
 p <- pwt9.1

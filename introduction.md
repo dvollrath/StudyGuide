@@ -12,6 +12,9 @@ And for comparison
 
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/7.embed"></iframe>
 
+Convergence
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/9.embed"></iframe>
+
 ## Productivity drives growth
 One of the big ideas we'll cover is that productivity - better technology, better organization, better blueprints - is what drives economic growth in the long run. Growth occurs because we find ways to get more value out of fewer inputs like time, capital, and natural resources. 
 
