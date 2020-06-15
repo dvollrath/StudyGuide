@@ -33,6 +33,7 @@ api_create(fig, filename = "pwt-catchup-lngdppc")
 
 ############################
 # Figures of convergence
+############################
 # get 10-year lagged value of log gdppc, by country
 p <- 
   p %>%
@@ -50,4 +51,23 @@ fig <- layout(fig, title=list(text = 'Convergence and non-convergence', x= 0),
               yaxis = list (title = '10-year growth rate'))
 api_create(fig, filename = "pwt-catchup-convergence")
 
+############################
+# Figures of K/Y ratio
+############################
+p1960 <- p[which(p$year >1959),] # drop 50-59 b/c of PWT initial ky guess
+stable <- p1960[ which(p1960$isocode %in% c("USA", "CAN", "MEX", "GBR", "AUS")),]
+catchup <- p1960[ which(p1960$isocode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
 
+fig <- plot_ly(stable, x = ~year, y = ~ky, linetype = ~country, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Capital/output ratio for stable countries', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Capital/output ratio',range=c(0,7)),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-stable-ky")
+
+fig <- plot_ly(catchup, x = ~year, y = ~ky, linetype = ~country, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Capital/output ratio for catch-up countries', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Capital/output ratio',range=c(0,7)),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-catchup-ky")
