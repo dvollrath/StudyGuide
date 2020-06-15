@@ -98,7 +98,7 @@ We've take our model of the economy and used it to construct an equation that te
 
 You can play with this interactive figure to see how changing the values of $g_A$, $g_K$, $A(0)$, and $K(0)$ all would theoretically affect GDP. One thing to note in this figure is that log GDP is denoted as $f(t)$, which just means that log GDP is a function of time.
 
-<iframe src="https://www.desmos.com/calculator/h2zwdpqyhd?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
+<iframe src="https://www.desmos.com/calculator/h2zwdpqyhd" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
 
 The model tells us that if the growth rate of $A$ or $K$ is higher, then the growth rate of GDP is higher, which you can see because the slope of the line in the figure is steeper. It also tells us that the level of GDP will be higher at every point in time if $A(0)$ or $K(0)$ are higher, because the economy starts out with a higher amount of productivity or capital/resources. 
 
