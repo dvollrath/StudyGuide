@@ -10,6 +10,7 @@ data("pwt9.1")
 
 p <- pwt9.1 # copy dataframe for manipulation
 p$lngdppc <- round(log(p$rgdpna) - log(p$pop),digits=2) # create log GDP per capita
+p$ky <- round(p$rnna/p$rgdpna,digits=2)
 
 # subset PWT into stable and catchup groups
 stable <- p[ which(p$isocode %in% c("USA", "CAN", "MEX", "GBR", "AUS")),]
@@ -17,14 +18,14 @@ catchup <- p[ which(p$isocode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
 
 # Figures of Log GDP per capita
 fig <- plot_ly(stable, x = ~year, y = ~lngdppc, linetype = ~country, type = 'scatter', mode = 'lines+markers')
-fig <- layout(fig, title='Log GDP per capita for stable growth countries',
+fig <- layout(fig, title = list(text = 'Log GDP per capita for stable growth countries', x=0),
                xaxis = list(title = 'Year'),
                yaxis = list (title = 'Log GDP per capita', range=c(6,11)),
                hovermode="x unified")
 api_create(fig, filename = "pwt-stable-lngdppc")
 
 fig <- plot_ly(catchup, x = ~year, y = ~lngdppc, linetype = ~country, type = 'scatter', mode = 'lines+markers')
-fig <- layout(fig, title = 'Log GDP per capita for catch-up growth countries',
+fig <- layout(fig, title = list(text = 'Log GDP per capita for catch-up growth countries', x=0), 
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'Log GDP per capita', range=c(6,11)),
               hovermode="x unified")
@@ -44,7 +45,15 @@ catchup <- p[ which(p$isocode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
 
 fig <- plot_ly(catchup, x = ~lag10.lngdppc, y = ~g10.lngdppc,
                color = ~country, colors = "Set1", type = 'scatter')
-fig <- layout(fig, title='Convergence and non-convergence',
+fig <- layout(fig, title=list(text = 'Convergence and non-convergence', x= 0),
               xaxis = list(title = 'Initial log GDP per capita',range=c(6,11)),
               yaxis = list (title = '10-year growth rate'))
 api_create(fig, filename = "pwt-catchup-convergence")
+
+############################
+# Figures of K/Y
+fig <- plot_ly(stable, x = ~year, y = ~ky, linetype = ~country, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Capital/output ratio for stable growth countries', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Capital/output ratio', range=c(6,11)),
+              hovermode="x unified")
