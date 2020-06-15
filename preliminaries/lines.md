@@ -53,54 +53,42 @@ This is why so often we will draw graphs of the log of GDP (or GDP per capita, o
 This link from logs to lines is going to be used a lot when we set up models of growth, so that we can draw out what they imply. Now, rather than starting with data, we're going to start with a model. Let's say that our model of the economy is that GDP is determined by this equation
 
 $$
-Y(t) = A(t) K(t)
+Y(t) = A(t)
 $$
 
-or that total GDP depends on the size of some variable $A$ multiplied by some variable $K$. A might represent productivity, and K might represent the use of natural resources, capital, or labor. It isn't relevant at the moment. What our model also has to tell us is how $A$ and $K$ change over time. So let's say we assume that $A$ has exponential growth with a constant growth rate of $g_A$. From the section on [exponential growth](http://growthecon.com/StudyGuide/preliminaries/logs.html) we know that we can write
+or that total GDP depends on the size of some variable $A$. A might represent productivity, but it isn't relevant at the moment. What our model also has to tell us is how $A$ changes over time. So let's say we assume that $A$ has exponential growth with a constant growth rate of $g_A$. From the section on [exponential growth](http://growthecon.com/StudyGuide/preliminaries/logs.html) we know that we can write
 
 $$
 A(t) = (1+g_A)^t A(0).
 $$
 
-If we assume $K$ has a constant growth rate of $g_K$, then we can write
-
-$$
-K(t) = (1+g_K)^t K(0).
-$$
-
 Now, go back to the original expression for GDP and take logs,
 
 $$
-\ln Y(t) = \ln A(t) + \ln K(t).
+\ln Y(t) = \ln A(t).
 $$
 
-Take logs of the expressions for $A(t)$ and $K(t)$ as well, and plug into this to get
+Take logs of the expressions for $A(t)$ as well, and plug into this to get
 
 $$
-\ln Y(t) = t \ln (1+g_A) + \ln A(0) + t \ln (1+g_K) + \ln K(0).
+\ln Y(t) = t \ln (1+g_A) + \ln A(0).
 $$
 
-One last thing to assume. Let's say that $g_A$ and $g_K$ are both small, so we can use this approximation,
+One last thing to assume. Let's say that $g_A$ is small, so we can use this approximation,
 
 $$
-\ln Y(t) = t g_A + \ln A(0) + t g_K + \ln K(0)
+\ln Y(t) = \ln A(0) + g_A t
 $$
 
-and re-arrange this all to
+What is this? It's the equation for a line graphing the log of GDP against time, t. The y-variable is $\ln Y(t)$. The x-variable is $t$. What is the slope? $g_A$, or the growth rate of productivity. What is the intercept of this line? $\ln A(0)$, or the log value of the initial value of productivity.
 
-$$
-\ln Y(t) = \left[\ln A(0) + \ln K(0)\right] + (g_A + g_K)t.
-$$
+We've taken our model of the economy and used it to construct an equation that tells us how to graph log GDP over time. It tells us what the slope of that line is, meaning it tells us the growth rate of GDP. And it tells us what the intercept of that line, meaning it tells us about the level of GDP.
 
-What is this? It's the equation for a line graphing the log of GDP against time, t. The y-variable is $\ln Y(t)$. The x-variable is $t$. What is the slope? $g_A + g_K$, or the combined growth rate of the two inputs to production. What is the intercept of this line? $\ln A(0) + \ln K(0)$, or the combined log values of the initial values of those inputs.
-
-We've take our model of the economy and used it to construct an equation that tells us how to graph log GDP over time. It tells us what the slope of that line is, meaning it tells us the growth rate of GDP. And it tells us what the intercept of that line, meaning it tells us about the level of GDP.
-
-You can play with this interactive figure to see how changing the values of $g_A$, $g_K$, $A(0)$, and $K(0)$ all would theoretically affect GDP. One thing to note in this figure is that log GDP is denoted as $f(t)$, which just means that log GDP is a function of time.
+You can play with the interactive figure to see how changing the values of $g_A$ or $A(0)$ would theoretically affect GDP. One thing to note in this figure is that log GDP is denoted as $f(t)$, which just means that log GDP is a function of time.
 
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="https://www.geogebra.org/m/kaxuywsc"></iframe>
 
+The model tells us that if the growth rate $g_A$ is higher, then the growth rate of GDP is higher, which you can see because the slope of the line in the figure is steeper. It also tells us that the level of GDP will be higher at every point in time if $A(0)$ is higher, because the economy starts out with a higher amount of productivity or capital/resources. 
 
-
-The model tells us that if the growth rate of $A$ or $K$ is higher, then the growth rate of GDP is higher, which you can see because the slope of the line in the figure is steeper. It also tells us that the level of GDP will be higher at every point in time if $A(0)$ or $K(0)$ are higher, because the economy starts out with a higher amount of productivity or capital/resources. 
+This is a really boring figure. It's just a line. But what we're going to see when we look more deeply into the data on growth is that most countries have really boring figures for log GDP per capita over time. A straight line like this is going to turn out to be an okay approximation for a lot of economic growth. For the moment, know that you have to be comfortable working with figures that plot the log of something over time, and that the slope represents a growth rate, and the intercept represents the baseline level of that something.
 
