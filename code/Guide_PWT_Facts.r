@@ -50,10 +50,4 @@ fig <- layout(fig, title=list(text = 'Convergence and non-convergence', x= 0),
               yaxis = list (title = '10-year growth rate'))
 api_create(fig, filename = "pwt-catchup-convergence")
 
-############################
-# Figures of K/Y
-fig <- plot_ly(stable, x = ~year, y = ~ky, linetype = ~country, type = 'scatter', mode = 'lines+markers')
-fig <- layout(fig, title = list(text = 'Capital/output ratio for stable growth countries', x=0),
-              xaxis = list(title = 'Year'),
-              yaxis = list (title = 'Capital/output ratio', range=c(6,11)),
-              hovermode="x unified")
+
