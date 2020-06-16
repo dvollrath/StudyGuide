@@ -17,12 +17,9 @@ The right-hand part of this figure is capturing what we saw in the [prior sectio
 
 We can use the right-hand side of this figure to establish one more stylized fact. 
 
-___
 Temporary growth differences
 {: .label .label-green }
-Differences in the growth rate of GDP per capita between developed economies appear to be temporary.
-
-___
+**Differences in the growth rate of GDP per capita between developed economies appear to be temporary.**
 
 For relatively developed economies, those with log GDP per capita above 8.5, growth can be very high, but that appears to always dissipate. None of them are able to sustain growth of 6-8% per year for more than a decade or so. Eventually, as they get even richer, their growth rates decline towards the common 1.8% growth rate seen in places like the US and UK. Growth rates can differ across developed countries, but this appears to be a temporary phenomenon.
 
