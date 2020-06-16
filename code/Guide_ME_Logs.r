@@ -27,3 +27,20 @@ fig <- layout(fig, title = list(text = 'Log GDP over time', x=0),
               yaxis = list (title = 'Log of GDP',range=c(4.4,4.8)),
               hovermode="x unified")
 api_create(fig, filename = "me-level-hyp")
+
+fake <- data.frame(year)
+fake$series1 <- log(75) + .02*(fake$year-2018)
+fake$series2 <- log(100) + .02*(fake$year-2018)
+fake$series3 <- log(75) + .10*(fake$year-2018)
+fake$series4 <- log(100) + .10*(fake$year-2018)
+
+fig <- plot_ly(fake, x = ~year) 
+fig <- fig %>% add_trace(y = ~series1, name = 'A0=75, gA=.02', type = 'scatter', mode = 'lines+markers')
+fig <- fig %>% add_trace(y = ~series2, name = 'A0=100, gA=.02', type = 'scatter', mode = 'lines+markers')
+fig <- fig %>% add_trace(y = ~series3, name = 'A0=75, gA=.10', type = 'scatter', mode = 'lines+markers')
+fig <- fig %>% add_trace(y = ~series4, name = 'A0=100, gA=.10', type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Theoretical log GDP over time', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Log of GDP',range=c(4,5.5)),
+              hovermode="x unified")
+api_create(fig, filename = "me-level-theory")
