@@ -8,7 +8,7 @@ library(RColorBrewer)
 p <- read.csv("~/Dropbox/project/studyguide/data/pwt91_na.csv", header=TRUE)
 
 p$scon <- round(p$v_c/p$v_gdp,digits=2) # calculate consump share
-p$sgfcf <- round(p$v_inv/p$v_gdp,digits=2) # calculate cap formation as share
+p$sgfcf <- round(p$v_i/p$v_gdp,digits=2) # calculate cap formation as share
 
 stable <- p[ which(p$countrycode %in% c("USA", "CAN", "MEX", "GBR", "AUS")),]
 catchup <- p[ which(p$countrycode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
