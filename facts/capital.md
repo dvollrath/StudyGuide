@@ -4,6 +4,12 @@ parent: Growth facts
 nav_order: 4
 ---
 
+# Capital and returns
+{: .no_toc }
+
+1. TOC 
+{:toc}
+
 ## Capital/output ratios
 K/Y for stable
 
