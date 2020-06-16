@@ -31,6 +31,7 @@ ___
 Stable growth rates
 {: .label .label-green }
 The growth rate of GDP per capita in developed economies appears to be stable over the long-run (e.g. decades)
+
 ___
 
 And we can follow that fact up with something even more precise.
@@ -39,6 +40,7 @@ ___
 Common growth rate
 {: .label .label-green }
 The growth rate of GDP per capita in developed economies appears to be the *same* in the long run, at about 1.8%.
+
 ___
 
 This number of 1.8% comes from looking at the actual slope of the lines in the figures. For a place like the US, the growth rate of GDP per capita has been about 1.8% for decades, while in a place like South Korea it has slowed to this rate after catching up in living standards to the US.
@@ -49,6 +51,7 @@ ___
 Permanent level differences
 {: .label .label-green }
 Even in the long run, there are permanent differences in the level of GDP per capita across countries.
+
 ___
 
 You can see this by looking at the case of Mexico and the US, or the UK and US. Even though they grow at roughly similar rates, those two countries have lower levels of GDP per capita than the US at all points in time. That level difference is permanent in the sense that if all these countries continue to grow at roughly 1.8% per year, Mexico and the UK will never have GDP per capita catch up to the US level.
