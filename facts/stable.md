@@ -27,12 +27,9 @@ Nigeria also looks like an outlier here. In 1950 it had higher living standards 
 
 Let's take the evidence in these figures and use them to establish a few stylized facts. Be concious of the fact that these facts are going to be appropriate for relatively developed economies, and don't hold for all countries (e.g. they aren't applicable to Nigeria, and we're not sure if they hold for China yet).
 
-___
 Stable growth rates
 {: .label .label-green }
-The growth rate of GDP per capita in developed economies appears to be stable over the long-run (e.g. decades)
-
-___
+**The growth rate of GDP per capita in developed economies appears to be stable over the long-run (e.g. decades)**
 
 And we can follow that fact up with something even more precise.
 
