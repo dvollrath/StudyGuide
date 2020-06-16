@@ -5,6 +5,8 @@ nav_order: 1
 ---
 
 # Stable growth
+{: .no_toc }
+
 1. TOC 
 {:toc}
 
