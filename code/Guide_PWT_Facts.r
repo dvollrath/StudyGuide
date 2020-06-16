@@ -32,6 +32,23 @@ fig <- layout(fig, title = list(text = 'Log GDP per capita for catch-up growth c
 api_create(fig, filename = "pwt-catchup-lngdppc")
 
 ############################
+# Figures of labor share
+############################
+fig <- plot_ly(stable, x = ~year, y = ~labsh, linetype = ~country, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Compensation/GDP for stable growth countries', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Compensation share of GDP', range=c(0,1)),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-stable-labsh")
+
+fig <- plot_ly(catchup, x = ~year, y = ~labsh, linetype = ~country, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Compensation/GDP for catch-up growth countries', x=0), 
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Compensation share of GDP', range=c(0,1)),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-catchup-labsh")
+
+############################
 # Figures of convergence
 ############################
 # get 10-year lagged value of log gdppc, by country
