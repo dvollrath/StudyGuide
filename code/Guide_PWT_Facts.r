@@ -11,6 +11,7 @@ data("pwt9.1")
 p <- pwt9.1 # copy dataframe for manipulation
 p$lngdppc <- round(log(p$rgdpna) - log(p$pop),digits=2) # create log GDP per capita
 p$ky <- round(p$rnna/p$rgdpna,digits=2)
+p$phil <- round(p$labsh*p$rgdpna/(p$labsh*p$rgdpna+.05*p$rnna),digits=2)
 
 # subset PWT into stable and catchup groups
 stable <- p[ which(p$isocode %in% c("USA", "CAN", "MEX", "GBR", "AUS")),]
@@ -47,6 +48,23 @@ fig <- layout(fig, title = list(text = 'Compensation/GDP for catch-up growth cou
               yaxis = list (title = 'Compensation share of GDP', range=c(0,1)),
               hovermode="x unified")
 api_create(fig, filename = "pwt-catchup-labsh")
+
+############################
+# Figures of labor cost share
+############################
+fig <- plot_ly(stable, x = ~year, y = ~phil, linetype = ~country, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Compensation/Total Costs', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'W/(W+RK)', range=c(0,1)),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-stable-phil")
+
+fig <- plot_ly(catchup, x = ~year, y = ~phil, linetype = ~country, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Compensation/Total Costs', x=0), 
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'W/(W+RK)', range=c(0,1)),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-catchup-phil")
 
 ############################
 # Figures of convergence
