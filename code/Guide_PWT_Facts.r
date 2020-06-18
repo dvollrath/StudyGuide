@@ -10,14 +10,16 @@ data("pwt9.1")
 
 p <- pwt9.1 # copy dataframe for manipulation
 p$lngdppc <- round(log(p$rgdpna) - log(p$pop),digits=2) # create log GDP per capita
-p$ky <- round(p$rnna/p$rgdpna,digits=2)
-p$phil <- round(p$labsh*p$rgdpna/(p$labsh*p$rgdpna+.05*p$rnna),digits=2)
+p$ky <- round(p$rnna/p$rgdpna,digits=2) # create K/Y ratio
+p$phil <- round(p$labsh*p$rgdpna/(p$labsh*p$rgdpna+.05*p$rnna),digits=2) # create kludge cost share of labor
 
 # subset PWT into stable and catchup groups
-stable <- p[ which(p$isocode %in% c("USA", "CAN", "MEX", "GBR", "AUS")),]
-catchup <- p[ which(p$isocode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
+stable <- p[which(p$isocode %in% c("USA", "CAN", "MEX", "GBR", "AUS")),]
+catchup <- p[which(p$isocode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
 
-# Figures of Log GDP per capita
+############################
+# Figures for log GDP per capita
+############################
 fig <- plot_ly(stable, x = ~year, y = ~lngdppc, linetype = ~country, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Log GDP per capita for stable growth countries', x=0),
                xaxis = list(title = 'Year'),
