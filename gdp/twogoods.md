@@ -73,3 +73,17 @@ $$
 $$
 
 The subscript on the left-hand side, $F$, stands for "Fisher", because he developed this idea of using the geometric mean of the two indices of real consumption. On the right-hand side, you multiply together the two different ratios we calculated, and then take the square root of the whole thing. 
+
+Note that the best we can do is create this ratio of real output between $t$ and $s$. There is no way to get an absolute number for real output (like $Y_t$ by itself), as it is meant to measure something like "living standards", which have no units. We might decide that a given year (e.g. 2009 or 2013) is our "base" year, and assign it a real index of 100, and use the ratios we calculate with other years to create index values relative to that. For example, if $(Y_{2010}/Y_{2009})_F = 1.034$, and 2009 was our base year, then we might report real GDP in 2010 as $Y_{2010} = 103.4$. 
+
+## Numeric example
+This probably all makes more sense if we put some numbers in. Here is some raw data we can use.
+
+| Year | p(Mango) | c(Mango) | p(Beer) | c(Beer) |
+|:-----|:-----|:-----|:-----|:-----|
+| 2018 | $2  | 10 | $5  | 2 |
+| 2019 | $4  | 8  | $2  | 4 |
+
+Notice that there is no obvious increase in real consumption from 2018 to 2019. Mango consumption fell, but beer consumption rose. Overall, were we better or worse off?
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTtHfTC07IT3aMOqFdKF2QdKIbNFHiMLpcM0KdaUG-Y0i9x0PXmAU5jTTPZvURnkNzftRZWn3ynPC1q/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
