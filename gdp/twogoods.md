@@ -86,4 +86,6 @@ This probably all makes more sense if we put some numbers in. Here is some raw d
 
 Notice that there is no obvious increase in real consumption from 2018 to 2019. Mango consumption fell, but beer consumption rose. Overall, were we better or worse off?
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTtHfTC07IT3aMOqFdKF2QdKIbNFHiMLpcM0KdaUG-Y0i9x0PXmAU5jTTPZvURnkNzftRZWn3ynPC1q/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
+
+There is a [Google Sheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vTtHfTC07IT3aMOqFdKF2QdKIbNFHiMLpcM0KdaUG-Y0i9x0PXmAU5jTTPZvURnkNzftRZWn3ynPC1q/pubhtml) which shows all these calculations. Rather than walking you through each step of this, I recommend that you go to that sheet and see how I came up with all these numbers. The spreadsheet just applies the formulas established in the prior section.
