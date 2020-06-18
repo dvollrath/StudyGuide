@@ -28,3 +28,48 @@ The bigger issue comes when we have a situation as in the figure below, where th
 How do we compare past and present, then, and figure out whether the real value of the consumption bundle has increased or decreased? The answer is that we're going to compare them from both perspectives (e.g. compare them using the relative prices of the past, and then compare then using the relative prices of the present) and do something like average those perspectives.
 
 ## Mathematical comparison
+To do that averaging, we need to add some math. Rather than "past" and "present", let's flip over and use period $t$ and $s$, which will save some space. 
+
+First, nominal expenditure on goods 1 and 2 in period $t$, valued using the prices from period $t$ is
+
+$$
+E_{t,t} = p_{1t} c_{1t} + p_{2t} c_{2t}.
+$$
+
+We could set up an equivalent statement for period $s$, where all the $t$ subscripts are just replaced with $s$'s. A different thing we might want to measure (not might, will) is the hypothetical amount you *would* have spent on the goods from period $t$ ($c_{1t}$ and $c_{2t}$) if you had faced the prices from period $s$ ($p_{1s}$ and $p_{2s}$).
+
+$$
+E_{s,t} = p_{1s} c_{1t} + p_{2s} c_{2t}.
+$$
+
+And there is a similar statement about nominal expenditure on goods from $s$ using the prices from time $t$,
+
+$$
+E_{t,s} = p_{1t} c_{1s} + p_{2t} c_{2ts}.
+$$
+
+Okay, that gives us a few ways of getting nominal expenditures in hypothetical situations. But we want to know what your *real* consumption in period $s$ was relative to your *real* consumption in period $t$. To do that, we need to use a common set of prices, so that we're valuing everything in the same terms. 
+
+Let's set up this ratio of real consumption (which, in our really simple two-good economy is just equal to GDP). And let's set up this ratio assuming that the prices of time $t$,
+
+$$
+\left(\frac{Y_s}{Y_t}\right)_{t} = \frac{p_{1t} c_{1s} + p_{2t} c_{2ts}}{p_{1t} c_{1t} + p_{2t} c_{2t}} = \frac{E_{t,s}}{E_{t,t}}.
+$$
+
+The notation is dense. On the left, inside the parentheses, this is the ratio of real consumption (or GDP) in period $s$ relative to period $t$. The subscript $t$ indicates that we're forming that ratio holding prices constant at those used in time $t$. On the right hand side, the numerator is the expenditure on consumption goods from period $s$, valued using the prices from time $t$. In the denominator, we've got expenditure on consumptions goods from period $t$, valued using the prices from time $t$. By holding the prices constant, we're really comparing the value of real consumption in the two periods. 
+
+But as we saw above, there is no reason that using the time $t$ prices is the right way to do this. We could just as easily decide to use the prices from period $s$. That would look like this
+
+$$
+\left(\frac{Y_s}{Y_t}\right)_{s} = \frac{p_{1s} c_{1s} + p_{2s} c_{2ts}}{p_{1s} c_{1t} + p_{2s} c_{2t}} = \frac{E_{s,s}}{E_{s,t}}.
+$$
+
+Again, dense. But notice the only thing different here is that the prices are from period $s$, rather than $t$. And again, this is a perfectly valid way of comparing real consumption in period $s$ to period $t$.
+
+So we've got two equally valid ways of comparing real GDP/consumption in period $s$ to period $t$. Neither is more correct than the other. We want some way to use both, and the idea of "averaging" makes sense. But we have to be careful here, because we've got two ratios, and you cannot just take an ordinary mean. I won't bore you with the (to me, kinda interesting) mathematical reason why. But what we need to do is take a "geometric" mean.
+
+$$
+\left(\frac{Y_s}{Y_t}\right)_{F} = \sqrt{\left(\frac{Y_s}{Y_t}\right)_{t} \times \left(\frac{Y_s}{Y_t}\right)_{s}}
+$$
+
+The subscript on the left-hand side, $F$, stands for "Fisher", because he developed this idea of using the geometric mean of the two indices of real consumption. On the right-hand side, you multiply together the two different ratios we calculated, and then take the square root of the whole thing. 
