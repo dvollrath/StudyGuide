@@ -53,7 +53,7 @@ Okay, that gives us a few ways of getting nominal expenditures in hypothetical s
 Let's set up this ratio of real consumption (which, in our really simple two-good economy is just equal to GDP). And let's set up this ratio assuming that the prices of time $t$,
 
 $$
-\left(\frac{Y_s}{Y_t}\right)_{t} = \frac{p_{1t} c_{1s} + p_{2t} c_{2ts}}{p_{1t} c_{1t} + p_{2t} c_{2t}} = \frac{E_{t,s}}{E_{t,t}}.
+\left(\frac{Y_s}{Y_t}\right)_{t} = \frac{p_{1t} c_{1s} + p_{2t} c_{2s}}{p_{1t} c_{1t} + p_{2t} c_{2t}} = \frac{E_{t,s}}{E_{t,t}}.
 $$
 
 The notation is dense. On the left, inside the parentheses, this is the ratio of real consumption (or GDP) in period $s$ relative to period $t$. The subscript $t$ indicates that we're forming that ratio holding prices constant at those used in time $t$. On the right hand side, the numerator is the expenditure on consumption goods from period $s$, valued using the prices from time $t$. In the denominator, we've got expenditure on consumptions goods from period $t$, valued using the prices from time $t$. By holding the prices constant, we're really comparing the value of real consumption in the two periods. 
@@ -61,7 +61,7 @@ The notation is dense. On the left, inside the parentheses, this is the ratio of
 But as we saw above, there is no reason that using the time $t$ prices is the right way to do this. We could just as easily decide to use the prices from period $s$. That would look like this
 
 $$
-\left(\frac{Y_s}{Y_t}\right)_{s} = \frac{p_{1s} c_{1s} + p_{2s} c_{2ts}}{p_{1s} c_{1t} + p_{2s} c_{2t}} = \frac{E_{s,s}}{E_{s,t}}.
+\left(\frac{Y_s}{Y_t}\right)_{s} = \frac{p_{1s} c_{1s} + p_{2s} c_{2s}}{p_{1s} c_{1t} + p_{2s} c_{2t}} = \frac{E_{s,s}}{E_{s,t}}.
 $$
 
 Again, dense. But notice the only thing different here is that the prices are from period $s$, rather than $t$. And again, this is a perfectly valid way of comparing real consumption in period $s$ to period $t$.
