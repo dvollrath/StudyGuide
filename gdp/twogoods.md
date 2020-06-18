@@ -86,6 +86,14 @@ This probably all makes more sense if we put some numbers in. Here is some raw d
 
 Notice that there is no obvious increase in real consumption from 2018 to 2019. Mango consumption fell, but beer consumption rose. Overall, were we better or worse off?
 
+There is a [Google Sheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vTtHfTC07IT3aMOqFdKF2QdKIbNFHiMLpcM0KdaUG-Y0i9x0PXmAU5jTTPZvURnkNzftRZWn3ynPC1q/pubhtml) which shows all the calculations. Rather than walking you through each step of this, I recommend that you go to that sheet and see how I came up with all the numbers that follow. The spreadsheet just applies the formulas established in the prior section.
 
+If you calculate $(Y_{2019}/Y__{2018})_{2019}$, meaning the ratio of real consumption using 2019 prices, then you get 0.91. In terms of 2019 prices, 2019 was *worse* for consumption than 2018. This makes some sense. In 2019 terms mangoes are relatively expensive compared to beer, but from 2018 to 2019 we consumed fewer mangoes and less beer, so we seem to be worse off. 
 
-There is a [Google Sheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vTtHfTC07IT3aMOqFdKF2QdKIbNFHiMLpcM0KdaUG-Y0i9x0PXmAU5jTTPZvURnkNzftRZWn3ynPC1q/pubhtml) which shows all these calculations. Rather than walking you through each step of this, I recommend that you go to that sheet and see how I came up with all these numbers. The spreadsheet just applies the formulas established in the prior section.
+If you calculatie $(Y_{2019}/Y__{2018})_{2018}$, or the ratio of real consumption in 2019 to 2018 using 2018 prices, you get a ratio of 1.20. In terms of 2018 prices, 2019 was *better* for consumption than 2018. That's because the relative value of mangoes was low compared to beer in 2018, and so when beer consumption increased and mango consumption decreased, that made things look better from the 2018 perspective. 
+
+Now, which of these is right? Did 2019 have lower or higher real consumption than 2018? Well, neither is right. We need to use both. Using the Fisher index from above, you get a final ratio of 1.04, which is the square root of 0.91 times 1.20. This says that 2019 had 4% higher real consumption than 2018. On net, the increase in real consumption from the 2018 perspective was larger than the decrease from the 2019 perspective. 
+
+If we were reporting this, we might assume that $Y_{2018} = 100$. So our reported real GDP series would be $Y_{2018} = 100$ and $Y_{2019} = 104$. 
+
+You should go to the Google sheet and play around with the relative prices. You can adjust them to see under what situations real consumption goes up from both perspectives, or down from both perspectives. 
