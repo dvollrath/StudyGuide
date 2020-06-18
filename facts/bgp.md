@@ -27,7 +27,7 @@ The US, for example, has data that conforms to these four facts. Because of that
 
 The definition of a BGP is helpful because it allows us to focus on some key regularities in the data. When we try to model the economy and how it grows, we're going to want that model to replicate the outcomes associated with a BGP, because we see so many countries with those characteristics. In addition, we'll want that model to help explain why countries that are "off" a BGP at some point (like South Korea, Germany, or Japan) all end up back "on" a BGP after some period of time. Finally, once we have that model, we'll use it to predict what might happen to places like Nigeria and China.
 
-A BGP defines a hypothetical economy that our model will match. We can draw figures similar to those we saw using actual data, but now for this hypothetical BGP economy. In my defense, these figures were how I taught myself to use Plotly to embed figures on this site, so I'm just happy that they all work. 
+A BGP defines a hypothetical economy that our model will match. We can draw figures similar to those we saw using actual data, but now for this hypothetical BGP economy. They are not very exciting. In my defense, these figures were how I taught myself to use Plotly to embed figures on this site, so I'm just happy that they all work. 
 
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/41.embed"></iframe>
 
@@ -37,4 +37,4 @@ A BGP defines a hypothetical economy that our model will match. We can draw figu
 
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/47.embed"></iframe>
 
-These figures are all quite boring, which is part of the point of a BGP. It is a relatively boring hypothetical economy that ignores lots of of interesting short-run fluctuations in order to focus on (to me, *more* interesting) long-run trends. You should know what a BGP is (the four facts), and be aware that we'll be building models to try and replicate a BGP.
+These figures are all boring, as mentioned, which is kind of the point of a BGP. It is a relatively boring hypothetical economy that ignores lots of of interesting short-run fluctuations in order to focus on (to me, *more* interesting) long-run trends. You should know what a BGP is (the four facts), and be aware that we'll be building models to try and replicate a BGP.
