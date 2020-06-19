@@ -37,3 +37,7 @@ This quick derivaion indicates that the faster population grows, the *slower* is
 
 ## The distribution of GDP per capita
 GDP per capita is a measure of the *average* GDP produced per person. This is not to say that each and every person in the economy has access to exactly that average amount of goods and services. There are clear and obvious inequalities in the real goods and services that people consume in a given year. GDP per capita is a rough summary measure of the average material living standard of people in a country, but do not take that as a statement about the equity of the actual distribution of GDP. GDP per capita gives us a good starting point for explaining economic growth, but a thorough treatment would include a discussion of the distribution of economic growth across the population.
+
+If we focus just on extreme poverty - the proportion of people living on less that $1.90 per day - then there is a strong negative relationship of GDP per capita and poverty. Growth in GDP per capita is probably a decent guide to the level of extreme poverty. 
+
+<iframe src="https://ourworldindata.org/grapher/the-share-of-people-living-in-extreme-poverty-vs-gdp-per-capita" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
