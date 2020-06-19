@@ -12,4 +12,6 @@ nav_order: 6
 
 ## Life sucked
 
-<iframe src="https://capx.co/the-romantic-idea-of-a-plentiful-past-is-pure-fantasy/"></iframe>
+<a class="tiptext">A link
+ <iframe class="description" src="https://capx.co/the-romantic-idea-of-a-plentiful-past-is-pure-fantasy/"></iframe>
+ </a>
