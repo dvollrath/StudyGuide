@@ -1,3 +1,8 @@
+---
+title: Introduction
+nav_order: 1
+---
+
 # Home
 Materials for a course in economic growth based on Jones and Vollrath's "Introduction to Economic Growth". Available at [Amazon](https://amzn.to/2Ytb3pB).
 
