@@ -1,10 +1,3 @@
-# Load necessary libraries
-library(devtools)
-library(plotly)
-library(pwt9)
-library(dplyr)
-library(RColorBrewer)
-
 # Pull PWT into dataframe
 data("pwt9.1")
 
@@ -81,11 +74,22 @@ p$g10.lngdppc <- (p$lngdppc - p$lag10.lngdppc)/10
 # just need the catchup group
 catchup <- p[ which(p$isocode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
 
-fig <- plot_ly(catchup, x = ~lag10.lngdppc, y = ~g10.lngdppc,
-               color = ~country, colors = "Set1", type = 'scatter')
+pal <- c('#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33')
+pal <- setNames(pal, c("CHN", "DEU", "JPN","KOR","NGA","USA"))
+fig <- plot_ly(catchup, x = ~lag10.lngdppc, y = ~g10.lngdppc, text=~year,
+               color = ~isocode, 
+               colors = pal, 
+               type = 'scatter',
+               mode = 'markers',
+               hovertemplate = paste("<b>%{text}</b><br>",
+                                     "%{yaxis.title.text}: %{y:.2f}<br>",
+                                     "%{xaxis.title.text}: %{x:.2f}<br>"),
+               marker = list(size = 7)
+               )
 fig <- layout(fig, title=list(text = 'Convergence and non-convergence', x= 0),
               xaxis = list(title = 'Initial log GDP per capita',range=c(6,11)),
-              yaxis = list (title = '10-year growth rate'))
+              yaxis = list (title = '10-year growth rate')
+              )
 api_create(fig, filename = "pwt-catchup-convergence")
 
 ############################

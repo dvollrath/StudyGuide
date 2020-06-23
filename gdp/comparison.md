@@ -1,7 +1,7 @@
 ---
 title: Comparisons with the past
 parent: Measuring GDP
-nav_order: 6
+nav_order: 7
 ---
 
 # Comparing living standards in the deep past
@@ -26,7 +26,8 @@ The two follow-ups look specifically at [urban poverty](https://capx.co/coal-dus
 > “We do know,” Cipolla writes, “that the mass [of the population] lived in a state of undernourishment. This gave rise, among other things, to serious forms of avitaminosis. Widespread filth was also the cause of troublesome and painful skin diseases. To this must be added in certain areas the endemic presence of malaria, or the deleterious effects of a restricted matrimonial selection, which gave rise to cretinism.”
 
 ## Conditions in 1915
+A different way of assessing whether we are better off (whatever that might mean to you) in 2020 than in 1920 is by asking what it would take to get you to go back in time. Would you go back 100 years if you could be a millionaire in 1920? Would you do it if you could be a billionaire in 1920? Don Boudreax took on that question, and makes the argument that [you would not do it](https://cafehayek.com/2016/02/40405.html) even if you were as rich as John D. Rockefeller, the richest person around a century ago.
 
-[the Bureau of Labor Statistics](https://www.bls.gov/opub/mlr/2016/article/the-life-of-american-workers-in-1915.html)
+His argument is based on comparing a number of practical differences in technology between then and now. [The Bureau of Labor Statistics](https://www.bls.gov/opub/mlr/2016/article/the-life-of-american-workers-in-1915.html) has a much more thorough description of conditions in 1915 available, and you can make you own assessment. 
 
-A good question. How much money would it take for you to agree to live 100 years ago? Would you go back in time if you could be a millionaire in 1920? Would you do it if you could be a billionaire in 1920? Don Boudreax took on that question, and makes the argument that [you would not do it](https://cafehayek.com/2016/02/40405.html) even if you were as rich as John D. Rockefeller, the richest person around a century ago. To give one reason, think about a world with no anti-biotics.
+One thing to note here is that this question is based on real technologies, and not on the level of real GDP per capita. This points out that the number associated with real GDP per capita doesn't mean anything by itself. *Changes* in real GDP per capita - economic growth - are a useful summary statistic for how the availability of goods and services changed over time. But real GDP per capita sort of melts all those technological changes together into a single number. Looking at the practical differences from 1915 to today gives you a sense of what exactly differs, and why those changes in real GDP per capita indicate a higher living standard.

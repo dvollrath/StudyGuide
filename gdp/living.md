@@ -1,7 +1,7 @@
 ---
 title: Living standards
 parent: Measuring GDP
-nav_order: 5
+nav_order: 6
 ---
 
 # Real GDP per capita and living standards

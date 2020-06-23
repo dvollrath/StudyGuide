@@ -72,7 +72,7 @@ Old = BudgetCurve(c1,1,2,100)
 New = BudgetCurve(c1,2,1,100)
 
 #############################################
-## Create figure
+## Create time figure
 #############################################
 fig, ax = plt.subplots(figsize=(8,8))
 
@@ -98,5 +98,36 @@ ax.grid()
 
 # Save
 location = os.path.abspath(os.path.dirname(__file__))
-path = os.path.join(location, "../Drafts/fig-real-gdp-ambig.eps")
+path = os.path.join(location, "../gdp/fig-real-gdp-ambig.eps")
+plt.savefig(path, bbox_inches='tight')
+
+#############################################
+## Create country figure
+#############################################
+
+fig, ax = plt.subplots(figsize=(8,8))
+
+# Main elements
+ax.plot(c1, Old, lw=3, color='black') # plot old budget
+ax.plot(c1, New, lw=3, color='black', linestyle='--') # plot new budget
+ax.plot(60,20,'or',markersize=10) # old bundle
+ax.plot(20,60,'or',markersize=10) # old bundle
+ax.annotate('Mexico bundle', xy=(60,20), xytext=(60+2, 20+2), size=20)
+ax.annotate('Brazil bundle', xy=(20,60), xytext=(20+2, 60+2), size=20)
+#ax.annotate(r'Slope = $\frac{-U_c(c_1)}{\beta U_c(c_2)}$', xy=(15,120), xytext=(15, 120), size=20)
+#ax.annotate(r'Slope = $-(1+r)$', xy=(15,50), xytext=(15, 50), size=20)
+
+# Options
+ax.set_xlim(0, 100)
+ax.set_ylim(0, 100)
+ax.set_xlabel('Consumption of good 1', fontsize=16)
+ax.set_ylabel('Consumption of good 2', fontsize=16)
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False)
+ax.grid()
+
+
+# Save
+location = os.path.abspath(os.path.dirname(__file__))
+path = os.path.join(location, "../gdp/fig-xcountry-gdp-ambig.eps")
 plt.savefig(path, bbox_inches='tight')
