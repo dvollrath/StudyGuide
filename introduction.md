@@ -1,6 +1,6 @@
 ---
 title: Introduction
-nav_order: 1
+nav_order: 2
 ---
 
 # Big questions in economic growth
