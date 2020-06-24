@@ -1,5 +1,6 @@
 ---
 title: Production
+parent: Solow and Balanced Growth
 has_children: true
 nav_order: 1
 ---
@@ -68,4 +69,51 @@ What does this mean? Think of what happens if *both* capital and labor grow by 1
 
 Now why am I ignoring productivity in all this? That's because productivity is really a different animal than the inputs capital and labor. The guide is going to spend a *lot* of time talking about why productivity is so different, so hang on to that question for the time being. The quick version is that capital and labor are tangible things that can only be used in one place at one time, but productivity is something less tangible that applies everywhere at once. 
 
+Okay, one last thing about these elasticities. I set them up as parameters that appear to be fixed over time. That is, $\alpha$ doesn't have a subscript $t$, implying that the elasticity of real GDP with respect to capital (and therefore with respect to labor) is the same in 1970, 1980, 1990, ... and 2020. Does that make sense? 
+
+It does to some degree. The reason is that these elasticities should be roughly equal to the cost shares of their respective inputs. In other words, $\alpha = \phi_K = RK/(wL+RK)$ and $1-\alpha = \phi_L = wL/(wL+RK)$. Recall that one of the four facts about a BGP was that labor's cost share (and hence capital's) [was constant](http://growthecon.com/StudyGuide/facts/income.html#labors-share-of-costs). If those cost shares are constant, then the parameters $\alpha$ and $1-\alpha$ are constant.
+
+I'm going to punt the explanation for *why* elasticities should equal cost shares to a sub-page, as that gets us into the weeds a little. But it will be worth reading through that explanation to understand why I'm not just making this up. 
+
+Elasticities and cost shares
+{: .label .label-green }
+**The elasticity $1-\alpha$ is roughly equal to the cost share of labor, $\phi_L$, which in the data is in the range 0.6-0.8 and stable. The elasticity $\alpha$ is roughly equal to the cost share of capital, $\phi_K$, which in the data is about 0.2-0.4 and stable.**
+
+We are using the Cobb-Douglas production function above precisely because it has stable elasticities, which match the data on cost shares.
+
 ## Per-capita growth and capital/output ratios
+Taking the production function above as given, we wrote
+
+$$
+g_Y = \alpha g_K + (1-\alpha) g_A + (1-\alpha) g_L.
+$$
+
+Now I'm going to do something a little odd. I'm going to subtract $\alpha g_K$ from both sides. 
+
+$$
+(1-\alpha)g_Y = \alpha (g_K - g_Y) + (1-\alpha) g_A + (1-\alpha) g_L.
+$$
+
+Divide both sides of this equation by $(1-\alpha)$, 
+
+$$
+g_Y = \frac{\alpha}{1-\alpha} (g_K - g_Y) + g_A + g_L.
+$$
+
+We seem to have made things more complicated, but this is going to work for us later on. This version says that the growth rate of real GDP depends on $g_K-g_Y$, or the difference in the growth rate of capital and the growth rate of GDP. 
+
+Stop for a moment to think about where we would get such a differene in growth rates. What is the growth rate of the capital/output ratio, $K/Y$? As a ratio, it's growth rate must be $g_K - g_Y$. This last equation says that the growth rate of GDP depends, in part, on the growth rate of the capital/output ratio. Why do we write it this way? Because ultimately the growth rate of capital is going to depend on the growth rate of output - we have to build capital - and so capital growth contributes to growth in GDP only to the extent that it *outgrows* output. We'll get back to this in the next section regarding capital accumulation.
+
+Anyway, back to that last equation. The other things that drive growth in real GDP are growth in labor, $g_L$, and growth in productivity, $g_A$. Once we account for the growth rate of the capital/output ratio, those two growth rates contribute directly to growth in GDP. Why is there no $\alpha$ or $1-\alpha$ scaling down the effect of $g_A$ or $g_L$ any more? 
+
+$$
+g_y = g_Y - g_L.
+$$
+
+Put those together and you have
+
+$$
+g_y = \alpha g_K + (1-\alpha) g_A -\alpha g_L.
+$$
+
+Now I'm going to do something a little odd and subtract $\alpha g_y$ from both sides. 
