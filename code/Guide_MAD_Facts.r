@@ -1,8 +1,4 @@
 # Load necessary libraries
-library(devtools)
-library(plotly)
-library(dplyr)
-library(RColorBrewer)
 
 # Pull Maddison data into dataframe
 mad <- read.csv("~/Dropbox/project/studyguide/data/maddison2010.csv", header=TRUE)

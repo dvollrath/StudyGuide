@@ -1,8 +1,5 @@
 # Load necessary libraries
-library(devtools)
-library(plotly)
-library(dplyr)
-library(RColorBrewer)
+
 
 year <- c(2018:2058)
 

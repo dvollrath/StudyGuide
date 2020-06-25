@@ -1,8 +1,4 @@
 # Load necessary libraries
-library(devtools)
-library(plotly)
-library(dplyr)
-library(RColorBrewer)
 
 # Pull PWT national accounts data into dataframe
 p <- read.csv("~/Dropbox/project/studyguide/data/jstdatasetr4.csv", header=TRUE)
