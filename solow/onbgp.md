@@ -56,9 +56,9 @@ We haven't said anything yet about how capital accumulates, but we can already m
 
 Growth on a BGP
 {: .label .label-green }
-**The growth rate of GDP per capita on a balanced growth path depends only on the growth rate of productivity, $g_A$.**
+**The growth rate of GDP per capita on a balanced growth path, $g_y^{BGP}$, depends only on the growth rate of productivity, $g_A$, or $g_y^{BGP} = g_A$.**
 
-This means that the growth rate in all the countries that were on a balanced growth path (e.g. the US, UK, Australia, Canada, probably Mexico, probably Germany and Japan in the last few decades) is equal to the growth rate of productivity *only*. The growth rate of capital - which we'll see is due to the amount of GDP they allocate to new capital - does *not* matter for how fast countries grow in the long-run. It will still matter, we'll see, but not to the growth rate. 
+The growth rate in all the countries that were on a balanced growth path (e.g. the US, UK, Australia, Canada, probably Mexico, probably Germany and Japan in the last few decades) is equal to the growth rate of productivity *only*. The growth rate of capital - which we'll see is due to the amount of GDP they allocate to new capital - does *not* matter for how fast countries grow in the long-run. It will still matter for how rich they are, as we'll see, but not to the growth rate. 
 
 Productivity growth is the origin of the long-run growth in GDP per capita. This makes understanding the growth rate of productivity one of the most important things we can study. The whole next topic of the study guide is dedicated to thinking about why and how productivity grows, for that reason. 
 
@@ -66,6 +66,6 @@ We can even be a little more specific. The growth rate of GDP per capita is stab
 
 Growth in productivity
 {: .label .label-green }
-**The growth rate of productivity is stable and equal to about 1.8% per year in most developed countries.**
+**The growth rate of productivity is stable and equal to about 1.8% per year in most developed countries, or $g_A \approx 0.018.**
 
 We'll use this last implication to help us pin down the economics behind the growth rate of productivity.
