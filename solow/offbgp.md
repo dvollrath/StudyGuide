@@ -127,3 +127,4 @@ Let's go back to think about what we were after. We started this section by sayi
 
 That tells us that transitional growth depends not just on $\delta$, $g_A$, and $g_L$, but also depends on the size of the capital/output ratio itself. And this dependence on $K/Y$ itself is going to explain why transitional growth tends to dissipate to zero over time, no matter how big it gets to start with.
 
+<iframe src="https://www.geogebra.org/calculator/up2w555f?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
