@@ -7,6 +7,8 @@ nav_order: 3
 # Growth off the BGP
 {: .no_toc }
 
+This section is one of the longer ones in the study guide. It contains a lot of material that isn't always intuitive the first time through. This is something you probably want to work through slowly, and several times.
+
 1. TOC 
 {:toc}
 
@@ -127,7 +129,40 @@ Let's go back to think about what we were after. We started this section by sayi
 
 That tells us that transitional growth depends not just on $\delta$, $g_A$, and $g_L$, but also depends on the size of the capital/output ratio itself. And this dependence on $K/Y$ itself is going to explain why transitional growth tends to dissipate to zero over time, no matter how big it gets to start with.
 
+Most important for us is that the growth rate of the capital/output ratio *declines* as the K/Y ratio gets larger. This creates some very interesting dynamics for us. To see what I mean, the figure below plots the growth rate of K/Y, $g_{K/Y}$, against the size of $K/Y$. It does this for two fake economies. Economy "A" starts with a capital/output ratio of 0.5. Economy "B" starts with a capital/output ratio of 4, so the two countries are quite different in this regard. 
+
+Despite that difference, the parameters in two countries are otherwise identical. Specifically, I set $\alpha = 0.3$, $s_I = 0.2$, $g_A = 0.02$, and $g_L = 0.01$, all values that are pretty reasonable for a developed country. 
+
+The growth rate of the capital/output ratio for economy "A" is, given the capital/output ratio of 0.5, 
+
+$$
+g_{K/Y}^A = (1-.3)\left[.2/0.5 - .05 - .02 - .01 \right] = 0.224
+$$
+
+or 22.4%. Thus the green dot for economy A is at (.5,.224) in the figure. For economy B, the growth rate of the capital/output ratio is
+
+$$
+g_{K/Y}^B = (1-.3)\left[.2/4 - .05 - .02 - .01 \right] = -0.021
+$$
+
+or *negative* 2.1%. The capital/output ratio in economy B is so large that the new gross capital formation being done cannot keep up with the depreciation of capital and the fact that output is growing, and so K/Y is shrinking in economy B. Thus the blue dot for economy B starts at (4,-0.21).
+
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/49.embed"></iframe>
 
-Here's the theoretical version
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="https://www.geogebra.org/m/up2w555f"></iframe>
+Now go ahead and hit "Play" to see what happens next. The capital/output ratio for A grows at 22.4%, meaning it moves to the right. The capital/output ratio for B shrinks at 2.1%, so it moves to the left. But because their K/Y ratios changed, so did the growth rate of capital/output in each. In A, the growth rate went *down*, while in B the growth rate went *up* (but is still negative). As the animation keeps going, you see this continue to happen. As K/Y grows in A, the growth rate of K/Y slows down. As K/Y shrinks in B, the growth rate of K/Y rises.
+
+This gets boring pretty fast, but keep watching until the end, because you'll see that both economies are headed to the *same* spot, which is where $K/Y = 2.5$. At this spot, the growth rate of the capital/output ratio in *both* countries is essentially zero. The capital/output ratio for these two countries evolves until it *stops growing completely*.
+
+The dynamics of the capital/output ratio, as governed by this equation
+
+$$
+g_{K/Y} = (1-\alpha)\left[s_I \frac{Y}{K} - \delta - g_A - g_L \right].
+$$
+
+dictate that no matter where the capital/output ratio *starts*, it always ends up at a point where $g_{K/Y} = 0$. In other words, the transitional growth that we started out trying to explain is inherently *temporary*, and so differences in growth between countries tend to be temporary. We'll make that more explicit in the next section.
+
+One last thing before we leave, though. Instead of watching the two economies evolve over time, we could plot out all the points that they hit along the way. This will show us what the growth rate $g_{K/Y}$ was at every given $K/Y$ that the two countries experienced. 
+
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/51.embed"></iframe>
+
+Their dynamics trace out a very nice curve which shows that the relationship of $g_{K/Y}$ to $K/Y$ itself is negative. We're going to work more with this on a theoretical level in the next section.

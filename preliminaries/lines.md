@@ -90,11 +90,13 @@ What is this? It's the equation for a line graphing the log of GDP against time,
 
 We've taken our model of the economy and used it to construct an equation that tells us how to graph log GDP over time. It tells us what the slope of that line is, meaning it tells us the growth rate of GDP. And it tells us what the intercept of that line, meaning it tells us about the level of GDP.
 
-The figure below shows you several possible paths for log GDP over time, given different values for $A(0)$ and $g_A$. Note that $A(0)$ shifts the entire line up and down, it affects the *level* of log GDP at all points in time. The growth rate $g_A$ controls the slope of that line. Higher growth, a higher slope.
+The figure below allows you to play with the parameters of our simple model - $A(0)$ and $g_A$ - to see how it affects the line describing the relationship of log GDP and time. You can play with the sliders on the left to change the values of those parameters, and see how this moves the line around in space. Notice that if you change $A(0)$, this shifts the *level* of log GDP at all points in time. On the other hand, the growth rate $g_A$ controls the slope of the line. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/29.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="https://www.geogebra.org/m/kaxuywsc"></iframe>
 
-The theory is general, meaning it could replicate any constant growth GDP over time if we just give it the right values for $A(0)$ and $g_A$. We can give those two values a lot more economic intuition, and we will in the rest of the study guide. But for the moment realize that we can construct a theoretical line that can capture constant growth of GDP without too much trouble.
+One reminder on the GeoGebra embeds in the study guide. You can click the three dots in the upper right of the GeoGebra panel and select "Open in App" to pop open the model in its own tab, which may make it easier to see and work with.
 
-This figure is also useful as a way to think about theoretical reasons that two different countries might differ in their level of log GDP. The "yellow" country is richer than the "green" country in 2018-2021, because yellow has a higher value of $A(0)$. But because green has a higher growth rate, eventually it becomes richer than yellow in 2022. This very simple model tells us that to understand why some countries are rich and others are poor, we are going to need to understand what determines their level of GDP (the intercept) and what determines their growth rate (the slope).
+The theoretical line we have is general, meaning it could replicate any constant growth GDP over time if we just give it the right values for $A(0)$ and $g_A$. We can give those two values a lot more economic intuition, and we will in the rest of the study guide. But for the moment realize that we can construct a theoretical line that can capture constant growth of GDP without too much trouble.
+
+Note that it isn't really relevant that the x-axis is labelled from 0 to 10. If you wanted to think of these as years, then you could easily add 2020 to each of them, and think of the line as showing GDP from 2020 to 2030. Or use any other initial year you want. 
 
