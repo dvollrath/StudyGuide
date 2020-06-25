@@ -130,4 +130,4 @@ That tells us that transitional growth depends not just on $\delta$, $g_A$, and 
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/49.embed"></iframe>
 
 Here's the theoretical version
-<iframe src="https://www.geogebra.org/calculator/up2w555f?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="https://www.geogebra.org/m/up2w555f"></iframe>
