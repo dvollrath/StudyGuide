@@ -143,6 +143,6 @@ Those are just the GDP per capita in period 0. What if we keep simulating this o
 Once you hit play, you can see the big difference in initial GDP per capita. But you can also see that both countries are approaching the blue line in the middle I've labeled "BGP" over time. Again, the figures are a little jumpy, but ignore that. If we ran this figure out even further, you'd see that both countries have GDP per capita that ends up along that BGP line.
 
 ## Fun with spreadsheets
-Simulating an economy using the Solow model can be easier to get your head around sometimes if you use a brute force approach in a spreadsheet, calculating the result period by period. 
+Simulating an economy using the Solow model can be easier to get your head around sometimes if you use a brute force approach in a spreadsheet, calculating the result period by period. [This link](https://docs.google.com/spreadsheets/d/e/2PACX-1vRrEsKNR3Aco157HVGA_iDE8uTE4HbFFuV5K9_0aVbrEFCQWSxqk76BExHSstBE3lO6xiNKbMIf_AZf/pubhtml) will take you to a Google Sheet where I've set up the Solow model this way. 
 
 You should be able to walk through period by period and see how the equations used in the Study Guide map to the formulas used in the spreadsheet. One advantage of the spreadsheet is that you can also play with the parameters and see how this changes the path of log GDP per capita, the growth rate of GDP per capita, and the relationship of K/Y and $g_{K/Y}$. 
