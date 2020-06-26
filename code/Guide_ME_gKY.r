@@ -70,43 +70,45 @@ df = NULL
 for (t in 1:30)
 {
   kycurr <- .5
+  kyalt <- 4
+  kybgp <- 2.5
   dftemp = NULL
+  dfalt = NULL
+  dfbgp = NULL
+
   for (k in 1:t) # do for this many periods
   {
-    gky <- (1-alpha)*(s/kycurr - delta - ga - gl) # calculate growth in k/y given current k/y
-    dftemp = rbind(dftemp, data.frame(t,k,kycurr,gky)) # add to dataframe
-    kycurr <- (1+gky)*(kycurr) # update current k/y for next period
+    name <- "A"
+    ky <- kycurr        
+    gky <- (1-alpha)*(s/ky - delta - ga - gl) # calculate growth in k/y given current k/y
+    dftemp = rbind(dftemp, data.frame(t,k,ky,gky,name)) # add to dataframe
+    kycurr <- (1+gky)*(ky) # update current k/y for next period
+    name <- "B"
+    ky <- kyalt    
+    gky <- (1-alpha)*(s/ky - delta - ga - gl)
+    dfalt = rbind(dfalt, data.frame(t,k,ky,gky,name)) # add to dataframe
+    kyalt <- (1+gky)*(ky) # update current k/y for next period
+    name <- "BGP"
+    ky <- kybgp
+    gky <- (1-alpha)*(s/ky - delta - ga - gl)
+    dfalt = rbind(dfalt, data.frame(t,k,ky,gky,name)) # add to dataframe
+    kybgp <- (1+gky)*(ky) # update current k/y for next period
   }
   df = rbind(df,dftemp)
+  df = rbind(df,dfalt)
+  df = rbind(df,dfbgp)
 }
 
-fig <- plot_ly(df,
-               x = ~k, 
-               y = ~gky, 
-               frame = ~t, 
-               hoverinfo = "text",
-               type = 'scatter',
-               mode = 'lines'
-)
-fig <- fig %>% animation_slider(
-  hide = T
-)
-fig <- fig %>% animation_button(
-  x = 1, xanchor = "right", y = 0.4, yanchor = "bottom"
-)
-fig <- layout(fig, title = list(text = 'Growth rate of GDP over time', x=0),
-              xaxis = list(title = 'Time', range=c(0,30),dtick=5),
-              yaxis = list (title = 'Growth rate', range=c(-.05,0.25)
-              )
-)
 
-df$lny <- (alpha/(1-alpha))*log(df$kycurr) + 4 + df$k*ga
-df$lnbgp <- (alpha/(1-alpha))*(s/(delta+ga+gl)) + 4 + df$k*ga
+df$lny <- (alpha/(1-alpha))*log(df$ky) + 4 + df$k*ga
+df$gy <- ga + (alpha/(1-alpha))*df$gky
 
+df <-df[order(df$name, df$t, df$k),]
 fig <- plot_ly(df,
                x = ~k, 
                y = ~lny, 
-               frame = ~t, 
+               frame = ~t,
+               color = ~name,
                hoverinfo = "text",
                type = 'scatter',
                mode = 'lines'
@@ -117,8 +119,33 @@ fig <- fig %>% animation_slider(
 fig <- fig %>% animation_button(
   x = 1, xanchor = "right", y = 0.4, yanchor = "bottom"
 )
-fig <- layout(fig, title = list(text = 'Growth rate of GDP over time', x=0),
+fig <- layout(fig, title = list(text = 'Level of GDP per capita over time', x=0),
               xaxis = list(title = 'Time', range=c(0,30),dtick=5),
-              yaxis = list (title = 'Growth rate', range=c(3,6)
+              yaxis = list (title = 'Log GDP per capita', range=c(3,6)
               )
 )
+
+api_create(fig, filename = "me-lny-animated")
+
+fig <- plot_ly(df,
+               x = ~k, 
+               y = ~gy, 
+               frame = ~t,
+               color = ~name,
+               hoverinfo = "text",
+               type = 'scatter',
+               mode = 'lines'
+)
+fig <- fig %>% animation_slider(
+  hide = T
+)
+fig <- fig %>% animation_button(
+  x = 1, xanchor = "right", y = 0.4, yanchor = "bottom"
+)
+fig <- layout(fig, title = list(text = 'Growth rate of GDP per capita over time', x=0),
+              xaxis = list(title = 'Time', range=c(0,30),dtick=5),
+              yaxis = list (title = 'Growth rate of GDP per capita', range=c(0,.15)
+              )
+)
+
+api_create(fig, filename = "me-gy-animated")

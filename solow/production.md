@@ -34,7 +34,7 @@ Let's go through each of the pieces of this.
 2. $L_t$ is the total amount of labor in the economy at time $t$. This could be a count of the number of workers, or we can get fancy and think of it as a combined stock of skills and abilities that those workers bring with them. Either way, more labor, more real GDP.
 3. $A_t$ is the level of productivity at time $t$. We'll have more to say later about what this really measures, but for now keep in mind that is measures how efficiently we use the capital and labor in the economy. Higher productivity, higher real GDP.
 
-Notice that I didn't include anything explicit about natural resources or raw materials here. We could, but they tend to not be as important for growth in real GDP as we tend to think. For the time being we'll leave them out, and later on can incorporate information about them into the production function.
+Notice that I didn't include anything explicit about natural resources or raw materials here. We could, but they tend to not be as important for growth in real GDP as we think. For the time being we'll leave them out, and later on can incorporate information about them into the production function.
 
 What about the remaining parameters, $\alpha$ and $1-\alpha$? Those dictate how sensitive real GDP is to the amount of capital ($\alpha$) or to productivity and labor ($1-\alpha$). Their role is quite important, and will be easiest to see if we do a little mathematical work first.
 
