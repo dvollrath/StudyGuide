@@ -4,4 +4,7 @@ aux_links:
   "Study Guide on GitHub":
     - "https://github.com/dvollrath/StudyGuide"
 ga_tracking: UA-72839737-1
-ga_tracking_anonymize_ip: true    
+ga_tracking_anonymize_ip: true
+rel_url: false
+button: true
+heading_anchors: false
