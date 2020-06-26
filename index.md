@@ -6,6 +6,7 @@ nav_order: 1
 # Home
 Materials for a course in economic growth based on Jones and Vollrath's "Introduction to Economic Growth". Available at [Amazon](https://amzn.to/2Ytb3pB).
 
+## Structure
 The concept of the study guide is to provide the material in layers. 
 
 If I manage to pull this off, then the best way to use this study guide is to work through a topic at the top layer first. This will give you an overview of the important concepts and facts. Then work through the topic again at the second layer, filling in details. Finally, if you want to get into the real nuts and bolts of economic growth, you can work through the third layer.
