@@ -1,9 +1,3 @@
-# Load necessary libraries
-library(devtools)
-library(plotly)
-library(dplyr)
-library(RColorBrewer)
-
 # Pull PWT national accounts data into dataframe
 p <- read.csv("~/Dropbox/project/studyguide/data/pwt91_na.csv", header=TRUE)
 
@@ -40,3 +34,6 @@ fig <- layout(fig, title = list(text = 'Gross capital formation share of GDP', x
               yaxis = list (title = 'Gross capital formation share',range = c(0,1)),
               hovermode="x unified")
 api_create(fig, filename = "pwt-catchup-sgfcf")
+
+
+fig <- plot_ly(p, x = ~year, y = ~sgfcf, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
