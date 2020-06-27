@@ -1,5 +1,5 @@
 ---
-title: Case studies using the Solow model
+title: Case studies
 parent: Solow and Balanced Growth
 nav_order: 6
 ---
