@@ -21,7 +21,7 @@ Revisit the figure showing the time path of GDP per capita across several countr
 
 These all appear to be on a BGP for a long stretch of time, as evidenced by the constant slopes. But the slopes are very similar, indicating, as we know, that the value of $g_A$ was very similar. At the same time, the *level* of GDP per capita at any given point is very different. We saw that GDP per capita in the US was about 2.7 times higher than in Mexico in any given year. So how do we use the Solow model to explain this ratio of 2.7?
 
-Go back to the section on [simulating growth](solow/simulation.html) and recall that we could write the level of GDP per capita as
+Go back to the section on [simulating growth](simulation.html) and recall that we could write the level of GDP per capita as
 
 $$
 \ln y_t = \frac{\alpha}{1-\alpha} (\ln K_t/Y_t) + \ln A_0 + g_A t.
