@@ -7,3 +7,12 @@ aux_links:
     - "https://github.com/dvollrath/StudyGuide"
 ga_tracking: UA-72839737-1
 ga_tracking_anonymize_ip: true
+
+back_to_top: true
+back_to_top_text: "Back to top"
+
+footer_content: "Copyright &copy; 2020 Dietrich Vollrath. Distributed by an <a href=\"https://github.com/dvollrath/StudyGuide/blob/master/LICENSE.txt\">MIT license.</a>"
+
+# Footer last edited timestamp
+last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
+last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
