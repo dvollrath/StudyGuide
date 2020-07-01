@@ -13,6 +13,7 @@ p$g10.pop <- (log(p$pop) - log(p$lag10.pop))/10
 
 
 p <- p[which((p$g10.pop>-.01) & (p$g10.pop <.06)),]
+p <- p[which((p$si>0) & (p$g10.pop <.6)),]
 p <-  p[which(p$year %in% c(1950,1960,1970,1980,1990,2000,2010,2015)),]
 
 fig <- plot_ly(p,
@@ -24,7 +25,7 @@ fig <- plot_ly(p,
                hoverinfo = "text",               
                type = 'scatter',
                mode = 'markers'
-) %>% animation_opts(frame=2000)
+) %>% animation_opts(frame=2000, transition=200)
 fig <- fig %>% animation_button(
   x = 1, xanchor = "right", y = 0.4, yanchor = "bottom"
 )
@@ -45,7 +46,7 @@ fig <- plot_ly(p,
                hoverinfo = "text",               
                type = 'scatter',
                mode = 'markers'
-) %>% animation_opts(frame=2000)
+) %>% animation_opts(frame=2000, transition=200)
 fig <- fig %>% animation_button(
   x = 1, xanchor = "right", y = 0.4, yanchor = "bottom"
 )
