@@ -16,6 +16,7 @@ p$si<- round(p$csh_i,digits=2)
 usa <- p[which(p$isocode %in% c("USA")),]
 deu <- p[which(p$isocode %in% c("DEU")),]
 kor <- p[which(p$isocode %in% c("KOR")),]
+chn <- p[which(p$isocode %in% c("CHN")),]
 
 m1 <- lm(usa$lngdppc~usa$year, data=usa)
 
@@ -76,3 +77,32 @@ fig <- layout(fig, title = list(text = 'Population growth for South Korea', x=0)
               yaxis = list (title = 'Population growth rate', range=c(0,0.05)),
               hovermode="x unified")
 api_create(fig, filename = "pwt-apply-gl-kor")
+
+
+m1 <- lm(chn$lngdppc~chn$year, data=chn, subset=(year<1970))
+chn$fitted1 <- predict(m1,chn)
+chn$fitted2 <- predict(m2,chn)
+
+fig <- plot_ly(chn, x = ~year, y = ~lngdppc, linetype = ~isocode, type = 'scatter', mode = 'lines+markers')
+fig <- fig %>% add_trace(y = ~fitted1, name = 'BGP before',mode = 'lines')
+fig <- fig %>% add_trace(y = ~fitted2, name = 'S. Korea BGP',mode = 'lines')
+fig <- layout(fig, title = list(text = 'Log GDP per capita for China', x=0),
+              xaxis = list(title = 'Year', tick0=1950, dtick=10),
+              yaxis = list (title = 'Log GDP per capita', range=c(6.5,11)),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-apply-chn")
+
+
+fig <- plot_ly(chn, x = ~year, y = ~csh_i, linetype = ~isocode, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Capital formation share of GDP for China', x=0),
+              xaxis = list(title = 'Year', tick0=1950, dtick=10),
+              yaxis = list (title = 'Capital formation share of GDP', range=c(0,0.6)),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-apply-si-chn")
+
+fig <- plot_ly(chn, x = ~year, y = ~g1.pop, linetype = ~isocode, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Population growth for China', x=0),
+              xaxis = list(title = 'Year', tick0=1950, dtick=10),
+              yaxis = list (title = 'Population growth rate', range=c(0,0.05)),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-apply-gl-chn")

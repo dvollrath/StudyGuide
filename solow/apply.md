@@ -85,3 +85,20 @@ We can tell a similar story using the population growth rate, $g_L$. The rate in
 The last part of the explanation would be that $A_0$ rose. Again, don't get hung up on the timing of this. All we're saying is that "baseline" productivity shifted up. Now, what did South Korea do to make baseline productivity go up? Well, see those books I mentioned. This can include anything from land reform (more productive agriculture?) to trade deals (exporting to the US?) to better education (creating more human capital?). The Solow model isn't definitive, but it gives us a framework on which to build explanations for a growth experience like South Korea's.
 
 ## What's the deal with China?
+The prior three case studies can all be fit into the Solow model explanation because the data allows us to identify some plausible BGP's. In the case of China, however, it doesn't appear that we've seen enough of the transition to know for sure what is going on.
+
+Starting in 1950, China was in a situation very similar to South Korea. It had been occupied by Japan and devastated during World War II, and was very poor in the 1950s. It appeared to be on a poor BGP until the 1970s. In the late 1970s a series of reforms began that allowed for more market-oriented activity within China, and eventually opened China up to international trade. Similar to South Korea, one can read entire books about what precisely changed in China in this period. But the evidence is clear that *something* happened starting in the 1980s such that China began to grow much faster.
+
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/73.embed"></iframe>
+
+This has the flavor of what happened in South Korea. Except that to date, China appears to be in the midst of the kind of transition South Korea experienced, so we can't identify a clear BGP that it is headed to - or even *if* it is headed towards a BGP. While all our existing examples suggest that China will reach some kind of BGP eventually, perhaps China really has found a way to grow at a very high rate (6%, 7% per year) for decades. 
+
+However, if you look at the last few years, the 2010s, the growth rate of China appears to have slowed. This is consistent with approaching a BGP. The figure plots the BGP from South Korea as well, just as a reference. We don't know what will happen, but China may be hitting a BGP that has a lower level of GDP per capita than South Korea. 
+
+The reasons for the jump to a higher BGP (if that is what is happening) appear to be similar to South Korea's. The $s_I$ ratio went up. It went up so much that there are actually reasons to believe that the numbers are inflated compared to reality. But taking them as given, $s_I$ rose from around 10% to around 50% over the last sixty years.
+
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/75.embed"></iframe>
+
+Perhaps more famously, China instituted the one-child policy in 1979 to limit what was a high population growth rate. This was actually after the population growth rate had fallen from a high around 3% in the early 1960s to under 2% in the 1970s. Regardless, $g_L$ fell by a substantial amount in China over this period. The severe negative spike to population growth around 1960 was due to the "Great Leap Forward", an attempt by Mao Zedong to reconstruct China on an agrarian basis that led to disruptions of farming and a massive famine that killed an estimated 30 million people.
+
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/77.embed"></iframe>
