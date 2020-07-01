@@ -44,6 +44,16 @@ The best way to see the impact of all these parameters on the level of the BGP i
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="https://www.geogebra.org/m/eascufmv"></iframe>
 
 ## Evidence across countries
-At a primitive level, we now know *why* some countries are richer than others. Two of the most tangible reasons are that some may allocate a greater fraction of GDP to capital ($s_I$), or have lower population growth ($g_L$). We can look at some evidence of this to see if it makes sense. 
+At a primitive level, we now know *why* some countries are richer than others. We can look at some evidence if some of the theoretical explanations make sense. Start with the share of GDP going to capital formation, $s_I$. The theory says that - holding everything else constant - countries with higher $s_I$ should have a higher level of GDP per capita. 
+
+The following figure shows the relationship of $s_I$ to log GDP per capita in several years. If you hit "Play", there is a lag before the figure cycles through all the available years. Once the animation is done, you can move the slider to see individual years.
 
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/57.embed"></iframe>
+
+There is a rough positive correlation between $s_I$ and GDP per capita. This is neither definitive proof the Solow model is right, nor is the weak correlation definitive evidence that the Solow model is wrong. The problem, of course, is that in the data it is not true that all other things are held equal. These countries have different population growth rates, different levels of $A_0$, and so on. Furthermore, these countries may not all be *on* a BGP, which clouds the comparison as well. Japan, for example, in the 1970s had a higher $s_I$ than the United States, but was poorer than the US because it was still catching up to its BGP, while the US was on a BGP.
+
+We can do something similar to analyze the effect of population growth, $g_L$. The model tells us that higher population growth should be associated with *lower* GDP per capita. The figure below gives you a chance to look at the relationship of the two for several years. The population growth rate here is the annualized 10-year lagged population growth rate. So for 1980, this is the annualized growth rate of population from 1970 to 1980. 
+
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/59.embed"></iframe>
+
+You get a similar story here. There is a rough negative relationship. But that neither proves nor disproves the Solow model, as everything is not held constant. But the combination of the results in the two figures at least tell us that the Solow model is not, on the face of it, crazy. 
