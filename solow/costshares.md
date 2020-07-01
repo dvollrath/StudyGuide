@@ -2,7 +2,6 @@
 title: Cost shares and elasticities
 parent: Production
 grand_parent: Solow and Balanced Growth
-has_children: true
 nav_order: 1
 ---
 

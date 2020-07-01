@@ -6,6 +6,8 @@ p$sgfcf <- round(p$v_i/p$v_gdp,digits=2) # calculate cap formation as share
 
 stable <- p[ which(p$countrycode %in% c("USA", "CAN", "MEX", "GBR", "AUS")),]
 catchup <- p[ which(p$countrycode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
+usa <- p[ which(p$countrycode %in% c("USA")),]
+
 
 fig <- plot_ly(stable, x = ~year, y = ~scon, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Consumption share of GDP', x=0),
