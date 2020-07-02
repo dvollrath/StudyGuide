@@ -1,7 +1,6 @@
 ---
 title: Human capital
 parent: Solow and Balanced Growth
-has_children: true
 nav_order: 7
 ---
 
