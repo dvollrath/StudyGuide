@@ -64,6 +64,8 @@ This decomposes the 10-year annualized growth rate of GDP per capita into the pa
 
 The following figure plots for each year the contribution of each piece. The green bars represent the contribution of productivity growth, and as expected they are the largest in almost every given year, with a few exceptions. The orange bars capture human capital growth. The orange bars start in negative territory often because capital/output growth (the blue bars) is often negative. The combination of the three bars adds up to actual growth in GDP per capita, so the top of the bars captures that growth rate.
 
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/89.embed"></iframe>
+
 What this makes obvious is that productivity growth and human capital growth were the dominant source of growth in GDP per capita for the US. Moreover, it highlights how human capital growth was a big source of growth in the middle of the 20th century, but that the contribution declined in the late 20th century. You can also see that the growth rate of productivity was high for most of this time period, with dips in the 1970s, and then most noticeably in the 21st century. 
 
 This represents another means of arguing that understanding productivity growth is of paramount importance. If we can explain that, we can possibly explain what happened starting in the 21st century to the growth rate and if the decline in the productivity growth rate might continue.
