@@ -26,7 +26,7 @@ deu <- p[which(p$isocode %in% c("DEU")),]
 kor <- p[which(p$isocode %in% c("KOR")),]
 jpn <- p[which(p$isocode %in% c("JPN")),]
 chn <- p[which(p$isocode %in% c("CHN")),]
-comp <- p[which(p$isocode %in% c("USA","CHN","KOR")),]
+
 
 fig <- plot_ly(usa, x = ~year, y = ~kyonly, name = 'K/Y only', type = 'scatter', mode = 'lines')
 fig <- fig %>% add_trace(y = ~hconly, name = 'HC only',mode = 'lines')
@@ -71,7 +71,9 @@ s$g10.accthc <- round((s$accthc - s$lag10.accthc)/10,digits=4)
 s$g10.accttfp <- round((s$accttfp - s$lag10.accttfp)/10,digits=4)
 s$g10.lngdppc <- round((s$lngdppc - s$lag10.lngdppc)/10,digits=4)
 
+comp <- s[which(s$isocode %in% c("USA","CHN","KOR","JPN","DEU","GBR")),]
 s <- s[which(s$isocode %in% c("USA")),]
+
 
 fig <- plot_ly(s, x = ~year, y = ~g10.acctky, type = 'bar', name = 'K/Y growth')
 fig <- fig %>% add_trace(y = ~g10.accthc, name = 'HC growth')
@@ -83,3 +85,10 @@ fig <- fig %>% layout(yaxis = list(title = '10-year growth contribution'),
                       hovermode="x unified"
                       )
 api_create(fig, filename = "pwt-growth-acct-usa")
+
+fig <- plot_ly(comp, x = ~year, y = ~g10.accttfp, linetype = ~isocode, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Productivity growth', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list(title = '10-year productivity growth rate'),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-growth-tfp-comp")
