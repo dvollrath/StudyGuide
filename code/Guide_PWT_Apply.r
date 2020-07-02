@@ -17,6 +17,7 @@ usa <- p[which(p$isocode %in% c("USA")),]
 deu <- p[which(p$isocode %in% c("DEU")),]
 kor <- p[which(p$isocode %in% c("KOR")),]
 chn <- p[which(p$isocode %in% c("CHN")),]
+comp <- p[which(p$isocode %in% c("USA","CHN","KOR")),]
 
 m1 <- lm(usa$lngdppc~usa$year, data=usa)
 
@@ -103,6 +104,13 @@ api_create(fig, filename = "pwt-apply-si-chn")
 fig <- plot_ly(chn, x = ~year, y = ~g1.pop, linetype = ~isocode, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Population growth for China', x=0),
               xaxis = list(title = 'Year', tick0=1950, dtick=10),
-              yaxis = list (title = 'Population growth rate', range=c(0,0.05)),
+              yaxis = list (title = 'Population growth rate', range=c(-.01,0.05)),
               hovermode="x unified")
 api_create(fig, filename = "pwt-apply-gl-chn")
+
+fig <- plot_ly(comp, x = ~year, y = ~lngdppc, linetype = ~isocode, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Log GDP per capita ', x=0),
+              xaxis = list(title = 'Year', tick0=1950, dtick=10),
+              yaxis = list (title = 'Log GDP per capita', range=c(6.5,12)),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-apply-comp")

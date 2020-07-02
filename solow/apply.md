@@ -102,3 +102,9 @@ The reasons for the jump to a higher BGP (if that is what is happening) appear t
 Perhaps more famously, China instituted the one-child policy in 1979 to limit what was a high population growth rate. This was actually after the population growth rate had fallen from a high around 3% in the early 1960s to under 2% in the 1970s. Regardless, $g_L$ fell by a substantial amount in China over this period. The severe negative spike to population growth around 1960 was due to the "Great Leap Forward", an attempt by Mao Zedong to reconstruct China on an agrarian basis that led to disruptions of farming and a massive famine that killed an estimated 30 million people.
 
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/77.embed"></iframe>
+
+The last thing to consider with China is that it is a good illustration of the difference between growth rates and the level of GDP per capita. The rapid growth in China over the last three decades has not put China on the same BGP as South Korea or the US (at least yet). To make clear the distinctions, the following figure shows the log GDP per capita for the three countries.
+
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/79.embed"></iframe>
+
+Note that despite China's rapid *growth*, the *level* of GDP per capita still remains far below South Korea or China. In terms of ratios, in 2017 log GDP per capita in the US was 10.91, and in China was 9.51. That means the ratio of GDP per capita was $e^(10.91-9.51) = 4.1$, or US GDP per capita is over four times higher than in China. The ratio for South Korea is $e^(10.52-9.51) = 2.74$. China could well be on its way to a BGP that matches the GDP per capita of South Korea or the US, but it will still be decades before it gets there, even with the rapid growth rate is experienced.
