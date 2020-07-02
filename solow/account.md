@@ -68,4 +68,6 @@ The following figure plots for each year the contribution of each piece. The gre
 
 What this makes obvious is that productivity growth and human capital growth were the dominant source of growth in GDP per capita for the US. Moreover, it highlights how human capital growth was a big source of growth in the middle of the 20th century, but that the contribution declined in the late 20th century. You can also see that the growth rate of productivity was high for most of this time period, with dips in the 1970s, and then most noticeably in the 21st century. 
 
+Remember that these are 10-year rolling growth rates. So if you look at 2009, the bars represent the growth rates from 1999-2009. Even with the Great Recession in 2009, this represents a slowdown in growth from the late 1990s to early 2000s. 
+
 This represents another means of arguing that understanding productivity growth is of paramount importance. If we can explain that, we can possibly explain what happened starting in the 21st century to the growth rate and if the decline in the productivity growth rate might continue.
