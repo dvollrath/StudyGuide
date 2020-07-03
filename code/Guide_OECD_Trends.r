@@ -37,3 +37,23 @@ fig <- layout(fig, title = list(text = 'R&D expenditure over time', x=0),
               yaxis = list(title = 'Real R&D expenditures'),
               hovermode="x unified")
 api_create(fig, filename = "oecd-rd-levelrd")
+
+# too large to download directly
+p <- read.csv("~/Dropbox/project/studyguide/data/pats_ipc_subset.csv", header=TRUE)
+
+
+pat <- p
+pat <- pat[which(pat$KINDCOUNTRY %in% c("APPLICANTS")),]
+pat <- pat[which(pat$KINDPATENT %in% c("USPTO_G")),]
+pat <- pat[which(pat$KINDDATE %in% c("GRANT")),]
+pat <- pat[which(pat$IPC %in% c("TOTAL")),]
+pat <- pat[which(pat$LOCATION %in% c("USA","JPN","KOR","CHN","DEU","GBR")),]
+
+#write.csv(pat,file="~/Dropbox/project/studyguide/data/pats_ipc_subset.csv",row.names=FALSE, na="")
+
+fig <- plot_ly(pat, x = ~Time, y = ~Value, linetype = ~LOCATION, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Patent activity over time', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list(title = 'USPTO patent grants'),
+              hovermode="x unified")
+api_create(fig, filename = "oecd-rd-patent")
