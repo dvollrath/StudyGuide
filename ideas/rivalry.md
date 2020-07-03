@@ -10,8 +10,6 @@ nav_order: 1
 1. TOC 
 {:toc}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vZmgZGIZtiM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ## Rival and non-rival inputs
 We know that productivity is important to the process of growth. It determines both the growth rate, $g_A$, along a BGP, and the baseline level, $A_0$, is part of what determines the level of the BGP. But what is productivity, and what makes it so important?
 
@@ -70,3 +68,8 @@ $$
 Since the number $\alpha$ is usually around 0.3, this means that doubling rival inputs and non-rival productivity raises GDP by a factor of $2^{2-.3} = 2^{1.7} = 3.25$. GDP goes up by a factor over three! Note that this means GDP per capita has gone up as well. GDP went up by 3.25, but the number of people only doubled, so GDP per capita was 3.25/2 = 1.625 times higher than before. Non-rival productivity allows us to grow per-capita GDP in a way that rival inputs cannot.
 
 It is this ability of non-rival productivity to break out of the constraints of the constant returns to scale associated with rival inputs that allows for economic growth.
+
+## Thinking more deeply
+The concept that non-rivalry was the origin of economic growth was articulated in the most coherent way by economist Paul Romer, who recently won a Nobel Prize for that work. The following video is his Nobel lecture explaining his idea. It ranges a bit farther than what we've talked about here, but remains a valuable introduction to thinking about the deeper reasons for economic growth.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vZmgZGIZtiM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
