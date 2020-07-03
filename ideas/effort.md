@@ -1,7 +1,7 @@
 ---
 title: Research effort
 parent: Ideas and Productivity
-nav_order: 1
+nav_order: 2
 ---
 
 # Research effort and productivity growth
@@ -47,4 +47,4 @@ Rising R&D efforts
 {: .label .label-green }
 **The absolute number of workers and GDP spent on R&D has increased over time, but there is no systematic increase in the growth rate of productivity.**
 
-## Long-run scale differences
+## Population and productivity in the long run

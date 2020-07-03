@@ -12,6 +12,9 @@ nav_order: 5
 
 ## Profits
 
+## Excludable and non-excludable goods
+
+
 ## Profits with increased varieties
 
 ## Profits with improving quality
