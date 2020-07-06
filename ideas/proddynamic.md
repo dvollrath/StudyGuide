@@ -107,15 +107,42 @@ On the other hand, if we plot the growth rate of productivity against the *growt
 
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/107.embed"></iframe>
 
-Here, there is a tendency to see higher productivity growth when $g_R$ is higher. This doesn't prove the theory is right. First, this is just a handful of countries, and a simple correlation in the data is not the same thing as a causal relationship. Second, the theory was *designed* to produce this result. We were trying to come up with something that can mimic this relationship, and we did. The next sub-section explains in a little more detail what the crucial part of our theory that ensured $g_R$ was relevant to the growth rate of productivity, while the absolute number of researchers was not.
+Here, there is a tendency to see higher productivity growth when $g_R$ is higher. This doesn't prove the theory is right. First, this is just a handful of countries, and a simple correlation in the data is not the same thing as a causal relationship. Second, the theory was *designed* to produce this result. We were trying to come up with something that can mimic this relationship, and we did.
 
 ## Stability
 The prior sub-section describes the productivity growth rate along the BGP. But just as with the Solow model and the K/Y ratio, we want to know if that is a *stable* outcome. If the economy starts out with a $g_A$ above or below the BGP growth rate, does it have a tendency to return to $g_A^{BGP}$? The simulation suggests that yes, it does. But why is that? 
 
-XXXX
+Go back to the expression for $g_A$
+
+$$
+g_{A} = \theta \frac{R_{t}^{\lambda}}{A_t^{1-\phi}}.
+$$
+
+Take a look at a dynamic figure representing this relationship. Here we have to be careful, because that ratio of $R_t^{\lambda}/A_t^{1-\phi}$ is tricky. In the figure below, I'm just using $x = R_t^{\lambda}/A_t^{1-\phi}$. "x" captures the ratio of researchers to productivity (which depends in part on those parameter values). The "f(x)" function is therefore just the growth rate in productivity, $g_A$. In a not surprising outcome, the growth rate $g_A$ is increasing in "x", the ratio of researchers to productivity.
+
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="https://www.geogebra.org/m/t4yhvxze"></iframe>
+
+What else is in this figure? The growth rate of researchers, modified in our case by the fraction $\lambda/(1-\phi)$. So the "g(x)" function is $g_R \times \lambda/(1-\phi)$. We know that this is the BGP growth rate of productivity, and we know that it doesn't depend on the *size* of x. That is why it is a flat line. 
+
+What do we have now? If I give you a value of the researcher/productivity ratio, "x", then you can find your place on the x-axis. Read up and you'll see what $g_A$ is relative to the growth rate $g_R \times \lambda/(1-\phi)$. If "x" is very low, then the growth rate of productivity is very low relative to the growth rate $g_R \times \lambda/(1-\phi)$. What happens to "x"? Well, with productivity growing very slowly, it must be that this ratio *rises*, because the numerator is growing faster than the denominator. And so if you start with a very low ratio, it gets bigger over time, which means $g_A$ gets bigger.
+
+You can work the same logic backwards. If "x" starts very *big*, meaning the number of researchers is very large compared to productivity, then $g_A$ is very large as well. This means the ratio "x" must *fall*, as the denominator grows faster than the numerator. So $g_A$ gets smaller. 
+
+No matter where you start, the system pushes you back to the point where the two lines cross, and where $g_A = g_R \times \lambda/(1-\phi)$, which is the BGP growth rate of productivity. This says that the productivity growth rate is *stable*. 
+
+There are a lot of parameters involved here, but the most important one for this result turns out the be $\phi$. Using the GeoGebra screen, try pushing the value of $\phi$ all the way to one. What happens? The horizontal line for $g_R \times \lambda/(1-\phi)$ disappears. Why? Because the denominator ($1-\phi$) goes to zero, meaning the whole term blows up to infinity. In other words, if $\phi$ goes to one (or was higher than one) then the BGP growth rate of productivity would be...infinity. Needless to say, this doesn't make a whole lot of sense.
 
 Stable productivity growth
 {: .label .label-green }
-**The growth rate of productivity along a BGP is stable if the value of $\phi<1$.**
+**The growth rate of productivity along a BGP is stable at $g_A^{BGP} = g_R \lambda/(1-\phi)$ if the value of $\phi<1$.**
 
 $\phi<1$ essentially says that the growth rate of productivity must fall as productivity rises. It means that getting more productive cannot lead to an acceleration of productivity growth. The data suggest that this must be true. We do not see that productivity growth accelerates as productivity rises.
+
+## When Skynet kills us all
+If $\phi\geq1$, then what this implies in our formula for productivity growth is that as productivity goes up, the *growth rate* of productivity would go up as well. There would be an accelerating relationship. 
+
+But some people speculate that in fact faster computers (perhaps AI) may be able to essentially shift $\phi>1$ and create explosive growth in technology so that $g_A$ itself may explode towards infinity. You might hear this called "the singularity". 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1uIzS1uCOcE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+For now, there is no evidence from history that this occurred. That doesn't mean it *couldn't*, but it would be a truly revolutionary change.
