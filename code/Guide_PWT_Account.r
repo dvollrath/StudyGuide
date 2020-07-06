@@ -110,8 +110,9 @@ fte <-
   mutate(lag10.lnrdworker = dplyr::lag(lnrdworker, n = 10, default = NA))
 fte$g10.lnrdworker <- (fte$lnrdworker - fte$lag10.lnrdworker)/10
 
-match <- data.frame(comp$isocode,comp$g10.accttfp,comp$year)
-colnames(match) <- c("COUNTRY","g10.accttfp","obsTime")
+match <- data.frame(comp$isocode,comp$g10.accttfp,comp$year,comp$pop,comp$accttfp)
+colnames(match) <- c("COUNTRY","g10.accttfp","obsTime","pop","accttfp")
+match$lnpop <- log(match$pop)
 
 joined <- merge(match,fte,by=c('COUNTRY','obsTime'))
 
@@ -139,3 +140,14 @@ fig <- layout(fig, title = list(text = 'Relationship of R&D growth and prod grow
               yaxis = list(title = '10-year productivity growth rate'),
               hovermode="x unified")
 api_create(fig, filename = "pwt-oecd-rd-gtfp")
+
+fig <- plot_ly(joined, x = ~lnrdworker, y = ~accttfp, color = ~COUNTRY, 
+               type = 'scatter', mode = 'markers',colors = pal,
+               hovertemplate = paste("<br>","%{yaxis.title.text}: %{y:.2f}<br>",
+                                     "%{xaxis.title.text}: %{x:.2f}<br>")
+)
+fig <- layout(fig, title = list(text = 'Relationship of R&D level and prod level', x=0),
+              xaxis = list(title = 'Log R&D FTE'),
+              yaxis = list(title = 'Log productivity'),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-oecd-level-rd")
