@@ -1,7 +1,7 @@
 ---
 title: Models of productivity
 parent: Ideas and Productivity
-nav_order: 4
+nav_order: 6
 ---
 
 # Models of productivity

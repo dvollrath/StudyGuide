@@ -8,12 +8,21 @@ fte <- fte[which(fte$GENDER %in% c("_T")),]
 fte <- fte[which(fte$MEASURE %in% c("FTE")),]
 fte <- fte[which(fte$COUNTRY %in% c("USA","JPN","KOR","CHN","DEU","GBR")),]
 
+fte$lnrdworker <- log(fte$obsValue)
+
 fig <- plot_ly(fte, x = ~obsTime, y = ~obsValue, linetype = ~COUNTRY, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'R&D Workers over time', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'FTE R&D Workers'),
               hovermode="x unified")
 api_create(fig, filename = "oecd-rd-fte")
+
+fig <- plot_ly(fte, x = ~obsTime, y = ~lnrdworker, linetype = ~COUNTRY, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'R&D Workers over time', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Log FTE R&D Workers'),
+              hovermode="x unified")
+api_create(fig, filename = "oecd-rd-lnfte")
 
 work <- get_dataset("GERD_TOE")
 

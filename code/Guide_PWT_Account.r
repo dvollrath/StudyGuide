@@ -92,3 +92,50 @@ fig <- layout(fig, title = list(text = 'Productivity growth', x=0),
               yaxis = list(title = '10-year productivity growth rate'),
               hovermode="x unified")
 api_create(fig, filename = "pwt-growth-tfp-comp")
+
+# Pull OECD into dataframe
+work <- get_dataset("PERS_FUNC")
+
+fte <- work
+fte <- fte[which(fte$SECTPERF %in% c("_T")),]
+fte <- fte[which(fte$FUNCTION %in% c("RSE")),]
+fte <- fte[which(fte$GENDER %in% c("_T")),]
+fte <- fte[which(fte$MEASURE %in% c("FTE")),]
+fte <- fte[which(fte$COUNTRY %in% c("USA","JPN","KOR","CHN","DEU","GBR")),]
+fte$lnrdworker <- log(fte$obsValue)
+
+fte <- 
+  fte %>%
+  group_by(COUNTRY) %>%
+  mutate(lag10.lnrdworker = dplyr::lag(lnrdworker, n = 10, default = NA))
+fte$g10.lnrdworker <- (fte$lnrdworker - fte$lag10.lnrdworker)/10
+
+match <- data.frame(comp$isocode,comp$g10.accttfp,comp$year)
+colnames(match) <- c("COUNTRY","g10.accttfp","obsTime")
+
+joined <- merge(match,fte,by=c('COUNTRY','obsTime'))
+
+pal <- c('#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33')
+pal <- setNames(pal, c("USA","JPN","KOR","CHN","DEU","GBR"))
+fig <- plot_ly(joined, x = ~lnrdworker, y = ~g10.accttfp, color = ~COUNTRY, 
+               type = 'scatter', mode = 'markers',colors = pal,
+               hovertemplate = paste("<br>",
+                                     "%{yaxis.title.text}: %{y:.2f}<br>",
+                                     "%{xaxis.title.text}: %{x:.2f}<br>")
+)
+fig <- layout(fig, title = list(text = 'Relationship of R&D work and prod growth', x=0),
+              xaxis = list(title = 'Log R&D FTE workers'),
+              yaxis = list(title = '10-year productivity growth rate'),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-oecd-rd-tfp")
+
+fig <- plot_ly(joined, x = ~g10.lnrdworker, y = ~g10.accttfp, color = ~COUNTRY, 
+               type = 'scatter', mode = 'markers',colors = pal,
+               hovertemplate = paste("<br>","%{yaxis.title.text}: %{y:.2f}<br>",
+                                     "%{xaxis.title.text}: %{x:.2f}<br>")
+)
+fig <- layout(fig, title = list(text = 'Relationship of R&D growth and prod growth', x=0),
+              xaxis = list(title = '10-year growth rate of R&D FTE'),
+              yaxis = list(title = '10-year productivity growth rate'),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-oecd-rd-gtfp")
