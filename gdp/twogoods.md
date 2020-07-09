@@ -3,7 +3,7 @@ title: Two goods and two time periods
 parent: Measuring GDP
 nav_order: 1
 ---
-
+https://growthecon.com/gdp/fig-real-gdp-obvious.eps
 # Two goods and two time periods
 {: .no_toc }
 
