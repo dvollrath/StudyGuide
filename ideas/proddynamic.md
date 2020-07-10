@@ -124,6 +124,8 @@ Take a look at a dynamic figure representing this relationship. Here we have to 
 
 What else is in this figure? The growth rate of researchers, modified in our case by the fraction $\lambda/(1-\phi)$. So the "g(x)" function is $g_R \times \lambda/(1-\phi)$. We know that this is the BGP growth rate of productivity, and we know that it doesn't depend on the *size* of x. That is why it is a flat line. 
 
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="https://www.desmos.com/calculator/kmg6eycwmn"></iframe>
+
 What do we have now? If I give you a value of the researcher/productivity ratio, "x", then you can find your place on the x-axis. Read up and you'll see what $g_A$ is relative to the growth rate $g_R \times \lambda/(1-\phi)$. If "x" is very low, then the growth rate of productivity is very low relative to the growth rate $g_R \times \lambda/(1-\phi)$. What happens to "x"? Well, with productivity growing very slowly, it must be that this ratio *rises*, because the numerator is growing faster than the denominator. And so if you start with a very low ratio, it gets bigger over time, which means $g_A$ gets bigger.
 
 You can work the same logic backwards. If "x" starts very *big*, meaning the number of researchers is very large compared to productivity, then $g_A$ is very large as well. This means the ratio "x" must *fall*, as the denominator grows faster than the numerator. So $g_A$ gets smaller. 
