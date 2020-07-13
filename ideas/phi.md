@@ -1,5 +1,5 @@
 ---
-title: Do ideas get hard to find?
+title: Do ideas get harder to find?
 parent: Dynamics of productivity
 grand_parent: Ideas and Productivity
 nav_order: 1
