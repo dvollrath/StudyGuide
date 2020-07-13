@@ -137,12 +137,3 @@ Stable productivity growth
 **The growth rate of productivity along a BGP is stable at $g_A^{BGP} = g_R \lambda/(1-\phi)$ if the value of $\phi<1$.**
 
 $\phi<1$ essentially says that the growth rate of productivity must fall as productivity rises. It means that getting more productive cannot lead to an acceleration of productivity growth. The data suggest that this must be true. We do not see that productivity growth accelerates as productivity rises.
-
-## When Skynet kills us all
-If $\phi\geq1$, then what this implies in our formula for productivity growth is that as productivity goes up, the *growth rate* of productivity would go up as well. There would be an accelerating relationship. 
-
-But some people speculate that in fact faster computers (perhaps AI) may be able to essentially shift $\phi>1$ and create explosive growth in technology so that $g_A$ itself may explode towards infinity. You might hear this called "the singularity". 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1uIzS1uCOcE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-For now, there is no evidence from history that this occurred. That doesn't mean it *couldn't*, but it would be a truly revolutionary change.
