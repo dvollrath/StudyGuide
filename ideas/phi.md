@@ -43,7 +43,7 @@ Start with semiconductors as an example. Semiconductors seems to obey something 
 
 What does that tell us about $\phi$? Well, if we were using the same number of $R_t$ each year developing new semiconductors, then this would indicate that research productivity was constant, and this would imply that $\phi=1$. Instead, what the authors show is that $R_t$ was going up dramatically over these forty years, implying that $\phi<1$. 
 
-[Moores Law](bloometalfig4.png)
+![Moores Law](bloometalfig4.png)
 
 The figure shows how $g_A$ stayed the same, while $R_t$ went up, in semiconductors. As $A_t$ was rising due to the extra transistors, it must be that $\phi<1$. We can actually work out the value of $\phi$ for semiconductors. 
 
