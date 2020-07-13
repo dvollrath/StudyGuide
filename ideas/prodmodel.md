@@ -67,7 +67,7 @@ What do they get at the margin for someone doing R&D work? Well, that is more co
 As we said, the firm will switch people back and forth between work ($L_t$) and research ($R_t$) until the marginal product of these two activities are identical. For completeness, the firm doesn't care that the research pays off tomorrow rather than today. In other words, they act such that
 
 $$
-\frac{(1-\apha)Y_t}{L_t} = \frac{s_{\pi M} Y_{t+1}}{R_t}.
+\frac{(1-\alpha)Y_t}{L_t} = \frac{s_{\pi M} Y_{t+1}}{R_t}.
 $$
 
 We can do one more thing. We know that $Y_{t+1} = (1+g_A + g_L)Y_t$ along a BGP. That is, total GDP will grow from today to tomorrow, and if we're close to a BGP, we know that growth rate of *total* GDP is $g_A + g_L$.
@@ -75,7 +75,7 @@ We can do one more thing. We know that $Y_{t+1} = (1+g_A + g_L)Y_t$ along a BGP.
 Let's plug this in
 
 $$
-\frac{(1-\apha)}{L_t} = \frac{s_{\pi M}(1+g_A + g_L) }{R_t}
+\frac{(1-\alpha)}{L_t} = \frac{s_{\pi M}(1+g_A + g_L) }{R_t}
 $$
 
 and notice that $Y_t$ cancels out. The two activities are proportional to GDP today, so it falls out of the problem. Regardless, re-arrange this to
