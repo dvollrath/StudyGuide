@@ -56,7 +56,7 @@ $$
 and the authors report that the growth rate of research productivity is -7%. And we know Moore's law says $g_A$ is 35%, so we've got
 
 $$
--7% = -(1-\phi)35%
+-.07 = -(1-\phi).035
 $$
 
 which solves to $\phi=0.8$. Less than one, as we suspected. 
@@ -64,7 +64,7 @@ which solves to $\phi=0.8$. Less than one, as we suspected.
 The authors do this kind of calculation for all sorts of different technologies. They find over and over again that $\phi<1$. Moore's Law actually is the least pessimistic outcome. For most industries, they find values of $\phi$ like -2 and -3. For the economy as a whole, research productivity grew at -4%, and produtivity growth was about 1.5%, so they get
 
 $$
--4% = -(1-\phi)1.5%
+-.04 = -(1-\phi).015
 $$
 
 or $\phi = -1.67$. Meaning it does get harder to find each new idea every year. A lot harder. But note that we already know from the dynamics of productivity growth that this doesn't mean productivity growth *falls*. It just means that productivity growth stays *stable*.
