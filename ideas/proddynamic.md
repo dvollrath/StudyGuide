@@ -1,6 +1,7 @@
 ---
 title: Dynamics of productivity
 parent: Ideas and Productivity
+has_children: true
 nav_order: 3
 ---
 
