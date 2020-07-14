@@ -13,7 +13,7 @@ nav_order: 2
 
 The key to productivity growth is research effort. And the more researchers we have, the more ideas we can generate to raise productivity. If exclude some people from taking part in the research and innovation process, we're throwing away the chance at ideas that could benefit everyone.
 
-## Reconstruction and African-American Patents
+## Violence and African-American Patents
 Dr. Lisa Cook has a [paper](https://lisadcook.net/wp-content/uploads/2014/02/pats_paper17_1013_final_web.pdf) that looks at whether the level of innovative activity (patents) changes in response to hate-related violence (lynchings, riots), or whether economic activity changes in response to the shift in property rights that result from hate-related violence. 
 
 She has done a number of great interviews on the topic, which are worth listenting to as she does a good job explaining the consequence of this violence on African-American patenting activity. [NPR Interview](https://pca.st/nkjjnzuf).

@@ -3,6 +3,7 @@ data("pwt9.1")
 
 p <- pwt9.1 # copy dataframe for manipulation
 p$lngdppc <- round(log(p$rgdpna) - log(p$pop),digits=2) # create log GDP per capita
+p$lntfp <- log(p$rtfpna)
 p$ky <- round(p$rnna/p$rgdpna,digits=2) # create K/Y ratio
 p$phil <- round(p$labsh*p$rgdpna/(p$labsh*p$rgdpna+.05*p$rnna),digits=2) # create kludge cost share of labor
 p <- 
@@ -114,3 +115,35 @@ fig <- layout(fig, title = list(text = 'Log GDP per capita ', x=0),
               yaxis = list (title = 'Log GDP per capita', range=c(6.5,12)),
               hovermode="x unified")
 api_create(fig, filename = "pwt-apply-comp")
+
+
+f <- p[which(p$isocode %in% c("CHN")),]
+m1 <- lm(f$lntfp~f$year, data=f, subset=(year<1963))
+m2 <- lm(f$lntfp~f$year, data=f, subset=(year>1960 & year<2000))
+m3 <- lm(f$lntfp~f$year, data=f, subset=(year>2013))
+f$fitted1 <- predict(m1,f)
+f$fitted2 <- predict(m2,f)
+f$fitted3 <- predict(m3,f)
+fig <- plot_ly(f, x = ~year, y = ~lntfp, linetype = ~isocode, type = 'scatter', mode = 'lines+markers')
+#fig <- fig %>% add_trace(y = ~fitted1, name = 'BGP early',mode = 'lines')
+fig <- fig %>% add_trace(y = ~fitted2, name = 'Early BGP?',mode = 'lines')
+fig <- fig %>% add_trace(y = ~fitted3, name = 'New BGP?',mode = 'lines')
+fig <- layout(fig, title = list(text = 'Level of productivity', x=0),
+              xaxis = list(title = 'Year', tick0=1950, dtick=10),
+              yaxis = list (title = 'Log productivity'),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-apply-gtfp-chn")
+
+f <- p[which(p$isocode %in% c("JPN")),]
+m1 <- lm(f$lntfp~f$year, data=f, subset=(year<1995))
+m3 <- lm(f$lntfp~f$year, data=f, subset=(year>2000))
+f$fitted1 <- predict(m1,f)
+f$fitted3 <- predict(m3,f)
+fig <- plot_ly(f, x = ~year, y = ~lntfp, linetype = ~isocode, type = 'scatter', mode = 'lines+markers')
+fig <- fig %>% add_trace(y = ~fitted1, name = 'Pre-1995 BGP',mode = 'lines')
+fig <- fig %>% add_trace(y = ~fitted3, name = 'Post-2000 BGP',mode = 'lines')
+fig <- layout(fig, title = list(text = 'Level of productivity', x=0),
+              xaxis = list(title = 'Year', tick0=1950, dtick=10),
+              yaxis = list (title = 'Log productivity', range=c(-.75,.25)),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-apply-gtfp-jpn")

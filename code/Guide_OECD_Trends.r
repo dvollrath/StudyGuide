@@ -24,6 +24,15 @@ fig <- layout(fig, title = list(text = 'R&D Workers over time', x=0),
               hovermode="x unified")
 api_create(fig, filename = "oecd-rd-lnfte")
 
+jpn <- fte[which(fte$COUNTRY %in% c("JPN")),]
+fig <- plot_ly(jpn, x = ~obsTime, y = ~lnrdworker, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Japanese R&D Workers over time', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Log FTE R&D Workers'),
+              hovermode="x unified")
+api_create(fig, filename = "oecd-rd-lnfte-jpn")
+
+
 work <- get_dataset("GERD_TOE")
 
 gerd <- work

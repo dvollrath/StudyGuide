@@ -138,3 +138,60 @@ Stable productivity growth
 **The growth rate of productivity along a BGP is stable at $g_A^{BGP} = g_R \lambda/(1-\phi)$ if the value of $\phi<1$.**
 
 $\phi<1$ essentially says that the growth rate of productivity must fall as productivity rises. It means that getting more productive cannot lead to an acceleration of productivity growth. The data suggest that this must be true. We do not see that productivity growth accelerates as productivity rises.
+
+## The level of productivity
+Just like we did with the Solow model, we want to distinguish between the growth rate of productivity on the BGP ($g_A^{BGP}$) from the *level* of productivity on the BGP. Let's go back to our formula for how productivity growth works, and note that this still holds along the BGP.
+
+$$
+g_{A}^{BGP} = \theta \frac{R_{t}^{\lambda}}{A_t^{1-\phi}}.
+$$
+
+Since we know the growth rate along the BGP, this becomes
+
+$$
+\frac{\lambda}{1-\phi} g_R = \theta \frac{R_{t}^{\lambda}}{A_t^{1-\phi}}
+$$
+
+and this tells us how $A_t$ and $R_t$ are related *along* a BGP. To find the *level* of productivity at any given point in time on the BGP, start by taking logs
+
+$$
+\ln \frac{\lambda}{1-\phi} + \ln g_R = \ln \theta + \lambda \ln R_t - (1-\phi) \ln A_t.
+$$
+
+Now re-arrange this so that the $(1-\phi) \ln A_t$ is by itself on the left,
+
+$$
+(1-\phi) \ln A_t = \ln \theta - \ln \frac{\lambda}{1-\phi} - \ln g_R + \lambda \ln R_t.
+$$
+
+And finally divide by $(1-\phi)$ on both sides,
+
+$$
+\ln A_t = \frac{1}{1-\phi}\ln \theta - \frac{1}{1-\phi} \ln \frac{\lambda}{1-\phi} - \frac{1}{1-\phi}\ln g_R + \frac{\lambda}{1-\phi} \ln R_t.
+$$
+
+So productivity on the BGP depends on the level of $R_t$, not surprising. We can go a little further. If $R_t$ is growing at a constant rate, then we have that
+
+$$
+R_t = R_0 (1+g_R)^t
+$$
+
+and taking logs we get
+
+$$
+\ln R_t = \ln R_0 + t \ln (1+g_R) \approx \ln R_0 + g_Rt
+$$
+
+where the approximation comes from the properties of logs and small growth rates. Put this back into the expression for $\ln A_t$.
+
+$$
+\ln A_t^{BGP} = \frac{1}{1-\phi}\ln \theta - \frac{1}{1-\phi} \ln \frac{\lambda}{1-\phi} - \frac{1}{1-\phi}\ln g_R + \frac{\lambda}{1-\phi} \ln R_0 + \frac{\lambda}{1-\phi} g_R t.
+$$
+
+Much like in the Solow model, this expression looks like a pile of gibberish. But note that it is just the equation for a line. The y-variable here is $\ln A_t^{BGP}$, and the x-variable is $t$. I've used the notation $\ln A_t^{BGP}$ to indicate that this is the path of productivity on a BGP, and our actual productivity might not be on this BPG path (just like in the Solow model the K/Y ratio may not be on the BGP).
+
+The slope (the growth rate) is exactly what we think it should be, $g_R \lambda/(1-\phi)$. 
+
+The rest of the gibberish is the intercept of the line, and determines the *level* of productivity. The most important from our perspective is $R_0$. This is the baseline level of research effort that is done, and it dictates how big productivity will be. 
+
+Here we have to be really careful, and don't over-interpret $R_0$ as the literal number of researchers. Think of it more as the baseline level of research effort done in the past. This number, as mentioned before, doesn't have to just include research effort from the country we are talking about. Ideas are non-rival, so the research effort and productivity level of a country may be determined in part by research done in *other* economies.
