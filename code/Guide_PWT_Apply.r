@@ -118,7 +118,7 @@ api_create(fig, filename = "pwt-apply-comp")
 
 
 f <- p[which(p$isocode %in% c("CHN")),]
-m1 <- lm(f$lntfp~f$year, data=f, subset=(year<1963))
+f <- f[which(f$year>1960),]
 m2 <- lm(f$lntfp~f$year, data=f, subset=(year>1960 & year<2000))
 m3 <- lm(f$lntfp~f$year, data=f, subset=(year>2013))
 f$fitted1 <- predict(m1,f)
