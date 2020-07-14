@@ -19,6 +19,8 @@ $$
 
 meant that the growth rate of productivity *falls* as productivity gets higher (holding R constant). The justification for this was that it fit the data, as we don't see the growth rate of productivity accelerating over time (which it would if $\phi>1$). Is there other evidence?
 
+See [Matt Clancy's](https://mattsclancy.substack.com/p/are-ideas-getting-harder-to-find) article and audio clip expanding on some of the research that is cited here. He does a nice job of bringing in some additional evidence on how innovation has gotten harder over time.
+
 ## The age of genius
 Economist [Ben Jones](https://www.kellogg.northwestern.edu/faculty/jones-ben/htm/Research.htm) has done a lot of research on how science has gotten harder over time, in the sense that today scientists tend to be much older when they produce ideas that are Nobel-prize-worthy or of similar caliber. 
 
