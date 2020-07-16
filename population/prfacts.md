@@ -1,25 +1,21 @@
 ---
-title: Facts on Resource Use
+title: Energy and growth
 parent: Population and Resources
 nav_order: 2
 ---
 
-# Facts on Resource Use
+# Energy and growth
 {: .no_toc }
 
 1. TOC 
 {:toc}
 
-The prior section was all theory about how to fit resources into a standard model of growth. Here we can turn to some data to see how resource use actually has occurred alongside growth, and see whether the model constructed fits well, or how we can interpret the data in terms of the parameters in that model.
-
-## Energy use
-Start with energy use, perhaps the form of resource use we're most concious of. The stock $X_t$ is thus something like "total proven reserves" of things like oil and natural gas. The term $E_t$ is the flow of these resources, or "energy", that goes into production.
-
-Here's a plot of total energy use over time. And one can see how this levelled off for places like the US, Japan, and the UK, but keeps climbing in places like China and India.
+## Facts on energy use
+The stock $X_t$ here is something like "total proven reserves" of things like oil and natural gas. The term $E_t$ is the flow of these resources, or "energy", that goes into production. Here's a plot of total energy use over time. One can see how this levelled off for places like the US, Japan, and the UK, but kept climbing in places like China and India.
 
 <iframe src="https://ourworldindata.org/grapher/primary-energy-cons?tab=chart&country=USA~CHN~IND~KOR~GBR~JPN" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
 
-In per capita terms, things look a little different.. This shows something interesting, which is that energy use *per-capita* does not necessarily keep rising over time. In particular, for richer countries like the US, UK, or Japan, energy use per capita started to fall in the last few decades. Of course, this was from a high starting point, so they still have higher per-capita energy use than places like China and India. But it isn't necessarily true that as economic growth continues, so does energy use per capita.
+In per capita terms, things looked a little different.. This shows something interesting, which is that energy use *per-capita* does not necessarily keep rising over time. In particular, for richer countries like the US, UK, or Japan, energy use per capita started to fall in the last few decades. Of course, this was from a high starting point, so they still have higher per-capita energy use than places like China and India. But it isn't necessarily true that as economic growth continues, so does energy use per capita.
 
 <iframe src="https://ourworldindata.org/grapher/energy-use-per-capita?tab=chart&country=CHN~IND~JPN~GBR~USA~KOR~OWID_WRL" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
 
@@ -27,80 +23,45 @@ On the other hand, if we look across all countries, the relationship of energy u
 
 <iframe src="https://ourworldindata.org/grapher/energy-use-per-capita-vs-gdp-per-capita?xScale=log&yScale=log&time=1990..2015" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
 
-Trying to put this data into context with the model is not straightforward. The cross-sectional relationship in the last figure we can make sense of. Countries that have large resource flow per capita, meaning a high $X_0$ or $s_X$, will have high GDP per capita in our model, holding everything else constant. Everything else is *not* the same, of course, across countries. But perhaps the other things that matter ($A_0$, $s_I$, $g_L$, etc..) turn out to be not very important compared to resources.
+Trying to put this data into context with the model is not straightforward. The cross-sectional relationship in the last figure we can make sense of. Countries that have large resource flows per capita, meaning a high $X_0$ or $s_X$, will have high GDP per capita in our model, holding everything else constant. Everything else is *not* the same, of course, across countries. But perhaps the other things that matter ($A_0$, $s_I$, $g_L$, etc..) turn out to be not very important compared to resources.
 
-On the other hand, our model is a pretty *bad* fit for the time series evidence. For most countries at most times, energy use per capita (and total energy use) is *rising* over time, not falling. That's the exact opposite of what we assumed was going on. 
+On the other hand, our model is a pretty *bad* fit for the time series evidence. For most countries at most times, energy use per capita (and total energy use) was *rising* over time, not falling. That's the exact opposite of what we assumed was going on. It's only the rich countries in the last few decades that have falling energy use per capita, and intuitively that seems to be less a question of diminishing stocks of resources than a conscious choice made with respect to environmental and climate concerns.
 
-The most plausible explanation for what we see here is that the initial stock of resources, $X_0$, and or the extraction rate, $s_X$, rose over time. We in fact see that proved reserves of oil and natural gas worldwide rose over time. A lot of time and effort goes into exploring for oil and gas resources, so perhaps that isn't a huge shock. 
+The most plausible explanation for rising energy consumption per capita is that the initial stock of resources, $X_0$, and or the extraction rate, $s_X$, rose over time. We in fact see that proved reserves of oil and natural gas worldwide rose over time. A lot of time and effort goes into exploring for oil and gas resources, so perhaps that isn't a huge shock. 
 
-![Reserve to production ratio](https://en.wikipedia.org/wiki/Reserves-to-production_ratio#/media/File:Ratio_World_Proved_Oil_Reserves_-_Production_1980-2011.png)
+![Reserve to production ratio](reserves.eps)
 
-This figure shows, for oil, the world's proven reserves ($X_t$) over production ($E_t$) since 1980. In our model, this line should be flat - the ratio of $X_t/E_t$ is constant as both decline at the rate $s_X$. But in fact the ratio of reserves to production rose. 
+This figure shows, for oil, the world's proven reserves ($X_t$) over production ($E_t$) since 1980. In our model, this line should be flat as the ratio of $X_t/E_t$ is constant as both decline at the rate $s_X$. But in fact the ratio of reserves to production rose, indicating that discoveries of fossil fuel reserves were rising faster than energy use.
 
-## Energy intensity
-Perhaps we have found more of these nonrenewable resources over time, allowing us to increase $E_t$ per capita. Is that something we can count on continuing? Ultimately that is question of both supply and demand. Will there continue to be deposits of fossil fuels discovered, or techniques invented to extract more of those fuels (e.g. fracking)? Or do we change our demand for energy sources for environmental and climate reasons? 
+So it may well be true that resource use does put a drag on growth through the $s_X$ term, as we speculated in the model, but that a sufficient amount of *new* resources coming online raise $X_0$ enough to offset that. A more robust model would include some kind of decision to invest in discovery, similar to what we did in the section on innovation. At some point nonrenewable resources, by definition, *have* to run out. But for the last century or so we have not come close to that limit, from what the data indicate.
 
-The data on energy use don't give us an obvious fit to the model, and don't even give us an obvious set of trends we can use to create a model. What we're really after here is some indication of whether resources are becoming more scarce, and hence might be a drag on growth in the future, or whether they are plentiful enough to not be a significant drag on growth. The information in the prior section was all about quantities of energy used, and we know from simple supply and demand analysis that just knowing the quantity changed doesn't tell us *why* it changed (supply or demand shift) or if the resources are getting more expensive or cheaper.
+## Energy factor share and intensity
+An open question given the above data is whether this kind of energy use can be sustained over time. Nonrenewable resources are, by definition, going to run out at some point. We may keep increasing $X_0$, but perhaps that will end at some point soon. Is there a way in which we can esacpe the consequences of using these kinds of resources? 
 
-We can get some insight (we hope) by looking at prices. Here is a figure showing the relative price of energy compared to non-energy goods for consumers. The index is set to equal 1 in 2019. If the index was rising over time, energy was getting more expensive, while if it was falling it was getting less expensive over time.
+One possibility is that we find technologies that minimize our need to use these resources. Rather than thinking of this in terms of $A_t$, we could think of this as changing the actual production function itself. What I mean here is changing the value of $\beta$. If we made $\beta$ lower, then our need for resources would be lower. If $\beta=0$, in the extreme, then there is no reason to use any amount of the resource at all.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/119.embed"></iframe>
-
-There isn't a clear trend here across these countries. For the US, there isn't much of a trend here, but rather a series of fluctuations, with a big surge in energy prices in the 1970s (twin oil crises) and another in the early 2000s (when oil was hitting more than one hundred dollars a barrel). But there is not a strong change in price compared to the other countries. Japan had a significant decline in the price of energy over time, but Great Britain, South Korea, and Chile all had pretty significant increases. There is no common pattern here. 
-
-Let's see if we can figure out why the price moved up or down for some of these countries. Remember that the elasticity of an input tells us something about the cost share of that input. In the case of energy, it should be that $\beta$ is
-
-$$
-\beta = \frac{p_E E}{Cost}
-$$
-
-or that the total cost of energy $p_E E$ relative to costs in a given year is equal to the elasticity. This idea was covered in the material on [cost shares](costshare.html). Now, if we're willing to stretch a little and assume that costs are constant with respect to GDP over time (meaning that the profit share of GDP is constant), then we get
+Is it plausible for $\beta$ to fall? Sure. Recall from the work on [cost shares](costshare.html) that the elasticity of GDP with respect to an input ($\beta$ in this case) is approximately equal to the payments made to that input (in the case, total payments for energy) divided by GDP. Yes, that should be divided by *costs*, but in this case we don't have a great measure of total costs including energy, so we're going to fudge this a little with GDP. 
 
 $$
 \beta \approx \frac{p_E E}{Y}
 $$
 
-which can be re-arranged to
+The Energy Department produces data on the ratio on the right-hand side of this approximation. The figure here shows, on the left, the total real payments made for energy ($p_E E$) by year, and broken down by the use of that energy. Real costs rose over time, but in the last few years fell. On the right hand side is the figure we are more interested in. This measures those real costs as a fraction of real GDP, or $p_E E/Y$, which is our approximation of $\beta$. 
 
-$$
-p_E \approx \beta \frac{Y}{E}.
-$$
+![Share of GDP](main.eps)
 
-The relative price of energy should depend on $\beta$ and the GDP to energy ratio. If the ratio of GDP to energy use (measured in real units like BTUs) goes up, this *should* be reflected in higher prices. 
+Note that despite a surge in the late 1970s and early 2000s, this ratio *declined* over time. In our simple Cobb-Douglas setting, this ratio should be constant. What this falling ratio indicates is that the importance of energy in production did fall, consistent with our production function becoming less reliant on energy use.
 
-<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/121.embed"></iframe>
+The decline in $\beta$ could be driven either by a fall in the price of energy, or by a fall in the ratio of $E/Y$, something sometimes called "energy intensity". This plot shows that ratio for a set of countries from 1990 forward. 
 
-## Food and land
-Ag land per capita over time
-<iframe src="https://ourworldindata.org/grapher/agricultural-area-per-capita?country=OWID_WRL~USA~GBR~KOR~NGA~IND~JPN~CHN" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/121.embed"></iframe>
 
-Ag land use over time
-<iframe src="https://ourworldindata.org/grapher/cropland-extent-over-the-long-run" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+In fact, it does look like energy intensity fell over time. Most countries are using less energy per unit of GDP now than in the past. This indicates some kind of increase in energy efficiency, and perhaps is driving a long-run drop in $\beta$.
 
-Food share and GDP per capita
-<iframe src="https://ourworldindata.org/grapher/share-of-consumer-expenditure-spent-on-food-vs-gdp-per-capita" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+The other thing to consider is a drop in price of energy was responsible for the drop in the ratio of $p_E E/Y$, which may also be part of the story. Here the data is less telling. The following figure shows you the relative price of energy for consumers compared to other non-energy (and non-food) goods, and is set to equal 1 in 2019 by construction. 
 
-Absolute food expend and GDP per capita
-<iframe src="https://ourworldindata.org/grapher/annual-food-expenditure-per-person-vs-gdp-per-capita" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/119.embed"></iframe>
 
-Food prices in real terms (rel to 1900)
-<iframe src="https://ourworldindata.org/grapher/long-term-price-index-in-food-commodities-1850-2015" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+There isn't an obvious pattern here. For a place like the US, the relative price of energy fluctuated quite a bit, and ended up somewhat higher in 2019 than in decades before, but there isn't a massive increase. On the other hand, in Japan the price fell dramatically. But in South Korea it increased quite a bit. There is no obvious answer here. 
 
-## Population
-Births per 1000
-<iframe src="https://ourworldindata.org/grapher/birth-rate-the-number-of-births-per-1000-people-in-the-population?country=CHN~JPN~USA%20(whites)~USA%20(blacks)~England%20and%20Wales~FRA" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
-
-Children per woman
-<iframe src="https://ourworldindata.org/grapher/children-per-woman-UN?tab=chart&country=USA~GBR~OWID_WRL~BGD~IND~JPN~KOR~CHN~NGA~GHA" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
-
-TFR and schooling
-<iframe src="https://ourworldindata.org/grapher/fertility-rate-vs-mean-years-of-schooling?time=latest" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
-
-GDP per capita and Child per woman
-<iframe src="https://ourworldindata.org/grapher/children-per-woman-by-gdp-per-capita" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
-
-Population growth rate and median age
-<iframe src="https://ourworldindata.org/grapher/population-growth-rate-vs-median-age?time=latest" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
-
-Dependency ratios
-<iframe src="https://ourworldindata.org/grapher/age-dependency-ratio-of-working-age-population?tab=chart&country=GBR~JPN~CHN~NGA~KOR~USA~IND" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+While we cannot make very strong predictions from this limited data, there does appear to be plausible evidence that energy as a resource declined in importance for production. With a fall in $\beta$, the economy can keep growing over time and use fewer resources over time without threatening that growth. No guarantees, but is a plausible possibility for the future.

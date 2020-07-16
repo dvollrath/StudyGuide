@@ -23,11 +23,20 @@ fig <- layout(fig, title = list(text = 'Relative price of energy', x=0),
               hovermode="x unified")
 api_create(fig, filename = "oecd-cpi-energy")
 
-dat = WDI(indicator=c('GDPE' = 'EG.GDP.PUSE.KO.PP.KD','EGDP'='EG.USE.COMM.GD.PP.KD','GDPE2'='EG.GDP.PUSE.KO.PP','EGDP2'='EG.EGY.PRIM.PP.KD'),country='all')
+dat = WDI(indicator=c('GDPE' = 'EG.GDP.PUSE.KO.PP.KD',
+                      'EGDP'='EG.USE.COMM.GD.PP.KD',
+                      'GDPE2'='EG.GDP.PUSE.KO.PP',
+                      'EGDP2'='EG.EGY.PRIM.PP.KD',
+                      'L' = 'SL.TLF.TOTL.IN',
+                      'GDPL'='SL.GDP.PCAP.EM.KD'
+                      )
+          ,country='all')
+dat$ratio <- dat$GDPE/dat$GDPL
+
 f <- dat[which(dat$iso2c %in% c("US","JP","KR","CN","NG","GB")),]
-fig <- plot_ly(f, x = ~year, y = ~GDPE, linetype = ~country, type = 'scatter', mode = 'lines+markers')
-fig <- layout(fig, title = list(text = 'GDP per unit of energy', x=0),
+fig <- plot_ly(f, x = ~year, y = ~EGDP, linetype = ~country, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Energy Intensity', x=0),
               xaxis = list(title = 'Year'),
-              yaxis = list(title = 'GDP per unit of energy (kg oil equiv)'),
+              yaxis = list(title = 'Energy (kg oil equiv) / GDP'),
               hovermode="x unified")
 api_create(fig, filename = "wdi-energy-gdpe")
