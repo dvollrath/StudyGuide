@@ -48,7 +48,7 @@ $$
 
 The Energy Department produces data on the ratio on the right-hand side of this approximation. The figure here shows, on the left, the total real payments made for energy ($p_E E$) by year, and broken down by the use of that energy. Real costs rose over time, but in the last few years fell. On the right hand side is the figure we are more interested in. This measures those real costs as a fraction of real GDP, or $p_E E/Y$, which is our approximation of $\beta$. 
 
-<img src="main.eps" alt="drawing" width="500"/>
+<img src="main.eps" alt="drawing" width="900"/>
 
 Note that despite a surge in the late 1970s and early 2000s, this ratio *declined* over time. In our simple Cobb-Douglas setting, this ratio should be constant. What this falling ratio indicates is that the importance of energy in production did fall, consistent with our production function becoming less reliant on energy use.
 
