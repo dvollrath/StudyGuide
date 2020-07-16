@@ -1,4 +1,7 @@
 # Pull OECD into dataframe
+work <- get_dataset("PRICES_CPI")
+
+
 work <- get_dataset("PERS_FUNC")
 
 fte <- work

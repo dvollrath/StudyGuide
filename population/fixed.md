@@ -1,7 +1,7 @@
 ---
 title: Growth with natural resources
 parent: Population and Resources
-nav_order: 2
+nav_order: 1
 ---
 
 # Growth with natural resources
@@ -111,7 +111,7 @@ $$
 Now subtract $\ln L_t$ from both sides so that we get GDP per capita on the left. But notice that this is going to leave a term involve labor "dangling" at the end of the right-hand side.
 
 $$
-\ln y_t = \frac{\alpha}{1-\alpha} (\ln K_t - \ln Y_t) + \frac{\beta}{1-\alpha} \ln E_t + \frac{1-\alpha-\beta}{1-\alpha}\ln A_t - \frac{\beta}{1-\alpha} ln L_t.
+\ln y_t = \frac{\alpha}{1-\alpha} (\ln K_t - \ln Y_t) + \frac{\beta}{1-\alpha} \ln E_t + \frac{1-\alpha-\beta}{1-\alpha}\ln A_t - \frac{\beta}{1-\alpha} \ln L_t.
 $$
 
 This says that if the absolute number of people goes up, GDP per person *falls*. We didn't get this in our original Solow model. Why does this happen? It happens because the two original inputs we worried about, capital and labor, no longer can achieve constant returns on their own. That is, doubling just capital and labor in this production function will give you *less* that double the output, because there is *another* rival input involved, $E_t$. Adding in resources as an additional rival input creates the possibility that living standards are declining with the size of population. 
@@ -148,8 +148,71 @@ If productivity growth is high enough, then this can overcome the drag on growth
 
 Growth with natural resources
 {: .label .label-green }
-**Using natural resources in production can create a drag on the growth rate of GDP per capita. Growth is only positive if produtcivity growth is sufficiently high.**
+**Using natural resources in production can create a drag on the growth rate of GDP per capita. Growth is only positive if produtcivity growth is sufficiently high and/or population growth is sufficiently low.**
 
 It's important to see that this relationship depends on the size of $\beta$, which dictates the elasticity of resource use in production. It essentially tells us how relevant resources are for GDP. If $\beta$ is close to zero, then essentially resources don't matter, and we're back to our original Solow model. Growth is positive so long as $g_A>0$ in that case.
 
 Here, the higher is $\beta$, and the more important resources are, the harder it is to achieve growth in GDP per capita on a BGP. We'll look more at this when we try to use this model to explain some real-world data.
+
+## Level effects
+To be clear on what this model implies for the use of resources per capita, and the level of both resources per capita and GDP per capita, let's work out a few values. First, let's look at the *stock* of resources per capita, using small letters to denote per-capita amounts, as normal.
+
+$$
+x_t = \frac{X_t}{L_t}
+$$
+
+and therefore in logs we've got $\ln x_t = \ln X_t - \ln L_t$, and using what we know from above, we've got
+
+$$
+\ln x_t = \ln X_0 - s_X t - \ln L_t
+$$
+
+and if we use what we know about population growth, $\ln L_t = \ln L_0 + g_L t$, gives us
+
+$$
+\ln x_t = \ln X_0 - \ln L_0 - (s_X + g_L) t.
+$$
+
+The level of resources per capita at any given time depends on the initial stock of resources per capita (the $X_0$ and $L_0$ terms), and then this declines at the rate $s_X + g_L$, which captures the fact that the stock of resources is declining and that stock is getting spread across more and more people.
+
+How about the flow of resources per person (i.e. energy use per person)? This is
+
+$$
+e_t = \frac{E_t}{L_t}
+$$
+
+and similar logic to above is going to give us
+
+$$
+\ln e_t = \ln s_X + \ln X_0 - \ln L_0 - (s_X + g_L) t.
+$$
+
+Again, this is falling, and is basically identical to the stock per capita over time, except for the addition of the $\ln s_X$ term showing us what fraction of the resource is getting used.
+
+Finally, let's go back to the level of GDP per capita. From above, this was
+
+$$
+\ln y_t = \frac{\alpha}{1-\alpha} (\ln K_t - \ln Y_t) + \frac{\beta}{1-\alpha} \ln E_t + \frac{1-\alpha-\beta}{1-\alpha}\ln A_t - \frac{\beta}{1-\alpha} \ln L_t.
+$$
+
+We know how to describe $\ln E_t$ from the first sub-section. Based on our knowledge of how innovation works, we can write $\ln A_t = \ln A_0 + g_A t$, and we know that $g_A$ depends on $g_R$, but to keep things clean let's just stick with this. Finally, we know $\ln L_t = \ln L_0 + g_L t$. Put it all together and we get
+
+$$
+\ln y_t = \frac{\alpha}{1-\alpha}\ln K_t/Y_t + \frac{\beta}{1-\alpha} \left(\ln s_X + \ln X_0 - s_X t \right) + \frac{1-\alpha-\beta}{1-\alpha}\left(\ln A_0 + g_A t \right) - \frac{\beta}{1-\alpha} \left(\ln L_0 + g_L t \right).
+$$
+
+This can be simplified(?) a little into
+
+$$
+\ln y_t = \frac{\alpha}{1-\alpha}\ln K_t/Y_t + \frac{\beta}{1-\alpha} \left(\ln s_X + \ln X_0 - \ln L_0 \right) + \frac{1-\alpha-\beta}{1-\alpha}\left(\ln A_0 \right) + \left(1- \frac{\beta}{1-\alpha}\right)g_A t - \frac{\beta}{1-\alpha} (s_X + g_L)t.
+$$
+
+Again, we've got an equation for a line. The intercept of this line (the level of GDP per capita) depends on:
+
+1. The capital/output ratio. We know this ultimately should settle down to a stable ratio that depends on the savings rate, population growth, depreciation, and the growth rate of productivity.
+2. The initial flow of resources per capita, $\ln s_X + \ln X_0 - \ln L_0$. No big surprise, an economy that has a higher initial flow of these resources will be richer. 
+3. The initial value of productivity, $\ln A_0$. The more productive you are with the given capital and resources, the richer the economy.
+
+The last two terms captures the growth rate, and as we know that can be positive or negative depending on how big $g_A$ is relative to $s_X$ and $g_L$. 
+
+Note the conflicting effects of the extraction rate, $s_X$. If we draw down a large amount of resources each year to provide $E_t$, then this *raises* the level of GDP per capita, but *lowers* the growth rate. It is another one of these intertemporal trade-offs. High GDP per capita now, or soon, in exchange for low growth in GDP per capita in the future. If you raised $s_X$ high enough, you might generate a situation where you are very rich today, at the cost of a *negative* growth rate in the future, meaning GDP per capita would fall as the resource base ran out.
