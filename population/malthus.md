@@ -89,11 +89,11 @@ and population growth depends on productivity growth.
 ## Global relationships
 This last expression implies something important from a historical sense. Recall that from the innovation section we tied the growth rate of productivity, $g_A$, to the size of researcher growth, $g_R$, which in turn had to be pinned down to some extent by the population growth rate. The Malthusian model says that population growth depends positively on productivity growth. Innovation dynamics say productivity growth depends positively on population growth. This implies there is some kind of positive feedback loop at work, at least over the long run. 
 
-We can look at the same information we looked at in terms of [levels](prodlevel.html) of GDP per capita and population. But now put this in growth rate terms. This figure shows historically the global growth rate of GDP per capita (our proxy for productivity growth) and the global growth rate of population. 
+In this Malthusian world, faster productivity growth should be associated with a higher living standard. If we take a look at some of the same data on world historical living standards as [before](prodlevel.html), but look at the *growth rate* of population, we get the following. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/123.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/127.embed"></iframe>
 
-This isn't some kind of strict relationship, but there is something there. The faster population grew historically, the faster GDP per capita grew. This even works for the period (the 2010 data point) for when population growth fell compared to the high historical levels of the early 20th century, and so did the growth rate of GDP per capita.
+This isn't some kind of strict relationship, but there is something there. The faster population grew historically, the higher GDP per capita was at a global level, consistent with the Malthusian model for much of history. The only point this kind of breaks down is if you look at the last two points on the right (for 1973 and 2010). Here, their relationship is negative, consistent with our modern demography model. But otherwise Malthus gets things about right.
 
 We can be even more daring. From the work on innovation, we know that the growth rate of productivity is associated with the number of researchers. Imagine we had a model where our productivity growth equation was
 
@@ -101,7 +101,7 @@ $$
 g_A \approx \theta \frac{L}{A}
 $$
 
-where we made a bunch of assumptions. First, $\lamba = 1$ and $\phi=0$. Second, I substituted $L$ for $R$, meaning that we're taking the whole population as the base for research work. At worst, we can assume that $\theta$ incorporates information on the fraction of people able to do research. 
+where we made a bunch of assumptions. First, $\lambda = 1$ and $\phi=0$. Second, I substituted $L$ for $R$, meaning that we're taking the whole population as the base for research work. At worst, we can assume that $\theta$ incorporates information on the fraction of people able to do research. 
 
 Use this with our expression above for the growth rate of population in a Malthusian world. 
 

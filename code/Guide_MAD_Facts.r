@@ -60,10 +60,22 @@ fig <- plot_ly(mad, x = ~gl, y = ~gy, text=~year,
 )
 fig <- layout(fig, title = list(text = 'Population and GDP p.c. growth', x=0),
               xaxis = list(title = 'Global population growth'),
-              yaxis = list(title = 'Global GDP p.c. growth')
+              yaxis = list(title = 'GDP p.c.')
 )
-
 api_create(fig, filename = "mad-global-gy-gl")
+
+fig <- plot_ly(mad, x = ~gl, y = ~ln_gdppc, text=~year,
+               type = 'scatter', mode = 'markers',
+               marker = list(size = 10),
+               hovertemplate = paste("<b>Year: %{text}</b><br>","%{yaxis.title.text}: %{y:.2f}<br>",
+                                     "%{xaxis.title.text}: %{x:.2f}<br>")
+)
+fig <- layout(fig, title = list(text = 'Population growth and GDP p.c.', x=0),
+              xaxis = list(title = 'Global population growth'),
+              yaxis = list(title = 'Global GDP p.c.')
+)
+api_create(fig, filename = "mad-global-y-gl")
+
 
 
 kr <- read.csv("~/Dropbox/project/studyguide/data/kremer.csv", header=TRUE)
