@@ -10,7 +10,7 @@ nav_order: 1
 1. TOC 
 {:toc}
 
-## Dynamics of natural resources
+## Dynamics of nonrenewable resources
 Understanding growth when resources are required for production is just an extension of our standard model. Let $X_t$ be the stock of a resource, and this stock could be agricultural land, oil, trees, copper, the ocean, or it could represent a composite of all resources. This stock could decline over time.
 
 Let $E_t$ be the flow of resources used in production each year (think "Energy"). So $E_t$ is like the oil we pump this year, and $X_t$ is the stock of known reserves this year. Last, let's have $s_X$ be the share of $X_t$ used in any given year, so 
@@ -85,7 +85,7 @@ The fraction $s_X$ is going to be a lot like the fraction $s_I$, in a sense, bec
 Now we want to incorporate natural resources into production and see what impact that has. Modify the regular Cobb-Douglas production function to be
 
 $$
-Y_t = K_t^{\alpha}(E_t)^{\beta} (A_t L_t)^{1-\alpha-\beta},
+Y_t = K_t^{\alpha}E_t^{\beta} (A_t L_t)^{1-\alpha-\beta},
 $$
 
 where recall $E_t$ is the flow of resources we use in a year. Note that the elasticity on labor is different now. It depends on $\alpha$ *and* $\beta$. We use this formulation so that the production function still has constant returns to scale. And this is going to be important for what we find below.
