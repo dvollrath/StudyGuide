@@ -28,6 +28,8 @@ Just like we did with respect to time, we want to think about figuring out ratio
 ## A numeric example
 For the moment, let's stick with two countries and put some numbers on this. I'm going to switch to the USA and Nigeria, so that we can illustrate how important the prices used will be. For cell phones, think of the consumption amount as per capita. For teachers, think of this as something like number of teachers per capita. I know, the numbers don't make a lot of sense, but we're not after realism at the moment.
 
+[Download](twogoodtwocountry.xlsx)
+
 The data and calculations are all available in this [Google sheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vT-aCB6vVkYtm8GbGA0RTKtG8LMaXdwqeHRDoS33rgOKhJIXR1Uk4zoLglXc6PEeGZip6zUu3FLG14D/pubhtml).
 
 
