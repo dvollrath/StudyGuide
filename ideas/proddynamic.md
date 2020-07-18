@@ -131,7 +131,7 @@ You can mechanically work out what happens next by adjusting R up by a little, b
 
 No matter where you start, the system pushes you back to the point where the two lines cross, and where $g_A = g_R \times \lambda/(1-\phi)$, which is the BGP growth rate of productivity. This says that the productivity growth rate is *stable*. 
 
-For a different way of seeing what is going on, you can also try this [Google Sheet](https://docs.google.com/spreadsheets/d/1R8ylxtlmh73TpqXpIfKY5Ah4eXIg8yKkrxvDYE-boJg/edit?usp=sharing) which lays out the dynamics of productivity period by period. You can adjust the parameters and initial values of R and A to see how productivity growth evolves over time.
+For a different way of seeing what is going on, you can also try this [spreadsheet](proddynamic.xlsx) which lays out the dynamics of productivity period by period. You can adjust the parameters and initial values of R and A to see how productivity growth evolves over time.
 
 There are a lot of parameters involved here, but the most important one for this result turns out the be $\phi$. Using the GeoGebra screen, try pushing the value of $\phi$ all the way to one. What happens? The horizontal line for $g_R \times \lambda/(1-\phi)$ disappears. Why? Because the denominator ($1-\phi$) goes to zero, meaning the whole term blows up to infinity. In other words, if $\phi$ goes to one (or was higher than one) then the BGP growth rate of productivity would be...infinity. Needless to say, this doesn't make a whole lot of sense.
 
