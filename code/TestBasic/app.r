@@ -116,7 +116,7 @@ server <- function(input, output, session) {
   # Function to combine alternative and baseline inputs, generate dataframe
   # containing time series of outcomes
   GraphData <- reactive({
-    t <- c(1:input$timeT) # vector of periods up to input time
+    t <- c(0:input$timeT) # vector of periods up to input time
     df <- data.frame(t) # create dataframe to hold outcomes
     alt_kystar <- input$alt_sI/(input$alt_delta+input$alt_gA+input$alt_gL) # alt ss KY
     alt_ky <- (input$alt_K/input$alt_A)^(1-input$alt_alpha) ## actual starting KY
@@ -203,12 +203,15 @@ server <- function(input, output, session) {
       df <- data.frame(tick) # create dataframe
       df$gky <- (1-input$alt_alpha)*(input$alt_sI/df$tick-input$alt_gL -input$alt_gA- input$alt_delta)
       df$gkybase <- (1-base_alpha)*(base_sI/df$tick-base_gL -base_gA- base_delta)
+      alt_kystar = input$alt_sI/(input$alt_gL + input$alt_gA + input$alt_delta)
       
       ggplot(df, aes(x=tick)) +
         geom_line(aes(y = gky, color = "green"),size=1) + 
         geom_line(aes(y = gkybase, color="blue"), linetype="dashed",size=1) +
         geom_point(data=GraphData(),y=GraphData()$gky, color="black") +
         geom_hline(yintercept=0, linetype="dotted", color = "red") +
+        geom_vline(xintercept=base_kystar, linetype="dotted", color = "red") +
+        geom_vline(xintercept=alt_kystar, linetype="dotted", color = "red") +
         xlab("K/Y ratio") +
         ylab("Growth rate of K/Y") +
         theme_light() +

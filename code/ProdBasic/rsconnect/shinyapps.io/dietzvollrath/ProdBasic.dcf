@@ -1,0 +1,12 @@
+name: ProdBasic
+title: ProdBasic
+username:
+account: dietzvollrath
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2592992
+bundleId: 3412547
+url: https://dietzvollrath.shinyapps.io/ProdBasic/
+when: 1595257243.04389
+asMultiple: FALSE
+asStatic: FALSE

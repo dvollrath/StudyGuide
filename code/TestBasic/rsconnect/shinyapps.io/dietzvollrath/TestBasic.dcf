@@ -5,8 +5,8 @@ account: dietzvollrath
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2589839
-bundleId: 3409404
+bundleId: 3409475
 url: https://dietzvollrath.shinyapps.io/TestBasic/
-when: 1595180408.67361
+when: 1595183143.90494
 asMultiple: FALSE
 asStatic: FALSE

@@ -131,8 +131,6 @@ You can mechanically work out what happens next by adjusting R up by a little, b
 
 No matter where you start, the system pushes you back to the point where the two lines cross, and where $g_A = g_R \times \lambda/(1-\phi)$, which is the BGP growth rate of productivity. This says that the productivity growth rate is *stable*. 
 
-For a different way of seeing what is going on, you can also try this [spreadsheet](proddynamic.xlsx) which lays out the dynamics of productivity period by period. You can adjust the parameters and initial values of R and A to see how productivity growth evolves over time.
-
 There are a lot of parameters involved here, but the most important one for this result turns out the be $\phi$. Using the GeoGebra screen, try pushing the value of $\phi$ all the way to one. What happens? The horizontal line for $g_R \times \lambda/(1-\phi)$ disappears. Why? Because the denominator ($1-\phi$) goes to zero, meaning the whole term blows up to infinity. In other words, if $\phi$ goes to one (or was higher than one) then the BGP growth rate of productivity would be...infinity. Needless to say, this doesn't make a whole lot of sense.
 
 Stable productivity growth
@@ -197,3 +195,10 @@ The slope (the growth rate) is exactly what we think it should be, $g_R \lambda/
 The rest of the gibberish is the intercept of the line, and determines the *level* of productivity. The most important from our perspective is $R_0$. This is the baseline level of research effort that is done, and it dictates how big productivity will be. 
 
 Here we have to be really careful, and don't over-interpret $R_0$ as the literal number of researchers. Think of it more as the baseline level of research effort done in the past. This number, as mentioned before, doesn't have to just include research effort from the country we are talking about. Ideas are non-rival, so the research effort and productivity level of a country may be determined in part by research done in *other* economies.
+
+## Visualizing the dynamics
+For a different way of seeing what is going on, you can also try this [spreadsheet](proddynamic.xlsx) which lays out the dynamics of productivity period by period. You can adjust the parameters and initial values of R and A to see how productivity growth evolves over time.
+
+Or similar to the Solow model, the following app allows you to adjust parameters and see the impact on the level of productivity, the growth rate of productivity, and how the dynamic system works. Rather than using the embedded app, <a href="https://dietzvollrath.shinyapps.io/ProdBasic/" target="_blank">this link</a> will take you directly to the app on its own page. 
+
+<iframe height="800" width="100%" frameborder="no" src="https://dietzvollrath.shinyapps.io/ProdBasic/"> </iframe>
