@@ -15,6 +15,8 @@ The focus of a course on economic growth is going to be on real GDP. But it is i
 
 We should be careful, therefore, in assuming that higher real GDP, or more rapid growth in real GDP, necessarily means we are "better off". But at the same time, we should not necessarily *dismiss* real GDP as irrelevant. Many of the things we might consider more concrete measures of well-being - life expectancy, general health, environmental quality - are affected by our ability to produce goods and services. In many cases, an increase in real GDP is associated with more of those things that affect our well-being. In other cases, increases in real GDP are associated with worse outcomes. 
 
+![Isolation](https://imgs.xkcd.com/comics/isolation.png)
+
 ## Health and life expectancy
 Over time and across countries, countries that have a higher GDP per capita also tend to have longer life expectancy. The relationship here probably works in both directions: richer countries can provide better health care, but healthier countries are also able to produce more goods and services. But higher GDP per capita is associated with living longer.
 
