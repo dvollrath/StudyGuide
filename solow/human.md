@@ -143,6 +143,8 @@ In other words, the *log wage* is a function of the capital/output ratio, produc
 
 What's nice about this setup is that it connects to a very common set of empirical results. For decades, researchers in labor economics have found that the log wage is related to the number of years of schooling (for different workers). They estimate that $\gamma_S$ is approximately 0.10, and while it varies by country, it doesn't vary as much as you might guess. 
 
-They also estimate values for $\gamma_X$ of around 0.03-0.05. They tend to allow for the fact that experience can have negative effects (i.e. old people tend to get stuck in unproductive habits at work) and we could allow for that, but we're trying to keep things relatively simple. 
+They also estimate values for $\gamma_X$ of around 0.03-0.05. They also allow for the fact that experience can have negative effects (i.e. old people tend to get stuck in unproductive habits at work) and we could allow for that, but we're trying to keep things relatively simple. But the decline in human capital is probably a real phenomenon:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bxNSCuiPiDs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The point is that the structure of the $h_t$ term was not completely random. It was chosen specifically so that when we did this manipulation to think about the average wage in the economy, it would have this "log wage depends on years of schooing and experience" relationship that labor economists have studied. 
