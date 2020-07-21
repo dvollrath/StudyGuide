@@ -5,17 +5,16 @@ library(ggplot2)
 #############################################################
 # Set the baseline parameters
 #############################################################
-base_sI <- .2
 base_gL <- .01
+base_gamma <- -.0
 base_gA <- .02
-base_delta <- .05
-base_alpha <- .3
-base_beta <- .2
-base_X <- 1
-base_A <- 1
-base_kystar <- base_sI/(base_gL+base_gA+base_delta)
-base_K <- base_kystar^(1/(1-base_alpha))
-base_timeT <- 50
+base_beta <- .3
+base_X <- 5
+base_A <- 5
+base_L <- 5
+base_sR <- .01
+base_sX <- .01
+base_timeT <- 100
 
 #############################################################
 # Define UI ----
@@ -29,63 +28,70 @@ ui <- fluidPage(
       
       h4("Set parameters"),
       actionButton("reset", "Reset to baseline"),
-      sliderInput("alt_sI", h6('New capital share of GDP \\(s_I\\)'),
-                  min = 0, max = 1, value = base_sI),
-      sliderInput("alt_gL", h6("Population growth rate \\(gL\\)"),
-                  min = -.1, max = .1, value = base_gL),
-      sliderInput("alt_gA", h6("Productivity gorwth rate \\(gA\\)"),
-                  min = -.1, max = .1, value = base_gA),
-      sliderInput("alt_delta", h6("Depreciation rate \\(\\delta\\)"),
-                  min = 0, max = 1, value = base_delta),
-      sliderInput("alt_alpha", h6("Capital elasticity \\(\\alpha\\)"),
-                  min = 0, max = 1, value = base_alpha),
-      sliderInput("alt_K", h6("Initial capital stock \\(K_0\\)"),
-                  min = 0, max = 10, value = base_K,step = 0.1),
-      sliderInput("alt_A", h6("Initial Productivity \\(A_0\\)"),
+      sliderInput("alt_gamma", h6("Population growth parameter \\(\\gamma\\)"),
+                  min = -3, max = 3, value = base_gamma, step=.01),
+      sliderInput("alt_gL", h6("Initial pop growth rate \\(g_L\\)"),
+                  min = -.02, max = .04, value = base_gL, step=.001),
+      sliderInput("alt_gA", h6("Productivity growth rate \\(g_A\\)"),
+                  min = -.1, max = .1, value = base_gA,step=.001),
+      sliderInput("alt_beta", h6("Land elasticity \\(\\beta\\)"),
+                  min = 0, max = .5, value = base_beta, step=.01),
+      sliderInput("alt_sX", h6("Extraction rate \\(s_X\\)"),
+                  min = 0, max = .1, value = base_sX, step=.001),
+      sliderInput("alt_sR", h6("Replenish rate \\(s_R\\)"),
+                  min = 0, max = .1, value = base_sR, step=.001),
+      sliderInput("alt_A", h6("Initial productivity \\(A_0\\)"),
                   min = 0, max = 10, value = base_A, step = 0.1),
+      sliderInput("alt_L", h6("Initial population \\(L_0\\)"),
+                  min = 0, max = 10, value = base_L,step = 0.1),      
+      sliderInput("alt_X", h6("Initial resource stock \\(X_0\\)"),
+                  min = 0, max = 10, value = base_X, step = 0.1),
       sliderInput("timeT", h6("Number of periods"),
-                  min = 0, max = 300, value = base_timeT, step = 1)
+                  min = 0, max = 600, value = base_timeT, step = 1)
       ), # end sidebar panel
     
     mainPanel(
       
       tabsetPanel(type = "tabs",
-                  tabPanel("K/Y ratio",
-                           br(),
-                           p("The baseline is that the economy is on a BGP, so the actual K/Y is constant. 
-                             As you adjust the parameters to the left, there may be a new BGP, or actual K/Y may
-                             not be on the BGP any more. Black graphs the actual path of K/Y, blue the baseline BGP,
-                             and green is the new BGP based on your choice of parameters."),
-                           br(),
-                           p("Be sure you understand why some adjustments to parameters create a new BGP, and why
-                             some adjustments only push actual K/Y off of the BGP."),
-                           plotOutput("kygraph",width = "100%") ),
                   tabPanel("Log GDP p.c.", 
                            br(),
-                           p("This has the same idea the K/Y ratio. Black is the actual path of GDP per capita. 
-                             Green is the BGP from the parameters you set, and blue is the original BGP."),
+                           p("Production in this simulation involves only resources, productivity, and people. With
+                             \\(Y = X^{\\beta}(AL)^{1-\\beta}\\). This eliminates some transitional growth due to 
+                             capital accumulation, but keeps the interaction of resources and population."),
+                           br(),
+                           p("The blue line is the baseline path, and the black line is the alternative path given the
+                             parameters you choose. With zero population response (the baseline) the paths shown are
+                             BGPs; there is no transitional growth given there is no capital. Once you add population
+                             effects from GDP per capita, there really isn't a BGP any more because population growth
+                             evolves continuously."),
                            br(),
                            plotOutput("lnygraph",width = "100%") ),
-                  tabPanel("Growth rate", 
+                  tabPanel("Log resources p.c.", 
                            br(),
-                           p("The colors work the same with the growth rate of GDP per capita. Make sure you 
-                             understand how this growth rate is related to the path of log GDP per capita."),
+                           p("Resources are allowed to be affected by both an extraction rate \\(s_X\\) and a
+                             replenishment rate \\(s_R\\), so that \\(g_X=s_R-s_X\\). Nonrenewables simply have
+                             an extraction rate higher than their replenishment rate. A fixed resource, as we 
+                             modelled land, has extraction = replenishment. You could also think of an alternate
+                             economy with renewables where replenishment > extraction."),
                            br(),
-                           plotOutput("gygraph",width = "100%") ),
-                  tabPanel("K/Y dynamics", 
+                           plotOutput("lnxgraph",width = "100%") ),
+                  tabPanel("Population growth", 
                            br(),
-                           p("This graph is different. It shows the relationship of the growth rate in K/Y and
-                             the level of K/Y. The negative slope established the stability of the Solow model.
-                             Changes in some parameters shift the theoretical curves here, implying different
-                             steady state K/Y ratios where the growth rate is zero."),
+                           p("Population growth is allowed to be affected by GDP per capita, with \\(g_L=y^{\\gamma}\\).
+                             If \\(\\gamma\\) is positive, then we have the Malthusian response of higher
+                             population growth with higher income, and if negative the modern demographic response of
+                             lower population growth with higher income."),
                            br(),
-                           p("The black dots indicate the actual K/Y ratio and growth rate over time. In the 
-                             baseline, all these dots are at the steady state point. If you adjust parameters
-                             you'll see these spread out and show you how K/Y and the growth rate of K/Y evolved. 
-                             See how they follow the green path based on the new BGP."),
+                           plotOutput("glgraph",width = "100%") ),
+                  tabPanel("GDP p.c. growth", 
                            br(),
-                           plotOutput("gkygraph",width = "100%") )
-      ) # end tabset
+                           p("GDP per capita growth depends on a race between productivity growth versus population growth
+                             and resource extraction. The Malthusian population response will make this race harder to
+                             win, while modern demographics make this easier to win."),
+                           br(),
+                           plotOutput("gygraph",width = "100%") )
+                  
+              ) # end tabset
 
       ) # end main panel
   ) # end ui
@@ -97,128 +103,124 @@ server <- function(input, output, session) {
 
   # Reset parameters
   observeEvent(input$reset, {
-    updateSliderInput(session,'alt_sI',value = base_sI)
+    updateSliderInput(session,'timeT',value = base_timeT)
+    updateSliderInput(session,'alt_gamma',value = base_gamma)
     updateSliderInput(session,'alt_gL',value = base_gL)
     updateSliderInput(session,'alt_gA',value = base_gA)
-    updateSliderInput(session,'alt_delta',value = base_delta)
-    updateSliderInput(session,'alt_alpha',value = base_alpha)
-    updateSliderInput(session,'alt_K',value = base_K)
+    updateSliderInput(session,'alt_beta',value = base_beta)
     updateSliderInput(session,'alt_A',value = base_A)
-    updateSliderInput(session,'alt_timeT',value = base_timeT)
+    updateSliderInput(session,'alt_L',value = base_L)
+    updateSliderInput(session,'alt_X',value = base_X)
+    updateSliderInput(session,'alt_sX',value = base_sX)
+    updateSliderInput(session,'alt_sR',value = base_sR)
   })
-  
   # Function to combine alternative and baseline inputs, generate dataframe
   # containing time series of outcomes
   GraphData <- reactive({
     t <- c(0:input$timeT) # vector of periods up to input time
     df <- data.frame(t) # create dataframe to hold outcomes
-    alt_kystar <- input$alt_sI/(input$alt_delta+input$alt_gA+input$alt_gL) # alt ss KY
-    alt_ky <- (input$alt_K/input$alt_A)^(1-input$alt_alpha) ## actual starting KY
+  
+    lnL <- log(input$alt_L)
+    lnA <- log(input$alt_A)
+    lnx <- log(input$alt_X/input$alt_L)
+    X <- input$alt_X
+    lny <- (1-input$alt_beta)*(lnA+3) -(input$alt_beta)*lnL +(input$alt_beta)*log(input$alt_sX*X)
+    gL_param <- input$alt_gL/exp(lny)^(input$alt_gamma)
+    lnybase <- (1-base_beta)*(log(base_A)+3) -(base_beta)*log(base_L) +(base_beta)*log(base_sX*base_X)
+    lnxbase <- log(base_X)-log(base_L)
     
-    # Formula to fill in per-period actual KY ratio
-    df$ky <- alt_kystar*(1-exp(-(1-input$alt_alpha)*(input$alt_delta+input$alt_gA+input$alt_gL)*df$t)) + alt_ky*exp(-(1-input$alt_alpha)*(input$alt_delta+input$alt_gA+input$alt_gL)*df$t)
+    for (i in t) {
+      df$gL[i+1] <- gL_param*exp(lny)^(input$alt_gamma)
+      df$gX[i+1] <- input$alt_sR - input$alt_sX
+      df$gx[i+1] <- input$alt_sR - input$alt_sX - df$gL[i+1]
+      df$gxbase[i+1] <- base_sR - base_sX - base_gL
+      df$gLbase[i+1] <- base_gL
+      df$gAbase[i+1] <- base_gA
+      df$lnA[i+1] <- lnA
+      df$lnL[i+1] <- lnL
+      df$lny[i+1] <- lny
+      df$lnx[i+1] <- lnx
+      df$lnxbase[i+1] <- lnxbase
+      df$lnybase[i+1] <- lnybase
+      df$gy[i+1] <- (1-input$alt_beta)*input$alt_gA -(input$alt_beta)*df$gL[i+1] + (input$alt_beta)*df$gX[i+1]
+      df$gybase[i+1] <- (1-base_beta)*base_gA - (base_beta)*base_gL + base_beta*(base_sR - base_sX)
+      lnL <- lnL+df$gL[i+1]
+      lnA <- lnA+input$alt_gA
+      lny <- lny+df$gy[i+1]
+      lnx <- lnx+df$gx[i+1]
+      lnybase <- lnybase + df$gybase[i+1]
+      lnxbase <- lnxbase + df$gxbase[i+1]
+    }
     
-    df$kyalt <- alt_kystar # fill df with alt ss KY
-    df$kybase <- base_kystar # fill df with base ss KY
-    
-    # Fill df with series on log GDP per capita
-    df$lny <- (input$alt_alpha/(1-input$alt_alpha))*df$ky + log(input$alt_A) + input$alt_gA*df$t
-    df$lnyalt <- (input$alt_alpha/(1-input$alt_alpha))*df$kyalt + log(input$alt_A) + input$alt_gA*df$t
-    df$lnybase <- (base_alpha/(1-base_alpha))*df$kybase + log(base_A) + base_gA*df$t
-    
-    # Fill df with series on growth rate of GDP per capita
-    df$gky <- (1-input$alt_alpha)*(input$alt_sI/df$ky-input$alt_gL -input$alt_gA- input$alt_delta)
-    df$gy <- (input$alt_alpha/(1-input$alt_alpha))*df$gky + input$alt_gA
-    df$gyalt <- input$alt_gA
-    df$gybase <- base_gA
-      
-    df$tick <- df$ky # for graphing purposes later
     return(df)
   })
   
-  output$kygraph <- renderPlot(
-    {
-      ggplot(GraphData(), aes(t,value,colour=variable)) +
-        geom_line(aes(y = ky, color = "black"),size=1) + 
-        geom_line(aes(y = kybase, color="blue"), linetype="dashed",size=1) +
-        geom_line(aes(y = kyalt, color="green"), linetype="dashed",size=1) +
-        xlab("Time") +
-        ylab("Capital/output ratio") +
-        ylim(0, 5) +
-        theme_light() +
-        ggtitle("Capital/output ratio over time") + 
-        scale_color_identity(name = "Models",
-                             breaks = c("black", "green", "blue"),
-                             labels = c("Actual", "New BGP", "Old BGP"),
-                             guide = "legend")
-    }
-  ) # end ky graph
-  
+ 
   output$lnygraph <- renderPlot(
     {
       ggplot(GraphData(), aes(t,value,colour=variable)) +
         geom_line(aes(y = lny, color = "black"),size=1) + 
-        geom_line(aes(y = lnybase, color="blue"), linetype="dashed",size=1) +
-        geom_line(aes(y = lnyalt, color="green"), linetype="dashed",size=1) +
+        geom_line(aes(y = lnybase, color = "blue"),linetype="dashed",size=1) + 
         xlab("Time") +
         ylab("Log GDP per capita") +
-        ylim(0, 3) +
         theme_light() +
         ggtitle("GDP per capita over time") + 
         scale_color_identity(name = "Models",
                              breaks = c("black", "green", "blue"),
-                             labels = c("Actual", "New BGP", "Old BGP"),
+                             labels = c("Actual", "New BGP", "Baseline"),
                              guide = "legend")
     }
-  ) # end lny graph
+  )
   
-  
-  output$gygraph <- renderPlot(
+  output$lnxgraph <- renderPlot(
     {
       ggplot(GraphData(), aes(t,value,colour=variable)) +
-        geom_line(aes(y = gy, color = "black"),size=1) + 
-        geom_line(aes(y = gybase, color="blue"), linetype="dashed",size=1) +
-        geom_line(aes(y = gyalt, color="green"), linetype="dashed",size=1) +
+        geom_line(aes(y = lnx, color = "black"),size=1) + 
+        geom_line(aes(y = lnxbase, color = "blue"),linetype="dashed",size=1) + 
         xlab("Time") +
-        ylab("Growth rate of GDP p.c.") +
+        ylab("Log resources per capita") +
         theme_light() +
-        ylim(-.05, .07) +
-        ggtitle("Growth rate of GDP p.c. over time") + 
+        ggtitle("Resources per capita over time") + 
         scale_color_identity(name = "Models",
                              breaks = c("black", "green", "blue"),
-                             labels = c("Actual", "New BGP", "Old BGP"),
+                             labels = c("Actual", "New BGP", "Baseline"),
                              guide = "legend")
     }
-  ) # end gy graph
+  )
+  
+    output$glgraph <- renderPlot(
+      {
+        ggplot(GraphData(), aes(t,value,colour=variable)) +
+          geom_line(aes(y = gL, color = "black"),size=1) + 
+          geom_line(aes(y = gLbase, color = "blue"),linetype="dashed",size=1) + 
+          xlab("Time") +
+          ylab("Population growth rate") +
+          theme_light() +
+          ggtitle("Population growth over time") + 
+          scale_color_identity(name = "Models",
+                               breaks = c("black", "green", "blue"),
+                               labels = c("Actual", "New BGP", "Baseline"),
+                               guide = "legend")
+      }    
+  ) # end gL graph
+  
 
-  output$gkygraph <- renderPlot(
-    {
-      tick <- seq(0,6,.1) # arbitrary ky values
-      df <- data.frame(tick) # create dataframe
-      df$gky <- (1-input$alt_alpha)*(input$alt_sI/df$tick-input$alt_gL -input$alt_gA- input$alt_delta)
-      df$gkybase <- (1-base_alpha)*(base_sI/df$tick-base_gL -base_gA- base_delta)
-      alt_kystar = input$alt_sI/(input$alt_gL + input$alt_gA + input$alt_delta)
-      
-      ggplot(df, aes(x=tick)) +
-        geom_line(aes(y = gky, color = "green"),size=1) + 
-        geom_line(aes(y = gkybase, color="blue"), linetype="dashed",size=1) +
-        geom_point(data=GraphData(),y=GraphData()$gky, color="black") +
-        geom_hline(yintercept=0, linetype="dotted", color = "red") +
-        geom_vline(xintercept=base_kystar, linetype="dotted", color = "red") +
-        geom_vline(xintercept=alt_kystar, linetype="dotted", color = "red") +
-        xlab("K/Y ratio") +
-        ylab("Growth rate of K/Y") +
-        theme_light() +
-        ylim(-.1,.15) +
-        ggtitle("Growth rate of K/Y vs. K/Y") + 
-        scale_color_identity(name = "Models",
-                             breaks = c("green", "blue"),
-                             labels = c("New BGP", "Old BGP"),
-                             guide = "legend")
-    }
-  ) # end gky graph
-  
-  
+    output$gygraph <- renderPlot(
+      {
+        ggplot(GraphData(), aes(t,value,colour=variable)) +
+          geom_line(aes(y = gy, color = "black"),size=1) + 
+          geom_line(aes(y = gybase, color = "blue"),linetype="dashed",size=1) +
+          xlab("Time") +
+          ylab("GDP p.c. growth rate") +
+          theme_light() +
+          ggtitle("GDP p.c. growth over time") + 
+          scale_color_identity(name = "Models",
+                               breaks = c("black", "green", "blue"),
+                               labels = c("Actual", "New BGP", "Baseline"),
+                               guide = "legend")
+      }    
+    ) # end gy graph    
+    
 } # end server
 
 # Run the app ----

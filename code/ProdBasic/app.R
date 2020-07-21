@@ -84,7 +84,7 @@ server <- function(input, output, session) {
     updateSliderInput(session,'alt_lambda',value = base_lambda)
     updateSliderInput(session,'alt_phi',value = base_phi)
     updateSliderInput(session,'alt_theta',value = base_theta)
-    updateSliderInput(session,'alt_timeT',value = base_timeT)
+    updateSliderInput(session,'timeT',value = base_timeT)
     updateSliderInput(session,'alt_gR',value = base_gR)
   })
   

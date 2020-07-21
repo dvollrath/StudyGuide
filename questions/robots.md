@@ -12,6 +12,10 @@ nav_order: 2
 
 ![Robot](robot.jpg)
 
+## Robots
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OUJe0Wmfo5g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ## Automation and job loss
 Timothy Taylor has collected a number of old references to worries about automation and job loss. This is not something new. 
 

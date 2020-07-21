@@ -102,7 +102,7 @@ server <- function(input, output, session) {
     updateSliderInput(session,'alt_alpha',value = base_alpha)
     updateSliderInput(session,'alt_K',value = base_K)
     updateSliderInput(session,'alt_A',value = base_A)
-    updateSliderInput(session,'alt_timeT',value = base_timeT)
+    updateSliderInput(session,'timeT',value = base_timeT)
   })
   
   # Simple function to calculate the new  steady state K/Y ratio for display
