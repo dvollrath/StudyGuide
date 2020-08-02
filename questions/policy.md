@@ -1,5 +1,5 @@
 ---
-title: Taxes, Regulation, and Growth
+title: Taxes, regulation, and growth
 parent: Applications and Questions
 nav_order: 4
 ---

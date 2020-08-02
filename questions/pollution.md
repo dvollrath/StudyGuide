@@ -1,5 +1,5 @@
 ---
-title: Pollution and Growth
+title: Pollution and growth
 parent: Applications and Questions
 nav_order: 1
 ---
