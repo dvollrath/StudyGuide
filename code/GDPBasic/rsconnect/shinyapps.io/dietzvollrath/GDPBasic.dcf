@@ -1,0 +1,12 @@
+name: GDPBasic
+title: GDPBasic
+username:
+account: dietzvollrath
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2635523
+bundleId: 3466514
+url: https://dietzvollrath.shinyapps.io/GDPBasic/
+when: 1596401190.01889
+asMultiple: FALSE
+asStatic: FALSE

@@ -47,6 +47,7 @@ where I used the subscript $F$ for this ratio because it is related to something
 
 Note that the best we can do is create this ratio of real output between $b$ and $a$. There is no way to get an absolute number for real output, as it is meant to measure something like "living standards", which have no units. We might decide that a given year (e.g. 2009 or 2013) is our "base" year, and assign it a real index of 100, and use the ratios we calculate with other years to create index values relative to that.
 
+## Using price deflators
 This is what we're after, but the common way to arrive at these ratios involves deflating nominal GDP in given years by prices indices. What we can show is that this deflation process delivers exactly the same ratio we just calculated. The price deflator used is again a geometric average of two different underlying price deflators (Laspeyres and Paasche) that differ in which base period they use. 
 
 The Laspeyres price index computes the ratio of prices in $b$ relative to $a$, using the quantities from $a$ (the prior period) as weights, 

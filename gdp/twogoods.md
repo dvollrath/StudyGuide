@@ -3,7 +3,7 @@ title: Two goods and two time periods
 parent: Measuring GDP
 nav_order: 1
 ---
-https://growthecon.com/gdp/fig-real-gdp-obvious.eps
+
 # Two goods and two time periods
 {: .no_toc }
 
@@ -101,4 +101,9 @@ Now, which of these is right? Did 2019 have lower or higher real consumption tha
 
 If we were reporting this, we might assume that $Y_{2018} = 100$. So our reported real GDP series would be $Y_{2018} = 100$ and $Y_{2019} = 104$. 
 
-You should go to the Google sheet and play around with the relative prices. You can adjust them to see under what situations real consumption goes up from both perspectives, or down from both perspectives. 
+### Visualizing
+You should go to the spreadsheet and play around with the relative prices. You can adjust them to see under what situations real consumption goes up from both perspectives, or down from both perspectives. 
+
+To see a more interactive example of how all this works, you can alternatively play around with this web app. Either go to [this link](https://dietzvollrath.shinyapps.io/GDPBasic/) or use the app as embedded here. 
+
+<iframe height="800" width="100%" frameborder="no" src="https://dietzvollrath.shinyapps.io/GDPBasic/"> </iframe>
