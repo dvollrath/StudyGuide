@@ -81,7 +81,7 @@ $$
 where $\Delta \tilde{k}$ is the absolute change in the capital per efficiency unit. Multiply both sides by $\tilde{k}$, and you get
 
 $$
-\Delta \tilde{k} = s_I \tilde{k}^{\alpha} - (\delta + g_A + g_L \right)\tilde{k}.
+\Delta \tilde{k} = s_I \tilde{k}^{\alpha} - \left(\delta + g_A + g_L \right)\tilde{k}.
 $$
 
 The change in the capital per efficiency unit depends on the positive contribution from the share of GDP allocated to new capital, minus the deterioration that occurs because of depreciation in capital, the growth in productivity, and the growth in labor. Note that faster productivity growth implies *less* growth in the change in capital per efficiency unit. It doesn't mean less capital, it means less capital relative to how productive workers are.
@@ -95,7 +95,7 @@ The second curve maps the total amount of deterioration of $\tilde{k}$, $(\delta
 
 Those two curves are shown in the above figure, which is taken from the Jones/Vollrath textbook. The only thing to note here is that the $s_I \tilde{k}^{\alpha}$ curve is written as $s \tilde{y}$, which is due to a (1) using $s$ in place of $s_I$, and (2) noting that $\tilde{y} = \tilde{k}^{\alpha}$. The $(\delta + g_A + g_L)\tilde{k}$ line has (1) $g$ to measure $g_A$ and (2) $n$n to measure $g_L$. 
 
-Regardless, if actual capital per efficiency unit is to the left of where the two curves cross, it is the case that $s_I \tilde{k}^{\alpha} > (\delta + g_A + g_L \right)\tilde{k}$ and so the capital per efficiency unit must be *rising*. This is shown along the x-axis by the arrows pointing to the right. If actual capital per efficiency unit is to the right of where they cross, capital per efficiency unit shrinks, indicating by arrows. 
+Regardless, if actual capital per efficiency unit is to the left of where the two curves cross, it is the case that $s_I \tilde{k}^{\alpha} > (\delta + g_A + g_L)\tilde{k}$ and so the capital per efficiency unit must be *rising*. This is shown along the x-axis by the arrows pointing to the right. If actual capital per efficiency unit is to the right of where they cross, capital per efficiency unit shrinks, indicating by arrows. 
 
 Everything about this pushes capital per efficiency unit towards the point where the curves cross. At that point, capital per efficiency unit is constant, with the addition offsetting the deterioration. Because everything pushes capital per efficiency unit towards this point, it is a stable steady state. This is just like the steady state discussed in the main study guide.
 
@@ -103,13 +103,13 @@ Everything about this pushes capital per efficiency unit towards the point where
 The dynamics of the Solow diagram say that $\tilde{k}$ should end up at a stable steady state, where the two curves cross. What is that value of $\tilde{k}$? Set the change in $\tilde{k}$ to zero, which is what that steady state means. 
 
 $$
-0 = s_I \tilde{k}^{\alpha} - (\delta + g_A + g_L \right)\tilde{k}.
+0 = s_I \tilde{k}^{\alpha} - (\delta + g_A + g_L )\tilde{k}.
 $$
 
 Moving terms around you can solve for
 
 $$
-\tilde{k}^{ss} = \left(\frac{s_I}{\delta + g_A + g_L} \right)^{1/(1-\alpha})}
+\tilde{k}^{ss} = \left(\frac{s_I}{\delta + g_A + g_L} \right)^{1/(1-\alpha)}
 $$
 
 where the $ss$ indicates this is the steady state value.
