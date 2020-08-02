@@ -101,7 +101,7 @@ Now, which of these is right? Did 2019 have lower or higher real consumption tha
 
 If we were reporting this, we might assume that $Y_{2018} = 100$. So our reported real GDP series would be $Y_{2018} = 100$ and $Y_{2019} = 104$. 
 
-### Visualizing
+## Visualizing
 You should go to the spreadsheet and play around with the relative prices. You can adjust them to see under what situations real consumption goes up from both perspectives, or down from both perspectives. 
 
 To see a more interactive example of how all this works, you can alternatively play around with this web app. Either go to [this link](https://dietzvollrath.shinyapps.io/GDPBasic/) or use the app as embedded here. 
