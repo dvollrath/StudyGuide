@@ -2,6 +2,12 @@ title: Growth Study Guide
 baseurl: "/StudyGuide" # the subpath of your site, e.g. /blog
 url: "http://growthecon.com" 
 remote_theme: pmarsceill/just-the-docs
+
+search_enabled: true
+search:
+  rel_url: false
+  button: true
+  
 aux_links:
   "Study Guide on GitHub":
     - "https://github.com/dvollrath/StudyGuide"
@@ -17,4 +23,3 @@ footer_content: "Copyright &copy; 2020 Dietrich Vollrath. Distributed by an <a h
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
 last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
 
-search_enabled: false
