@@ -3,11 +3,6 @@ baseurl: "/StudyGuide" # the subpath of your site, e.g. /blog
 url: "http://growthecon.com" 
 remote_theme: pmarsceill/just-the-docs
 
-search_enabled: true
-search:
-  rel_url: false
-  button: true
-  
 aux_links:
   "Study Guide on GitHub":
     - "https://github.com/dvollrath/StudyGuide"
