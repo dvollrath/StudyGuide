@@ -9,10 +9,17 @@ p$phil <- round(p$labsh*p$rgdpna/(p$labsh*p$rgdpna+.05*p$rnna),digits=2) # creat
 # subset PWT into stable and catchup groups
 stable <- p[which(p$isocode %in% c("USA", "CAN", "MEX", "GBR", "AUS")),]
 catchup <- p[which(p$isocode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
+test <- p[which(p$isocode %in% c("BRA", "IDN", "VNM", "TUR", "ZAF","PAK")),]
 
 ############################
 # Figures for log GDP per capita
 ############################
+fig <- plot_ly(test, x = ~year, y = ~lngdppc, linetype = ~country, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Log GDP per capita', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Log GDP per capita', range=c(6,11)),
+              hovermode="x unified")
+
 fig <- plot_ly(stable, x = ~year, y = ~lngdppc, linetype = ~country, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Log GDP per capita for stable growth countries', x=0),
                xaxis = list(title = 'Year'),
