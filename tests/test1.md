@@ -4,7 +4,9 @@ parent: Test material
 nav_order: 1
 ---
 
-# Real GDP Calculation
+# Test 1 Reference Material
+
+## Real GDP Calculation
 You will need the following table to calculate real GDP ratios for two questions. 
 
 | Year | p(Taco) | c(Taco) | p(Banh mi) | c(Banh mi) |
@@ -20,3 +22,21 @@ You will need the following table to calculate real GDP ratios for two questions
 | 2008 | $5 | 110 | $2 | 65 |
 | 2009 | $6 | 108 | $3 | 72 |
 | 2010 | $8 | 110 | $2 | 80 |
+
+## Figures
+
+### Log GDP per capita
+
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/129.embed"></iframe>
+
+### Capital/output ratio
+
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/133.embed"></iframe>
+
+### Gross capital formation share of GDP
+
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/131.embed"></iframe>
+
+### Labors share of costs
+
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/135.embed"></iframe>

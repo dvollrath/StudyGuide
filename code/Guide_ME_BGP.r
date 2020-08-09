@@ -36,3 +36,59 @@ fig <- layout(fig, title = list(text = 'BGP capital/output ratio', x=0),
               yaxis = list (title = 'Ratio of K/Y',range=c(1,5)),
               hovermode="x unified")
 api_create(fig, filename = "me-bgp-ky")
+
+year <- c(2018:2058)
+dA <- data.frame(year)
+noise <- rnorm(41)
+dA$lngdppc <- 4.5 + .02*(year-2018) + .02*noise
+dA$sinv  <- .8 + .03*noise - .01*(year-2018)
+dA$ky    <- 5 + .1*noise - .05*(year-2018)
+dA$phil  <- .6 + .03*noise
+dA$id <- "A"
+
+dB <- data.frame(year)
+noise <- rnorm(41)
+dB$lngdppc <- 5.3 + .0005*(year-2018)+ .02*noise 
+dB$sinv  <- .2 + .02*noise
+dB$ky    <- 2 + .1*noise + .1*(year-2018)
+dB$phil  <- .75 + .03*noise
+dB$id <- "B"
+
+dC <- data.frame(year)
+noise <- rnorm(41)
+dC$lngdppc <- 4 + .04*(year-2018)+ .02*noise 
+dC$sinv  <- .2 + .03*noise + .01*(year-2018)
+dC$ky    <- 2.5 + .1*noise
+dC$phil  <- .8 + .03*noise
+dC$id <- "C"
+
+dall <- rbind(dA,dB)
+dall <- rbind(dall,dC)
+
+fig <- plot_ly(dall, x = ~year, y = ~lngdppc, linetype = ~id, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'log GDP per capita', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Log of GDP per capita'),
+              hovermode="x unified")
+api_create(fig, filename = "test-bgp-lny")
+
+fig <- plot_ly(dall, x = ~year, y = ~sinv, linetype = ~id, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Gross capital formation share', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Gross capital formation share of GDP', range=c(0,1)),
+              hovermode="x unified")
+api_create(fig, filename = "test-bgp-sinv")
+
+fig <- plot_ly(dall, x = ~year, y = ~ky, linetype = ~id, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Capital/output ratio', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Capital/output ratio',range=c(1,6)),
+              hovermode="x unified")
+api_create(fig, filename = "test-bgp-ky")
+
+fig <- plot_ly(dall, x = ~year, y = ~phil, linetype = ~id, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Labor share of costs', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Labor share of costs',range=c(0,1)),
+              hovermode="x unified")
+api_create(fig, filename = "test-bgp-phil")
