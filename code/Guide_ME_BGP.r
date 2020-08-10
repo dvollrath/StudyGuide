@@ -92,3 +92,36 @@ fig <- layout(fig, title = list(text = 'Labor share of costs', x=0),
               yaxis = list (title = 'Labor share of costs',range=c(0,1)),
               hovermode="x unified")
 api_create(fig, filename = "test-bgp-phil")
+
+year <- c(0:40)
+dA <- data.frame(year)
+dA$lngdppc <- 4.5 + .02*year
+dA$id <- "A"
+
+dB <- data.frame(year)
+dB$lngdppc <- 4.5*exp(-.1*dB$year) + 5*(1-exp(-.1*dB$year)) + .02*year
+dB$id <- "B"
+
+dC <- data.frame(year)
+dC$lngdppc <- 4.5*exp(-.1*dC$year) + 4*(1-exp(-.1*dC$year)) + .02*year
+dC$id <- "C"
+
+dD <- data.frame(year)
+dD$lngdppc <- 5.5*exp(-.1*dD$year) + 4.5*(1-exp(-.1*dD$year)) + .02*year
+dD$id <- "D"
+
+dE <- data.frame(year)
+dE$lngdppc <- 3.5*exp(-.1*dE$year) + 4.5*(1-exp(-.1*dE$year)) + .02*year
+dE$id <- "E"
+
+dall <- rbind(dA,dB)
+dall <- rbind(dall,dC)
+dall <- rbind(dall,dD)
+dall <- rbind(dall,dE)
+
+fig <- plot_ly(dall, x = ~year, y = ~lngdppc, linetype = ~id, type = 'scatter', mode = 'lines')
+fig <- layout(fig, title = list(text = 'log GDP per capita', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Log of GDP per capita'),
+              hovermode="x unified")
+api_create(fig, filename = "test-bgp-choices")
