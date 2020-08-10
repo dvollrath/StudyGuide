@@ -16,6 +16,14 @@ api_create(fig, filename = "pwt-catchup-emppop")
 
 p <- read.csv("~/Dropbox/project/studyguide/data/pwt91_labor_detail.csv", header=TRUE)
 catchup <- p[ which(p$countrycode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
+test <- p[ which(p$countrycode %in% c("ETH", "ZAF", "BWA")),]
+
+fig <- plot_ly(test, x = ~year, y = ~yr_sch, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Years of schooling by country', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Avg. years of schooling',range=c(0,15)),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-test-yrsch")
 
 fig <- plot_ly(catchup, x = ~year, y = ~yr_sch, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Years of schooling by country', x=0),
@@ -23,3 +31,4 @@ fig <- layout(fig, title = list(text = 'Years of schooling by country', x=0),
               yaxis = list (title = 'Avg. years of schooling',range=c(0,15)),
               hovermode="x unified")
 api_create(fig, filename = "pwt-catchup-yrsch")
+

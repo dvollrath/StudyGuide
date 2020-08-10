@@ -9,7 +9,7 @@ p$phil <- round(p$labsh*p$rgdpna/(p$labsh*p$rgdpna+.05*p$rnna),digits=2) # creat
 # subset PWT into stable and catchup groups
 stable <- p[which(p$isocode %in% c("USA", "CAN", "MEX", "GBR", "AUS")),]
 catchup <- p[which(p$isocode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
-test <- p[which(p$isocode %in% c("VNM", "TWN", "USA")),]
+test <- p[which(p$isocode %in% c("ETH", "ZAF","BWA")),]
 
 ############################
 # Figures for log GDP per capita
@@ -19,6 +19,7 @@ fig <- layout(fig, title = list(text = 'Log GDP per capita', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'Log GDP per capita', range=c(6,11)),
               hovermode="x unified")
+api_create(fig, filename = "pwt-test-lngdppc")
 
 fig <- plot_ly(stable, x = ~year, y = ~lngdppc, linetype = ~country, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Log GDP per capita for stable growth countries', x=0),
@@ -37,6 +38,7 @@ api_create(fig, filename = "pwt-catchup-lngdppc")
 ############################
 # Figures of labor share
 ############################
+
 fig <- plot_ly(stable, x = ~year, y = ~labsh, linetype = ~country, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Compensation/GDP for stable growth countries', x=0),
               xaxis = list(title = 'Year'),
@@ -54,6 +56,7 @@ api_create(fig, filename = "pwt-catchup-labsh")
 ############################
 # Figures of labor cost share
 ############################
+
 fig <- plot_ly(stable, x = ~year, y = ~phil, linetype = ~country, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Compensation/Total Costs', x=0),
               xaxis = list(title = 'Year'),
@@ -105,13 +108,6 @@ api_create(fig, filename = "pwt-catchup-convergence")
 p1960 <- p[which(p$year >1959),] # drop 50-59 b/c of PWT initial ky guess
 stable <- p1960[ which(p1960$isocode %in% c("USA", "CAN", "MEX", "GBR", "AUS")),]
 catchup <- p1960[ which(p1960$isocode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
-test <- p1960[which(p1960$isocode %in% c("VNM", "TWN", "USA")),]
-
-fig <- plot_ly(test, x = ~year, y = ~ky, linetype = ~country, type = 'scatter', mode = 'lines+markers')
-fig <- layout(fig, title = list(text = 'Capital/output ratio for stable countries', x=0),
-              xaxis = list(title = 'Year'),
-              yaxis = list (title = 'Capital/output ratio',range=c(0,7)),
-              hovermode="x unified")
 
 fig <- plot_ly(stable, x = ~year, y = ~ky, linetype = ~country, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Capital/output ratio for stable countries', x=0),

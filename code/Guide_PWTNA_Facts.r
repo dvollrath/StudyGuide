@@ -6,6 +6,7 @@ p$sgfcf <- round(p$v_i/p$v_gdp,digits=2) # calculate cap formation as share
 
 stable <- p[ which(p$countrycode %in% c("USA", "CAN", "MEX", "GBR", "AUS")),]
 catchup <- p[ which(p$countrycode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
+test <- p[ which(p$countrycode %in% c("ETH", "ZAF","BWA")),]
 usa <- p[ which(p$countrycode %in% c("USA")),]
 
 
@@ -36,3 +37,10 @@ fig <- layout(fig, title = list(text = 'Gross capital formation share of GDP', x
               yaxis = list (title = 'Gross capital formation share',range = c(0,1)),
               hovermode="x unified")
 api_create(fig, filename = "pwt-catchup-sgfcf")
+
+fig <- plot_ly(test, x = ~year, y = ~sgfcf, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Gross capital formation share of GDP', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Gross capital formation share',range = c(0,1)),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-test-sgfcf")
