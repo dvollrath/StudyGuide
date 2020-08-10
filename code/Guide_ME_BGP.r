@@ -93,26 +93,42 @@ fig <- layout(fig, title = list(text = 'Labor share of costs', x=0),
               hovermode="x unified")
 api_create(fig, filename = "test-bgp-phil")
 
+
 year <- c(0:40)
 dA <- data.frame(year)
+dA$f <- exp(-.1*dA$year)-exp(-.1*(dA$year-1))
 dA$lngdppc <- 4.5 + .02*year
+dA$g <- .02
 dA$id <- "A"
+dA$gid <- "C"
 
 dB <- data.frame(year)
+dB$f <- exp(-.1*dB$year)-exp(-.1*(dB$year-1))
 dB$lngdppc <- 4.5*exp(-.1*dB$year) + 5*(1-exp(-.1*dB$year)) + .02*year
+dB$g <- 4.5*dB$f + 5*(-1*dB$f) + .02
 dB$id <- "B"
+dB$gid <- "B"
 
 dC <- data.frame(year)
+dC$f <- exp(-.1*dC$year)-exp(-.1*(dC$year-1))
 dC$lngdppc <- 4.5*exp(-.1*dC$year) + 4*(1-exp(-.1*dC$year)) + .02*year
+dC$g <- 4.5*dC$f + 4*(-1*dC$f) + .02
 dC$id <- "C"
+dC$gid <- "D"
 
 dD <- data.frame(year)
+dD$f <- exp(-.1*dD$year)-exp(-.1*(dD$year-1))
 dD$lngdppc <- 5.5*exp(-.1*dD$year) + 4.5*(1-exp(-.1*dD$year)) + .02*year
+dD$g <- 5.5*dD$f + 4.5*(-1*dD$f) + .02
 dD$id <- "D"
+dD$gid <- "E"
 
 dE <- data.frame(year)
+dE$f <- exp(-.1*dE$year)-exp(-.1*(dE$year-1))
 dE$lngdppc <- 3.5*exp(-.1*dE$year) + 4.5*(1-exp(-.1*dE$year)) + .02*year
+dE$g <- 3.5*dE$f + 4.5*(-1*dE$f) + .02
 dE$id <- "E"
+dE$gid <- "A"
 
 dall <- rbind(dA,dB)
 dall <- rbind(dall,dC)
@@ -125,3 +141,12 @@ fig <- layout(fig, title = list(text = 'log GDP per capita', x=0),
               yaxis = list (title = 'Log of GDP per capita'),
               hovermode="x unified")
 api_create(fig, filename = "test-bgp-choices")
+
+dall <- rbind(dA,dE)
+dall <- rbind(dall,dD)
+fig <- plot_ly(dall, x = ~year, y = ~g, linetype = ~gid, type = 'scatter', mode = 'lines')
+fig <- layout(fig, title = list(text = 'Growth rate of GDP per capita', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Growth rate of GDP per capita'),
+              hovermode="x unified")
+api_create(fig, filename = "test-gy-choices")

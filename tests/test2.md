@@ -22,6 +22,11 @@ These figures show select information for Ethiopia (ETH), Botswana (BWA), and So
 <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/141.embed"></iframe>
 
 ## Theoretical paths
-The figure shows theoretical paths of GDP per captia starting in period zero.
+
+### Log GDP per capita
 
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/143.embed"></iframe>
+
+### Growth rate of GDP per capita
+
+<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/145.embed"></iframe>
