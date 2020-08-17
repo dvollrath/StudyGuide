@@ -52,3 +52,5 @@ Of course, from the pollution perspective it is the absolute amount of CO2 that 
 <iframe src="https://ourworldindata.org/grapher/annual-co2-emissions-per-country?tab=chart&country=CHN~USA~IND~GBR~KOR~JPN" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
 
 Here the scale of China's population becomes apparent. Absolute emissions in the US have actually gone down in recent years, as they have in the UK and Japan. From the pollution perspective the question remains how much CO2 China and India will produce as they develop further. If you click on the "log" feature of this figure, you'll get a sense for the big differences in the growth rates of CO2 production, which are substantial.
+
+## Preferences and growth
