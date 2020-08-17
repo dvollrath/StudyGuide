@@ -1,6 +1,7 @@
 ---
 title: Sampling and innovation
 parent: Incentives to innovate
+grand_parent: Ideas and Productivity
 nav_order: 1
 ---
 
