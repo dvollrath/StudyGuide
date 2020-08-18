@@ -39,7 +39,7 @@ If you remove some people from the pool of researchers, then $R_t$ goes down, an
 But what does cutting out a portion of people from innovation do to the *level* of productivity, even in the long run? There is a case study in this topic on what happens if there is a one-time *positive* [shock to the number of researchers](applyideas.html). We can reverse that logic here, with a *negative* shock. Productivity will be *permanently* lower because of the loss of the Black researchers. 
 
 ## Lost Einsteins
-A separate study by [Bell, Chetty, Jaravel, Petkova, and van Reenen](http://www.nber.org/papers/w24062) looks at who becomes an inventor in the United States, focusing on a more recent time frame that Cook's study. 
+A separate study by [Bell, Chetty, Jaravel, Petkova, and van Reenen](http://www.nber.org/papers/w24062) looks at who becomes an inventor in the United States, focusing on a more recent time frame that Cook's study. You can also see their own summary [here](https://voxeu.org/article/how-exposure-innovation-influences-who-becomes-inventor).
 
 First, children from high-income (top 1%) families are ten times more likely to become inventors than children from families with below-median income. They provide the following figure showing the raw data on highly-cited patents and parents income. Kids with the richest parents have about 0.4 highly-cited inventors per thousand (i.e. 4 highly-cited inventors for every 10,000 kids). For kids from the 20th percentile of the income distribution only have about 0.04 per thousand (or 4 highly-cited invenstors for every *100,000* kids). 
 
