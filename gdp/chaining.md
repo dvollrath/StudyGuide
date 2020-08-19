@@ -1,6 +1,7 @@
 ---
 title: Real GDP over time
 parent: Measuring GDP
+has_children: true
 nav_order: 3
 ---
 
