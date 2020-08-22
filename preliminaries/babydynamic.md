@@ -218,3 +218,10 @@ $$
 This is the equation for a line, and in fact is the line graphed in the "Level" panel of the app in the green dashed line. If you change the paramters, then the blue dashed line shows you the new level of X at any given point in time with those parameters. 
 
 The level is something like a target for the actual path of X. It is what the real X approaches over time.
+
+## Revisit the questions
+Go back to the big questions I said we'd ask about. The first was whether X had a constant growth rate eventually. That question is really, "Does this dynamic system have a steady state?". 
+
+Once we know that answer, the follow-up question was really "What is the equation for the level of X in the steady state". 
+
+Note that it really doesn't matter for us here whether the growth rate of X in the long-run was zero or not. If you set $g_Z = 0$ in our model, then the level of $X_t^{Level}$ is fixed by $Z_0$ and $g_Z +s$. If $g_Z \neq 0$, then it either grows or shrinks over time. 
