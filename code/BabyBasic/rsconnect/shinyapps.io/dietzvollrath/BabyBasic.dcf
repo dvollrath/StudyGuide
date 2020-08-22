@@ -1,0 +1,12 @@
+name: BabyBasic
+title: BabyBasic
+username:
+account: dietzvollrath
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2696549
+bundleId: 3545945
+url: https://dietzvollrath.shinyapps.io/BabyBasic/
+when: 1598128772.19381
+asMultiple: FALSE
+asStatic: FALSE
