@@ -1,6 +1,7 @@
 ---
 title: Competition and Growth
 parent: Ideas and Productivity
+has_children: true
 nav_order: 6
 ---
 
@@ -52,56 +53,48 @@ Combine this with the finding from the last section about profits and the paymen
 We don't know precisely where the sweet spot is, and thus it is very possible that we have too little or too much competition in the economy to maximize growth, or that we are over or under-paying rival inputs relative to what would maximize growth. There is no clean answer to what economic conditions maximize innovation and economic growth. 
 
 ## Competition and the level of innovation
-[*Note to students*: I'm really unhappy with this section, so if you don't get it don't worry. I'm trying to work out something more intuitive and easier to follow.]
+Let's go back to our simple model of chossing $R_t$ from the prior section to think about how the findings in the above section work. This is just putting some math behind the words above. 
 
-Having just said that we cannot get clean answers, let's make some assumptions and provide some explanation for the level of R&D that gets done, and it's growth rate, $g_R$. Recall that this $g_R$ dictates the long-run growth rate. 
-
-First assumptions are that the *only* industries or firms that do R&D are those in medium-competitive industries. We're being very stark in saying that perfectly competitive industries do *zero* innovation, and industries with monopolies (or perhaps some colluding oligopolists) do *zero* innovation. 
-
-Again, there are more thorough treatments of this we could do mathematically. Here we are just trying to get some sense of what drive things. The key idea we'll use is that firms (or individuals) are making decisions about how to allocate their time between two activities: R&D to create new innovations and "regular" work. R&D doesn't pay off today, it pays off tomorrow with new ideas that raise GDP. Regular work pays off today, but tomorrow it doesn't do anything to raise GDP.
-
-What do firms get at the margin from having someone do regular production work? The marginal product of labor, which in our Cobb-Douglas function is $(1-\alpha)Y_t/L_t$. 
-
-What do they get at the margin for someone doing R&D work? Well, that is more complicated. Let $s_{\pi M}$ be the share of GDP that is accounted for by profits in the medium-competitive industries. So $s_{\pi M} Y_{t+1}$ is the total amount of income up for grabs *next* year in the medium-competitive industries. And we'll assume that the $R_t$ researchers employed *today* are each equally good at innovating, so the amount of profits that any given researcher can capture for their employer by innovating are $s_{\pi M} Y_{t+1}/R_t$. 
-
-As we said, the firm will switch people back and forth between work ($L_t$) and research ($R_t$) until the marginal product of these two activities are identical. For completeness, the firm doesn't care that the research pays off tomorrow rather than today. In other words, they act such that
+We came up with this equation
 
 $$
-\frac{(1-\alpha)Y_t}{L_t} = \frac{s_{\pi M} Y_{t+1}}{R_t}.
+\frac{s_{\pi} Y_t}{A_t}\frac{\Delta A_{t+1}}{R_t}  = \frac{s_L Y_t}{L_t}.
 $$
 
-We can do one more thing. We know that $Y_{t+1} = (1+g_A + g_L)Y_t$ along a BGP. That is, total GDP will grow from today to tomorrow, and if we're close to a BGP, we know that growth rate of *total* GDP is $g_A + g_L$.
+that told us how a hypothetical firm would decide to allocate workers to research work. But in building that up, I made a very stark assumption that wasn't discussed. This equation doesn't take into account the *current* profits a firm might be earning. Or if you like, it *assumes* that the firm we are talking about is earning zero profits to begin with. 
 
-Let's plug this in
+The left-hand side was the marginal benefit of profits, but that marginal benefit would be lower if the firm innovated and *lost* some existing profits. Think of Apple deciding to introduce a new iPhone. A very important consideration for them is the fact that they will be cannibalizing the profits of their *old* phones when they do that.
 
-$$
-\frac{(1-\alpha)}{L_t} = \frac{s_{\pi M}(1+g_A + g_L) }{R_t}
-$$
-
-and notice that $Y_t$ cancels out. The two activities are proportional to GDP today, so it falls out of the problem. Regardless, re-arrange this to
+We need to replace the profits-per-idea term with something like this
 
 $$
-R_t = L_t \frac{s_{\pi M}}{(1-\alpha)} (1+g_A + g_L)
+\left(\frac{s_{\pi} Y_t}{A_t} - \pi^{Old}_t \right)\frac{\Delta A_{t+1}}{R_t}  = \frac{s_L Y_t}{L_t}
 $$
 
-or that $R_t$ is proportional to the population, $L_t$. Next, notice that if the share of GDP going to profits of medium-competitive industries goes up, so does the number of researchers. This could occur because more industries become medium-competitive, perhaps because entry to some very competitive industries is reduced or because entry to low-competitive industries is expanded. But if more industries become either perfectly competitive or monopolized, then $s_{\pi M}$ would fall, and this would *lower* R&D efforts. This is just capturing the intuition of the prior sub-section.
+where $\pi^{Old}_t$ are the profits that a firm would *lose* if it innovated. These are the lost profits from iPhone 8s when Apple introduced the iPhone 11. 
 
-The final piece of this is the term in parentheses with the growth rates. $g_A$ is the growth rate of productivity, and we know that this already depends on $g_R$, with $g_A = g_R \lambda/(1-\phi)$. In other words, the *level* of $R_t$ depends on the growth rate of $R$, $g_R$. Why? Because the faster R is growing, the faster productivity is rising, and the faster productivity is rising the faster total profits in these medium-competitive industries are growing. It pays to do research when the economy is growing. 
-
-This also explains the presence of $g_L$. The faster population grows, the larger the economy gets, and the more customers you've got, basically. It pays to do more research when the economy is going to be larger next period. 
-
-Finally, we can use the above equation to give ourselves an idea of how fast $R$ grows, since we already know this dictates $g_A$ on the BGP. Take logs of the last equation
+Now go back and think through the different types of industries again. In very competitive industries, the share of profits they actually can recoup is quite small, so for them $s_{\pi}$ is close to zero, and their existing profits are zero, so the equation is something like
 
 $$
-\ln R_t = \ln L_t + \ln s_{\pi M} - \ln (1-\alpha) + g_A + g_L
+\left(0 - 0\right)\frac{\Delta A_{t+1}}{R_t}  = \frac{s_L Y_t}{L_t}
 $$
 
-where I used the trick that $\ln (1+g_A+g_L) \approx g_A + g_L$ because both of those growth rates tend to be close to zero. Now take the time derivative of this, assuming that since we're close to a BGP that both $g_A$ and $g_L$ are constants. In addition, $s_{\pi M}$ is assumed to not have any clear growth rate, but is just a parameter.
+and it doesn't really matter what the process is for accumulating new ideas or the wage rate is. The only solution here is to set R to zero. There is no marginal benefit to doing research. 
+
+In a very un-competitive industry, they already are earning profits, and no one can replace them either because of IP or because they are so far ahead. So now this looks like
 
 $$
-g_R = g_L.
+\left(\frac{s_{\pi} Y_t}{A_t} - \frac{s_{\pi} Y_t}{A_t} \right)\frac{\Delta A_{t+1}}{R_t}  = \frac{s_L Y_t}{L_t}.
 $$
 
-In other words, the growth rate of researchers here is bound to be close to the growth rate of population in general. If you think about it, that makes some sense. $g_R$ cannot be *alot* higher than $g_L$ or we'd see the proportion of R&D workers in the economy approaching one, and we know that not everyone is a researcher. And $g_R$ cannot be a lot lower than $g_L$, or the share of R&D workers in population would go to zero, and that doesn't appear to be true either. In short, the growth rate of R&D workers should be close to the growth rate of population. 
+The profits that the firm in the un-competitive industry earns from an innovation are offset by the lost profits from their old product. Again, the term on the left is close to zero, and there is no incentive to do research. This is sometimes referred to as the *Arrow replacement effect*, which is the concept that firms don't want to innovate to replace themselves. That is a waste of resources.
 
-Things like $s_{\pi M}$, the degree of medium-competition in the economy, has a *level* effect on R&D, but doesn't change the growth rate of R&D, and thus doesn't change the growth rate of productivity in the long run. 
+Finally, the "medium" competitive industries have something like this going on:
+
+$$
+\left(\frac{s_{\pi} Y_t}{A_t} - 0 \right)\frac{\Delta A_{t+1}}{R_t}  = \frac{s_L Y_t}{L_t}
+$$
+
+where they currently have very few profits (because they are in competition with other firms) but if they *could* innovate they could jump out and grab some big profits. So the incentive here is pretty big, and we get positive values of $R_t$. 
+
+The question of how big $R_t$ is for the whole economy thus depends a lot on the distribution of firms across these kinds of markets. The more medium-competitive firms there are, who have real incentives to do innovation, the more innovation we get. The more monopolies we have *or the most hyper-competitive markets we have* the less innovation there is. There is a sweet spot for innovation that involves some competition but not too much. 
