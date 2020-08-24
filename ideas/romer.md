@@ -156,7 +156,7 @@ $$
 \Pi = (1-\alpha)\alpha Y,
 $$
 
-because $(1-\alpha)$ of intermediate revenues are set aside for profits, and intermediate good firms get $\alphaY$ in revenue. The share of profits in GDP is thus $s_{\pi} = (1-\alpha)\alpha$.
+because $(1-\alpha)$ of intermediate revenues are set aside for profits, and intermediate good firms get $\alpha Y$ in revenue. The share of profits in GDP is thus $s_{\pi} = (1-\alpha)\alpha$.
 
 Last (I swear), what are the profits for any individual intermediate firm? Since there are A of them, and they are identical, it must be that
 
