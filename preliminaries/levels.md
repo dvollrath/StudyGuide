@@ -72,7 +72,7 @@ ___
 ## Average or annualized growth rates
 In the table above, we calculated an *annual* growth rate, meaning it was the percent change in GDP from one year to the next. But we don't have to limit ourselves to this. What if we want some kind of single summary growth rate that reflects what happened on average from 2018 to 2024? That summary growth rate might be useful in order to compare this period of time to some other one (e.g. 1960-1970) or to compare the growth rate in the U.S. to the growth rate in another country.
 
-We can compute an *annualized* growth rate from 2018 to 2024 to get this summary measure. The annualized growth rate is the growth rate that, if it held in every year from 2018 to 2014, delivered the exact same end result of GDP of 109. This is a hypothetical growth rate that ignores the fluctuations in growth from year to year. Here's what it looks like in a table
+We can compute an *annualized* growth rate from 2018 to 2024 to get this summary measure. The annualized growth rate is the growth rate that, if it held in every year from 2018 to 2024, delivered the exact same end result of GDP of 109. This is a hypothetical growth rate that ignores the fluctuations in growth from year to year. Here's what it looks like in a table
 
 | Year | Level | Growth | Growth rate |
 |:-----|:------------------|:------|:----|
