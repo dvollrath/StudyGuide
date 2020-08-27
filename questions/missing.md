@@ -1,8 +1,7 @@
 ---
 title: Missing innovation
-parent: Dynamics of productivity
-grand_parent: Ideas and Productivity
-nav_order: 2
+parent: Applications and Questions
+nav_order: 8
 ---
 
 # Missing innovation
@@ -58,3 +57,26 @@ On the x-axis are the standardized test scores of kids. The y-axis shows the pro
 But the important comparison here is between the two lines. At a lot of the low test scores, the blue line is slightly above the orange, indicating that conditional on having the same innate ability, kids from higher income backgrounds were slightly more likely to invent something. But if you look to the right side of the figure, among kids with the very best test scores, the gap becomes *huge*. Kids that are both bright *and* from well-off families are far more likely to become inventors (7 per thousand) while kids that are *just as bright* but from less well-off families only invent at a rate of 3 per thousand, less than half. 
 
 The combination of all these facts means that there are a bunch of "Lost Einsteins", as the authors call them. People from poorer communities, women, and non-white people have the same capacity to invent, but apparently family income determines whether they can take advantage of that capacity. Limiting researchers and inventions based on family income robs the economy of ideas they might have invented, and reduces the level of productivity in the long-run. The logic here is identical to what I described above. If you artificially lower $R_t$ at each point in time by excluding poor, female, or non-white innovators, then you are lowering long-run productivity. 
+
+## Women in science
+[Kim and Moser](https://www.dropbox.com/s/2umv5go9umjdolm/KimMoser.pdf) have a recent paper documenting the differential career paths for women in science compared to men. They link together information on the family history of a scientist (date married, number of kids) with the timing of their important patents or inventions. This reveals some distinct differences on the role of family formation for the two genders on their activity, and suggests that because of the unequal expectations or demands on time, female scientists essentially a penalty for being women. What we lose as a society are the innovations these women *would* have come up with had they not been subject to the same limitations.
+
+You can see some of the effects in the following tables. In this first table, the numbers highlighted in red are estimates of the effect of having their first child on the patent activity of mothers. The measure of patenting is patens per 100 scientists per year. So this table means that the number of patents per 100 female scientists with a first child was 2.2-2.6 patents lower than females without a child. The mean for the whole sample is around 8.8 patents, so that is a pretty massive effect. 
+
+![](/assets/kimmoserA2.png)
+
+Perhaps that is just a reflection of having kids, and it affected fathers just as much? Not so much. The second table is identical to the first, only has a different section highlighted. These numbers are the estimated effect of having a first child on *fathers*. Here you can see that the first kid *raised* the number of patents by about 1.6-1.8 patents per 100 fathers per year. There was a distinct difference in the consequences of starting families on scientific output. Where it slowed down female innovation, it sped up innovation by male scientists.
+
+![](/assets/kimmoserA2b.png)
+
+This distinction between genders in patenting activity even extends to marriage, as the following figure is meant to show. Kim and Moser took all the scientists in their sample, and found in what year they got married. They then overlay everyone on the same scale, so that 0 means the year you were married, and -1 means it was one year before you were married, and 8 means it is your 8th year of marriage. 
+
+![](/assets/kimmoserfig3.png)
+
+The red line in the figure indicates the year before marriage for all scientists, and they normalize the patents per 100 scientists for their four groups to be equal in this period. Those four groups are mothers, fathers, other men (non-fathers) and other women (non-mothers). So starting from the same baseline, how did each group's patent activity fare after marriage? The light gray lines are for men (either fathers or non-fathers). You can see that patent activity rose substantially in the 10 years after marriage, by an average of about 5 patents per 100 men (remember, the average is about 8.8, so that is a lot). 
+
+For women, the consequences of marriage were not as fruitful. They essentially flatlined after marriage until about 15 years. At that point mothers see their patent activity accelerate like crazy (perhaps after their kids are older?) while for other women their patent activity falls off in a manner similar to men who are about 15 years into marriage. 
+
+The overall thrust is that forming a family and having kids tends to limit patent activity for women, while it enhances it for men. Even leaving aside the equity issue (which is substantial) the economy is sacrificing an amount of innovation through these effects. If marriage led to an acceleration of patent activity for both genders, we'd be getting a significant amount more patent activity. 
+
+Even if that was not possible, the issue here is the distribution of who is innovating by ability. What I mean is that ability is distributed across genders equally, so by cutting off women from scientific activity due to family we are sacrificing scientists who would otherwise be at the forefront of their fields. The men who remain in those fields are going to have lower average ability. So even if the raising of children demands that *someone* sacrifice their time and career for the kids, we're losing out by focusing that sacrifice on women. 
