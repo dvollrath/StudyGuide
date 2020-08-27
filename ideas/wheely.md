@@ -11,7 +11,7 @@ nav_order: 4
 1. TOC 
 {:toc}
 
-## How do we innovate
+## How do we innovate?
 The Romer and Schumpeterian models have different takes on how innovation works. For Romer, it is new goods that are acquired, for Schumpeterian models it is better quality versions of existing products. Of course, both types exist, but how important are the two types?
 
 [Pete Klenow and Huiyu Li](http://klenow.com/Innovative_Growth_Accounting_Klenow-Li.pdf) attempted to figure that out. It is hard to measure exactly what counts as a "new product" and "higher quality", but they try to make some progress by using available data on establishments. 
