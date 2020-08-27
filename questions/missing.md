@@ -63,15 +63,15 @@ The combination of all these facts means that there are a bunch of "Lost Einstei
 
 You can see some of the effects in the following tables. In this first table, the numbers highlighted in red are estimates of the effect of having their first child on the patent activity of mothers. The measure of patenting is patens per 100 scientists per year. So this table means that the number of patents per 100 female scientists with a first child was 2.2-2.6 patents lower than females without a child. The mean for the whole sample is around 8.8 patents, so that is a pretty massive effect. 
 
-![](/assets/kimmoserA2.png)
+![](kimmoserA2.png)
 
 Perhaps that is just a reflection of having kids, and it affected fathers just as much? Not so much. The second table is identical to the first, only has a different section highlighted. These numbers are the estimated effect of having a first child on *fathers*. Here you can see that the first kid *raised* the number of patents by about 1.6-1.8 patents per 100 fathers per year. There was a distinct difference in the consequences of starting families on scientific output. Where it slowed down female innovation, it sped up innovation by male scientists.
 
-![](/assets/kimmoserA2b.png)
+![](kimmoserA2b.png)
 
 This distinction between genders in patenting activity even extends to marriage, as the following figure is meant to show. Kim and Moser took all the scientists in their sample, and found in what year they got married. They then overlay everyone on the same scale, so that 0 means the year you were married, and -1 means it was one year before you were married, and 8 means it is your 8th year of marriage. 
 
-![](/assets/kimmoserfig3.png)
+![](kimmoserfig3.png)
 
 The red line in the figure indicates the year before marriage for all scientists, and they normalize the patents per 100 scientists for their four groups to be equal in this period. Those four groups are mothers, fathers, other men (non-fathers) and other women (non-mothers). So starting from the same baseline, how did each group's patent activity fare after marriage? The light gray lines are for men (either fathers or non-fathers). You can see that patent activity rose substantially in the 10 years after marriage, by an average of about 5 patents per 100 men (remember, the average is about 8.8, so that is a lot). 
 
