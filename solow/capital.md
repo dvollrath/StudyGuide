@@ -1,6 +1,7 @@
 ---
 title: Capital accumulation
 parent: Solow and Balanced Growth
+has_children: true
 nav_order: 2
 ---
 
