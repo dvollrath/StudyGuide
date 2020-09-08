@@ -91,7 +91,7 @@ This probably all makes more sense if we put some numbers in. Here is some raw d
 Notice that there is no obvious increase in real consumption from 2018 to 2019. Mango consumption fell, but beer consumption rose. Overall, were we better or worse off?
 
 
-Rather than walking you through each step of this, I recommend that you go to that sheet and see how I came up with all the numbers that follow. The data and calculations are all available in this [spreadsheet](twogoodtwocountry.xlsx). Download to work with the data. The spreadsheet just applies the formulas established in the prior section.
+Rather than walking you through each step of this, I recommend that you go to that sheet and see how I came up with all the numbers that follow. The data and calculations are all available in this [spreadsheet](twogoodtwoperiod.xlsx). Download to work with the data. The spreadsheet just applies the formulas established in the prior section.
 
 If you calculate $(Y_{2019}/Y_{2018})$ using 2019 prices, then you get 0.91. In terms of 2019 prices, 2019 was *worse* for consumption than 2018. This makes some sense. In 2019 terms mangoes are relatively expensive compared to beer, but from 2018 to 2019 we consumed fewer mangoes and less beer, so we seem to be worse off. 
 
