@@ -23,7 +23,7 @@ Chained real GDP calculations are the closest thing we've got in the data to the
 ## New products and lost products
 Chaining gives us a way of piecing together a real GDP series that avoids comparing 1965 to 2009. Why does that matter? Mainly because lots of products in 2009 didn't exist in 1965, and lots of products that did exist in 1965 are no longer purchased today. That is relevant to our calculation of real GDP. 
 
-Go back to the simple two-good situation. And let's say we want to compare 1965 to 2009, and the two goods we want to use are an iPhone (good 1) and an [RCA Spectra 70](https://archive.computerhistory.org/resources/text/RCA/RCA.SPECTRA70.1965.102646099.pdf) (good 2). The RCA was a mainframe that could be configured with either 4,096 or 8,192 bytes of RAM. That's about 0.000003814697 or 0.0.000007629394 of a GB, by the way.
+Go back to the simple two-good situation. And let's say we want to compare 1965 to 2009, and the two goods we want to use are an iPhone (good 1) and an [RCA Spectra 70](https://archive.computerhistory.org/resources/text/RCA/RCA.SPECTRA70.1965.102646099.pdf) (good 2). The RCA was a mainframe that could be configured with either 4,096 or 8,192 bytes of RAM. That's about 0.0.000007629394 of a GB, by the way.
 
 Anyway, for those two products, let's say that we know the following. 
 
