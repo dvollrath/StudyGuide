@@ -32,6 +32,8 @@ For comparison, here is the lowest marginal tax rate, the rate paid on that mini
 
 <iframe width="900" height="600" frameborder="0" scrolling="yes" src="https://fred.stlouisfed.org/graph/fredgraph.png?g=wtQj"></iframe>
 
+<div class="embed-container"><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=wtQj&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden;" allowTransparency="true" loading="lazy"></iframe></div><script src="https://fred.stlouisfed.org/graph/js/embed.js" type="text/javascript"></script>
+
 In comparison to those two rates, what do we want to see? We want to see whether the growth rate of GDP per capita appears to be substantially different in periods with high tax rates and periods with low tax rates. The following figure plots a rolling 10-year growth rate for the U.S. (meaning that in 2000 it is plotting the annualized growth rate from 1990 to 2000). 
 
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/155.embed"></iframe>
