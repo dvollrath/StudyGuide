@@ -26,11 +26,11 @@ Rather than looking at government spending as a fraction of GDP, we could instea
 
 This figure plots the top marginal tax rate in the U.S. from 1949 to the present. As you can see, the general pattern here is that this top marginal rate declines over time, with a few wiggles up and down. It is as high as 90% in the 1950s, and in the mid-30% range more recently. Just a reminder that this is the top *marginal* rate. So this is the rate paid on income over and above some high threshold. It is not the rate paid by someone earning minimum wage, for example. 
 
-<iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=wtQ3&width=670&height=475" scrolling="no" frameborder="0"style="overflow:hidden; width:670px; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="https://fred.stlouisfed.org/graph/graph-landing.php?g=wtQ3"></iframe>
 
 For comparison, here is the lowest marginal tax rate, the rate paid on that minimum wage, for example. This rate is also slightly lower now than in the past. 
 
-<iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=wtQj&width=670&height=475" scrolling="no" frameborder="0"style="overflow:hidden; width:670px; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="https://fred.stlouisfed.org/graph/fredgraph.png?g=wtQj"></iframe>
 
 In comparison to those two rates, what do we want to see? We want to see whether the growth rate of GDP per capita appears to be substantially different in periods with high tax rates and periods with low tax rates. The following figure plots a rolling 10-year growth rate for the U.S. (meaning that in 2000 it is plotting the annualized growth rate from 1990 to 2000). 
 
