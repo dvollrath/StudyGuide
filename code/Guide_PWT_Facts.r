@@ -5,11 +5,40 @@ p <- pwt9.1 # copy dataframe for manipulation
 p$lngdppc <- round(log(p$rgdpna) - log(p$pop),digits=2) # create log GDP per capita
 p$ky <- round(p$rnna/p$rgdpna,digits=2) # create K/Y ratio
 p$phil <- round(p$labsh*p$rgdpna/(p$labsh*p$rgdpna+.05*p$rnna),digits=2) # create kludge cost share of labor
+p <- 
+  p %>%
+  group_by(isocode) %>%
+  mutate(lag10.lngdppc = dplyr::lag(lngdppc, n = 10, default = NA))
+p$g10.lngdppc <- (p$lngdppc - p$lag10.lngdppc)/10
+p$lagyear <- p$year-10
 
 # subset PWT into stable and catchup groups
 stable <- p[which(p$isocode %in% c("USA", "CAN", "MEX", "GBR", "AUS")),]
 catchup <- p[which(p$isocode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
 test <- p[which(p$isocode %in% c("ETH", "ZAF","BWA")),]
+
+all <- p[which(p$isocode %in% c("USA", "MEX", "DEU","JPN","KOR","CHN")),]
+fig <- plot_ly(all, x = ~csh_g, y = ~g10.lngdppc, color = ~country, type = 'scatter', mode='markers', colors = "Set1")
+fig <- layout(fig, title = list(text = 'Government and growth', x=0),
+              xaxis = list(title = 'Gov. spending share of GDP'),
+              yaxis = list (title = '10-year growth rate'),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-all-cshg-growth")
+
+fig <- plot_ly(all, x = ~csh_g, y = ~lngdppc, color = ~country, type = 'scatter', mode='markers', colors = "Set1")
+fig <- layout(fig, title = list(text = 'Government and level of GDP per capita', x=0),
+              xaxis = list(title = 'Gov. spending share of GDP'),
+              yaxis = list (title = 'Log GDP per capita'),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-test-chsg-level")
+
+us <- p[which(p$isocode %in% c("USA")),]
+fig <- plot_ly(us, x = ~lagyear, y = ~g10.lngdppc, type = 'scatter', mode='lines+markers', colors = "Set1")
+fig <- layout(fig, title = list(text = '10-year growth rate', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = '10-year growth rate', range=c(0,.04)),
+              hovermode="x unified")
+api_create(fig, filename = "pwt-all-cshg-growth")
 
 ############################
 # Figures for log GDP per capita
@@ -122,3 +151,4 @@ fig <- layout(fig, title = list(text = 'Capital/output ratio for catch-up countr
               yaxis = list (title = 'Capital/output ratio',range=c(0,7)),
               hovermode="x unified")
 api_create(fig, filename = "pwt-catchup-ky")
+
