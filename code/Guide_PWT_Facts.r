@@ -11,34 +11,52 @@ p <-
   mutate(lag10.lngdppc = dplyr::lag(lngdppc, n = 10, default = NA))
 p$g10.lngdppc <- (p$lngdppc - p$lag10.lngdppc)/10
 p$lagyear <- p$year-10
+p$csh_trade <- p$csh_x - p$csh_m
+p$csh_mabs <- -1*p$csh_m
 
 # subset PWT into stable and catchup groups
 stable <- p[which(p$isocode %in% c("USA", "CAN", "MEX", "GBR", "AUS")),]
 catchup <- p[which(p$isocode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
 test <- p[which(p$isocode %in% c("ETH", "ZAF","BWA")),]
-
 all <- p[which(p$isocode %in% c("USA", "MEX", "DEU","JPN","KOR","CHN")),]
+
 fig <- plot_ly(all, x = ~csh_g, y = ~g10.lngdppc, color = ~country, type = 'scatter', mode='markers', colors = "Set1")
 fig <- layout(fig, title = list(text = 'Government and growth', x=0),
               xaxis = list(title = 'Gov. spending share of GDP'),
-              yaxis = list (title = '10-year growth rate'),
-              hovermode="x unified")
+              yaxis = list (title = '10-year growth rate'))
 api_create(fig, filename = "pwt-all-cshg-growth")
 
 fig <- plot_ly(all, x = ~csh_g, y = ~lngdppc, color = ~country, type = 'scatter', mode='markers', colors = "Set1")
 fig <- layout(fig, title = list(text = 'Government and level of GDP per capita', x=0),
               xaxis = list(title = 'Gov. spending share of GDP'),
-              yaxis = list (title = 'Log GDP per capita'),
-              hovermode="x unified")
+              yaxis = list (title = 'Log GDP per capita'))
 api_create(fig, filename = "pwt-test-chsg-level")
 
 us <- p[which(p$isocode %in% c("USA")),]
 fig <- plot_ly(us, x = ~lagyear, y = ~g10.lngdppc, type = 'scatter', mode='lines+markers', colors = "Set1")
 fig <- layout(fig, title = list(text = '10-year growth rate', x=0),
               xaxis = list(title = 'Year'),
-              yaxis = list (title = '10-year growth rate', range=c(0,.04)),
-              hovermode="x unified")
-api_create(fig, filename = "pwt-all-cshg-growth")
+              yaxis = list (title = '10-year growth rate', range=c(0,.04)))
+api_create(fig, filename = "pwt-usa-growth-rate")
+
+fig <- plot_ly(all, x = ~csh_trade, y = ~lngdppc, color = ~country, type = 'scatter', mode='markers', colors = "Set1")
+fig <- layout(fig, title = list(text = 'Trade and level of GDP per capita', x=0),
+              xaxis = list(title = '(Exports+Imports) as share of GDP'),
+              yaxis = list (title = 'Log GDP per capita'))
+api_create(fig, filename = "pwt-all-trade-level")
+
+fig <- plot_ly(all, x = ~csh_x, y = ~lngdppc, color = ~country, type = 'scatter', mode='markers', colors = "Set1")
+fig <- layout(fig, title = list(text = 'Exports and level of GDP per capita', x=0),
+              xaxis = list(title = 'Exports as share of GDP'),
+              yaxis = list (title = 'Log GDP per capita'))
+api_create(fig, filename = "pwt-all-export-level")
+
+fig <- plot_ly(all, x = ~csh_mabs, y = ~lngdppc, color = ~country, type = 'scatter', mode='markers', colors = "Set1")
+fig <- layout(fig, title = list(text = 'Imports and level of GDP per capita', x=0),
+              xaxis = list(title = 'Imports as share of GDP'),
+              yaxis = list (title = 'Log GDP per capita'))
+api_create(fig, filename = "pwt-all-imports-level")
+
 
 ############################
 # Figures for log GDP per capita
