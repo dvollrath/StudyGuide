@@ -3,13 +3,19 @@ data("pwt9.1")
 
 p <- pwt9.1 # copy dataframe for manipulation
 p$lngdppc <- round(log(p$rgdpna) - log(p$pop),digits=2) # create log GDP per capita
+p$lnpop <- round(log(p$pop),digits=2) # create log population
 p$ky <- round(p$rnna/p$rgdpna,digits=2) # create K/Y ratio
 p$phil <- round(p$labsh*p$rgdpna/(p$labsh*p$rgdpna+.05*p$rnna),digits=2) # create kludge cost share of labor
 p <- 
   p %>%
   group_by(isocode) %>%
   mutate(lag10.lngdppc = dplyr::lag(lngdppc, n = 10, default = NA))
+p <- 
+  p %>%
+  group_by(isocode) %>%
+  mutate(lag10.lnpop = dplyr::lag(lnpop, n = 10, default = NA))
 p$g10.lngdppc <- (p$lngdppc - p$lag10.lngdppc)/10
+p$g10.lnpop <- (p$lnpop - p$lag10.lnpop)/10
 p$lagyear <- p$year-10
 p$csh_trade <- p$csh_x - p$csh_m
 p$csh_mabs <- -1*p$csh_m
@@ -18,7 +24,14 @@ p$csh_mabs <- -1*p$csh_m
 stable <- p[which(p$isocode %in% c("USA", "CAN", "MEX", "GBR", "AUS")),]
 catchup <- p[which(p$isocode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
 test <- p[which(p$isocode %in% c("ETH", "ZAF","BWA")),]
+usa <- p[which(p$isocode %in% c("USA")),]
 all <- p[which(p$isocode %in% c("USA", "MEX", "DEU","JPN","KOR","CHN")),]
+
+fig <- plot_ly(usa, x = ~lagyear, y = ~g10.lnpop, color = ~country, type = 'scatter', mode='lines+markers', colors = "Set1")
+fig <- layout(fig, title = list(text = 'Population growth rate', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = '10-year population growth rate', range=c(0,.02)))
+api_create(fig, filename = "pwt-usa-pop-growth")
 
 fig <- plot_ly(all, x = ~csh_g, y = ~g10.lngdppc, color = ~country, type = 'scatter', mode='markers', colors = "Set1")
 fig <- layout(fig, title = list(text = 'Government and growth', x=0),
