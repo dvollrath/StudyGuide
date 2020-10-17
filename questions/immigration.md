@@ -108,7 +108,8 @@ The following [link](https://knowledge.wharton.upenn.edu/article/how-immigrants-
 ## Two tails
 These effects are about aggregate growth. Are there not differentials across groups? Probably. Immigration to the US tends to be either high-education (grad school) or low education (HS or less). Competition of the low-education immigrants with existing low-education workers should push down wages. But there is evidence that even this is not necessarily how things work. Low education existing workers seem to benefit - in some places - from the value that their language skills and knowledge of the market bring, while immigrant workers fill in lower-wage positions. At the high end, high-education workers appear to be complements with other high-education workers, and so they *all* benefit from immigration. 
 
-<iframe width="560" height="315" src="https://vimeo.com/187080192" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/187080192?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/187080192">NBER SUMMER HANSON Immigration Sequence.01</a> from <a href="https://vimeo.com/user2025783">NBER</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 This video is by one of the top immigration researchers in the country, and walks you through these questions about how immigration affects different groups within the economy. 
 
