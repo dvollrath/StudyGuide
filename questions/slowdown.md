@@ -29,7 +29,7 @@ I tend to favor the second option, as it isn't obvious (yet) that innovation slo
 The first step here is to see what actually drove the slowdown. We can do this using the same kind of accounting that we did [here](https://growthecon.com/StudyGuide/solow/account.html). First, establish that the production function is
 
 $$
-y_t = \left(\frac{K_t}{Y_t})^{\alpha/(1-\alpha)}h_t A_t
+y_t = \left(\frac{K_t}{Y_t}\right)^{\alpha/(1-\alpha)}h_t A_t
 $$
 
 and we can break down the growth rate of GDP per capita into 
@@ -55,3 +55,37 @@ In what is about to follow, I'm going to do things over different periods. That 
 |1998-2008 |     1.62|    -0.09|     0.27|     1.43 |
 |2000-2008 |     1.21|     0.05|     0.05|     1.11 |
 
+The first line shows the accounting for the 20th century alone. Capital/output had a negative contribution, and growth was driven by a high rate of human capital growth (0.96) and productivity growth (1.51). As you step through the next few lines, you can see how things changed decade by deacde in the 20th century, with a surge of human capital growth in the 1970s and 1980s, and relatively high productivity growth in the 1960s and 1990s. 
+
+The final four lines give you a few different takes on how the growth rate fell in the 21st century. From 2000-2016 the growth rate dropped to 1%, from 2.25% in the 20th, a drop of 1.25%. That is the overall growth slowdown that we can focus on. Note that this was driven by a significant drop in human capital growth, from 0.96 to *negative* 0.14 in the 21st century. By itself, that change in the human capital growth rate would have made the growth rate of GDP per capita decline by 1.1% per year. That is almost the entire growth slowdown we're talking about. Relative to that, there was a small decline in the productivity growth rate. 
+
+The other few time periods, 2006-2016, 1998-2008, and 2000-2008 are there to illustrate that this was a distinct drop in growth throughtout the 21st century, and not simply a consequence of the financial crisis in 2009/10. *Prior* to the financial crisis, from 2000-2008, growth had slowed down, in large part due to slower human capital growth.
+
+## Human capital changes
+Okay, so why did human capital growth decline the way it did? Well, we can break down the growth rate of human capital similar to how we described it in [this section](human.html) of the study guide, with one additional tweak:
+
+$$
+h = e^{\gamma_S S + \gamma_X X}\frac{E}{L}\frac{Hours}{E}
+$$
+
+where the $Hours/E$ term accounts for the fact that the hours worked per employee may have changed over time. Otherwise $S$ is years of schooling, $X$ is years of experience (actually more complicated than that, but for this explanation keep it simple), and $E/L$ is the employment to population ratio. 
+
+Take growth rates and you get
+
+$$
+g_h = \gamma_S \Delta S + \gamma_X \Delta_X + g_{E/L} + g_{H/E}
+$$
+
+and we can do a growth rate accounting same as before. Here you go:
+
+| Period | $g_h$  | Education | Experience | E/L | Hours/E |
+|1950-2000 |     0.96|     0.70|     0.05|     0.45|    -0.24|
+|          |         |         |         |          |       |
+|1950-1960 |     0.08|     0.62|     0.23|    -0.63|    -0.13|
+|1960-1970 |     0.95|     0.87|    -0.18|     0.54|    -0.28|
+|1970-1980 |     1.64|     0.92|    -0.27|     1.62|    -0.64|
+|1980-1990 |     1.26|     0.57|     0.11|     0.70|    -0.12|
+|1990-2000 |     0.88|     0.55|     0.35|     0.01|    -0.03|
+|          |         |         |         |          |       |
+|2000-2016 |    -0.15|     0.31|     0.08|    -0.35|    -0.19|
+|2000-2008 |     0.06|     0.31|     0.18|    -0.09|    -0.34|
