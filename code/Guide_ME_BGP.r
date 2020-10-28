@@ -150,3 +150,47 @@ fig <- layout(fig, title = list(text = 'Growth rate of GDP per capita', x=0),
               yaxis = list (title = 'Growth rate of GDP per capita'),
               hovermode="x unified")
 api_create(fig, filename = "test-gy-choices")
+
+
+
+year <- c(0:200)
+dA <- data.frame(year)
+dA$R <- 2*(1+.02)^year
+dA$A <- ((1-.02)^year)*1*dA$R + (1- (1-.02)^year)*(.01/.02)*dA$R
+dA$lnA <- log(dA$A)
+dA$id <- "A"
+
+dB <- data.frame(year)
+dB$R <- 2*(1+.01)^year
+dB$A <- ((1-.01)^year)*1*dB$R + (1- (1-.01)^year)*(.01/.01)*dB$R
+dB$lnA <- log(dB$A)
+dB$id <- "B"
+dall <- rbind(dA,dB)
+
+dC <- data.frame(year)
+dC$R <- 2*(1+.001)^year
+dC$A <- ((1-.001)^year)*1*dC$R + (1- (1-.001)^year)*(.01/.001)*dC$R
+dC$lnA <- log(dC$A)
+dC$id <- "C"
+dall <- rbind(dall,dC)
+
+dD <- data.frame(year)
+dD$R <- 2*(1+.01)^year
+dD$A <- ((1-.01)^year)*1*dD$R + (1- (1-.01)^year)*(.02/.01)*dD$R
+dD$lnA <- log(dD$A)
+dD$id <- "D"
+dall <- rbind(dall,dD)
+
+dE <- data.frame(year)
+dE$R <- 2*(1+.01)^year
+dE$A <- ((1-.01)^year)*1*dE$R + (1- (1-.01)^year)*(.005/.01)*dE$R
+dE$lnA <- log(dE$A)
+dE$id <- "E"
+dall <- rbind(dall,dE)
+
+fig <- plot_ly(dall, x = ~year, y = ~lnA, linetype = ~id, type = 'scatter', mode = 'lines')
+fig <- layout(fig, title = list(text = 'log Productivity (A)', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Log of productivity (A)'),
+              hovermode="x unified")
+api_create(fig, filename = "test-logA-choices")

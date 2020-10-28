@@ -40,3 +40,20 @@ fig <- layout(fig, title = list(text = 'Energy Intensity', x=0),
               yaxis = list(title = 'Energy (kg oil equiv) / GDP'),
               hovermode="x unified")
 api_create(fig, filename = "wdi-energy-gdpe")
+
+f <- dat[which(dat$iso2c %in% c("BD","CL","MX","VN","BR","IL")),]
+fig <- plot_ly(f, x = ~year, y = ~EGDP, linetype = ~country, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Energy Intensity', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list(title = 'Energy (kg oil equiv) / GDP'),
+              hovermode="x unified")
+api_create(fig, filename = "wdi-energy-gdpe-test")
+
+dat = WDI(indicator=c('TFR' = 'SP.DYN.TFRT.IN'),country='all')
+f <- dat[which(dat$iso2c %in% c("NG","MX","VN","BR")),]
+fig <- plot_ly(f, x = ~year, y = ~TFR, linetype = ~country, type = 'scatter', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Fertility rates', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list(title = 'Total fertility rate'),
+              hovermode="x unified")
+api_create(fig, filename = "wdi-fert-test")

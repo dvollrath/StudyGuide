@@ -26,7 +26,7 @@ ui <- fluidPage(
       h4("Set parameters"),
       actionButton("reset", "Reset to baseline"),
       sliderInput("alt_R", h6('Initial researchers \\(R_0\\)'),
-                  min = 0, max = 10, value = base_R_0, step=.1),
+                  min = 0, max = 10, value = base_R_0, step=.01),
       sliderInput("alt_lambda", h6("Research elasticity \\(\\lambda\\)"),
                   min = 0, max = 1, value = base_lambda),
       sliderInput("alt_phi", h6("Productivity effect \\(\\phi\\)"),
