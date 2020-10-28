@@ -194,3 +194,29 @@ fig <- layout(fig, title = list(text = 'log Productivity (A)', x=0),
               yaxis = list (title = 'Log of productivity (A)'),
               hovermode="x unified")
 api_create(fig, filename = "test-logA-choices")
+
+
+year <- c(0:50)
+dA <- data.frame(year)
+dA$R <- 12*(1+.01)^year
+dA$lnR <- log(dA$R)
+dA$id <- "A"
+
+dB <- data.frame(year)
+dB$R <- 8*(1-.01)^year
+dB$lnR <- log(dB$R)
+dB$id <- "B"
+dall <- rbind(dA,dB)
+
+dC <- data.frame(year)
+dC$R <- 20*(1-.03)^year
+dC$lnR <- log(dC$R)
+dC$id <- "C"
+dall <- rbind(dall,dC)
+
+fig <- plot_ly(dall, x = ~year, y = ~lnR, linetype = ~id, type = 'scatter', mode = 'lines')
+fig <- layout(fig, title = list(text = 'Resources per capita (X/L)', x=0),
+              xaxis = list(title = 'Year'),
+              yaxis = list (title = 'Log of resources per capita (X/L)'),
+              hovermode="x unified")
+api_create(fig, filename = "test-logXL-choices")
