@@ -11,8 +11,9 @@ base_gA <- .02
 base_delta <- .05
 base_alpha <- .3
 base_A <- 1
+base_kalstar <- (base_sI/(base_gL+base_gA+base_delta))^(1/(1-base_alpha))
+base_K <- base_kalstar*base_A
 base_kystar <- base_sI/(base_gL+base_gA+base_delta)
-base_K <- base_kystar^(1/(1-base_alpha))
 base_timeT <- 50
 
 #############################################################
@@ -48,19 +49,19 @@ ui <- fluidPage(
     mainPanel(
       
       tabsetPanel(type = "tabs",
-                  tabPanel("K/Y ratio",
+                  tabPanel("K/AL ratio",
                            br(),
-                           p("The baseline is that the economy is on a BGP, so the actual K/Y is constant. 
-                             As you adjust the parameters to the left, there may be a new BGP, or actual K/Y may
-                             not be on the BGP any more. Black graphs the actual path of K/Y, blue the baseline BGP,
+                           p("The baseline is that the economy is on a BGP, so the actual K/AL ratio is constant. 
+                             As you adjust the parameters to the left, there may be a new BGP, or actual K/AL may
+                             not be on the BGP any more. Black graphs the actual path of K/AL, blue the baseline BGP,
                              and green is the new BGP based on your choice of parameters."),
                            br(),
                            p("Be sure you understand why some adjustments to parameters create a new BGP, and why
-                             some adjustments only push actual K/Y off of the BGP."),
-                           plotOutput("kygraph",width = "100%") ),
+                             some adjustments only push actual K/AL off of the BGP."),
+                           plotOutput("kalgraph",width = "100%") ),
                   tabPanel("Log GDP p.c.", 
                            br(),
-                           p("This has the same idea the K/Y ratio. Black is the actual path of GDP per capita. 
+                           p("This has the same idea the K/AL ratio. Black is the actual path of GDP per capita. 
                              Green is the BGP from the parameters you set, and blue is the original BGP."),
                            br(),
                            plotOutput("lnygraph",width = "100%") ),
@@ -70,19 +71,19 @@ ui <- fluidPage(
                              understand how this growth rate is related to the path of log GDP per capita."),
                            br(),
                            plotOutput("gygraph",width = "100%") ),
-                  tabPanel("K/Y dynamics", 
+                  tabPanel("K/AL dynamics", 
                            br(),
-                           p("This graph is different. It shows the relationship of the growth rate in K/Y and
-                             the level of K/Y. The negative slope established the stability of the Solow model.
+                           p("This graph is different. It shows the relationship of the growth rate of K and
+                             the level of K/AL. The negative slope established the stability of the Solow model.
                              Changes in some parameters shift the theoretical curves here, implying different
-                             steady state K/Y ratios where the growth rate is zero."),
+                             steady state K/AL ratios where the growth rate of capital is equal to productivity and population growth."),
                            br(),
-                           p("The black dots indicate the actual K/Y ratio and growth rate over time. In the 
+                           p("The black dots indicate the actual K/AL ratio and growth rate of capital over time. In the 
                              baseline, all these dots are at the steady state point. If you adjust parameters
-                             you'll see these spread out and show you how K/Y and the growth rate of K/Y evolved. 
+                             you'll see these spread out and show you how K/AL and the growth rate of K evolved. 
                              See how they follow the green path based on the new BGP."),
                            br(),
-                           plotOutput("gkygraph",width = "100%") )
+                           plotOutput("gkalgraph",width = "100%") )
       ) # end tabset
 
       ) # end main panel
@@ -108,13 +109,15 @@ server <- function(input, output, session) {
   # Simple function to calculate the new  steady state K/Y ratio for display
   output$kystar <- renderText(
     { 
-    paste("K/Y*:", 
-          input$alt_sI/(input$alt_delta+input$alt_gA+input$alt_gL)) 
+    paste("K/AL*:", 
+          (input$alt_sI/(input$alt_delta+input$alt_gA+input$alt_gL))^(1/(1-base_alpha))
+    )
     }
   )
   
   # Function to combine alternative and baseline inputs, generate dataframe
   # containing time series of outcomes
+  # This is all done in K/Y terms as that is how explicit solution is done
   GraphData <- reactive({
     t <- c(0:input$timeT) # vector of periods up to input time
     df <- data.frame(t) # create dataframe to hold outcomes
@@ -123,10 +126,13 @@ server <- function(input, output, session) {
     
     # Formula to fill in per-period actual KY ratio
     df$ky <- alt_kystar*(1-exp(-(1-input$alt_alpha)*(input$alt_delta+input$alt_gA+input$alt_gL)*df$t)) + alt_ky*exp(-(1-input$alt_alpha)*(input$alt_delta+input$alt_gA+input$alt_gL)*df$t)
+    df$kal <- df$ky^(1/(1-input$alt_alpha))
     
     df$kyalt <- alt_kystar # fill df with alt ss KY
     df$kybase <- base_kystar # fill df with base ss KY
-    
+    df$kalalt <- df$kyalt^(1/(1-input$alt_alpha)) # fill df with alt ss KAL
+    df$kalbase <- base_kalstar # fill df with base ss KAL
+
     # Fill df with series on log GDP per capita
     df$lny <- (input$alt_alpha/(1-input$alt_alpha))*df$ky + log(input$alt_A) + input$alt_gA*df$t
     df$lnyalt <- (input$alt_alpha/(1-input$alt_alpha))*df$kyalt + log(input$alt_A) + input$alt_gA*df$t
@@ -134,25 +140,26 @@ server <- function(input, output, session) {
     
     # Fill df with series on growth rate of GDP per capita
     df$gky <- (1-input$alt_alpha)*(input$alt_sI/df$ky-input$alt_gL -input$alt_gA- input$alt_delta)
+    df$gk  <- input$alt_sI/df$ky- input$alt_delta
     df$gy <- (input$alt_alpha/(1-input$alt_alpha))*df$gky + input$alt_gA
     df$gyalt <- input$alt_gA
     df$gybase <- base_gA
       
-    df$tick <- df$ky # for graphing purposes later
+    df$tick <- df$kal # for graphing purposes later
     return(df)
   })
   
-  output$kygraph <- renderPlot(
+  output$kalgraph <- renderPlot(
     {
       ggplot(GraphData(), aes(t,value,colour=variable)) +
-        geom_line(aes(y = ky, color = "black"),size=1) + 
-        geom_line(aes(y = kybase, color="blue"), linetype="dashed",size=1) +
-        geom_line(aes(y = kyalt, color="green"), linetype="dashed",size=1) +
+        geom_line(aes(y = kal, color = "black"),size=1) + 
+        geom_line(aes(y = kalbase, color="blue"), linetype="dashed",size=1) +
+        geom_line(aes(y = kalalt, color="green"), linetype="dashed",size=1) +
         xlab("Time") +
-        ylab("Capital/output ratio") +
-        ylim(0, 5) +
+        ylab("K/AL ratio") +
+        ylim(0, 10) +
         theme_light() +
-        ggtitle("Capital/output ratio over time") + 
+        ggtitle("K/AL ratio over time") + 
         scale_color_identity(name = "Models",
                              breaks = c("black", "green", "blue"),
                              labels = c("Actual", "New BGP", "Old BGP"),
@@ -197,26 +204,27 @@ server <- function(input, output, session) {
     }
   ) # end gy graph
 
-  output$gkygraph <- renderPlot(
+  output$gkalgraph <- renderPlot(
     {
       tick <- seq(0,6,.1) # arbitrary kal values
       df <- data.frame(tick) # create dataframe
-      df$gky <- (1-input$alt_alpha)*(input$alt_sI/df$tick-input$alt_gL -input$alt_gA- input$alt_delta)
-      df$gkybase <- (1-base_alpha)*(base_sI/df$tick-base_gL -base_gA- base_delta)
-      alt_kystar = (input$alt_sI/(input$alt_gL + input$alt_gA + input$alt_delta))
+      df$gk <- input$alt_sI/(df$tick^(1-input$alt_alpha))- input$alt_delta
+      df$gkbase <- base_sI/(df$tick^(1-input$alt_alpha))- base_delta
+      alt_kalstar = (input$alt_sI/(input$alt_gL + input$alt_gA + input$alt_delta))^(1/(1-input$alt_alpha))
       
       ggplot(df, aes(x=tick)) +
-        geom_line(aes(y = gky, color = "green"),size=1) + 
-        geom_line(aes(y = gkybase, color="blue"), linetype="dashed",size=1) +
-        geom_point(data=GraphData(),y=GraphData()$gky, color="black") +
-        geom_hline(yintercept=0, linetype="dotted", color = "red") +
-        geom_vline(xintercept=base_kystar, linetype="dotted", color = "red") +
-        geom_vline(xintercept=alt_kystar, linetype="dotted", color = "red") +
-        xlab("K/Y ratio") +
-        ylab("Growth rate of K/Y") +
+        geom_line(aes(y = gk, color = "green"),size=1) + 
+        geom_line(aes(y = gkbase, color="blue"), linetype="dashed",size=1) +
+        geom_point(data=GraphData(),y=GraphData()$gk, color="black") +
+        geom_hline(yintercept=base_gA+base_gL, linetype="dotted", color = "blue",size=1) +
+        geom_hline(yintercept=input$alt_gA+input$alt_gL, linetype="dotted", color = "green",size=1) +
+        geom_vline(xintercept=base_kalstar, linetype="dotted", color = "red") +
+        geom_vline(xintercept=alt_kalstar, linetype="dotted", color = "red") +
+        xlab("K/AL ratio") +
+        ylab("Growth rates") +
         theme_light() +
-        ylim(-.1,.15) +
-        ggtitle("Growth rate of K/Y vs. K/Y") + 
+        ylim(-.01,.12) +
+        ggtitle("Growth rate of K vs. K/AL") + 
         scale_color_identity(name = "Models",
                              breaks = c("green", "blue"),
                              labels = c("New BGP", "Old BGP"),

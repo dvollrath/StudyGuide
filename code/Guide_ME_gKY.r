@@ -9,8 +9,8 @@ delta <- .05
 alpha <- .3
 
 # Initialize dynamic process
-kycurr <- .5 # initial capital/output ratio
-kyalt <- 4 # initial capital/output ratio
+kycurr <- 2 # initial capital stock
+kyalt <- 5 # initial capital stock
 
 df = NULL # initialize a dataframe
 dfalt = NULL # initialize a dataframe
@@ -19,12 +19,12 @@ namealt = "B"
 
 for (t in 1:150) # do for this many periods
 {
-  gky <- (1-alpha)*(s/kycurr - delta - ga - gl) # calculate growth in k/y given current k/y
+  gky <- s*(1/kycurr)^(1-alpha) - delta  #(1-alpha)*(s/kycurr - delta - ga - gl) # calculate growth in k given current k/al
   df = rbind(df, data.frame(t,kycurr,gky,name)) # add to dataframe
-  kycurr <- (1+gky)*(kycurr) # update current k/y for next period
-  gky <- (1-alpha)*(s/kyalt - delta - ga - gl)
+  kycurr <- (1+gky-ga-gl)*(kycurr)# update current k/y for next period
+  gky <- s*(1/kyalt)^(1-alpha) - delta #(1-alpha)*(s/kyalt - delta - ga - gl)
   dfalt = rbind(dfalt, data.frame(t,kyalt,gky,namealt)) # add to dataframe
-  kyalt <- (1+gky)*(kyalt)
+  kyalt <- (1+gky-ga-gl)*(kyalt)
 }
 
 colnames(dfalt) <- c("t","kycurr","gky","name")
@@ -48,9 +48,9 @@ fig <- fig %>% animation_slider(
 fig <- fig %>% animation_button(
   x = 1, xanchor = "right", y = 0.4, yanchor = "bottom"
 )
-fig <- layout(fig, title = list(text = 'Dynamics of capital/output growth', x=0),
-              xaxis = list(title = 'Capital/Output (K/Y)', range=c(0,4.5),dtick=.5),
-              yaxis = list (title = 'Growth rate of K/Y', range=c(-.1,0.25)
+fig <- layout(fig, title = list(text = 'Dynamics of capital growth', x=0),
+              xaxis = list(title = 'K/AL ratio', range=c(1.5,5.5),dtick=.5),
+              yaxis = list (title = 'Growth rate of K', range=c(0,0.1),dtick=.01
               )
 )
 api_create(fig, filename = "me-gky-dynamics")
@@ -69,8 +69,8 @@ df = NULL
 
 for (t in 1:30)
 {
-  kycurr <- .5
-  kyalt <- 4
+  kycurr <- 2^(1-alpha)
+  kyalt <- 5^(1-alpha)
   kybgp <- 2.5
   dftemp = NULL
   dfalt = NULL
@@ -121,7 +121,7 @@ fig <- fig %>% animation_button(
 )
 fig <- layout(fig, title = list(text = 'Level of GDP per capita over time', x=0),
               xaxis = list(title = 'Time', range=c(0,30),dtick=5),
-              yaxis = list (title = 'Log GDP per capita', range=c(3,6)
+              yaxis = list (title = 'Log GDP per capita', range=c(4,5)
               )
 )
 
@@ -144,7 +144,7 @@ fig <- fig %>% animation_button(
 )
 fig <- layout(fig, title = list(text = 'Growth rate of GDP per capita over time', x=0),
               xaxis = list(title = 'Time', range=c(0,30),dtick=5),
-              yaxis = list (title = 'Growth rate of GDP per capita', range=c(0,.15)
+              yaxis = list (title = 'Growth rate of GDP per capita', range=c(0,.05)
               )
 )
 

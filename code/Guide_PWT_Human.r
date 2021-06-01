@@ -1,4 +1,8 @@
-# Pull PWT into dataframe
+# Uses PWT to create a large number of figures used in Study Guide
+
+##################################################################################
+# Get employee/pop ratio from PWT API
+##################################################################################
 data("pwt9.1")
 
 p <- pwt9.1 # copy dataframe for manipulation
@@ -14,6 +18,9 @@ fig <- layout(fig, title = list(text = 'Employee/Pop ratio by country', x=0),
               hovermode="x unified")
 api_create(fig, filename = "pwt-catchup-emppop")
 
+##################################################################################
+# Get labor detail from PWT CSV file
+##################################################################################
 p <- read.csv("~/Dropbox/project/studyguide/data/pwt91_labor_detail.csv", header=TRUE)
 catchup <- p[ which(p$countrycode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
 test <- p[ which(p$countrycode %in% c("ETH", "ZAF", "BWA")),]

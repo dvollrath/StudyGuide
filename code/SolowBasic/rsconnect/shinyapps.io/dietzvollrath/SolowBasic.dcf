@@ -1,0 +1,12 @@
+name: SolowBasic
+title: SolowBasic
+username:
+account: dietzvollrath
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4214850
+bundleId: 4665736
+url: https://dietzvollrath.shinyapps.io/SolowBasic/
+when: 1622573235.48059
+asMultiple: FALSE
+asStatic: FALSE

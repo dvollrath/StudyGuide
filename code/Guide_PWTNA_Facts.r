@@ -1,4 +1,8 @@
-# Pull PWT national accounts data into dataframe
+# Uses PWT to create a large number of figures used in Study Guide
+
+##################################################################################
+# National accounts data - from CSV b/c no API to download
+##################################################################################
 p <- read.csv("~/Dropbox/project/studyguide/data/pwt91_na.csv", header=TRUE)
 
 p$scon <- round(p$v_c/p$v_gdp,digits=2) # calculate consump share
@@ -10,7 +14,9 @@ catchup <- p[ which(p$countrycode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA"
 test <- p[ which(p$countrycode %in% c("ETH", "ZAF","BWA")),]
 usa <- p[ which(p$countrycode %in% c("USA")),]
 
-
+##################################################################################
+# GDP shares for C, G, I
+##################################################################################
 fig <- plot_ly(stable, x = ~year, y = ~scon, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Consumption share of GDP', x=0),
               xaxis = list(title = 'Year'),
@@ -52,9 +58,6 @@ fig <- layout(fig, title = list(text = 'Government spending share of GDP', x=0),
               yaxis = list (title = 'Government spending share',range = c(0,1)),
               hovermode="x unified")
 api_create(fig, filename = "pwt-catchup-sgov")
-
-
-
 
 fig <- plot_ly(test, x = ~year, y = ~sgfcf, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Gross capital formation share of GDP', x=0),
