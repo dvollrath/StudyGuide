@@ -24,9 +24,7 @@ $$
 g_{K/Y} = (1-\alpha)\left[s_I \frac{Y_t}{K_t} - \delta - g_A - g_L \right].
 $$
 
-A key thing we noted, and saw in action with economies A and B, was that the growth rate of capital/output *fell* as the capital/output ratio *rose*. To see that this is a general feature of this equation, go ahead and play around with the following GeoGebra figure, which lets you adjust the parameters (e.g. $\alpha$, $s_I$, etc..) in the equation. In this figure, note that "x" is the capital/output ratio, and "f(x)" is the growth rate of the capital/output ratio.
-
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="https://www.geogebra.org/m/up2w555f"></iframe>
+A key thing we noted, and saw in action with economies A and B, was that the growth rate of capital/output *fell* as the capital/output ratio *rose*. To see that this is a general feature of this equation, go ahead and play around with the following app, which lets you adjust the parameters (e.g. $\alpha$, $s_I$, etc..) in the equation.
 
 Not only does the line slope down no matter what. But the line always crosses the x-axis, meaning there is *always* a capital/output ratio we can find such that $g_{K/Y} = 0$. If you really jam up the parameters to some weird numbers that crossing will occur off-screen, but hopefully the action of the curve helps convince you that at *some* point the curve crosses the x-axis no matter what.
 
