@@ -29,8 +29,8 @@ ui <- fluidPage(
       
       h4("Set parameters"),
       
-      fluidRow(
-        column(4,
+      fixedRow(
+        column(6,
         sliderInput("alt_sI", h6('New capital share of GDP \\(s_I\\)'),
                     min = 0, max = 1, value = base_sI),
         sliderInput("alt_gL", h6("Population growth rate \\(g_L\\)"),
@@ -38,7 +38,7 @@ ui <- fluidPage(
         sliderInput("alt_gA", h6("Productivity gorwth rate \\(g_A\\)"),
                     min = -.1, max = .1, value = base_gA)
         ),
-        column(4,
+        column(6,
         sliderInput("alt_delta", h6("Depreciation rate \\(\\delta\\)"),
                     min = 0, max = 1, value = base_delta),
         sliderInput("alt_alpha", h6("Capital elasticity \\(\\alpha\\)"),
