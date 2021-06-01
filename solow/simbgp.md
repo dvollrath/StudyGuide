@@ -30,7 +30,7 @@ A key thing we noted, and saw in action with economies A and B, was that the gro
 
 Not only does the line slope down no matter what. But the line always crosses the x-axis, meaning there is *always* a capital/output ratio we can find such that $g_{K/Y} = 0$. If you really jam up the parameters to some weird numbers that crossing will occur off-screen, but hopefully the action of the curve helps convince you that at *some* point the curve crosses the x-axis no matter what.
 
-<iframe height="800" width="1200" frameborder="no" src="https://dietzvollrath.shinyapps.io/JustKAL/"> </iframe>
+<iframe height="900" width="1200" frameborder="no" src="https://dietzvollrath.shinyapps.io/JustKAL/"> </iframe>
 
 The combination of the downward slope and the crossing of the x-axis means that the capital/output ratio has a "stable steady state". No matter what capital/output ratio you start with, this figure implies that you will *always* end up at the capital/output ratio where the line crosses the x-axis and $g_{K/Y}=0$. 
 
