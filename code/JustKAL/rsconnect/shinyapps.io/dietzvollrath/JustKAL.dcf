@@ -5,8 +5,8 @@ account: dietzvollrath
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4215262
-bundleId: 4666072
+bundleId: 4669749
 url: https://dietzvollrath.shinyapps.io/JustKAL/
-when: 1622580726.278
+when: 1622655959.00424
 asMultiple: FALSE
 asStatic: FALSE

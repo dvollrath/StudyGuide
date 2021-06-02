@@ -10,7 +10,7 @@ base_gL <- .01
 base_gA <- .02
 base_delta <- .05
 base_alpha <- .3
-base_A <- 1
+base_A <- 10
 base_kalstar <- (base_sI/(base_gL+base_gA+base_delta))^(1/(1-base_alpha))
 base_K <- base_kalstar*base_A
 base_kystar <- base_sI/(base_gL+base_gA+base_delta)
@@ -20,7 +20,7 @@ base_kystar <- base_sI/(base_gL+base_gA+base_delta)
 #############################################################
 ui <- fluidPage(
   withMathJax(),
-  titlePanel("Dynamics of K/AL Ratio"),
+  titlePanel("Level of BGP"),
   
   mainPanel(
       
@@ -40,11 +40,13 @@ ui <- fluidPage(
                     min = 0, max = .1, value = base_delta, ticks = FALSE, step=.01),
         sliderInput("alt_alpha", h6("Capital elasticity \\(\\alpha\\)"),
                     min = 0, max = 1, value = base_alpha, ticks = FALSE, step=.01),
+        sliderInput("alt_A", h6("Baseline productivity \\(A_0\\)"),
+                    min = 0, max = 30, value = base_A, ticks = FALSE, step=.1),
         br(),
         actionButton("reset", "Reset all to baseline")
         ),
         column(8,
-        plotOutput("gkalgraph",width = "100%"),       
+        plotOutput("lnygraph",width = "100%"),       
         )
       ) # end FluidRow
       ) # end main panel
@@ -61,30 +63,22 @@ server <- function(input, output, session) {
     updateSliderInput(session,'alt_gA',value = base_gA)
     updateSliderInput(session,'alt_delta',value = base_delta)
     updateSliderInput(session,'alt_alpha',value = base_alpha)
+    updateSliderInput(session,'alt_A',value = base_A)
   })
     
-  output$gkalgraph <- renderPlot(
+  output$lnygraph <- renderPlot(
     {
-      kalstar = (input$alt_sI/(input$alt_gL + input$alt_gA + input$alt_delta))^(1/(1-input$alt_alpha))
-      tick <- seq(0,12,.1) # arbitrary kal values
-      df <- data.frame(tick) # create dataframe
-      df$gk <- input$alt_sI/(df$tick^(1-input$alt_alpha))- input$alt_delta
-      reverse = (input$alt_sI/(input$alt_delta+.12))^(1/(1-input$alt_alpha))
-      
-      ggplot(df, aes(x=tick)) +
-        geom_line(aes(y = gk),size=1) + 
-        geom_hline(yintercept=input$alt_gA+input$alt_gL, linetype="dashed", color = "black",size=1) +
-        geom_vline(xintercept=kalstar, linetype="dotted", color = "black") +
-        annotate(geom="text", x=9, y=input$alt_gA+input$alt_gL+.005, 
-                 label="gA + gL",size=6) +
-        annotate(geom="text", x=kalstar+1.6, y=.12, 
-                 label="K/AL steady state",size=6) +
-        annotate(geom="text", x=reverse-.4, y=.12, 
-                 label="gK",size=6) +
-        xlab("K/AL ratio") +
-        ylab("Growth rates") +
+      t <- c(0:100)
+      df <- data.frame(t)
+      kystar = input$alt_sI/(input$alt_gL+input$alt_gA+input$alt_delta)
+      df$lny <- (input$alt_alpha/(1-input$alt_alpha))*log(kystar) + log(input$alt_A) + input$alt_gA*df$t
+
+      ggplot(df, aes(x=t)) +
+        geom_line(aes(y = lny),size=1) + 
+        xlab("Time") +
+        ylab("Log GDP per capita") +
         theme_light() +
-        ylim(-.01,.12)
+        ylim(0,7.5)
     }
   ) # end gky graph
   
