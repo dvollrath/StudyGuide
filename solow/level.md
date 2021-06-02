@@ -41,7 +41,7 @@ The value of $g_A$ has an interesting two-part effect. Higher productivity growt
 
 The best way to see the impact of all these parameters on the level of the BGP is to play with this, either in the following app, or in the same [spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vRrEsKNR3Aco157HVGA_iDE8uTE4HbFFuV5K9_0aVbrEFCQWSxqk76BExHSstBE3lO6xiNKbMIf_AZf/pubhtml) from a few sections ago.
 
-<iframe height="600" width="1200" frameborder="no" src="https://dietzvollrath.shinyapps.io/JustLevel/"> </iframe>
+<iframe height="800" width="1200" frameborder="no" src="https://dietzvollrath.shinyapps.io/JustLevel/"> </iframe>
 
 ## Evidence across countries
 At a primitive level, we now know *why* some countries are richer than others. We can look at some evidence if some of the theoretical explanations make sense. Start with the share of GDP going to capital formation, $s_I$. The theory says that - holding everything else constant - countries with higher $s_I$ should have a higher level of GDP per capita. 

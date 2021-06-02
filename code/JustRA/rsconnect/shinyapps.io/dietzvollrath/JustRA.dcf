@@ -1,0 +1,12 @@
+name: JustRA
+title: JustRA
+username:
+account: dietzvollrath
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4219559
+bundleId: 4669907
+url: https://dietzvollrath.shinyapps.io/JustRA/
+when: 1622659370.25246
+asMultiple: FALSE
+asStatic: FALSE
