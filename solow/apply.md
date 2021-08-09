@@ -57,11 +57,11 @@ As I said, the US is kind of boring. Germany is a classic case often used to ill
 
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/63.embed"></iframe>
 
-How do we explain what was happening in Germany? Well, in 1950 we know that Germany was just coming out of the destruction of World War II. The capital stock in Germany was obliterated, so the actual capital/output ratio, $K/Y$, in Germany in 1950 was very *low*. What does the theory suggest should happen to the growth rate og $g_{K/Y}$ when the $K/Y$ ratio is low? $g_{K/Y}$ should be very *high*, meaning there is a lot of transitional growth. 
+How do we explain what was happening in Germany? Well, in 1950 we know that Germany was just coming out of the destruction of World War II. The capital stock in Germany was obliterated, so the actual capital ratio, $K/AL$, in Germany in 1950 was very *low*. What does the theory suggest should happen to the growth rate $g_K$ when the $K/AL$ ratio is low? $g_{K}$ should be very *high*, meaning there is a lot of transitional growth. 
 
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/65.embed"></iframe>
 
-What do we see in Germany with the capital/output ratio? The above figure shows that it was lower in 1950, and then after a brief dip it shot upward to about 4.5 by 1980. This is exactly the pattern suggested by the Solow model. And as the K/Y ratio climbed in Germany, the growth rate $g_{K/Y}$ fell, and so did the growth rate of GDP per capita. This all meant that Germany converged to the BGP shown in the first figure. 
+What do we see in Germany with the capital/output ratio (remember this is a close relative of $K/AL$)? The above figure shows that it was lower in 1950, and then after a brief dip it shot upward to about 4.5 by 1980. This is exactly the pattern suggested by the Solow model. And as the K/Y ratio climbed in Germany, the growth rate $g_K$ fell, and so did the growth rate of GDP per capita. This all meant that Germany converged to the BGP shown in the first figure. 
 
 It is important to note that the only thing necessary to explain these dynamics are the shock to the actual capital stock in Germany. There wasn't necessarily a change to any fundamental parameter, like $s_I$, $g_L$, or $A_0$, that had to occur in 1950. All that happened was that Germany had their capital stock destroyed, and so started the 1950s with a low K/Y ratio, and the rest appears to follow from the basic mechanics of the Solow model.
 

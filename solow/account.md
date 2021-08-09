@@ -16,6 +16,12 @@ We know that productivity growth, $g_A$, determines the growth rate on the BGP. 
 To do this we're going to build some hypothetical paths for log GDP per capita. Start with our description of log GDP per capita that *includes* human capital. 
 
 $$
+\ln y_t = \alpha (\ln K_t/A_th_tL_t) + \ln h_t + \ln A_t.
+$$
+
+For the purposes here (just to keep some notation straight, and because it is easier to measure), we're going to talk about this in capital/output terms. Remember that $K/Y = (K/AhL)^{1-\alpha}$, so it must be that
+
+$$
 \ln y_t = \frac{\alpha}{1-\alpha} (\ln K_t/Y_t) + \ln h_t + \ln A_t.
 $$
 

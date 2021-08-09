@@ -50,28 +50,22 @@ It is a little more difficult to put together consistent information on experien
 ## Human capital on the BGP
 How does human capital influence the level of GDP per capita on the BGP, and does it influence the growth rate? 
 
-To answer this, we need to work back through our production function. Starting with the production function take logs to get
+To answer this, we need to work back through our production function. Adjust it as follows like we did before:
 
 $$ 
-\ln Y_t = \alpha \ln K_t + (1-\alpha) \ln A_t + (1-\alpha) \ln h_t + (1-\alpha) \ln L_t 
+Y_t = \left(\frac{K_t}{A_t h_t L_t}\right)^{\alpha} A_t h_t L_t
 $$
 
-make the odd adjustment to subtract $\alpha \ln Y_t$ from both sides,
+and so per capita GDP is
 
-$$
-(1-\alpha)\ln Y_t = \alpha (\ln K_t - \ln Y_t) + (1-\alpha) \ln A_t + (1-\alpha) \ln L_t
-$$
-
-and then divide both sides by $(1-\alpha)$,
-
-$$
-\ln Y_t = \frac{\alpha}{1-\alpha} (\ln K_t - \ln Y_t) + \ln A_t + \ln h_t + \ln L_t.
+$$ 
+y_t = \left(\frac{K_t}{A_t h_t L_t}\right)^{\alpha} A_t h_t.
 $$
 
-We care about per-capita outcomes, so subtract $\ln L_t$ from both sides,
+In log terms
 
 $$
-\ln y_t = \frac{\alpha}{1-\alpha} (\ln K_t/Y_t) + \ln A_t + \ln h_t.
+\ln y_t = \alpha (\ln K_t/A_t h_t L_t) + \ln A_t + \ln h_t.
 $$
 
 Again, human capital appears to function a lot like the productivity term. Higher human capital is associated with higher GDP per capita, because it increases the productivity of labor. 
@@ -79,24 +73,28 @@ Again, human capital appears to function a lot like the productivity term. Highe
 We can plug in what we know about $h_t$ here to be more specific.
 
 $$
-\ln y_t = \frac{\alpha}{1-\alpha} (\ln K_t/Y_t) + \ln A_t + \ln \frac{E_t}{L_t} + \gamma_S S_t + \gamma_X X_t.
+\ln y_t = \alpha (\ln K_t/A_t h_t L_t) + \ln A_t + \ln \frac{E_t}{L_t} + \gamma_S S_t + \gamma_X X_t.
 $$
 
 Note that when we do $\ln h_t$, that removes the exponential term from $h_t$. What this says is that the log of the employment/population ratio matters for GDP per capita. When a higher fraction of people are workers, there will be higher GDP per person. 
 
 In addition, notice that the years of schooling, $S_t$, and years of experience, $X_t$, have a direct effect as well. They aren't in logs, because of how we set up the $h_t$ term. I'll explain below why we set things up this way. 
 
-For now, let's see what this implies for the *growth rate* of GDP per capita. To get the growth rate, remember that we can take the time derivative of the above equation. See [here](calculus.html) to remind yourself of how this works.
+What about that $K/AhL$ term? Does that matter? Only in the same way that it mattered in the original Solow model. That ratio will find a steady state level that depends on $s_I$, $g_A$, $g_L$, and if there were any growth in human capital, $g_h$, it would depend on that as well. But as human capital acts just like productivity growth, we know that this ratio $K/AhL$ will settle down just like before.
+
+For now, let's see what all this implies for the *growth rate* of GDP per capita. To get the growth rate, remember that we can take the time derivative of the above equation. See [here](calculus.html) to remind yourself of how this works.
 
 We have to be a little careful about how we deal with the $S_t$ and $X_t$ terms, becuase they are not in logs.
 
 $$
-g_y = \frac{\alpha}{1-\alpha} g_{K/Y} + g_A + g_{E/L} + \gamma_S \Delta S_t + \gamma_X \Delta X_t. 
+g_y = \alpha(g_K - g_A - g_h - g_L) + g_A + g_{E/L} + \gamma_S \Delta S_t + \gamma_X \Delta X_t. 
 $$
+
+The first term is again transitional growth that might occur because the $K/AhL$ ratio isn't at steady state.
 
 The term $\Delta S_t$ refers to the *absolute change* in years of schooling, and not the growth rate. For example, if years of schooling go from 10 to 12, then the effect on the growth rate of GDP per capita is $\gamma_S \times 2$. The percent growth rate of schooling (which would be 20%) is not relevant. There is a similar argument for experience.
 
-Along a BGP, we know that $K/Y$ is stable. In principle, then, it could be that along a BGP the growth rate of GDP per capita depends on productivity growth, $g_A$, *and* on the growth rate of employment/population, the change in years of schooling, and the change in years of experience. In practice, though, these three human capital terms all have such small effects we tend to ignore them. 
+Along a BGP, we know that $K/AhL$ is stable. In principle, then, it could be that along a BGP the growth rate of GDP per capita depends on productivity growth, $g_A$, *and* on the growth rate of employment/population, the change in years of schooling, and the change in years of experience. In practice, though, these three human capital terms all have such small effects we tend to ignore them. In other words, $g_h$ will be assumed to be close to zero. 
 
 Employment/population, if you look at the figure above, is roughly constant for a lot of developed countries. Thus the growth rate is zero or close to zero. For education, while over long periods of time the average rose, the actual change in years of schooling year-to-year is only like 0.05 years even when education is rising quickly. We'd get a similar result for experience. Furthermore, the size of $\gamma_S$ and $\gamma_X$ tend to be small. As I'll show below, we think $\gamma_S$ is around 0.10, and $\gamma_X$ is around 0.04. So the net effect of a change in schooling for the growth rate of GDP per capita is something like $0.05 \times 0.1 = .005$. At *best* faster growth in schooling (or experience) could add half a percentage point to the growth rate. That's nothing to sneeze at, but for most countries the changes in schooling and experience are too small to have a meaningful effect on the *growth rate*.
 
@@ -116,19 +114,19 @@ For employment to population, that is straightforward. Only people engaged in wo
 With schooling and experience, we had that funky exponential term. Let's see what those imply. Looking back at the prior sub-section, we had in logs that
 
 $$
-\ln y_t = \frac{\alpha}{1-\alpha} (\ln K_t/Y_t) + \ln A_t + \ln \frac{E_t}{L_t} + \gamma_S S_t + \gamma_X X_t.
+\ln y_t = \alpha (\ln K_t/A_th_tL_t) + \ln A_t + \ln \frac{E_t}{L_t} + \gamma_S S_t + \gamma_X X_t.
 $$
 
 Let's move the employment/population ratio term over to the left, so we have
 
 $$
-\ln (Y_t/L_t) - \ln (E_t/L_t) = \frac{\alpha}{1-\alpha} (\ln K_t/Y_t) + \ln A_t + \gamma_S S_t + \gamma_X X_t.
+\ln (Y_t/L_t) - \ln (E_t/L_t) = \alpha (\ln K_t/A_th_tL_t) + \ln A_t + \gamma_S S_t + \gamma_X X_t.
 $$
 
 I changed the $y_t$ term to $Y_t/L_t$ to indicate that it was GDP per person, explicitly. Now re-arrange the terms on the left, which we can do given the logs, to 
 
 $$
-\ln (Y_t/E_t) = \frac{\alpha}{1-\alpha} (\ln K_t/Y_t) + \ln A_t + \gamma_S S_t + \gamma_X X_t.
+\ln (Y_t/E_t) = \alpha (\ln K_t/A_th_tL_t) + \ln A_t + \gamma_S S_t + \gamma_X X_t.
 $$
 
 What is on the left is GDP *per worker*. Great. Now let's add one more piece of information. We know from the original growth facts that the share of GDP going to labor (i.e. wages) was roughly stable, and we called that ratio $s_L$. The average wage of a worker is therefore $w_t = s_L Y_t/E_t$, or the total GDP paid as wages divided by the number of workers.
@@ -136,7 +134,7 @@ What is on the left is GDP *per worker*. Great. Now let's add one more piece of 
 This means we could write
 
 $$
-\ln w_t = \ln s_L + \frac{\alpha}{1-\alpha} (\ln K_t/Y_t) + \ln A_t + \gamma_S S_t + \gamma_X X_t.
+\ln w_t = \ln s_L + \alpha (\ln K_t/A_th_tL_t) + \ln A_t + \gamma_S S_t + \gamma_X X_t.
 $$
 
 In other words, the *log wage* is a function of the capital/output ratio, productivity, *and* the average years of schooling and experience. That makes some sense. The average wage should depend on the skills and abilities of workers, to some extent, and this makes it explicit. Be careful, this isn't saying this is how wages are *exactly* set, or even how wages *should* be set. It is just a statement that *given our assumptions* wages will be related to schooling and experience this way.

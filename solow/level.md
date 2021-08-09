@@ -24,10 +24,10 @@ These all appear to be on a BGP for a long stretch of time, as evidenced by the 
 Go back to the section on [simulating growth](simulation.html) and recall that we could write the level of GDP per capita as
 
 $$
-\ln y_t = \frac{\alpha}{1-\alpha} (\ln K_t/Y_t) + \ln A_0 + g_A t.
+\ln y_t = \alpha \ln (K_t/A_tL_t) + \ln A_0 + g_A t.
 $$
 
-This holds at any given point in time, regardless of the actual value of capital/output. But we're interested in the level fo GDP per capita on a given BGP. We want to replace that $K_t/Y_t$ with the steady-state value $(K/Y)^{ss} = s_I/(\delta + g_A + g_L)$. This gives us
+This holds at any given point in time, regardless of the actual value of $K/AL$. But we're interested in the level fo GDP per capita on a given BGP. We want to replace that $K_t/A_tL_t$ with the steady-state value $(K/AL)^{ss} = (s_I/(\delta + g_A + g_L))^{1-\alpha}$. This gives us
 
 $$
 \ln y_t^{BGP} = \frac{\alpha}{1-\alpha} \left(\ln s_I - \ln(\delta + g_A + g_L) \right) + \ln A_0 + g_A t.

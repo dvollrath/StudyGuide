@@ -12,67 +12,15 @@ nav_order: 2
 {:toc}
 
 ## Per-capita growth 
-Start with the production function from the last section, and recall that from our Cobb-Douglas production function, we could write the growth rate of GDP as
+From the last section we found that 
 
 $$
-g_Y = \alpha g_K + (1-\alpha) g_A + (1-\alpha) g_L.
+g_y = \alpha (g_K - g_A - g_L) + g_A
 $$
 
-Now I'm going to do something a little odd. I'm going to subtract $\alpha g_K$ from both sides. 
-
-$$
-(1-\alpha)g_Y = \alpha (g_K - g_Y) + (1-\alpha) g_A + (1-\alpha) g_L.
-$$
-
-Divide both sides of this equation by $(1-\alpha)$, 
-
-$$
-g_Y = \frac{\alpha}{1-\alpha} (g_K - g_Y) + g_A + g_L.
-$$
-
-We seem to have made things more complicated, but this is going to make thinking about capital accumulation easier, believe it or not. This version says that the growth rate of real GDP depends on $g_K-g_Y$, or the difference in the growth rate of capital and the growth rate of GDP. 
-
-Stop for a moment to think about where we would get such a differene in growth rates. What is the growth rate of the capital/output ratio, $K/Y$? As a ratio, it's growth rate must be $g_K - g_Y$. This last equation then says that the growth rate of GDP depends, in part, on the growth rate of the capital/output ratio. Why do we write it this way? Because ultimately the growth rate of capital is going to depend on the growth rate of output - we have to build capital - and so capital growth contributes to growth in GDP only to the extent that it *outgrows* output. 
-
-The other things that drive growth in real GDP are growth in labor, $g_L$, and growth in productivity, $g_A$. Once we account for the growth rate of the capital/output ratio, those two growth rates contribute directly to growth in GDP. Why is there no $\alpha$ or $1-\alpha$ scaling down the effect of $g_A$ or $g_L$ any more? Because while by itself growth in labor (say) raises GDP, that extra GDP growth *also* lets the economy acquire more capital, which contributes further to GDP growth. So this last equation is giving "full credit" to the effects of growth in labor and productivity.
-
-Okay, last this we want to do to set things up is see what this all means for growth in GDP per capita, $y = Y/L$. The growth rate of GDP per capita is
-
-$$
-g_y = g_Y - g_L.
-$$
-
-Put this together with the equation from above and we have
-
-$$
-g_y = \frac{\alpha}{1-\alpha} (g_K - g_Y) + g_A.
-$$
-
-This says that the growth rate of GDP per capita depends on two things: the growth rate of the capital/output ratio ($g_K - g_Y$) and the growth rate of productivity, $g_A$. 
-
-What happened to the growth rate of labor? Well, faster growth in labor does imply faster growth in GDP, but is *also* implies faster growth in "capitas", or people. The effect of faster GDP growth due to more labor on GDP per capita is offset exactly (in our theoretical case) by the drag on GDP per capita due to more labor. It's a wash.
-
-The last thing we're going to do is introduce one piece of notation to save a little space. Define
-
-$$
-g_{K/Y} = g_K - g_Y
-$$
-
-as the growth rate of the capital/output ratio. Then growth in GDP per capita is
-
-$$
-g_y = \frac{\alpha}{1-\alpha} g_{K/Y} + g_A.
-$$
+was the growth rate of GDP per capita. To decipher what drives growth, we need to know what creates growth in productivity, labor, and capital. The first two are going to be relatively simple, as we'll just assume they are constants. It's the growth rate of capital, $g_K$, that is where all the interesting dynamics come in.
 
 ## Capital accumulation
-If $g_{K/Y} = g_K - g_Y$ is so important for growth differences, then what determines $g_{K/Y}$? Start by plugging in what we know about $g_Y$ from the section on the [production function](http://growthecon.com/StudyGuide/solow/production.html#production-growth-and-elasticities) to the definition of $g_{K/Y}$.
-
-$$
-g_{K/Y} = g_K - g_Y = g_K - \alpha g_K - (1-\alpha) g_A - (1-\alpha) g_L = (1-\alpha)\left[g_K - g_A - g_L \right]
-$$
-
-We need to come up with more details about $g_A$, $g_L$, and $g_K$. For now, we're going to just take the values of $g_A$ and $g_L$ as given. The interesting part for us is the growth in capital, $g_K$. 
-
 To describe $g_K$ further, we need to now dig into the process by which capital accumulates. Here is the basic equation we assume governs how the stock of capital changes.
 
 Capital accumulation
@@ -133,20 +81,14 @@ $$
 
 Since $s_I$ is stable, this means the growth rate of capital is dictated by the size of the capital/output ratio itself. 
 
-Okay, we've finally got an expression for $g_K$. Let's go back and put this into the equation we started with at the beginning of this sub-section regarding the growth rate of the capital/output ratio. This is important enough to us that we'll give it a little label.
+From the last page, we know that the capital/output ratio is just the $K/AL$ ratio raised the $1-\alpha$ power. This means we can write the following:
 
-Growth rate of capital/output
+Growth rate of capital
 {: .label .label-green }
-**The growth rate of the capital/output ratio is determined by the following equation:**
+**The growth rate of capital is determined by the following equation:**
 
 $$
-g_{K/Y} = (1-\alpha)\left[s_I \frac{Y_t}{K_t} - \delta - g_A - g_L \right].
+g_K = s_I \left(\frac{AL}{K}\right)^{1-\alpha} - \delta.
 $$
 
-The *growth rate* of the capital/output ratio depends inversely on the *level* of the capital/output ratio itself. The higher is $K/Y$, the lower is the growth rate $g_{K/Y}$. We also see that the higher is the share of GDP allocated to capital formation, $s_I$, the higher is the growth rate of capital/output. Recall that $g_{K/Y}$ is the transitional growth off the BGP, so this tells us that transitional growth is driven in large part by the actual size of the capital/output ratio.
-
-What else do we see? Three additional things act on the growth rate of the capital/output ratio. 
-
-1. Depreciation, $\delta$, has an obvious effect. The faster that capital breaks down, the slower the capital/output ratio will grow. 
-2. Productivity growth, $g_A$. The faster productivity grows, the slower is growth in the capital/output ratio. That is because productivity growth causes output to grow, but does not cause capital to grow directly.
-3. Labor or population growth, $g_L$. The faster the workforce grows, the slower is growth in the caiptal/output ratio. This is similar to productivity. Worker growth makes output grow faster, but doesn't make capital grow directly.
+The *growth rate* of capital depends *inversely* on the *ratio* of $K/AL$. The higher is $K/AL$, the lower is the growth rate $g_K$. We also see that the higher is the share of GDP allocated to capital formation, $s_I$, the higher is the growth rate of capital/output. The higher is depreciation, $\delta$, the slower capital grows, as it is breaking down faster.

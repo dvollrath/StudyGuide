@@ -11,58 +11,60 @@ nav_order: 4
 {:toc}
 
 ## Simulating a BGP
-The simulations in the prior section showed that the two economies A and B seemed to be heading to common outcomes. Their capital/output ratios were headed to 2.5, and their growth rates were both headed to 2%. Recall as well that the production function elasticities were assumed to be constant, $\alpha = 0.3$ and there fore $1-\alpha = 0.7$. And finally, we assumed that the ratio of capital good formation to GDP, $s_I = 0.2$, was constant and identical in both. 
+The simulations in the prior section showed that the two economies A and B seemed to be heading to common outcomes. Their $K/AL$ ratios were headed to about 3.7, and their growth rates were both headed to 2%. Recall as well that the production function elasticities were assumed to be constant, $\alpha = 0.3$ and there fore $1-\alpha = 0.7$. And finally, we assumed that the ratio of capital good formation to GDP, $s_I = 0.2$, was constant and identical in both. 
 
 Go back and look at the definition of a [BGP](http://growthecon.com/StudyGuide/facts/bgp.html). Our simulated economies appear to have all the characteristics of a balanced growth path. Or rather, they both arrive very close to the characteristics of a BGP as time goes on. Despite starting out in very different positions given their capital/output ratios, A and B end up with a similar BGP. 
 
 This worked for this specific simulation. The question for this section is whether that tendency to approach a BGP is true for any set of parameters we choose, and any initial value of the capital/output ratio. The answer is yes, but we are going to need to do a little math to see that.
 
 ## Finding a steady state
-To see that the model we've set up implies that *all* economies end up on a balanced growth path, let's go back to the equation governing how the capital/output ratio grows. 
+To see that the model we've set up implies that *all* economies end up on a balanced growth path, let's go back to the equation governing how capital grows,
 
 $$
-g_{K/Y} = (1-\alpha)\left[s_I \frac{Y_t}{K_t} - \delta - g_A - g_L \right].
+g_K = s_I \left(\frac{AL}{K}\right)^{1-\alpha} - \delta.
 $$
 
-A key thing we noted, and saw in action with economies A and B, was that the growth rate of capital/output *fell* as the capital/output ratio *rose*. To see that this is a general feature of this equation, go ahead and play around with the following app, which lets you adjust the parameters (e.g. $\alpha$, $s_I$, etc..) in the equation.
+To understand what happens to $g_K$ over time, we need to know what happens to $K/AL$, which depends on $g_K$, which depends on $K/AL$, and so on. To analyze this more formally we'll use a diagram that looks like the one in the app below. On the x-axis is the $K/AL$ ratio, and note that $g_K$ declines as $K/AL$ goes up, just like in our equation above. 
 
-Not only does the line slope down no matter what. But the line always crosses the x-axis, meaning there is *always* a capital/output ratio we can find such that $g_{K/Y} = 0$. If you really jam up the parameters to some weird numbers that crossing will occur off-screen, but hopefully the action of the curve helps convince you that at *some* point the curve crosses the x-axis no matter what.
+$g_K$ is the growth rate of the numerator in $K/AL$. The denominator of the $K/AL$ grows at the rate $g_A + g_L$, the growth rate of both productivity plus labor. That combined growth rate is shown with the dashed line. 
 
 <iframe height="700" width="1200" frameborder="no" src="https://dietzvollrath.shinyapps.io/JustKAL/"> </iframe>
 
-The combination of the downward slope and the crossing of the x-axis means that the capital/output ratio has a "stable steady state". No matter what capital/output ratio you start with, this figure implies that you will *always* end up at the capital/output ratio where the line crosses the x-axis and $g_{K/Y}=0$. 
+The combination of the two lines tells us everything about how the $K/AL$ ratio, and hence $g_K$, changes over time. Let's say that we start with a very small $K/AL$ ratio (close to zero). What does the diagram indicate? It says that $g_K > g_A + g_L$ (the dark line is above the dashed line). In this case the ratio must *rise*, because the numerator is growing faster than the denominator. In practice, the economy has very little capital relative to how productive it is and how many workers it has. So it can generate a high growth rate of capital by producing more capital relative to its small base. The dynamics keep pushing the $K/AL$ ratio to the right. 
 
-We can be more precise about the level of the capital/output ratio where $g_{K/Y}=0$. Go back to the equation above, and let's set the growth rate to zero and solve for the what $K/Y$ ratio is associated with no growth in the capital/output ratio.
+If you start with a large $K/AL$ ratio, like 10, you get the opposite dynamics. There it is $g_K < g_A + g_L$ and so the ratio *falls*. The economy has a lot of capital relative to how productive it is and the number of workers. So even though it might produce a large absolute amount of capital, that additional capital is small compared to the initial amount, and the growth rate of capital is small. Everything about the dynamics push the $K/AL$ ratio to the left. 
 
-$$
-0 = (1-\alpha)\left[s_I \frac{Y}{K} - \delta - g_A - g_L \right].
-$$
+No matter what, eventually the dynamics of the economy force it to the point where $g_K = g_A + g_L$, or the capital stock is growing just as fast as productivity and labor. At that point the economy can generate new capital, but just in balance with how fast it is getting more productive and adding more workers.
 
-Divide both sides by $(1-\alpha)$, then re-arrange what you're left with to
+We can be specific about that point. If $g_K = g_A + g_L$, then
 
 $$
-\delta + g_A + g_L = s_I \frac{Y}{K}.
+s_I \left(\frac{AL}{K}\right)^{1-\alpha} - \delta = g_A + g_L
 $$
 
-Now, notice that on the right we have the $Y/K$ ratio, not $K/Y$. So multiply both sides by $K/Y$, and re-arrange some more to get
+and you can solve for
 
 $$
-\frac{K}{Y} = \frac{s_I}{\delta + g_A + g_L}.
+\frac{K}{AL} = \left(\frac{s_I}{g_A + g_L + \delta}\right)^{1/(1-\alpha)}.
 $$
 
-This is the capital/output ratio at which $g_{K/Y}=0$. This is important enough to warrant a label.
+This is the *steady-state* $K/AL$ ratio. It is the value towards which the economy is always evolving. Remember from before that the capital output ratio is just $K/Y = (K/AL)^{1-\alpha}$. That means the following:
 
 Steady state capital/output ratio
 {: .label .label-green }
 **The steady state capital/output ratio in the Solow model is $(K/Y)^{ss} = s_I/(\delta + g_A + g_L)$.**
 
-Let's make sure this equation makes sense. Plug in the parameter values I used to create that figure for economies A and B: $\alpha = 0.3$, $s_I = 0.2$, $g_A = 0.02$, and $g_L = 0.01$.
+Let's make sure this all makes sense. Plug in the parameter values I used to create that figure for economies A and B: $\alpha = 0.3$, $s_I = 0.2$, $g_A = 0.02$, and $g_L = 0.01$. With those values we get that in steady state
+
+$$
+\frac{K}{AL} = \left(\frac{.2}{.02 + .01 + .05}\right)^{1/(1-.3)} = 3.702,
+$$
+
+which is exactly what our simulation said it would be. The capital output ratio, just a slightly different way of talking about things, is
 
 $$
 \left(\frac{K}{Y} \right)^{ss} = \frac{s_I}{\delta + g_A + g_L} = \frac{.2}{(.05 + .02 + .01)} = 2.5
 $$
-
-That's exactly the value we saw them head towards in the figure. Both economies have the same steady state value for $K/Y$ because they both have the same parameters. It doesn't matter that A started with a K/Y ratio of 0.5, or that B started with a K/Y ratio of 4. Eventually they both end up with K/Y = 2.5. The dynamics of capital accumulation ensure that.
 
 ## Balanced growth and transitional growth
 Now that we know that the capital/output ratio has a stable steady/state, we can go back and reconsider the definition of a balanced growth path, and what the combination of the data and theory imply. Here are the four characteristics of a BGP again:
@@ -81,10 +83,10 @@ Well, the Solow model tells us that any economy that accumulates capital in the 
 That leaves us with part 1 of the definition. Go back and recall that the growth rate of GDP per capita can be explained as
 
 $$
-g_y = \frac{\alpha}{1-\alpha} g_{K/Y} + g_A.
+g_y = \alpha(g_K - g_A - g_L) + g_A.
 $$
 
-We know that on a BGP $g_{K/Y}=0$, just from the data, so on a BGP it must be that
+What happens in steady state? We know that in steady state $g_K = g_A + g_L$, so the term in parenthese is zero. That means that along a BGP it must be that
 
 $$
 g_y = g_A.
@@ -100,28 +102,24 @@ The growth rate in all the countries that were on a balanced growth path (e.g. t
 
 By the way, I used the terminology $g_y^{BGP}$ just to be clear that this is the growth rate "on the BGP", and doesn't mean that the growth rate is *always* equal to $g_A$.
 
-We can even be a little more specific. The data tell us that the growth rate of GDP per capita is stable, and we said it was roughly equal to 1.8% per year for most developed countries. That means:
-
-Growth in productivity
-{: .label .label-green }
-**The growth rate of productivity is stable and equal to about 1.8% per year in most developed countries, or $g_A \approx 0.018$.**
-
-This stark finding on the importance of productivity growth for long-run growth in GDP per capita doesn't mean that $g_{K/Y}$ is irrelevant. It helps explain why growth rates might differ between countries, and why those growth rate differences are likely to be temporary. In fact we're going to give $g_{K/Y}$ a particular name.
+This stark finding on the importance of productivity growth for long-run growth in GDP per capita doesn't mean that $g_K$ or the $K/AL$ ratio (or $K/Y$) is irrelevant. It helps explain why growth rates might differ between countries, and why those growth rate differences are likely to be temporary. The whole term $\alpha (g_K - g_A - g_L)$ in fact deserves it's own name:
 
 Transitional growth
 {: .label .label-green }
-**The growth due to changes in the capital/output ratio, $g_{K/Y}$, is called transitional growth.**
+**The growth due to changes in the $K/AL$ ratio, $\alpha (g_K - g_A - g_L)$, is called transitional growth.**
+
+This reason it is "transitional" is that eventually this term always dissipates. Like countries A and B in our simulation, you can have this term be not zero for a while, but ultimately the economy will end up at a steady state and $\alpha (g_K - g_A - g_L) = 0$. 
 
 Let's be clear about what this means when we compare countries to one another. 
 
 Source of growth differences
 {: .label .label-green }
-**Given that $g_A$ is similar across countries, any observed differences in growth rates across countries are due to differences in transitional growth, $g_{K/Y}$.**
+**Given that $g_A$ is similar across countries, any observed differences in growth rates across countries are due to differences in transitional growth.**
 
-Moreover, the Solow model tells us how to explain transitional growth and tells us that because capital/output has a steady state that transitional growth eventually disappears, leading to this conclusion.
+Moreover, the Solow model tells us how to explain transitional growth and tells us that because $K/AL$ has a steady state that transitional growth eventually disappears, leading to this conclusion.
 
 Temporary growth differences
 {: .label .label-green }
-**Observed differences in growth rates across countries due to differences in transitional growth, $g_{K/Y}$, are temporary.**
+**Observed differences in growth rates across countries due to differences in transitional growth are temporary.**
 
-Thus the Solow model helps us understand *why* places like Germany, South Korea, or Japan could have very high growth rates for a while (transitional growth) but that eventually their growth rates fell until they were equal to a similar growth rate as countries like the US (productivity growth). The Solow model tells us that transitional growth is temporary, because the process of capital accumulation cannot keep up with the growth in output.
+Thus the Solow model helps us understand *why* places like Germany, South Korea, or Japan could have very high growth rates for a while (transitional growth) but that eventually their growth rates fell until they were equal to a similar growth rate as countries like the US (productivity growth). The Solow model tells us that transitional growth is temporary, because the process of capital accumulation cannot keep up with the growth in output. It's important to know that just because it is transitional, doesn't mean it dissipates quickly. This transitional growth can last decades.
