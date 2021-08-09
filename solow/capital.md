@@ -11,7 +11,7 @@ nav_order: 2
 1. TOC 
 {:toc}
 
-## Per-capita growth and capital/output ratios
+## Per-capita growth 
 Start with the production function from the last section, and recall that from our Cobb-Douglas production function, we could write the growth rate of GDP as
 
 $$

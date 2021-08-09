@@ -14,7 +14,7 @@ label <- c('C','B','D','E','A') # allows different label for test purposes
 
 # Year vector gives total periods to run over
 year <- c(0:40)
-s <- 0 # initializes vector
+s <- 0 # initializes Solow vector
 
 # Merge year and scenario data to create scenario/year dataframe
 all_scenario <- data.frame(scenario,alpha,sI,gL,gA,delta,KY0,A0) # combine scenario parameters

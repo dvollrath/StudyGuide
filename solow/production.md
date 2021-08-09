@@ -80,3 +80,44 @@ Elasticities and cost shares
 **The elasticity $1-\alpha$ is roughly equal to the cost share of labor, $\phi_L$, which in the data is in the range 0.6-0.8 and stable. The elasticity $\alpha$ is roughly equal to the cost share of capital, $\phi_K$, which in the data is about 0.2-0.4 and stable.**
 
 We are using the Cobb-Douglas production function above precisely because it has stable elasticities, which match the data on cost shares.
+
+## KAL and the Capital/Output Ratio
+When we start working with the Solow model, it will turn out to be easier to deal with the production function by thinking of it in a slightly different arrangement. Start with the typical function
+
+$$ 
+Y_t = K_t^{\alpha} (A_t L_t)^{1-\alpha}
+$$
+
+and re-arrange based on the exponents to
+
+$$ 
+Y_t = \left(\frac{K_t}{A_t L_t}\right)^{\alpha} A_t L_t.
+$$
+
+This says that GDP depends on the $K/AL$ ratio, or capital relative to the size of productivity and labor. This is sometimes called the "capital per efficiency unit of labor" ratio. But we will stick with $K/AL$. 
+
+Why do we use this? It turns out the ratio $K/AL$ is relatively easy to analyze, and that it will end up becoming stable (e.g. unchanging) in the long-run. Economically, the reason is that capital $K$ is itself going to be built using GDP, and so it evolves over time based on how big GDP gets. Productivity and labor, AL, are determinants of GDP, and so they help determine the size of the capital stock. The capital stock will have to grow in proportion to productivity and labor because of this, and hence their ratio is relevant to us. 
+
+In practice, this form of the production function can be used to write GDP per capita.
+
+$$ 
+y_t = \left(\frac{K_t}{A_t L_t}\right)^{\alpha} A_t.
+$$
+
+And using this, we can write the growth rate of GDP per capita using the logs-derivatives method as
+
+$$
+g_y = \alpha (g_K - g_A - g_L) + g_A.
+$$
+
+This is identical to what we have above, just re-arranged a little again. This separates the growth rate of GDP per capita into two parts. The first, $\alpha(g_K - g_A - g_L)$, is the growth rate of the $K/AL$ ratio itself, and depends on how fast capital grows relative to productivity and labor. The second, $g_A$, is just straight productivity growth. Note that productivity growth has two effects: one on the $K/AL$ ratio and one directly on GDP per captia. This will turn out to be important when we look at the long-run growth rate.
+
+The last thing to do here is to talk about another way to refer to the $K/AL$ ratio. Start with the capital-output ratio, $K/Y$,
+
+$$
+\frac{K}{Y} = \frac{K}{K^{\alpha}(AL)^{1-\alpha}} = \frac{K^{1-\alpha}}{(AL)^{1-\alpha}} = \left( \frac{K}{AL}\right)^{1-\alpha}.
+$$
+
+In other words, the capital-output ratio is just the $K/AL$ ratio raised to a power. The $K/AL$ ratio and $K/Y$ are *basically* capturing the same thing, just with some slight variation. What this means is that sometimes we'll slip in a mention of the capital/output ratio to save some time, rather than writing out or talking about the $K/AL$ ratio. 
+
+Why do we care about the $K/Y$ ratio? It is useful in finding the rate of return on capital, for one. 
