@@ -5,8 +5,9 @@ account: dietzvollrath
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2696549
-bundleId: 3545945
+bundleId: 4916490
 url: https://dietzvollrath.shinyapps.io/BabyBasic/
-when: 1598128772.19381
+when: 1628786849.1732
+lastSyncTime: 1628786849.17322
 asMultiple: FALSE
 asStatic: FALSE
