@@ -79,7 +79,7 @@ So how do we go about answering the main question. How do we decide if the growt
 
 The figure will have the growth rate $g_{Xt}$ on the y-axis, and the ratio $Z/X$ on the x-axis. Given that our equation is very simple, when we graph it we'll just see a straight line that intersects the y-axis at $-s$ and slopes upwards. 
 
-We can draw this out by hand, and will when we talk about this during a class. But ultimately being able to manipulate this system will help it make more sense. This [page](<a href="https://dietzvollrath.shinyapps.io/BabyBasic/" target="_blank">) will take you to an app that draws the figure I'm talking about for you, and allows you to manipulate things like the initial value of Z/X, and the size of the "other stuff" effect coming from $s$. 
+We can draw this out by hand, and will when we talk about this during a class. But ultimately being able to manipulate this system will help it make more sense. <a href="https://dietzvollrath.shinyapps.io/BabyBasic/" target="_blank">This link</a> will take you to an app that draws the figure I'm talking about for you, and allows you to manipulate things like the initial value of Z/X, and the size of the "other stuff" effect coming from $s$. 
 
 If you look at that app, the first panel ("Dynamics") shows an upward-sloping line that graphs $g_{X}$ against $Z/X$. This is the green/blue dashed line, and it has a bunch of black dots on it that we'll get to in a bit. By itself, that dashed green/blue line is pretty boring, and it doesn't tell us anything about what *will* happen. 
 
