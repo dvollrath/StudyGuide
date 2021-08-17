@@ -43,7 +43,7 @@ $$
 and given our simple growth rate formula that means that
 
 $$
-X_{t+1} = \left(1+\frac{Z_t}{X_t}\right)X_t = X_t + Z_t - sX_t = (1-s)X_t + Z_t.
+X_{t+1} = \left(1+\frac{Z_t}{X_t} - s\right)X_t = X_t + Z_t - sX_t = (1-s)X_t + Z_t.
 $$
 
 In other words, X tomorrow is equal to X today plus some addition due to Z. In the little table that follows we start with X = 100 in 2018. I've made up a bunch of values for Z. We can track how X evolves over time - the dynamics - by applying our formula. The growth rate is easy to calculate given that we know X and Z.
