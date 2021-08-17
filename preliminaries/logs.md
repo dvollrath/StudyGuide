@@ -110,45 +110,47 @@ The above sections used logs as a way of calculating something (a growth rate, a
 
 Here's an example. When we model the economy we'll want to allow for the fact that the population grows over time. In reality, the population growth rate varies year by year, but for our *modeling* purposes we might assume that population grows at exactly the same rate every year. We'd want to confirm that this assumption is plausible by looking at real data on population growth, but if we can justify the assumption then it makes our lives a lot easier.
 
-So let's say we make that assumption, that population $L$ grows at the rate $g_L$ every year. This implies that population experiences exponential growth. Our assumption means that
-
-$$
-g_L \approx \ln L_{t+1} - \ln L_t
-$$
-
-no matter what year we plug in for $t$. We also know from above that this statement involves an approximation, and we can be more exact with
-
-$$
-\ln (1+g_L) = \ln L_{t+1} - \ln L_t
-$$
-
-If we start at some base year we denote 0, then we can write $\ln (1+g_L) = \ln L_1 - \ln L_0$ and manipulate this into
+So let's say we make that assumption, that population $L$ grows at the rate $g_L$ every year. This implies that population experiences exponential growth. From period zero to period 1 our assumption means that
 
 $$
 L_1 = (1+g_L)L_0.
 $$
 
-Now, apply the same logic and we get $L_2 = (1+g_L)L_1$. Plug in for $L_1$ from above, and we get
+Then from period 1 to period 2 it means that $L_2 = (1+g_L)L_1$, and so on. But if we know how to write $L_2$ this way, and it depends on $L_1$, and $L_1$ depends on $L_0$, then we can write
 
 $$
 L_2 = (1+g_L)^2 L_0.
 $$
 
-And if we were to keep going, we'd get
+$L_2$ is just the base level of population, $L_0$, with the growth rate applied twice. This holds in general, and therefore
 
 $$
 L_t = (1+g_L)^t L_0.
 $$
 
-For exponential growth, we can find the value of population in period $t$ by just knowing the initial population size ($L_0$) and the growth rate ($g_L$). 
+The value of population in any period $t$ just depends on the growth rate $g_L$, the number of periods $t$, and the initial value, $L_0$. We don't need to write down the value in every period to find the value in period $t$. 
+
+If you take logs of this, you get the handy solution that
+
+$$
+\ln L_t = t \ln (1+g_L) + \ln L_0. 
+$$
+
+Apply our favorite trick to logs of $1+g_L$, and you get
+
+$$
+\ln L_t \approx \ln L_0 + g_L t.
+$$
+
+The log of $L_t$ depends on the log of initial population plus an adjustment which is just the growth rate $g_L$ times the number of periods. We'll get to this next section, but note that this is a lot like an equation for a line, where $t$ is the x variable. 
 
 This holds just fine with discrete years. We could also talk about exponential growth where the units of time get arbitrarily small. This would mean we take time to be continuous. The equivalent way to start the continuous time version is to say
 
 $$
-g_L = \frac{d \ln L(t)}{dt}
+d \ln L(t) \approx g_L dt
 $$
 
-or that the derivative of population with respect to time is constant and equal to $g_L$. Note that the derivative is very much like our approximation above. $d \ln L(t)$ means "the change in log population", much like $\ln L_{t+1} - \ln L_t$. The $dt$ is the "change in time", which above was just equal to one, for one year. Here, the $dt$ refers to an almost infinitely small increment of time. 
+or that the change in log population $d \ln L(t)$ is approximately the growth rate $g_L$ times the actual change in time (which is presumed to be very, very small).
 
 Without working through the calculus on this, we can use the last equation given to solve for
 
