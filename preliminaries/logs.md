@@ -84,39 +84,19 @@ $$
 
 or very close to 1.45%. If you used more decimal places in the natural logs of 100 and 109, you'd get an even closer approximation. 
 
-## Logs and level differences
-We can use logs to make sense of differences in levels as well. For example, perhaps we want to compare the GDP per capita of the US (60) to the GDP per capita of China (13). An obvious way is to take their ratio. 60/13 = 4.62, or US GDP per capita is about 4.62 times higher than in China. 
-
-Let's do that in a little more math-y way. If $y_{US}$ is GDP per capita in the US, and $y_{CH}$ is GDP per capita in the US, then $y_{US}/y_{CH}$ is the ratio. Now, using the properties of logs and exponentials, we can write
-
-$$
-\frac{y_{US}}{y_{CH}} = e^{\ln y_{US} - \ln y_{CH}}.
-$$
-
-This just made things more complicated. So why did I bother? Because most of the time we're going to be looking at the log of GDP per capita (and of some other data). So it is useful to understand how to use data on logs and quickly arrive at a comparison of the relative levels that they imply. When you take a look at the data in the [growth facts](http://growthecon.com/StudyGuide/facts/facts.html) section, almost everything is plotted in terms of logs. Differences in logs represent relative levels of variables, just like the difference in log GDP per capita between the US and China captures the relative level of GDP per capita in the two countries.
-
-One last thing to note here is that the units of GDP per capita become irrelevant once we are looking at the ratio or log difference. Above, I said GDP per capita was 60 and 13 for the US and China, respectively. 60 and 13 what? In practice it would be thousands of international dollars, but for our purposes that doesn't matter. If we did measure it in dollars, then we'd get $60,000/13,000 = 4.62$, the same ratio as before. 
-
-Logs differences preserve the fact that the units of measurement don't matter. Let's do this in dollars, and get
-
-$$
-\frac{y_{US}}{y_{CH}} = e^{\ln y_{US} - \ln y_{CH}} = e^{\ln 60000 - \ln 13000} = e^{\ln 60 + \ln 1000 - \ln 13 - \ln 1000} = e^{\ln 60 - \ln 13} = e^{1.529} = 4.62.
-$$
-
-You should be comfortable about all steps in this calculation. The study guide appeals a lot to differences in logs to see the relative size of two values, and an important reason for that is because it makes the units (1000's of dollars or just dollars) irrelevant to the discussion. Our conclusions about growth should not hinge on whether we measure things by the 1000 or not.
 
 ## Logs and exponential growth
-The above sections used logs as a way of calculating something (a growth rate, a ratio) from existing data. When we get to writing down models of growth, we'll also be using logs to help us represent the path of some variable over time. 
+The above sections used logs as a way of calculating something a growth rate (which is like a percent change) from given data on the level of some variable (like GDP). We can also go the other way, and if you are given a growth rate you can work out the level of some variable. 
 
-Here's an example. When we model the economy we'll want to allow for the fact that the population grows over time. In reality, the population growth rate varies year by year, but for our *modeling* purposes we might assume that population grows at exactly the same rate every year. We'd want to confirm that this assumption is plausible by looking at real data on population growth, but if we can justify the assumption then it makes our lives a lot easier.
+Here's an example. Let's say we are talking about population over time, denoted by $L_t$. You know the initial population at time zero is $L_0$, and you know that it has a constant growth rate of $g_L$ (maybe like 1% or 2%). What's the size of the population at any given time $t$? 
 
-So let's say we make that assumption, that population $L$ grows at the rate $g_L$ every year. This implies that population experiences exponential growth. From period zero to period 1 our assumption means that
+Well, start from period 0. This would then imply that population in period 1 was
 
 $$
 L_1 = (1+g_L)L_0.
 $$
 
-Then from period 1 to period 2 it means that $L_2 = (1+g_L)L_1$, and so on. But if we know how to write $L_2$ this way, and it depends on $L_1$, and $L_1$ depends on $L_0$, then we can write
+From period 1 to period 2 it would be that $L_2 = (1+g_L)L_1$, and so on. But if we know how to write $L_2$ this way, and it depends on $L_1$, and $L_1$ depends on $L_0$, then we can write
 
 $$
 L_2 = (1+g_L)^2 L_0.
@@ -128,7 +108,7 @@ $$
 L_t = (1+g_L)^t L_0.
 $$
 
-The value of population in any period $t$ just depends on the growth rate $g_L$, the number of periods $t$, and the initial value, $L_0$. We don't need to write down the value in every period to find the value in period $t$. 
+The value of population in any period $t$ just depends on the growth rate $g_L$, the number of periods $t$, and the initial value, $L_0$. We don't need to write down the value in every period to find the value in period $t$. If you have the growth rate and initial value, you can find the value in any subsequent period. 
 
 If you take logs of this, you get the handy solution that
 
@@ -142,17 +122,9 @@ $$
 \ln L_t \approx \ln L_0 + g_L t.
 $$
 
-The log of $L_t$ depends on the log of initial population plus an adjustment which is just the growth rate $g_L$ times the number of periods. We'll get to this next section, but note that this is a lot like an equation for a line, where $t$ is the x variable. 
+The log of $L_t$ depends on the log of initial population plus an adjustment which is just the growth rate $g_L$ times the number of periods. We'll get to this next section, but note that this is a lot like an equation for a line, where $t$ is the x variable. This just says that given the growth rate and initial level of a variable, you can find the *log* value of that variable in some period t. 
 
-This holds just fine with discrete years. We could also talk about exponential growth where the units of time get arbitrarily small. This would mean we take time to be continuous. The equivalent way to start the continuous time version is to say
-
-$$
-d \ln L(t) \approx g_L dt
-$$
-
-or that the change in log population $d \ln L(t)$ is approximately the growth rate $g_L$ times the actual change in time (which is presumed to be very, very small).
-
-Without working through the calculus on this, we can use the last equation given to solve for
+This holds just fine with discrete years. We could also talk about exponential growth where the units of time get arbitrarily small. This would mean we take time to be continuous. The equivalent way to state the continuous time version is to say
 
 $$
 L(t) = e^{g_L t}L(0)
@@ -160,4 +132,33 @@ $$
 
 which says that the population at moment $t$ can be solved for by knowing initial population size and the growth rate. Both $L_t = (1+g_L)^t L_0$ and $L(t) = e^{g_L t}L(0)$ say roughly the same thing. The first just assumes that time moves in discrete chunks (e.g. years) while the second assumes that time moves continuously.
 
+Note that if you take the log of this continuous time version you get
+
+$$
+\ln L(t) = \ln L(0) + g_Lt
+$$
+
+which is identical to what you get with the discrete time version. Once we know the growth rate and initial level, we can find the *log* value of a variable at any point in the future. 
+
 Our assumption of constant growth in population thus gives us a way of pinning down the size of population in any period of time $t$ we want to think about. We'll use equations like these in our models to describe how certain variables act over time.
+
+## Logs and level differences
+A last way to use logs is related to using logs to find percentage growth. Here instead we're interested in how logs related to ratios of variables, like the ratio of GDP per capita in the US to that in China. Let's say that GDP per capita in the US is 60, but in China is only 15. Then the ratio is 60/15 = 4. Or US GDP per capita is 4 times higher than in China.
+
+What we'll often encounter in this class is that things like GDP per capita are shown in a graph or figure in log terms. That is, a figure might show that *log* GDP per capita is 4.094 (the natural log of 60), while the *log* GDP per capita in China is 2.708 (the natural log of 15). You'll see in the next section of the Study Guide why a lot of figures will work with logs. When you take a look at the data in the [growth facts](http://growthecon.com/StudyGuide/facts/facts.html) section, almost everything is plotted in terms of logs. For now, take it as a given. 
+
+If you know the log GDP per capita in both, can you find the ratio? Sure. But let's do that in a little more math-y way. If $y_{US}$ is GDP per capita in the US, and $y_{CH}$ is GDP per capita in the US, then $y_{US}/y_{CH}$ is the ratio we want (and we know is equal to 4). Using the properties of logs and exponentials, we can write
+
+$$
+e^{\ln y_{US} - \ln y_{CH}} = \frac{y_{US}}{y_{CH}}.
+$$
+
+This looks complicated, but it is just an application of the various rules about logs. You can work out on the right that this reduces to the ratio. But notice that on the right we have the difference in logs. This just tells us how to translate the difference in logs into the ratio. 
+
+Plug in what we know. 
+
+$$
+e^{4.094 - 2.708} = e^{1.386} = 3.999 \approx 4.
+$$
+
+The only reason the answer isn't exactly right is because we only used three decimal places for the logs. But once we know the difference in log values, we know the ratio. 
