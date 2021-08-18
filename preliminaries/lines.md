@@ -90,12 +90,6 @@ What is this? It's the equation for a line graphing the log of GDP against time,
 
 We've taken our model of the economy and used it to construct an equation that tells us how to graph log GDP over time. It tells us what the slope of that line is, meaning it tells us the growth rate of GDP. And it tells us what the intercept of that line, meaning it tells us about the level of GDP.
 
-The figure below allows you to play with the parameters of our simple model - $A(0)$ and $g_A$ - to see how it affects the line describing the relationship of log GDP and time. You can play with the sliders on the left to change the values of those parameters, and see how this moves the line around in space. Notice that if you change $A(0)$, this shifts the *level* of log GDP at all points in time. On the other hand, the growth rate $g_A$ controls the slope of the line. 
-
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="https://www.geogebra.org/m/kaxuywsc"></iframe>
-
-One reminder on the GeoGebra embeds in the study guide. You can click the three dots in the upper right of the GeoGebra panel and select "Open in App" to pop open the model in its own tab, which may make it easier to see and work with.
-
 The theoretical line we have is general, meaning it could replicate any constant growth GDP over time if we just give it the right values for $A(0)$ and $g_A$. We can give those two values a lot more economic intuition, and we will in the rest of the study guide. But for the moment realize that we can construct a theoretical line that can capture constant growth of GDP without too much trouble.
 
 Note that it isn't really relevant that the x-axis is labelled from 0 to 10. If you wanted to think of these as years, then you could easily add 2020 to each of them, and think of the line as showing GDP from 2020 to 2030. Or use any other initial year you want. 
