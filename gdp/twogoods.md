@@ -1,6 +1,7 @@
 ---
 title: Two goods and two time periods
 parent: Measuring GDP
+has_children: true
 nav_order: 1
 ---
 
