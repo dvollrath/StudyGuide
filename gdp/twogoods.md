@@ -27,7 +27,7 @@ Why is the present better off in the figure above? Note that at the relative pri
 
 A more complicated issue comes when we have a situation as in the figure below, where the present consumes more of good 2 and less of good 1, but the choices available in the two periods overlap. Now, it is not obvious whether the economy is better off or not. If we valued everything at the relative prices of the past, then the present is obviously better (i.e. it would appear that the constraint shifted up). But if we valued everything at the relative prices of the present, then it would look like the *past* is obviously better (i.e. it would again appear that the constraint shifted up). Notice that this is not an issue with pure inflation in prices, as again all that we're focusing on here is the relative price of goods within a given period.
 
-![Ambiguous change](fig-real-gdp-ambig.eps)
+![Ambiguous change](fig-real-gdp-ambig.pdf)
 
 How do we compare past and present, then, and figure out whether the real value of the consumption bundle has increased or decreased? The answer is that we're going to compare them from both perspectives (e.g. compare them using the relative prices of the past, and then compare then using the relative prices of the present) and do something like average those perspectives.
 
