@@ -19,7 +19,7 @@ Moreover, we observe these market outcomes both in the present, and in the past.
 
 Things get more complicated when the present does not consume more of *both* goods, but only more of *one* of the goods. Still, it may be obvious in this case that the present has higher real consumption than the past. 
 
-![Obvious change](fig-real-gdp-obvious.eps)
+![Obvious change](fig-real-gdp-obvious.png)
 
 The above figure gives a simple demonstration of this. The lines included have a slope $-p_1/p_2$, which gives the relative price of the two goods in either the past or present. As drawn, that relative price is different in past and present, but note that this doesn't change the conclusion that the present is better off than in the past in this case. A second thing to note is that pure inflation in prices is not an issue in the figure. We have the real quantities graphed, and the slope of the line is unaffected by the absolute price level, because it captures the relative price of the two goods. What we cannot do just by looking at the figure, however, is put a firm number on the increase in real consumption. 
 

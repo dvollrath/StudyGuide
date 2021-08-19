@@ -15,13 +15,13 @@ The issues with comparing [real GDP over time](http://growthecon.com/StudyGuide/
 
 Let's start with an obvious example. In this figure, Brazil's consumption bundle is noted, and the dashed line indicates the relative price of goods 1 and 2 in Brazil, $-p_1/p_2$. Similar for Mexico, only the dark line indicates the relative price of the goods. 
 
-![Obvious advantage](fig-xcountry-gdp-obvious.eps)
+![Obvious advantage](fig-xcountry-gdp-obvious.png)
 
 Here, given the relative prices in Brazil, Brazilians *could* have consumed more of both goods than Mexicans no matter what. No choice the Mexicans could have made at their relative prices would have been unavailable to Brazilians. We still don't know how to quantify the difference in real consumption of the two countries, but the ranking is obvious. 
 
 Just like the time-based case, this gets more complicated when the choices available to the two countries overlap. In the figure below, now it isn't obvious at all which country has higher real consumption. If we valued everything at the relative prices *in Brazil*, then Mexico looks better off: the Mexican bundle isn't available to Brazilians at the current Brazilian prices. But if we value everything at the relative prices *in Mexico*, then Brazil looks better off: the Brazilian bundle isn't available to Mexicans at the current Mexican prices.
 
-![Ambiguous advantage](fig-xcountry-gdp-ambig.eps)
+![Ambiguous advantage](fig-xcountry-gdp-ambig.png)
 
 Just like we did with respect to time, we want to think about figuring out ratios of real consumption from both perspectives, and then averaging them. The problem is that rather than two time periods (past and present) we've got *lots* of countries. We want to come up with a way of comparing all the countries with one another on a common scale, and so we need to take into account all the possible pairs of comparison (Brazil with Mexico, Mexico with the US, Brazil with the US, South Korea with Mexico, South Korea with the US, and so on and so on). 
 
