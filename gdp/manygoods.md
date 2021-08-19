@@ -1,6 +1,7 @@
 ---
 title: Many goods
-parent: Measuring GDP
+grand_parent: Measuring GDP
+parent: Two goods and two time periods
 nav_order: 2
 ---
 
