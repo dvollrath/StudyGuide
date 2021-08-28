@@ -105,6 +105,6 @@ If we were reporting this, we might assume that $Y_{2018} = 100$. So our reporte
 ## Visualizing
 You should go to the spreadsheet and play around with the relative prices. You can adjust them to see under what situations real consumption goes up from both perspectives, or down from both perspectives. 
 
-To see a more interactive example of how all this works, you can alternatively play around with this web app. Either go to [this link](https://dietzvollrath.shinyapps.io/GDPBasic/) or use the app as embedded here. 
+To see a more interactive example of how all this works, you can alternatively play around with this web app. Either go to  <a href="https://dietzvollrath.shinyapps.io/GDPBasic/" target="_blank">this link</a> or use the app as embedded here. 
 
 <iframe height="800" width="100%" frameborder="no" src="https://dietzvollrath.shinyapps.io/GDPBasic/"> </iframe>
