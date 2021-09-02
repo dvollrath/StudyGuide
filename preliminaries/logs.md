@@ -147,7 +147,7 @@ A last way to use logs is related to using logs to find percentage growth. Here 
 
 What we'll often encounter in this class is that things like GDP per capita are shown in a graph or figure in log terms. That is, a figure might show that *log* GDP per capita is 4.094 (the natural log of 60), while the *log* GDP per capita in China is 2.708 (the natural log of 15). You'll see in the next section of the Study Guide why a lot of figures will work with logs. When you take a look at the data in the [growth facts](http://growthecon.com/StudyGuide/facts/facts.html) section, almost everything is plotted in terms of logs. For now, take it as a given. 
 
-If you know the log GDP per capita in both, can you find the ratio? Sure. But let's do that in a little more math-y way. If $y_{US}$ is GDP per capita in the US, and $y_{CH}$ is GDP per capita in the US, then $y_{US}/y_{CH}$ is the ratio we want (and we know is equal to 4). Using the properties of logs and exponentials, we can write
+If you know the log GDP per capita in both, can you find the ratio? Sure. But let's do that in a little more math-y way. If $y_{US}$ is GDP per capita in the US, and $y_{CH}$ is GDP per capita in China, then $y_{US}/y_{CH}$ is the ratio we want (and we know is equal to 4). Using the properties of logs and exponentials, we can write
 
 $$
 e^{\ln y_{US} - \ln y_{CH}} = \frac{y_{US}}{y_{CH}}.
