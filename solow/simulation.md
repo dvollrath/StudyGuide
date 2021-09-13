@@ -138,6 +138,6 @@ Simulating an economy using the Solow model can be easier to get your head aroun
 
 You should be able to walk through period by period and see how the equations used in the Study Guide map to the formulas used in the spreadsheet. One advantage of the spreadsheet is that you can also play with the parameters and see how this changes the path of log GDP per capita, the growth rate of GDP per capita, and the relationship of K/Y and $g_{K/Y}$. 
 
-As an alternative the following app allows you to tweak the parameters of the model and see how various outcomes evolve over time. In essence, this is an interactive version of the spreadsheet that is easier to adjust, but remember it is doing exactly the *same* thing. You can play with the embedded app below, or use <a href="https://dietzvollrath.shinyapps.io/TestBasic/" target="_blank">this link</a> to open up a direct link, which is easier to use.
+As an alternative the following app allows you to tweak the parameters of the model and see how various outcomes evolve over time. In essence, this is an interactive version of the spreadsheet that is easier to adjust, but remember it is doing exactly the *same* thing. You can play with the embedded app below, or use <a href="https://dietzvollrath.shinyapps.io/SolowBasic/" target="_blank">this link</a> to open up a direct link, which is easier to use.
 
-<iframe height="800" width="100%" frameborder="no" src="https://dietzvollrath.shinyapps.io/TestBasic/"> </iframe>
+<iframe height="800" width="100%" frameborder="no" src="https://dietzvollrath.shinyapps.io/SolowBasic/"> </iframe>
