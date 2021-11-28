@@ -97,13 +97,13 @@ The other contributor appears to be a slowdown in educational change, from 0.70 
 ## Demographic boom and bust
 The big story here is that demographics are fundamentally changing the growth rate of GDP per capita. This is really the consequence of the Baby Boom in the 1940s-1960s and then the subsequent collapse in fertility rates that followed. It led to a surge of workers into the population in the mid-20th century and then a drop in the 21st. 
 
-![Fertility](chi-vollrath-fig05001.eps)
+![Fertility](chi-vollrath-fig05001.png)
 
 This figure shows two series on fertility. The dark line is the number of crude birth rate - children per 1,000 women - and you can see the Boom in the 1940s and 1950s. More relevant for the slowdown is the collapse in child/women into 1970 and afterwards. The dashed line is the total fertility rate, which accounts for age structure differences of women (e.g. crude births could be low if there are a lot of 5-15 year old girls). Even accounting for age structure, there is a distinc decline in fertility in the 1970s/1980s, and it has remained low. 
 
 Okay, what consequence did this have? It changed the age structure across years, and in particular changed the fraction of the population that was of working age in different decades. 
 
-![Age](chi-vollrath-fig05002.eps)
+![Age](chi-vollrath-fig05002.png)
 
 This second figure shows the age structure in three different years. In 1960 note that there are *tons* of kids relative to older people. But there is a dip in working ages 20-65. This is when the Baby Boom are kids, and the distinct drop around 20-25 reflects lives missing due to World War II. 
 
