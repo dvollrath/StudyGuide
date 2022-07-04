@@ -11,15 +11,17 @@ nav_order: 2
 {:toc}
 
 ## Accounting for growth
-From the prior section we know that the growth rate of GDP per capita can be written as
+From the prior section we know that given a production function of $Y = K^{\alpha}(AL)^{1-\alpha}$ the growth rate of GDP per capita can be written as
 
 $$
 g_y = \alpha (g_K - g_A - g_L) + g_A.
 $$
 
-This divides up growth into a part determined by the growth rate of capital (relative to productivity and labor), and a part determined strictly by the growth rate of productivity. Here we will break this down numerically to see how important the two parts are. 
+This divides up growth in GDP per capita into two parts. $\alpha(g_K - g_A - g_L)$ is the contribution of *net* capital growth. The "net" refers to the fact that we care about how fast capital grows relative to the growth rate of productivity and labor. Why? Because capital is itself something that is produced, so if it is growing quickly that may only indicate that the economy is growing for *other* reasons. Capital contributes to growth in living standards to the extent that it grows faster than the pace of productivity and labor; in that case we are actually accumulating more capital relative to our ability to use it. 
 
-Some of this is straightforward to find. We can look up (or calculate) the growth rate of GDP per capita, $g_y$, the growth rate of capital, $g_K$, and the growth rate of labor, $g_L$. Given what we learned about cost shares, we can infer a value of $\alpha$ of about 0.3. 
+The second part is just $g_A$ itself, productivity growth. This contributes directly because it enhances our production given the stock of capital and labor available. 
+
+The question here is how big these two contributions to growth are in the real world. Some of this is straightforward to find. We can look up (or calculate) the growth rate of GDP per capita, $g_y$, the growth rate of capital, $g_K$, and the growth rate of labor, $g_L$. Given what we learned about cost shares, we can infer a value of $\alpha$ of about 0.3. 
 
 The one thing that isn't immediately clear here is what the growth rate of productivity will be, $g_A$. Productivity isn't something we can measure directly at all. But since we have all this other information, we can back out what $g_A$ *must* be to ensure this equation holds. 
 

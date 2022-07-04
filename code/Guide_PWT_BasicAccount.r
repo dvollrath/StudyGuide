@@ -55,7 +55,7 @@ fig <- plot_ly(usa, x = ~year, y = ~ga, name = 'Productivity', type = 'scatter',
                mode = 'lines'
 )
 fig <- fig %>% add_trace(y = ~gcap, name = 'Capital',mode = 'lines')
-fig <- layout(fig, title = list(text = 'Accounting for Japan', x=0),
+fig <- layout(fig, title = list(text = 'Accounting for United States', x=0),
               xaxis = list(title = 'Year', tick0=1950, dtick=10),
               yaxis = list (title = '10-year growth rates'),
               hovermode="x unified")
