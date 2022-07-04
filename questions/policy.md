@@ -98,7 +98,7 @@ $$
 
 and whether $\tau$ positively or negatively affects the growth of the capital stock depends on whether $s_P$ is bigger or less than $s_I$. The point being that we have to know what taxation is used for before we make any conclusions about its effects. And for different countries, the size of $s_P$ and $s_I$ could be different, so that in one (Mexico?) higher taxes are associated with higher levels of GDP per capita, but for others (Japan?) higher taxes are associated with lower levels of GDP per capita.
 
-But even then we'd have to keep considering what is donw with the taxes not spent on capital, the $(1-s_P)\tauY_t$ in spending. Is that invested in human capital, through hiring teachers or providing health care? Or is it used for transfers, which then gets us into the question of whether we're transferring money from people with low propensities to buy capital goods to those with high propensities. 
+But even then we'd have to keep considering what is donw with the taxes not spent on capital, the $(1-s_P) \tau Y_t$ in spending. Is that invested in human capital, through hiring teachers or providing health care? Or is it used for transfers, which then gets us into the question of whether we're transferring money from people with low propensities to buy capital goods to those with high propensities. 
 
 ## Incentives to innovate
 The prior section viewed the impact of taxes and government spending entirely as means of adjusting the capital stock. But we can easily imagine that tax policies and spending influence the innovation process as well. 

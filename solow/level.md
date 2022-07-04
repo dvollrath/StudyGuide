@@ -1,7 +1,7 @@
 ---
 title: Level differences
 parent: Solow and Balanced Growth
-nav_order: 5
+nav_order: 6
 ---
 
 # Level differences in GDP per capita

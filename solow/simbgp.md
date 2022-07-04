@@ -1,7 +1,7 @@
 ---
 title: The balanced growth path
 parent: Solow and Balanced Growth
-nav_order: 4
+nav_order: 5
 ---
 
 # The balanced growth path
