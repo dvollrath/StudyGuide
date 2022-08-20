@@ -3,6 +3,8 @@ title: Introduction
 nav_order: 2
 ---
 
+![Meme](meme_intro.pdf)
+
 # Big questions in economic growth
 
 The first part of the course is about building up an understanding of the facts of economic growth, and the main models for understanding those facts. That framework will then be used to think about a series of more specific questions related to growth and how it interacts with other areas of the economy, society, and governance.

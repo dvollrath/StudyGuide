@@ -10,6 +10,8 @@ nav_order: 4
 1. TOC 
 {:toc}
 
+![Meme](meme_calc.pdf)
+
 ## Take logs and time derivatives
 When we're building a model of economic growth, we'll start with some kind of expression for GDP (or GDP per capita). This might take the form of a production function like
 

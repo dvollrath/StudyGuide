@@ -10,6 +10,8 @@ nav_order: 5
 1. TOC 
 {:toc}
 
+![Meme](meme_gdppc.pdf)
+
 ## Measuring things in per capita terms
 We know how to calculate real GDP. But that absolute size of GDP isn't terribly interesting, because we know that some countries have a large GDP (e.g. China, the US) partly because they just have a lot of people. We're going to focus instead on GDP per person, which is also known as GDP *per capita* (because Latin is cool). There isn't anything magic about GDP per capita. If $L$ is the number of people in a country, then GDP per capita ($y$) is just
 

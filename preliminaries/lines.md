@@ -10,6 +10,8 @@ nav_order: 3
 1. TOC 
 {:toc}
 
+![Meme](meme_graph.pdf)
+
 ## Log differences and slopes
 One of the reasons we use logs so much in economic growth is because it is going to make it easy to visualize the growth rate. To see what I mean, go back to the toy data we used to think about growth and levels. Here, I added a new column that is the log of the level of GDP.
 

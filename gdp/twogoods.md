@@ -11,6 +11,8 @@ nav_order: 1
 1. TOC 
 {:toc}
 
+![Meme](meme_prices.pdf)
+
 ## Visual comparison
 You can get all the important intuition for how we measure GDP by thinking just about two goods, and looking at two time periods.
 

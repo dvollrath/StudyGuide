@@ -10,6 +10,8 @@ nav_order: 4
 1. TOC 
 {:toc}
 
+![Meme](meme_xcountry.pdf)
+
 ## Who are you calling rich?
 The issues with comparing [real GDP over time](http://growthecon.com/StudyGuide/gdp/twogoods.html) for a given country come up again when trying to compare two countries with one another, even in the same year. Let's say that we're trying to compare the real consumption (or GDP) of Mexico and Brazil. And further, let's say that we only care about two consumption goods, $c_1$ and $c_2$. 
 

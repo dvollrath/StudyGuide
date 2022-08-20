@@ -10,6 +10,8 @@ nav_order: 7
 1. TOC 
 {:toc}
 
+![Meme](meme_dying.pdf)
+
 ## Did life suck?
 What we're after here is a comparison of living standards not just with last year or a decade ago, but a century ago or more. Set aside the precise measurement of GDP per capita for the moment. Were people better off before the industrial revolution and the origin of sustained growth in GDP per capita? Or were they better off in a pre-industrial economy based primarily on agriculture?
 
