@@ -10,6 +10,8 @@ nav_order: 3
 1. TOC 
 {:toc}
 
+![Meme](meme_expend.pdf)
+
 ## Consumption
 From basic macro, we know we can account for GDP on the expenditure basis, or $Y = C + I + G + NX$. We'll be mainly concerned in this class with consumption (C) and investment (I). What we want to look at first is the fraction of GDP that is accounted for by consumption, or $C/Y$. 
 

@@ -10,6 +10,8 @@ nav_order: 1
 1. TOC 
 {:toc}
 
+![Meme](meme_stable.pdf)
+
 ## Evidence from after 1950
 The study guide [discussed](http://growthecon.com/StudyGuide/gdp/gdp.html) that real GDP per capita is the piece of data we are going to be most concerned with when studying growth. So the first thing is to look at how the *log* of real GDP per capita changed over time. We're going to do this for a set of relatively developed countries: US, UK, Canada, Australia, and Mexico. The most important thing in the figure you see below is how boring it is. The growth rate was stable for each country. How do you know it was stable? Because the slope of each line was pretty similar for decades. If you're not sure how the growth rate is related to the slope of these lines, review [this section](http://growthecon.com/StudyGuide/preliminaries/lines.html).
 
