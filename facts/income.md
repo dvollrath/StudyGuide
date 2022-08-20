@@ -10,6 +10,8 @@ nav_order: 4
 1. TOC 
 {:toc}
 
+![Meme](meme_wage.pdf)
+
 ## Labor's share of income
 The [prior section](http://growthecon.com/StudyGuide/facts/expenditure.html) looked at the expenditure breakdown of GDP. But GDP can also be decomposed by income payments. A simplified way of doing this is $Y = W + RK + \Pi$. $W$ is total labor compensation, including both direct wages and benefits (e.g. health insurance). $RK$ is the total return paid to owners of capital, where $R$ is the return per unit of capital, and $K$ is the amount of capital. Finally, $\Pi$ are the economic profits earned when an economy is not perfectly competitive. This would includes the economic profits earned by a monopolist, for example. 
 

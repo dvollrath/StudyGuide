@@ -11,6 +11,8 @@ nav_order: 3
 1. TOC 
 {:toc}
 
+![Meme](meme_capital.pdf)
+
 ## Per-capita growth 
 From the last section we found that 
 

@@ -10,6 +10,8 @@ nav_order: 6
 1. TOC 
 {:toc}
 
+![Meme](meme_level.pdf)
+
 ## Countries with different BGP's
 In the fake economies A and B, they shared a common BGP. Not only their growth rate converged to $g_A = 0.02$, but given the same parameters ($s_I$, $g_A$, $g_L$, and $\delta$) they had identical steady state values of the capital labor ratio and the same value for $A_0$, the *level* of their GDP per capita converged over time. They shared the *same* BGP. 
 

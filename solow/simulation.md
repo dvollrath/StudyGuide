@@ -11,6 +11,8 @@ nav_order: 4
 1. TOC 
 {:toc}
 
+![Meme](meme_simulation.pdf)
+
 ## Tracking the growth of GDP per capita
 Believe it or not, between the production function and the growth rate of capital, we've got everything we need to produce a reasonable simulation of economies that have balanced growth paths. 
 
