@@ -10,6 +10,8 @@ nav_order: 4
 1. TOC 
 {:toc}
 
+![Meme](meme_modern.pdf)
+
 ## Population growth
 What was clear from the sections on resources and growth was that the rate of population growth, $g_L$, mattered along the BGP. The faster population grew, the slower would be GDP per capita growth, as the resources were split up over more and more people. 
 

@@ -10,6 +10,8 @@ nav_order: 2
 1. TOC 
 {:toc}
 
+![Meme](meme_effort.pdf)
+
 ## Increasing absolute research effort
 Productivity is the application of non-rival ideas to using rival inputs. And while the non-rival nature of those ideas mean they can be applied in many places at once, that doesn't mean non-rival ideas were easy to obtain. In fact, a tremendous amount of time and spending every year goes to finding *new* non-rival ideas to raise productivity. Non-rival ideas may not have an opportunity cost when they are used, but they do have a cost to develop in the first place.
 

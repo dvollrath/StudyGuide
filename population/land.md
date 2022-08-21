@@ -10,6 +10,8 @@ nav_order: 3
 1. TOC 
 {:toc}
 
+![Meme](meme_land.pdf)
+
 ## Renewables and fixed resources
 We can tweak the original model a little to think about the use of resources that are necessary for production, but that do not deteriorate over time, or that can be renewed. Agricultural land is commonly thought of this way, and while soil fertility can decline with use, it can also be renewed through fallowing or fertilization. Other types of resources, like lumber or water, have similar properties. How does economic growth operate in the presence of these kinds of resources?
 

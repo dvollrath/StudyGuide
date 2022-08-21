@@ -10,6 +10,8 @@ nav_order: 5
 1. TOC 
 {:toc}
 
+![Meme](meme_malthus.pdf)
+
 ## Demographics in the past
 While the demographics in the modern period seem to reinforce the process of economic growth, in the past this did not seem to be the case (or at least was not as strong). Farther back in the past, demographics appear to be associated with "Malthusian dynamics", named for Thomas Malthus. He speculated that population growth was positively associated with growth in GDP per capita (as opposed to the negative relationship in modern times) and that this put a natural check on the growth rate of living standards. Let's see how that works, first by asking if Malthus was right about how population growth and living standards are related.
 

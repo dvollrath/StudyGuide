@@ -10,6 +10,8 @@ nav_order: 2
 1. TOC 
 {:toc}
 
+![Meme](meme_energy.pdf)
+
 ## Facts on energy use
 The stock $X_t$ here is something like "total proven reserves" of things like oil and natural gas. The term $E_t$ is the flow of these resources, or "energy", that goes into production. Here's a plot of total energy use over time. One can see how this levelled off for places like the US, Japan, and the UK, but kept climbing in places like China and India.
 
@@ -29,7 +31,7 @@ On the other hand, our model is a pretty *bad* fit for the time series evidence.
 
 The most plausible explanation for rising energy consumption per capita is that the initial stock of resources, $X_0$, and or the extraction rate, $s_X$, rose over time. We in fact see that proved reserves of oil and natural gas worldwide rose over time. A lot of time and effort goes into exploring for oil and gas resources, so perhaps that isn't a huge shock. 
 
-<img src="reserves.eps" alt="drawing" width="900"/>
+![Reserves](reserves.pdf)
 
 This figure shows, for oil, the world's proven reserves ($X_t$) over production ($E_t$) since 1980. In our model, this line should be flat as the ratio of $X_t/E_t$ is constant as both decline at the rate $s_X$. But in fact the ratio of reserves to production rose, indicating that discoveries of fossil fuel reserves were rising faster than energy use.
 
@@ -48,7 +50,7 @@ $$
 
 The Energy Department produces data on the ratio on the right-hand side of this approximation. The figure here shows, on the left, the total real payments made for energy ($p_E E$) by year, and broken down by the use of that energy. Real costs rose over time, but in the last few years fell. On the right hand side is the figure we are more interested in. This measures those real costs as a fraction of real GDP, or $p_E E/Y$, which is our approximation of $\beta$. 
 
-<img src="main.eps" alt="drawing" width="900"/>
+![Share](main.pdf)
 
 Note that despite a surge in the late 1970s and early 2000s, this ratio *declined* over time. In our simple Cobb-Douglas setting, this ratio should be constant. What this falling ratio indicates is that the importance of energy in production did fall, consistent with our production function becoming less reliant on energy use.
 

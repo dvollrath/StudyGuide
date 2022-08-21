@@ -11,6 +11,8 @@ nav_order: 5
 1. TOC 
 {:toc}
 
+![Meme](meme_competition.pdf)
+
 ## Profits!
 This isn't hard. We think innovation occurs because people want to get *paid*. Companies get started with new products because the founders want to make money. Existing comparies hire R&D workers to invent or improve products so that they can make more money. Individual workers will generate new ideas and ways of doing things to get noticed by a boss and ... make more money. 
 

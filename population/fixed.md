@@ -10,6 +10,8 @@ nav_order: 1
 1. TOC 
 {:toc}
 
+![Meme](meme_versus.pdf)
+
 ## Dynamics of nonrenewable resources
 Understanding growth when resources are required for production is just an extension of our standard model. Let $X_t$ be the stock of a resource, and this stock could be agricultural land, oil, trees, copper, the ocean, or it could represent a composite of all resources. This stock could decline over time.
 

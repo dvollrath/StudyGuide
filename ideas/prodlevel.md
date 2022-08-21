@@ -10,6 +10,8 @@ nav_order: 4
 1. TOC 
 {:toc}
 
+![meme](meme_popgrowth.pdf)
+
 ## Whose researchers?
 The prior section had some strong predictions about the relationship of productivity growth to the growth rate of researchers, $g_R$. But this raises some interesting questions about exactly who those researchers are. 
 

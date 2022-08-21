@@ -10,6 +10,8 @@ nav_order: 9
 1. TOC 
 {:toc}
 
+![Meme](meme_account2.pdf)
+
 ## Accounting for growth
 We know that productivity growth, $g_A$, determines the growth rate on the BGP. But we can establish further that productivity growth is responsible for *most* of the growth in GDP per capita over time. This will be focused on the United States, but for a number of developed countries similar results would hold.
 
