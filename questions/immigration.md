@@ -10,6 +10,8 @@ nav_order: 6
 1. TOC 
 {:toc}
 
+![Meme](meme_immigration.pdf)
+
 ## Immigration facts
 To start, let's get some sense of how immigration in the United States has occurred over the years. The three figures following all come from a paper by [Ran Abramitzky and Leah Platt Boustan](https://www.nber.org/papers/w21882.pdf). This is, by the way, a very readable history of immigration into the U.S. over time.
 

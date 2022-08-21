@@ -10,6 +10,8 @@ nav_order: 3
 1. TOC 
 {:toc}
 
+![Meme](meme_trade.pdf)
+
 ## GDP and trade
 Before we go too far, let's get some accounting straight to eliminate a common mistake when thinking about trade and GDP. You know the standard macro relationship
 

@@ -10,6 +10,8 @@ nav_order: 4
 1. TOC 
 {:toc}
 
+![Meme](meme_taxes.pdf)
+
 ## Basic relationships
 It is normal to think about how government policy - taxation, spending, and regulation - influence the economy. In this section we'll focus on how these policies influence economic growth. To start, let's just look at whether there are any meaningful relationships between things like taxes or spending and economic growth. 
 
