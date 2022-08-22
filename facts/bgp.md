@@ -10,7 +10,7 @@ nav_order: 6
 1. TOC 
 {:toc}
 
-![Meme](meme_bgp.pdf)
+![Meme](meme_bgp.png)
 
 
 This last section is not about a new fact, but rather about a term - "balanced growth path" - that is a description of the set of facts just reviewed. A balanced growth path, often abbreviated BGP, is defined by a series of facts that roughly approximate the observed data in developed countries like the US. You can actually find several different definitions of what a BGP is. For the purposes of this study guide, this is the set of facts we'll use to define a BGP.
