@@ -11,7 +11,7 @@ nav_order: 1
 1. TOC 
 {:toc}
 
-![Meme](meme_production.pdf)
+![Meme](meme_production.png)
 
 ## The production function
 Real GDP depends on the amount of each product that is produced, so we need some way of describing how all that producing of products occurs. In practice, we know that real GDP is calculated using *many* products. Conceptually, we could set up a production function for each individual product that describes how each is produced using capital, labor, natural resources, and perhaps other products. 

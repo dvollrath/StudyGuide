@@ -10,7 +10,7 @@ nav_order: 5
 1. TOC 
 {:toc}
 
-![Meme](meme_steady.pdf)
+![Meme](meme_steady.png)
 
 ## Simulating a BGP
 The simulations in the prior section showed that the two economies A and B seemed to be heading to common outcomes. Their $K/AL$ ratios were headed to about 3.7, and their growth rates were both headed to 2%. Recall as well that the production function elasticities were assumed to be constant, $\alpha = 0.3$ and there fore $1-\alpha = 0.7$. And finally, we assumed that the ratio of capital good formation to GDP, $s_I = 0.2$, was constant and identical in both. 

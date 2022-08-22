@@ -121,19 +121,13 @@ $$
 g_{A} = \theta \frac{R_{t}^{\lambda}}{A_t^{1-\phi}}.
 $$
 
-Take a look at a dynamic figure representing this relationship. Here we have to be careful, because that ratio of $R_t^{\lambda}/A_t^{1-\phi}$ is tricky. In the figure below, I'm just using $x = R_t^{\lambda}/A_t^{1-\phi}$. "x" captures the stock of researchers to the stock of productivity (which depends in part on those parameter values). The "f(x)" function shows the growth rate of productivity, $g_A$, in the green line. In a not surprising outcome, the growth rate $g_A$ is increasing in "x", the ratio of researchers to productivity. 
+Take a look at a dynamic figure representing this relationship. Here, I've plotted the growth rate $(1-\phi)g_A$ (the sloped line), and the growth rate $\lambda g_R$ (the horizontal line). 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="https://www.geogebra.org/m/t4yhvxze"></iframe>
-
-What else is in this figure? The growth rate of researchers, modified in our case by the fraction $\lambda/(1-\phi)$. So the "g(x)" function is $g_R \times \lambda/(1-\phi)$. We know that this is the BGP growth rate of productivity, and we know that it doesn't depend on the *size* of x. That is why it is a flat line. 
-
-Finally, we've got the vertical black dashed line, which is meant to capture the *actual* stock of $R^{\lambda}/A^{1-\phi}$ at one given point in time. If you start out with the values of R and A that I give in the figure, then the dashed line is to the right of where the blue and green lines intersect. What does that mean? It means that $g_A$ (green) is higher than the modified $g_R$ (blue). Which in turn means that A grows fast enough to overcome the growth in R, and the stock of $R^{\lambda}/A^{1-\phi}$ *falls*. 
-
-You can mechanically work out what happens next by adjusting R up by a little, but A up by a lot. This will shift the dashed line to the *left*. And that will mean the growth rate $g_A$ falls a little, but still remains large enough to push A up more than R, and the dashed line moves left *again*. And so on until the dashed line (the actual ratio of $R^{\lambda}/A^{1-\phi}$) comes to the point where the blue and green lines cross.
+<iframe height="700" width="1200" frameborder="no" src="https://dietzvollrath.shinyapps.io/JustRA/"> </iframe>
 
 No matter where you start, the system pushes you back to the point where the two lines cross, and where $g_A = g_R \times \lambda/(1-\phi)$, which is the BGP growth rate of productivity. This says that the productivity growth rate is *stable*. 
 
-There are a lot of parameters involved here, but the most important one for this result turns out the be $\phi$. Using the GeoGebra screen, try pushing the value of $\phi$ all the way to one. What happens? The horizontal line for $g_R \times \lambda/(1-\phi)$ disappears. Why? Because the denominator ($1-\phi$) goes to zero, meaning the whole term blows up to infinity. In other words, if $\phi$ goes to one (or was higher than one) then the BGP growth rate of productivity would be...infinity. Needless to say, this doesn't make a whole lot of sense.
+But try adjusting the value of $\phi$ up towards 1. It becomes almost horizontal, and in that case the $(1-\phi)g_A$ line may not intersect the $\lambda g_R$ line at all. In that case the system does not come to rest at a steady state. This means we've got another finding.
 
 Stable productivity growth
 {: .label .label-green }

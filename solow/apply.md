@@ -11,7 +11,7 @@ nav_order: 7
 1. TOC 
 {:toc}
 
-![Meme](meme_case.pdf)
+![Meme](meme_case.png)
 
 ## Finding the BGP in the United States
 We can apply the Solow model to specific cases, and use it to tell the story behind the economic growth that occurred. To start, consider the US, which is relatively boring. The figure below plots the log GDP per capita in the US over time, as we've seen before. What I've added to the figure are two hypothetical BGP lines. The two BGP lines differ in how they were constructed. 

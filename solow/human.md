@@ -10,7 +10,7 @@ nav_order: 8
 1. TOC 
 {:toc}
 
-![Meme](meme_human.pdf)
+![Meme](meme_human.png)
 
 ## Measuring human capital
 The Solow model so far has just physical capital, $K$, and "labor", $L$, as inputs. But that does not allow for much nuance in terms of skills, experience, or participation in the work force of people. We can extend the definition of production to allow for this. It requires two changes. The first is to add an explicit accounting for what we'll call *human capital* in the production function. Let

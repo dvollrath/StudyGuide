@@ -17,13 +17,13 @@ Let's think about the consequences of a one-time boost to the stock of researche
 
 How do we think about this in our model of innovation? First, be careful that this shock means a *one-time* jump in $R_t$, but the growth rate $g_R$ is unchanged once that shock occurs. Yes, the measured growth rate of R would be much higher than $g_R$ in that specific year that the shock occurred, but I'm saying that $g_R$ is the same both before the year of the shock and after the year of the shock.
 
-Next, go back to the GeoGebra figure describing the dynamics of innovation.
+Next, go back to the interactive figure describing the dynamics of innovation, or use [this link](https://dietzvollrath.shinyapps.io/ProdBasic/).
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="https://www.geogebra.org/m/t4yhvxze"></iframe>
+<iframe height="700" width="1200" frameborder="no" src="https://dietzvollrath.shinyapps.io/ProdBasic/"> </iframe>
 
-In that figure, what we're doing is just adjusting the R upwards, so that the dashed line moves to the right. If you do that, what happens to the growth rate of productivity? It jumps up. But once R is higher, what do the dynamics tell us? It tells us that R/A starts to fall, and eventually the economy will come back to rest at the same long-run growth rate as before, $g_A^{BGP} = g_R \lambda/(1-\phi)$. 
+In that figure, look at the "Productivity Dynamics" tab. Adjust the value of $R_0$ upwards, so the ratio of researchers to productivity goes up. Once R is higher, what do the dynamics tell us? It tells us that R/A starts to fall, and eventually the economy will come back to rest at the same long-run growth rate as before, $g_A^{BGP} = g_R \lambda/(1-\phi)$. 
 
-Does that mean the one-time jump in R had no effect? No. It had a temporary effect on the growth rate of productivity (it was higher for a while) and therefore means there is a *permanent* effect on the *level* of productivity. 
+Does that mean the one-time jump in R had no effect? No. It had a temporary effect on the growth rate of productivity (it was higher for a while) and therefore means there is a *permanent* effect on the *level* of productivity. Go back and look at the other tabs for the level and growth rate of productivity. You'll see a temporary spike in the growth rate of productivity and that the level of productivity is becoming permanently higher. 
 
 If you go back to the expression for the level of productivity,
 

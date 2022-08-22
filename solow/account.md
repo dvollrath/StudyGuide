@@ -10,7 +10,7 @@ nav_order: 2
 1. TOC 
 {:toc}
 
-![Meme](meme_account.pdf)
+![Meme](meme_account.png)
 
 ## Accounting for growth
 From the prior section we know that given a production function of $Y = K^{\alpha}(AL)^{1-\alpha}$ the growth rate of GDP per capita can be written as
