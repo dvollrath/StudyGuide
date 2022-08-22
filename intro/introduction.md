@@ -3,7 +3,7 @@ title: Introduction
 nav_order: 2
 ---
 
-![Meme](meme_intro.pdf)
+![Meme](meme_intro.png)
 
 # Big questions in economic growth
 

@@ -10,7 +10,7 @@ nav_order: 8
 1. TOC 
 {:toc}
 
-![Meme](meme_missing.pdf)
+![Meme](meme_missing.png)
 
 The key to productivity growth is research effort. And the more researchers we have, the more ideas we can generate to raise productivity. If exclude some people from taking part in the research and innovation process, we're throwing away the chance at ideas that could benefit everyone.
 

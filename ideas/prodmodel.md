@@ -11,7 +11,7 @@ nav_order: 6
 1. TOC 
 {:toc}
 
-![Meme](meme_humpshape.pdf)
+![Meme](meme_humpshape.png)
 
 ## Evidence on competition
 The prior section explained that *some* profits are needed to stimulate innovation. What we will do here is establish that the relationship of innovation and profits is not as simple as "more profits, more innovation". 

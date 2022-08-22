@@ -10,7 +10,7 @@ nav_order: 2
 1. TOC 
 {:toc}
 
-![Meme](meme_robots.pdf)
+![Meme](meme_robots.png)
 
 ## Robots
 Robots are capital goods, just more flexible and capable than things like trucks, buildings, or computers. And it is probably that flexibility that generates the most worry about how robots may affect employment of people. For example, here's a video of a robot cooking, something that up until now felt like it was inherently human-based.

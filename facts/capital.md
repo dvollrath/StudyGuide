@@ -10,7 +10,7 @@ nav_order: 5
 1. TOC 
 {:toc}
 
-![Meme](meme_capital.pdf)
+![Meme](meme_capital.png)
 
 ## Capital/output ratios
 One of the key inputs to producing GDP is what is loosely termed physical capital ($K$): structures, equipment, and intellectual property. If we tried to compare the stock of that capital across countries, it would be difficult because the absolute amount of capital in a place like the US is so large relative to a place like South Korea. We're instead going to scale the capital stock by the size of GDP, $K/Y$. In addition, this ratio is going to turn out to be central to how we think about the process of economic growth when we turn to modeling.

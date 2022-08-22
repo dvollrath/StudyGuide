@@ -10,7 +10,7 @@ nav_order: 5
 1. TOC 
 {:toc}
 
-![Meme](meme_dynamics.pdf)
+![Meme](meme_dynamics.png)
 
 ## Changes depend on levels
 Almost every model we're going to work with involves dynamics, meaning how a variable changes as time passes. For example, we want to know how GDP per capita (the variable) changes year to year. The dynamic models we use are going to tell us what the change in a variable is (or it's growth rate) in terms of the level of the same variable and perhaps a few others. For example, the change in GDP per capita might depend on how big GDP per capita is to begin with. 

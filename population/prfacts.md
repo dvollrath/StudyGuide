@@ -10,7 +10,7 @@ nav_order: 2
 1. TOC 
 {:toc}
 
-![Meme](meme_energy.pdf)
+![Meme](meme_energy.png)
 
 ## Facts on energy use
 The stock $X_t$ here is something like "total proven reserves" of things like oil and natural gas. The term $E_t$ is the flow of these resources, or "energy", that goes into production. Here's a plot of total energy use over time. One can see how this levelled off for places like the US, Japan, and the UK, but kept climbing in places like China and India.

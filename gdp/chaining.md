@@ -11,7 +11,7 @@ nav_order: 3
 1. TOC 
 {:toc}
 
-![Meme](meme_infinite.pdf)
+![Meme](meme_infinite.png)
 
 ## Chained real GDP
 We want to look at economic growth over a range of years, not just two. We could imagine using a single base year, and comparing all other years to that one. But then we'd have ratios like $(Y_{1965}/Y_{2009})$, and we'd be measuring real GDP in 1965 using 2009 prices. The disconnect of those prices may be substantial, and we haven't even touched yet on the issues that would come up with new products arriving, or old products disappearing. 

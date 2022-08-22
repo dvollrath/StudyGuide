@@ -10,7 +10,7 @@ nav_order: 5
 1. TOC 
 {:toc}
 
-![Meme](meme_slowdown.pdf)
+![Meme](meme_slowdown.png)
 
 ## 21st century slow growth
 You may be vaguely aware of the complaint that the growth rate of GDP per capita (and of GDP) has slowed down. Here is the 10-year rolling growth rate of GDP per capita to illustrate when this really kicked in.

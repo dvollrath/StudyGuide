@@ -10,7 +10,7 @@ nav_order: 1
 1. TOC 
 {:toc}
 
-![Meme](meme_pollution.pdf)
+![Meme](meme_pollution.png)
 
 ## Some facts on pollution
 The story with respect to economic growth is mixed. There are several types of pollution that appear to decline as countries become rich, while there are others that have a strong positive relationship to GDP per capita.

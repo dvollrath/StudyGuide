@@ -10,7 +10,7 @@ nav_order: 2
 1. TOC 
 {:toc}
 
-![Meme](meme_log.pdf)
+![Meme](meme_log.png)
 
 ## Natural logs
 You should be familiar with how logs work. You'll recall that logs have a base (e.g. "log base 10"). In economics we almost always work with logs that have a base of $e$, the mathematical constant that is approximately 2.718. The *natural log* of something is the log using base $e$. This is often denoted using $\ln$, as opposed to $log_e$. In this study guide, every time you see a reference to "log", I mean "natural log", and I'll use $\ln$ at all times to refer to taking the natural log of something. 

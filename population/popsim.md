@@ -10,7 +10,7 @@ nav_order: 6
 1. TOC 
 {:toc}
 
-![Meme](meme_simulate.pdf)
+![Meme](meme_simulate.png)
 
 ## Combination model
 For working with the model in a spreadsheet or app, it helps to slim things down and focus on just the resource dynamics and population dynamics. This is slightly less realistic, of course, but if we don't do this the intuition can get lost in trying to keep up with endogenous productivity growth or capital accumulation.

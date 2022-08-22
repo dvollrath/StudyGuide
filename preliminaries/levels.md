@@ -10,7 +10,7 @@ nav_order: 1
 1. TOC 
 {:toc}
 
-![Meme](meme_level.pdf)
+![Meme](meme_level.png)
 
 ## Basic concepts
 The first thing we need to do is distinguish between the *level* of something (like GDP), the *growth* of that thing, and the *growth rate* of that thing. 

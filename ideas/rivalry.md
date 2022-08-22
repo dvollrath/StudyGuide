@@ -10,7 +10,7 @@ nav_order: 1
 1. TOC 
 {:toc}
 
-![Meme](meme_nonrival.pdf)
+![Meme](meme_nonrival.png)
 
 ## Rival and non-rival inputs
 We know that productivity is important to the process of growth. It determines both the growth rate, $g_A$, along a BGP, and the baseline level, $A_0$, is part of what determines the level of the BGP. But what is productivity, and what makes it so important?

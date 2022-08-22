@@ -11,7 +11,7 @@ nav_order: 3
 1. TOC 
 {:toc}
 
-![Meme](meme_dynamics.pdf)
+![Meme](meme_dynamics.png)
 
 ## Research effort and productivity growth
 We want to build a model that explicitly makes productivity growth a function of research and development effort, and that can match the fact that R&D effort has increased but the rate of productivity growth remained roughly stable.  

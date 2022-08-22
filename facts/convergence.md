@@ -10,7 +10,7 @@ nav_order: 2
 1. TOC 
 {:toc}
 
-![Meme](meme_converge.pdf)
+![Meme](meme_converge.png)
 
 ## Convergence
 The prior section asserted that economic growth was stable over long periods of time, at least for developed economies. However, if you look back at those figures you'll see that there were a lot of possible deviations. Countries like Japan, South Korea, and Germany all had very high growth rates for a while compared to the US or UK, before settling down. In countries like Nigeria and China, we see surges in the growth rate and collapses in the growth rate, but it isn't obvious that they are headed towards stable growth.
