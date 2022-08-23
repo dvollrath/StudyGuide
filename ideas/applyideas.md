@@ -10,7 +10,7 @@ nav_order: 7
 1. TOC 
 {:toc}
 
-![Meme](meme_case.pdf)
+![Meme](meme_case.png)
 
 ## A one-time shock to the stock of researchers
 Let's think about the consequences of a one-time boost to the stock of researchers, $R_t$, in an economy. If you want some context for this, think of the 1930s and 40s, when a host of German scientists immigrated to the U.S. to escape persecution by the Nazis. [Moser, Voena, and Waldinger](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1910247) studied the impact of this on patent activity in the chemical industry specifically, finding it had a significant *increase* in patent activity. 
