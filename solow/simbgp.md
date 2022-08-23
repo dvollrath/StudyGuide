@@ -70,7 +70,7 @@ $$
 
 ## Balanced growth and transitional growth
 
-![Meme](meme_longrun.pdf)
+![Meme](meme_longrun.png)
 
 Now that we know that the capital/output ratio has a stable steady/state, we can go back and reconsider the definition of a balanced growth path, and what the combination of the data and theory imply. Here are the four characteristics of a BGP again:
 
