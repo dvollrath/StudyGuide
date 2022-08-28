@@ -1,6 +1,7 @@
 ---
 title: Revisiting accounting
 parent: Solow and Balanced Growth
+has_children: true
 nav_order: 9
 ---
 
