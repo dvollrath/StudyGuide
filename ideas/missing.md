@@ -1,7 +1,8 @@
 ---
 title: Missing innovation
-parent: Applications and Questions
-nav_order: 8
+parent: Case studies
+grand_parent: Ideas and Productivity
+nav_order: 2
 ---
 
 # Missing innovation

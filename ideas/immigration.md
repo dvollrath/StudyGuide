@@ -1,7 +1,8 @@
 ---
 title: Immigration and growth
-parent: Applications and Questions
-nav_order: 6
+parent: Case studies
+grand_parent: Ideas and Productivity
+nav_order: 1
 ---
 
 # How does immigration affect growth?

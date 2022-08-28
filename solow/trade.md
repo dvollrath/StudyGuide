@@ -1,6 +1,6 @@
 ---
 title: Is trade good for growth?
-parent: Case Studies
+parent: Case studies
 grand_parent: Solow and Balanced Growth
 nav_order: 2
 ---

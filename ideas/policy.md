@@ -1,7 +1,8 @@
 ---
 title: Taxes, government, and growth
-parent: Applications and Questions
-nav_order: 4
+parent: Case studies
+grand_parent: Ideas and Productivity
+nav_order: 3
 ---
 
 # Taxes, government, and Growth
