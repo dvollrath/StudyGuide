@@ -193,7 +193,7 @@ The rest of the gibberish is the intercept of the line, and determines the *leve
 Here we have to be really careful, and don't over-interpret $R_0$ as the literal number of researchers. Think of it more as the baseline level of research effort done in the past. This number, as mentioned before, doesn't have to just include research effort from the country we are talking about. Ideas are non-rival, so the research effort and productivity level of a country may be determined in part by research done in *other* economies.
 
 ## Visualizing the dynamics
-For a different way of seeing what is going on, you can also try this [spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQKwEdw0tpHNsoB30siQ3vuEN55HET1JcMhZYdyUnwf7v6q91VkaPA0yBxfHSxd5wfWApd5SusIx0Bt/pubhtml) which lays out the dynamics of productivity period by period. You can adjust the parameters and initial values of R and A to see how productivity growth evolves over time.
+For a different way of seeing what is going on, you can also try this [spreadsheet](https://docs.google.com/spreadsheets/d/1nN9Di392qIkza7RYq6Tp6yqBWtyxx3JAtseMaX4aDvA/edit?usp=sharing) which lays out the dynamics of productivity period by period. You can adjust the parameters and initial values of R and A to see how productivity growth evolves over time.
 
 Or similar to the Solow model, the following app allows you to adjust parameters and see the impact on the level of productivity, the growth rate of productivity, and how the dynamic system works. Rather than using the embedded app, <a href="https://dietzvollrath.shinyapps.io/ProdBasic/" target="_blank">this link</a> will take you directly to the app on its own page. 
 
