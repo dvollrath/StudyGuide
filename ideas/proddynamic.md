@@ -195,6 +195,8 @@ Here we have to be really careful, and don't over-interpret $R_0$ as the literal
 ## Visualizing the dynamics
 For a different way of seeing what is going on, you can also try this [spreadsheet](https://docs.google.com/spreadsheets/d/1nN9Di392qIkza7RYq6Tp6yqBWtyxx3JAtseMaX4aDvA/edit?usp=sharing) which lays out the dynamics of productivity period by period. You can adjust the parameters and initial values of R and A to see how productivity growth evolves over time.
 
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQKwEdw0tpHNsoB30siQ3vuEN55HET1JcMhZYdyUnwf7v6q91VkaPA0yBxfHSxd5wfWApd5SusIx0Bt/pubhtml?widget=true&amp;headers=false"></iframe>
+
 Or similar to the Solow model, the following app allows you to adjust parameters and see the impact on the level of productivity, the growth rate of productivity, and how the dynamic system works. Rather than using the embedded app, <a href="https://dietzvollrath.shinyapps.io/ProdBasic/" target="_blank">this link</a> will take you directly to the app on its own page. 
 
 <iframe height="800" width="100%" frameborder="no" src="https://dietzvollrath.shinyapps.io/ProdBasic/"> </iframe>
