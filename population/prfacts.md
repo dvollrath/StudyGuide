@@ -31,7 +31,7 @@ On the other hand, our model is a pretty *bad* fit for the time series evidence.
 
 The most plausible explanation for rising energy consumption per capita is that the initial stock of resources, $X_0$, and or the extraction rate, $s_X$, rose over time. We in fact see that proved reserves of oil and natural gas worldwide rose over time. A lot of time and effort goes into exploring for oil and gas resources, so perhaps that isn't a huge shock. 
 
-![Reserves](reserves.pdf)
+![Reserves](reserves.png)
 
 This figure shows, for oil, the world's proven reserves ($X_t$) over production ($E_t$) since 1980. In our model, this line should be flat as the ratio of $X_t/E_t$ is constant as both decline at the rate $s_X$. But in fact the ratio of reserves to production rose, indicating that discoveries of fossil fuel reserves were rising faster than energy use.
 
