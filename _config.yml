@@ -18,4 +18,4 @@ footer_content: "Copyright &copy; 2020 Dietrich Vollrath. Distributed by an <a h
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
 last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
 
-toc_levels: 2..2
+toc_levels: 1..2
