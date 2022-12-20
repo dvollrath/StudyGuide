@@ -6,6 +6,9 @@ nav_order: 1
 
 # Chapter 2 problems
 
+1. TOC 
+{:toc}
+
 ## Question 1
 These are short questions to check your understanding of the basics of the Solow model.
 
