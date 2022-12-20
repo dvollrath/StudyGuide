@@ -4,12 +4,10 @@ parent: Problems
 nav_order: 1
 ---
 
-# Chapter 2 problems
-
 1. TOC 
 {:toc}
 
-## Question 1
+# Question 1
 These are short questions to check your understanding of the basics of the Solow model.
 
 ### Part A
@@ -42,7 +40,7 @@ In the expression $g_y = \alpha(g_K - g_A - g_L) + g_A$, what term(s) capture th
 
 The $\alpha(g_K - g_A - g_L)$ term captures transitional growth that takes place while the economy moves from an initial value of $K/AL$ towards the steady state.
 
-## Question 2
+# Question 2
 For each of the following scenarios, assume that the economy begins in a steady state. For each scenario, draw three figures showing how each of the following terms evolve over time: the growth rate of GDP per capita, the log of GDP per capita, and the size of the $K/AL$ ratio. 
 
 ### Part A
