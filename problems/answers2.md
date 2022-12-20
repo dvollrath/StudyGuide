@@ -32,10 +32,24 @@ Along a BGP it is the case that $g_C = g_Y$, so therefore $g_C = g_A + g_L$. The
 ### Part E
 Along a balanced growth path, does $s_I$ affect the growth rate or the level of GDP per capita?
 
-Section 2.3.1 went over the effect of $s_I$ on the economy. In Figure 2.5 it shows that changing $s_I$ would impact the \textit{level} of GDP per capita along a BGP, but that the growth rate of GDP per capita would remain equal to $g_A$.
+Section 2.3.1 went over the effect of $s_I$ on the economy. In Figure 2.5 it shows that changing $s_I$ would impact the *level* of GDP per capita along a BGP, but that the growth rate of GDP per capita would remain equal to $g_A$.
 
 ### Part F
 In the expression $g_y = \alpha(g_K - g_A - g_L) + g_A$, what term(s) capture the concept of "transitional growth".
 
 The $\alpha(g_K - g_A - g_L)$ term captures transitional growth that takes place while the economy moves from an initial value of $K/AL$ towards the steady state.
-	\end{enumerate}
+
+## Question 2
+For each of the following scenarios, assume that the economy begins in a steady state. For each scenario, draw three figures showing how each of the following terms evolve over time: the growth rate of GDP per capita, the log of GDP per capita, and the size of the $K/AL$ ratio. 
+
+### Part A
+The gross capital formation rate, $s_I$, drops to a lower value and stays there permanently.
+
+Answering this requires you to evaluate the dynamics of the Solow model as in Section 2.3.1 or 2.3.2. In this case, the situation inovlves a shift *down* in $s_I$, the opposite of what is discussed in Section 2.3.1. Hence the results should look opposite as well. In words, what happens is that after this change, the actual $K/AL$ ratio is now higher than the steady state $K/AL$ ratio, and hence $g_K$ falls to something less than $g_A + g_L$. Slower capital growth means slower growth in GDP per capita, so that $g_y < g_A$ as the economy transitions to the new steady state. The level of the BGP in GDP per capita shifts down as well, as the steady state value of $K/AL$ is lower.
+
+To see this in figures that the problem asks for, it is helpful to use the following app. 
+
+### Part B
+The population growth rate, $g_L$, rises to a higher value and stays there permanently.
+
+You can analyze this problem in the same manner. In the end
