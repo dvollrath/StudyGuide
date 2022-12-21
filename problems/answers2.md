@@ -63,3 +63,7 @@ To see this in figures that the problem asks for, it is helpful to use the follo
 The population growth rate, $g_L$, rises to a higher value and stays there permanently.
 
 **Answer:** You can analyze this problem in the same manner. In the end
+
+## Question 6
+
+<iframe src="https://rows.com/embed/1GdqNgUh9ldtjJtq2AGRlXWl5jnkcdURf0NUGJeuVXSB/7c8087c6-f7ef-43a2-8fc7-9dff47b3c8f2" class="rows-embed" frameborder="0" width="100%" height="450" style="max-width: 100%; border: 0px solid #EAEAEA; border-radius: 4px;"></iframe>
