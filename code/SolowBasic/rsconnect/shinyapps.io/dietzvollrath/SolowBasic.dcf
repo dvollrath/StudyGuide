@@ -5,8 +5,9 @@ account: dietzvollrath
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4214850
-bundleId: 5028364
+bundleId: 6665193
 url: https://dietzvollrath.shinyapps.io/SolowBasic/
-when: 1631545854.911
+when: 1671731111.52849
+lastSyncTime: 1671731111.5285
 asMultiple: FALSE
 asStatic: FALSE

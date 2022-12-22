@@ -11,6 +11,7 @@ base_gA <- .02
 base_delta <- .05
 base_alpha <- .3
 base_A <- 1
+base_L <- 1
 base_kalstar <- (base_sI/(base_gL+base_gA+base_delta))^(1/(1-base_alpha))
 base_K <- base_kalstar*base_A
 base_kystar <- base_sI/(base_gL+base_gA+base_delta)
@@ -31,9 +32,9 @@ ui <- fluidPage(
       sliderInput("alt_sI", h6('New capital share of GDP \\(s_I\\)'),
                   min = 0, max = 1, value = base_sI),
       sliderInput("alt_gL", h6("Population growth rate \\(gL\\)"),
-                  min = -.1, max = .1, value = base_gL),
+                  min = -.04, max = .04, value = base_gL),
       sliderInput("alt_gA", h6("Productivity gorwth rate \\(gA\\)"),
-                  min = -.1, max = .1, value = base_gA),
+                  min = -.06, max = .06, value = base_gA),
       sliderInput("alt_delta", h6("Depreciation rate \\(\\delta\\)"),
                   min = 0, max = 1, value = base_delta),
       sliderInput("alt_alpha", h6("Capital elasticity \\(\\alpha\\)"),
@@ -42,6 +43,8 @@ ui <- fluidPage(
                   min = 0, max = 10, value = base_K,step = 0.1),
       sliderInput("alt_A", h6("Initial Productivity \\(A_0\\)"),
                   min = 0, max = 10, value = base_A, step = 0.1),
+      sliderInput("alt_L", h6("Initial Labor \\(L_0\\)"),
+                  min = 0, max = 10, value = base_L, step = 0.1),
       sliderInput("timeT", h6("Number of periods"),
                   min = 0, max = 300, value = base_timeT, step = 1)
       ), # end sidebar panel
@@ -102,6 +105,7 @@ server <- function(input, output, session) {
     updateSliderInput(session,'alt_delta',value = base_delta)
     updateSliderInput(session,'alt_alpha',value = base_alpha)
     updateSliderInput(session,'alt_K',value = base_K)
+    updateSliderInput(session,'alt_L',value = base_L)
     updateSliderInput(session,'alt_A',value = base_A)
     updateSliderInput(session,'timeT',value = base_timeT)
   })
@@ -122,7 +126,7 @@ server <- function(input, output, session) {
     t <- c(0:input$timeT) # vector of periods up to input time
     df <- data.frame(t) # create dataframe to hold outcomes
     alt_kystar <- input$alt_sI/(input$alt_delta+input$alt_gA+input$alt_gL) # alt ss KY
-    alt_ky <- (input$alt_K/input$alt_A)^(1-input$alt_alpha) ## actual starting KY
+    alt_ky <- (input$alt_K/(input$alt_L*input$alt_A))^(1-input$alt_alpha) ## actual starting KY
     
     # Formula to fill in per-period actual KY ratio
     df$ky <- alt_kystar*(1-exp(-(1-input$alt_alpha)*(input$alt_delta+input$alt_gA+input$alt_gL)*df$t)) + alt_ky*exp(-(1-input$alt_alpha)*(input$alt_delta+input$alt_gA+input$alt_gL)*df$t)

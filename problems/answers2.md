@@ -60,7 +60,9 @@ How does the economy get to this lower $K/AL$ ratio? $g_K$ falls to something le
 
 Ultimately the *level* of GDP per capita will be lower, as the slower growth in GDP per capita pushes the economy down to a lower BGP. 
 
-To see this in figures that the problem asks for, it is helpful to use <a href="https://dietzvollrath.shinyapps.io/SolowBasic/" target="_blank">this app</a>, which will open in a separate window. This app is a simulation of the Solow model, and allows you to adjust the parameters to see what happens in response. 
+To see this in figures that the problem asks for, it is helpful to use <a href="https://dietzvollrath.shinyapps.io/SolowBasic/" target="_blank">this app</a>, which will open in a separate window if you use the link, or is embedded below. This app is a simulation of the Solow model, and allows you to adjust the parameters to see what happens in response. 
+
+<iframe height="800" width="100%" frameborder="no" src="https://dietzvollrath.shinyapps.io/SolowBasic/"> </iframe>
 
 In that app, the economy begins at steady state, and is on a BGP. When you adjust a parameter, like $s_I$, you'll see how the economy responds. In the app, the economy starts with $s_I = 0.20$. For this problem, use the slider on the left to adjust $s_I$ down to 0.10, a lower value. You'll see several things happen in the four tabs of results ("K/AL ratio", "Log GDP pc", "Growth rate", and "K/AL dynamics").
 
