@@ -74,6 +74,8 @@ In that app, the economy begins at steady state, and is on a BGP. When you adjus
 
 - "K/AL dynamics": This figure wasn't asked for in the problem, but reflects the shift that occurs in Figure 2.2 of the book. The blue dashed line is the original position of the $g_K$ curve, and the original steady state of $K/AL$ was where it intersected the dotted green line (at about 3.5) which measures the size of $g_A + g_L$. When $s_I$ falls, it shifts the $g_K$ curve to the left (lower). That's represented by the solid green line, which shows a lower steady state $K/AL$; note that it intersects the dotted green line at a lower value of $K/AL$ (at about 1.5). In terms of dynamics, the black dots represent the actual position of the economy period by period. Immediately after $s_I$ falls, the $g_K$ *curve* falls, but the actual value of $K/AL$ is still at the old steady state. The growth rate $g_K$ immediately falls below $g_A + g_L$, which starts pushing $K/AL$ to the left. The black dots track period by period that $K/AL$ falls, and $g_K$ slowly rises as the economy approaches the steady state. 
 
+As an alternative to the app, you can also use [this spreadsheet](solowmodel.xlsx) to evaluate the change. In that spreadsheet, on the first tab, you can adjust the parameters of the model
+
 ### Part B
 {: .no_toc }
 The population growth rate, $g_L$, rises to a higher value and stays there permanently.
