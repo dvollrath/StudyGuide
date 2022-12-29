@@ -10,6 +10,6 @@ The pages here contain answers and explanations for the end-of-chapter questions
 <iframe frameborder="0"
              width="900" height="600"
              scrolling="no"
-             src="/assets/plotly/fig_europe.html"
+             src="fig_europe.html"
              frameborder="0">
 </iframe>
