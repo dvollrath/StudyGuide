@@ -79,7 +79,7 @@ ui <- fluidPage(
                            p("This graph is different. It shows the relationship of the growth rate of K and
                              the level of K/AL. The negative slope established the stability of the Solow model.
                              Changes in some parameters shift the theoretical curves here, implying different
-                             steady state K/AL ratios where the growth rate of capital is equal to productivity and population growth."),
+                             steady state K/AL ratios (denoted by red dotted) where the growth rate of capital is equal to productivity and population growth."),
                            br(),
                            p("The black dots indicate the actual K/AL ratio and growth rate of capital over time. In the 
                              baseline, all these dots are at the steady state point. If you adjust parameters
@@ -141,6 +141,7 @@ server <- function(input, output, session) {
     df$lny <- (input$alt_alpha/(1-input$alt_alpha))*df$ky + log(input$alt_A) + input$alt_gA*df$t
     df$lnyalt <- (input$alt_alpha/(1-input$alt_alpha))*df$kyalt + log(input$alt_A) + input$alt_gA*df$t
     df$lnybase <- (base_alpha/(1-base_alpha))*df$kybase + log(base_A) + base_gA*df$t
+    df$lnymax <- max(df$lny)
     
     # Fill df with series on growth rate of GDP per capita
     df$gky <- (1-input$alt_alpha)*(input$alt_sI/df$ky-input$alt_gL -input$alt_gA- input$alt_delta)
@@ -156,13 +157,14 @@ server <- function(input, output, session) {
   output$kalgraph <- renderPlot(
     {
       ggplot(GraphData(), aes(t,value,colour=variable)) +
-        geom_line(aes(y = kal, color = "black"),size=1) + 
-        geom_line(aes(y = kalbase, color="blue"), linetype="dashed",size=1) +
-        geom_line(aes(y = kalalt, color="green"), linetype="dashed",size=1) +
+        geom_line(aes(y = kal, color = "black"),size=2) + 
+        geom_line(aes(y = kalbase, color="blue"), linetype="dashed",size=2) +
+        geom_line(aes(y = kalalt, color="green"), linetype="dashed",size=2) +
         xlab("Time") +
         ylab("K/AL ratio") +
         ylim(0, 10) +
         theme_light() +
+        theme(text = element_text(size = 16)) +
         ggtitle("K/AL ratio over time") + 
         scale_color_identity(name = "Models",
                              breaks = c("black", "green", "blue"),
@@ -174,13 +176,14 @@ server <- function(input, output, session) {
   output$lnygraph <- renderPlot(
     {
       ggplot(GraphData(), aes(t,value,colour=variable)) +
-        geom_line(aes(y = lny, color = "black"),size=1) + 
-        geom_line(aes(y = lnybase, color="blue"), linetype="dashed",size=1) +
-        geom_line(aes(y = lnyalt, color="green"), linetype="dashed",size=1) +
+        geom_line(aes(y = lny, color = "black"),size=2) + 
+        geom_line(aes(y = lnybase, color="blue"), linetype="dashed",size=2) +
+        geom_line(aes(y = lnyalt, color="green"), linetype="dashed",size=2) +
         xlab("Time") +
         ylab("Log GDP per capita") +
-        ylim(0, 3) +
+        #ylim(0, 3) + # Don't use limits here, let graph adjust to size
         theme_light() +
+        theme(text = element_text(size = 16)) +
         ggtitle("GDP per capita over time") + 
         scale_color_identity(name = "Models",
                              breaks = c("black", "green", "blue"),
@@ -193,12 +196,13 @@ server <- function(input, output, session) {
   output$gygraph <- renderPlot(
     {
       ggplot(GraphData(), aes(t,value,colour=variable)) +
-        geom_line(aes(y = gy, color = "black"),size=1) + 
-        geom_line(aes(y = gybase, color="blue"), linetype="dashed",size=1) +
-        geom_line(aes(y = gyalt, color="green"), linetype="dashed",size=1) +
+        geom_line(aes(y = gy, color = "black"),size=2) + 
+        geom_line(aes(y = gybase, color="blue"), linetype="dashed",size=2) +
+        geom_line(aes(y = gyalt, color="green"), linetype="dashed",size=2) +
         xlab("Time") +
         ylab("Growth rate of GDP p.c.") +
         theme_light() +
+        theme(text = element_text(size = 16)) +
         ylim(-.05, .07) +
         ggtitle("Growth rate of GDP p.c. over time") + 
         scale_color_identity(name = "Models",
@@ -217,16 +221,17 @@ server <- function(input, output, session) {
       alt_kalstar = (input$alt_sI/(input$alt_gL + input$alt_gA + input$alt_delta))^(1/(1-input$alt_alpha))
       
       ggplot(df, aes(x=tick)) +
-        geom_line(aes(y = gk, color = "green"),size=1) + 
-        geom_line(aes(y = gkbase, color="blue"), linetype="dashed",size=1) +
+        geom_line(aes(y = gk, color = "green"),size=2) + 
+        geom_line(aes(y = gkbase, color="blue"), linetype="dashed",size=2) +
         geom_point(data=GraphData(),y=GraphData()$gk, color="black") +
-        geom_hline(yintercept=base_gA+base_gL, linetype="dotted", color = "blue",size=1) +
-        geom_hline(yintercept=input$alt_gA+input$alt_gL, linetype="dotted", color = "green",size=1) +
+        geom_hline(yintercept=base_gA+base_gL, linetype="dotted", color = "blue",size=2) +
+        geom_hline(yintercept=input$alt_gA+input$alt_gL, linetype="dotted", color = "green",size=2) +
         geom_vline(xintercept=base_kalstar, linetype="dotted", color = "red") +
         geom_vline(xintercept=alt_kalstar, linetype="dotted", color = "red") +
         xlab("K/AL ratio") +
         ylab("Growth rates") +
         theme_light() +
+        theme(text = element_text(size = 16)) +
         ylim(-.01,.12) +
         ggtitle("Growth rate of K vs. K/AL") + 
         scale_color_identity(name = "Models",
