@@ -11,6 +11,10 @@ nav_order: 2
 ## Question 1
 In Figure 3.1 and 3.2 Germany and South Korea reach a balanced growth path that has a lower level of GDP per capita than the United States. Using the Solow Model as your guide, list possible reasons that these countries do not have the same level of GDP per capita.
 
+![Figure 3.1](/figures/fig-ch3-fig1.png)
+
+![Figure 3.2](/figures/fig-ch3-fig2.png)
+
 **Answer**: These differences in the balanced growth path depend on the parameters governing behavior (like gross capital formation) or the initial level of productivity. Section 3.2 contains an equation defining the level of GDP per capita along the BGP
 
 $$
@@ -35,6 +39,8 @@ Note that $g_A$, the growth rate of productivity, is *not* a likely candidate fo
 ## Question 2
 J. Bradford Delong (1988), in a comment on Baumol's convergence result for industrialized countries, Figure 3.7, pointed out that the result could be driven by the procedure through which the countries were selected. In particular, DeLong noted two things. First, only countries were rich at the end of the sample (i.e. 2018) were included. Second, several countries not included, such as Argentina, were richer than Japan in 1870. Use these points to criticize and discuss the Baumol result. Do these criticisms apply to the results for all countries?
 
+![Figure 3.7](/figures/fig-ch3-fig7.png)
+
 **Answer**: To see the problem with Baumol's selection, suppose that countries' income levels were not determined by any economic process, but were in fact just random numbers. To be concrete, let's say that GDP per capita was drawn each period from the set of 10 numbers $1, 2, 3, \ldots, 10$, and that each value could be drawn with equal probability (10\%). 
 
 Suppose we look only at countries with income levels greater than or equal to 6 in the second period. Because of this randomness, knowing that a country is rich (has income great than 6) in the second period implies nothing about its income in the first period -  hence the distribution will be "wider" in the first period than in the second, and we will see the appearance of convergence even though in this simple experiment we know there is no convergence.
@@ -46,7 +52,9 @@ This criticism applies whenever countries are selected on the basis of the last 
 For the evidence related to the world as a whole, there is no selection bias --- all countries are included.
 
 ## Question 3
-Figure 3.9 showed that countries that are relatively rich (compared to their steady state) tend to grow slowly, while countries that are relatively poor (compared to their steady state) tend to grow fast. We presumed that because of the Solow Model, this meant that over time all these countries would eventually reach their steady state. Danny Quah (1993) argued that the correlation depicted in Figure \ref{FIG-Ch3-Fig9} does not necessarily imply this, appealing to something called \textit{Galton's fallacy}. His reasoning was as follows. Imagine that in each year, the position of every country relative to its steady state is determined at random, and that every country has an equal chance of landing at each value in the Figure (-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, or 2). 
+Figure 3.9 showed that countries that are relatively rich (compared to their steady state) tend to grow slowly, while countries that are relatively poor (compared to their steady state) tend to grow fast. We presumed that because of the Solow Model, this meant that over time all these countries would eventually reach their steady state. Danny Quah (1993) argued that the correlation depicted in Figure 3.9 does not necessarily imply this, appealing to something called Galton's Fallacy. His reasoning was as follows. Imagine that in each year, the position of every country relative to its steady state is determined at random, and that every country has an equal chance of landing at each value in the Figure (-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, or 2). 
+
+![Figure 3.9](/figures/fig-ch3-fig9.png)
 
 ### Part A
 {: .no_toc }
@@ -72,7 +80,6 @@ How would you use this logic to dismiss the Solow Model interpretation of that F
 
 **Answer**: This is the same criticism as in Question 2 with the Baumol model. We might interpret the data in Figure 3.9 as evidence of convergence to steady state, when in fact we are just observing random fluctuations. 
 
-
 ### Part E
 {: .no_toc }
 Does this logic imply that Figure 3.9 is useless?
@@ -81,6 +88,8 @@ Does this logic imply that Figure 3.9 is useless?
 
 ## Question 4
 Figure 3.10 shows the ratio of GDP per capita in the 90th to 10th percentile countries over time. Does this Figure imply that countries at the 10th percentile of GDP per capita in 1970 grew more slowly than countries at the 90th percentile in 1970? Why or why not? Does this Figure imply that countries at the 10th percentile of GDP per capita in 1995 grew faster than countries at the 90th percentile in 1995? Why or why not?
+
+![Figure 3.10](/figures/fig-ch3-fig10.png)
 
 **Answer**: For the first part, regarding growth after 1970, the answer is no. What Figure 3.10 does not tell us is the identity of the countries at each percentile. It's possible that a country at the 10th percentile in 1970 grew *very* fast and became a country in the 90th percentile by 1995 or 2020. The country at the 90th percentile could have grown very slowly afterwards, and ended up lower in the distribution later on. The distribution of countries could be mixed up over time.
 
@@ -108,5 +117,7 @@ From 1995 to 2018 the difference in variances is negative (variance was smaller 
 
 ## Question 5
 In Figure 3.11 we showed that the distribution of GDP per capita across countries has shifted to the right, meaning average GDP per capita was higher in 2019 than in 1960. This Figure also captures, indirectly, the information in Figure 3.10 that the spread of GDP per capita between the top and bottom of the distribution was larger in 2019 than in 1960. Draw a hypothetical version of Figure 3.11 that would show an increase in the average level of GDP per capita but where the spread of GDP per capita *declined* from 1960 to 2019. 
+
+![Figure 3.11](/figures/fig-ch3-fig11.png)
 
 **Answer**: There are a number of ways to accomplish this. The easiest would be to draw a single bar for 2019 with a GDP per capita of 64,000, meaning the distribution was minimized (everyone has a similar GDP per capita), but the average is demonstrably higher than in 1960.

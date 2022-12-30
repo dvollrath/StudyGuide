@@ -21,6 +21,8 @@ If $s_I = 0.2$, $g_L = 0.01$, $g_A = 0.02$, and $\delta = 0.05$, what is the ste
 {: .no_toc }
 In steady state, what is the growth rate of the capital stock, $g_K$, in the Solow model? 
 
+![Figure 2.2](/figures/fig-ch2-fig2.png)
+
 **Answer:** Figure 2.2 established that regardless of the starting value of $K/AL$, it always moves until it reaches a steady state. At that steady state it must be that $g_K = g_A + g_L$, such that the numerator and denominator of $K/AL$ grow at the same rate. 
 
 ### Part C
