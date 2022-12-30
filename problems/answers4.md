@@ -113,6 +113,8 @@ Note the difference with our standard Solow model. In the standard model with $Y
 ## Question 5
 Examining Figure 4.6, world GDP per capita appears to rise with the size of world population.
 
+![Figure 4.6](/figures/fig-ch4-fig6.png)
+
 ### Part A
 {: .no_toc }
 Is the effect of population on GDP per capita getting stronger or weaker as the size of population rises?
