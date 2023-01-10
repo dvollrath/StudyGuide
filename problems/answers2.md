@@ -79,7 +79,7 @@ In that app, the economy begins at steady state, and is on a BGP. When you adjus
 <iframe frameborder="0"
              width="900" height="600"
              scrolling="no"
-             src="/plotly/fig1.html"
+             src="./plotly/fig1.html"
              frameborder="0">
 </iframe>
 
