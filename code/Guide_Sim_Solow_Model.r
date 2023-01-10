@@ -23,10 +23,11 @@ f.solow <- function(alpha = .3, si=.2, delta=.05, ga=.02, gl=.01, k0=1, a0=1, l0
   gy_time <- (1-alpha)*(gK_time - ga - gl) + ga # growth rate of GDP pc at each t 
  
   # create list containing all results
-  solved <- list("time" = t, "KAL" = kal_time, "KY" = ky_time, "lny" = lny_time, 
+  results <- list("time" = t, "KAL" = kal_time, "KY" = ky_time, "lny" = lny_time, 
                  "lny_bgp" = lny_bgp, "gK" = gK_time, "gy" = gy_time, "KY_ss" = ky_ss,
                  "KAL_ss" = kal_ss, "KY_init" = ky_init, "KAL_init" = kal_init, 
                  "gK_init" = gK_init, "gy_init" = gy_init)
+  solved <- as.data.frame(results) # convert to data frame to pass back
 
   return(solved) # return all results
 }
@@ -36,30 +37,13 @@ init <- f.solow(k0=1.2)
 krange <- seq(from = 1,to = 4, by = .1)
 s = f.solow(k0 = krange)
 
-## Set up scenarios
-# Each scenario has ID, alpha, sI, gL, gA, delta, KY0, A0
-scenario <- c('A','B','C','D','E')
-
+s= f.solow(t = seq(from = 1,to = 50, by = 1))
 
 # Plot figure of scenarios and their BGP's
-fig <- plot_ly(s, x = ~year, y = ~lny, linetype = ~scenario, type = 'scatter', mode = 'lines')
-#fig <- add_trace(fig, x = ~year, y = ~lnystar, linetype = ~scenario, type = 'scatter', mode = 'lines')
-fig <- layout(fig, title = list(text = 'log GDP per capita', x=0),
-              xaxis = list(title = 'Year'),
+fig <- plot_ly(s, x = ~time, y = ~lny, type = 'scatter', mode = 'lines', name='Actual')
+fig <- add_trace(fig, x = ~time, y = ~lny_bgp, type = 'scatter', mode = 'lines', name='BGP')
+fig <- layout(fig, title = list(text = 'Log GDP per capita', x=0),
+              xaxis = list(title = 'Time'),
               yaxis = list (title = 'Log of GDP per capita'),
               hovermode="x unified")
-api_create(fig, filename = "sim-solow-lny")
-
-fig <- plot_ly(s, x = ~year, y = ~gy, linetype = ~label, type = 'scatter', mode = 'lines')
-fig <- layout(fig, title = list(text = 'Growth rates', x=0),
-              xaxis = list(title = 'Year'),
-              yaxis = list (title = 'Growth rate of GDP per capita'),
-              hovermode="x unified")
-api_create(fig, filename = "sim-solow-gy")
-
-fig <- plot_ly(s, x = ~year, y = ~ky, linetype = ~scenario, type = 'scatter', mode = 'lines')
-fig <- layout(fig, title = list(text = 'Capital/output ratio', x=0),
-              xaxis = list(title = 'Year'),
-              yaxis = list (title = 'Capital/output ratio'),
-              hovermode="x unified")
-api_create(fig, filename = "sim-solow-ky")
+export(fig, file = "/figures/fig1.png")

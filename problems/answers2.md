@@ -21,7 +21,7 @@ If $s_I = 0.2$, $g_L = 0.01$, $g_A = 0.02$, and $\delta = 0.05$, what is the ste
 {: .no_toc }
 In steady state, what is the growth rate of the capital stock, $g_K$, in the Solow model? 
 
-![Figure 2.2](/figures/fig-ch2-fig2.png)
+![Figure 2.2](./figures/fig-ch2-fig2.png)
 
 **Answer:** Figure 2.2 established that regardless of the starting value of $K/AL$, it always moves until it reaches a steady state. At that steady state it must be that $g_K = g_A + g_L$, such that the numerator and denominator of $K/AL$ grow at the same rate. 
 
@@ -76,7 +76,14 @@ In that app, the economy begins at steady state, and is on a BGP. When you adjus
 
 - "K/AL dynamics": This figure wasn't asked for in the problem, but reflects the shift that occurs in Figure 2.2 of the book. The blue dashed line is the original position of the $g_K$ curve, and the original steady state of $K/AL$ was where it intersected the dotted green line (at about 3.5) which measures the size of $g_A + g_L$. When $s_I$ falls, it shifts the $g_K$ curve to the left (lower). That's represented by the solid green line, which shows a lower steady state $K/AL$; note that it intersects the dotted green line at a lower value of $K/AL$ (at about 1.5). In terms of dynamics, the black dots represent the actual position of the economy period by period. Immediately after $s_I$ falls, the $g_K$ *curve* falls, but the actual value of $K/AL$ is still at the old steady state. The growth rate $g_K$ immediately falls below $g_A + g_L$, which starts pushing $K/AL$ to the left. The black dots track period by period that $K/AL$ falls, and $g_K$ slowly rises as the economy approaches the steady state. 
 
+<iframe frameborder="0"
+             width="900" height="600"
+             scrolling="no"
+             src="/plotly/fig1.html"
+             frameborder="0">
+</iframe>
 
+![Figure 2.2](./figures/fig1.png)
 
 ### Part B
 {: .no_toc }
