@@ -1,8 +1,8 @@
 title: Growth Study Guide
 baseurl: "/StudyGuide" # the subpath of your site, e.g. /blog
 url: "https://growthecon.com" 
-#remote_theme: pmarsceill/just-the-docs
-theme: just-the-docs
+remote_theme: pmarsceill/just-the-docs
+#theme: just-the-docs
 
 aux_links:
   "Study Guide on GitHub":
