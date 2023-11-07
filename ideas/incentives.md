@@ -40,7 +40,7 @@ How do we do that? The most obvious answer is intellectual property (IP) law: pa
 We could go deep down the rabbit hole of IP and innovation. For the moment, though, we're just interested in the idea that IP creates the excludable characteristic of non-rival ideas. Note that nothing here says that *more* IP or *stronger* IP necessarily increases innovation. We probably need *some* IP to incent innovation, but it is an open question of how much. We'll come back to that later.
 
 ## Economic implications
-Instead of getting into the weeds of IP here, let's work out some of the economic implications of having IP in order to generate growth. 
+Instead of getting into the weeds of IP here, let's work out some of the economic implications of having IP in order to generate growth. Here the Study Guide deviates from the textbook some, and tries to present a rough overview of the R&D decision process that firms use to capture the profits that come from IP. 
 
 First, from a pure accounting perspective, remember that we can always break GDP down into three income streams,
 
@@ -75,7 +75,7 @@ But let's operate as if the assumptions are true, and think about more possible 
 If this is true, then allowing profits for innovations doesn't just change the size of the slices of pie, it makes the pie smaller today. Again, this might be worth it. We might accept a smaller pie today, and labor and capital might accept smaller slices of that smaller pie today, if in return we get more innovation and a rapidly growing pie over time. 
 
 ## The amount of research
-The general result of the prior sub-section indicates that the profits behind innovation necessitate some deviation from perfect factor markets. But that general result doesn't inform us about how much research and development effort will be put in. We can try and be a little more specific about that by thinking about the incentives for innovators. 
+The general result of the prior sub-section indicates that the profits behind innovation necessitate some deviation from perfect factor markets. But that general result doesn't inform us about how much research and development effort will be put in. We can try and be a little more specific about that by thinking about the incentives for innovators. In the textbook there are very specific models (Romer, Schumpeter) about how those profits arise, what the imperfect markets look like, and what this does to R&D choices. Here we're going to treat things from a slightly higher level.
 
 Think of things from the perspective of a firm deciding whether to employ some workers in R&D, in the hopes of generating an innovation that will in turn generate profits. Our basic economic intuition is that they will employ R&D workers until the marginal benefit of R&D (the extra profits they could earn from their innovations) is equal to the marginal cost of those R&D workers, which is their wage. 
 
@@ -83,14 +83,16 @@ We can use that condition to come up with a rough idea of how many R&D workers, 
 
 Start with the profits. Let $s_{\pi} = \Pi/Y$ be profit's share of total GDP. Those are the total profits available to earn given the market power granted to innovators through IP rules and/or other means of making ideas excludable. To keep our lives simple, let's also assume that the profit each separate idea earns is equal to the total profits divided by the level of productivity, A. This is like saying that the size of productivity is exactly equal to the number of ideas. That isn't true, of course, but as long as they are proportional in some way, we are good. Put that together and we have a profits per idea in some given period $t$ of $s_{\pi} Y_t/A_t$. 
 
-Hold onto that for a moment. Now, how many ideas would any given researcher - if hired - produce? Well, we modeled the total flow of ideas with $\Delta A_{t+1} = \theta R_t^{\lambda} A_t^{\phi}$. Note that this isn't the growth rate of ideas, this is the raw change in ideas given some total number of researchers and an initial value for productivity. The number of new ideas per researcher is this divided by $R_t$, or $\Delta A_{t+1}/R_t$. 
+Hold onto that for a moment. Now, how many ideas would any given researcher - if hired - produce? Well, we modeled the total flow of ideas with $dA = \theta R_{t}^{\lambda} A_t^{\phi}$. Note two things. First, I'm just using $R$ here to denote the number of R&D workers. That is just to keep this distinct from the $L$, the number of regular old workers. Second, that this isn't the growth rate of ideas, this is the raw change in ideas given some total number of researchers and an initial value for productivity. 
+
+The number of *new ideas per researcher* is this divided by $R_t$, or $dA/R_t$. How many ideas can a firm get per each R&D worker they employ.
 
 Now hold onto *that* for a moment. What is the wage rate that you have to pay a researcher? We're assuming they are similar to everyone else, so they earn the regular wage. The wage per person is the total share of GDP earned by labor divided by the number of workers, or $w_t = s_L Y_t/L_t$. Note that I'm ignoring here any effect of moving researchers out of the labor force (which would presumably lower the number of workers and push wages up), because the fraction of R&D workers relative to the workforce is so small that it cannot matter that much. 
 
 Okay, we've got three pieces of information to work with. Put them together into this equilibrium condition,
 
 $$
-\frac{s_{\pi} Y_t}{A_t}\frac{\Delta A_{t+1}}{R_t}  = \frac{s_L Y_t}{L_t}.
+\frac{s_{\pi} Y_t}{A_t}\frac{d A}{R_t}  = \frac{s_L Y_t}{L_t}.
 $$
 
 The left-hand side has the profits-per-idea times the ideas-per-researcher, or profits-per-researcher. The right-hand side has wages per worker, and as we said above we expect these to be equal so that the marginal benefit to a firm (the left) is equal to the marginal cost (the right). This equation allows us to solve for the size of $R_t$ relative to $L_t$. 
@@ -100,10 +102,10 @@ Stary by noticing that the $Y_t$ terms cancel. This is a little bit of a fudge, 
 Cancel the $Y_t$ terms and then re-arrange the equation to
 
 $$
-\frac{s_{\pi}}{s_L}\frac{\Delta A_{t+1}}{A_t}  = \frac{R_t}{L_t}.
+\frac{s_{\pi}}{s_L}\frac{dA}{A_t}  = \frac{R_t}{L_t}.
 $$
 
-We've got what we want on the right-hand side now, the ratio of researchers to workers. And we can make one more substitution on the left. Note that we have the ratio $\Delta A_{t+1}/A_t$, which is just the growth rate of productivity. We could denote this $g_A$ to keep things simpler, and find that
+We've got what we want on the right-hand side now, the ratio of researchers to workers. And we can make one more substitution on the left. Note that we have the ratio $d A/A_t$, which is just the growth rate of productivity. We can denote this $g_A$ to keep things simpler, and find that
 
 $$
 \frac{R_t}{L_t} = \frac{s_{\pi}}{s_L}g_A.
@@ -119,43 +121,21 @@ Changes in IP laws or rules adjust the size of $s_{\pi}$ relative to $s_L$, and 
 
 This gives us one way of interpreting the growth of research effort over time in most developed countries, and in particular the growth in the fraction of workers involved in research. Our little model here suggests that this must have involved either an increase in the fruitfulness of research ($g_A$ going up) or in a larger payoff to innovation ($s_{\pi}$ going up). 
 
-## Research growth over time
-*This section is a little speculative, but kind of fun to work through.*
-
-You'll recall (I hope) that we said $g_A$ itself depends on the growth rate of researchers. So ultimately the fraction of researchers in the workforce depends on the growth rate of researchers? We can try and offer some idea about how the size of $R_t$ evolves over time using the above toy model, at least along a balanced growth path. 
-
-Along a BGP, we know that $g_A = g_R \lambda/(1-\phi)$, and since we see in the data that productivity growth is roughly constant it must be that $g_R$ is roughly constant as well. In our model above this means we have
+By the way, note that the ratio $s_R$ we used in the dynamics is the share of workers employed in R&D, or that roughly
 
 $$
-\frac{R_t}{L_t} = \frac{s_{\pi}}{s_L}\frac{\lambda}{1-\phi}g_R
+s_R \approx \frac{R}{L}
 $$
 
-once we are on a BGP. Take logs 
+so what we've done here is solve for the value of $s_R$ that firms hunting down profits will choose to employ. 
 
-$$
-\ln R_t = \ln L_t + \ln s_{\pi}/s_L + \ln \lambda/(1-\phi) + \ln g_R
-$$
+### Rising research effort
+The logic in this section gives us some insight into why the data show that the value of $s_R$ went up over time. One possibility is that the share of GDP going to profits rose relative to the share going to labor. If firms felt they were able to capture a bigger share of GDP then it makes more sense to try and innovate. 
 
-and that tells us about the level of research effort. If we apply what we know already about how population growth works, that $L_t = L_0 (1+g_L)^t$, then we can get that
+A second possibility is that the size of $g_A$ went up, which from the *firm* perspective just looks like a higher change of getting lucky with R&D. From the aggregate perspective we know that this is tied to the growth rate of population, $g_L$. 
 
-$$
-\ln R_t = \ln L_0 + \ln s_{\pi}/s_L + \ln \lambda/(1-\phi) + \ln g_R + g_L t.
-$$
+Now, over the last few decades we know that $g_L$ has slowed down across most major economies, while at the same time $s_R$ went up. One story is therefore that $s_R$ went up becaues profits went up relative to wages, which you can find some support for in the data. 
 
-This is a big mathematical mess, so let's not lose sight of what it says. It says that research effort over time, $R_t$, depends on the size of the baseline population, $L_0$, and the growth rate of that population, $g_L$. A larger population will have more researchers, and a population that grows faster will have faster growth in researchers. 
+On the other hand, as mentioned before on population, the "right" value of $g_L$ is probably some kind of worldwide growth rate related to all populations who produce research, and in that sense the arrival of China and India as major R&D producers is significant. $s_R$ might have gone up *everywhere* because the additional flow of smart people from China and India made it easier and cheaper to innovate. There isn't a clear answer on this, but the equations help us frame the question and narrow down the plausible answers.
 
-In addition, the *level* of research effort (the ratio of R relative to L) depends on the profit share and the parameters governing the accumulation of ideas like $\lambda$ and $\phi$. It also depends on how fast researchers are growing, because that dictates how fast we accumulate the ideas that put a drag on productivity growth. 
 
-Take this equation one step further, and ask yourself what it says about the growth rate of research effort. Careful, the $g_R$ in the above equation is not what we're solving for. We're taking the slope of this line, so we care about the term involved with $t$. It says that
-
-$$
-g_R = g_L
-$$
-
-or that on a balanced growth path researchers grow at the same rate as the population. If you want to really round this off, then you could end up saying this
-
-$$
-\ln R_t = \ln L_0 + \ln s_{\pi}/s_L + \ln \lambda/(1-\phi) + \ln g_L + g_L t.
-$$
-
-The growth rate of population determines the level *and* the growth rate of the level of research effort. Faster growth in population means the stock of possible researchers is growing, so that influences the growth rate of $R_t$. But faster population growth also means indirectly that the growth rate of research is fast, and thus it makes sense for people to put more people to work as researchers. 

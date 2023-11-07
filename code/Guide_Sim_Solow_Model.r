@@ -46,4 +46,5 @@ fig <- layout(fig, title = list(text = 'Log GDP per capita', x=0),
               xaxis = list(title = 'Time'),
               yaxis = list (title = 'Log of GDP per capita'),
               hovermode="x unified")
-export(fig, file = "/figures/fig1.png")
+orca(fig, file = "/figures/fig1.png")
+saveWidget(partial_bundle(fig), "./plotly/fig1.html",selfcontained = F, libdir = "lib")

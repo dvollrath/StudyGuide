@@ -55,12 +55,12 @@ Combine this with the finding from the last section about profits and the paymen
 We don't know precisely where the sweet spot is, and thus it is very possible that we have too little or too much competition in the economy to maximize growth, or that we are over or under-paying rival inputs relative to what would maximize growth. There is no clean answer to what economic conditions maximize innovation and economic growth. 
 
 ## Competition and the level of innovation
-Let's go back to our simple model of chossing $R_t$ from the prior section to think about how the findings in the above section work. This is just putting some math behind the words above. 
+Let's go back to our simple model of choosing $R_t$ from the prior section to think about how the findings in the above section work. This is just putting some math behind the words above. 
 
 We came up with this equation
 
 $$
-\frac{s_{\pi} Y_t}{A_t}\frac{\Delta A_{t+1}}{R_t}  = \frac{s_L Y_t}{L_t}.
+\frac{s_{\pi} Y_t}{A_t}\frac{dA}{R_t}  = \frac{s_L Y_t}{L_t}.
 $$
 
 that told us how a hypothetical firm would decide to allocate workers to research work. But in building that up, I made a very stark assumption that wasn't discussed. This equation doesn't take into account the *current* profits a firm might be earning. Or if you like, it *assumes* that the firm we are talking about is earning zero profits to begin with. 
@@ -70,15 +70,15 @@ The left-hand side was the marginal benefit of profits, but that marginal benefi
 We need to replace the profits-per-idea term with something like this
 
 $$
-\left(\frac{s_{\pi} Y_t}{A_t} - \pi^{Old}_t \right)\frac{\Delta A_{t+1}}{R_t}  = \frac{s_L Y_t}{L_t}
+\left(\frac{s_{\pi} Y_t}{A_t} - \pi^{Old}_t \right)\frac{dA}{R_t}  = \frac{s_L Y_t}{L_t}
 $$
 
-where $\pi^{Old}_t$ are the profits that a firm would *lose* if it innovated. These are the lost profits from iPhone 8s when Apple introduced the iPhone 11. 
+where $\pi^{Old}_t$ are the profits that a firm would *lose* if it innovated. These are the lost profits from iPhone 14s when Apple introduced the iPhone 15. 
 
 Now go back and think through the different types of industries again. In very competitive industries, the share of profits they actually can recoup is quite small, so for them $s_{\pi}$ is close to zero, and their existing profits are zero, so the equation is something like
 
 $$
-\left(0 - 0\right)\frac{\Delta A_{t+1}}{R_t}  = \frac{s_L Y_t}{L_t}
+\left(0 - 0\right)\frac{dA}{R_t}  = \frac{s_L Y_t}{L_t}
 $$
 
 and it doesn't really matter what the process is for accumulating new ideas or the wage rate is. The only solution here is to set R to zero. There is no marginal benefit to doing research. 
@@ -86,7 +86,7 @@ and it doesn't really matter what the process is for accumulating new ideas or t
 In a very un-competitive industry, they already are earning profits, and no one can replace them either because of IP or because they are so far ahead. So now this looks like
 
 $$
-\left(\frac{s_{\pi} Y_t}{A_t} - \frac{s_{\pi} Y_t}{A_t} \right)\frac{\Delta A_{t+1}}{R_t}  = \frac{s_L Y_t}{L_t}.
+\left(\frac{s_{\pi} Y_t}{A_t} - \frac{s_{\pi} Y_t}{A_t} \right)\frac{dA}{R_t}  = \frac{s_L Y_t}{L_t}.
 $$
 
 The profits that the firm in the un-competitive industry earns from an innovation are offset by the lost profits from their old product. Again, the term on the left is close to zero, and there is no incentive to do research. This is sometimes referred to as the *Arrow replacement effect*, which is the concept that firms don't want to innovate to replace themselves. That is a waste of resources.
@@ -94,7 +94,7 @@ The profits that the firm in the un-competitive industry earns from an innovatio
 Finally, the "medium" competitive industries have something like this going on:
 
 $$
-\left(\frac{s_{\pi} Y_t}{A_t} - 0 \right)\frac{\Delta A_{t+1}}{R_t}  = \frac{s_L Y_t}{L_t}
+\left(\frac{s_{\pi} Y_t}{A_t} - 0 \right)\frac{dA}{R_t}  = \frac{s_L Y_t}{L_t}
 $$
 
 where they currently have very few profits (because they are in competition with other firms) but if they *could* innovate they could jump out and grab some big profits. So the incentive here is pretty big, and we get positive values of $R_t$. 
