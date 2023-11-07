@@ -32,7 +32,7 @@ ui <- fluidPage(
                     min = -.35, max = .95, value = base_phi, ticks = FALSE, step=.01),
         sliderInput("alt_theta", h6("Scaling parameter \\(\\theta\\)"),
                     min = .01, max = .3, value = base_theta, ticks = FALSE, step=.01),
-        sliderInput("alt_gR", h6("Researcher growth \\(g_R\\)"),
+        sliderInput("alt_gR", h6("Researcher growth \\(g_L\\)"),
                     min = 0, max = .1, value = base_gR, ticks = FALSE, step=.01),
         br(),
         actionButton("reset", "Reset all to baseline")
@@ -70,10 +70,10 @@ server <- function(input, output, session) {
         annotate(geom="text", x=.45, y=input$alt_lambda*input$alt_gR+.002, 
                  label=expression(lambda*g[R]),size=4) +
         annotate(geom="text", x=RAstar+.05,y = .07, 
-                 label=expression(paste(R^{lambda}/A^{1-phi}," Steady State")),size=4) +
+                 label=expression(paste(L^{lambda}/A^{1-phi}," Steady State")),size=4) +
         annotate(geom="text", x=.45, y=(1-input$alt_phi)*input$alt_theta*.45+.005, 
                  label=expression((1-phi)*g[A]),size=4) +
-        xlab(expression(R^{lambda}/A^{1-phi}) ) +
+        xlab(expression(L^{lambda}/A^{1-phi}) ) +
         ylab("Growth rates") +
         theme_light() +
         xlim(0,.5) +

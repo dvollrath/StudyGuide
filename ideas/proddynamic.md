@@ -110,6 +110,11 @@ I labelled this $g_A^{BGP}$ because this is the growth rate of productivity alon
 
 This gives us a pretty clean result in determining the productivity growth rate.
 
+{: .highlight }
+> Productivity growth and researcher growth
+>
+>**Along a BGP the growth rate of productivity depends on the growth rate of the number of population according to $g_A^{BGP} = \frac{\lambda}{1-\phi} g_L$. It does not depend on the absolute number of researchers or the absolute size of productivity.**
+
 Productivity growth and researcher growth
 {: .label .label-green }
 **Along a BGP the growth rate of productivity depends on the growth rate of the number of population according to $g_A^{BGP} = \frac{\lambda}{1-\phi} g_L$. It does not depend on the absolute number of researchers or the absolute size of productivity.**
@@ -189,7 +194,7 @@ So productivity on the BGP depends on the level of $L_t$, not surprising. Note t
 Devoting a bigger share of workers to R&D will get us more productivity and potentially make the economy richer, yes. But it won't necessarily increase the *growth rate* of productivity on a BGP. This is the same logic as with capital and the ratio $s_I$. Using more of GDP to build capital will make us richer, but it won't change the growth rate. 
 
 ## Visualizing the dynamics
-For a different way of seeing what is going on, you can also try this [spreadsheet](https://docs.google.com/spreadsheets/d/1nN9Di392qIkza7RYq6Tp6yqBWtyxx3JAtseMaX4aDvA/edit?usp=sharing) which lays out the dynamics of productivity period by period. You can adjust the parameters and initial values of R and A to see how productivity growth evolves over time.
+For a different way of seeing what is going on, you can also try this [spreadsheet](https://docs.google.com/spreadsheets/d/1nN9Di392qIkza7RYq6Tp6yqBWtyxx3JAtseMaX4aDvA/edit?usp=sharing) which lays out the dynamics of productivity period by period. You can adjust the parameters and initial values of L and A to see how productivity growth evolves over time.
 
 Or similar to the Solow model, the following app allows you to adjust parameters and see the impact on the level of productivity, the growth rate of productivity, and how the dynamic system works. Rather than using the embedded app, <a href="https://dietzvollrath.shinyapps.io/ProdBasic/" target="_blank">this link</a> will take you directly to the app on its own page. 
 

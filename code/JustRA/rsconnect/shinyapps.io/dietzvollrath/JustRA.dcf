@@ -5,9 +5,7 @@ account: dietzvollrath
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4219559
-bundleId: 6226914
+bundleId: 7900755
 url: https://dietzvollrath.shinyapps.io/JustRA/
-when: 1661200805.8352
-lastSyncTime: 1661200805.83521
 asMultiple: FALSE
 asStatic: FALSE
