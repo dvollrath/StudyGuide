@@ -111,9 +111,7 @@ I labelled this $g_A^{BGP}$ because this is the growth rate of productivity alon
 This gives us a pretty clean result in determining the productivity growth rate.
 
 {: .highlight }
-> Productivity growth and population growth
->
->Along a BGP the growth rate of productivity depends on the growth rate of the number of population according to $g_A^{BGP} = \frac{\lambda}{1-\phi} g_L$. It does not depend on the absolute number of researchers or the absolute size of productivity.
+Along a BGP the growth rate of productivity depends on the growth rate of the number of population according to $g_A^{BGP} = \frac{\lambda}{1-\phi} g_L$. It does not depend on the absolute number of researchers or the absolute size of productivity.
 
 More researchers means more ideas, and that pushes up the growth rate of productivity. But recall that higher productivity tends to push down $g_A$, so those two forces are fighting against one another. The economy can sustain a higher growth rate of $g_A$ along the BGP if it has a faster growth rate of researchers to keep overcoming the drag from the higher *level* of productivity. But simply having more researchers does not, by itself, lead to faster growth in productivity. 
 
