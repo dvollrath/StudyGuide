@@ -113,7 +113,7 @@ This gives us a pretty clean result in determining the productivity growth rate.
 {: .highlight }
 Along a BGP the growth rate of productivity depends on the growth rate of the number of population according to $g_A^{BGP} = \frac{\lambda}{1-\phi} g_L$. It does not depend on the absolute number of researchers or the absolute size of productivity.
 
-Filler
+Filler	
 
 
 Productivity growth and researcher growth
