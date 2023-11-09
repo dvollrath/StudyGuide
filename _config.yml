@@ -19,8 +19,6 @@ footer_content: "Copyright &copy; 2020 Dietrich Vollrath. Distributed by an <a h
 callouts:
   important:
     color: green
-  highlight:
-    color: yellow
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
