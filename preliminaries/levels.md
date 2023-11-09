@@ -29,12 +29,8 @@ Here's a table showing some made-up data on GDP for several different years. The
 
 The growth rate of GDP in this table is the *percent change* in GDP from one year to the next. So from 2018 to 2019, the growth rate was $(104 - 100)/100 = .04$, or 4%. The next year, the absolute change in GDP was negative, so the growth rate was $(98-104)/104 = -.0577$, or -5.77%. And so on. Remember that when calculating the growth rate, you have to use the earlier year in the denominator of the calculation. 
 
-___
-Reminder 
-{: .label } 
+{: .highlight } 
 A percent is just 100 times a decimal. Saying "7%" is the same thing as saying "0.07". In the study guide we'll flip back and forth between these two. 
-
-___
 
 There are a few interesting things to notice about how levels, growth, and growth rates work together. Take a look at the years 2022, 2023, and 2024. In each of these years, the absolute growth of GDP is 2, meaning that GDP goes up by exactly the same amount each year. But when we calculate the *growth rate* of GDP in those years, the growth rate declines from 1.94% to 1.90% to 1.87%. Why? Because the level of GDP is increasing, and so the absolute growth (2) represents a smaller percent change in GDP than before. 
 
@@ -64,12 +60,8 @@ $$
 .04 = \frac{104}{100} - 1 = \frac{104-100}{100}.
 $$
 
-___
-Reminder 
-{: .label } 
+{: .highlight } 
 You'll have to be comfortable with this level of algebra to make any sense of this study guide. If you can't follow what we just went through, you probably want to do a math review before taking this course.
-
-___
 
 ## Average or annualized growth rates
 In the table above, we calculated an *annual* growth rate, meaning it was the percent change in GDP from one year to the next. But we don't have to limit ourselves to this. What if we want some kind of single summary growth rate that reflects what happened on average from 2018 to 2024? That summary growth rate might be useful in order to compare this period of time to some other one (e.g. 1960-1970) or to compare the growth rate in the U.S. to the growth rate in another country.

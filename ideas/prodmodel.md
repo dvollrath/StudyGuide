@@ -44,9 +44,8 @@ So what is going on in this figure? Let's think through three types of industrie
 
 We didn't prove anything formally here, but the intuition gives rise to this important point.
 
-Growth and competition
-{: .label .label-green }
-**There is a medium level of competition among firms - neither perfect competition nor monopolies - that maximizes economic growth.** 
+{: .important }
+There is a medium level of competition among firms - neither perfect competition nor monopolies - that maximizes economic growth.
 
 In economics we normally make a big deal about how perfect competition is the most efficient form of market organization. But note that this is a statement about the level of economic output *given* a level of productivity. If productivity were held constant, then we'd want all industries to be perfectly competitive, as that would maximize production. But if we're thinking about growth in productivity, we *don't* want perfect competition because this would limit innovation. 
 

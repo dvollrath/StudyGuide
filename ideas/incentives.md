@@ -62,9 +62,8 @@ Put all three of these together, and you get an intriguing result. It *must* be 
 
 Growth requires innovation, which requires profits, which requires that rival inputs like labor and capital are paid *less* than their marginal product. This is important enough to warrant a little label
 
-Growth and rival inputs
-{: .label .label-green }
-**Economic growth in a constant-returns to scale economy implies that rival inputs are not paid their marginal products.**
+{: .important }
+Economic growth in a constant-returns to scale economy implies that rival inputs are not paid their marginal products.
 
 Based on this, rival inputs like labor and capital need to be "underpaid" relative to their contribution to producing GDP so that we can provide incentives to innovators to come up with better ways to do things. That doesn't mean this must be unfair to labor or capital. It depends on their outlook. It may be that labor and capital are agreeing to take a smaller slice of the pie, in return for the pie growing even faster over time.
 

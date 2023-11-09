@@ -144,9 +144,8 @@ No matter where you start, the system pushes you back to the point where the two
 
 But try adjusting the value of $\phi$ up towards 1. It becomes almost horizontal, and in that case the $(1-\phi)g_A$ line may not intersect the $\lambda g_L$ line at all. In that case the system does not come to rest at a steady state. This means we've got another finding.
 
-Stable productivity growth
-{: .label .label-green }
-**The growth rate of productivity along a BGP is stable at $g_A^{BGP} = g_L \lambda/(1-\phi)$ if the value of $\phi<1$.**
+{: .important }
+The growth rate of productivity along a BGP is stable at $g_A^{BGP} = g_L \lambda/(1-\phi)$ if the value of $\phi<1$.
 
 $\phi<1$ essentially says that the growth rate of productivity must fall as productivity rises. It means that getting more productive cannot lead to an acceleration of productivity growth. The data suggest that this must be true. We do not see that productivity growth accelerates as productivity rises.
 

@@ -38,12 +38,8 @@ There are several properties of natural logs that we will use over and over agai
 * $\ln x^{\alpha} = \alpha \ln x$
 * $d \ln x/dx = 1/x$, or the derivative of $\ln x$ with respect to $x$ is $1/x$.
 
-___
-Reminder 
-{: .label } 
+{: .highlight } 
 This is some more mathematical material you have to be comfortable with to work through the study guide. If this doesn't ring a bell, look to do some math review before this course.
-
-___
 
 ## Using logs to calculate annualized growth rates
 Logs are handy because they allow us to turn multiplication and division problems into addition and subtraction problems. This can be really useful in calculating annualized growth rates, where if you recall from the [prior section](http://growthecon.com/StudyGuide/introduction/levels.html) involved a pretty annoying formula,
