@@ -25,9 +25,8 @@ If we look at the second set of countries that were experiencing catch-up growth
 
 Much like we did with growth rates, we're going focus on the stability among mainly developed countries to establish another stylized fact. 
 
-Stable consumption ratios
-{: .label .label-green }
-**The ratio of consumption to GDP ($C/Y$) tends to be stable over time for developed economies.**
+{: .fact }
+The ratio of consumption to GDP ($C/Y$) tends to be stable over time for developed economies.
 
 Again, this doesn't imply that consumption ratios are identical across countries. It just means that for a given country, it tends to be stable. And it doesn't account for the experience of developing economies (e.g. Nigeria and China) that have either a lot of variance or steady declines in their consumption ratios. But once we establish a model of how stable, developed economies work, we'll see how we can adapt that to explain what we see with places like Nigeria and China.
 
@@ -46,6 +45,5 @@ If we flip to the second set of countries things again get a little more excitin
 
 Regardless, this ratio of gross capital formation to GDP doesn't swing wildly year to year, and it doesn't bounce between 0 and 1. It stays within a fairly narrow band of values for each country, although there may be some shifts. We'll be able to accommodate those shifts when we get to modeling growth. But the two figures will lead to the following stylized fact.
 
-Stable gross capital formation ratios
-{: .label .label-green }
-**The ratio of gross capital formation to GDP ($I/Y$) tends to be stable over time for developed economies.**
+{: .fact }
+The ratio of gross capital formation to GDP ($I/Y$) tends to be stable over time for developed economies.

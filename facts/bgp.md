@@ -15,16 +15,12 @@ nav_order: 6
 
 This last section is not about a new fact, but rather about a term - "balanced growth path" - that is a description of the set of facts just reviewed. A balanced growth path, often abbreviated BGP, is defined by a series of facts that roughly approximate the observed data in developed countries like the US. You can actually find several different definitions of what a BGP is. For the purposes of this study guide, this is the set of facts we'll use to define a BGP.
 
-___
-Balanced growth path
-{: .label .label-green }
-**A country is said to have a balanced growth path (BGP) if the following four conditions hold:**
+{: .important }
+A country is said to have a balanced growth path (BGP) if the following four conditions hold:
 1. The growth rate of GDP per capita ($g_y$) is stable
 2. The ratio of gross capital formation to GDP ($I/Y$) is stable
 3. Labor's share of *costs* ($\phi_L$) is stable
 4. The capital/output ratio ($K/Y$) is stable
-
-___
 
 The US, for example, has data that conforms to these four facts. Because of that, we will say that the US is "on a balanced growth path". A number of other countries we looked at (Canada, Australia, the UK, Mexico) all appear to be on a balanced growth path as well. A number of other countries (South Korea, Germany, Japan) did not seem to be "on" a BGP for a long time, but they all seemed to have reached a BGP by around the year 2000. For countries like China and Nigeria, they do not appear to be "on" a BGP, and it remains an open question of whether they will end up on a BGP.
 

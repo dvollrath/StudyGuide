@@ -29,9 +29,8 @@ We get a similar story with the second set of countries. Again, there is a tende
 
 Much like our other facts, we're going to focus on the stability here.
 
-Stable labor share of GDP
-{: .label .label-green }
-**The share of GDP accounted for by compensation of labor is stable over long periods of time in developed countries.**
+{: .fact }
+The share of GDP accounted for by compensation of labor is stable over long periods of time in developed countries.
 
 This fact is associated solely with labor. But what about the share of GDP paid to capital, or to profits? These are harder to measure, because unfortunately national statistical agencies do not report payments to capital and economic profits separately. The reason is that businesses do not do their accounting in these terms, and so you cannot ask them to report to the Bureau of Economic Analysis (in the US) what their payments to capital were. The accounting profits that a business reports are generally a combination of both payments to capital and economic profits, and the owners of that business may not know or care how the accounting profits are broken down.
 
@@ -74,8 +73,7 @@ You get a similar story (save for Nigeria) if you look at the second set of coun
 
 Regardless, at this point we're going to go out on a limb and assert that these figures, despite being based on an assumed return to capital of 0.05, tell us something about the cost shares over time.
 
-Stable cost share of labor
-{: .label .label-green }
-**The share of costs (W+RK) accounted for by compensation of labor (W) is stable over long periods of time in developed countries.**
+{: .fact }
+The share of costs (W+RK) accounted for by compensation of labor (W) is stable over long periods of time in developed countries.
 
 This will come in very handy when trying to decide how to model production of GDP using labor and capital.

@@ -27,9 +27,8 @@ For other countries, there are some clear trends. Japan appears to have had a cl
 
 Much like all of our stylized facts, we're going to zoom out and focus on the stability involved in this data, as in the first figure. That will allow us to build a model of economic growth, and using that we can think about why countries in the second figure may see these movements in capital/output over time. 
 
-Stable capital/output ratios
-{: .label .label-green }
-**The capital/output ratio in developed economies appears to be stable over the long-run (e.g. decades)**
+{: .fact }
+The capital/output ratio in developed economies appears to be stable over the long-run (e.g. decades)
 
 ## Return to capital
 One of the key reasons to look at the capital/output ratio is that it should inform us about the *return* to capital. We need a tiny bit of math to think about this return. Recall the share $s_K$ is the fraction of GDP that is paid to owners of capital. Total payments to capital are thus $s_K Y$, and therefore the average return to any given unit of capital, $R$, is
@@ -48,7 +47,6 @@ The figure below uses their series on the overall return to capital, which incor
 
 What's plotted in the figure are backward looking 5-year average real returns. In 2000, for example, the rate of return plotted is the annualized return on capital from 1995-2000. The "real" return means that these are adjusted for inflation. This smooths out the year-to-year fluctuations, which can get very big, and allows us to focus on the long-run trend in returns. Similar to the other series, there is a certain stability here. Yes there are still big fluctuations (see Japan around 1970), but overall the returns all hover around 5% per year consistently. There is no distinct trend leading the return to capital in this period up or down. This gives us another stylized fact.
 
-Stable return on capital
-{: .label .label-green }
-**The return on capital in developed economies appears to be stable over the long-run (e.g. decades)**
+{: .fact }
+The return on capital in developed economies appears to be stable over the long-run (e.g. decades)
 
