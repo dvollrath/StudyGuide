@@ -41,7 +41,7 @@ We could construct this $R$ using the data on $s_K$ and data on the capital/outp
 
 Can we confirm this without just assuming it? To some extent, yes. Jorda, Schularick, and Taylor produced a long-run series on the [rates of return to capital](http://www.macrohistory.net/data/). They build this up from actual financial returns, as opposed to backing it out from aggregate data on $s_K$ and $K/Y$. 
 
-The figure below uses their series on the overall return to capital, which incorporates housing, equities, and safe assets (like government bonds). The data are not available for all countries, so I've included five that have been used in the prior figures.
+The figure below uses their series on the overall return to capital, which incorporates housing, equities, and safe assets (like government bonds). The data are not available for all countries, so I've included five that have been used in the prior section.
 
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="/plotly/jst-stable-return.html"></iframe>
 
@@ -49,4 +49,5 @@ What's plotted in the figure are backward looking 5-year average real returns. I
 
 {: .fact }
 The return on capital in developed economies appears to be stable over the long-run (e.g. decades)
+
 
