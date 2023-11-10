@@ -25,7 +25,7 @@ was the growth rate of GDP per capita. To decipher what drives growth, we need t
 ## Capital accumulation
 To describe $g_K$ further, we need to now dig into the process by which capital accumulates. Here is the basic equation we assume governs how the stock of capital changes.
 
-{: .important }
+{: .assumption }
 >Capital accumulates according to the following equation:
 >
 >$$

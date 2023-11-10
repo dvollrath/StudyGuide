@@ -22,7 +22,7 @@ We could do that in theory, but in practice it is unmanageable. What we're going
 
 Here is our aggregate production function, and it is so central to what we're going to do that I'm going to set it off with it's own little marker.
 
-{: .important }
+{: .assumption }
 >Real GDP at time $t$, $Y_t$, is produced according to the following Cobb-Douglas aggregate production function:
 >
 >$$ 

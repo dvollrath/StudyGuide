@@ -25,6 +25,9 @@ callouts:
   fact:
     title: Key fact
     color: blue
+  assumption:
+    title: Key assumption
+    color: yellow
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter

@@ -16,15 +16,21 @@ nav_order: 3
 ## Research effort and productivity growth
 We want to build a model that explicitly makes productivity growth a function of research and development effort, and that can match the fact that R&D effort has increased but the rate of productivity growth remained roughly stable.  
 
-To do this we will set up an equation for the "accumulation" of productivity, sort of like the accumulation equation we had for capital. Here's how we'll set this up,
+To do this we will set up an equation for the "accumulation" of productivity, sort of like the accumulation equation we had for capital.
+
+{: .assumption }
+>Ideas accumulate according to the following equation:
+>$$
+>A_{t+1} = A_t +  \theta L_{Rt}^{\lambda} A_t^{\phi},
+>$$
+
+or
 
 $$
-A_{t+1} = A_t +  \theta L_{Rt}^{\lambda} A_t^{\phi},
+dA = \theta L_{Rt}^{\lambda} A_t^{\phi}
 $$
-or
-$$
-dA = \theta L_{Rt}^{\lambda} A_t^{\phi}.
-$$
+
+where $dA = A_{t+1} - A_t$. 
 
 Productivity in period $t+1$ is equal to productivity in period $t$ plus this collection of terms (with the $\theta$) that represents the additional productivity gained in that period. Unlike capital, we don't have an explicit depreciation term for productivity, although we could do that (imagine old technologies becoming obsolete) at the cost of some more algebra. 
 
@@ -54,11 +60,12 @@ $$
 
 assuming $s_R$ stays constant. In other words, the number of R&D workers is just proportional to the number of people.
 
-The growth rate of productivity can therefore be written as
 
-$$
-g_A = \theta s_R^{\lambda} \frac{L_{t}^{\lambda}}{A_t^{1-\phi}}.
-$$
+{: .important }
+>The growth rate of productivity can be written as
+>$$
+>g_A = \theta s_R^{\lambda} \frac{L_{t}^{\lambda}}{A_t^{1-\phi}}.
+>$$
 
 ## Dynamics of productivity growth
 The last equation describes how the growth rate of productivity changes over time. It depends on the interaction of the number of researchers, $s_R L_t$, and the size of current productivity, $A_t$. Just like we did with the capital/output ratio, let's take a look at a simulation first to see how the growth rate of productivity changes as $L$ and $A$ change. 
