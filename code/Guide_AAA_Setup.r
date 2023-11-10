@@ -15,7 +15,7 @@ source("~/Dropbox/Tools/.Rprofile")
 #########################################################################
 # Necessary libraries
 #########################################################################
-library(devtools)
+#library(devtools)
 library(plotly)
 library(pwt9)
 library(pwt10)
@@ -24,3 +24,4 @@ library(OECD)
 library(reshape2)
 library(WDI)
 library(processx)
+library(htmlwidgets)
