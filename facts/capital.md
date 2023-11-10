@@ -43,7 +43,7 @@ Can we confirm this without just assuming it? To some extent, yes. Jorda, Schula
 
 The figure below uses their series on the overall return to capital, which incorporates housing, equities, and safe assets (like government bonds). The data are not available for all countries, so I've included five that have been used in the prior section.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="/plotly/jst-stable-return.html"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/jst-stable-return.html"></iframe>
 
 What's plotted in the figure are backward looking 5-year average real returns. In 2000, for example, the rate of return plotted is the annualized return on capital from 1995-2000. The "real" return means that these are adjusted for inflation. This smooths out the year-to-year fluctuations, which can get very big, and allows us to focus on the long-run trend in returns. Similar to the other series, there is a certain stability here. Yes there are still big fluctuations (see Japan around 1970), but overall the returns all hover around 5% per year consistently. There is no distinct trend leading the return to capital in this period up or down. This gives us another stylized fact.
 
