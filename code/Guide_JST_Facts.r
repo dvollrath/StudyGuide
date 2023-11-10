@@ -40,5 +40,5 @@ fig <- layout(fig, title = list(text = 'Return to capital over time', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = '5-year annualized return',range = c(-.1,.2)),
               hovermode="x unified")
-saveWidget(partial_bundle(fig), "../facts/jst-stable-return.html",selfcontained = F, libdir = "lib")
+saveWidget(partial_bundle(fig), "../plotly/jst-stable-return.html",selfcontained = F, libdir = "lib")
 #api_create(fig, filename = "jst-stable-return")
