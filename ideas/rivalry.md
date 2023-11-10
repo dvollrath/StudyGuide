@@ -27,9 +27,8 @@ What's an example of something non-rival? A recipe. The knowledge of *how* to co
 
 Ideas, recipes, plans, blueprints, market research, specs, and the like are all non-rival inputs to production. They tell us how to combine the rival inputs capital and labor to produce goods and services. And that gets us to a definition of productivity. 
 
-Defining productivity
-{: .label .label-green }
-**Productivity is the set of non-rival ideas that tell us how to combine rival inputs (capital, labor) to produce GDP.**
+{: .important }
+Productivity is the set of non-rival ideas that tell us how to combine rival inputs (capital, labor) to produce GDP.
 
 The non-rivalry is why productivity is capable of driving growth in GDP per person even when rival inputs (capital, labor) are not. Before we get to that, though, it is useful to think about a specific example to make the concepts clear.
 

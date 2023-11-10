@@ -46,9 +46,8 @@ We already kind of knew this, because we know from the growth facts that growth 
 
 But this disconnect between the increased R&D effort and stable productivity growth rate is important enough to warrant a little label, as it is going to inform our work on modeling productivity growth. 
 
-Rising R&D efforts
-{: .label .label-green }
-**The absolute number of workers and GDP spent on R&D has increased over time, but there is no systematic increase in the growth rate of productivity.**
+{: .fact }
+The absolute number of workers and GDP spent on R&D has increased over time, but there is no systematic increase in the growth rate of productivity.
 
 Here it is important to remember that while productivity is a measure of how efficiently we use inputs, it is *not* a measure of the number of innovations that take place. For example, here is a plot showing the number of patents granted by the US Patent Office to applicants from different countries over time. This isn't a perfect measure of the total number of innovations being found around the world. First, not all innovations get patented. Second, not all innovators get a patent in the US. But given the size of the US many innovators choose to patent here, even if they are from another country. 
 
