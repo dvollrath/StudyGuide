@@ -24,4 +24,6 @@ fig <- layout(fig, title = list(text = 'Relative price of energy', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list(title = 'Real energy price (2019=1)'),
               hovermode="x unified")
-api_create(fig, filename = "oecd-cpi-energy")
+saveWidget(partial_bundle(fig), "../plotly/oecd-cpi-energy.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "oecd-cpi-energy")

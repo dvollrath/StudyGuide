@@ -53,7 +53,9 @@ fig <- layout(fig, title = list(text = 'Dynamics of capital growth', x=0),
               yaxis = list (title = 'Growth rate of K', range=c(0,0.1),dtick=.01
               )
 )
-api_create(fig, filename = "me-gky-dynamics")
+saveWidget(partial_bundle(fig), "../plotly/me-gky-dynamics.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "me-gky-dynamics")
 
 dfgraph <- dfgraph[with(dfgraph,order(kycurr)),]
 
@@ -62,7 +64,9 @@ fig <- layout(fig, title = list(text = 'Relationship of growth and level of K/Y'
               xaxis = list(title = 'Capital/output ratio',range=c(0,4.5),dtick=.5),
               yaxis = list (title = 'Growth rate of capital/output ratio', range=c(-.1,0.25))
 )
-api_create(fig, filename = "me-gky-relationship")
+saveWidget(partial_bundle(fig), "../plotly/me-gky-relationship.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "me-gky-relationship")
 
 ## Create evolving frames for graphing changes in growth rate
 df = NULL
@@ -124,8 +128,9 @@ fig <- layout(fig, title = list(text = 'Level of GDP per capita over time', x=0)
               yaxis = list (title = 'Log GDP per capita', range=c(4,5)
               )
 )
+saveWidget(partial_bundle(fig), "../plotly/me-lny-animated.html",selfcontained = F, libdir = "lib")
 
-api_create(fig, filename = "me-lny-animated")
+#api_create(fig, filename = "me-lny-animated")
 
 fig <- plot_ly(df,
                x = ~k, 
@@ -147,5 +152,6 @@ fig <- layout(fig, title = list(text = 'Growth rate of GDP per capita over time'
               yaxis = list (title = 'Growth rate of GDP per capita', range=c(0,.05)
               )
 )
+saveWidget(partial_bundle(fig), "../plotly/me-gy-animated.html",selfcontained = F, libdir = "lib")
 
-api_create(fig, filename = "me-gy-animated")
+#api_create(fig, filename = "me-gy-animated")

@@ -24,7 +24,8 @@ fig <- layout(fig, title = list(text = 'Log GDP per capita in the long run', x=0
               xaxis = list(title = 'Year', tick0=1820, dtick=20),
               yaxis = list (title = 'Log GDP per capita', range=c(6,11)),
               hovermode="x unified")
-api_create(fig, filename = "mad-stable-lngdppc")
+saveWidget(partial_bundle(fig), "../plotly/mad-stable-lngdppc.html",selfcontained = F, libdir = "lib")
+#api_create(fig, filename = "mad-stable-lngdppc")
 
 ##########################################################################
 # Pull Maddison world data in and figure for global GDP per capita and pop
@@ -41,7 +42,8 @@ fig <- layout(fig, title = list(text = 'Relationship of GDP p.c. and population'
               xaxis = list(title = 'Log global population'),
               yaxis = list(title = 'Log global GDP per capita')
               )
-api_create(fig, filename = "mad-global-lngdppc-pop")
+saveWidget(partial_bundle(fig), "../plotly/mad-global-lngdppc-pop.html",selfcontained = F, libdir = "lib")
+#api_create(fig, filename = "mad-global-lngdppc-pop")
 
 # Calculate average growth rates between Maddison observations
 mad <- # lag the population
@@ -69,7 +71,8 @@ fig <- layout(fig, title = list(text = 'Population and GDP p.c. growth', x=0),
               xaxis = list(title = 'Global population growth'),
               yaxis = list(title = 'GDP p.c.')
 )
-api_create(fig, filename = "mad-global-gy-gl")
+saveWidget(partial_bundle(fig), "../plotly/mad-global-gy-gl.html",selfcontained = F, libdir = "lib")
+#api_create(fig, filename = "mad-global-gy-gl")
 
 #########################################################################
 # Figure of pop growth rate and GDP per capita
@@ -84,7 +87,9 @@ fig <- layout(fig, title = list(text = 'Population growth and GDP p.c.', x=0),
               xaxis = list(title = 'Global population growth'),
               yaxis = list(title = 'Global GDP p.c.')
 )
-api_create(fig, filename = "mad-global-y-gl")
+saveWidget(partial_bundle(fig), "../plotly/mad-global-y-gl.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "mad-global-y-gl")
 
 
 #########################################################################
@@ -101,4 +106,6 @@ fig <- layout(fig, title = list(text = 'Population level and growth', x=0),
               xaxis = list(title = 'Population (millions)'),
               yaxis = list(title = 'Population growth rate')
 )
-api_create(fig, filename = "kremer-pop-gl")
+saveWidget(partial_bundle(fig), "../plotly/kremer-pop-gl.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "kremer-pop-gl")

@@ -2,9 +2,9 @@
 
 #########################################################################
 # Pull PWT into dataframe
-data("pwt9.1")
+data("pwt10.01")
 
-p <- pwt9.1 # copy dataframe for manipulation
+p <- pwt10.01 # copy dataframe for manipulation
 p$lngdppc <- round(log(p$rgdpna) - log(p$pop),digits=2) # create log GDP per capita
 p$si<- round(p$csh_i,digits=2)
 
@@ -40,7 +40,9 @@ fig <- layout(fig, title = list(text = 'Level of GDP p,c. and capital formation'
               xaxis = list(title = 'Capital formation share of GDP'),
               yaxis = list (title = 'Log GDP per capita')
 )
-api_create(fig, filename = "pwt-corr-si")
+saveWidget(partial_bundle(fig), "../plotly/pwt-corr-si.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-corr-si")
 
 #########################################################################
 # Animated figure of correlation of pop growth and GDP per capita over time
@@ -62,4 +64,6 @@ fig <- layout(fig, title = list(text = 'Level of GDP p,c. and population growth'
               xaxis = list(title = '10-year annualized pop growth rate'),
               yaxis = list (title = 'Log GDP per capita')
 )
-api_create(fig, filename = "pwt-corr-gl")
+saveWidget(partial_bundle(fig), "../plotly/pwt-corr-gl.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-corr-gl")

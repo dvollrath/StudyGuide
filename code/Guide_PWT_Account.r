@@ -1,13 +1,16 @@
 # Do growth accounting and prepare figures of results
 
+# Needs OECD fix for merge
+
+
 #########################################################################
 # Pull PWT into dataframe
-data("pwt9.1") # extract PWT data
+data("pwt10.01") # extract PWT data
 
 #########################################################################
 # Accounting calculation
 #########################################################################
-p <- pwt9.1 # copy dataframe for manipulation
+p <- pwt10.01 # copy dataframe for manipulation
 p$lngdppc <- round(log(p$rgdpna) - log(p$pop),digits=2) # create log GDP per capita
 p$ky <- round(p$rnna/p$rgdpna,digits=2) # create K/Y ratio
 p$acctky <- (.3/(1-.3))*log(p$ky) # just the K/Y part
@@ -51,7 +54,9 @@ fig <- layout(fig, title = list(text = 'Accounting for United States', x=0),
                xaxis = list(title = 'Year', tick0=1950, dtick=10),
                yaxis = list (title = 'Log GDP per capita',range=c(9,11)),
                hovermode="x unified")
-api_create(fig, filename = "pwt-account-usa")
+saveWidget(partial_bundle(fig), "../plotly/pwt-account-usa.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-account-usa")
 
 fig <- plot_ly(kor, x = ~year, y = ~kyonly, name = 'K/Y only', type = 'scatter', mode = 'lines')
 fig <- fig %>% add_trace(y = ~hconly, name = 'HC only',mode = 'lines')
@@ -61,7 +66,9 @@ fig <- layout(fig, title = list(text = 'Accounting for South Korea', x=0),
               xaxis = list(title = 'Year', tick0=1950, dtick=10),
               yaxis = list (title = 'Log GDP per capita'),
               hovermode="x unified")
-api_create(fig, filename = "pwt-account-kor")
+saveWidget(partial_bundle(fig), "../plotly/pwt-account-kor.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-account-kor")
 
 #########################################################################
 # Create alternative figure with breakdown of growth rate by 10-year period
@@ -106,7 +113,9 @@ fig <- fig %>% layout(yaxis = list(title = '10-year growth contribution'),
                       title = list(text = 'Growth accounting', x=0),
                       hovermode="x unified"
                       )
-api_create(fig, filename = "pwt-growth-acct-usa")
+saveWidget(partial_bundle(fig), "../plotly/pwt-growth-acct-usa.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-growth-acct-usa")
 
 #########################################################################
 # Figure of growth rate of productivity for set of countries
@@ -116,7 +125,9 @@ fig <- layout(fig, title = list(text = 'Productivity growth', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list(title = '10-year productivity growth rate'),
               hovermode="x unified")
-api_create(fig, filename = "pwt-growth-tfp-comp")
+saveWidget(partial_bundle(fig), "../plotly/pwt-growth-tfp-comp.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-growth-tfp-comp")
 
 #########################################################################
 # Merge OECD R&D data with productivity growth data

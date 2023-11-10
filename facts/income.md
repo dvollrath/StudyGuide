@@ -17,7 +17,7 @@ The [prior section](http://growthecon.com/StudyGuide/facts/expenditure.html) loo
 
 Similar to what we did with the expenditure side, we can look at a ratio of labor compensation to GDP, $W/Y$, and track that over time. This data isn't as widely available across countries, so in the figure below you'll see these long stretches of time where the ratio is perfectly stable. That is not because labor shares in Mexico were exactly 0.429 every year from 1960 to 1993, but rather the source of this data is using a later observation and assuming it held in the past. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/33.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-stable-labs.html"></iframe>
 
 Knowing that, you can see that at least for the last few decades there has been a tendency of the $W/Y$ ratio to decline very slightly in most of these countries. For the US and Australia, with longer time series, you can see a more obvious decline over these roughly 60 years, from about 0.65-0.70 down to just below 0.60. Neverthless, these shares stay at roughly stable levels throughout.
 
@@ -25,7 +25,7 @@ Notice there are significant differences in the levels of these labor shares. So
 
 We get a similar story with the second set of countries. Again, there is a tendency to see some drift downwards in recent decades in the compensation share. But you also an see that labor shares tend to remain relatively stable for long periods of time. An exception here is Nigeria, where the issues with underreporting of labor compensation would be similar to Mexico, but where there appears to be a significant change in that reporting around 2010. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/35.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-catchup-labsh.html"></iframe>
 
 Much like our other facts, we're going to focus on the stability here.
 
@@ -65,11 +65,11 @@ Since we know $W$ and $K$, with the assumption of $R=0.05$ we can calculate $\ph
 
 Here's the figure showing the cost share of labor for the first set of countries. These are again pretty stable looking, and are higher than the share of compensation in GDP (that implies that economic profits are not equal to zero). There are some changes over time, as you can see the UK's $\phi_L$ drift down and then up, and Mexico's seems to drop over the whole period of time. But for the most part this labor cost share tends to hang in there around 0.7-0.8 the whole time.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/37.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-stable-phil.html"></iframe>
 
 You get a similar story (save for Nigeria) if you look at the second set of countries. Some tendency to drift down over time across most of them, but cost shares in the 0.75-0.85 range for the most part. In Nigeria, the evidence suggests a steep drop in labor's share of costs around 1980, and then a steep climb back to around 0.80. I suspect this has as much to do with some problems with reporting actual labor compensation as it does with a real change in labor's share of costs.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/39.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-catchup-phil.html"></iframe>
 
 Regardless, at this point we're going to go out on a limb and assert that these figures, despite being based on an assumed return to capital of 0.05, tell us something about the cost shares over time.
 

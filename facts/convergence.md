@@ -17,7 +17,7 @@ The prior section asserted that economic growth was stable over long periods of 
 
 We can explore those deviations in a little more detail, and see if we can come up with any regularities. The figure below is different than what you've seen before. Here, what is plotted is the 10-year growth rate against the level of GDP per capita at the beginning of that 10-year period. For example, when Japan had a log GDP per capita of 8.65, it had an annualized growth rate of 8.9% over the next ten years.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/9.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-catchup-convergence.html"></iframe>
 
 You can divide this figure in half, right at a value of log GDP per capita of about 8.5. To the right of that dividing line, there is a clear negative relationship of the growth rate and the level of GDP per capita. Given that economic growth pushes up the level of GDP per capita, by definition, this part of the figure works a little like a slide. If you get on the slide with a GDP per capita around 8.5, then the growth rate is around 6-8% per year, and GDP per capita rises rapidly. But as the living standard rises, you move to the right (down the slide), and the growth rate tends to be lower. Once you get to the bottom of the slide at around (log) GDP per capita between 10 and 11, near the US level, the growth rate drops to right around 1.8% per year. 
 

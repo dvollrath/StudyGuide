@@ -1,4 +1,6 @@
 # Uses OECD to create a large number of figures used in Study Guide
+# OECD data is always fucked up, so of course the package doesn't work
+
 
 ##################################################################################
 # R&D worker data
@@ -22,14 +24,18 @@ fig <- layout(fig, title = list(text = 'R&D Workers over time', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'FTE R&D Workers'),
               hovermode="x unified")
-api_create(fig, filename = "oecd-rd-fte")
+saveWidget(partial_bundle(fig), "../plotly/oecd-rd-fte.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "oecd-rd-fte")
 
 fig <- plot_ly(fte, x = ~obsTime, y = ~lnrdworker, linetype = ~COUNTRY, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'R&D Workers over time', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'Log FTE R&D Workers'),
               hovermode="x unified")
-api_create(fig, filename = "oecd-rd-lnfte")
+saveWidget(partial_bundle(fig), "../plotly/oecd-rd-lnfte.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "oecd-rd-lnfte")
 
 ##################################################################################
 # Japan only - for case study
@@ -40,7 +46,9 @@ fig <- layout(fig, title = list(text = 'Japanese R&D Workers over time', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'Log FTE R&D Workers'),
               hovermode="x unified")
-api_create(fig, filename = "oecd-rd-lnfte-jpn")
+saveWidget(partial_bundle(fig), "../plotly/oecd-rd-lnfte-jpn.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "oecd-rd-lnfte-jpn")
 
 ##################################################################################
 # Get OECD data on R&D expenditures
@@ -62,11 +70,15 @@ fig <- layout(fig, title = list(text = 'R&D expenditure over time', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list(title = 'Log real R&D expenditures', type='log'),
               hovermode="x unified")
-api_create(fig, filename = "oecd-rd-logrd")
+saveWidget(partial_bundle(fig), "../plotly/oecd-rd-logrd.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "oecd-rd-logrd")
 
 fig <- plot_ly(gerd, x = ~obsTime, y = ~obsValue, linetype = ~COUNTRY, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'R&D expenditure over time', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list(title = 'Real R&D expenditures'),
               hovermode="x unified")
-api_create(fig, filename = "oecd-rd-levelrd")
+saveWidget(partial_bundle(fig), "../plotly/oecd-rd-levelrd.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "oecd-rd-levelrd")

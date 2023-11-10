@@ -69,5 +69,6 @@ fig <- layout(fig, title = list(text = 'Level of GDP per capita over time', x=0)
               yaxis = list (title = 'Log GDP per capita'
               )
 )
+saveWidget(partial_bundle(fig), "../plotly/me-lny-prodanimated.html",selfcontained = F, libdir = "lib")
 
 #api_create(fig, filename = "me-lny-prodanimated")

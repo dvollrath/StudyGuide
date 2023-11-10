@@ -17,13 +17,13 @@ One of the key inputs to producing GDP is what is loosely termed physical capita
 
 Let's start with our standard set of countries, and plot the size of $K/Y$ over time. These ratios are kinda-sorta stable? For the UK, there is a clear increase and then decline in the ratio over time, although these movements take decades to occur. There are mild trends in other countries as well, but for the most part the capital/output ratio stays within a range of about 3 to 4 over decades.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/21.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-stable-ky.html"></iframe>
 
 As is normal, when we turn to the group of countries that were/are experiencing catch-up growth, there is less stability involved. Nigeria experienced a massive surge in the capital/output ratio, and then it collapsed to around 2. This may well have something to do with problems in measuring capital, and less with a real pattern in the data. 
 
 For other countries, there are some clear trends. Japan appears to have had a climb in K/Y over time, but then it levelled off from 2000 forward, similar to when its growth rate slowed down to match that in the US. Korea showed a similar pattern. China is again an outlier, with a consistent path upward in the capital/output ratio.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/23.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-catchup-ky.html"></iframe>
 
 Much like all of our stylized facts, we're going to zoom out and focus on the stability involved in this data, as in the first figure. That will allow us to build a model of economic growth, and using that we can think about why countries in the second figure may see these movements in capital/output over time. 
 

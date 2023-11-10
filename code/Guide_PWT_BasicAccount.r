@@ -48,7 +48,9 @@ fig <- layout(fig, title = list(text = 'Accounting for Japan', x=0),
                xaxis = list(title = 'Year', tick0=1950, dtick=10),
                yaxis = list (title = '10-year growth rates'),
                hovermode="x unified")
-api_create(fig, filename = "pwt-account-basic-jpn")
+saveWidget(partial_bundle(fig), "../plotly/pwt-account-basic-jpn.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-account-basic-jpn")
 
 
 fig <- plot_ly(usa, x = ~year, y = ~ga, name = 'Productivity', type = 'scatter', 
@@ -59,4 +61,6 @@ fig <- layout(fig, title = list(text = 'Accounting for United States', x=0),
               xaxis = list(title = 'Year', tick0=1950, dtick=10),
               yaxis = list (title = '10-year growth rates'),
               hovermode="x unified")
-api_create(fig, filename = "pwt-account-basic-usa")
+saveWidget(partial_bundle(fig), "../plotly/pwt-account-basic-usa.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-account-basic-usa")

@@ -17,7 +17,7 @@ The study guide [discussed](http://growthecon.com/StudyGuide/gdp/gdp.html) that 
 
 Moreover, that growth rate was very similar for all five. If you stare at the figure long enough, you can make the case that Mexico's growth rate became permanently lower around 1980 (or that Mexico's growth rate was somewhat higher than normal from 1965 to 1980). 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/5.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-stable-lngdppc.html"></iframe>
 
 While the growth rates of these five countries are stable and similar, note that the level of GDP per capita was not similar. Mexico is demonstrably poorer than the others. The difference in log GDP per capita between Mexico and the US is about 1, which means that the ratio of GDP per capita between the US and Mexico is about 2.7 to 1, and has been for about sixty years. If you're not sure how the difference in logs of 1 leads to a ratio of 2.7 to 1, [see here](http://growthecon.com/StudyGuide/preliminaries/logs.html).
 
@@ -25,7 +25,7 @@ Mexico's living standards grew, but only enough to keep pace with the US. The ot
 
 Not every country is as boring as these five. The next figure below plots (log) GDP per capita for the US (as a reference) and five new countries (Germany, Japan, South Korea, Nigeria, and China). For each of these five the locus of log GDP per capita was not linear, or often even close to linear. The slope of these lines changed over time, implying that the growth rate of GDP per capita changed as well. In almost every case, however, the lines look concave, meaning that the growth rate was falling over time. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/7.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-catchup-lngdppc.html"></iframe>
 
 Moreover, you can see that as GDP per capita in each country approaches the level of that in the US, the growth rate falls to match (roughly) the US growth rate. Germany, Japan, and now South Korea all seem to be asymptoting towards the level of living standards in the US. They started out much lower in 1950 and 1960, as you can see. In 1950 the gap in living standards between the US and Germany was about 2.7 to 1, between the US and Japan about 4.5 to 1, and between the US and South Korea about 25 to 1. But their high growth rates (as evidenced by the high slopes) allowed them to catch up to the US, at which point their growth rates slowed (lower slopes), and they are all now have living standards slightly lower than the US. But note that their growth rates (slopes) all are becoming very similar to that in the US, UK, Australia, Canada, and Mexico.
 
@@ -57,7 +57,7 @@ The data in the figures above just goes back to 1950. For a smaller set of count
 
 The next figure plots log GDP per capita for four developed economies: US, UK, France, and the Netherlands. The data go back to 1820, so we've got almost 200 years of evidence. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/11.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/mad-stable-lngdppc.html"></iframe>
 
 A remarkable thing (to me) about this figure is how boring it is. The lines are very...linear. This implies that for long periods of time the growth rate of GDP per capita was stable in these countries. There are certainly fluctuations, but for decade after decade these countries saw growth rates of around 1.7-2% per year. 
 

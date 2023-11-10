@@ -1,5 +1,5 @@
 # Load necessary libraries
-library(devtools)
+#library(devtools)
 library(plotly)
 library(dplyr)
 library(RColorBrewer)
@@ -17,7 +17,9 @@ fig <- layout(fig, title = list(text = 'Log GDP over time', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'Log of GDP',range=c(4.4,4.8)),
               hovermode="x unified")
-api_create(fig, filename = "me-level-data")
+saveWidget(partial_bundle(fig), "../plotly/me-level-data.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "me-level-data")
 
 fig <- plot_ly(data, x = ~year) 
 fig <- fig %>% add_trace(y = ~lngdp, name = 'Actual GDP', type = 'scatter', mode = 'lines+markers')
@@ -26,7 +28,9 @@ fig <- layout(fig, title = list(text = 'Log GDP over time', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'Log of GDP',range=c(4.4,4.8)),
               hovermode="x unified")
-api_create(fig, filename = "me-level-hyp")
+saveWidget(partial_bundle(fig), "../plotly/me-level-hyp.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "me-level-hyp")
 
 fake <- data.frame(year)
 fake$series1 <- log(75) + .02*(fake$year-2018)
@@ -43,4 +47,6 @@ fig <- layout(fig, title = list(text = 'Theoretical log GDP over time', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'Log of GDP',range=c(4,5.5)),
               hovermode="x unified")
-api_create(fig, filename = "me-level-theory")
+saveWidget(partial_bundle(fig), "../plotly/me-level-theory.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "me-level-theory")

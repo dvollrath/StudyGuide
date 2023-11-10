@@ -22,46 +22,60 @@ fig <- layout(fig, title = list(text = 'Consumption share of GDP', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'Consumption share',range = c(0,1)),
               hovermode="x unified")
-api_create(fig, filename = "pwt-stable-scon")
+saveWidget(partial_bundle(fig), "../plotly/pwt-stable-scon.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-stable-scon")
 
 fig <- plot_ly(catchup, x = ~year, y = ~scon, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Consumption share of GDP', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'Consumption share',range = c(0,1)),
               hovermode="x unified")
-api_create(fig, filename = "pwt-catchup-scon")
+saveWidget(partial_bundle(fig), "../plotly/pwt-catchup-scon.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-catchup-scon")
 
 fig <- plot_ly(stable, x = ~year, y = ~sgfcf, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Gross capital formation share of GDP', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'Gross capital formation share',range = c(0,1)),
               hovermode="x unified")
-api_create(fig, filename = "pwt-stable-sgfcf")
+saveWidget(partial_bundle(fig), "../plotly/pwt-stable-sgfcf.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-stable-sgfcf")
 
 fig <- plot_ly(catchup, x = ~year, y = ~sgfcf, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Gross capital formation share of GDP', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'Gross capital formation share',range = c(0,1)),
               hovermode="x unified")
-api_create(fig, filename = "pwt-catchup-sgfcf")
+saveWidget(partial_bundle(fig), "../plotly/pwt-catchup-sgfcf.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-catchup-sgfcf")
 
 fig <- plot_ly(stable, x = ~year, y = ~sgov, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Government spending share of GDP', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'Government spending share',range = c(0,1)),
               hovermode="x unified")
-api_create(fig, filename = "pwt-stable-sgov")
+saveWidget(partial_bundle(fig), "../plotly/pwt-stable-sgov.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-stable-sgov")
 
 fig <- plot_ly(catchup, x = ~year, y = ~sgov, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Government spending share of GDP', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'Government spending share',range = c(0,1)),
               hovermode="x unified")
-api_create(fig, filename = "pwt-catchup-sgov")
+saveWidget(partial_bundle(fig), "../plotly/pwt-catchup-sgov.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-catchup-sgov")
 
 fig <- plot_ly(test, x = ~year, y = ~sgfcf, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Gross capital formation share of GDP', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'Gross capital formation share',range = c(0,1)),
               hovermode="x unified")
-api_create(fig, filename = "pwt-test-sgfcf")
+saveWidget(partial_bundle(fig), "../plotly/pwt-test-sgfcf.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-test-sgfcf")
