@@ -52,9 +52,8 @@ $$
 
 This is the *steady-state* $K/AL$ ratio. It is the value towards which the economy is always evolving. Remember from before that the capital output ratio is just $K/Y = (K/AL)^{1-\alpha}$. That means the following:
 
-Steady state capital/output ratio
-{: .label .label-green }
-**The steady state capital/output ratio in the Solow model is $(K/Y)^{ss} = s_I/(\delta + g_A + g_L)$.**
+{: .important }
+The steady state capital/output ratio in the Solow model is $(K/Y)^{ss} = s_I/(\delta + g_A + g_L)$.
 
 Let's make sure this all makes sense. Plug in the parameter values I used to create that figure for economies A and B: $\alpha = 0.3$, $s_I = 0.2$, $g_A = 0.02$, and $g_L = 0.01$. With those values we get that in steady state
 
@@ -97,11 +96,10 @@ $$
 g_y = g_A.
 $$
 
-This is such an important conclusion that we'll set it off with a label.
+This is such an important conclusion that we'll set it off with some cool colors.
 
-Growth on a BGP
-{: .label .label-green }
-**The growth rate of GDP per capita on a balanced growth path, $g_y^{BGP}$, depends only on the growth rate of productivity, $g_A$, or $g_y^{BGP} = g_A$.**
+{: .important }
+The growth rate of GDP per capita on a balanced growth path, $g_y^{BGP}$, depends only on the growth rate of productivity, $g_A$, or $g_y^{BGP} = g_A$.
 
 The growth rate in all the countries that were on a balanced growth path (e.g. the US, UK, Australia, Canada, probably Mexico, probably Germany and Japan in the last few decades) is equal to the growth rate of productivity *only*. Productivity growth is the origin of the long-run growth in GDP per capita. This makes understanding the growth rate of productivity one of the most important things we can study. The whole next topic of the study guide is dedicated to thinking about why and how productivity grows, for that reason. 
 
@@ -109,22 +107,19 @@ By the way, I used the terminology $g_y^{BGP}$ just to be clear that this is the
 
 This stark finding on the importance of productivity growth for long-run growth in GDP per capita doesn't mean that $g_K$ or the $K/AL$ ratio (or $K/Y$) is irrelevant. It helps explain why growth rates might differ between countries, and why those growth rate differences are likely to be temporary. The whole term $\alpha (g_K - g_A - g_L)$ in fact deserves it's own name:
 
-Transitional growth
-{: .label .label-green }
-**The growth due to changes in the $K/AL$ ratio, $\alpha (g_K - g_A - g_L)$, is called transitional growth.**
+{: .important }
+The growth due to changes in the $K/AL$ ratio, $\alpha (g_K - g_A - g_L)$, is called transitional growth.
 
 This reason it is "transitional" is that eventually this term always dissipates. Like countries A and B in our simulation, you can have this term be not zero for a while, but ultimately the economy will end up at a steady state and $\alpha (g_K - g_A - g_L) = 0$. 
 
 Let's be clear about what this means when we compare countries to one another. 
 
-Source of growth differences
-{: .label .label-green }
-**Given that $g_A$ is similar across countries, any observed differences in growth rates across countries are due to differences in transitional growth.**
+{: .important }
+Given that $g_A$ is similar across countries, any observed differences in growth rates across countries are due to differences in transitional growth.
 
 Moreover, the Solow model tells us how to explain transitional growth and tells us that because $K/AL$ has a steady state that transitional growth eventually disappears, leading to this conclusion.
 
-Temporary growth differences
-{: .label .label-green }
-**Observed differences in growth rates across countries due to differences in transitional growth are temporary.**
+{: .important }
+Observed differences in growth rates across countries due to differences in transitional growth are temporary.
 
 Thus the Solow model helps us understand *why* places like Germany, South Korea, or Japan could have very high growth rates for a while (transitional growth) but that eventually their growth rates fell until they were equal to a similar growth rate as countries like the US (productivity growth). The Solow model tells us that transitional growth is temporary, because the process of capital accumulation cannot keep up with the growth in output. It's important to know that just because it is transitional, doesn't mean it dissipates quickly. This transitional growth can last decades.

@@ -25,13 +25,12 @@ was the growth rate of GDP per capita. To decipher what drives growth, we need t
 ## Capital accumulation
 To describe $g_K$ further, we need to now dig into the process by which capital accumulates. Here is the basic equation we assume governs how the stock of capital changes.
 
-Capital accumulation
-{: .label .label-green }
-**Capital accumulates according to the following equation:**
-
-$$
-K_{t+1} = I_t + (1-\delta)K_t
-$$
+{: .important }
+>Capital accumulates according to the following equation:
+>
+>$$
+>K_{t+1} = I_t + (1-\delta)K_t
+>$$
 
 The capital stock in time $t+1$ is equal to gross capital formation in period t, $I_t$, plus some fraction of the current capital stock, $K_t$, that remains. The value of $\delta$ is the *depreciation rate*, and it is a number between 0 and 1. A normal value used for $\delta$ is 0.05, meaning that 5% of the capital stock depreciates, or breaks down, each period. Thus 95% of the capital stock at $K_t$ is still available for use as capital in period $t+1$. 
 
@@ -85,12 +84,11 @@ Since $s_I$ is stable, this means the growth rate of capital is dictated by the 
 
 From the last page, we know that the capital/output ratio is just the $K/AL$ ratio raised the $1-\alpha$ power. This means we can write the following:
 
-Growth rate of capital
-{: .label .label-green }
-**The growth rate of capital is determined by the following equation:**
-
-$$
-g_K = s_I \left(\frac{AL}{K}\right)^{1-\alpha} - \delta.
-$$
+{: .important }
+>The growth rate of capital is determined by the following equation:
+>
+>$$
+>g_K = s_I \left(\frac{AL}{K}\right)^{1-\alpha} - \delta.
+>$$
 
 The *growth rate* of capital depends *inversely* on the *ratio* of $K/AL$. The higher is $K/AL$, the lower is the growth rate $g_K$. We also see that the higher is the share of GDP allocated to capital formation, $s_I$, the higher is the growth rate of capital/output. The higher is depreciation, $\delta$, the slower capital grows, as it is breaking down faster.

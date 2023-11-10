@@ -22,13 +22,12 @@ We could do that in theory, but in practice it is unmanageable. What we're going
 
 Here is our aggregate production function, and it is so central to what we're going to do that I'm going to set it off with it's own little marker.
 
-Aggregate production function
-{: .label .label-green }
-**Real GDP at time $t$, $Y_t$, is produced according to the following Cobb-Douglas aggregate production function:**
-
-$$ 
-Y_t = K_t^{\alpha} (A_t L_t)^{1-\alpha}
-$$
+{: .important }
+>Real GDP at time $t$, $Y_t$, is produced according to the following Cobb-Douglas aggregate production function:
+>
+>$$ 
+>Y_t = K_t^{\alpha} (A_t L_t)^{1-\alpha}
+>$$
 
 Let's go through each of the pieces of this.
 
@@ -57,15 +56,13 @@ This tells us that growth in real GDP depends on growth in capital, growth in pr
 
 If you recall from earlier economics classes, and *elasticity* measures the percent change of one thing with respect to the percent change in another. The values $\alpha$ and $1-\alpha$ are elasticities. Since I'm enjoying using these markers, let's use another
 
-Production function elasticities
-{: .label .label-green }
-**$\alpha$ is the elasticity of real GDP with respect to capital. $1-\alpha$ is the elasticity of real GDP with respect to labor. We assume that $0<\alpha<1$, which implies that $0<1-\alpha<1$ as well.**
+{: .important }
+$\alpha$ is the elasticity of real GDP with respect to capital. $1-\alpha$ is the elasticity of real GDP with respect to labor. We assume that $0<\alpha<1$, which implies that $0<1-\alpha<1$ as well.
 
 Cool. We can say a little more about production given these parameters. The first concept here relates to returns to scale.
 
-Constant returns to scale
-{: .label .label-green }
-**Because $\alpha + (1-\alpha) = 1$, the aggregate production function has constant returns to scale with respect to capital and labor.**
+{: .important }
+Because $\alpha + (1-\alpha) = 1$, the aggregate production function has constant returns to scale with respect to capital and labor.
 
 What does this mean? Think of what happens if *both* capital and labor grow by 10% (but productivity doesn't grow at all). Then $g_Y = \alpha 10% + (1-\alpha)10% = 10%$. Constant returns to scale means that if you scale up both inputs by the same percent, output goes up by that percent as well. This is different than increasing returns to scale, which would imply that output went up by 20%, say, if you increased capital and labor by 10%. 
 
@@ -77,9 +74,8 @@ It does to some degree. The reason is that these elasticities should be roughly 
 
 I'm going to punt the explanation for *why* elasticities should equal cost shares to a sub-page, as that gets us into the weeds a little. But it will be worth reading through that explanation to understand why I'm not just making this up. 
 
-Elasticities and cost shares
-{: .label .label-green }
-**The elasticity $1-\alpha$ is roughly equal to the cost share of labor, $\phi_L$, which in the data is in the range 0.6-0.8 and stable. The elasticity $\alpha$ is roughly equal to the cost share of capital, $\phi_K$, which in the data is about 0.2-0.4 and stable.**
+{: .important }
+The elasticity $1-\alpha$ is roughly equal to the cost share of labor, $\phi_L$, which in the data is in the range 0.6-0.8 and stable. The elasticity $\alpha$ is roughly equal to the cost share of capital, $\phi_K$, which in the data is about 0.2-0.4 and stable.
 
 We are using the Cobb-Douglas production function above precisely because it has stable elasticities, which match the data on cost shares.
 
