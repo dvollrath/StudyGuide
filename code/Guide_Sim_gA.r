@@ -59,5 +59,6 @@ fig <- layout(fig, title = list(text = 'Dynamics of productivity growth', x=0),
               xaxis = list(title = 'Ratio of R/A'),
               yaxis = list (title = 'Growth rate',range=c(0,.06))
 )
+saveWidget(partial_bundle(fig), "../plotly/me-gA-dynamics.html",selfcontained = F, libdir = "lib")
 
-api_create(fig, filename = "me-gA-dynamics")
+#api_create(fig, filename = "me-gA-dynamics")

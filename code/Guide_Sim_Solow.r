@@ -17,7 +17,7 @@ year <- c(0:40)
 s <- 0 # initializes Solow vector
 
 # Merge year and scenario data to create scenario/year dataframe
-all_scenario <- data.frame(scenario,alpha,sI,gL,gA,delta,KY0,A0) # combine scenario parameters
+all_scenario <- data.frame(scenario,alpha,sI,gL,gA,delta,KY0,A0,label) # combine scenario parameters
 year_scenario <- expand.grid(year,scenario) # create year/scenario combinations
 names(year_scenario) <- c("year","scenario")
 s <- merge(year_scenario,all_scenario,by="scenario") # add parameters to year/scenario combos
@@ -39,18 +39,24 @@ fig <- layout(fig, title = list(text = 'log GDP per capita', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'Log of GDP per capita'),
               hovermode="x unified")
-api_create(fig, filename = "sim-solow-lny")
+saveWidget(partial_bundle(fig), "../plotly/sim-solow-lny.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "sim-solow-lny")
 
 fig <- plot_ly(s, x = ~year, y = ~gy, linetype = ~label, type = 'scatter', mode = 'lines')
 fig <- layout(fig, title = list(text = 'Growth rates', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'Growth rate of GDP per capita'),
               hovermode="x unified")
-api_create(fig, filename = "sim-solow-gy")
+saveWidget(partial_bundle(fig), "../plotly/sim-solow-gy.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "sim-solow-gy")
 
 fig <- plot_ly(s, x = ~year, y = ~ky, linetype = ~scenario, type = 'scatter', mode = 'lines')
 fig <- layout(fig, title = list(text = 'Capital/output ratio', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list (title = 'Capital/output ratio'),
               hovermode="x unified")
-api_create(fig, filename = "sim-solow-ky")
+saveWidget(partial_bundle(fig), "../plotly/sim-solow-ky.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "sim-solow-ky")

@@ -11,6 +11,7 @@ dat = WDI(indicator=c('GDPE' = 'EG.GDP.PUSE.KO.PP.KD',
                       'GDPL'='SL.GDP.PCAP.EM.KD'
                       )
           ,country='all')
+write.csv(fte,file="WDI_ENERGY.csv",row.names=FALSE, na="") # save in case
 
 f <- dat[which(dat$iso2c %in% c("US","JP","KR","CN","NG","GB")),]
 fig <- plot_ly(f, x = ~year, y = ~EGDP, linetype = ~country, type = 'scatter', mode = 'lines+markers')
@@ -18,7 +19,9 @@ fig <- layout(fig, title = list(text = 'Energy Intensity', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list(title = 'Energy (kg oil equiv) / GDP'),
               hovermode="x unified")
-api_create(fig, filename = "wdi-energy-gdpe")
+saveWidget(partial_bundle(fig), "../plotly/wdi-energy-gdpe.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "wdi-energy-gdpe")
 
 f <- dat[which(dat$iso2c %in% c("BD","CL","MX","VN","BR","IL")),]
 fig <- plot_ly(f, x = ~year, y = ~EGDP, linetype = ~country, type = 'scatter', mode = 'lines+markers')
@@ -26,24 +29,32 @@ fig <- layout(fig, title = list(text = 'Energy Intensity', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list(title = 'Energy (kg oil equiv) / GDP'),
               hovermode="x unified")
-api_create(fig, filename = "wdi-energy-gdpe-test")
+saveWidget(partial_bundle(fig), "../plotly/wdi-energy-gdpe-test.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "wdi-energy-gdpe-test")
 
 ##################################################################################
 # Fertility data and figure
 ##################################################################################
 dat = WDI(indicator=c('TFR' = 'SP.DYN.TFRT.IN'),country='all')
+write.csv(fte,file="WDI_TFR.csv",row.names=FALSE, na="") # save in case
+
 f <- dat[which(dat$iso2c %in% c("NG","MX","VN","BR")),]
 fig <- plot_ly(f, x = ~year, y = ~TFR, linetype = ~country, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Fertility rates', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list(title = 'Total fertility rate'),
               hovermode="x unified")
-api_create(fig, filename = "wdi-fert-test")
+saveWidget(partial_bundle(fig), "../plotly/wdi-fert-test.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "wdi-fert-test")
 
 ##################################################################################
 # Patent data and figures
 ##################################################################################
 dat = WDI(indicator=c('PAT' = 'IP.PAT.RESD','NPAT' = 'IP.PAT.NRES'),country='all')
+write.csv(fte,file="WDI_PATENT.csv",row.names=FALSE, na="") # save in case
+
 dat$TPAT <- dat$PAT+dat$NPAT
 f <- dat[which(dat$iso2c %in% c("US","JP","DE","CN")),]
 
@@ -52,18 +63,24 @@ fig <- layout(fig, title = list(text = 'Resident patenting', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list(title = 'Number resident patents'),
               hovermode="x unified")
-api_create(fig, filename = "wdi-patent-resident")
+saveWidget(partial_bundle(fig), "../plotly/wdi-patent-resident.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "wdi-patent-resident")
 
 fig <- plot_ly(f, x = ~year, y = ~NPAT, linetype = ~country, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Non-resident patenting', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list(title = 'Number non-resident patents'),
               hovermode="x unified")
-api_create(fig, filename = "wdi-patent-nonres")
+saveWidget(partial_bundle(fig), "../plotly/wdi-patent-nonres.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "wdi-patent-nonres")
 
 fig <- plot_ly(f, x = ~year, y = ~TPAT, linetype = ~country, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Total patenting', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list(title = 'Number non-resident and resident patents'),
               hovermode="x unified")
-api_create(fig, filename = "wdi-patent-all")
+saveWidget(partial_bundle(fig), "../plotly/wdi-patent-all.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "wdi-patent-all")

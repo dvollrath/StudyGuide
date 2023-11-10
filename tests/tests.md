@@ -1,7 +1,7 @@
 ---
 title: Test material
 has_children: true
-nav_order: 9
+nav_order: 10
 ---
 
 # Test material

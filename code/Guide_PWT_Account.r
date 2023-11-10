@@ -132,17 +132,9 @@ saveWidget(partial_bundle(fig), "../plotly/pwt-growth-tfp-comp.html",selfcontain
 #########################################################################
 # Merge OECD R&D data with productivity growth data
 #########################################################################
-# Pull OECD into dataframe
-work <- get_dataset("PERS_FUNC")
 
-# Get log of R&D workers
-fte <- work
-fte <- fte[which(fte$SECTPERF %in% c("_T")),]
-fte <- fte[which(fte$FUNCTION %in% c("RSE")),]
-fte <- fte[which(fte$GENDER %in% c("_T")),]
-fte <- fte[which(fte$MEASURE %in% c("FTE")),]
-fte <- fte[which(fte$COUNTRY %in% c("USA","JPN","KOR","CHN","DEU","GBR")),]
-fte$lnrdworker <- log(fte$obsValue)
+fte <- read.csv(file="OECD_PERS_FUNC.csv", header=TRUE)
+fte$lnrdworker <- log(as.numeric(fte$ObsValue)) # log value
 
 # Calculate 10-year growth rate of R&D workers
 fte <- 
@@ -153,9 +145,9 @@ fte$g10.lnrdworker <- (fte$lnrdworker - fte$lag10.lnrdworker)/10
 
 # Join the R&D worker data to the productivity growth data for set of countries
 match <- data.frame(comp$isocode,comp$g10.accttfp,comp$year,comp$pop,comp$accttfp)
-colnames(match) <- c("COUNTRY","g10.accttfp","obsTime","pop","accttfp")
+colnames(match) <- c("COUNTRY","g10.accttfp","Time","pop","accttfp")
 match$lnpop <- log(match$pop)
-joined <- merge(match,fte,by=c('COUNTRY','obsTime'))
+joined <- merge(match,fte,by=c('COUNTRY','Time'))
 
 #########################################################################
 # Figure for R&D workers and growth in productivity
@@ -172,7 +164,9 @@ fig <- layout(fig, title = list(text = 'Relationship of R&D work and prod growth
               xaxis = list(title = 'Log R&D FTE workers'),
               yaxis = list(title = '10-year productivity growth rate'),
               hovermode="x unified")
-api_create(fig, filename = "pwt-oecd-rd-tfp")
+saveWidget(partial_bundle(fig), "../plotly/pwt-oecd-rd-tfp.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-oecd-rd-tfp")
 
 #########################################################################
 # Figure for growth in R&D workers and growth in productivity
@@ -186,7 +180,9 @@ fig <- layout(fig, title = list(text = 'Relationship of R&D growth and prod grow
               xaxis = list(title = '10-year growth rate of R&D FTE'),
               yaxis = list(title = '10-year productivity growth rate'),
               hovermode="x unified")
-api_create(fig, filename = "pwt-oecd-rd-gtfp")
+saveWidget(partial_bundle(fig), "../plotly/pwt-oecd-rd-gtfp.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-oecd-rd-gtfp")
 
 #########################################################################
 # Figure for level of R&D workers and level of productivity
@@ -200,4 +196,6 @@ fig <- layout(fig, title = list(text = 'Relationship of R&D level and prod level
               xaxis = list(title = 'Log R&D FTE'),
               yaxis = list(title = 'Log productivity'),
               hovermode="x unified")
-api_create(fig, filename = "pwt-oecd-level-rd")
+saveWidget(partial_bundle(fig), "../plotly/pwt-oecd-level-rd.html",selfcontained = F, libdir = "lib")
+
+#api_create(fig, filename = "pwt-oecd-level-rd")
