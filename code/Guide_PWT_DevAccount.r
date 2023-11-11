@@ -44,6 +44,7 @@ p$acctky <- round(p$acctky,digits=3)
 p$accthc <- round(p$accthc,digits=3)
 p$acctlfp <- round(p$acctlfp,digits=3)
 p$accttfp <- round(p$accttfp,digits=3)
+f <- p
 names(p) <- c("Country","GDP p.c.","K/Y","HC","L/N","A")
 p <- p[complete.cases(p), ]
 
@@ -70,3 +71,45 @@ tab <- datatable(s,rownames = FALSE,  class = 'cell-border stripe',
                  )
 )
 saveWidget(tab, "../plotly/pwt-dev-raw.html",selfcontained = F, libdir = "lib")
+
+fig <- plot_ly(f, x = ~acctgdppc, y = ~acctky, 
+               type = 'scatter', mode = 'markers',
+               hovertemplate = paste("<br>",
+                                     "%{yaxis.title.text}: %{y:.2f}<br>",
+                                     "%{xaxis.title.text}: %{x:.2f}<br>")
+)
+fig <- fig %>% add_trace(y = ~acctgdppc,mode = 'lines')
+fig <- fig %>% layout(showlegend = FALSE)
+fig <- layout(fig, title = list(text = 'Relationship of relative K/Y to relative GDP p.c.', x=0),
+              xaxis = list(title = 'Relative GDP p.c.'),
+              yaxis = list(title = 'Relative K/Y'),
+              hovermode="x unified")
+saveWidget(tab, "../plotly/pwt-dev-ky.html",selfcontained = F, libdir = "lib")
+
+fig <- plot_ly(f, x = ~acctgdppc, y = ~accthc, 
+               type = 'scatter', mode = 'markers',
+               hovertemplate = paste("<br>",
+                                     "%{yaxis.title.text}: %{y:.2f}<br>",
+                                     "%{xaxis.title.text}: %{x:.2f}<br>")
+)
+fig <- fig %>% add_trace(y = ~acctgdppc,mode = 'lines')
+fig <- fig %>% layout(showlegend = FALSE)
+fig <- layout(fig, title = list(text = 'Relationship of relative HC to relative GDP p.c.', x=0),
+              xaxis = list(title = 'Relative GDP p.c.'),
+              yaxis = list(title = 'Relative HC'),
+              hovermode="x unified")
+saveWidget(tab, "../plotly/pwt-dev-hc.html",selfcontained = F, libdir = "lib")
+
+fig <- plot_ly(f, x = ~acctgdppc, y = ~accttfp, 
+               type = 'scatter', mode = 'markers',
+               hovertemplate = paste("<br>",
+                                     "%{yaxis.title.text}: %{y:.2f}<br>",
+                                     "%{xaxis.title.text}: %{x:.2f}<br>")
+)
+fig <- fig %>% add_trace(y = ~acctgdppc,mode = 'lines')
+fig <- fig %>% layout(showlegend = FALSE)
+fig <- layout(fig, title = list(text = 'Relationship of relative A to relative GDP p.c.', x=0),
+              xaxis = list(title = 'Relative GDP p.c.'),
+              yaxis = list(title = 'Relative A'),
+              hovermode="x unified")
+saveWidget(tab, "../plotly/pwt-dev-tfp.html",selfcontained = F, libdir = "lib")

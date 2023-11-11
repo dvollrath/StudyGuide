@@ -72,9 +72,29 @@ This will make more sense by looking at the actual data. This table gives you th
 
 <iframe width="900" height="600" frameborder="0" scrolling="yes" src="../plotly/pwt-dev-acct.html"></iframe>
 
-On the first page of that table you can see United Arab Emirates (or should). The number for "GDP p.c." is the ratio $y_i/y_{US}$. That number is 1.061, meaning that GDP per capita in UAE is a little higher (about 6.1%) than in the US. Why? Well, UAE has a capital/output ratio term that by itself would give them living standards 1.359 higher than in the US. UAE has a lot of capital. But in human capital, the number is only $h_i/h_{US} = 0.733$, so the rough skills of workers in the UAE is lower than in the US. The employment ratio of 1.236 means they have more workers per person, which helps to make them richer. And productivity is 1.066, so that $A_i$ is just a little bit higher than in the US. 
+On the first page of that table you can see United Arab Emirates (or should). The number for "GDP p.c." is the ratio $y_i/y_{US}$. That number is 1.061, meaning that GDP per capita in UAE is a little higher (about 6.1%) than in the US. Why? Well, UAE has a capital/output ratio term that by itself would give them living standards 1.359 higher than in the US. UAE has a lot of capital. But in human capital, the number is only $h_i/h_{US} = 0.733$, so the rough skills of workers in the UAE is lower than in the US. The employment ratio of 1.236 means they have more workers per person, which helps to make them richer. And productivity is 0.862, so that $A_i$ is not quite as high. Even if UAE had all the same factors as the US, it would still be poorer because it apparently doesn't quite use them as efficiently. Note that these work together according to the equation above. Note that $1.061 = 1.359 \times 0.733 \times 1.236 \times 0.862$. 
 
-Note that these work together according to the equation above. Note that $1.061 = 1.359 \times 0.733 \times 1.236 \times 1.066$. 
+Now look at a relatively poor country, like Albania. Their GDP per capita is 0.207, or about 20% of that in the US. Why? Their K/Y ratio would give them *higher* GDP per capita, 1.281, so the answer lies elsewhere. Human capital is only 0.791, and the employment ratio is only 0.776. But really the biggest source of lower living standards is the productivity term 0.263. For a given set of factors, Albania would only get about 26% as much output from them as the US. For *some* reason they don't use factors efficiently. Other sections will look at why, but first let's establish some regularities to this importance of productivity.
+
+## Productivity matters
+If you scroll through the table or look at particularly poor countries, you'll start to see a few things. Mainly, that it looks like the $A_i/A_{US}$ terms seem to explain quite a bit. We can plot these out to see this more clearly.
+
+This first figure shows how the values of the relative K/Y terms compar to the relative size of GDP per capita. Note that whatever the relative GDP per capita, the values of relative K/Y are all around 1, meaning that every country has a pretty similar K/Y ratio. Or, rather, there is variation in K/Y, but as a rule it doesn't line up exactly with how rich a country is. There are lots of poor countries with high values of K/Y. So this isn't a major explanation for relative GDP per capita.
+
+<iframe width="900" height="600" frameborder="0" scrolling="yes" src="../plotly/pwt-dev-ky.html"></iframe>
+
+Next is human capital. Same kind of figure, but here there is a little more information. Note that for very poor countries, they do have relatively low values of $hc_i/hc_{US}$. So there is some explanatory power for human capital. But outside of very poor countries, most countries have values similar to the US. 
+
+<iframe width="900" height="600" frameborder="0" scrolling="yes" src="../plotly/pwt-dev-hc.html"></iframe>
+
+Finally, take a look at productivity. In this case relative $A_i/A_{US}$ lines up almost directly with relative GDP per capita $y_i/y_{US}$. You can predict nearly exactly how rich a country will be just by knowing their relative value of $A$. In that sense productivity - or the efficiency of how a country uses factors - is the most relevant thing to study for understanding why some countries are rich and some are poor.
+
+<iframe width="900" height="600" frameborder="0" scrolling="yes" src="../plotly/pwt-dev-tfp.html"></iframe>
+
+That's probably so important we should set this off.
+
+{: .important}
+Differences in GDP per capita across countries are primarily due to differences in productivity, A, with smaller contributions from differences in human capital and employment ratios. Differences in capital/output ratios are not that important.
 
 ## Raw data
 The raw data necessary to make all the development accounting calculations is in the following table. The human capital per capita term is given directly by the Penn World Tables. 
