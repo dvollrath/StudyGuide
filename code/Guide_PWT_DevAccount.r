@@ -13,7 +13,7 @@ p$gdppc <- p$rgdpna/p$pop # GDP per capita
 p$ky <- (p$rnna/p$rgdpna)**(.3/(1-.3)) #K/Y ratio
 p$lfp <- p$emp/p$pop # just the LFP ratio
 # HC is already pre-calculated
-p$tfp <- p$gdppc/(p$ky*p$hc) # just the TFP part
+p$tfp <- p$gdppc/(p$ky*p$hc*p$lfp) # just the TFP part
 
 p <- p[which(p$year == "2019"),] # just the 2019 data
 
