@@ -1,7 +1,7 @@
 ---
 title: Is trade good for growth?
 parent: Comparative Development
-nav_order: 2
+nav_order: 3
 ---
 
 # Is trade good for growth?
