@@ -1,7 +1,6 @@
 ---
 title: Is trade good for growth?
-parent: Case studies
-grand_parent: Solow and Balanced Growth
+parent: Comparative Development
 nav_order: 2
 ---
 
@@ -37,7 +36,7 @@ If there is a relationship of imports to the size of GDP, we have to work much h
 ## Basic relationships
 That aside, one of the best things to do is look as some simple relationships in the data to see what it says. This first figure shows you the the relationship of the level of GDP per capita to the imports as a share of GDP for a selection of countries.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/161.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-all-imports-level.html"></iframe>
 
 Note that for each country, the relationship of the import share and the level of GDP per capita tends to be *positive*.
 
@@ -45,7 +44,7 @@ However, look across countries, and notice what is going on. The richest country
 
 These kinds of relationships show up again if we look instead at exports/GDP. In this figure, below, the plot looks almost identical to the one for imports. There is a tendency for the export/GDP ratio to be larger when GDP per capita is larger for any given country.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/159.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-all-export-level.html"></iframe>
 
 But, across countries the richer ones (US) tend to have lower export/GDP ratios than the poorer ones (South Korea). 
 
