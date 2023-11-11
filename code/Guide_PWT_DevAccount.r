@@ -24,6 +24,7 @@ s$rnna <- round(s$rnna,digits=2)
 s$hc <- round(s$hc,digits=2)
 s$emp <- round(s$emp,digits=2)
 names(s) <- c("Country","GDP","Pop.(N)","K","HC p.c.","Worker(L)")
+s <- s[complete.cases(s), ]
 
 usgdppc <- with(p,gdppc[isocode=="USA"])
 usky <- with(p,ky[isocode=="USA"])
@@ -44,9 +45,6 @@ p$accthc <- round(p$accthc,digits=3)
 p$acctlfp <- round(p$acctlfp,digits=3)
 p$accttfp <- round(p$accttfp,digits=3)
 names(p) <- c("Country","GDP p.c.","K/Y","HC","L/N","A")
-
-
-
 p <- p[complete.cases(p), ]
 
 #########################################################################
@@ -57,7 +55,7 @@ p <- p[complete.cases(p), ]
 
 tab <- datatable(p,rownames = FALSE,  class = 'cell-border stripe', 
                  caption = 'Development accounting for 2019',
-                 extensions = 'Buttons', 
+                 extensions = c('Buttons'), 
                  options=list(dom = 'lfrtipB',
                               buttons = c('csv')
                               )
@@ -66,7 +64,7 @@ saveWidget(tab, "../plotly/pwt-dev-acct.html",selfcontained = F, libdir = "lib")
 
 tab <- datatable(s,rownames = FALSE,  class = 'cell-border stripe', 
                  caption = 'Raw data for 2019',
-                 extensions = 'Buttons', 
+                 extensions =c('Buttons'), 
                  options=list(dom = 'lfrtipB',
                               buttons = c('csv')
                  )
