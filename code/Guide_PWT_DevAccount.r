@@ -44,44 +44,14 @@ s <- p[which(p$isocode %in% c("USA","FRA","CHL","POL","AUS","THA")),]
 #########################################################################
 # Figure for level of R&D workers and level of productivity
 #########################################################################
-fig <- plot_ly(
-  type = 'table',
-  columnwidth = c(40,20,20,20,20,20),
-  header = list(
-    values = c(names(s)),
-    align = c('left', rep('center', ncol(s))),
-    line = list(width = 1, color = 'black'),
-    fill = list(color = 'lightblue'),
-    font = list(family = "Arial", size = 14, color = "white")
-  ),
-  cells = list(
-    values = rbind(
-      t(as.matrix(unname(s)))
-    ),
-    align = c('left', rep('center', ncol(s))),
-    line = list(color = "black", width = 1),
-    fill = list(color = c('lightgray', 'white')),
-    font = list(family = "Arial", size = 12, color = c("black"))
-  ))
 
 
-saveWidget(fig, "../plotly/pwt-dev-acct.html",selfcontained = F, libdir = "lib")
 
-datatable(p,rownames = FALSE,  class = 'cell-border stripe', options=list(buttons = c('excel')))
-
-dev_search <- DT::datatable((p),
-                               rownames = FALSE, 
-                               extensions = 'Buttons', 
-                               options = list(autoWidth = TRUE, 
-                                              extensions = 'FixedColumns', 
-                                              options = list(dom = 't', 
-                                                             scrollX = TRUE, 
-                                                             fixedColumns = TRUE),
-                                              columnDefs = list(list(width= '200px',
-                                                                     targets = "feedback")), 
-                                              dom=('Bfrtip'), 
-                                              buttons = c('excel'),
-                                              #pageLength = table_rows,
-                                              searchHighlight = TRUE),
-                               filter=list(position="top"))
-
+tab <- datatable(p,rownames = FALSE,  class = 'cell-border stripe', 
+                 caption = 'Development accounting for 2019',
+                 extensions = 'Buttons', 
+                 options=list(dom = 'Blrtip',
+                              buttons = c('copy', 'csv')
+                              )
+                 )
+saveWidget(tab, "../plotly/pwt-dev-acct.html",selfcontained = F, libdir = "lib")
