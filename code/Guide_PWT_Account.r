@@ -14,7 +14,7 @@ p <- pwt10.01 # copy dataframe for manipulation
 p$lngdppc <- round(log(p$rgdpna) - log(p$pop),digits=2) # create log GDP per capita
 p$ky <- round(p$rnna/p$rgdpna,digits=2) # create K/Y ratio
 p$acctky <- (.3/(1-.3))*log(p$ky) # just the K/Y part
-p$accthc <- log(p$hc) + log(p$emp/p$emp) # just the labor/HC part
+p$accthc <- log(p$hc) + log(p$emp/p$pop) # just the labor/HC part
 p$accttfp <- p$lngdppc - p$acctky - p$accthc # just the TFP part
 
 s <- p # save initial dataset for use later
