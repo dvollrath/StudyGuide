@@ -1,7 +1,6 @@
 ---
 title: Development accounting
 parent: Comparative Development
-has_children: true
 nav_order: 1
 ---
 
@@ -10,6 +9,8 @@ nav_order: 1
 
 1. TOC 
 {:toc}
+
+![Meme](meme-dev.png)
 
 ## Comparisons across countries
 To start let's be more systematic about comparing countries and what drives differences in their GDP per capita. All we need for this at the moment is the production function
