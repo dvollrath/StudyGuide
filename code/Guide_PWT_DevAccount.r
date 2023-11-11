@@ -84,7 +84,7 @@ fig <- layout(fig, title = list(text = 'Relationship of relative K/Y to relative
               xaxis = list(title = 'Relative GDP p.c.'),
               yaxis = list(title = 'Relative K/Y'),
               hovermode="x unified")
-saveWidget(tab, "../plotly/pwt-dev-ky.html",selfcontained = F, libdir = "lib")
+saveWidget(partial_bundle(fig), "../plotly/pwt-dev-ky.html",selfcontained = F, libdir = "lib")
 
 fig <- plot_ly(f, x = ~acctgdppc, y = ~accthc, 
                type = 'scatter', mode = 'markers',
@@ -98,7 +98,7 @@ fig <- layout(fig, title = list(text = 'Relationship of relative HC to relative 
               xaxis = list(title = 'Relative GDP p.c.'),
               yaxis = list(title = 'Relative HC'),
               hovermode="x unified")
-saveWidget(tab, "../plotly/pwt-dev-hc.html",selfcontained = F, libdir = "lib")
+saveWidget(partial_bundle(fig), "../plotly/pwt-dev-hc.html",selfcontained = F, libdir = "lib")
 
 fig <- plot_ly(f, x = ~acctgdppc, y = ~accttfp, 
                type = 'scatter', mode = 'markers',
@@ -112,4 +112,4 @@ fig <- layout(fig, title = list(text = 'Relationship of relative A to relative G
               xaxis = list(title = 'Relative GDP p.c.'),
               yaxis = list(title = 'Relative A'),
               hovermode="x unified")
-saveWidget(tab, "../plotly/pwt-dev-tfp.html",selfcontained = F, libdir = "lib")
+saveWidget(partial_bundle(fig), "../plotly/pwt-dev-tfp.html",selfcontained = F, libdir = "lib")
