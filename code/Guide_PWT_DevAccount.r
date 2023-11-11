@@ -50,7 +50,7 @@ s <- p[which(p$isocode %in% c("USA","FRA","CHL","POL","AUS","THA")),]
 tab <- datatable(p,rownames = FALSE,  class = 'cell-border stripe', 
                  caption = 'Development accounting for 2019',
                  extensions = 'Buttons', 
-                 options=list(dom = 'Blrtip',
+                 options=list(dom = 'lfrtipB',
                               buttons = c('copy', 'csv')
                               )
                  )
