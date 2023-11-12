@@ -54,8 +54,7 @@ p <- p[complete.cases(p), ]
 
 
 
-tab <- datatable(p,rownames = FALSE,  class = 'cell-border stripe', 
-                 caption = 'Development accounting for 2019',
+tab <- datatable(p,rownames = FALSE,  class = 'bootstrap', 
                  extensions = c('Buttons'), 
                  options=list(dom = 'lfrtipB',
                               buttons = c('csv')
@@ -63,10 +62,9 @@ tab <- datatable(p,rownames = FALSE,  class = 'cell-border stripe',
                  )
 saveWidget(tab, "../plotly/pwt-dev-acct.html",selfcontained = F, libdir = "lib")
 
-tab <- datatable(s,rownames = FALSE,  class = 'cell-border stripe', 
-                 caption = 'Raw data for 2019',
+tab <- datatable(s,rownames = FALSE,  class = 'bootstrap', 
                  extensions =c('Buttons'), 
-                 options=list(dom = 'lfrtipB',
+                 options=list(dom = 'lfrtBp',
                               buttons = c('csv')
                  )
 )
