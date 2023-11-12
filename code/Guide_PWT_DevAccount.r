@@ -54,15 +54,15 @@ p <- p[complete.cases(p), ]
 
 
 
-tab <- datatable(p,rownames = FALSE,  class = 'bootstrap', 
+tab <- datatable(p,rownames = FALSE,  class = 'display', 
                  extensions = c('Buttons'), 
-                 options=list(dom = 'lfrtipB',
+                 options=list(dom = 'lfrtBp',
                               buttons = c('csv')
                               )
                  )
 saveWidget(tab, "../plotly/pwt-dev-acct.html",selfcontained = F, libdir = "lib")
 
-tab <- datatable(s,rownames = FALSE,  class = 'bootstrap', 
+tab <- datatable(s,rownames = FALSE,  class = 'display', 
                  extensions =c('Buttons'), 
                  options=list(dom = 'lfrtBp',
                               buttons = c('csv')
