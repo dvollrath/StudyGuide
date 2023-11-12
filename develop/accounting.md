@@ -100,4 +100,4 @@ Differences in GDP per capita across countries are primarily due to differences 
 ## Raw data
 The raw data necessary to make all the development accounting calculations is in the following table. The human capital per capita term is given directly by the Penn World Tables. Population and employment are in millions. GDP is millions of PPP adjusted dollars, meaning this accounts for price differences across countries. K is millions of PPP adjusted dollars of capital. HC per capita uses years of schooling and Mincer equation to derive a measure of human capital.
 
-<iframe width="900" height="600" frameborder="0" scrolling="yes" src="../plotly/pwt-dev-raw.html"></iframe>
+<iframe src="../plotly/pwt-dev-raw.html"></iframe>
