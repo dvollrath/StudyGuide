@@ -16,23 +16,11 @@ Paul Romer developed a theory of innovation and growth in two main papers, the f
 
 So what did Romer do specifically in this paper that differs from the general model we've used so far? The key difference is that Romer provides a precise definition of how to interpret an "idea" and therefore how that relates to the concept of productivity. By making this definitive, it allows Romer to write down a much more precise mathematical model of economic growth. One part of that precise mathematical model was a much more nuanced description of the choice about how many people to allocate to doing R&D. The toy model covered [here](incentives.html#the-amount-of-research) is a stripped-down version of what Romer did.
 
-On to specifics. Romer's model conceived of ideas as recipes for new products or varieties of products. So the value of $A$ - what we call productivity - is a count of the number of types of products available. By itself, that doesn't do much for us. But Romer provides a way of thinking about how those varieties are used in production and how expanding the number of varieties leads to higher output.
+On to specifics. Romer's model conceived of ideas as recipes for new products or varieties of products. So the value of $A$ - what we call productivity - is a count of the number of types of products available. By itself, that doesn't do much for us. 
 
-One thing we have to get our head around in Romer's model is that there are two layers of production. There is the *final* good, which consumers purchase and .... consume. The total amount of the final good is equal to GDP (which is just final goods and services). There is a second layer, however, of *intermediate* goods, which are used by the final goods producer to make those final goods. An analogy I like is that the final goods producer is like Wal-mart or Target. They combine a lot of intermediate goods (toys, Diet Coke, socks, TVs, fishing poles, etc..) together to create the "final good" that is the cart full of goods that you leave the store with. 
+Romer set up a production structure just like the varieties [model of production](https://growthecon.com/StudyGuide/gdp/varieties.html). All the interpretations are the same as in that section, only Romer called the number of varieties $A$ rather than $N$. Where Romer expands on that simple model of production is in describing the economics behind how intermediate good firms act, how much they charge, and so forth, in order to develop a means of measuring how big their profits were. 
 
-Here's the production function for the final good firm.
-
-$$
-Y = L^{1-\alpha} \sum_{j=1}^A x_j^{\alpha}.
-$$
-
-This is not like the Cobb-Douglas function we used before, but after we get through describing the intermediate goods firms, you'll see that it actually is. $Y$ is GDP, just like before, and this is the output of the final goods firm. It uses labor, $L$, and it uses a bunch of intermediate goods, $x_j$. There are $A$ of these intermediate goods, and $x_j$ measures the amount of each that it uses (e.g. how many cases of Diet Coke or pairs of socks). 
-
-What's key about this function is that each of the $x_j$ amounts is raised to the $\alpha$ power. That means there are *decreasing marginal returns* to each one. As you increase the amount of $x_j$ that the final goods firm stocks, the contribution to GDP falls. Imagine that Wal-mart just kept piling up socks in their stores, at the expense of everything else. That wouldn't be nearly as attractive as the *variety* of goods that you normally expect at Wal-mart. Because of the decreasing returns to each variety, the final goods firm will produce the highest GDP if it has small amounts of lots of types of goods (A is high and $x_j$ is low) rather than large amounts of few goods (A is small and $x_j$ is high). 
-
-Note that this production function is still constant returns to scale. If you double the amount of $x_j$ of each variety, and double the labor, you get double the GDP. 
-
-Great. How much of each variety does the final goods firm use? Well, here Romer assumes that the final goods firm is a normal profit-maximizing firm, and takes the price of each of those varieties as given. In other words, final goods firms are not so big that their orders change the price they pay for intermediates. (This is arguable for a place like Wal-mart). 
+So step back in that model for a moment and as how much of each variety does the final good firm (e.g. Target) want to buy from intermediate suppliers? Well, here Romer assumes that the final goods firm is a normal profit-maximizing firm, and takes the price of each of those varieties as given. In other words, final goods firms are not so big that their orders change the price they pay for intermediates. (This is arguable for a place like Wal-mart). 
 
 Think about the final goods firm profits
 
