@@ -12,4 +12,4 @@ nav_order: 5
 
 ![Meme](meme-rules.png)
 
-## 
+
