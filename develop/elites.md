@@ -12,8 +12,12 @@ nav_order: 6
 
 ![Meme](meme-elites.png)
 
-## Winners and losers
 If social infrastructure or institutions are so important for development, why don't countries adopt the best version of them? These are ideas, certainly, and so are non-rival. A country can create a good social infrastructure without lowering the social infrastructure in another. What is stopping places from making these changes? 
+
+This gets to very long-run questions about why some places ended up rich relative to others. Douglass North, in *Structure and Change in Economic History* (1981) laid it out this way:
+> From the redistributive societies of ancient Egyptian dynasties through the slavery system of the Greek and Roman world to the medieval manor, there was a persistent tension between the ownership structure which maximized the rents to the ruler (and his group) and an efficient system that reduced transaction costs and encouraged economic growth. This fundamental dichotomy is the root cause of the failure of societies to experience sustained economic growth. (p. 25)
+
+Here we want to lay out some logic about how economies can get "stuck" with bad institutions and stay relatively poor, and that also helps us see how they could get out of that bad position and grow.
 
 ## Misallocation again
 Let's go back to the misallocation model to understand *one* way of thinking about the incentives for institutions. There, we thought about a model where there are $N$ different varieties that *could* be used, but only $M$ of the are used. That made the economy worse off. In that section I just said, "eh, institutions?" as an explanation for why. 
@@ -119,4 +123,15 @@ So if we cannot set up rules and laws and institutions that remove the veto powe
 This gives us another route for looking at development. Can we see evidence of these kinds of bargains being made over time to allow for increased varieties while protecting incumbents? Arguably, yes, this happens all the time. Tariffs on imported goods are a way to protect incumbents from new (and cheaper) varieties, costing us more but allowing that competition. We give tax breaks (implicitly raising the profit share) to incumbent firms to get them to build plants in new places - adding a "variety" to a new city or state that didn't have that before. 
 
 ## Time for some game theory
-Here's the problem, though. In principle we could make an agreement with incumbents to add varieties and increase GDP. In practice that agreement requires both sides to adhere to the deal. 
+Here's the problem, though. In principle we could make an agreement with incumbents to add varieties and increase GDP. In practice that agreement requires both sides to adhere to the deal, and most likely neither can make a credible commitment to do so. 
+
+Think of the incumbents. They could agree to the deal, and then once the new varieties enter the market, collude against them in several ways to drive them back out of business. They could hoard labor (non-competes?) and capital (lease available office space but not use it) to prevent the new varieties from setting up. They could undercut the new varieties by taking losses today, drive them out of business, and then put their own prices back up. They'd get rid of the additional competitors and keep the higher $s_{\pi}$ and be strictly better off. 
+
+Think of us. We could agree to the deal, and then once the new varieties are set up and established, we could renege on the agreement regarding profit share. We could vote for a tax to completely offset (or over-compensate) for the increased profit rate, making the incumbents worse off. Great question is why we didn't do that before, but in either case we can't credibly commit *not* to do it in the future. 
+
+So both sides don't really trust the other to keep the bargain, even though it invariably would raise overall GDP and average living standards. Despite the potential win-win, the threat of one side going back on the deal in the future after they get what they want prevents an agreement from happening. So we'd be back to the point where the incumbents have a veto (remember, we're starting with the presumption that they do) and can't improve the situation. 
+
+The logic I'm describing here is based on work by Daron Acemoglu and James Robinson. Their book *Why Nations Fail* (2012) gives much of the logic we're talking about here with varieties and misallocation, but frames this more around an elite and "rest of us" who vie for political power, which in turn allows the two groups to dictate the rules on the economy. The important point they make is that even though elites and the rest of us can both see that allowing everyone to participate politically could make rules more conducive to growth, neither side can credibly commit to their side of a bargain. The elites cannot credibly commit to *not* taking all the profits as the rest of us innovate or invest, and the rest of us cannot credibly commit to not chopping off the heads of the elite if they share the power. Acemoglu and Robinson get into extra details on how the disparity in power and inequality matters for how easy it is to break out of this situation, but the core logic is the same. 
+
+Historically, then, *one* story for why some places got rich and others remained poor is that the rich places were able to solve this coordination problem. How? A few possibilities. One is that the elites themselves were the ones innovating and/or coming up with new varieties, and hence didn't want to block themselves from entering. A second is that we didn't coordinate our way out of this at all, and in fact what happened was the elites and the rest of us fought, the elites (or some of them) were pushed aside, and the rest of us instituted new rules that favored entrance of new varieties. That is a frightening over-simplification of history, politics, and economics. But the logic of thinking about elites and the rest of us getting stuck is a useful one for thinking about development. 
+

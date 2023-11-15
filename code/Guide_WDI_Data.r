@@ -1,5 +1,26 @@
 # Uses WDI to create a large number of figures used in Study Guide
 
+dat = WDI(indicator=c('DBSCORE' = 'IC.BUS.DFRN.XQ',
+                      'DB1014'='IC.BUS.EASE.DFRN.DB1014',
+                      'DB15'='IC.BUS.EASE.DFRN.DB15',
+                      'DB16'='IC.BUS.EASE.DFRN.DB16',
+                      'DB1719' = 'IC.BUS.EASE.DFRN.XQ.DB1719',
+                      'DBRANK'='IC.BUS.EASE.XQ',
+                      'GDPPC' = 'NY.GDP.PCAP.PP.KD'
+)
+,country='all')
+write.csv(fte,file="WDI_DOINGBUSINESS.csv",row.names=FALSE, na="") # save in case
+
+f <- dat[which(dat$year %in% c("2018")),]
+f$lnGDPPC = log(f$GDPPC)
+fig <- plot_ly(f, x = ~lnGDPPC, y = ~DBSCORE, text = ~country, 
+               hoverinfo = "text", type = 'scatter', mode = 'markers')
+fig <- layout(fig, title = list(text = 'Doing Business Score and GDP per capita', x=0),
+              xaxis = list(title = 'Log GDP per capita'),
+              yaxis = list(title = 'Doing Business Score')
+              )
+saveWidget(partial_bundle(fig), "../plotly/wdi-doing-business.html",selfcontained = F, libdir = "lib")
+
 ##################################################################################
 # Energy data and figure
 ##################################################################################
