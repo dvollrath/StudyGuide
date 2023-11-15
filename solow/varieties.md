@@ -56,13 +56,13 @@ Again, we can rationalize that with a model of how these firms compete, but for 
 Okay, put what we know together. Each intermediate firm uses $K_i = K/N$ capital, so each one produces $x_i = K / N$ in goods. The final good firm stocks those goods in their stores, meaning the total value of final goods is
 
 $$
-Y = L^{1-\alpha} \sum_i^{N} \left(\frac{K}{N})^{\alpha}.
+Y = L^{1-\alpha} \sum_i^{N} \left(\frac{K}{N}\right)^{\alpha}.
 $$
 
 Inside that summation, everything is constant, so we've really got
 
 $$
-Y = L^{1-\alpha} \left(\frac{K}{N})^{\alpha} \sum_i^{N} 1.
+Y = L^{1-\alpha} \left(\frac{K}{N}\right)^{\alpha} \sum_i^{N} 1.
 $$
 
 and then that summation reduces to $\sum_i^{N} 1 = N$ - it's just the sum of $N$ ones.
@@ -70,7 +70,7 @@ and then that summation reduces to $\sum_i^{N} 1 = N$ - it's just the sum of $N$
 Our production function is now
 
 $$
-Y = L^{1-\alpha} \left(\frac{K}{N})^{\alpha} N
+Y = L^{1-\alpha} \left(\frac{K}{N}\right)^{\alpha} N
 $$
 
 oooooorrrrrr
