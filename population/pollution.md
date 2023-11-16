@@ -1,8 +1,7 @@
 ---
 title: Pollution and growth
-parent: Growth with natural resources
-grand_parent: Population and Resources
-nav_order: 1
+parent: Population and Resources
+nav_order: 3
 ---
 
 # Pollution and Growth

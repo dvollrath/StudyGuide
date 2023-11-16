@@ -1,7 +1,6 @@
 ---
 title: Growth with natural resources
 parent: Population and Resources
-has_children: true
 nav_order: 2
 ---
 

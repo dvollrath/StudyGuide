@@ -1,6 +1,7 @@
 ---
 title: Energy and growth
 parent: Population and Resources
+has_children: true
 nav_order: 1
 ---
 
