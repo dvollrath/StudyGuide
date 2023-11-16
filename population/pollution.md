@@ -15,21 +15,13 @@ nav_order: 3
 ## Some facts on pollution
 The story with respect to economic growth is mixed. There are several types of pollution that appear to decline as countries become rich, while there are others that have a strong positive relationship to GDP per capita.
 
-Air pollution is one area that appears to get better once countries achieve a certain level of development. [Sulphur dioxide](https://www.epa.gov/so2-pollution/sulfur-dioxide-basics#effects) is the chemical that creates the smell when you light a match. It is also released as a byproduct of burning some fossil fuels. Most important, it creates health issues, both directly by irritating the lungs, but also by helping to form particulate matter in the air which has long-term consequences for people breathing it. It is one of the main air pollutants tracked by the EPA and other agencies.
+Air pollution is one area that appears to get better once countries achieve a certain level of development. [Sulphur dioxide](https://www.epa.gov/so2-pollution/sulfur-dioxide-basics#effects) is the chemical that creates the smell when you light a match. It is also released as a byproduct of burning some fossil fuels. Most important, it creates health issues, both directly by irritating the lungs, but also by helping to form particulate matter in the air which has long-term consequences for people breathing it.
 
-<iframe src="https://ourworldindata.org/grapher/so-emissions-tonnes-per-year" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+<iframe src="https://ourworldindata.org/grapher/emissions-of-air-pollutants-oecd" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
 
-The figure shows the absolute amount of sulphur dioxide produced for several countries over a long time span. The amounts rose substantially from the late 1800s to the middle of the 20th century, but then in the most developed nations declined after that due in part to more awareness of the health issues. China still has growth in sulphur dioxide production as it continues to expand fossil fuel use.
-
-Globally, these emissions have gone down in the last thirty to forty years. 
+The figure shows the absolute amount of sulphur dioxide produced, as well as amounts of several other key air pollutants. You can change country using the buttons to look at values for the United States or other members of the OECD. Globally, these emissions have gone down in the last thirty to forty years. 
 
 <iframe src="https://ourworldindata.org/grapher/so-emissions-by-world-region-in-million-tonnes" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
-
-Looking specifically at the US, you can see a similar downward trend in several types of air pollutants: sulphur dioxide, [nitrogen oxides](https://www.epa.gov/no2-pollution), and [volatile organic compounds](https://www.epa.gov/indoor-air-quality-iaq/volatile-organic-compounds-impact-indoor-air-quality). 
-
-<iframe src="https://ourworldindata.org/grapher/air-pollutant-emissions?country=~USA" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
-
-Note that these are absolute amounts. The per-capita production of air pollutants in the US has fallen even faster than this.
 
 [Particulate matter](https://www.epa.gov/pm-pollution/health-and-environmental-effects-particulate-matter-pm) (PM) is a different sort of air pollution, and this has not seen the same substantial declines as other pollutants. Developed countries like the US and UK seem to have a baseline level of PM pollution that is slightly lower than in places like Kenya or Brazil. The real worries here are places like India and China, which rely heavily on fossil fuel production and where air pollution is substantial. 
 
@@ -39,6 +31,11 @@ Particulate matter is the reason you get pictures like this from Delhi of smog l
 
 ![Air pollution](https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Poulluted_killer_fog_in_Delhi.jpg/1024px-Poulluted_killer_fog_in_Delhi.jpg)
 
+The low values in places like the UK are relatively new. This next figure shows you PM levels in London going back to 1700, and it shows how these rose substantially during the initial periods of the industrial revolution (1750-ish to 1900-ish) and then dropped dramatically as the city got richer and richer. For reference, the recent data for Delhi is included, and you can see that city is closer to industrial revolution London levels than modern London.
+
+<iframe src="https://ourworldindata.org/grapher/air-pollution-london-vs-delhi" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+
+## Plastics!
 An entirely different kind of pollution is from plastics. You may be familiar with micro-plastics or the amount of plastic that finds its way into oceans. The amount of plastic pollution appears to be strongly correlated with GDP per capita.
 
 <iframe src="https://ourworldindata.org/grapher/per-capita-plastic-waste-vs-gdp-per-capita" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
@@ -89,13 +86,13 @@ Taking that narrow perspective (or pushing the other perspectives off into the u
 Run that logic in reverse. If we want to *raise* X, we have to extract *less* E, and that has to *lower* GDP (and hence GDP per capita). So the price of raising X is lower GDP per capita. The price of one unit of X is the lost GDP per capita we'd have produced if we had instead extracted that 1 unit of X and used it in production. So the price of environmental quality is the marginal product of the extracted resources. That is
 
 $$
-P_X = MPE = \epsilon_E \frac{y}{E}
+P_X = MPE = \beta \frac{y}{E}
 $$
 
-or the price of X is the marginal product of E, which in turn is equal to the elasticity of production with respect to E, $\epsilon_E$, times the average product of E, $y/E$. That's a mouthful, but it captures the trade-off we have to make to get one more unit of X. Put that together with the choice condition above.
+or the price of X is the marginal product of E, which in turn is equal to the elasticity of production with respect to E, $\beta$, times the average product of E, $y/E$. That's a mouthful, but it captures the trade-off we have to make to get one more unit of X. Put that together with the choice condition above.
 
 $$
-\epsilon_E \frac{y}{E}= \frac{MU(X)}{MU(y)}.
+\beta \frac{y}{E}= \frac{MU(X)}{MU(y)}.
 $$
 
 We can use this to tell ourselves about how the choice between GDP per capita and extraction of resources (or any kind of destruction of environmental quality) will change over time.
@@ -112,4 +109,4 @@ In a different context, like say plastics, the salience of the environmental eff
 
 We can also use this framework to think about developing countries and their environmental choices. You cannot infer from the data that poorer countries do not care about the environment. They probably have fundamentally similar preferences to anyone living in the US or EU or Japan. But when GDP per capita is very low, the MU of GDP per capita is very high, and hence the ratio of MU's is very low. This in turn leads to a choice of a low ratio of y/E, or a high energy intensity. It's not that the people in Delhi *like* the air pollution, it is more likely that they cannot imagine sacrificing their some of their limited consumption in order to clean it up. 
 
-One last point about this setting related to production. Note that if you were to lower the elasticity, $\epsilon_E$, what would happen? To keep the equation in balance you would have to raise y/E, or reduce the energy intensity of production. One tangible way of lowering the environmental impact of growth is to make energy (or resources in general) less important for production. You could even view innovation in that direction (solar, wind, batteries) as an alternative response to the change in marginal utilities induced by growth and environmental quality decline. 
+One last point about this setting related to production. Note that if you were to lower the elasticity, $\beta$, what would happen? To keep the equation in balance you would have to raise y/E, or reduce the energy intensity of production. One tangible way of lowering the environmental impact of growth is to make energy (or resources in general) less important for production. You could even view innovation in that direction (solar, wind, batteries) as an alternative response to the change in marginal utilities induced by growth and environmental quality decline. 

@@ -1,7 +1,7 @@
 ---
 title: Modern Demographics
 parent: Population and Resources
-nav_order: 4
+nav_order: 5
 ---
 
 # Modern demographic experience
@@ -12,10 +12,9 @@ nav_order: 4
 
 ![Meme](meme_modern.png)
 
-## Population growth
-What was clear from the sections on resources and growth was that the rate of population growth, $g_L$, mattered along the BGP. The faster population grew, the slower would be GDP per capita growth, as the resources were split up over more and more people. 
+What was clear from the sections on resources and growth was that the rate of population growth, $g_L$, mattered along the BGP. The faster population grew, the slower would be GDP per capita growth, as the resources were split up over more and more people. In a [Malthusian world](malthus.html) a positive association of $g_L$ with living standards leads to stagnation in living standards, even if it doesn't imply collapse of them. 
 
-Here we want to see if there are any regularities in the process of population growth that can help us figure out if $g_L$ is likely to be low enough to ensure that growth in GDP per capita can continue. In this section we'll be focusing on the "modern" era in the 20th century and beyond, and then looking more closely at pre-modern population dynamics in a different section, as they tend to be quite different. 
+But does that Malthusian model do a good job of describing our modern economies? Should we expect that modern economic growth could come to an end because of population growth out-running resources? The answer is "probably no". 
 
 The overwhelming finding here is that population growth tends to fall as countries become richer. You can look over long periods of time, and see that the number of births per 1000 people fell. From about 30 or 40 per 1000 people each year, to around 10 by 2010. 
 
@@ -39,35 +38,25 @@ However, we have to be a little careful making conclusions that $g_L$ is necessa
 
 Even though people may have fewer kids, if they live longer then the population size may not fall as much as we think. Actually accounting for this gets a little tedious, but overall the drop in fertility is "winning" and it tends to be the case that as GDP per capita gets higher, population growth $g_L$ falls.
 
-## Implications for growth
-Let's use the model from the prior section on fixed resources and growth to think about what impact this relationship has on growth over the long-run. Recall from that work that the growth rate of GDP per capita along a BGP was
+## Model implications
+What does this do to things in our models of growth? Well, there are a couple of things to look at. To make things concrete, let's think about a world in which $g_L = 0$, as this appears to be where we are headed - at least!
+
+In the Solow model, we know that the capital/output ratio is associated with $g_L$. $K/Y^{ss} = s_I/(g_A + g_L + \delta)$. If we set $g_L$ to zero, we get a *higher* capital/output ratio. So modern fertility works to make us richer. In our model of resources we had that the growth rate of GDP per capita depended on the population growth rate because it diluted resources, as in
 
 $$
-g_y^{BGP} =  \frac{1-\alpha-\beta}{1-\alpha} g_A - \frac{\beta}{1-\alpha} g_L.
+g_y^{BGP} = \left(1 - \frac{\beta}{1-\alpha}\right)g_A - \frac{\beta}{1-\alpha}\left(s_X + g_L \right).
 $$
 
-The growth rate involved a race between productivity and population growth. Now we want to think about the situation where population growth may itself respond to the *level* of GDP per capita. In math, let's say that this describes the relationship 
+If we make $g_L$ zero, this takes away one of the "drag" terms, and therefore the growth rate of GDP per captia gets *higher*. Again, modern demographics work in our favor.
+
+What about with ideas? We know from that setup that the growth rate of productivity is itself
 
 $$
-g_L = \theta y_t^{-\mu}
+g_A = \frac{\lambda}{1-\phi}g_L.
 $$
 
-where $\mu$ is some parameter that governs how strongly $g_L$ responds to GDP per capita. But note that this exponent is negative, meaning that as GDP per capita goes up, $g_L$ goes *down*. That captures the negative relationship seen above. It also implies that as GDP per capita gets infinitely big, $g_L$ goes to zero. This doesn't allow for negative population growth (as we see in Japan or Italy).
+If $g_L = 0$ then this tells us that productivity growth *stops*. Worse, in our model with resource use, if we set $g_A$ to zero then the growth rate of GDP per capita could be negative (the $s_X$ term is still there). 
 
-Along the BGP, we therefore have
+Shutting down population growth would lead to stagnation in productivity growth, putting growth in living standards in jeopardy. Recall the example we used of Japan, where population growth has stagnated and so has the level of GDP per capita and productivity. One of the *dangers* of slower population growth is that it could stop living stanards from rising. 
 
-$$
-g_y^{BGP} =  \frac{1-\alpha-\beta}{1-\alpha} g_A - \frac{\beta}{1-\alpha} \theta y_t^{-\mu}.
-$$
-
-This says that the growth rate of GDP per capita depends on the *level* of GDP per capita itself. So the growth rate along the BGP here doesn't have to be constant, as we normally assume. It may in fact *rise* over time as the population growth rate drops towards zero.
-
-This is easiest to see in figure. The GeoGebra figure here plots the two parts of this relationship determining $g_y^{BGP}$. The y-axis measures growth rates, and the x-axis is the level of GDP per capita. The green horizontal line plots the term involving $g_A$ (along with the $\alpha$ and $\beta$ stuff). The red line plots the relationship of the population growth rate and GDP per capita (again including all the $\alpha$ and $\beta$ stuff and setting $\theta=.1$).
-
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="https://www.geogebra.org/m/jwd7njzq"></iframe>
-
-We know that if the red line is above the green then population growth is running so high compared to productivity growth than GDP per capita growth is *negative*, and so the actual GDP per capita would fall, moving to the left, and further exacerbating the gap. If GDP per capita starts low enough here, it eventually goes to *zero*. 
-
-The more relevant section of the figure is where the red line reflecting population growth falls below the green line reflecting productivity growth. Here, growth in GDP per capita is positive, and so the actual GDP per capita keeps moving to the right. That means the green line is still over the red line, and GDP per capita growth continues. Eventually, GDP per capita will get big enough that population growth goes to zero, and the growth rate of GDP per capita is based only on $g_A$.
-
-You can adjust the values of the parameters here to see what happens, and whether changes in parameters make it easier or harder to achieve growth in the long run. A particularly interesting experiment is to adjust $\beta$. Make it go down to zero, meaning resources are no longer important in production, and see how the levels of GDP per capita at which growth will be positive expands. As we make resources unimportant, growth is more likely to be positive. 
+Perhaps that helps with some environmental outcomes. But recall as well that countries getting richer was associated with less pollution and lower resource use. If population growth stalls out productivity growth - or worse lowers living standards - then we might revert to *more* resource intense activities to keep up living standards. 
