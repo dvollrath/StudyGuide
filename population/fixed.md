@@ -2,7 +2,7 @@
 title: Growth with natural resources
 parent: Population and Resources
 has_children: true
-nav_order: 1
+nav_order: 2
 ---
 
 # Growth with natural resources
@@ -12,6 +12,8 @@ nav_order: 1
 {:toc}
 
 ![Meme](meme_versus.png)
+
+Now let's try to put together a model of economic growth that includes these resources, and then see how it maps into some of the facts we established with the data in the last section.
 
 ## Dynamics of nonrenewable resources
 Understanding growth when resources are required for production is just an extension of our standard model. Let $X_t$ be the stock of a resource, and this stock could be agricultural land, oil, trees, copper, the ocean, or it could represent a composite of all resources. This stock could decline over time.
@@ -88,52 +90,40 @@ The fraction $s_X$ is going to be a lot like the fraction $s_I$, in a sense, bec
 Now we want to incorporate natural resources into production and see what impact that has. Modify the regular Cobb-Douglas production function to be
 
 $$
-Y_t = K_t^{\alpha}E_t^{\beta} (A_t L_t)^{1-\alpha-\beta},
+Y_t = K_t^{\alpha} E_t^{\beta} (A_tL_t)^{1-\alpha-\beta} ,
 $$
 
 where recall $E_t$ is the flow of resources we use in a year. Note that the elasticity on labor is different now. It depends on $\alpha$ *and* $\beta$. We use this formulation so that the production function still has constant returns to scale. And this is going to be important for what we find below.
 
-Do what we always do, and take logs
+This is more complicated that our normal production model, as we've got two different stocks - K and E - growing. But we can get most of the solution we need by noting a key thing, which is that the growth rate of E, $g_E$, is a fixed number $g_E = -s_X$. It doesn't depend on other things the way that the growth rate of capital depended on the size of GDP. 
+
+Rewrite the production function like this
 
 $$
-\ln Y_t = \alpha \ln K_t + \beta \ln E_t + (1-\alpha)\ln A_t + (1-\alpha) ln L_t.
+Y_t = K_t^{\alpha} (B_t L_t)^{1-\alpha} 
 $$
 
-Here, we'll use the same trick we've used before, and subtract $\alpha \ln Y_t$ from both sides
+where $B_t$ is a composite term that is 
 
 $$
-(1-\alpha)\ln Y_t = \alpha (\ln K_t - \ln Y_t) + \beta \ln E_t + (1-\alpha-\beta)\ln A_t + (1-\alpha-\beta) ln L_t.
+B_t = A_t^{\frac{1-\alpha-\beta}{1-\alpha}} \left(\frac{E_t}{L_t}\right)^{\frac{\beta}{1-\alpha}}.
 $$
 
-Divide both sides by $(1-\alpha)$
+All I've done is collect all of the "weird" things in our production function into the B term. What we are left with is a production function that looks exactly like what we've always worked with, $Y_t = K_t^{\alpha} (B_t L_t)^{1-\alpha}$, just with B in the place of A. 
+
+Ignore what's going on in B for the moment. If I showed you this production function and said that it was the Solow model, you'd be able to solve it. You'd tell me that the growth rate of GDP per capita with this production function would - along a BGP - turn out to be
 
 $$
-\ln Y_t = \frac{\alpha}{1-\alpha} (\ln K_t - \ln Y_t) + \frac{\beta}{1-\alpha} \ln E_t + \frac{1-\alpha-\beta}{1-\alpha}\ln A_t + \frac{1-\alpha-\beta}{1-\alpha} ln L_t.
+g_y^{BGP} = g_B.
 $$
 
-Now subtract $\ln L_t$ from both sides so that we get GDP per capita on the left. But notice that this is going to leave a term involve labor "dangling" at the end of the right-hand side.
+So now we need to know what $g_B$ is. Look at the equation above, take logs and derivatives, and we get (after some re-arranging)
 
 $$
-\ln y_t = \frac{\alpha}{1-\alpha} (\ln K_t - \ln Y_t) + \frac{\beta}{1-\alpha} \ln E_t + \frac{1-\alpha-\beta}{1-\alpha}\ln A_t - \frac{\beta}{1-\alpha} \ln L_t.
+g_B = \left(1 - \frac{\beta}{1-\alpha}\right)g_A - \frac{\beta}{1-\alpha}\left(s_X + g_L \right).
 $$
 
-This says that if the absolute number of people goes up, GDP per person *falls*. We didn't get this in our original Solow model. Why does this happen? It happens because the two original inputs we worried about, capital and labor, no longer can achieve constant returns on their own. That is, doubling just capital and labor in this production function will give you *less* that double the output, because there is *another* rival input involved, $E_t$. Adding in resources as an additional rival input creates the possibility that living standards are declining with the size of population. 
-
-What does this function tell us about the growth rate? Do what we normally do with an expression in logs like this and you get
-
-$$
-g_y =  \frac{\alpha}{1-\alpha} g_{KY} + \frac{\beta}{1-\alpha} g_E + \frac{1-\alpha-\beta}{1-\alpha} g_A - \frac{\beta}{1-\alpha} g_L.
-$$
-
-Growth in GDP per capita is now a little like a race. On one side you have the positive terms involving the capital/output ratio, energy use, and productivity. On the other you have population growth. We know the capital/output ratio cannot offer help forever, as we'll head to a BGP, so it really is a question of whether energy use and productivity can grow fast enough to offset population growth. 
-
-But things get a little dicey here when you recall from the prior sub-section that $g_E = -s_X$, or that energy use is *negative*. Let's look at a BGP to make things a little more apparent. Along a BGP, we know $g_{KY} = 0$, so that will disappear.
-
-$$
-g_y^{BGP} = \left(1- \frac{\beta}{1-\alpha}\right)g_A - \frac{\beta}{1-\alpha}(s_X + g_L).
-$$
-
-The growth rate is like a weighted average of $g_A$ and *negative* $s_X + g_L$. The second two are negative for different reasons. $s_X$ has a negative effect because it tells us that the amount of resource use is falling over time, hurting production. $g_L$ is negative because we're trying to spread that resource use over a larger number of people. 
+The growth rate is a weighted average of $g_A$ - actual productivity growth - and *negative* $s_X + g_L$. The second two are negative for different reasons. $s_X$ has a negative effect because it tells us that the amount of energy use is falling over time as we exhaust the stock of X, which pushes down production. $g_L$ is negative because we're trying to spread that resource use over a larger number of people. 
 
 Growth along the BGP is positive only if
 
@@ -149,13 +139,14 @@ $$
 
 If productivity growth is high enough, then this can overcome the drag on growth from resource use and rising population. 
 
-Growth with natural resources
-{: .label .label-green }
-**Using natural resources in production can create a drag on the growth rate of GDP per capita. Growth is only positive if produtcivity growth is sufficiently high and/or population growth is sufficiently low.**
+{: .important }
+Using natural resources in production can create a drag on the growth rate of GDP per capita. Growth is only positive if produtcivity growth is sufficiently high and/or population growth is sufficiently low.
 
 It's important to see that this relationship depends on the size of $\beta$, which dictates the elasticity of resource use in production. It essentially tells us how relevant resources are for GDP. If $\beta$ is close to zero, then essentially resources don't matter, and we're back to our original Solow model. Growth is positive so long as $g_A>0$ in that case.
 
 Here, the higher is $\beta$, and the more important resources are, the harder it is to achieve growth in GDP per capita on a BGP. We'll look more at this when we try to use this model to explain some real-world data.
+
+You can also see that the size of $s_X$ matters. If the resource we're talking about is renewable and $s_X \approx 0$, then growth is higher and there is less of a "drag" on growth from using the resource. As $s_X$ gets bigger, it becomes more a drag and harder to get positive growth.
 
 ## Level effects
 To be clear on what this model implies for the use of resources per capita, and the level of both resources per capita and GDP per capita, let's work out a few values. First, let's look at the *stock* of resources per capita, using small letters to denote per-capita amounts, as normal.
@@ -192,30 +183,66 @@ $$
 
 Again, this is falling, and is basically identical to the stock per capita over time, except for the addition of the $\ln s_X$ term showing us what fraction of the resource is getting used.
 
-Finally, let's go back to the level of GDP per capita. From above, this was
+We can use some of this information to tell ourselves what the productivity level $B_t$ looks like over time. $B$ was defined as 
 
 $$
-\ln y_t = \frac{\alpha}{1-\alpha} (\ln K_t - \ln Y_t) + \frac{\beta}{1-\alpha} \ln E_t + \frac{1-\alpha-\beta}{1-\alpha}\ln A_t - \frac{\beta}{1-\alpha} \ln L_t.
+B_t = A_t^{\frac{1-\alpha-\beta}{1-\alpha}} \left(\frac{E_t}{L_t}\right)^{\frac{\beta}{1-\alpha}},
 $$
 
-We know how to describe $\ln E_t$ from the first sub-section. Based on our knowledge of how innovation works, we can write $\ln A_t = \ln A_0 + g_A t$, and we know that $g_A$ depends on $g_R$, but to keep things clean let's just stick with this. Finally, we know $\ln L_t = \ln L_0 + g_L t$. Put it all together and we get
+so in log terms this is
 
 $$
-\ln y_t = \frac{\alpha}{1-\alpha}\ln K_t/Y_t + \frac{\beta}{1-\alpha} \left(\ln s_X + \ln X_0 - s_X t \right) + \frac{1-\alpha-\beta}{1-\alpha}\left(\ln A_0 + g_A t \right) - \frac{\beta}{1-\alpha} \left(\ln L_0 + g_L t \right).
+\ln B_t = \frac{1-\alpha-\beta}{1-\alpha} \ln A_t + \frac{\beta}{1-\alpha} \ln E_t - \frac{\beta}{1-\alpha} \ln L_t.
 $$
 
-This can be simplified(?) a little into
+We know how to describe $E_t$ from the first sub-section. Put this together to the mess that is
 
 $$
-\ln y_t = \frac{\alpha}{1-\alpha}\ln K_t/Y_t + \frac{\beta}{1-\alpha} \left(\ln s_X + \ln X_0 - \ln L_0 \right) + \frac{1-\alpha-\beta}{1-\alpha}\left(\ln A_0 \right) + \left(1- \frac{\beta}{1-\alpha}\right)g_A t - \frac{\beta}{1-\alpha} (s_X + g_L)t.
+\ln B_t = \frac{1-\alpha-\beta}{1-\alpha} \ln A_t + \frac{\beta}{1-\alpha} (\ln s_X + \ln X_0 - s_X t) - \frac{\beta}{1-\alpha} \ln L_t.
 $$
 
-Again, we've got an equation for a line. The intercept of this line (the level of GDP per capita) depends on:
+What are we looking at? B is the effective level of productivity in this economy, accounting for energy use. That effective productivity level depends on actual productivity, A, and it depends negatively on the size of the population, L, due to dilution of resources. What we also see is that effective productivity depends positively on the initial *stock* of resources, $X_0$. If we have more to use overall, our extraction can be bigger and we can use more energy and be more productive. 
 
-1. The capital/output ratio. We know this ultimately should settle down to a stable ratio that depends on the savings rate, population growth, depreciation, and the growth rate of productivity.
-2. The initial flow of resources per capita, $\ln s_X + \ln X_0 - \ln L_0$. No big surprise, an economy that has a higher initial flow of these resources will be richer. 
-3. The initial value of productivity, $\ln A_0$. The more productive you are with the given capital and resources, the richer the economy.
+More interesting, note that there are two effects of $s_X$ here. The $\ln s_X$ term is positive, and the higher the extraction rate, the higher is $B_t$. This is the direct effect of pulling more out of the resource stock. More energy at any given time, more productive. But note that that $s_X t$ term is telling us about how $B$ evolves over time in reaction. This term is negative, and the bigger is $s_X$ the *slower* that B will grow, because we are running down the resource stock.
 
-The last two terms captures the growth rate, and as we know that can be positive or negative depending on how big $g_A$ is relative to $s_X$ and $g_L$. 
+## Resources and living standards
+Finally, let's go back to the level of GDP per capita. This will get messy, but what we are after here is some sense of the role of $s_X$. There is going to be a positive *level* effect, meaning that the higher is $s_X$ the richer we are to start, as we use more resources. But there is a negative *growth* effect, as the higher is $s_X$ the slower is the growth rate due to resources declining faster. So the impact on living standards is somewhat ambiguous. High $s_X$ (a big negative number) can mean short-run production but low growth, while low $s_X$ gives low GDP per capita today but allows for higher GDP per capita in the future. 
 
-Note the conflicting effects of the extraction rate, $s_X$. If we draw down a large amount of resources each year to provide $E_t$, then this *raises* the level of GDP per capita, but *lowers* the growth rate. It is another one of these intertemporal trade-offs. High GDP per capita now, or soon, in exchange for low growth in GDP per capita in the future. If you raised $s_X$ high enough, you might generate a situation where you are very rich today, at the cost of a *negative* growth rate in the future, meaning GDP per capita would fall as the resource base ran out.
+How do we see this in the math? Use the production function with $B$ and we've got
+
+From above, this was
+
+$$
+\ln y_t = \frac{\alpha}{1-\alpha} (\ln K_t/Y_t) + \ln B_t.
+$$
+
+We already know that $B_t$ depends in multiple ways on $s_X$. But we also know that the choice of $s_X$ will influence the level of $K/Y$ that we end up at. We know from the Solow model that in this production function the steady state capital/output ratio will be
+
+$$
+K/Y^{ss} = \frac{s_I}{g_B + g_L + \delta}.
+$$
+
+The growth rate $g_B$ shows up here again, and from above we found that
+
+$$
+g_B = \left(1 - \frac{\beta}{1-\alpha}\right)g_A - \frac{\beta}{1-\alpha}\left(s_X + g_L \right).
+$$
+
+So here we see *another* influence of $s_X$. A higher extraction rate will lower the capital/output ratio in the long-run, as it pushes up on GDP. 
+
+Stepping back from the math, the overall point is that the impact of resource extraction on GDP per capita is ambiguous in some sense. Higher $s_X$ can generate higher living standards *now*, but lowers the growth rate. Lower $s_X$ keeps living standards low now, but has a higher growth rate. We can't say for sure that one is better than another - from the perspective of GDP per capita - unless we take a stand on how important the present is compared to the future. 
+
+And so far we've said *nothing* about the possible environmental impact of that resource use. 
+
+## Matching the facts
+Lots of moving parts here. But let's ask how this model does in matching what we see in the data. First, we estabalished that $\beta$ is kinda-sorta constant over time. That's fine, our model is just taking $\beta$ as given, so none of our results rely on it changing. 
+
+Next, the data suggest that energy intensity, E/Y, was *falling* over time. Does our model deliver that result? Let's think about this in terms of growth rates. If E/Y is falling, then it has to be that
+
+$$
+g_E < g_Y
+$$
+
+We already know that our model matches to this. Way back at the beginning we said that $g_E = -s_X$, or that energy use declines over time - by assumption. Even if we think that $s_X$ is close to zero, either because of new discoveries or because we're considering renewable energy as well, then this just means $g_E$ is close to zero as well. We know that our model can deliver positive growth in GDP, $g_Y >0$ so long as productivity growth, $g_A$ is big enough. So yes, this model is consistent with falling energy intensity over time. 
+
+What about the longer-run rise in relative price of energy, $p_E$? Here we don't have anything to say. The model doesn't have any explicit choice being made on how much energy to use, so we have no way of addressing the apparent price of that energy. So the model is incomplete, but to the extent that it works, it works.
