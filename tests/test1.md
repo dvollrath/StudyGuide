@@ -27,16 +27,16 @@ You will need the following table to calculate real GDP ratios for two questions
 
 ### Log GDP per capita
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/129.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/test1-level-gdppc.html"></iframe>
 
 ### Capital/output ratio
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/133.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/test1-level-ky.html"></iframe>
 
 ### Gross capital formation share of GDP
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/131.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/test1-level-si.html"></iframe>
 
 ### Labors share of costs
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/135.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/test1-level-phi.html"></iframe>
