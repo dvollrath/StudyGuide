@@ -11,22 +11,22 @@ These figures show select information for Ethiopia (ETH), Botswana (BWA), and So
 
 ### GDP per capita
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/137.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-test-lngdppc.html"></iframe>
 
 ### Gross capital formation share
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/139.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-test-sgfcf.html"></iframe>
 
 ### Years of education
 
-<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/141.embed"></iframe>
+<iframe width="900" height="800" frameborder="0" scrolling="no" src="../plotly/pwt-test-yrsch.html"></iframe>
 
 ## Theoretical paths
 
 ### Log GDP per capita
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/143.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/sim-solow-lny.html"></iframe>
 
 ### Growth rate of GDP per capita
 
-<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/145.embed"></iframe>
+<iframe width="900" height="800" frameborder="0" scrolling="no" src="../plotly/sim-solow-gy.html"></iframe>
