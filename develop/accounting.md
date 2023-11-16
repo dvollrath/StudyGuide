@@ -52,7 +52,7 @@ $$
 
 This tells us that several components explain GDP per capita in a country, and that these same components can help us understand why some countries are richer than others.
 
-1. $(K_i/Y_i)^(\alpha/(1-\alpha))$ is the capital/output ratio, and we know that this reflects choices in the economy about how much to devote to building capital, $s_I$, as well as depreciation, population growth, and the growth rate of productivity.
+1. $(K_i/Y_i)^{\alpha/(1-\alpha)}$ is the capital/output ratio, and we know that this reflects choices in the economy about how much to devote to building capital, $s_I$, as well as depreciation, population growth, and the growth rate of productivity.
 2. $h_i$ is the measure of human capital or skills per person. 
 3. $L_i/N_i$ is the employment ratio.
 4. $A_i$ is productivity, or how well the country uses all of those factors of production. 

@@ -39,5 +39,13 @@ It is true that there is no place ranked by the World Bank that is both rich and
 
 This gets into the problems with (3), how do we know that this is causal? Even if we take the measurement seriously, and even if we take the positive correlation seriously, are we sure that being better at doing busienss by the World Bank standards will actually *make* you rich? That is, if I made changes in your rules and norms to improve the Doing Business score, could you guarantee me that the country will grow faster and get richer? 
 
-The answer is no, because we don't have a clear way of telling what drives what. Lots of the things that are measured in the Doing Business score are measured based on rich-country standards. 
+The answer is no, because we don't have a clear way of telling what drives what. Lots of the things that are measured in the Doing Business score are measured based on rich-country standards. Why do we think that efficient registering of property is good for development? Because rich countries tend to be efficient at this. But maybe that efficiency is *because* they are rich, and can afford modern systems and making these kinds of transactions easy to do. The origin of their rich-ness might lie elsewhere, and being good at "doing business" is a byproduct of being rich, and not the other way around. We don't have a good causal identification here because we don't have a clear experiment where we compared identical places but varied their ability to do business. All we've got in the above figure is something suggestive.
+
+Here's a different dimension of data to look on "social infrastructure" that shares all the same issues. It's about the presence of electoral democracy and GDP per capita. The index of electoral democracy basically measures how open, fair, and competitive elections are. You can kinda-sorta see a positive relationship here, and the outliers in the upper left tend to be monarchies sitting on top of giant piles of oil. 
+
+<iframe src="https://ourworldindata.org/grapher/gdp-per-capita-vs-electoral-democracy" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+
+So does this data mean that democracy *causes* countries to get rich? Does it mean that democracy is *necessary* for countries to open up to trade, or to be open to diffusion of ideas, or to allocate their factors across many varieties and allow free entry of firms? No, we can't read that much into it. It may be that places which are open to trade, ideas, and entry then become places which have open democracies; things could work the other way around. But again, we have this suggestive evidence that things like efficient processes and open political structures are associated with higher living standards. We can't prove anything, but we can see how this could work. 
+
+## Experimenting with institutions
 
