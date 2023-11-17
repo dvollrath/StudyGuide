@@ -6,6 +6,8 @@ nav_order: 1
 # Home
 Materials for a course in economic growth based loosely on Jones and Vollrath's "Introduction to Economic Growth". 4th edition (new in 2023) is available through [Norton](https://wwnorton.com/books/9781324059578). The old 3rd edition is still available at [Amazon](https://amzn.to/2Ytb3pB). The 4th edition is improved on several dimensions in terms of presentation of models and concepts, and this Study Guide is geared towards that presentation. It's still useful if you are using the 3rd edition, but there will be some notational differences you'll need to work through.
 
+<img src="/img/jv_4th_cover.jpg" style="height: 50%">
+
 ![Book cover](jv_4th_cover.jpg)
 
 ## Structure
