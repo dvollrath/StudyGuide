@@ -1,8 +1,8 @@
 ---
 title: Why is growth slowing down?
-parent: Revisiting accounting
+parent: Case studies
 grand_parent: Solow and Balanced Growth
-nav_order: 1
+nav_order: 2
 ---
 
 # Why is growth slowing down?

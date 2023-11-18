@@ -2,7 +2,7 @@
 title: Case studies
 parent: Solow and Balanced Growth
 has_children: true
-nav_order: 7
+nav_order: 9
 ---
 
 # Case studies using the Solow model

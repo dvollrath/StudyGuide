@@ -1,7 +1,7 @@
 ---
 title: Human capital
 parent: Solow and Balanced Growth
-nav_order: 8
+nav_order: 7
 ---
 
 # Human capital in the Solow model
