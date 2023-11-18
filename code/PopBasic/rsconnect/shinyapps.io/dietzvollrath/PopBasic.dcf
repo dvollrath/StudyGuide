@@ -5,8 +5,7 @@ account: dietzvollrath
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2597026
-bundleId: 3416946
+bundleId: 7943206
 url: https://dietzvollrath.shinyapps.io/PopBasic/
-when: 1595340167.42863
 asMultiple: FALSE
 asStatic: FALSE

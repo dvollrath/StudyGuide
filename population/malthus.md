@@ -138,4 +138,7 @@ And what do you know? It kind of works. As world population grew, so did the gro
 
 What's the conclusion? Going back to the beginning, we saw that the Malthusian setting, where production depends on fixed resources and population growth is *positively* related to living standards, implies that living standards are *stagnant*. That explains economic growth conditions for much of human history. But it does not imply any kind of resource-based collapse. 
 
+## Visualizing
+To see how all these pieces interact to shape the path of GDP per capita, resources, and population growth over time in a Malthusian setting, consider another app. <a href="https://dietzvollrath.shinyapps.io/PopBasic/" target="_blank">This link</a> will take you directly to the app on its own page, or the app is embedded here to play with.
 
+<iframe height="800" width="100%" frameborder="no" src="https://dietzvollrath.shinyapps.io/PopBasic/"> </iframe>

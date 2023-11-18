@@ -4,13 +4,29 @@
 # Pull Maddison data into dataframe
 mad <- read.csv("maddison2010.csv", header=TRUE)
 
-mad <- mad[which(mad$year>1819),] # only 1820 and later
+mad <- mad[which(mad$year>999),] # only 1820 and later
 
 mad$lndenmark <- round(log(mad$denmark),digits=2)
 mad$lnfrance <- round(log(mad$france),digits=2)
 mad$lnusa <- round(log(mad$usa),digits=2)
 mad$lnenglandgbuk <- round(log(mad$englandgbuk),digits=2)
 mad$lnhollandnetherlands <- round(log(mad$hollandnetherlands),digits=2)
+mad$lnitaly <- round(log(mad$centrenorthitaly),digits=2)
+mad$lnmexico <- round(log(mad$mexico),digits=2)
+mad$lnjapan <- round(log(mad$japan),digits=2)
+
+fig <- plot_ly(mad, x = ~year)
+fig <- fig %>% add_trace(y = ~lnenglandgbuk, name = 'UK', mode = 'lines+markers')
+fig <- fig %>% add_trace(y = ~lnmexico, name = 'Mexico', mode = 'lines+markers')
+fig <- fig %>% add_trace(y = ~lnjapan, name = 'Japan', mode = 'lines+markers')
+fig <- layout(fig, title = list(text = 'Log GDP per capita in the long run', x=0),
+              xaxis = list(title = 'Year',tick0=1000, dtick=100),
+              yaxis = list (title = 'Log GDP per capita', range=c(6,11)),
+              hovermode="x unified")
+saveWidget(partial_bundle(fig), "../plotly/mad-longrun-ir.html",selfcontained = F, libdir = "lib")
+
+
+mad <- mad[which(mad$year>1819),] # only 1820 and later
 
 #########################################################################
 # Figure for long-run GDP per capita

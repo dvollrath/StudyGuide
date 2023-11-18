@@ -3,7 +3,7 @@ title: Was Thanos Right?
 parent: Malthusian Demographics
 grand_parent: Population and Resources
 has_children: true
-nav_order: 4
+nav_order: 1
 ---
 
 # Thanos's Plan
@@ -36,3 +36,9 @@ We actually saw a version of Thanos' plan happen on Earth. When the Black Death 
 The return of living standards to their pre-Black Death levels was coincident with the recovery of population to its previous size, consistent with the Malthusian model. Italy's population was 10 million in the year 1300, prior to the Black Death. After falling to 7 million in 1400, by 1500 it was back to 10 million. In England, population dropped from 3.75 million to 2.5 million during the Black Death, and then by 1500 was back to 3.75 million. All those numbers are from [*Atlas of World Population History*](https://amzn.to/3Gcp8hn) by Colin McEvedy and Richard Jones, but take those with a grain of salt as they are rough estimates. 
 
 So point 1 from above holds. If you wipe out a big chunk of the population, then yes living standards for the survivors do go up because there are more fixed resources per person. But the Malthusian population dynamics kick in and eventually living standards go down again as population grows. This is *also* something that Thanos go wrong. Snapping away one half of the population today doesn't ensure anything about the future. But note that while living standards fell again as population increased after the Black Death, living standards did not drop to zero and Europe did not become some barren hellscape. In fact one can trace some of the origins of sustained economic growth and modern demographics to the period right after the Black Death. Thanos' model of the universe is too simplistic, and he was never going to accomplish his end goal.
+
+You can see how this works in the app for the Malthus model. <a href="https://dietzvollrath.shinyapps.io/PopBasic/" target="_blank">This link</a> will take you directly to the app on its own page, or the app is embedded here to play with.
+
+<iframe height="800" width="100%" frameborder="no" src="https://dietzvollrath.shinyapps.io/PopBasic/"> </iframe>
+
+Use this and see what happens when you use the sliders to shift the initial population, $L_0$, *down*, as if there was a big pandemic. Go through the tabs and note how this makes GDP per capita jump *up*, but then the growth rate of GDP per capita becomes negative after that as the economy recovers back to steady state. Also note that population falls, but eventually goes right back to the same path it would always have been on.
