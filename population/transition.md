@@ -17,7 +17,7 @@ Historically the world was stuck in a Malthusian situation with stagnant living 
 ## Take-off
 Let's establish some timing first. The following figure gives you some very long-run estimates of GDP per capita in the UK, Japan, and Mexico. This demonstrates a few features of historical growth.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src=".../plotly/mad-longrun-ir.html"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/mad-longrun-ir.html"></iframe>
 
 First, the UK is considered the first case of an industrial revolution which created sustained growth. There had been fits and starts before this, but in the UK we see the first sustained rise in GDP per capita. This starts somewhere around the 1700s. The exact timing is argued over, but we're just after the rough start. Prior to the 1700s living standards in the UK  were pretty flat from around 1000 to 1700. They were a bit higher than in Japan and Mexico, yes, but there wasn't sustained growth.
 
