@@ -1,6 +1,7 @@
 ---
 title: Malthusian Demographics
 parent: Population and Resources
+has_children: true
 nav_order: 4
 ---
 
