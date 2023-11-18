@@ -24,6 +24,11 @@ One thing to make clear is that this kind of concern is not new. This drawing is
 
 ![Robot](robot.jpg)
 
+And this is someone in 1929 complaining about how technology changes things:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RS27u6IqWt0?si=dDcvGQiL5ppxpzjo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
 ## Automation and job loss
 Timothy Taylor has collected a number of old references to worries about automation and job loss. This is not something new. 
 
@@ -54,7 +59,7 @@ What follows are just a few deeper dives into these positions.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/76URvcmpmBQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[Matt Yglesias](https://www.vox.com/2015/7/27/9038829/automation-myth) questions whether robots are in fact even taking jobs at the rate we think. This is similar to this [Noah Smith](https://noahpinionblog.blogspot.com/2017/03/robuts-takin-jerbs.html?m=1) article about why this whole idea of robots stealing jobs is misguided.
+[Matt Yglesias](https://www.vox.com/2015/7/27/9038829/automation-myth) questions whether robots are in fact even taking jobs at the rate we think. This is similar to this [Noah Smith](https://noahpinionblog.blogspot.com/2017/03/robuts-takin-jerbs.html?m=1) article about why this whole idea of robots stealing jobs is misguided, and [again](https://www.noahpinion.blog/p/american-workers-need-lots-and-lots?sd=pf).
 
 From the other perspective you have [Richard Serlin](https://richardhserlin.blogspot.com/2015/11/robotai-revolution-decimating.html) who brings together a number of arguments to make the case that robots are going to have a differential effect than prior automation. This is partly based on speed of change and capability of robots.
 

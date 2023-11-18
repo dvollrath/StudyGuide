@@ -117,3 +117,7 @@ These effects are about aggregate growth. Are there not differentials across gro
 This video is by one of the top immigration researchers in the country, and walks you through these questions about how immigration affects different groups within the economy. 
 
 For a larger look at the impact of immigration on growth, [this site](https://nber.org/themes/immigration/immigrationsummary.shtml#) contains links to a number of research papers on the topic.
+
+Last, if you have a long time, this video with the wonder Leah Boustan from Princeton is a deep dive into the nature and process of immigration in the United States
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zRn9shhOT-E?si=RI_HvHVtXzOWg_e6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
