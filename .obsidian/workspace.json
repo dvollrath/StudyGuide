@@ -1,0 +1,156 @@
+{
+  "main": {
+    "id": "de306af131527511",
+    "type": "split",
+    "children": [
+      {
+        "id": "5a2f678d939c1458",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8f6042fba556efb7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "develop/misallocation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f4ec4ace35163a8e",
+    "type": "split",
+    "children": [
+      {
+        "id": "c7f365f1f7acd73e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d7dc026f67e20892",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "7ec2fa33aff96f82",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "433618c5e572e50f",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "eed490def1a1e598",
+    "type": "split",
+    "children": [
+      {
+        "id": "a29460e2b045bae5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a63a3bf192e9439e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "develop/misallocation.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "619b766bcc4a20f0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "develop/misallocation.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f550211da892d665",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "3036d3f573d1a715",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "develop/misallocation.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "8f6042fba556efb7",
+  "lastOpenFiles": [
+    "develop/meme-misallocation.png",
+    "develop/meme-rules.png",
+    "develop/accounting.md",
+    "develop/develop.md"
+  ]
+}
