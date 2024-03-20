@@ -82,32 +82,32 @@ We can use that condition to come up with a rough idea of how many R&D workers, 
 
 Start with the profits. Let $s_{\pi} = \Pi/Y$ be profit's share of total GDP. Those are the total profits available to earn given the market power granted to innovators through IP rules and/or other means of making ideas excludable. To keep our lives simple, let's also assume that the profit each separate idea earns is equal to the total profits divided by the level of productivity, A. This is like saying that the size of productivity is exactly equal to the number of ideas. That isn't true, of course, but as long as they are proportional in some way, we are good. Put that together and we have a profits per idea in some given period $t$ of $s_{\pi} Y_t/A_t$. 
 
-Hold onto that for a moment. Now, how many ideas would any given researcher - if hired - produce? Well, we modeled the total flow of ideas with $dA = \theta R_{t}^{\lambda} A_t^{\phi}$. Note two things. First, I'm just using $R$ here to denote the number of R&D workers. That is just to keep this distinct from the $L$, the number of regular old workers. Second, that this isn't the growth rate of ideas, this is the raw change in ideas given some total number of researchers and an initial value for productivity. 
+Hold onto that for a moment. Now, how many ideas would any given researcher - if hired - produce? Well, we modeled the total flow of ideas with $dA = \theta (s_R L_{t})^{\lambda} A_t^{\phi}$. First, I'm just using $s_R$ here to denote the share of R&D workers in the total stock of workers $L_t$. Second, that this isn't the growth rate of ideas, this is the raw change in ideas given some total number of researchers and an initial value for productivity. 
 
-The number of *new ideas per researcher* is this divided by $R_t$, or $dA/R_t$. How many ideas can a firm get per each R&D worker they employ.
+The number of *new ideas per researcher* is this divided by $s_R L_t$, or $dA/s_R L_t$. How many ideas can a firm get from each R&D worker they employ.
 
-Now hold onto *that* for a moment. What is the wage rate that you have to pay a researcher? We're assuming they are similar to everyone else, so they earn the regular wage. The wage per person is the total share of GDP earned by labor divided by the number of workers, or $w_t = s_L Y_t/L_t$. Note that I'm ignoring here any effect of moving researchers out of the labor force (which would presumably lower the number of workers and push wages up), because the fraction of R&D workers relative to the workforce is so small that it cannot matter that much. 
+Now hold onto *that* for a moment. What is the wage rate that you have to pay a researcher? We're assuming they are similar to everyone else, so they earn the regular wage. The wage per person is the total share of GDP earned by labor divided by the number of workers, or $w_t = s_L Y_t/L_t$. Note that I'm ignoring here any effect of moving researchers out of the labor force (which would presumably lower the number of workers and push wages up), because the fraction of R&D workers relative to the workforce is so small that it cannot matter that much. When we use the Cobb-Douglas production function, we assert that $s_L = (1-\alpha)$, but here we're just keeping things more general.
 
 Okay, we've got three pieces of information to work with. Put them together into this equilibrium condition,
 
 $$
-\frac{s_{\pi} Y_t}{A_t}\frac{d A}{R_t}  = \frac{s_L Y_t}{L_t}.
+\frac{s_{\pi} Y_t}{A_t}\frac{d A}{s_R L_t}  = \frac{s_L Y_t}{L_t}.
 $$
 
-The left-hand side has the profits-per-idea times the ideas-per-researcher, or profits-per-researcher. The right-hand side has wages per worker, and as we said above we expect these to be equal so that the marginal benefit to a firm (the left) is equal to the marginal cost (the right). This equation allows us to solve for the size of $R_t$ relative to $L_t$. 
+The left-hand side has the profits-per-idea times the ideas-per-researcher, or profits-per-researcher. The right-hand side has wages per worker, and as we said above we expect these to be equal so that the marginal benefit to a firm (the left) is equal to the marginal cost (the right). This equation allows us to solve for the size of $s_R$. 
 
 Stary by noticing that the $Y_t$ terms cancel. This is a little bit of a fudge, by the way. Note that the profits you earn for a new idea probably only come in the *future* (and we should have something like $Y_{t+1}$ on the left side), but we're acting as if they arrive immediately. We can allow for that forward-looking behavior, and in some cases that will become interesting. But for starters we're ignoring it. 
 
-Cancel the $Y_t$ terms and then re-arrange the equation to
+Cancel the $Y_t$ terms as well as the $L_t$ terms and then re-arrange the equation to
 
 $$
-\frac{s_{\pi}}{s_L}\frac{dA}{A_t}  = \frac{R_t}{L_t}.
+\frac{s_{\pi}}{s_L}\frac{dA}{A_t}  = s_R.
 $$
 
 We've got what we want on the right-hand side now, the ratio of researchers to workers. And we can make one more substitution on the left. Note that we have the ratio $d A/A_t$, which is just the growth rate of productivity. We can denote this $g_A$ to keep things simpler, and find that
 
 $$
-\frac{R_t}{L_t} = \frac{s_{\pi}}{s_L}g_A.
+s_R = \frac{s_{\pi}}{s_L}g_A.
 $$
 
 What does this tell us? It says that the number of people employed as researchers, relative to the labor force, depends on two things. 
@@ -116,17 +116,9 @@ What does this tell us? It says that the number of people employed as researcher
 
 2. The growth rate of productivity. The $g_A$ term is telling us how fast ideas arrive. If this is high, then it pays to invest in researchers, as they are likely to deliver a lot of new ideas to you, and hence profits. But if this is low, why bother hiring them? 
 
-Changes in IP laws or rules adjust the size of $s_{\pi}$ relative to $s_L$, and thus affect the size of the research effort over time. The argument for IP is that by protecting the profits of innovators, it induces more innovation (higher R). The counter-argument is that by raising $s_{\pi}$ relative to $s_L$, the share of GDP going to workers (or capital) is going down, and those workers are thus getting a smaller share of what may be a bigger pie. Whether that is good for the workers depends on whether the boost to innovation outweights the smaller slice.
+Changes in IP laws or rules adjust the size of $s_{\pi}$ relative to $s_L$, and thus affect the size of the research effort over time. The argument for IP is that by protecting the profits of innovators, it induces more innovation (higher $s_R$). The counter-argument is that by raising $s_{\pi}$ relative to $s_L$, the share of GDP going to workers (or capital) is going down, and those workers are thus getting a smaller share of what may be a bigger pie. Whether that is good for the workers depends on whether the boost to innovation outweights the smaller slice.
 
 This gives us one way of interpreting the growth of research effort over time in most developed countries, and in particular the growth in the fraction of workers involved in research. Our little model here suggests that this must have involved either an increase in the fruitfulness of research ($g_A$ going up) or in a larger payoff to innovation ($s_{\pi}$ going up). 
-
-By the way, note that the ratio $s_R$ we used in the dynamics is the share of workers employed in R&D, or that roughly
-
-$$
-s_R \approx \frac{R}{L}
-$$
-
-so what we've done here is solve for the value of $s_R$ that firms hunting down profits will choose to employ. 
 
 ### Rising research effort
 The logic in this section gives us some insight into why the data show that the value of $s_R$ went up over time. One possibility is that the share of GDP going to profits rose relative to the share going to labor. If firms felt they were able to capture a bigger share of GDP then it makes more sense to try and innovate. 
