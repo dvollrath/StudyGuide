@@ -14,9 +14,9 @@ nav_order: 7
 ![Meme](meme_case.png)
 
 ## A one-time shock to the stock of researchers
-Let's think about the consequences of a one-time boost to the stock of researchers, $L_{Rt}$, in an economy. If you want some context for this, think of the 1930s and 40s, when a host of German scientists immigrated to the U.S. to escape persecution by the Nazis. [Moser, Voena, and Waldinger](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1910247) studied the impact of this on patent activity in the chemical industry specifically, finding it had a significant *increase* in patent activity. 
+Let's think about the consequences of a one-time boost to the stock of researchers, in an economy. If you want some context for this, think of the 1930s and 40s, when a host of German scientists immigrated to the U.S. to escape persecution by the Nazis. [Moser, Voena, and Waldinger](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1910247) studied the impact of this on patent activity in the chemical industry specifically, finding it had a significant *increase* in patent activity. 
 
-How do we think about this in our model of innovation? First, be careful that this shock means a *one-time* jump in $L_{Rt}$, but the growth rate of population $g_L$ is unchanged once that shock occurs, and hence the growth rate of researchers is unchanged in the long run. Yes, the measured growth rate of $L_{R}$ would be much higher than $g_L$ in that specific year that the shock occurred, but I'm saying that $g_L$ is the same both before the year of the shock and after the year of the shock.
+How do we think about this in our model of innovation? First, be careful that this shock is like a *one-time* jump in $L_t$, but the growth rate of population $g_L$ is unchanged once that shock occurs, and hence the growth rate of researchers is unchanged in the long run. Yes, the measured growth rate of R&D effort would be much higher than $g_L$ in that specific year that the shock occurred, but I'm saying that $g_L$ is the same both before the year of the shock and after the year of the shock.
 
 Next, go back to the interactive figure describing the dynamics of innovation, or use [this link](https://dietzvollrath.shinyapps.io/ProdBasic/).
 
@@ -24,15 +24,7 @@ Next, go back to the interactive figure describing the dynamics of innovation, o
 
 In that figure, look at the "Productivity Dynamics" tab. Adjust the value of $L_0$ upwards, so the ratio of researchers to productivity goes up. We're faking the increase in research here by pretending it is an increase in population (which is also was). Once L is higher, what do the dynamics tell us? It tells us that L/A starts to fall, and eventually the economy will come back to rest at the same long-run growth rate as before, $g_A^{BGP} = g_L \lambda/(1-\phi)$. 
 
-Does that mean the one-time jump in researchers had no effect? No. It had a temporary effect on the growth rate of productivity (it was higher for a while) and therefore means there is a *permanent* effect on the *level* of productivity. Go back and look at the other tabs for the level and growth rate of productivity. You'll see a temporary spike in the growth rate of productivity and that the level of productivity is becoming permanently higher. 
-
-If you go back to the expression for the level of productivity,
-
-$$
-\ln A_t = \frac{1}{1-\phi}\ln \theta - \frac{1}{1-\phi} \ln \frac{\lambda}{1-\phi} - \frac{1}{1-\phi}\ln g_L + + \frac{\lambda}{1-\phi}\ln s_R + \frac{\lambda}{1-\phi} \ln L_t.
-$$
-
-what we're talking about here is a one-time jump in the value of $L_t$. The extra scientists push up the level of the BGP for productivity. We don't reach that new BGP right away, but take a while to get there, and during this time we've got higher growth in productivity than normal. 
+Does that mean the one-time jump in researchers had no effect? No. It had a temporary effect on the growth rate of productivity (it was higher for a while) and therefore means there is a *permanent* effect on the *level* of productivity. Go back and look at the other tabs for the level and growth rate of productivity. You'll see a temporary spike in the growth rate of productivity and that the level of productivity is becoming permanently higher. The extra scientists push up the level of the BGP for productivity. We don't reach that new BGP right away, but take a while to get there, and during this time we've got higher growth in productivity than normal. 
 
 We could use China as an example of this. Recall from the [earlier data](effort.html) that China had a *massive* increase in the number of research workers starting around the early 1990s. If we think of this as a "one-time" shock to research effort that does not change the long-run growth rate of researchers, it should show up in a significant shift up in the level of productivity. 
 

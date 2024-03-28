@@ -78,25 +78,17 @@ A difference in log GDP per capita represents a percent difference, basically. S
 But remember, that is a difference in *steady state* level. If immigration stopped tomorrow and the value of $g_L$ fell, it would take years for the economy to transition to the new, higher BGP. The immediate increase in GDP per capita would be far, far smaller than 2.4%. It might push up GDP per capita by as little as 0.1% immediately, and there would be little increases like that each year. 
 
 ## Innovation and entrepreneurship
-But it is quite possible that even that positive effect from lowering immigration, due to changes in the capital/output ratio, would be swamped by the negative effects coming from slower population growth on innovation. Recall from [this section](incentives.html#research-growth-over-time) that the growth rate of researchers, $g_R$, depends in part of the growth rate of population. So a lower population growth rate would lead to slower growth in the number of researchers, and ultimately to a lower growth rate of innovation, $g_A$. 
-
-In that section we said that
+But it is quite possible that even that positive effect from lowering immigration, due to changes in the capital/output ratio, would be swamped by the negative effects coming from slower population growth on innovation. Recall from [this section](incentives.html#research-growth-over-time) that the growth rate of researchers, $g_L$, is dependent on the growth rate of population. So a lower population growth rate would lead to slower growth in the number of researchers, and ultimately to a lower growth rate of innovation, $g_A$. 
 
 $$
-\ln R_t = \ln L_0 + \ln s_{\pi}/s_L + \ln \lambda/(1-\phi) + \ln g_L + g_L t
+g_A^{BGP} =\frac{\lambda}{1-\phi}g_L
 $$
 
-was the level of research done. The last term indicated that research grew at the same rate as population, or $g_R = g_L$. And recall that 
+so lower immigration would mean that the growth rate of productivity *falls* in the long run. 
 
-$$
-g_A^{BGP} = \frac{\lambda}{1-\phi}g_R =\frac{\lambda}{1-\phi}g_L
-$$
+But note that there is a *second* effect of $g_L$, on the *level* of research. If $g_L$ falls, the absolute amount of research is going to fall as well, not just its growth rate. Why? Because recall that research effort depends on profits, which depend on the scale of the economy, and by limiting immigration the size of the economy will not be as large in the future, and hence the profits available will be smaller, and hence the incentive to innovate will be low. Eliminating immigration will likely lead to slower growth. 
 
-so lower immigration would mean that the growth rate of productivity *falls*. 
-
-But note from the equation regarding $\ln R_t$ that there is a *second* effect of $g_L$, on the *level* of research. If $g_L$ falls, the absolute amount of research is going to fall as well, not just its growth rate. Why? Because recall that research effort depends on profits, which depend on the scale of the economy, and by limiting immigration the size of the economy will not be as large in the future, and hence the profits available will be smaller, and hence the incentive to innovate will be low. Eliminating immigration will likely lead to slower growth. 
-
-How much lower? Well, right now we have that $g_A = 0.018$, and $g_L \approx 0.005$, so it must be that $\lambda/(1-\phi) \approx 0.018/0.005 = 3.6$. If instead we've got that without immigration the population growth rate is only $g_L \approx 0.001$, then
+How much lower will the growth rate be? Well, right now we have that $g_A = 0.018$, and $g_L \approx 0.005$, so it must be that $\lambda/(1-\phi) \approx 0.018/0.005 = 3.6$. If instead we've got that without immigration the population growth rate is only $g_L \approx 0.001$, then
 
 $$
 g_A^{None} \approx 3.6 \times 0.001 \approx 0.0036
