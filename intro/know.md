@@ -4,17 +4,27 @@ parent: Introduction
 nav_order: 1
 ---
 
+# What you should know about growth
+{: .no_toc }
+
+1. TOC 
+{:toc}
+
+This is my attempt to distill down the material in this course into a set of relatively simple statements and claims without resorting to any math. If you know these, then you have a great baseline set of knowledge about how economic growth works. If you understand *why* these hold, then you have a deep understanding on why economic growth works. 
+
+The material is broken up into several subsections that align with material in the course.
+
+## Basic facts about economic growth
 {: .important }
-> Both the level of GDP per capita and the growth rate of GDP per capita are important. The level 
+> The *level* of GDP per capita and the *growth rate* of GDP per capita are different things.
 
-
-{: .important }
-> Rich countries have consistent growth rates of about 1-2% per year in GDP per capita, and that rate can persist for many decades. 
-
+Be careful to distinguish which one of these we are talking about. A high level doesn't mean a high growth rate, and vice versa. Very often, a low level makes it easier to have a high growth rate. When my daughter was born, the level of her height was low, she was only like 2 feet tall, while the level of my height was high, like 6 feet. But her growth rate was much higher than mine. 
 
 {: .important }
-> Middle income and poor countries have a lower level of GDP per capita than rich countries. They typically alos have average growth rates of about 1-2% per year in GDP per capita, meaning they are not catching up to rich countries. But they also are more likely to have big fluctuations in growth rates year after year, with short periods of rapid growth or short periods of very low or negative growth.
+> Rich countries have a high level of GDP per capita and consistent growth rates of about 1-2% per year in GDP per capita, and that rate can persist for many decades. 
 
+{: .important }
+> Middle income and poor countries have a lower level of GDP per capita than rich countries. They also have average growth rates of about 1-2% per year in GDP per capita, meaning they are not catching up to rich countries. They also are more likely to have big fluctuations in growth rates year after year, with short periods of rapid growth or short periods of very low or negative growth.
 
 {: .important }
 > Some middle income and poor countries are able to maintain very high growth rates of around 5-10% per year for a limited time, usually around 20-30 years. That period of rapid growth shifts them from the middle or poor group to the rich group of countries. But once they reach the same level of GDP per capita as rich countries their growth rates decline to 1-2% per year, in line with other rich countries. 
@@ -22,15 +32,24 @@ nav_order: 1
 {: .important }
 > Even within the group of rich countries there is variation in the level of GDP per capita that tends to persist over time as they all have similar growth rates. The variation is small compared to the difference between the group of rich countries and the group of middle income or poor countries. 
 
+## The drivers of economic growth
 {: .important }
 > The level of GDP per capita depends on factors of production like physical capital, human capital (e.g. skills or education), natural resources, and the population. It also depends on productivity, which is about how you use those factors of production. Factors are like ingredients, productivity is like a recipe.
 
 {: .important }
-> The long-run growth rate of any country, regardless of the level of GDP per capita, depends on the growth rate of productivity, not the growth rate of factors of production. The long-run growth rate depends on coming up with better recipes, not on finding more ingredients.
+> A significant share of the goods and services that make up GDP are used to create more factors of production: building new structures like offices, homes, and factories, educating workers, and extracting natural resources. 
 
 {: .important }
-> The supply of factors of production does help determine the level of GDP per capita, and variation in those factors does help determine variation across countries in the level of GDP per capita, and why some countries are relatively rich and some are relatively poor. 
+> The long-run growth rate of any country, regardless of the level of GDP per capita, depends on the growth rate of productivity, not the share of GDP devoted to accumulating more factors of production. The long-run growth rate depends on coming up with better recipes, not on accumulating more and more ingredients.
 
+{: .important }
+> The share of GDP devoted to accumulating factors of production does help determine the *level* of GDP per capita, and variation in that share does help determine variation across countries in the level of GDP per capita, and hence why some countries are relatively rich and some are relatively poor. 
+
+{: .important }
+> Non-renewable or fixed natural resources that we rely on to produce GDP do slow down the growth rate of GDP per capita because we cannot accumulate more of them to keep up with population. However, historically that drag has not been big enough to elimiate positive growth in GDP per capita, and we often innovate away from using those resources to mitigate or eliminate that drag.
+
+
+## The drivers of productivity growth
 {: .important }
 > The reason factors do not determine the growth rate is because factors are *rival* goods, meaning they can only be used in one place at one time. Productivity depends on *non-rival* ideas or recipes; good ideas or recipes can be used by anyone anywhere at any time without diminishing their usefulness. 
 
