@@ -25,6 +25,8 @@ If rivalry makes sense as a concept, then what about its opposite, non-rivalry? 
 
 What's an example of something non-rival? A recipe. The knowledge of *how* to combine flour, eggs, sugar, and milk into a cake is non-rival, even though the ingredients themselves are rival inputs. If you decide to bake a cake, that doesn't prevent *me* from using the same recipe to bake a cake. I'd need my own ingredients, but the idea of how to combine those ingredients isn't "used up" because you decided to make a cake. Both of us can use the same recipe at the same time. You can use the recipe over and over again without using it up. 
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/URvWSsAgtJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Ideas, recipes, plans, blueprints, market research, specs, and the like are all non-rival inputs to production. They tell us how to combine the rival inputs capital and labor to produce goods and services. And that gets us to a definition of productivity. 
 
 {: .important }
