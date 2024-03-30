@@ -90,7 +90,7 @@ The quality and variety of food tends to be better in big cities. That's because
 {: .important }
 > The *level* of productivity depends, in part, on the scale of the economy. Countries that have larger markets and bigger pools of innovators have higher productivity. Those markets and pools may extend beyond their borders due to trade, immigration, historical ties, etc.
 
-This is the power of non-rivalry. That Japanese-Nigerian place can exist because using Japanese or Nigerian recipes here doesn't limit the ability of anyone in Japan or Nigeria to use the same recipes. 
+This is the power of non-rivalry. That Japanese-Nigerian place can exist because using Japanese or Nigerian recipes here doesn't limit the ability of anyone in Japan or Nigeria to use the same recipes. Belgium is a small country with a high GDP per capita because they can share ideas and products easiliy with the European Union as well as with the US, Japan, and others. North Korea is a small country with a low GDP per capita in part because they limit themselves to only the ideas and products that they have locally.
 
 {: .important }
 > Firms and individuals will only innovate if they can earn some rewards from those innovations, at least enough to cover the fixed cost from doing research and development. For them to earn those rewards they have to sell products of those innovations at a price higher than marginal cost. Charging prices higher than marginal cost implies *some* level of *imperfect competition*. Long run growth in productivity and GDP per capita depends on there being imperfect competition. 
@@ -98,11 +98,24 @@ This is the power of non-rivalry. That Japanese-Nigerian place can exist because
 Perfect competition might increase the amount of economic activity *today* by giving us cheap copies of existing products (e.g. a $200 iPhone clone), but it would limit innovation and reduce the growth rate of GDP per capita, meaning we wouldn't be as rich in the future.
 
 {: .important }
-> The ideas coming from innovation are non-rival, but they are also often *non-excludable*, meaning they are very easy to copy. We often use policy tools (e.g. patents and copyrights) to make ideas *excludable*, which prevents the copying and competition that would limit the rewards of innovation. 
+> The ideas coming from innovation are non-rival, but they are also often *non-excludable*, meaning they are very easy to copy. We often use policy tools to make ideas *excludable*, which prevents the copying and competition that would limit the rewards of innovation. 
 
-Excludability is what creates the imperfect competition that drives growth. Patents, for example, grant a firm a monopoly over a product for a certain amount of time. 
+Excludability is what creates the imperfect competition that drives growth. Patents, for example, grant a firm a monopoly over a product for a certain amount of time. Copyright, trademark, patents, and other forms of intellectual property are all examples of policy rules/laws that act to create excludability. 
 
 {: .important }
 > The degree of imperfect competition that we allow using those policy tools influences the *level* of productivity, but not the growth rate of productivity in the long run. There is no clear answer to the right amount of imperfect competition to have. 
 
-Either too much competition or too little competition in the economy will reduce incentives to innovate. Too much competition is allowing entrants to copy ideas without cost, so why would anyone innovate in the first place? Too little competition is existing firms preventing *any* entry by new firms, so we don't get any new ideas or products. 
+Either too much competition or too little competition in the economy will reduce incentives to innovate. It's possible that if we took our policies to extremes we would also influence the growth rate of productivity by shutting it down entirely; that could occur if we had zero intellectual property rights so no one wanted to innovate (way too much competition) or if we had extreme property rights or regulations that prevented any new firms or products from being introduced (way too little competition).
+
+## Rich countries and poor countries
+In considering why some countries are rich and others are medium or poor, we can think about two questions. Why is the level of GDP per capita different across countries? What changes that allows some countries to shift from one level to another - creating periods of rapid growth?
+
+{: .important }
+> Most of the difference between rich, medium, and poor countries in levels of GDP per capita is due to differences in the level of productivity, with less due to differences in the share of GDP devoted to accumulating factors.
+
+Rich countries definitely have more physical and human capital than poor countries, but by itself that isn't sufficient to explain the differences in GDP per capita we observe. Most of the gaps can be explained by productivity.
+
+{: .important }
+> Countries that make the shfit from poor or medium to rich tend to have several things in common. They increase the share of GDP devoted to accumulating factors like physical capital and human capital, they reduce their population growth rate, they create scale by allowing more internal and external trade, and they shift away from having too little competition.
+
+That's a very general conclusion, because each situation is unique. It also raises the question of why all poor countries don't do these things. Again, there is no clear answer. It probably has to do with the fact that incumbent firms and/or individuals benefit from the existing situation - possibly through a lack of competition - and block changes. 
