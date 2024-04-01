@@ -1,5 +1,5 @@
 ---
-title: What should you know about growth
+title: What you should know about growth
 parent: Introduction
 nav_order: 1
 ---
