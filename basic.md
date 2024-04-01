@@ -1,8 +1,3 @@
----
-title: The simplest growth model
-parent: Introduction
-nav_order: 2
----
 
 # The Simplest Growth Model
 {: .no_toc }
