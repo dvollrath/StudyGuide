@@ -1,5 +1,5 @@
 ---
-title: The Simplest Growth Model
+title: The simplest growth model
 parent: Introduction
 nav_order: 2
 ---
@@ -49,7 +49,28 @@ $$
 g_y = g_A,
 $$
 
-or the growth rate of GDP per capita depends on the growth rate of productivity. 
+or the growth rate of GDP per capita depends on the growth rate of productivity. That also means that factors per capita grow at the rate of productivity, or $g_x = g_A$ in the long run. 
+
+## The level of GDP per capita
+That was the growth rate of GDP per capita in the long run. What determines whether the level of GDP per capita is high or low? 
+
+In log terms, GDP per capita is
+
+$$
+\ln y_t = (1-\alpha) \ln A_t + \alpha \ln x_t
+$$
+
+$$
+\ln y_t = (1-\alpha) \ln A_0 + (1-\alpha) g_A t + \alpha \ln x_0 + \alpha g_A t
+$$
+
+so 
+
+$$
+\ln y_t = (1-\alpha) \ln A_0 + \alpha \ln x_0 + g_A t.
+$$
+
+The level of GDP per capita depends on those initial levels of productivity and factors per capita, $A_0$ and $x_0$. While the determinants of factors don't dictate the growth rate, they do dictate $x_0$, and therefore the level of GDP per capita. 
 
 ## Productivity Growth
 Where does productivity growth come from? 
