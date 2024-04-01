@@ -1,8 +1,4 @@
----
-title: Simple dynamics
-parent: Preliminaries
-nav_order: 5
----
+
 
 # Simple dynamics
 {: .no_toc }

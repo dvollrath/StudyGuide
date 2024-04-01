@@ -17,6 +17,8 @@ back_to_top_text: "Back to top"
 footer_content: "Copyright &copy; 2020 Dietrich Vollrath. Distributed by an <a href=\"https://github.com/dvollrath/StudyGuide/blob/master/LICENSE.txt\">MIT license.</a>"
 
 callouts:
+  core:
+    color: orange
   important:
     title: Key result
     color: green
