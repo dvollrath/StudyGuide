@@ -22,7 +22,7 @@ callouts:
     color: green
   highlight:
     color: yellow
-  core:
+  warning:
     title: You should know
     color: purple
   fact:
