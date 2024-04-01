@@ -23,6 +23,7 @@ callouts:
   highlight:
     color: yellow
   core:
+    title: You should know
     color: purple
   fact:
     title: Key fact
