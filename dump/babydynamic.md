@@ -1,4 +1,8 @@
-
+---
+layout: default
+title: Basic dynamics
+nav_exclude: true
+---
 
 # Simple dynamics
 {: .no_toc }

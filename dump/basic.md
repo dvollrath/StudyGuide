@@ -1,3 +1,8 @@
+---
+layout: default
+title: Simplest growth model
+nav_exclude: true
+---
 
 # The Simplest Growth Model
 {: .no_toc }
