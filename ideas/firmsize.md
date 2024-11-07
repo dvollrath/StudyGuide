@@ -19,3 +19,7 @@ Then you can listen to this anecdotal story of invention coming from someone who
 
 <iframe src="https://www.npr.org/player/embed/1179235807/1198987421" width="100%" height="290" frameborder="0" scrolling="no" title="NPR embedded audio player"></iframe>
 
+## Do firms do patent all their ideas?
+
+[Patents and ideas](https://mattsclancy.substack.com/p/how-many-inventions-are-patented?r=3s59a&utm_medium=ios&triedRedirect=true)
+

@@ -60,3 +60,8 @@ If $g_L = 0$ then this tells us that productivity growth *stops*. Worse, in our 
 Shutting down population growth would lead to stagnation in productivity growth, putting growth in living standards in jeopardy. Recall the example we used of Japan, where population growth has stagnated and so has the level of GDP per capita and productivity. One of the *dangers* of slower population growth is that it could stop living stanards from rising. 
 
 Perhaps that helps with some environmental outcomes. But recall as well that countries getting richer was associated with less pollution and lower resource use. If population growth stalls out productivity growth - or worse lowers living standards - then we might revert to *more* resource intense activities to keep up living standards. 
+
+## Future fertility
+Perhaps fertility might go up in the future? Accumulating evidence that maybe as incomes go up further so does willingness to have kids. 
+
+[Matt Tabarrok](https://www.maximum-progress.com/p/the-2nd-demographic-transition?r=3s59a&utm_medium=ios&triedRedirect=true)
