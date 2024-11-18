@@ -5,7 +5,7 @@
 #########################################################################
 # Set working directory to where data files are stored 
 #########################################################################
-setwd("~/Dropbox/project/studyguide/data")
+setwd("~/Dropbox/project/studyguide/")
 
 #########################################################################
 # Source the R profile that contains your Plotly authentication
