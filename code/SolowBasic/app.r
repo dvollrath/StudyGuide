@@ -1,6 +1,7 @@
 library(shiny)
 library(rsconnect)
 library(ggplot2)
+library(shinylive)
 
 #############################################################
 # Set the baseline parameters
@@ -245,4 +246,6 @@ server <- function(input, output, session) {
 } # end server
 
 # Run the app ----
+setwd("~/dropbox/project/studyguide/code/")
+shinylive::export(appdir = "./SolowBasic", destdir = "docs")
 shinyApp(ui = ui, server = server)
