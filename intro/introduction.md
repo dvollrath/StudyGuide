@@ -9,6 +9,8 @@ nav_order: 2
 
 The subsections in this introduction are an attempt to give you an overview of what we know about economic growth, and in some sense are the "answers" we'll be hunting for. 
 
+<link href="https://kineticgraphs.org/css/kg.0.2.7.css" rel="stylesheet" type="text/css">
+
 <div class="kg-container">
 
 layout:
