@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Basic Solow</title>
+    <link href="https://kineticgraphs.org/css/kg.0.2.7.css" rel="stylesheet" type="text/css">
+    <script src="https://kineticgraphs.org/js/kg.0.2.7.js"></script>
+</head>
+<body>
+
+<div class="kg-container">
+params:
+- {name: sK, value: .2, min: 0, max: .9, round: 0.1}
+- {name: gA, value: .02, min: -.01, max: .05, round: 0.01}
+- {name: gL, value: .02, min: -.01, max: .05, round: 0.01}
+- {name: KALinit, value: 1, min: 0, max: 4, round: 0.1}
+
+
+    
+layout:
+  TwoVerticalGraphsPlusSidebar:
+    topGraph:
+      xAxis:
+        ticks: 10
+      yAxis:
+        max: 1
+        title: Growth rate
+      objects:
+        - Line:
+          yintercept: (params.gA)
+          slope: 0
+
+    bottomGraph:
+      xAxis:
+        ticks: 10
+        title: Time
+        max: 20
+      yAxis:
+        max: 1
+        title: Log GDP per capita
+      objects:
+        - Line:
+          yintercept: (params.KALinit)
+          slope: (params.gA)
+
+    sidebar:
+      controls:
+      - title: Controls
+        description: Adjust sliders to see effects on growth
+        sliders:
+        - {param: sK, label: Capital accumulation}
+        - {param: gA, label: Productivity growth}
+        - {param: gL, label: Population growth}
+        - {param: KALinit, label: Initial K/AL ratio}
+</div>
+
+</body>
+</html>
