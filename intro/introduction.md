@@ -10,3 +10,24 @@ nav_order: 2
 The subsections in this introduction are an attempt to give you an overview of what we know about economic growth, and in some sense are the "answers" we'll be hunting for. 
 
 <iframe width="900" height="900" frameborder="0" scrolling="no" src="../plotly/hello-world.html"></iframe>
+
+
+
+
+<div class="kg-container">
+
+layout:
+  OneGraph:
+    graph:
+      objects:
+
+      # Point object at coordinates (6,4)
+      - Point:
+          coordinates: [6,4]
+
+      # Red point object at coordinates (3,3)
+      - Point:
+          coordinates: [3,3]
+          color: red
+
+</div>
