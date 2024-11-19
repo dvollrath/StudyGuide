@@ -22,7 +22,7 @@ calcs:
   KYss: (params.sK/(params.gL + params.gA + .05))
   KALss: (calcs.KYss)^(1.43)
   KYinit: (params.Kinit/(params.Ainit*params.Linit))
-  gAgraph: (params.gA*5)
+  gAgraph: (params.gA*10)
 layout:
   TwoVerticalGraphsPlusSidebar:
     topGraph:
@@ -70,7 +70,7 @@ layout:
       objects:
       - Curve: 
           univariateFunction:
-            fn: .2*((params.KYold) + 6 + (5*.02)*(x))
+            fn: .2*((params.KYold) + 6 + (10*.02)*(x))
             ind: x
           color: blue
           lineStyle: dashed
