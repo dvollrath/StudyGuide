@@ -9,22 +9,75 @@
 <body>
 
 <div class="kg-container">
+params:
+- {name: sK, value: .2, min: 0, max: .9, round: 0.1}
+- {name: gA, value: .02, min: -.01, max: .05, round: 0.01}
+- {name: gL, value: .02, min: -.01, max: .05, round: 0.01}
+- {name: KALinit, value: 1, min: 0, max: 4, round: 0.1}
+- {name: Kinit, value: 2, min: 0, max: 4, round: 0.1}
+- {name: Ainit, value: 2, min: 0, max: 4, round: 0.1}
+- {name: Linit, value: 2, min: 0, max: 4, round: 0.1}
+calcs:
+  conv: .7*(params.gA + params.gL + .05)
 layout:
   TwoVerticalGraphsPlusSidebar:
     topGraph:
       xAxis:
-        title: Top X Axis
+        max: 20
+        ticks: 10
       yAxis:
-        title: Top Y Axis
+        title: Growth rate
+        max: .05
+        min: -.02
+      objects:
+      - Line: {color: blue, lineStyle: dashed, yIntercept: (params.gA), slope: 0}
     bottomGraph:
       xAxis:
-        title: Bottom X Axis
+        title: Time
+        max: 20
+        ticks: 10        
       yAxis:
-        title: Bottom Y Axis
+        title: Log GDP per capita
+        max: 3
+        min: 0
+      objects:
+      - Line: 
+          color: blue
+          lineStyle: dashed
+          yIntercept: 2.5
+          slope: .02
+          label:
+              text: \text{Old BGP}
+              x: 15
+      - Line: 
+          color: green
+          lineStyle: dashed
+          yIntercept: 1
+          slope: (params.gA)
+          label:
+              text: \text{New BGP}
+              x: 15
+      - Curve:
+          univariateFunction:
+            fn: 2.5*(1 - (params.gA + params.gL)^((x)/10)) + 1*((params.gA+params.gL)^((x)/10)) + (params.gA)*(x)
+            ind: x
+          color: black
+          label:
+            text: \text{Actual}
+            x: 10
     sidebar:
       controls:
-      - title: Graph Title
-        description: This is a description.    
+      - title: Parameters
+        sliders:
+        - {param: gA, label: g_A}
+        - {param: gL, label: g_L}
+        - {param: sK, label: s_K}
+      - title: Initial conditions
+        sliders:
+        - {param: Kinit, label: K_0}
+        - {param: Ainit, label: A_0}
+        - {param: Linit, label: L_0}
+
 </div>
 
 </body>
