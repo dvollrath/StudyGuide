@@ -40,8 +40,20 @@ s = f.solow(k0 = krange)
 s= f.solow(t = seq(from = 1,to = 50, by = 1))
 
 # Plot figure of scenarios and their BGP's
-fig <- plot_ly(s, x = ~time, y = ~lny, type = 'scatter', mode = 'lines', name='Actual')
-fig <- add_trace(fig, x = ~time, y = ~lny_bgp, type = 'scatter', mode = 'lines', name='BGP')
+fig1 <- plot_ly(s, x = ~time, y = ~lny, type = 'scatter', mode = 'lines', name='Log GDP pc')
+fig1 <- add_trace(fig1, x = ~time, y = ~lny_bgp, type = 'scatter', mode = 'lines', name='BGP')
+
+fig2 <- plot_ly(s, x = ~time, y = ~gy, type = 'scatter', mode = 'lines', name='Growth rate')
+
+fig3 <- plot_ly(s, x = ~KAL, y = ~gK, type = 'scatter', mode = 'lines+markers', name='Capital growth rate')
+fig3 <- add_trace(fig3, x = ~KAL, y = .03, type = 'scatter', mode = 'lines', name='gA + gL')
+
+fig <- subplot(fig1, fig2, fig3, nrows=3)
+
+
+
+
+fig <- layout()
 fig <- layout(fig, title = list(text = 'Log GDP per capita', x=0),
               xaxis = list(title = 'Time'),
               yaxis = list (title = 'Log of GDP per capita'),

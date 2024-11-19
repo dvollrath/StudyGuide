@@ -10,15 +10,16 @@
 
 <div class="kg-container">
 params:
-- {name: sK, value: .2, min: 0, max: .9, round: 0.1}
+- {name: sK, value: .2, min: 0, max: .4, round: 0.01}
 - {name: gA, value: .02, min: -.01, max: .05, round: 0.01}
 - {name: gL, value: .02, min: -.01, max: .05, round: 0.01}
 - {name: KALinit, value: 1, min: 0, max: 4, round: 0.1}
-- {name: Kinit, value: 2, min: 0, max: 4, round: 0.1}
-- {name: Ainit, value: 2, min: 0, max: 4, round: 0.1}
-- {name: Linit, value: 2, min: 0, max: 4, round: 0.1}
+- {name: Kinit, value: 1, min: 0, max: 4, round: 0.1}
+- {name: Ainit, value: 1, min: 0, max: 4, round: 0.1}
+- {name: Linit, value: 1, min: 0, max: 4, round: 0.1}
 calcs:
-  conv: .7*(params.gA + params.gL + .05)
+  KYss: (params.sK/(params.gL + params.gA + .05))
+  KALss: (calcs.KYss)^(1.43)
 layout:
   TwoVerticalGraphsPlusSidebar:
     topGraph:
@@ -44,7 +45,7 @@ layout:
       - Line: 
           color: blue
           lineStyle: dashed
-          yIntercept: 2.5
+          yIntercept: (params.Kinit/(params.Ainit*params.Linit))
           slope: .02
           label:
               text: \text{Old BGP}
@@ -52,14 +53,14 @@ layout:
       - Line: 
           color: green
           lineStyle: dashed
-          yIntercept: 1
+          yIntercept: .5*(params.sK/(params.gL + params.gA))
           slope: (params.gA)
           label:
               text: \text{New BGP}
               x: 15
       - Curve:
           univariateFunction:
-            fn: 2.5*(1 - (params.gA + params.gL)^((x)/10)) + 1*((params.gA+params.gL)^((x)/10)) + (params.gA)*(x)
+            fn: .5*(params.sK/(params.gL + params.gA))*(1 - (params.gA + params.gL)^((x)/10)) + (params.Kinit/(params.Ainit*params.Linit))*((params.gA+params.gL)^((x)/10)) + (params.gA)*(x)
             ind: x
           color: black
           label:
@@ -77,7 +78,10 @@ layout:
         - {param: Kinit, label: K_0}
         - {param: Ainit, label: A_0}
         - {param: Linit, label: L_0}
-
+      - title: Steady state
+        divs:
+        - html: "`$$(K/Y)_{ss} = ${calcs.KYss.toFixed(2)}$$`"
+        - html: "`$$(K/AL)_{ss} = ${calcs.KALss.toFixed(2)}$$`"
 </div>
 
 </body>
