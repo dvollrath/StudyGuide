@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>JSXGraph template</title>
+    <title>JSXGraph Example</title>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <link href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js" type="text/javascript" charset="UTF-8"></script>
@@ -12,15 +12,19 @@
   </head>
   <body>
 
-  <div id="jxgbox" class="jxgbox" style="width:500px; height:200px;"></div>
+  <div id="jxgbox1" class="jxgbox" style="width:800px; height:400px;"></div>
+  <div id="jxgbox2" class="jxgbox" style="width:800px; height:400px;"></div>
 
   <script>
     // Initialise board
-    board = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [-1.5, 28.5, 28.5, -1.5], axis: true, grid: false});
+    var board = JXG.JSXGraph.initBoard('jxgbox1', {boundingbox: [-1.5, .12, 30, -.05], axis: true, grid: false});
+    var level = JXG.JSXGraph.initBoard('jxgbox2', {boundingbox: [-1.5, 10, 30, -1], axis: true, grid: false});
+
+    board.addChild(level);
 
     // Define sliders to dynamically change parameters of the equations and create text elements to describe them
-    s = board.create('slider', [[20.0,26.0],[25.0,26.0],[0.0,0.3,1.0]],{name:'&epsilon;1',strokeColor:'black',fillColor:'black'});
-    st = board.create('text', [20,25, "Birth rate predators"], {fixed:true});
+    var s = board.create('slider', [[20,.1],[22,,1],[0.0,0.2,.5]],{name:'sK;1',strokeColor:'black',fillColor:'black'});
+    st = board.create('text', [.1,21, "Capital rate"], {fixed:true});
     u = board.create('slider', [[20.0,24.0],[25.0,24.0],[0.0,0.7,1.0]],{name:'&epsilon;2',strokeColor:'black',fillColor:'black'});
     ut = board.create('text', [20,23, "Death rate predators"], {fixed:true});
 
@@ -92,6 +96,18 @@
     
     // Plot Predator
     g3 = board.create('curve', [t, datapred], {strokeColor:'red', strokeWidth:'2px'});
+    g3.updateDataArray = function() {
+        var data = ode();
+        this.dataX = [];
+        this.dataY = [];
+        for(var i=0; i<data.length; i++) {
+            this.dataX[i] = t[i];
+            this.dataY[i] = data[i][0];
+        }
+    }
+
+    // Plot Predator
+    g3 = b2.create('curve', [t, datapred], {strokeColor:'red', strokeWidth:'2px'});
     g3.updateDataArray = function() {
         var data = ode();
         this.dataX = [];
