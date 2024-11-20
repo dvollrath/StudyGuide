@@ -51,7 +51,7 @@ $$
 
 If you plot these all these series together for the US, along with the path of actual log GDP per capita, you get the following figure.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/81.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-account-usa.html"></iframe>
 
 What does this show us? Perhaps the most striking feature is that, by itself, the capital/output ratio would have *lowered* GDP per capita from 1960 to 2017. In the US the share of GDP allocated to capital goods fell slightly over time, and hence the K/Y ratio declined. This pulled down on GDP per capita. Note that we shouldn't have expected this to have a huge effect on GDP per capita in the first place. The US appeared to be on a BGP, and the K/Y ratio should have been stable anyway. 
 
@@ -72,7 +72,7 @@ This decomposes the 10-year annualized growth rate of GDP per capita into the pa
 
 The following figure plots for each year the contribution of each piece. The green bars represent the contribution of productivity growth, and as expected they are the largest in almost every given year, with a few exceptions. The orange bars capture human capital growth. The orange bars start in negative territory often because capital/output growth (the blue bars) is often negative. The combination of the three bars adds up to actual growth in GDP per capita, so the top of the bars captures that growth rate.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/89.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-growth-acct-usa.html"></iframe>
 
 What this makes obvious is that productivity growth and human capital growth were the dominant source of growth in GDP per capita for the US. Moreover, it highlights how human capital growth was a big source of growth in the middle of the 20th century, but that the contribution declined in the late 20th century. You can also see that the growth rate of productivity was high for most of this time period, with dips in the 1970s, and then most noticeably in the 21st century. 
 

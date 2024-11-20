@@ -47,13 +47,13 @@ Once you've got $g_A$, you can calculate size of the two contributions to growth
 
 I've done this for a couple of countries already. In each case, the growth rates I've calculated are 10-year annualized rates, to avoid wild swings associated with business cycles. Here's Japan:
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/193.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-account-basic-jpn.html"></iframe>
 
 The contribution to growth of productivity (which remember, is everything we cannot explain with capital and labor, basically) is huge at the outset, and remains relatively large throughout. The contribution from capital accumulation (relative to productivity and labor) looks a lot smaller. Note that there is a period where Japan benefits a lot from capital accumulation, but by the end this has run out completely. 
 
 If you look at the US, the story is slightly different. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/195.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-account-basic-usa.html"></iframe>
 
 Here, productivity growth is never as high as in Japan. But also note that the capital accumulation term is never that large. There is no burst like in Japan. For a country like the US that has experienced stable growth, the story is that the $\alpha(g_K - g_A - g_L)$ does not contribute a whole lot to the party. That won't mean that capital is unimportant, as we will see going forward. It's just that, on net, capital growth over and above productivity and labor growth is not a big contributor. 
 

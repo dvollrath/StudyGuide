@@ -18,7 +18,7 @@ We can apply the Solow model to specific cases, and use it to tell the story beh
 
 The "BGP All" (in orange) was fitted to the entire span of data, 1950-2017. While actual GDP per capita is not exactly on this orange BGP at all times, throughout the 20th century it stays quite close to the BGP. The experience after 2008 shows a distinct drop relative to the BGP, given the financial crisis. Since then GDP per capita does not look to have recovered back to the BGP. Hold onto that thought. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/61.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-apply-usa.html"></iframe>
 
 The "BGP 20th" (in green) was fitted only using the 20th century, 1950-2000. The data in the 20th century stays closer to this line than before. But this would indicate an even larger drop relative to the BGP starting in 2008. If you look closer, you'll see that GDP per capita appears to fall behind the BGP even starting around 2000. 
 
@@ -57,11 +57,11 @@ That's something that is going to be true throughout. The numerical value for $A
 ## Recovery to a BGP in Germany
 As I said, the US is kind of boring. Germany is a classic case often used to illustrate how an economy converges towards a BGP if they begin "off" of the BGP. Take a look at the figure below, which shows the actual log GDP per capita in Germany, and a BGP fitted to the data from 1990-2015. The fit of the BGP looks pretty good in that later period, but clearly Germany was "below" the BGP from 1950 to 1990. It was relatively poor, but notice the growth rate of GDP per capita was very high from 1950 to 1970/1980 as it caught up.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/63.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-apply-deu.html"></iframe>
 
 How do we explain what was happening in Germany? Well, in 1950 we know that Germany was just coming out of the destruction of World War II. The capital stock in Germany was obliterated, so the actual capital ratio, $K/AL$, in Germany in 1950 was very *low*. What does the theory suggest should happen to the growth rate $g_K$ when the $K/AL$ ratio is low? $g_{K}$ should be very *high*, meaning there is a lot of transitional growth. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/65.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-apply-ky-deu.html"></iframe>
 
 What do we see in Germany with the capital/output ratio (remember this is a close relative of $K/AL$)? The above figure shows that it was lower in 1950, and then after a brief dip it shot upward to about 4.5 by 1980. This is exactly the pattern suggested by the Solow model. And as the K/Y ratio climbed in Germany, the growth rate $g_K$ fell, and so did the growth rate of GDP per capita. This all meant that Germany converged to the BGP shown in the first figure. 
 
@@ -70,7 +70,7 @@ It is important to note that the only thing necessary to explain these dynamics 
 ## Shift to a new BGP in South Korea
 South Korea presents an even more interesting case. Between the Japanese occupation that started prior to World World II, and the devastation of the Korean War in the early 1950s, South Korea was very poor. Not only was it very poor, it seemed to be on a very poor BGP. Unlike Germany in the 1950s, it appeared to be a place stuck at a low level of GDP per capita, not a place temporarily below a rich BGP. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/67.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-apply-kor.html"></iframe>
 
 However, a series of reforms in the late 1950s and 1960s appear to have *changed* the BGP for South Korea. The BGP shifted up to the green line shown in the figure. Let's say that shift in the BGP happened in 1965. While the BGP shifted, the *actual* GDP per capita in South Korea stayed very poor in 1965. But now that the BGP was higher, it began to act like any other Solow model economy, and started to grow very quickly, trying to catch up to the higher BGP. And just like Germany, as it became richer the growth rate slowed down and it converged to a new BGP.
 
@@ -78,11 +78,11 @@ It is important to realize that the BGP itself can shift for a country. What wou
 
 One can read entire books about what happened in South Korea in the 1950s and 1960s to put it on the "rich-country" trajectory. So do not take this as a definitive explanation. But we can look at the rate of capital formation, $s_I$, over time. You can see from 1950 to 1980 how this rate climbs from as low as 10% to in the 40's. By itself, we know that an increase in $s_I$ would shift the BGP up.  
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/69.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-apply-si-kor.html"></iframe>
 
 We can tell a similar story using the population growth rate, $g_L$. The rate in the early 1950s is very low, due to the war. But by the late 1950s the population growth rate was over 3% per year, which is an incredibly high number for any country at any time. But note that it then starts to plunge. And from out theory, we know that as $g_L$ falls the BGP should rise. So a second explanation we can give for South Korea's higher BGP is that the population growth rate fell.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/71.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-apply-gl-kor.html"></iframe>
 
 The last part of the explanation would be that $A_0$ rose. Again, don't get hung up on the timing of this. All we're saying is that "baseline" productivity shifted up. Now, what did South Korea do to make baseline productivity go up? Well, see those books I mentioned. This can include anything from land reform (more productive agriculture?) to trade deals (exporting to the US?) to better education (creating more human capital?). The Solow model isn't definitive, but it gives us a framework on which to build explanations for a growth experience like South Korea's.
 
@@ -91,7 +91,7 @@ The prior three case studies can all be fit into the Solow model explanation bec
 
 Starting in 1950, China was in a situation very similar to South Korea. It had been occupied by Japan and devastated during World War II, and was very poor in the 1950s. It appeared to be on a poor BGP until the 1970s. In the late 1970s a series of reforms began that allowed for more market-oriented activity within China, and eventually opened China up to international trade. Similar to South Korea, one can read entire books about what precisely changed in China in this period. But the evidence is clear that *something* happened starting in the 1980s such that China began to grow much faster.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/73.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-apply-chn.html"></iframe>
 
 This has the flavor of what happened in South Korea. Except that to date, China appears to be in the midst of the kind of transition South Korea experienced, so we can't identify a clear BGP that it is headed to - or even *if* it is headed towards a BGP. While all our existing examples suggest that China will reach some kind of BGP eventually, perhaps China really has found a way to grow at a very high rate (6%, 7% per year) for decades. 
 
@@ -99,14 +99,14 @@ However, if you look at the last few years, the 2010s, the growth rate of China 
 
 The reasons for the jump to a higher BGP (if that is what is happening) appear to be similar to South Korea's. The $s_I$ ratio went up. It went up so much that there are actually reasons to believe that the numbers are inflated compared to reality. But taking them as given, $s_I$ rose from around 10% to around 50% over the last sixty years.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/75.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-apply-si-chn.html"></iframe>
 
 Perhaps more famously, China instituted the one-child policy in 1979 to limit what was a high population growth rate. This was actually after the population growth rate had fallen from a high around 3% in the early 1960s to under 2% in the 1970s. Regardless, $g_L$ fell by a substantial amount in China over this period. The severe negative spike to population growth around 1960 was due to the "Great Leap Forward", an attempt by Mao Zedong to reconstruct China on an agrarian basis that led to disruptions of farming and a massive famine that killed an estimated 30 million people.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/77.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-apply-gl-chn.html"></iframe>
 
 The last thing to consider with China is that it is a good illustration of the difference between growth rates and the level of GDP per capita. The rapid growth in China over the last three decades has not put China on the same BGP as South Korea or the US (at least yet). To make clear the distinctions, the following figure shows the log GDP per capita for the three countries.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/79.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-apply-comp.html"></iframe>
 
 Note that despite China's rapid *growth*, the *level* of GDP per capita still remains far below South Korea or China. In terms of a ratio, in 2017 log GDP per capita in the US was 10.91, and in China was 9.51. That means the ratio of GDP per capita was $e^{10.91-9.51} = 4.1$, or US GDP per capita is over four times higher than in China. The ratio for South Korea is $e^{10.52-9.51} = 2.74$. China could well be on its way to a BGP that matches the GDP per capita of South Korea or the US, but it will still be decades before it gets there, even with the rapid growth rate is experienced.

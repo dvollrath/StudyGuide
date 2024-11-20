@@ -37,13 +37,13 @@ which looks like a pile of garbage. But the various terms have distinct definiti
 
 We can look at a little data about the levels of these things across countries. Start with the $E_t/L_t$ ratio in the figure below. One thing you may note is that these ratios look small. South Korea, for example, had a reported $E_t/L_t$ ratio around 0.3 in the 1950s and 1960s. Some of this is a reporting issue, as in particularly poor countries (as South Korea was at the time) many people are self-employed as farmers, and so may not be reflected in the official count of "workers". There is probably a similar story at work with Nigeria, in that a substantial number of people are working for themselves in some capacity, and do not show up in official statistics.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/85.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-catchup-emppop.html"></iframe>
 
 Nevertheless, these ratios climbed for several countries in the 20th century, including the US (see about 1965 to 1990). This was the arrival of the Baby Boom into the workforce, which raised the proportion of workers to population, and which is now starting to disappear as that generation ages. 
 
 We can also look at years of schooling for the same countries. This is an average for people of working age (normally 25+), so the averages will look quite low in early years as it may reflect generations of older people who did not receive a lot of education. In the US, for example, the average years of education was only 8 in 1950, despite the fact that almost every kid in the US at that point was finishing high school. Those kids grandparents, however, may not have finished high school, and were dragging down the average years.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/86.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-catchup-yrsch.html"></iframe>
 
 Neverthless, you can see most countries experienced a substantial increase in average education over time. By the 21st century, the *average* person in Japan, Korea, Germany, or the US has more than a high school education. China and Nigeria have increased their years of schooling by substantial amounts. 
 
