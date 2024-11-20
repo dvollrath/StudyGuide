@@ -32,6 +32,6 @@ As an alternative the following app allows you to tweak the parameters of the mo
 
 You can use <a href="basic-solow.html" target="_blank">this link to open the app in a separate tab</a> (recommended). Or, use the embedded version below. Just note that the embedded version is squeezed into the frame, so you might have to scroll down in the sidebar to see all the parameters and results. 
 
-<iframe width="900" frameborder="no" src="basic-solow.html"> </iframe>
+<iframe height="900" width="900" frameborder="no" src="basic-solow.html"> </iframe>
 
 
