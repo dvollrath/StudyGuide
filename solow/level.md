@@ -41,9 +41,9 @@ Everything in that equation *except* the $g_A t$ part tells us about the level o
 
 The value of $g_A$ has an interesting two-part effect. Higher productivity growth *lowers* the *level* of GDP per capita, oddly enough, because it lowers the steady-state level of capital/output. But it also *raises* the growth rate of GDP per capita, so ultimately a country with a higher $g_A$ will end up richer than one with lower productivity growth. But remember, it appears that most developed countries share a similar $g_A$.
 
-The best way to see the impact of all these parameters on the level of the BGP is to play with this.
+The best way to see the impact of all these parameters on the level of the BGP is to play with this. <a href="basic-KAL.html" target="_blank">Use this link to open the app in a separate tab</a>, or use it here. If you are using the app here, make sure you scroll down in the sidebar to see all the info. 
 
-<iframe height="800" width="1200" frameborder="no" src="https://dietzvollrath.shinyapps.io/JustLevel/"> </iframe>
+<iframe height="600" width="900" frameborder="no" src="basic-level.html"> </iframe>
 
 ## Evidence across countries
 At a primitive level, we now know *why* some countries are richer than others. We can look at some evidence if some of the theoretical explanations make sense. Start with the share of GDP going to capital formation, $s_I$. The theory says that - holding everything else constant - countries with higher $s_I$ should have a higher level of GDP per capita. 

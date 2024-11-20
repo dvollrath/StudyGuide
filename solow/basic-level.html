@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Basic K/AL</title>
+    <link href="https://kineticgraphs.org/css/kg.0.2.7.css" rel="stylesheet" type="text/css">
+    <script src="https://kineticgraphs.org/js/kg.0.2.7.js"></script>
+</head>
+<body>
+
+<div class="kg-container">
+params:
+- {name: sK, value: .2, min: 0, max: .4, round: 0.01}
+- {name: gA, value: .02, min: -.01, max: .05, round: 0.01}
+- {name: gL, value: .01, min: -.05, max: .15, round: 0.01}
+- {name: delta, value: .05, min: 0, max: .15, round: 0.01}
+- {name: alpha, value: .3, min: .05, max: .95, round: 0.05}
+- {name: Ainit, value: 2, min: 0, max: 7, round: 0.1}
+calcs:
+    KYss: (params.sK/(params.gL + params.gA + params.delta))
+layout:
+  OneGraphPlusSidebar:
+    graph: 
+      xAxis:
+        title: Time (t)
+        max: 20
+        min: 0
+        intercept: 0
+      yAxis:
+        title: Log GDP per capita
+        max: 3
+        min: 0
+        intercept: 0
+      objects:
+        - Curve: 
+            univariateFunction:
+                fn: ((params.alpha)/(1-params.alpha))log(calcs.KYss) + log(params.Ainit) + (params.gA)*(x)
+                ind: x
+            color: blue
+            lineStyle: dashed
+            strokeWidth: 4
+            label:
+                text: \text{BGP}
+                x: 6.5
+    sidebar:
+      controls:
+      - title: Parameters
+        description: Adjust these to see how the level of the BGP changes.
+        sliders:
+        - {param: gL, label: g_L}
+        - {param: gA, label: g_A}
+        - {param: sK, label: s_K}
+        - {param: delta, label: \delta}
+        - {param: alpha, label: \alpha}
+        - {param: Ainit, label: A_0}
+      - title: Calculations
+        description: Given the parameters we can calculate these...
+        divs:
+        - html: "`$$\\\\ln y_{BGP}= \\\\frac{\\\\alpha}{1-\\\\alpha}\\\\ln\\\\left(\\\\frac{s_K}{g_A+g_L+\\\\delta}\\\\right) + \\\\ln(A_0) + g_A t$$`"
+        - html: "`$$\\\\ln y_{BGP}= \\\\frac{${params.alpha.toFixed(2)}}{1-${params.alpha.toFixed(2)}}\\\\ln\\\\left(\\\\frac{${params.sK.toFixed(2)}}{${params.gA.toFixed(2)}+${params.gL.toFixed(2)}+${params.delta.toFixed(2)}}\\\\right) + \\\\ln(${params.Ainit.toFixed(2)}) + ${params.gA.toFixed(2)} t$$`"  
+</div>
+
+</body>
+</html>
