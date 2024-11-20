@@ -83,15 +83,13 @@ $$
 g_K = s_I \left(\frac{AL}{K}\right)^{1-\alpha} - \delta.
 $$
 
-To understand what happens to $g_K$ over time, we need to know what happens to $K/AL$, which depends on $g_K$, which depends on $K/AL$, and so on. To analyze this more formally we'll use a diagram that looks like the one in the app below. On the x-axis is the $K/AL$ ratio, and note that $g_K$ declines as $K/AL$ goes up, just like in our equation above. 
+To understand what happens to $g_K$ over time, we need to know what happens to $K/AL$, which depends on $g_K$, which depends on $K/AL$, and so on. To analyze this more formally we'll use a diagram that looks like the one in the app below. On the x-axis is the $K/AL$ ratio, and note that $g_K$ declines as $K/AL$ goes up, just like in our equation above. <a href="basic-KAL.html" target="_blank">Use this link to open the app in a separate tab</a>.
 
-$g_K$ is the growth rate of the numerator in $K/AL$. The denominator of the $K/AL$ grows at the rate $g_A + g_L$, the growth rate of both productivity plus labor. That combined growth rate is shown with the dashed line. 
+<iframe height="1500" width="900" frameborder="no" src="basic-KAL.html"> </iframe>
 
-<iframe height="700" width="1200" frameborder="no" src="https://dietzvollrath.shinyapps.io/JustKAL/"> </iframe>
+The combination of the two lines tells us everything about how the $K/AL$ ratio, and hence $g_K$, changes over time. Let's say that we start with a very small $K/AL$ ratio (close to zero). What does the diagram indicate? It says that $g_K > g_A + g_L$ (the blue line is above the green line). In this case the ratio must *rise*, because the numerator is growing faster than the denominator. In practice, the economy has very little capital relative to how productive it is and how many workers it has. So it can generate a high growth rate of capital by producing more capital relative to its small base. The dynamics keep pushing the $K/AL$ ratio to the right. 
 
-The combination of the two lines tells us everything about how the $K/AL$ ratio, and hence $g_K$, changes over time. Let's say that we start with a very small $K/AL$ ratio (close to zero). What does the diagram indicate? It says that $g_K > g_A + g_L$ (the dark line is above the dashed line). In this case the ratio must *rise*, because the numerator is growing faster than the denominator. In practice, the economy has very little capital relative to how productive it is and how many workers it has. So it can generate a high growth rate of capital by producing more capital relative to its small base. The dynamics keep pushing the $K/AL$ ratio to the right. 
-
-If you start with a large $K/AL$ ratio, like 10, you get the opposite dynamics. There it is $g_K < g_A + g_L$ and so the ratio *falls*. The economy has a lot of capital relative to how productive it is and the number of workers. So even though it might produce a large absolute amount of capital, that additional capital is small compared to the initial amount, and the growth rate of capital is small. Everything about the dynamics push the $K/AL$ ratio to the left. 
+If you start with a large $K/AL$ ratio, like 7, you get the opposite dynamics. There it is $g_K < g_A + g_L$ and so the ratio *falls*. The economy has a lot of capital relative to how productive it is and the number of workers. So even though it might produce a large absolute amount of capital, that additional capital is small compared to the initial amount, and the growth rate of capital is small. Everything about the dynamics push the $K/AL$ ratio to the left. 
 
 No matter what, eventually the dynamics of the economy force it to the point where $g_K = g_A + g_L$, or the capital stock is growing just as fast as productivity and labor. At that point the economy can generate new capital, but just in balance with how fast it is getting more productive and adding more workers.
 
