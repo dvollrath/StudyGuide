@@ -2,7 +2,7 @@
 title: Old school Solow
 parent: Simulating growth
 grand_parent: Solow and Balanced Growth
-nav_order: 1
+nav_order: 4
 ---
 
 # Old school Solow
