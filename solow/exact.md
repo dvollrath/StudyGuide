@@ -2,7 +2,7 @@
 title: An exact solution
 parent: Simulating growth
 grand_parent: Solow and Balanced Growth
-nav_order: 2
+nav_order: 1
 ---
 
 # An exact solution

@@ -2,7 +2,7 @@
 title: Long Term Growth Model
 parent: Simulating growth
 grand_parent: Solow and Balanced Growth
-nav_order: 3
+nav_order: 2
 ---
 
 # Real World Solow Model
