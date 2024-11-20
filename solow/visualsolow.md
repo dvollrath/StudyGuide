@@ -23,6 +23,6 @@ It's best to walk through that spreadsheet in class with assistance from me (or 
 ## Point and click
 As an alternative the following app allows you to tweak the parameters of the model and see how various outcomes evolve over time. In essence, this is an interactive version of the spreadsheet that is easier to adjust, but remember it is doing exactly the *same* thing. 
 
-You can play with the embedded app below, or use [this link](basic-solow.html) to open it in a new tab.
+You can use [this link](basic-solow.html) to open the app in a separate tab (recommended). Or, use the embedded version below. Just note that the embedded version is squeezed into the frame, so you might have to scroll down in the sidebar to see all the parameters and results. 
 
-<iframe height="1200" width="100%" frameborder="no" src="basic-solow.html"> </iframe>
+<iframe height="1500" width="900" frameborder="no" src="basic-solow.html"> </iframe>
