@@ -6,19 +6,13 @@ format:
     fig-height: 4
     code-fold: true
     toc: false
-    echo: false
-    keep-hidden: true
     code-tools: true    
 ---
 
 ## Visualize changes to Solow model
 
-@fig-solow further explores the impact of temperature on ozone level.
-
 ```{r}
-#| echo: false
-#| 
-library(plotly)
+suppressMessages(library(plotly))
 
 f.solow <- function(alpha = .3, si=.2, delta=.05, ga=.02, gl=.01, k0=1, a0=1, l0=1, t=1) {
   kal_init <- k0/(a0*l0) # initial K/AL ratio
@@ -53,8 +47,19 @@ f.solow <- function(alpha = .3, si=.2, delta=.05, ga=.02, gl=.01, k0=1, a0=1, l0
 
   return(solved) # return all results
 }
+```
 
-s= f.solow(t = seq(from = 1,to = 50, by = 1))
+Let's use this function to map out some scenarios. This starts by telling R that we want to plot the function from year 1 to year 30. Then it calls the Solow function to calculate all the outcomes over those years.
+
+```{r}
+#| code-fold: false
+years = seq(from = 1,to = 30, by = 1)
+s= f.solow(t = years)
+```
+
+Given that solution we can plot figures of what is going on
+
+```{r}
 
 # Plot figure of scenarios and their BGP's
 fig1 <- plot_ly(s, x = ~time, y = ~lny, type = 'scatter', mode = 'lines', name='Log GDP pc')
@@ -65,14 +70,34 @@ fig2 <- plot_ly(s, x = ~time, y = ~gy, type = 'scatter', mode = 'lines', name='G
 fig3 <- plot_ly(s, x = ~KAL, y = ~gK, type = 'scatter', mode = 'lines+markers', name='Capital growth rate')
 fig3 <- add_trace(fig3, x = ~KAL, y = .03, type = 'scatter', mode = 'lines', name='gA + gL')
 
-fig <- subplot(fig1, fig2, fig3, nrows=3)
 ```
 
 
 ```{r}
-#| label: fig-solow
-#| fig-cap: "Solow model simulation"
+#| label: fig-level
+#| fig-cap: "Log GDP per capita over time"
 #| warning: false
 
-fig
+# Plot figure of scenarios and their BGP's
+fig1 <- plot_ly(s, x = ~time, y = ~lny, type = 'scatter', mode = 'lines', name='Log GDP pc')
+fig1 <- add_trace(fig1, x = ~time, y = ~lny_bgp, type = 'scatter', mode = 'lines', name='BGP')
+
+fig1
+```
+
+
+```{r}
+#| label: fig-growth
+#| fig-cap: "Growth rate over time"
+#| warning: false
+
+fig2
+```
+
+```{r}
+#| label: fig-kal
+#| fig-cap: "K/AL dynamics"
+#| warning: false
+
+fig3
 ```
