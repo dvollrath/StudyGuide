@@ -1,6 +1,6 @@
 ---
 title: An exact solution
-parent: Simulating growth
+parent: Visualizing the Solow model
 grand_parent: Solow and Balanced Growth
 nav_order: 1
 ---

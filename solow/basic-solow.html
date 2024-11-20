@@ -10,19 +10,22 @@
 
 <div class="kg-container">
 params:
-- {name: sK, value: .2, min: 0, max: .4, round: 0.01}
+- {name: sK, value: .2, min: 0.01, max: 1, round: 0.01}
 - {name: gA, value: .02, min: -.01, max: .05, round: 0.01}
 - {name: gL, value: .01, min: -.05, max: .15, round: 0.01}
+- {name: delta, value: .05, min: 0, max: .15, round: 0.01}
 - {name: KALinit, value: 1, min: 0, max: 4, round: 0.1}
 - {name: Kinit, value: 5, min: 1, max: 10, round: .5}
 - {name: Ainit, value: 2, min: 1, max: 5, round: .5}
 - {name: Linit, value: 1, min: .5, max: 4, round: .5}
 - {name: KYold, value: 2.5, min: 0, max: 4, round: 0.1}
+- {name: alpha, value: .3, min: .05, max: .95, round: 0.05}
 calcs:
-  KYss: (params.sK/(params.gL + params.gA + .05))
-  KALss: (calcs.KYss)^(1.43)
+  KYss: (params.sK/(params.gL + params.gA + params.delta))
+  KALss: (calcs.KYss)^(1/(1-params.alpha))
   KYinit: (params.Kinit/(params.Ainit*params.Linit))
-  gAgraph: (params.gA*10)
+  a: (params.alpha)/(1-params.alpha)
+  conv: 1 - (1-params.alpha)*(params.gL + params.gA + params.delta)
 layout:
   TwoVerticalGraphsPlusSidebar:
     topGraph:
@@ -50,14 +53,14 @@ layout:
           label:
             text: \text{New BGP}
             x: 15
-      - Curve: 
+      - Curve:
           univariateFunction:
-            fn: (params.gA) + (.1^((x)/10))*((calcs.KYss-calcs.KYinit)/100) 
+            fn: (params.gA)+(params.alpha*params.sK)*(calcs.KYss*(1-(.9)^(x)) + calcs.KYinit*((.9)^(x)))^(-1) - (params.alpha)*(params.delta + params.gA + params.gL)
             ind: x
           color: black
           label:
-              text: \text{Actual}
-              x: 10            
+            text: \text{Actual}
+            x: 10
     bottomGraph:
       xAxis:
         title: Time
@@ -65,12 +68,12 @@ layout:
         ticks: 15        
       yAxis:
         title: Log GDP per capita
-        max: 3.5
+        max: 2.5
         min: 0
       objects:
       - Curve: 
           univariateFunction:
-            fn: .2*((params.KYold) + 6 + (10*.02)*(x))
+            fn: (calcs.a)log(params.KYold) + log(2) + (.02)*(x)
             ind: x
           color: blue
           lineStyle: dashed
@@ -79,7 +82,7 @@ layout:
               x: 15
       - Curve: 
           univariateFunction:
-            fn: .2*((calcs.KYss) + (params.Ainit)*3 + (calcs.gAgraph)*(x))
+            fn: (calcs.a)log(calcs.KYss) + log(params.Ainit) + (params.gA)*(x)
             ind: x
           color: green
           lineStyle: dashed
@@ -88,7 +91,7 @@ layout:
               x: 15
       - Curve:
           univariateFunction:
-            fn: .2*((calcs.KYss)*(1 - .2^((x)/10)) + (calcs.KYinit)*(.2^((x)/10)) + (params.Ainit)*3 + (calcs.gAgraph)*(x))
+            fn: (calcs.a)*log(calcs.KYss*(1-(.9)^(x)) + calcs.KYinit*(.9)^(x)) + log(params.Ainit) + (params.gA)*(x)
             ind: x
           color: black
           label:
@@ -97,11 +100,15 @@ layout:
     sidebar:
       controls:
       - title: Parameters
+        description: Adjust parameter(s) to see effect on growth rate and level of GDP per capita. You can adjust multiple parameters. Reload the page to reset.
         sliders:
         - {param: gA, label: g_A}
         - {param: gL, label: g_L}
         - {param: sK, label: s_K}
+        - {param: delta, label: \delta}
+        - {param: alpha, label: \alpha}
       - title: Initial conditions
+        description: Adjust initial conditions to see effect on growth rate and level of GDP per capita. Note how these differ from adjusting parameters. Reload the page to reset.
         sliders:
         - {param: Kinit, label: K_0}
         - {param: Ainit, label: A_0}
@@ -112,7 +119,7 @@ layout:
         - html: "`$$(K/AL)_{ss} = ${calcs.KALss.toFixed(2)}$$`"
       - title: Warnings
         divs:
-        - html: "`The steady state calculations are accurate. But the graphs are set up for visual appeal, not numeric accuracy. If you want to see exact solutions, use the spreadsheet.`"
+        - html: "`The steady state calculations are accurate. But the graphs are set up for visual appeal, not numeric accuracy. There will be extreme situations where the growth rate implied in the log GDP per capita graph is inconsistent with the top figure. If you want to see exact solutions, use the spreadsheet.`"
 </div>
 
 </body>

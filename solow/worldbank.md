@@ -1,6 +1,6 @@
 ---
 title: Long Term Growth Model
-parent: Simulating growth
+parent: Visualizing the Solow model
 grand_parent: Solow and Balanced Growth
 nav_order: 2
 ---
