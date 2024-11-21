@@ -74,7 +74,7 @@ For this simulation, I set the value of $\theta = 1$ and the value of $s_R = .01
 
 Just like with capital/output, the simulation is set up with two separate economies, A and B. In economy A, initial productivity is $A_0^A = 2$, so the ratio of $L_{0}/A_0^A = 5$. Economy has higher initial productivity, $A_0^B = 10$, and a ratio of $L_{0}/A_0^B = 1$. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/103.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/me-gA-dynamics.html"></iframe>
 
 We know that because economy A has a higher ratio of researchers to productivity it will start with a higher growth rate of $g_A = .01 \times 5 = .05$ or 5%. But the next period, productivity will be higher by 5%, and the number of researchers will only grow by 2%, so the ratio of L/A in economy A will *fall*, which will lower the productivity growth rate. 
 
@@ -124,13 +124,13 @@ More researchers means more ideas, and that pushes up the growth rate of product
 
 And this is crucial in matching what we saw in the data. Recall the prior section said that while the absolute effort on R&D rose over time, the growth rate on productivity did not, across a number of countries. We can make this more tangible by plotting the growth rate of productivity against the log of R&D workers for several countries.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/105.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-oecd-rd-tfp.html"></iframe>
 
 Yes, there is some sense that in China there are both a lot of researchers *and* a relatively high productivity growth rate, but across most of this data there is no clear relationship. The US and Japan have substantially more R&D workers than Korea, Germany, or Great Britain, but their productivity growth is not higher. 
 
 On the other hand, if we plot the growth rate of productivity against the *growth rate* of the number of researchers, we get a more robust picture. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/107.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-oecd-rd-gtfp.html"></iframe>
 
 Here, there is a tendency to see higher productivity growth when R&D workers grow faster (which is tied to population growth in part) is higher. This doesn't prove the theory is right. First, this is just a handful of countries, and a simple correlation in the data is not the same thing as a causal relationship. Second, the theory was *designed* to produce this result. We were trying to come up with something that can mimic this relationship, and we did.
 
@@ -196,6 +196,6 @@ Devoting a bigger share of workers to R&D will get us more productivity and pote
 ## Visualizing the dynamics
 For a different way of seeing what is going on, you can also try this [spreadsheet](https://docs.google.com/spreadsheets/d/1nN9Di392qIkza7RYq6Tp6yqBWtyxx3JAtseMaX4aDvA/edit?usp=sharing) which lays out the dynamics of productivity period by period. You can adjust the parameters and initial values of L and A to see how productivity growth evolves over time.
 
-Or similar to the Solow model, the following app allows you to adjust parameters and see the impact on the level of productivity, the growth rate of productivity, and how the dynamic system works. Rather than using the embedded app, <a href="https://dietzvollrath.shinyapps.io/ProdBasic/" target="_blank">this link</a> will take you directly to the app on its own page. 
+Or similar to the Solow model, the following app allows you to adjust parameters and see the impact on the level of productivity, the growth rate of productivity, and how the dynamic system works. Rather than using the embedded app, <a href="basic-romer.html" target="_blank">this link</a> will take you directly to the app on its own page. 
 
-<iframe height="800" width="100%" frameborder="no" src="https://dietzvollrath.shinyapps.io/ProdBasic/"> </iframe>
+<iframe height="900" width="100%" frameborder="no" src="basic-romer.html"> </iframe>

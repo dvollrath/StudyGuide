@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Basic Productivity Model</title>
+    <link href="https://kineticgraphs.org/css/kg.0.2.7.css" rel="stylesheet" type="text/css">
+    <script src="https://kineticgraphs.org/js/kg.0.2.7.js"></script>
+</head>
+<body>
+
+<div class="kg-container">
+params:
+- {name: lam, value: .9, min: 0, max: 1, round: 0.01}
+- {name: gL, value: .01, min: -.05, max: .15, round: 0.01}
+- {name: phi, value: 0, min: -.5, max: .9, round: 0.01}
+- {name: sR, value: .05, min: 0, max: .15, round: 0.01}
+- {name: theta, value: .1, min: 0, max: 1, round: 0.01}
+- {name: Linit, value: 100, min: 1, max: 200, round: 1}
+- {name: Ainit, value: 47.7, min: 1, max: 100, round: .01}
+- {name: time, value: 100, min: 20, max: 200, round: 1}
+calcs:
+  Rinit: (params.sR)*(params.Linit)
+  ALinit: (params.Ainit)^(1-params.phi)/(calcs.Rinit)^(params.lam)
+  ALss: (1-params.phi)*(params.theta)/(params.lam*params.gL)
+  gAss: (params.lam)*(params.gL)/(1-params.phi)
+  a: (params.lam)/(1-params.phi)
+  p: (1/(1-params.phi))
+  conv: (params.lam*params.gL)
+  ALbase: (1-0)*.1/(.9*.01)
+layout:
+  TwoVerticalGraphsPlusSidebar:
+    topGraph:
+      xAxis:
+        max: (params.time)
+        min: 0
+        ticks: 10
+      yAxis:
+        title: Growth rate of productivity
+        max: .05
+        min: -.02
+      objects:
+      - Segment: 
+          a: [0,.009]
+          b: [(params.time),.009]
+          color: green 
+          lineStyle: dashed
+          label:
+            text: \text{Old BGP}
+            location: .25
+      - Segment: 
+          a: [0,calcs.gAss]
+          b: [(params.time),(calcs.gAss)]
+          color: blue 
+          lineStyle: dashed
+          label:
+            text: \text{New BGP}
+            location: .1
+      - Curve:
+          univariateFunction:
+            fn: (params.theta)/(calcs.ALss*(1-(.9)^(x)) + calcs.ALinit*((.9)^(x)))
+            ind: x
+          color: black
+          label:
+            text: \text{Actual}
+            x: 15
+    bottomGraph:
+      xAxis:
+        title: Time
+        min: 0
+        max: (params.time)
+        ticks: 10        
+      yAxis:
+        title: Log productivity level
+        max: 10
+        min: 0
+      objects:
+      - Segment:
+          a: [0,(.9)log(5) + log(11.11)]
+          b: [(params.time),(.9)log(5) + log(11.11)+(.9)*(.01)*(params.time)]
+          lineStyle: dashed
+          color: blue
+          label:
+              text: \text{Old BGP}
+              location: .1    
+      - Segment:
+          a: [0,(calcs.a)log(calcs.Rinit) + (calcs.p)log(calcs.ALss)]
+          b: [(params.time),(calcs.a)log(calcs.Rinit) + (calcs.p)log(calcs.ALss)+(calcs.a)*(params.gL)*(params.time)]
+          lineStyle: dashed
+          color: green
+          label:
+              text: \text{New BGP}
+              location: .25
+      - Curve: 
+          univariateFunction:
+            fn: (calcs.a)log(calcs.Rinit) + (calcs.p)log(calcs.ALss*(1-(.98)^(x)) + calcs.ALinit*((.98)^(x))) + (calcs.a)*(params.gL)*(x)
+            ind: x
+          color: black
+          label:
+              text: \text{Actual}
+              x: 15
+        
+    sidebar:
+      controls:
+      - title: Parameters
+        description: Adjust parameter(s) to see effect on growth rate and level of GDP per capita. You can adjust multiple parameters. Reload the page to reset.
+        sliders:
+        - {param: gL, label: g_L}
+        - {param: lam, label: \lambda}
+        - {param: phi, label: \phi}
+        - {param: theta, label: \theta}
+        - {param: sR, label: s_R}
+      - title: Initial conditions
+        description: Adjust initial conditions to see effect on growth rate and level of GDP per capita. Note how these differ from adjusting parameters. Reload the page to reset.
+        sliders:
+        - {param: Linit, label: L_0}
+        - {param: Ainit, label: A_0}
+      - title: Time frame
+        description: It can be useful to see dynamics over shorter or longer time frames. 
+        sliders:
+        - {param: time, label: t}
+</div>
+
+</body>
+</html>
