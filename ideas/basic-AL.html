@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Basic Productivity Dynamics</title>
+    <link href="https://kineticgraphs.org/css/kg.0.2.7.css" rel="stylesheet" type="text/css">
+    <script src="https://kineticgraphs.org/js/kg.0.2.7.js"></script>
+</head>
+<body>
+
+<div class="kg-container">
+params:
+- {name: lam, value: .9, min: 0, max: 1, round: 0.01}
+- {name: gL, value: .01, min: 0, max: .05, round: 0.001}
+- {name: phi, value: 0, min: -.5, max: .9, round: 0.01}
+- {name: sR, value: .05, min: 0, max: .15, round: 0.01}
+- {name: theta, value: .1, min: 0, max: 1, round: 0.01}
+- {name: Linit, value: 100, min: 1, max: 200, round: 1}
+- {name: Ainit, value: 47.7, min: 1, max: 100, round: .01}
+- {name: LAinit, value: 2, min: 0, max: 4, round: .01}
+calcs:
+  LAss: (params.lam*params.gL)/((1-params.phi)*(params.theta)*(params.sR)^(params.lam))
+  gAss: (params.lam)*(params.gL)/(1-params.phi)
+  gA: (params.theta)*(params.sR)^(params.lam)*(params.LAinit)
+layout:
+  OneGraphPlusSidebar:
+    graph: 
+      xAxis:
+        title: $L^{\lambda}/A^{1-\phi}$
+        max: 3
+        min: 0
+        intercept: 0
+      yAxis:
+        title: Growth rates
+        max: .03
+        min: 0
+        intercept: 0
+      objects:
+        - Point:
+            coordinates: [params.LAinit,0]
+            drag: 
+            - horizontal: LAinit
+        - Point:
+            coordinates: [calcs.LAss,(calcs.gAss)]
+            color: red
+            droplines:
+                vertical: (L^{\lambda}/A^{1-\phi})_{ss}
+        - Point:
+            coordinates: [params.LAinit, calcs.gA]
+            droplines:
+                vertical: \text{Initial } L^{\lambda}/A^{1-\phi}
+                horizontal: g_A
+        - Arrow:
+            begin: [params.LAinit,.001]
+            end: [calcs.LAss,.001]
+            color: blue
+            trim: .1
+        - Arrow:
+            begin: [.1,calcs.gA]
+            end: [.1,calcs.gAss]
+            color: blue
+            trim: .1            
+        - Curve: 
+            univariateFunction:
+                fn: (params.theta)*(params.sR)^(params.lam)*(x)
+                ind: x
+            color: blue
+            lineStyle: dashed
+            strokeWidth: 4
+            label:
+                text: g_A= \theta s_R^{\lambda} \frac{L^{\lambda}}{A^{1-\phi}}
+                x: 2.5
+        - Line:
+            yIntercept: (calcs.gAss)
+            slope: 0
+            lineStyle: dashed
+            strokeWidth: 4
+            color: green
+            label:
+                text: \frac{\lambda}{1-\phi}g_L
+                x: 3
+    sidebar:
+      controls:          
+      - title: Parameters
+        description: Adjust parameter(s) to see effect on growth rate and level of GDP per capita. You can adjust multiple parameters. Reload the page to reset.
+        sliders:
+        - {param: gL, label: g_L}
+        - {param: lam, label: \lambda}
+        - {param: phi, label: \phi}
+        - {param: theta, label: \theta}
+        - {param: sR, label: s_R}
+      - title: Initial conditions
+        description: You can adjust the initial L/A ratio using the dot on the x-axis or this control. The exponents (lambda,phi) don't display well here, but you're adjusting the right thing.
+        sliders:
+        - {param: LAinit, label: L/A } 
+      - title: Calculations
+        description: Given the initial conditions and parameters we can calculate these...
+        divs:
+        - html: "`$$\\\\text{Initial } g_A = \\\\theta s_R^{\\\\lambda} L^{\\\\lambda}/A^{1-\\\\phi} = ${calcs.gA.toFixed(4)}$$`"
+        - html: "`$$\\\\text{Steady state } g_A = \\\\lambda g_L / (1-\\\\phi) = ${calcs.gAss.toFixed(4)}$$`"   
+
+</div>
+
+</body>
+</html>

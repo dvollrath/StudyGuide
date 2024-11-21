@@ -143,9 +143,9 @@ $$
 g_{A} = \theta s_R^{\lambda} \frac{L_{t}^{\lambda}}{A_t^{1-\phi}}.
 $$
 
-Take a look at a dynamic figure representing this relationship. Here, I've plotted the growth rate $(1-\phi)g_A$ (the sloped line), and the growth rate $\lambda g_L$ (the horizontal line). 
+Take a look at a dynamic figure representing this relationship. Here, I've plotted the growth rate $(1-\phi)g_A$ (the sloped line), and the growth rate $\lambda g_L$ (the horizontal line). You can use <a href="basic-AL.html" target="_blank">this link to open the app in a separate tab</a> (reommended).
 
-<iframe height="700" width="1200" frameborder="no" src="https://dietzvollrath.shinyapps.io/JustRA/"> </iframe>
+<iframe height="900" width="100%" frameborder="no" src="basic-AL.html"> </iframe>
 
 No matter where you start, the system pushes you back to the point where the two lines cross, and where $g_A = g_L \times \lambda/(1-\phi)$, which is the BGP growth rate of productivity. This says that the productivity growth rate is *stable*. 
 
