@@ -145,7 +145,7 @@ $$
 
 Take a look at a dynamic figure representing this relationship. Here, I've plotted the growth rate $(1-\phi)g_A$ (the sloped line), and the growth rate $\lambda g_L$ (the horizontal line). You can use <a href="basic-AL.html" target="_blank">this link to open the app in a separate tab</a> (reommended).
 
-<iframe height="900" width="100%" frameborder="no" src="basic-AL.html"> </iframe>
+<iframe height="500" width="900" frameborder="no" src="basic-AL.html"> </iframe>
 
 No matter where you start, the system pushes you back to the point where the two lines cross, and where $g_A = g_L \times \lambda/(1-\phi)$, which is the BGP growth rate of productivity. This says that the productivity growth rate is *stable*. 
 
@@ -198,4 +198,4 @@ For a different way of seeing what is going on, you can also try this [spreadshe
 
 Or similar to the Solow model, the following app allows you to adjust parameters and see the impact on the level of productivity, the growth rate of productivity, and how the dynamic system works. Rather than using the embedded app, <a href="basic-romer.html" target="_blank">this link</a> will take you directly to the app on its own page. 
 
-<iframe height="600" width="100%" frameborder="no" src="basic-romer.html"> </iframe>
+<iframe height="500" width="900" frameborder="no" src="basic-romer.html"> </iframe>
