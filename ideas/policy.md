@@ -20,11 +20,11 @@ One might suspect that if a larger share of GDP is accounted for by government d
 
 This first figure shows the level of GDP per capita on the y-axis against the share of government spending in GDP on the x-axis. The idea is to see if there is any clear relationship between how "big" government is in terms of the economy and how rich countries are. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/153.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-all-cshg-level.html"></iframe>
 
 There isn't much here the really stands out. For some countries, like China and Mexico, higher goverment shares appear associated with *higher* GDP per capita. But for others, like Japan, higher government shares seem associated with *lower* GDP per capita. But really, you can find almost anything you want in this figure. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/151.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-all-cshg-growth.html"></iframe>
 
 We get a similar story if we look at the growth rate of GDP per capita (the 10-year average) against government spending as a share of GDP. In some areas you can tell yourself there is a positive relationship, and in others a negative one. 
 
@@ -40,7 +40,7 @@ For comparison, here is the lowest marginal tax rate, the rate paid on that mini
 
 In comparison to those two rates, what do we want to see? We want to see whether the growth rate of GDP per capita appears to be substantially different in periods with high tax rates and periods with low tax rates. The following figure plots a rolling 10-year growth rate for the U.S. (meaning that in 2000 it is plotting the annualized growth rate from 1990 to 2000). 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/155.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-usa-growth-rate.html"></iframe>
 
 Compare this to the figures on tax rates, and there isn't any *obvious* connection. If anything, the period in which tax rates were higher experienced higher growth rates. 
 

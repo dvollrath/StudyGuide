@@ -43,7 +43,7 @@ If we want to understand what affect this immigration had on economic growth, th
 
 According to that data above, immigration increased the growth rate of population in the U.S. by somewhere around 1% per year in the early 20th century, and closer to about 0.4% per year more recently. Let's look more carefully at the growth rate of population of the U.S. in the last part of the 20th century.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/163.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-usa-pop-growth.html"></iframe>
 
 In the 1950s, population growth was about 1.5% per year on average, but from the 1960s forward this levelled out at about 1%, and dropped in more recent years to just over 0.5%. One thing that is apparent is that in recent years population growth is largely a function of immigration, as opposed to natural increase (e.g. births > deaths). 
 

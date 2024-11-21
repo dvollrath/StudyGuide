@@ -158,10 +158,10 @@ saveWidget(partial_bundle(fig), "../plotly/pwt-apply-comp.html",selfcontained = 
 # Simple TS regressions for TFP path in China
 #########################################################################
 f <- p[which(p$isocode %in% c("CHN")),] # re-grab initial data
-f <- f[which(f$year>1960),]
+f <- f[which(f$year>1962),]
 
-m2 <- lm(f$lntfp~f$year, data=f, subset=(year>1960 & year<2000))
-m3 <- lm(f$lntfp~f$year, data=f, subset=(year>2013))
+m2 <- lm(f$lntfp~f$year, data=f, subset=(year>1962 & year<2006))
+m3 <- lm(f$lntfp~f$year, data=f, subset=(year>2006 & year<2019))
 f$fitted2 <- predict(m2,f)
 f$fitted3 <- predict(m3,f)
 

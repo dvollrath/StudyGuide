@@ -32,7 +32,7 @@ And which countries have more researchers? Some of it depends on policy choices,
 
 This is an odd prediction. And one that doesn't quite fit with the cross-country evidence we have.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/109.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-oecd-level-rd.html"></iframe>
 
 This figure shows the log level of productivity against the log level of R&D workers for our same set of countries. Within each country you can see a positive relationship, as both productivity and the number of researchers are growing over time. But *across* countries it is not true that countries with more researchers have a higher productivity level. Germany, Great Britain, and Korea have a productivity level just as high as Japan or the US, but with many fewer R&D workers. China has just as many R&D workers as Japan or the US, but much lower productivity.
 
@@ -41,7 +41,7 @@ Which brings us back to the question of what population matters for the analysis
 ## Global population and living standards
 It is possible to see something of the connection between the scale of researchers and the size of productivity by looking at global data over a very long time. This is going to be a rough test of the idea, because we need to make two different substitutions. First, we can't measure productivity exactly over a long period of time for the whole world. But we can look at GDP per capita, which depends a lot of the level of productivity. Second, we can't measure the number of "researchers" at the global level over a long period of time. So we'll look instead at the raw population size, which is the pool of eligible researchers.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/111.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/mad-global-lngdppc-pop.html"></iframe>
 
 The numbers here are necessarily estimates, as they go back to the year 0. But the rough idea is clear. As the population grew, so did the level of GDP per capita. And if you hover over the dots, you'll see that this figure is basically a time series plot, with the smallest population and GDP per capita at the left-hand corner, and then over time both values increased. 
 

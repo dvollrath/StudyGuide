@@ -17,7 +17,7 @@ Productivity is the application of non-rival ideas to using rival inputs. And wh
 
 We can look at some data that gives us an idea of the amount of time and resources spent to find these ideas. The following figure shows the number of workers (or full-time equivalents) engaged in "research and development" activity. That could run anywhere from lab science for Chevorn to market research for Nike. It also includes the activities of a lot of academics who work at universities. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/91.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/oecd-rd-fte.html"></iframe>
 
 For the most part, these numbers were increasing over time. Japan is something of an exception, although it is worth noting that Japan's total population stopped growing in recent decades as well. The odd dip in the Chinese data is due to a change in reporting standards. Even leaving that aside, you can see that the US and China put more people to work in research and development than other countries. But while other countries are smaller, most appear to have increased the numbers engaged in research and development activity. 
 
@@ -25,13 +25,13 @@ I plotted the absolute number for each country, as opposed to as a fraction of a
 
 We can instead look at the absolute amount of real R&D spending that was done by each country. Again, the absolute number is going to be relevant to us later, so that is what the following figure shows.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/93.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/oecd-rd-levelrd.html"></iframe>
 
 You can see that the US and China dominate in absolute spending *now*, but that this is due in large part to a massive increase in China over the last twenty years. In other countries, total spending on R&D rose as well, but in terms of scale no one matches the US and China. 
 
 These absolute numbers are useful, but it is hard to see the growth rates from this. Recall that we can look at the *log* of something over time to pick up on growth rates. The following figure shows the same information, only now with the *log* of R&D expenditures. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/95.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/oecd-rd-logrd.html"></iframe>
 
 This maintains the pattern across countries in the amount of R&D spending, but you can see that the US, Japan, Germany, and the UK all had similar *growth rates* of R&D. China and South Korea both had very rapid growth rates of R&D spending. In China's case, this allowed them to catch up to the US in total R&D spending, while South Korea caught up (almost) with Germany.
 
@@ -40,7 +40,7 @@ The general story here is that the *absolute* effort put towards research and de
 ## R&D effort and productivity growth
 But note that this increased absolute effort was *not* associated with a systematic increase in the growth rate of productivity. The following figure plots the 10-year annualized growth rate of productivity ($(\ln A_{t} - \ln A_{t-10})/10$) for all these countries. You can see fluctuations, but in no case is there a sustained increase in the productivity growth rate. Even in China, which saw productivity growth rise to around 8% per year, has seen a steep decline in that rate over the last several years. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/97.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-growth-tfp-comp.html"></iframe>
 
 We already kind of knew this, because we know from the growth facts that growth rates in most developed countries are stable, and that the Solow model shows that these growth rates are driven by the productivity growth rate. 
 
@@ -49,9 +49,9 @@ But this disconnect between the increased R&D effort and stable productivity gro
 {: .fact }
 The absolute number of workers and GDP spent on R&D has increased over time, but there is no systematic increase in the growth rate of productivity.
 
-Here it is important to remember that while productivity is a measure of how efficiently we use inputs, it is *not* a measure of the number of innovations that take place. For example, here is a plot showing the number of patents granted by the US Patent Office to applicants from different countries over time. This isn't a perfect measure of the total number of innovations being found around the world. First, not all innovations get patented. Second, not all innovators get a patent in the US. But given the size of the US many innovators choose to patent here, even if they are from another country. 
+Here it is important to remember that while productivity is a measure of how efficiently we use inputs, it is *not* a measure of the number of innovations that take place. For example, here is a plot showing the number of patents granted by each country to applicants (whether they were residents or non-residents; lots of firms and people patent in multiple places). This isn't a perfect measure of the total number of innovations being found around the world. First, not all innovations get patented. Second, not all innovators get a patent.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/99.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/wdi-patent-all.html"></iframe>
 
 The absolute number of patents rose in line with the amount of R&D workers and R&D spending in these countries. The increased effort towards innovation does appear to be related to the number of innovations (to the extent that can be captured by patents). 
 

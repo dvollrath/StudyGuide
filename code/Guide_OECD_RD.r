@@ -4,16 +4,18 @@
 ##################################################################################
 # R&D worker data
 ##################################################################################
-filter_list <- list(c("USA","JPN","KOR","CHN","DEU","GBR")) # limit countries to download
-fte <- get_dataset("PERS_FUNC", filter = filter_list)
+#filter_list <- list(c("USA","JPN","KOR","CHN","DEU","GBR")) # limit countries to download
+#fte <- get_dataset("PERS_FUNC", filter = filter_list)
 
-fte <- work
-fte <- fte[which(fte$SECTPERF %in% c("_T")),] # all sectors
-fte <- fte[which(fte$FUNCTION %in% c("RSE")),] # researchers
-fte <- fte[which(fte$GENDER %in% c("_T")),] # both genders
-fte <- fte[which(fte$MEASURE %in% c("FTE")),] # FTE measured
+#fte <- work
+#fte <- fte[which(fte$SECTPERF %in% c("_T")),] # all sectors
+#fte <- fte[which(fte$FUNCTION %in% c("RSE")),] # researchers
+#fte <- fte[which(fte$GENDER %in% c("_T")),] # both genders
+#fte <- fte[which(fte$MEASURE %in% c("FTE")),] # FTE measured
 
-write.csv(fte,file="OECD_PERS_FUNC.csv",row.names=FALSE, na="") # save in case
+#write.csv(fte,file="OECD_PERS_FUNC.csv",row.names=FALSE, na="") # save in case
+
+fte <- read.csv("OECD_PERS_FUNC.csv", header=TRUE)
 
 fte$lnrdworker <- log(as.numeric(fte$ObsValue)) # log value
 
@@ -54,21 +56,25 @@ saveWidget(partial_bundle(fig), "../plotly/oecd-rd-lnfte-jpn.html",selfcontained
 ##################################################################################
 # Get OECD data on R&D expenditures
 ##################################################################################
-filter_list <- list(c("USA","JPN","KOR","CHN","DEU","GBR")) # limit countries to download
-gerd <- get_dataset("GERD_TOE", filter = filter_list)
+#filter_list <- list(c("USA","JPN","KOR","CHN","DEU","GBR")) # limit countries to download
+#gerd <- get_dataset("GERD_TOE", filter = filter_list)
 
-gerd <- gerd[which(gerd$SECTPERF %in% c("_T")),]
-gerd <- gerd[which(gerd$TYPE_COST %in% c("_T")),]
-gerd <- gerd[which(gerd$MEASURE %in% c("DF6")),]
+#gerd <- gerd[which(gerd$SECTPERF %in% c("_T")),]
+#gerd <- gerd[which(gerd$TYPE_COST %in% c("_T")),]
+#gerd <- gerd[which(gerd$MEASURE %in% c("DF6")),]
 
-write.csv(fte,file="OECD_GERD_TOE.csv",row.names=FALSE, na="") # save in case
+#write.csv(fte,file="OECD_GERD_TOE.csv",row.names=FALSE, na="") # save in case
 
-gerd$lnrd <- round(log(as.numeric(gerd$ObsValue)),digits=2)
+gerd <- read.csv("OECD_GERD_TOE.csv", header=TRUE)
+gerd <- gerd[which(gerd$REF_AREA %in% c("USA","CHN","KOR","JPN","DEU","GBR")),]
+gerd <- gerd[which(gerd$PRICE_BASE %in% c("Q")),]
+gerd$lnrd <- round(log(as.numeric(gerd$OBS_VALUE)),digits=2)
+gerd <- gerd[order(gerd$REF_AREA,gerd$TIME_PERIOD),]
 
 ##################################################################################
 # Figures for R&D expenditures
 ##################################################################################
-fig <- plot_ly(gerd, x = ~Time, y = ~lnrd, linetype = ~COUNTRY, type = 'scatter', mode = 'lines+markers')
+fig <- plot_ly(gerd, x = ~TIME_PERIOD, y = ~lnrd, linetype = ~REF_AREA, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'R&D expenditure over time', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list(title = 'Log real R&D expenditures', type='log'),
@@ -77,7 +83,7 @@ saveWidget(partial_bundle(fig), "../plotly/oecd-rd-logrd.html",selfcontained = F
 
 #api_create(fig, filename = "oecd-rd-logrd")
 
-fig <- plot_ly(gerd, x = ~Time, y = ~ObsValue, linetype = ~COUNTRY, type = 'scatter', mode = 'lines+markers')
+fig <- plot_ly(gerd, x = ~TIME_PERIOD, y = ~OBS_VALUE, linetype = ~REF_AREA, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'R&D expenditure over time', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list(title = 'Real R&D expenditures'),
