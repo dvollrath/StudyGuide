@@ -198,4 +198,4 @@ For a different way of seeing what is going on, you can also try this [spreadshe
 
 Or similar to the Solow model, the following app allows you to adjust parameters and see the impact on the level of productivity, the growth rate of productivity, and how the dynamic system works. Rather than using the embedded app, <a href="basic-romer.html" target="_blank">this link</a> will take you directly to the app on its own page. 
 
-<iframe height="900" width="100%" frameborder="no" src="basic-romer.html"> </iframe>
+<iframe height="600" width="100%" frameborder="no" src="basic-romer.html"> </iframe>

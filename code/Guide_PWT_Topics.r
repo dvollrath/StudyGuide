@@ -34,6 +34,21 @@ fig <- layout(fig, title = list(text = 'Government and level of GDP per capita',
               yaxis = list (title = 'Log GDP per capita'))
 saveWidget(partial_bundle(fig), "../plotly/pwt-all-cshg-level.html",selfcontained = F, libdir = "lib")
 
+fig <- plot_ly(all, x = ~csh_x, y = ~lngdppc, color = ~country, type = 'scatter', mode='markers', colors = "Set1")
+fig <- layout(fig, title = list(text = 'Exports and level of GDP per capita', x=0),
+              xaxis = list(title = 'Exports as share of GDP'),
+              yaxis = list (title = 'Log GDP per capita'))
+saveWidget(partial_bundle(fig), "../plotly/pwt-all-export-level.html",selfcontained = F, libdir = "lib")
+#api_create(fig, filename = "pwt-all-export-level")
+
+all$csh_mabs <- abs(all$csh_m)
+fig <- plot_ly(all, x = ~csh_mabs, y = ~lngdppc, color = ~country, type = 'scatter', mode='markers', colors = "Set1")
+fig <- layout(fig, title = list(text = 'Imports and level of GDP per capita', x=0),
+              xaxis = list(title = 'Imports as share of GDP'),
+              yaxis = list (title = 'Log GDP per capita'))
+#api_create(fig, filename = "pwt-all-imports-level")
+saveWidget(partial_bundle(fig), "../plotly/pwt-all-imports-level.html",selfcontained = F, libdir = "lib")
+
 us <- p[which(p$isocode %in% c("USA")),]
 fig <- plot_ly(us, x = ~lagyear, y = ~g10.lngdppc, type = 'scatter', mode='lines+markers', colors = "Set1")
 fig <- layout(fig, title = list(text = '10-year growth rate', x=0),
