@@ -102,10 +102,3 @@ If you calculatie $(Y_{2019}/Y_{2018})$ using 2018 prices you get a ratio of 1.2
 Now, which of these is right? Did 2019 have lower or higher real consumption than 2018? Well, neither is right. We need to use both. Using the Fisher index from above, you get a final ratio of 1.04, which is the square root of 0.91 times 1.20. This says that 2019 had 4% higher real consumption than 2018. On net, the increase in real consumption from the 2018 perspective was larger than the decrease from the 2019 perspective. 
 
 If we were reporting this, we might assume that $Y_{2018} = 100$. So our reported real GDP series would be $Y_{2018} = 100$ and $Y_{2019} = 104$. 
-
-## Visualizing
-You should go to the spreadsheet and play around with the relative prices. You can adjust them to see under what situations real consumption goes up from both perspectives, or down from both perspectives. 
-
-To see a more interactive example of how all this works, you can alternatively play around with this web app. Either go to  <a href="https://dietzvollrath.shinyapps.io/GDPBasic/" target="_blank">this link</a> or use the app as embedded here. 
-
-<iframe height="800" width="100%" frameborder="no" src="https://dietzvollrath.shinyapps.io/GDPBasic/"> </iframe>
