@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Solow Model with Resources</title>
+    <link href="https://kineticgraphs.org/css/kg.0.2.7.css" rel="stylesheet" type="text/css">
+    <script src="https://kineticgraphs.org/js/kg.0.2.7.js"></script>
+</head>
+<body>
+
+<div class="kg-container">
+params:
+- {name: sK, value: .2, min: 0.01, max: 1, round: 0.01}
+- {name: gA, value: .02, min: -.01, max: .05, round: 0.01}
+- {name: gL, value: .01, min: -.05, max: .15, round: 0.01}
+- {name: delta, value: .05, min: 0, max: .15, round: 0.01}
+- {name: sX, value: .02, min: 0.001, max: .15, round: 0.001}
+- {name: Kinit, value: 2.1, min: 1, max: 10, round: .01}
+- {name: Ainit, value: 2, min: 1, max: 5, round: .5}
+- {name: Linit, value: 1, min: .5, max: 4, round: .5}
+- {name: Xinit, value: 1, min: .5, max: 10, round: .5}
+- {name: KYold, value: 2.5, min: 0, max: 4, round: 0.1}
+- {name: alpha, value: .3, min: .001, max: .5, round: 0.001}
+- {name: beta, value: .1, min: .001, max: .4, round: 0.001}
+calcs:
+  a: (params.alpha)/(1-params.alpha)
+  b: (params.beta)/(1-params.alpha)
+  Binit: (params.Ainit)^(1-calcs.b)*((params.sX*params.Xinit/params.Linit)^(calcs.b))
+  gBss: (1 - calcs.b)*(params.gA) - (calcs.b)*(params.sX + params.gL)
+  KYss: (params.sK)/(params.gL + calcs.gBss + params.delta)
+  KYinit: ((params.Kinit)/(calcs.Binit*params.Linit))^(1/(1-params.alpha))
+layout:
+  TwoVerticalGraphsPlusSidebar:
+    topGraph:
+      xAxis:
+        max: 15
+        ticks: 15
+      yAxis:
+        title: Growth rate
+        max: .05
+        min: -.02
+      objects:
+      - Line: 
+          yIntercept: .0129
+          slope: 0
+          color: blue 
+          lineStyle: dashed
+          label:
+            text: \text{Old BGP}
+            x: 15
+      - Line: 
+          yIntercept: (calcs.gBss)
+          slope: 0
+          color: green 
+          lineStyle: dashed
+          label:
+            text: \text{New BGP}
+            x: 15
+      - Curve:
+          univariateFunction:
+            fn: (calcs.gBss)+(params.alpha*params.sK)*(calcs.KYss*(1-(.9)^(x)) + calcs.KYinit*((.9)^(x)))^(-1) - (params.alpha)*(params.delta + calcs.gBss + params.gL)
+            ind: x
+          color: black
+          label:
+            text: \text{Actual}
+            x: 10
+    bottomGraph:
+      xAxis:
+        title: Time
+        max: 15
+        ticks: 15        
+      yAxis:
+        title: Log GDP per capita
+        max: 1.5
+        min: 0
+      objects:
+      - Curve: 
+          univariateFunction:
+            fn: (calcs.a)log(2.74) + log(1.035) + (.0129)*(x)
+            ind: x
+          color: blue
+          lineStyle: dashed
+          label:
+              text: \text{Old BGP}
+              x: 15
+      - Curve: 
+          univariateFunction:
+            fn: (calcs.a)log(calcs.KYss) + log(calcs.Binit) + (calcs.gBss)*(x)
+            ind: x
+          color: green
+          lineStyle: dashed
+          label:
+              text: \text{New BGP}
+              x: 15
+      - Curve:
+          univariateFunction:
+            fn: (calcs.a)*log(calcs.KYss*(1-(.9)^(x)) + calcs.KYinit*(.9)^(x)) + log(calcs.Binit) + (calcs.gBss)*(x)
+            ind: x
+          color: black
+          label:
+            text: \text{Actual}
+            x: 10
+    sidebar:
+      controls:
+      - title: Parameters
+        description: Adjust parameter(s) to see effect on growth rate and level of GDP per capita. You can adjust multiple parameters. Reload the page to reset.
+        sliders:
+        - {param: gA, label: g_A}
+        - {param: gL, label: g_L}
+        - {param: sK, label: s_K}
+        - {param: sX, label: s_X}
+        - {param: delta, label: \delta}
+        - {param: alpha, label: \alpha}
+        - {param: beta, label: \beta}
+      - title: Initial conditions
+        description: Adjust initial conditions to see effect on growth rate and level of GDP per capita. Note how these differ from adjusting parameters. Compare the effects of X versus K, in particular.
+        sliders:
+        - {param: Kinit, label: K_0}
+        - {param: Ainit, label: A_0}
+        - {param: Linit, label: L_0}
+        - {param: Xinit, label: X_0}
+      - title: Steady state
+        description: See how changing resource use or endowment changes the growth rate in steady state. It can also change the steady state K/Y ratio, and note in the graph what changes the level of the BGP (and what does not).
+        divs:
+        - html: "`$$\\\\text{S.S. } g_y = \\\\left(1-\\\\frac{\\\\beta}{1-\\\\alpha}\\\\right)g_A - \\\\frac{\\\\beta}{1-\\\\alpha}(s_X + g_L) $$`"
+        - html: "`$$\\\\Rightarrow ${calcs.gBss.toFixed(4)}$$`"
+        - html: "`$$(K/Y)_{ss} = \\\\frac{s_K}{g_B + g_L + \\\\delta} = ${calcs.KYss.toFixed(2)}$$`"
+</div>
+
+</body>
+</html>

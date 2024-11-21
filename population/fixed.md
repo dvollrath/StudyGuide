@@ -245,3 +245,8 @@ $$
 We already know that our model matches to this. Way back at the beginning we said that $g_E = -s_X$, or that energy use declines over time - by assumption. Even if we think that $s_X$ is close to zero, either because of new discoveries or because we're considering renewable energy as well, then this just means $g_E$ is close to zero as well. We know that our model can deliver positive growth in GDP, $g_Y >0$ so long as productivity growth, $g_A$ is big enough. So yes, this model is consistent with falling energy intensity over time. 
 
 What about the longer-run rise in relative price of energy, $p_E$? Here we don't have anything to say. The model doesn't have any explicit choice being made on how much energy to use, so we have no way of addressing the apparent price of that energy. So the model is incomplete, but to the extent that it works, it works.
+
+## Visualizing
+To see how all these pieces interact to shape the path of GDP per capita and growth when resources are used, there is yet another app. <a href="basic-resource.html" target="_blank">This link will take you directly to the app on its own page</a>, or the app is embedded here to play with.
+
+<iframe height="500" width="900" frameborder="no" src="basic-resource.html"> </iframe>
