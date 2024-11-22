@@ -110,20 +110,21 @@ How do we do this for lots and lots of products that make up the economy? The wh
 
 One additional note to make. In the above example with the Diet Coke we divided affordability growth $g_{PY} - g_P$ by this adjustment $1 + g_P$ to get the right answer. When the size of the $g_P$ are close to zero (1%, 2%) then this thing is very close to 1. What I'm going to show you here shows how to calculate real GDP growth over lots of goods using differentials, which are about very small changes to things. Hence it ignores those adjustment factors. That helps in understanding what is going on, without making a big change to the numerical answers. When someone like the Bureau of Economic Analysis does this they *do* include the adjustments, so the data you see is doing the right thing. We are doing a approximation so that we can see what's going on.
 
-Call nominal GDP $PY$, where $P$ is the "price" of GDP and $Y$ is a measure of real GDP. We'll be more specific about what I mean by real value, but think of $Y$ as a count of the actual things that you consume, as opposed to $PY$, which is how much you spent on them. We really only care about $Y$.
+We can be more specific about a few terms. "Spending" here refers to nominal GDP, $PY$, where $P$ is the "price" of a unit of GDP, and $Y$ is the measure of real GDP. That "price" is notional; there is no single price for GDP. But we could talk about a price index or something like that. Whenever we talk about spending or expenditure, it refers to the total nominal GDP. 
 
+Okay, all that spending is just the sum of the amounts spent on each individual product. Those products are indexed by $i$. So $i=1$ might be Diet Coke, $i=2$ might be apples, and so on. Each of those products has a price, $P_i$, and a quantity consumed $C_i$. I'm going to use the word "consumed" here, but these products are all the products we purchase, and that includes things that get classified as investment spending (e.g. delivery vans, computer equipment) and government spending (e.g. tanks, teacher salaries). All this equation says is that nominal GDP is the sum of spending on each individual product.
 
 $$
 PY = \sum_i P_i C_i
 $$
 
-Take the differential of this 
+We're going to do the same thing we did with the Diet Coke example. We're going to look at changes in nominal GDP and then back out changes in real GDP from that with information on prices. Here the only change is that we're going to do it via calculus. Take the differential 
 
 $$
 d PY = \sum_i P_i dC_i + \sum_i dP_i C_i.
 $$
 
-In principle we're thinking of this as the differential with respect to time, but it could be how PY changes in response to anything. All we're saying here is that the change in spending, $dPY$, is due to changes in quantities, $d C_i$, weighted by their price and changes in prices, $d P_i$, weighted by how much of each thing you buy. There isn't anything mysterious here. All we've done is collect all the changes in quantities together and all the changes in prices together.
+All we're saying here is that the change in spending, $dPY$, is due to changes in quantities, $d C_i$, weighted by their price and changes in prices, $d P_i$, weighted by how much of each thing you buy. There isn't anything mysterious here. All we've done is collect all the changes in quantities together and all the changes in prices together.
 
 Now, divide both sides by $PY$, total spending,
 
@@ -131,7 +132,7 @@ $$
 \frac{d PY}{PY} = \sum_i \frac{P_i}{PY} dC_i + \sum_i dP_i \frac{C_i}{PY}.
 $$
 
-On the left-hand side, this is now just the *percent* change in spending. On the right-hand side, note that I divided each of the elements of the sum by $PY$, which is fine. I wrote those fractions deliberately this way because we're going to make one more nudge and get this into a more useful form.
+On the left-hand side, this is now just growth rate of nominal GDP. On the right-hand side, note that I divided each of the elements of the sum by $PY$, which is fine. I wrote those fractions deliberately this way because we're going to make one more nudge and get this into a more useful form.
 
 We're going to multiply and divide within each summation like this:
 
@@ -139,9 +140,9 @@ $$
 \frac{d PY}{PY} = \sum_i \frac{P_i C_i}{PY} \frac{dC_i}{C_i} + \sum_i \frac{dP_i}{P_i} \frac{C_i P_i}{PY}
 $$
 
-and look at what we have inside each summation. The first summation has the *percent* change in quantity of a product, $dC_i/C_i$, weighted by the *expenditure share* of that product, $P_i C_i/PY$. The percent growth in quantity purchased matters for overall spending to the extent that you spend a lot of your income on that good, which kind of makes sense. If you only spend 1% of your money on Diet Coke, then even increasing your consumption by like 10% won't have a big impact on your *total* spending. 
+and look at what we have inside each summation. The first summation growth rate of the quantity of a product, $dC_i/C_i$, weighted by the *expenditure share* of that product, $P_i C_i/PY$. The growth rate in quantity purchased matters for overall spending to the extent that you spend a lot of your income on that good, which kind of makes sense. If you only spend 1% of your money on Diet Coke, then even increasing your consumption by like 10% won't have a big impact on your *total* spending. 
 
-The second summation is similar, but measures the *percent* change in price of each good, again weighted by the expenditure share. Like quantities, percent changes in price matter more for things that you spend a lot of money on (e.g. rent) than for things you spend little on (e.g. Diet Coke).
+The second summation is similar, but measures the growth rate of price of each good, again weighted by the expenditure share. Like quantities, percent changes in price matter more for things that you spend a lot of money on (e.g. rent) than for things you spend little on (e.g. Diet Coke).
 
 We're going to shift this around and create a measure of the growth of real GDP. Swap things around like this:
 
@@ -149,35 +150,45 @@ $$
 \sum_i \frac{P_i C_i}{PY} \frac{dC_i}{C_i} = \frac{d PY}{PY} - \sum_i \frac{dP_i}{P_i} \frac{C_i P_i}{PY}
 $$
 
-The thing on the left is the expenditure-share weighted sum of the percent growth in real quantities consumed. That thing on the left is the change in consumption *holding prices constant*, which is exactly what we want to measure. The expenditure shares tell us which products are important to us, and the $dC_i/C_i$ tells us how much our consumption of those grew. This is what we are after. 
+The thing on the left is the expenditure-share weighted sum of the growth rate in real quantities consumed. That thing on the left is the change in real consumption, which is exactly what we want to measure. The expenditure shares tell us which products are important to us, and the $dC_i/C_i$ tells us how much our consumption of those grew. The left-hand side is the growth rate of real GDP.
 
-What's on the right-hand side? A way of understanding where that growth comes from. To understand it better we're going to play with the algebra a little. First, note that it has to be the case that $\sum_i (C_i P_i)/PY = 1$, or the sum of the expenditure shares has to add up to one. We can't spend more than 100% of our spending.
+Let's clean this up by using the notation that the growth rate of nominal GDP is denoted by $g_{PY} = dPY/PY$, the growth rate of consumption of a good is $g_{Ci} = dC_i/C_i$, and the growth rate of a price of good $i$ is $g_{Pi} = dP_i/Pi$, so we have
+
+$$
+\sum_i \frac{P_i C_i}{PY} g_{Ci} = g_{PY} - \sum_i g_{Pi} \frac{C_i P_i}{PY}
+$$
+
+What's on the right-hand side? A way of understanding where that growth comes from. To understand it better we're going to play with the algebra a little. First, note that it has to be the case that $\sum_i (C_i P_i)/PY = 1$, or the sum of the expenditure shares has to add up to one. We can't spend more than 100% of nominal GDP, since nominal GDP is by definition the amount we spend.
 
 This means we can write
 
 $$
-\sum_i \frac{P_i C_i}{PY} \frac{dC_i}{C_i} = \sum_i \frac{d PY}{PY} \frac{C_i P_i}{PY} - \sum_i \frac{dP_i}{P_i} \frac{C_i P_i}{PY}
+\sum_i \frac{P_i C_i}{PY} g_{Ci} = \sum_i g_{PY} \frac{C_i P_i}{PY} - \sum_i g_{Pi} \frac{C_i P_i}{PY}
 $$
 
-which is just making the whole $dPY/PY$ thing more complicated. Because $d PY/PY$ is the same across products (overall spending growth is what it is) we can put it "inside" this summation. The value of doing this is that we can write
+Because $g_{PY}$ is a single number we can put it "inside" this summation. The value of doing this is that we can write
 
 $$
-\sum_i \frac{P_i C_i}{PY} \frac{dC_i}{C_i} = \sum_i \left(\frac{d PY}{PY} - \frac{dP_i}{P_i} \right)\frac{C_i P_i}{PY}
+\sum_i \frac{P_i C_i}{PY} g_{Ci} = \sum_i \left(g_{PY} - g_{Pi} \right)\frac{C_i P_i}{PY}
 $$
 
-which is possible because the two summations are over the same index, $i$, and because the weights are the same. What's that term inside the parenthese? For an individual good that is
+which is possible because the two summations are over the same index, $i$, and because the weights are the same. 
+
+What's that term inside the parentheses on the right? For an individual good it's $(g_{PY}-g_{Pi})$. This should look familiar, because it's the same kind of thing we calculated for Diet Coke - growth in nominal spending minus the growth rate of the price. This is the *affordability growth* for product $i$.
+
+Just like with the Diet Coke, this term is telling us whether we could increase out quantity consumed of product $i$ or not. It's kind of a weird term here, because it's telling you something like "If the *only* thing you consumed was product i, then this is how much more you could afford". 
+
+That doesn't mean you *do* buy more of that product. You might even buy less if it gets more affordable. But think of the affordability growth term $(g_{PY}-g_{Pi})$ as something like the hypothetical growth in consumption you could have for that product. 
+
+Real GDP growth is the sum of all those affordability growth terms, and each one matters based on how much you spend on that product to start with, the expenditure share $C_i P_i/PY$. Real GDP thus depends in part on how we decide to allocate our spending across products. 
+
+The last thing we're going to do is just change a little notation. Rather than write down $\sum_i \frac{P_i C_i}{PY} g_{Ci}$ every time we want to refer to the growth in real GDP, we're going to summarize that as $g_Y$, so we have
 
 $$
-\frac{d PY}{PY} - \frac{dP_i}{P_i}
+g_Y = \sum_i \frac{P_i C_i}{PY} g_{Ci} = \sum_i \left(g_{PY} - g_{Pi} \right)\frac{C_i P_i}{PY}.
 $$
 
-and it is the percent change in spending minus the percent change in the price of the product $i$. I'm going to call this the *affordability growth* of product $i$. If total spending goes up by 10%, but the price of product i only goes up by 2%, then product $i$ got more affordable. It's price did not keep up with the total amount you spent. If the only thing you spent money on was Diet Coke, then if your spending went up 10% but Diet Coke prices went up 2%, then you can afford 8% more Diet Coke. We're doing this same kind of calculation for each and every product in that summation. Whether the affordability growth of a product matters to us depends on the expenditure share. 
+Real GDP growth is the weighted sum of affordability growth over all the products we buy. We can have real GDP growth, $g_Y >0$, even though some or even most of the products in the economy are getting less affordable. Real GDP growth just means that *some* of the individual $g_{PY} - g_{Pi}$ terms have to be positive, and those with positive affordability growth need to have relatively big expenditure shares. 
 
-What this whole things is telling us is that real GDP growth represents products *getting more affordable* over time, on average. Because this is a summation over lots of products, it doesn't mean that *every* product is getting more affordable, or even that *most* products are getting more affordable. Growth in real GDP just means that on average, things we spend a lot of money on are tending to get at least a little more affordable over time. 
+*Why* do things get more affordable? The whole class is kind of about that question. What makes it possible that the price of something doesn't keep up with spending, implying that we are consuming or using more of a good or service? That's going to come from things like technological improvements, market or organizational changes (e.g. the entrance of a competitor), acquiring capital (e.g. building a new location), or adding more workers. 
 
-
-
-*Why* do things get more affordable? The whole class is kind of about that. 
-
-
-You're going to say "What about inflation?" and I'm going to answer you "Yeah, what about it?". The whole point of this way of looking at things is that inflation is already accounted for. Pure increases in prices *AND* expenditure just don't matter. If your income doubles and all the prices double, everything is the same for you. Usually when you say "What about inflation?" you mean the prices went up but your income did not. That is certainly possible, and here would be reflected in negative growth in real GDP. 
