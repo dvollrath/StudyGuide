@@ -113,11 +113,12 @@ So we can solve for the annualized growth rate using a formula like this if we k
 ## General formula
 Let's be a little more formal about all of this. Rather than specific years, let's say that we want to calculate the annualized growth rate of GDP from year $t$ to year $s$. The levels of GDP in those years are $Y_{t}$ and $Y_{s}$. The number of years between them are $s-t$. 
 
-The formula for the annualized growth rate from year $t$ to year $s$ is therefore
-
-$$
-g_{Y,t-s} = \left(\frac{Y_{s}}{Y_{t}}\right)^{1/(s-t)} - 1.
-$$
+{: .highlight } 
+> The formula for the annualized growth rate from year $t$ to year $s$ is therefore
+>
+>$$
+>g_{Y,t-s} = \left(\frac{Y_{s}}{Y_{t}}\right)^{1/(s-t)} - 1.
+>$$
 
 All we did above was use this equation with specific years $t=2018$ and $s=2024$. 
 

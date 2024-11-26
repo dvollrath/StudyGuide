@@ -57,6 +57,15 @@ you'll see that it is the equation for the slope of a line when the log of GDP i
 
 This is why so often we will draw graphs of the log of GDP (or GDP per capita, or human capital, or whatever) on the y-axis and time on the x-axis. The slope of the line we draw tells us the growth rate. And we can see instantly how the growth rate changed over time. For example, in the figure above, you can see immediately that growth from 2019 to 2020 was negative (the slope is negative) and that this growth rate was way below the annualized growth from 2018-2024. You can see that the growth rates from 2020 to 2024 were *above* the annualized growth rate, because the blue line in those years has a steeper slope than the orange line. 
 
+{: .highlight } 
+>If you graph the *log* of a variable Y (y-axis) against time (x-axis), the *slope* of the line you graph tells you the growth rate of Y. The *intercept* of the line you graph tells you about the initial value of Y(0). This is because if Y grows at rate $g_Y$, then the log of Y is determined by:
+>
+>$$
+>\ln Y(t) = \ln Y(0) + g_Y t.
+>$$
+>
+>and this is just the equation for a line with intercept $Y(0)$ and slope $g_y$.
+
 ## Theoretical lines and slopes
 This link from logs to lines is going to be used a lot when we set up models of growth, so that we can draw out what they imply. Now, rather than starting with data, we're going to start with a model. Let's say that our model of the economy is that GDP is determined by this equation
 

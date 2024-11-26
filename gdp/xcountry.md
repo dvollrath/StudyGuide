@@ -1,7 +1,7 @@
 ---
 title: Real GDP across countries
 parent: Measuring GDP
-nav_order: 4
+nav_order: 3
 ---
 
 # Real GDP across countries
@@ -13,7 +13,21 @@ nav_order: 4
 ![Meme](meme_xcountry.png)
 
 ## Who are you calling rich?
-The issues with comparing [real GDP over time](http://growthecon.com/StudyGuide/gdp/twogoods.html) for a given country come up again when trying to compare two countries with one another, even in the same year. Let's say that we're trying to compare the real consumption (or GDP) of Mexico and Brazil. And further, let's say that we only care about two consumption goods, $c_1$ and $c_2$. 
+The issues with comparing [real GDP over time](http://growthecon.com/StudyGuide/gdp/afford.html) for a given country come up again when trying to compare two countries with one another, even in the same year. 
+
+$$
+d PY = \sum_i P_i dC_i + \sum_i dP_i C_i.
+$$
+
+
+
+
+
+
+
+
+
+Let's say that we're trying to compare the real consumption (or GDP) of Mexico and Brazil. And further, let's say that we only care about two consumption goods, $c_1$ and $c_2$. 
 
 Let's start with an obvious example. In this figure, Brazil's consumption bundle is noted, and the dashed line indicates the relative price of goods 1 and 2 in Brazil, $-p_1/p_2$. Similar for Mexico, only the dark line indicates the relative price of the goods. 
 

@@ -2,7 +2,7 @@
 title: Real GDP over time
 parent: Measuring GDP
 has_children: true
-nav_order: 3
+nav_order: 2
 ---
 
 # Real GDP over time
@@ -14,49 +14,97 @@ nav_order: 3
 ![Meme](meme_infinite.png)
 
 ## Chained real GDP
-We want to look at economic growth over a range of years, not just two. We could imagine using a single base year, and comparing all other years to that one. But then we'd have ratios like $(Y_{1965}/Y_{2009})$, and we'd be measuring real GDP in 1965 using 2009 prices. The disconnect of those prices may be substantial, and we haven't even touched yet on the issues that would come up with new products arriving, or old products disappearing. 
+The basic way of thinking about real GDP growth was in the prior section, and we established an expression like this:
 
-Instead what happens is that we "chain" together estimates of real GDP ratios for adjacent years. For example, let's say we  calculate $(Y_{2008}/Y_{2009}) = 0.98$, $(Y_{2007}/Y_{2008}) = 0.97$, $(Y_{2006}/Y_{2007}) = 0.99$. These are all calculated using the Fisher method described in the prior sections.
+$$
+g_Y =  \sum_i \left(g_{PY} - g_{Pi} \right)\frac{P_i C_i}{PY}
+$$
 
-If we set real GDP in 2009 to 100, then we can get real GDP in 2008 by using the first ratio, meaning real GDP in 2008 is 98. Real GDP in 2007 would then be $98 \times 0.97 = 95.06$, and real GDP in 2006 would be $95.06 \times 0.99 = 94.11$. Our chained series for real GDP would be 94.11 in 2006, 95.06 in 2007, 98 in 2008, and 100 in 2009. 
+where the growth rate of real GDP was a weighted sum of the affordability growth of all the products in the economy. 
 
-Chained real GDP calculations are the closest thing we've got in the data to the theoretical idea of growth we're working with. 
+That works well as a measure of growth over two relatively close time periods, like 2023 and 2024. But it gets harder to justify if you wanted to do something like compute $g_Y$ between 1964 and 2024, a gap of 60 years. There are a few reasons it gets harder to justify for long periods. The first is that in deriving that expression we used calculus, which is an approximation good for small changes in time. Remeber the Diet Coke example, which had this extra $1+g_P$ term floating around? We can't ignore that kind of thing over the course of 60 years. 
+
+A second issue is that if we do want to use the above expression for growth over long periods of time, we have the problem with the expenditure shares, $P_i C_i/PY$. For close comparisons those are relatively similar, or at least aren't changing by enough to make us worry too much. But over 60 years those will change a lot. The expenditure share of food in general was like 30% in 1964, and is less than 10% now. Is it right that we use the initial 30% number? Or should we use the 10%?
+
+A way to leverage the above equation but build indices of real GDP over time is to "chain" them together. The idea is pretty simple, but tedious. Calculate $g^{23,24}_Y$ as the growth in real GDP from 2023 to 2024 using the above equation. That uses expenditure shares from 2023, and price changes from 2023 to 2024. Then calculate $g^{22,23}_Y$ as growth in real GDP from 2022 to 2023, using 2022 expenditure shares and price growth from 2022 to 2023. Then calculate $g^{21,22}_Y$ for 2021 to 2022, and so on. 
+
+We have separate growth rates of real GDP for each adjacent year, and those are more realistic in that they allow for expenditure shares to adapt over time. To get the growth rate of a longer period we "chain" those together. 
+
+First, note that we can find the real GDP in a year relative to the prior one like this:
+
+$$
+\frac{Y_{2024}}{Y_{2023}} = 1 + g^{2023,2024}_{Y}
+$$
+
+which just follows from the definition of $g^{2023,2024}_{Y}$. That means we can get the ratio of real GDP in 2024 to 2022 like this:
+
+$$
+\frac{Y_{2024}}{Y_{2022}} = \frac{Y_{2024}}{Y_{2023}}\frac{Y_{2023}}{Y_{2022}} = (1 + g^{2023,2024}_{Y})\times(1 + g^{2022,2023}_{Y})
+$$
+
+You could keep going like this and extend backwards or forwards however you like. So the size of real GDP in 2024 relative to real GDP in 1964 is
+
+$$
+\frac{Y_{2024}}{Y_{1964}} = (1 + g^{2023,2024}_{Y})\times(1 + g^{2022,2023}_{Y})\times...(1 + g^{1965,1966}_{Y})\times(1 + g^{1964,1965}_{Y}).
+$$
+
+It's a long calculation, tedious but do-able. 
+
+If you want the *average annual growth rate* from 1964 to 2024, then what you are doing is what we looked at in the preliminaries. 
+
+$$
+g_Y^{1964,2024} = \left(\frac{Y_{2024}}{Y_{1964}}\right)^{1/60} - 1.
+$$
+
+Why that "60" in exponent. Because there are 60 years in between the two endpoints. Because of how the ratio $Y_{2024}/Y_{1964}$ is constructed, you can see that the average annual growth rate from 1964 to 2024 is a geometric average of the 60 different individual annual growth rates. 
+
+## Indices
+The BEA and other agencies like to report real GDP as an index, with a base year (maybe 2015) and numbers like 100, 102.5, etc.. This is straightforward. 
+
+Pick a base year, 2015. Whatever real GDP is in 2015, we're going to call that 100. 100 what? 100 whatevers, it doesn't matter. It's solely to serve as a reference point. 
+
+What's real GDP in 2016? That's
+
+$$
+Y_{2016} = (1+g_Y^{2015,2016}) \times 100
+$$
+
+If the growth rate was 2%, then real GDP in 2016 is just 102. 102 whats? 102 whatevers. Again, it isn't something that has obvious units. The number 102 is there really to just make it easy for you to compare to the base year. Knowing it is 102 means you know pretty easily that real GDP in 2016 is 2% higher than in 2015. You can run this forward to 2017 by using the same chaining idea as above. If $g_Y^{2016,2017}$ was 3%, then $Y_{2017} = (1.02)(1.03)100 = 105.06$. 
+
+How about prior years? Just run this backwards
+
+$$
+100 = (1+g_Y^{2014,2015}) Y_{2014}
+$$
+
+which is solved to 
+
+$$
+Y_{2014}= \frac{100}{1+g_Y^{2014,2015}}.
+$$
+
+If growth from 2014 to 2015 was 4%, then the level of real GDP in 2014 was $Y_{2014} = 100/(1.04) = 96.15$. 
 
 ## New products and lost products
-Chaining gives us a way of piecing together a real GDP series that avoids comparing 1965 to 2009. Why does that matter? Mainly because lots of products in 2009 didn't exist in 1965, and lots of products that did exist in 1965 are no longer purchased today. That is relevant to our calculation of real GDP. 
+Chaining gives us a way of piecing together a real GDP series that avoids comparing 1964 to 2024 directly. Why does that matter? Mainly because lots of products in 2024 didn't exist in 1964, and lots of products that did exist in 1964 are no longer purchased today. That is relevant to our calculation of real GDP, and it is another reason we chain things.
 
-Go back to the simple two-good situation. And let's say we want to compare 1965 to 2009, and the two goods we want to use are an iPhone (good 1) and an [RCA Spectra 70](https://archive.computerhistory.org/resources/text/RCA/RCA.SPECTRA70.1965.102646099.pdf) (good 2). The RCA was a mainframe that could be configured with either 4,096 or 8,192 bytes of RAM. That's about 0.0.000007629394 of a GB, by the way.
-
-Anyway, for those two products, let's say that we know the following. 
-
-| Year | p(iPhone) | c(iPhone) | p(RCA) | c(RCA) |
-|:-----|:-----|:-----|:-----|:-----|
-| 1965 | ???  | 0 | $10,000  | 100 |
-| 2009 | $500  | 100  | ???  | 0 |
-
-The quantities of both are made up, and it will turn out not to matter for our purposes that I assumed 100 of each were sold in those years.
-
-Our big problem is with those question marks. What do you use for the price of an iPhone in 1965 or the price of an RCA Spectra 70 in 2009? The choice you make will matter for your calculations of real GDP.
-
-Let's start by saying that 1965 is our base year. 
+Go back to the calculation of a growth rate
 
 $$
-\left(\frac{Y_{2009}}{Y_{1965}}\right)_{1965} = \frac{??? \times 100 + 10000 \times 0}{??? \times 0 + 10000 \times 100}.
+g_Y =  \sum_i \left(g_{PY} - g_{Pi} \right)\frac{P_i C_i}{PY}.
 $$
 
-What do you want to use for the price of an iPhone in 1965? If you plug in ??? = 0, then you get the ratio of zero, meaning 2009 has literally zero real consumption relative to 1965. That seems like it doesn't make sense. 
+We just went through chaining, but let's ignore that for the moment. Let's use this again to think about how new products over time disrupt the calculation. 
 
-If you go the other way, and assume that the iPhone had infinite value in 1965 (because it would have taken infinite dollars to assemble one in that year), then you get a ratio of infinity, meaning *1965* had zero value relative to 2009. And that doesn't make sense either.
+Let's say we want to compare 1964 to 2024, and the two goods we want to use are an iPhone and an [RCA Spectra 70](https://archive.computerhistory.org/resources/text/RCA/RCA.SPECTRA70.1965.102646099.pdf). The RCA was a mainframe that could be configured with either 4,096 or 8,192 bytes of RAM. That's about 0.0.000007629394 of a GB, by the way.
 
-Okay, maybe that was just because we were using 1965 as the year for prices. What if we use 2009? 
+We can measure $g_{PY}$ between 1964 and 2024 without any trouble. What about the individual product level information? Start with the iPhone. What's the $g_{Pi}$ for the iPhone from 1964 to 2024? It didn't exist in 1964, so ..... how do we do this calculation? You *could* assume that the price was zero in 1964, and maybe 1000 dollars in 2024, but that gives you an estimated $g_{Pi}$ of ... infinity. Which means the affordability growth for an iPhone was ... negative infinity? Which then means that no matter what else happens $g_Y$ is negative infinity? Do we think the economy got infinitely smaller in 60 years?
 
-$$
-\left(\frac{Y_{2009}}{Y_{1965}}\right)_{2009} = \frac{500 \times 100 + ??? \times 0}{500 \times 0 + ??? \times 100}.
-$$
+Okay, that was dumb, you think. Let's instead assume that the price in 1964 of an iPhone was itself infinity - meaning it took infinite resources to get one. Then the $g_{Pi}$ for an iPhone is going to be zero. Okay, that seems better. The affordability of the iPhone is now $g_{PY} - 0 = g_{PY}$, which is at least a real number. 
 
-What should we use for the price of the RCA? If you choose ??? = 0 for the RCA, the ratio works out to infinity again, because the denominator works out to zero. If you choose ??? equal to infinity (it would take infinite dollars today to buy/find an RCA Spectra 70), then you get a ratio of 0.
+But what was the expenditure share of the iPhone we should use? It's 0 in 1964, so in principle that means it doesn't matter at all to the calculation? In some sense no matter what we do the iPhone just doesn't count at all? That seems totally wrong, because it should account for something. 
 
-In this case, you might want to argue that zero and infinity are not useful extremes to think about. It might be possible to hire *someone* out there to rebuild an RCA Spectra 70 for you at some price between 0 and infinity. Okay, but that would be very expensive relative to an iPhone, meaning the infinity approximation would start to kick in, *and* how representative of the actual consumption behavior in the economy is your purchase of a single retro-mainframe? 
+We get a similar issue for the RCA mainframe. They don't sell them anymore, so what's $g_{Pi}$? If you think the price today is zero, then the $g_{Pi} = -1$ or -100%, and affordability growth is like $g_{PY} + 1$, a big positive number. Okay, that kind of makes sense. But it still doesn't help because we have to do the whole iPhone price growth thing. And is it true that RCA mainframes are free? Not really, you can't actually buy one. They disappeared and in that sense their price is now ... infinity? So they have negative infinity affordability growth? 
 
 The general point is that once we have products being introduced or dropped from use over time, we run into this recurring issue of valuing real consumption/GDP from one year to the next. Even chaining doesn't help, because at some point we face this same dilemma. In 2004 no iPhone existed, and in 2005 an iPhone did exit. So what was the price in 2004? 
 

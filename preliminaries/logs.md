@@ -83,6 +83,13 @@ $$
 
 or very close to 1.45%. If you used more decimal places in the natural logs of 100 and 109, you'd get an even closer approximation. 
 
+{: .highlight } 
+>We can use logs to calculate annualized growth rates using the formula
+>
+>$$
+>g_{Y,t-s} \approx \frac{1}{s-t} \left(\ln Y_{s} - \ln Y_t \right).
+>$$
+
 
 ## Logs and exponential growth
 The above sections used logs as a way of calculating something a growth rate (which is like a percent change) from given data on the level of some variable (like GDP). We can also go the other way, and if you are given a growth rate you can work out the level of some variable. 
@@ -140,6 +147,13 @@ $$
 which is identical to what you get with the discrete time version. Once we know the growth rate and initial level, we can find the *log* value of a variable at any point in the future. 
 
 Our assumption of constant growth in population thus gives us a way of pinning down the size of population in any period of time $t$ we want to think about. We'll use equations like these in our models to describe how certain variables act over time.
+
+{: .highlight } 
+>If we know the growth rate of a variable X, $g_X$, we can calculate the log of that variable at time t using:
+>
+>$$
+>\ln X(t) = \ln X(0) + g_X t
+>$$
 
 ## Logs and level differences
 A last way to use logs is related to using logs to find percentage growth. Here instead we're interested in how logs related to ratios of variables, like the ratio of GDP per capita in the US to that in China. Let's say that GDP per capita in the US is 60, but in China is only 15. Then the ratio is 60/15 = 4. Or US GDP per capita is 4 times higher than in China.
