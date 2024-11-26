@@ -1,7 +1,7 @@
 ---
 title: Many goods
 grand_parent: Measuring GDP
-parent: Two goods and two time periods
+parent: Real GDP growth
 nav_order: 2
 ---
 

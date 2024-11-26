@@ -1,7 +1,8 @@
 ---
 title: Two goods and two time periods
-parent: Measuring GDP
-has_children: true
+parent: Real GDP growth
+grand_parent: Measuring GDP
+has_children: false
 nav_order: 1
 ---
 
@@ -14,7 +15,7 @@ nav_order: 1
 ![Meme](meme_prices.png)
 
 ## Visual comparison
-You can get all the important intuition for how we measure GDP by thinking just about two goods, and looking at two time periods.
+The top section on real GDP and affordability growth is a good way to understand what real GDP is measuring. If you recall that section was using an approximation for real GDP growth based on expenditure shares and affordability growth, but this was a little off (remember the Diet Coke example). This section outlines the precise way you'd calculate real GDP in a setting with multiple goods.
 
 In our little two-good world, the real amount of $c_1$ and $c_2$ produced and consumed is a result of an interaction of our preferences for the two goods and the production possibilities frontier that tells us the physical trade-off in producing good 1 in terms of good 2. But we cannot observe the utility function or the PPF, we only observe the actual market outcomes. That is, we see the nominal price that each sells for $p_1$ and $p_2$, and we know the quantity produced, $c_1$ and $c_2$.
 
