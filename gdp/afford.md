@@ -2,7 +2,7 @@
 title: Real GDP growth
 parent: Measuring GDP
 has_children: true
-nav_order: 7
+nav_order: 1
 ---
 
 # Measuring growth by affordability
@@ -13,13 +13,21 @@ nav_order: 7
 
 
 ## Diet Cokes
-What we want to do is measure the growth in *real* consumption over time. That is the increase in actual goods and services that we get to use or consume or have on hand in our lives. Real GDP is a way to try and summarize the amount of real consumption of those goods and services, and growth in real GDP - economic growth - is supposed to represent an increase in those actual goods and services. In that sense real GDP growth is about some kind of increase in true material living standards. 
+What we want to do is measure the growth in *real* consumption over time. That is the increase in actual goods and services that we get to use or consume or have on hand in our lives. 
+
+{: .core }
+> Real GDP is a way to try and summarize the amount of real consumption of those goods and services, and growth in real GDP - economic growth - represents an increase in those actual goods and services. Real GDP growth is an increase in material living standards. 
 
 But there are lots of goods and services, so how do we measure that real GDP, and how do we assess whether it in fact grew or not? Let's start by thinking about a very simple world where the only good we consume is Diet Coke. 
 
 Real GDP in this case is literally the number of Diet Cokes you consume in a given year (or month or week). Growth in real GDP is just the growth in the number of Diet Cokes. The growth *rate* is just the percent change in number of Diet Cokes. If you consumed 1,000 Diet Cokes in 2023, and 1,100 Diet Cokes in 2024, then real GDP grew by 100 Diet Cokes and the percent growth was 10%. 
 
-Note that we never, ever, have to use the term "dollars" in this simple world. Real GDP is not about dolalrs. It is about real units of goods and services. Since we're in simple Diet Coke world, the unit of real GDP is just "Diet Cokes", and is simple to measure and evaluate. 
+Note that we never, ever, have to use the term "dollars" in this simple world. 
+
+{: .core }
+> Real GDP is not measured in  dollars. It is measured in real quantities of goods and services.
+
+Since we're in simple Diet Coke world, the unit of real GDP is just "Diet Cokes", and is simple to measure and evaluate. 
 
 But the world does operate using dollars (or some other currency) and while in Diet Coke world we don't really need to care about that it will be helpful to see how we can use observed dollar values to work out the changes to real GDP. 
 
@@ -101,9 +109,17 @@ This says that real consumption of Diet Coke grew by about 12.1% from 2023 to 20
 
 Calculating real GDP for the whole economy is going to work a lot like this, just for a range of products that we'll have to add up somehow. We can get a lot of intuition for growth from this example.
 
-The numerator in this calculation is $g_{PY} - g_P$, the growth rate of spending minus the growth rate of the price. We're going to call that *affordability growth*, as it tells us something about how many more Diet Cokes we could afford given the growth in our spending. If $g_{PY} > g_P$, then it must be the case that $g_Y>0$, meaning that if the price of something grows more slowly than spending, we must be getting more of that thing. You can see that if prices grow faster than spending, then $g_Y<0$ and real consumption falls. 
+The numerator in this calculation is $g_{PY} - g_P$, the growth rate of spending minus the growth rate of the price. We're going to call that *affordability growth*, as it tells us something about how many more Diet Cokes we could afford given the growth in our spending. 
 
-This is the essence of economic growth. It's things getting more affordable, and our nominal spending growing faster than the price of the things we want to buy. Note that all we need for real GDP growth is that $g_{PY} > g_P$. It doesn't matter how big in absolute terms those things are. We could have 50% growth in spending and 49% growth in prices (massive inflation), and that still leaves us with *positive* growth in real GDP. If spending *falls* but prices fall *faster*, so like $g_{PY} = -.1$ but $g_P = -.2$, then it is still the case that $g_{PY} - g_P = -.1 - (-.2) = .1$ is positive and there was real GDP growth. Real GDP growth is a race between spending and prices. A very common way to see growth is when $g_{PY} \approx 0$ but $g_P <0$. That is, your nominal income stays constant but the price of something gets cheaper. 
+{: .assumption }
+> *Affordability growth* is the growth in nominal spending minus the growth in price, $g_{PY} - g_P$
+
+If $g_{PY} > g_P$, then it must be the case that $g_Y>0$, meaning that if the price of something grows more slowly than spending, we must be getting more of that thing. You can see that if prices grow faster than spending, then $g_Y<0$ and real consumption falls. 
+
+This is the essence of economic growth. It's things getting more affordable, and our nominal spending growing faster than the price of the things we want to buy. Note that all we need for real GDP growth is that $g_{PY} > g_P$. It doesn't matter how big in absolute terms those things are. We could have 50% growth in spending and 49% growth in prices (massive inflation), and that still leaves us with *positive* growth in real GDP. If spending *falls* but prices fall *faster*, so like $g_{PY} = -.1$ but $g_P = -.2$, then it is still the case that $g_{PY} - g_P = -.1 - (-.2) = .1$ is positive and there was real GDP growth. Real GDP growth is a race between spending and prices. 
+
+{: .core }
+> We can *infer* growth in real GDP from information on nominal spending (in dollars) and prices (in dollars). Real GDP growth is implied when affordability growth is positive, or nominal spending grows faster than the nominal price. 
 
 ## The whole mathy thing
 How do we do this for lots and lots of products that make up the economy? The whole intuition is going to be similar, but we'll need to add up affordability growth across products in a specific way we will get to. The intuition is straightforward; there will be more weight on things that we *spend* more on. If something is a big part of your budget, then whether it gets more or less affordable will count for more in the calculation of real GDP growth. 
@@ -182,13 +198,25 @@ That doesn't mean you *do* buy more of that product. You might even buy less if 
 
 Real GDP growth is the sum of all those affordability growth terms, and each one matters based on how much you spend on that product to start with, the expenditure share $C_i P_i/PY$. Real GDP thus depends in part on how we decide to allocate our spending across products. 
 
-The last thing we're going to do is just change a little notation. Rather than write down $\sum_i \frac{P_i C_i}{PY} g_{Ci}$ every time we want to refer to the growth in real GDP, we're going to summarize that as $g_Y$, so we have
+The last thing we're going to do is just change a little notation. Rather than write down $\sum_i \frac{P_i C_i}{PY} g_{Ci}$ every time we want to refer to the growth in real GDP, we're going to summarize that as $g_Y$.
 
-$$
-g_Y = \sum_i \frac{P_i C_i}{PY} g_{Ci} = \sum_i \left(g_{PY} - g_{Pi} \right)\frac{C_i P_i}{PY}.
-$$
+{: .assumption }
+> The growth rate of real GDP, $g_Y$, is defined as the expenditure-share weighted growth rate of consumption of each individual product:
+>
+>$$
+>g_Y = \sum_i \frac{P_i C_i}{PY} g_{Ci}
+>$$
 
-Real GDP growth is the weighted sum of affordability growth over all the products we buy. We can have real GDP growth, $g_Y >0$, even though some or even most of the products in the economy are getting less affordable. Real GDP growth just means that *some* of the individual $g_{PY} - g_{Pi}$ terms have to be positive, and those with positive affordability growth need to have relatively big expenditure shares. 
+This means we can calculate real GDP growth as
+
+{: .important }
+> The growth rate of real GDP is the expenditure-share weighted sum of affordability growth for all the products:
+>
+>$$
+>g_Y = \sum_i \left(g_{PY} - g_{Pi} \right)\frac{C_i P_i}{PY}
+>$$
+
+We can have real GDP growth, $g_Y >0$, even though some or even most of the products in the economy are getting less affordable. Real GDP growth just means that *some* of the individual $g_{PY} - g_{Pi}$ terms have to be positive, and those with positive affordability growth need to have relatively big expenditure shares. 
 
 *Why* do things get more affordable? The whole class is kind of about that question. What makes it possible that the price of something doesn't keep up with spending, implying that we are consuming or using more of a good or service? That's going to come from things like technological improvements, market or organizational changes (e.g. the entrance of a competitor), acquiring capital (e.g. building a new location), or adding more workers. 
 
