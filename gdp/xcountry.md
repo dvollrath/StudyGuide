@@ -85,7 +85,7 @@ In practice the market exchange rates tend to make poor countries look even poor
 
 This is a little easier to see in practice. The table below gives you some data on a handful of countries from 2017. The first column is the PPP conversion rate, indicating the price of a common basket of goods in local currency relative to that price in US dollars. It takes 4.2 yuan in China to buy the same amount of goods as 1 dollar does in the US, for example. However, the market exchange rate for China is 6.8 yuan to the dollar, meaning the yuan is *less* valuable on the foreign exchange market than it is in China itself. If you look down the list you'll see that this is the case for each country on this list, except for the US. In the US the PPP and exchange rate are exactly 1, because the US is the baseline country. 
 
-<iframe width="900" height="600" frameborder="0" src="../plotly/pwt-ppp-acct.html"></iframe>
+<iframe width="900" height="400" frameborder="0" src="../plotly/pwt-ppp-acct.html"></iframe>
 
 This matters for how we value GDP. The fourth column shows you GDP (per capita) using PPP rates, or the equation I gave you above $Y_X = PY_X/PPP_X$. These numbers are in dollars, so you con compare them to the US. Real GDP per capita in China, for example, is 13854/60117 = 0.23, or about 23% of the US standard of living. But notice that if you value China's GDP per capita using exchange rates, you only get a number of 8663, which is only 14% of the US value. Market exchange rates make China look relatively poor compared to the US. 
 

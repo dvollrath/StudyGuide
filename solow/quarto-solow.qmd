@@ -18,6 +18,8 @@ You can use the code "as-is". If you want to understand what's going on in the a
 
 ```{r}
 suppressMessages(library(plotly))
+rm(s)
+rm(b)
 
 f.solow <- function(alpha = .3, si=.2, delta=.05, ga=.02, gl=.01, k0=1, a0=1, l0=1, t=1) {
   kal_init <- k0/(a0*l0) # initial K/AL ratio
@@ -120,7 +122,9 @@ From that model the value KAL_ss contains the SS K/Al ratio. With A = 1 and L =1
 
 ```{r}
 #| code-fold: false
+
 s= f.solow(si = .4, t = years, k0 = b$KAL_ss) # solve using the higher capital accum rate
+o= f.solow(t=years, k0 = b$KAL_ss)
 
 ```
 
@@ -130,7 +134,22 @@ Now let's go back and plot the path of GDP per capita. This figure includes a pl
 #| code-fold: false
 fig1 <- plot_ly(s, x = ~time, y = ~lny, type = 'scatter', mode = 'lines', name='Log GDP pc')
 fig1 <- add_trace(fig1, x = ~time, y = ~lny_bgp, type = 'scatter', mode = 'lines', name='BGP')
-fig1 <- add_trace(fig1, data = b, x=~time, y = ~lny_bgp, type = 'scatter', mode = 'lines', name='Old BGP' )
+fig1 <- add_trace(fig1, x=~time, y = ~lny_bgp, type = 'scatter', mode = 'lines', name='Old BGP' )
 
 fig1
 ```
+
+We can do something similar for the plot of growth rates over time.
+
+```{r}
+#| fig-cap: "Growth rate over time"
+#| warning: false
+
+fig2 <- plot_ly(s, x = ~time, y = ~gy, type = 'scatter', mode = 'lines', name='Growth rate')
+fig2 <- add_trace(fig2, data = o, x = ~time, y = ~gy, type = 'scatter', mode = 'lines', name='Baseline')
+fig2 <- layout(fig2, yaxis = list(title="Growth rate",range=c(0,.1)))
+
+fig2
+```
+
+
