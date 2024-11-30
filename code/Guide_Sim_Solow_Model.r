@@ -39,6 +39,8 @@ s = f.solow(k0 = krange)
 
 s= f.solow(t = seq(from = 1,to = 50, by = 1))
 
+
+
 # Plot figure of scenarios and their BGP's
 fig1 <- plot_ly(s, x = ~time, y = ~lny, type = 'scatter', mode = 'lines', name='Log GDP pc')
 fig1 <- add_trace(fig1, x = ~time, y = ~lny_bgp, type = 'scatter', mode = 'lines', name='BGP')

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.6.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -63,17 +63,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="quarto-solow_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="quarto-solow_files/libs/quarto-html/anchor.min.js"></script>
 <link href="quarto-solow_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="quarto-solow_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="quarto-solow_files/libs/quarto-html/quarto-syntax-highlighting-01c78b5cd655e4cd89133cf59d535862.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="quarto-solow_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="quarto-solow_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="quarto-solow_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="quarto-solow_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-<script src="quarto-solow_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="quarto-solow_files/libs/plotly-binding-4.10.4/plotly.js"></script>
+<link href="quarto-solow_files/libs/bootstrap/bootstrap-e19dc0c07aeef78048e587c3f1edba7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="quarto-solow_files/libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="quarto-solow_files/libs/plotly-binding-4.10.1/plotly.js"></script>
 <script src="quarto-solow_files/libs/typedarray-0.1/typedarray.min.js"></script>
 <script src="quarto-solow_files/libs/jquery-3.5.1/jquery.min.js"></script>
-<link href="quarto-solow_files/libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
-<script src="quarto-solow_files/libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="quarto-solow_files/libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="quarto-solow_files/libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 <link href="quarto-solow_files/libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
 <script src="quarto-solow_files/libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
@@ -101,12 +100,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <section id="visualize-changes-to-solow-model" class="level2">
 <h2 class="anchored" data-anchor-id="visualize-changes-to-solow-model">Visualize changes to Solow model</h2>
+<p>This page gives an example of code you can use to numerically solve the Solow model under various conditions and use that to plot figures.</p>
+<p>This first block of code is a function that solves the Solow model. The function takes parameters like the capital accumulation rate, sI, or the population growth rate, gL. It also takes initial conditions for capital, labor, and productivity. The last, and maybe most important, parameter is the time periods to solve for.</p>
+<p>You can use the code “as-is”. If you want to understand what’s going on in the actual calculation, look at the Study Guide for the “An exact solution to the Solow model”. This key code is the line starting “ky_time &lt;-”. Solving the Solow is basically about solving for the exact K/Y ratio at each point in time given the parameters.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(plotly))</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -138,73 +142,105 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  results <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"time"</span> <span class="ot">=</span> t, <span class="st">"KAL"</span> <span class="ot">=</span> kal_time, <span class="st">"KY"</span> <span class="ot">=</span> ky_time, <span class="st">"lny"</span> <span class="ot">=</span> lny_time, </span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"lny_bgp"</span> <span class="ot">=</span> lny_bgp, <span class="st">"gK"</span> <span class="ot">=</span> gK_time, <span class="st">"gy"</span> <span class="ot">=</span> gy_time, <span class="st">"KY_ss"</span> <span class="ot">=</span> ky_ss,</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"KAL_ss"</span> <span class="ot">=</span> kal_ss, <span class="st">"KY_init"</span> <span class="ot">=</span> ky_init, <span class="st">"KAL_init"</span> <span class="ot">=</span> kal_init, </span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"gK_init"</span> <span class="ot">=</span> gK_init, <span class="st">"gy_init"</span> <span class="ot">=</span> gy_init)</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  solved <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(results) <span class="co"># convert to data frame to pass back</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(solved) <span class="co"># return all results</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"gK_init"</span> <span class="ot">=</span> gK_init, <span class="st">"gy_init"</span> <span class="ot">=</span> gy_init,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"alpha"</span> <span class="ot">=</span> alpha, <span class="st">"si"</span> <span class="ot">=</span> si, <span class="st">"delta"</span> <span class="ot">=</span> delta, <span class="st">"gA"</span> <span class="ot">=</span> ga, <span class="st">"gL"</span> <span class="ot">=</span> gl)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  solved <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(results) <span class="co"># convert to data frame to pass back</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(solved) <span class="co"># return all results</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Let’s use this function to map out some scenarios. This starts by telling R that we want to plot the function from year 1 to year 30. Then it calls the Solow function to calculate all the outcomes over those years.</p>
+<p>Let’s use this function to map out some scenarios. This starts by telling R that we want to plot the function from year 1 to year 60. Then it calls the Solow function to calculate all the outcomes over those years. An important point here is that you don’t have to specify everything for the function. You can just specify the thing you think is interesting, letting the function set the other parameters.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>years <span class="ot">=</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>,<span class="at">to =</span> <span class="dv">30</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>years <span class="ot">=</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>,<span class="at">to =</span> <span class="dv">60</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>s<span class="ot">=</span> <span class="fu">f.solow</span>(<span class="at">t =</span> years)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Given that solution we can plot figures of what is going on</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot figure of scenarios and their BGP's</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(s, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>lny, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'Log GDP pc'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">add_trace</span>(fig1, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>lny_bgp, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'BGP'</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>fig2 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(s, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>gy, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'Growth rate'</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(s, <span class="at">x =</span> <span class="sc">~</span>KAL, <span class="at">y =</span> <span class="sc">~</span>gK, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines+markers'</span>, <span class="at">name=</span><span class="st">'Capital growth rate'</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> <span class="fu">add_trace</span>(fig3, <span class="at">x =</span> <span class="sc">~</span>KAL, <span class="at">y =</span> .<span class="dv">03</span>, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'gA + gL'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>fig1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div id="fig-level" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-level-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a02c105891c3380e8286" style="width:100%;height:325px;"></div>
+<script type="application/json" data-for="htmlwidget-a02c105891c3380e8286">{"x":{"visdat":{"bb644f24e7cf":["function () ","plotlyVisDat"]},"cur_data":"bb644f24e7cf","attrs":{"bb644f24e7cf":{"x":{},"y":{},"mode":"lines","name":"Log GDP pc","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"bb644f24e7cf.1":{"x":{},"y":{},"mode":"lines","name":"BGP","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"time"},"yaxis":{"domain":[0,1],"automargin":true,"title":"lny"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60],"y":[0.02,0.073653927648741541,0.12321440734818224,0.16940595874525508,0.2127803637032728,0.2537675167438368,0.2927088371713924,0.32987996086928778,0.36550659168467836,0.3997758468483521,0.4328445512271224,0.46484541509881488,0.49589171225332923,0.52608087518966529,0.5554972950133551,0.58421452828958964,0.61229705553092484,0.63980169642397466,0.66677875923234975,0.69327298216837985,0.71932431037819389,0.74496854186153438,0.77023786802395744,0.7951613288657573,0.81976519851597696,0.84407331354688564,0.8681073539881472,0.89188708500923775,0.91543056571441628,0.93875433029462552,0.96187354582949169,0.98480215027355966,1.0075529735514457,1.0301378441943583,1.052567683550651,1.0748525892766572,1.0970019095462085,1.1190243091963832,1.1409278288441236,1.1627199378561768,1.1844075819277275,1.2059972259184786,1.2274948925052158,1.2489061971340787,1.2702363796914868,1.2914903332580072,1.3126726302627891,1.3337875463162632,1.3548390819645231,1.3758309825792816,1.3967667565718276,1.4176496920973369,1.4384828723967633,1.4592691899068717,1.4800113592544633,1.5007119292381423,1.5213732938898592,1.5419977026986955,1.5625872700707804,1.5831439840916337],"mode":"lines","name":"Log GDP pc","type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60],"y":[0.41269602794606652,0.43269602794606649,0.4526960279460665,0.47269602794606652,0.49269602794606648,0.5126960279460665,0.53269602794606652,0.55269602794606654,0.57269602794606644,0.59269602794606646,0.61269602794606648,0.6326960279460665,0.65269602794606651,0.67269602794606653,0.69269602794606655,0.71269602794606657,0.73269602794606659,0.75269602794606649,0.77269602794606651,0.79269602794606653,0.81269602794606643,0.83269602794606645,0.85269602794606647,0.87269602794606649,0.89269602794606651,0.91269602794606652,0.93269602794606654,0.95269602794606656,0.97269602794606647,0.99269602794606648,1.0126960279460664,1.0326960279460664,1.0526960279460664,1.0726960279460664,1.0926960279460665,1.1126960279460665,1.1326960279460665,1.1526960279460665,1.1726960279460665,1.1926960279460666,1.2126960279460666,1.2326960279460666,1.2526960279460666,1.2726960279460666,1.2926960279460666,1.3126960279460667,1.3326960279460667,1.3526960279460665,1.3726960279460665,1.3926960279460665,1.4126960279460665,1.4326960279460665,1.4526960279460666,1.4726960279460666,1.4926960279460666,1.5126960279460666,1.5326960279460666,1.5526960279460664,1.5726960279460664,1.5926960279460665],"mode":"lines","name":"BGP","type":"scatter","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"line":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-level-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Log GDP per capita over time
+</figcaption>
+</figure>
+</div>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot figure of scenarios and their BGP's</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(s, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>lny, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'Log GDP pc'</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">add_trace</span>(fig1, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>lny_bgp, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'BGP'</span>)</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig2 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(s, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>gy, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'Growth rate'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fig2 <span class="ot">&lt;-</span> <span class="fu">add_trace</span>(fig2, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>gA, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'gA'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>fig2 <span class="ot">&lt;-</span> <span class="fu">layout</span>(fig2, <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title=</span><span class="st">"Growth rate"</span>,<span class="at">range=</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">1</span>)))</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>fig1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>fig2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-level" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-5e23ad5c100f98a65197" style="width:100%;height:325px;"></div>
-<script type="application/json" data-for="htmlwidget-5e23ad5c100f98a65197">{"x":{"visdat":{"eb4273665cfb":["function () ","plotlyVisDat"]},"cur_data":"eb4273665cfb","attrs":{"eb4273665cfb":{"x":{},"y":{},"mode":"lines","name":"Log GDP pc","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"eb4273665cfb.1":{"x":{},"y":{},"mode":"lines","name":"BGP","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"time"},"yaxis":{"domain":[0,1],"automargin":true,"title":"lny"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0.02,0.073653927648741541,0.12321440734818224,0.16940595874525508,0.2127803637032728,0.2537675167438368,0.2927088371713924,0.32987996086928778,0.36550659168467836,0.3997758468483521,0.4328445512271224,0.46484541509881488,0.49589171225332923,0.52608087518966529,0.5554972950133551,0.58421452828958964,0.61229705553092484,0.63980169642397466,0.66677875923234975,0.69327298216837985,0.71932431037819389,0.74496854186153438,0.77023786802395744,0.7951613288657573,0.81976519851597696,0.84407331354688564,0.8681073539881472,0.89188708500923775,0.91543056571441628,0.93875433029462552],"mode":"lines","name":"Log GDP pc","type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0.41269602794606652,0.43269602794606649,0.4526960279460665,0.47269602794606652,0.49269602794606648,0.5126960279460665,0.53269602794606652,0.55269602794606654,0.57269602794606644,0.59269602794606646,0.61269602794606648,0.6326960279460665,0.65269602794606651,0.67269602794606653,0.69269602794606655,0.71269602794606657,0.73269602794606659,0.75269602794606649,0.77269602794606651,0.79269602794606653,0.81269602794606643,0.83269602794606645,0.85269602794606647,0.87269602794606649,0.89269602794606651,0.91269602794606652,0.93269602794606654,0.95269602794606656,0.97269602794606647,0.99269602794606648],"mode":"lines","name":"BGP","type":"scatter","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"line":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-<figcaption class="figure-caption">Figure&nbsp;1: Log GDP per capita over time</figcaption>
+<div id="fig-growth" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-growth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4807502f10b5f3214e09" style="width:100%;height:325px;"></div>
+<script type="application/json" data-for="htmlwidget-4807502f10b5f3214e09">{"x":{"visdat":{"bb641fb632fe":["function () ","plotlyVisDat"]},"cur_data":"bb641fb632fe","attrs":{"bb641fb632fe":{"x":{},"y":{},"mode":"lines","name":"Growth rate","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"bb641fb632fe.1":{"x":{},"y":{},"mode":"lines","name":"gA","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"title":"Growth rate","range":[0,0.10000000000000001]},"xaxis":{"domain":[0,1],"automargin":true,"title":"time"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60],"y":[0.10400000000000002,0.09342694509647001,0.084800707080246049,0.077639200191356506,0.07160727324263437,0.066464686459809644,0.062034729891922269,0.058184520977574983,0.054812206435254432,0.051838401519961899,0.049200315460179798,0.046847628605090952,0.044739540746271234,0.042842620018848615,0.041129210010219949,0.039576233086827436,0.038164279534645532,0.036876905921108219,0.035700088678250128,0.034621794268629907,0.033631637909906004,0.032720610276835663,0.031880856889994362,0.031105498708727905,0.030388485219287303,0.029724473351012411,0.029108727072108362,0.028537033656849561,0.028005633479880679,0.027511160853182177,0.027050593929356256,0.026621212089005506,0.026220559537836231,0.025846414081197609,0.02549676023532373,0.025169765987025354,0.024863762635644302,0.024577227249329033,0.02430876734716908,0.024057107483340549,0.023821077462187968,0.023599601956464263,0.023391691336622489,0.023196433548564283,0.023012986901759246,0.022840573650081474,0.022678474264804373,0.022526022313545831,0.022382599871044882,0.022247633397866406,0.022120590031788612,0.022000974243989984,0.021888324818427628,0.021782212118164983,0.021682235607005242,0.021588021598740331,0.021499221209729653,0.021415508493464113,0.021336578738315976,0.02126214691188404],"mode":"lines","name":"Growth rate","type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60],"y":[0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02],"mode":"lines","name":"gA","type":"scatter","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"line":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-growth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Growth rate over time
+</figcaption>
 </figure>
 </div>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fig2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(s, <span class="at">x =</span> <span class="sc">~</span>KAL, <span class="at">y =</span> <span class="sc">~</span>gK, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines+markers'</span>, <span class="at">name=</span><span class="st">'Capital growth rate'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> <span class="fu">add_segments</span>(fig3, <span class="at">data =</span> s, <span class="at">x =</span> <span class="dv">0</span>, <span class="at">xend =</span> <span class="dv">4</span>, <span class="at">y =</span> <span class="sc">~</span>(gA<span class="sc">+</span>gL), <span class="at">yend =</span> <span class="sc">~</span>(gA<span class="sc">+</span>gL), <span class="at">name=</span><span class="st">'gA + gL'</span>, <span class="at">line =</span> <span class="fu">list</span>(<span class="at">dash =</span> <span class="st">"dash"</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> <span class="fu">add_segments</span>(fig3, <span class="at">data =</span> s, <span class="at">x =</span> <span class="sc">~</span>KAL_ss, <span class="at">xend =</span> <span class="sc">~</span>KAL_ss, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> .<span class="dv">15</span>, <span class="at">name =</span> <span class="st">'K/AL steady state'</span>, <span class="at">line =</span> <span class="fu">list</span>(<span class="at">dash =</span> <span class="st">"dash"</span>))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> <span class="fu">add_segments</span>(fig3, <span class="at">data =</span> s, <span class="at">x =</span> <span class="sc">~</span>KAL_init, <span class="at">xend =</span> <span class="sc">~</span>KAL_init, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> .<span class="dv">15</span>, <span class="at">name =</span> <span class="st">'Initial K/AL'</span>, <span class="at">line =</span> <span class="fu">list</span>(<span class="at">dash =</span> <span class="st">"dash"</span>))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> <span class="fu">layout</span>(fig3, <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title=</span><span class="st">"Capital growth rate"</span>,<span class="at">range=</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">15</span>)))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> <span class="fu">layout</span>(fig3, <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title=</span><span class="st">"K/AL ratio"</span>,<span class="at">range=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>)))</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>fig3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-growth" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-85caf55cf51d8c85b7d7" style="width:100%;height:325px;"></div>
-<script type="application/json" data-for="htmlwidget-85caf55cf51d8c85b7d7">{"x":{"visdat":{"eb42386cc2a2":["function () ","plotlyVisDat"]},"cur_data":"eb42386cc2a2","attrs":{"eb42386cc2a2":{"x":{},"y":{},"mode":"lines","name":"Growth rate","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"time"},"yaxis":{"domain":[0,1],"automargin":true,"title":"gy"},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"y":[0.10400000000000002,0.09342694509647001,0.084800707080246049,0.077639200191356506,0.07160727324263437,0.066464686459809644,0.062034729891922269,0.058184520977574983,0.054812206435254432,0.051838401519961899,0.049200315460179798,0.046847628605090952,0.044739540746271234,0.042842620018848615,0.041129210010219949,0.039576233086827436,0.038164279534645532,0.036876905921108219,0.035700088678250128,0.034621794268629907,0.033631637909906004,0.032720610276835663,0.031880856889994362,0.031105498708727905,0.030388485219287303,0.029724473351012411,0.029108727072108362,0.028537033656849561,0.028005633479880679,0.027511160853182177],"mode":"lines","name":"Growth rate","type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-<figcaption class="figure-caption">Figure&nbsp;2: Growth rate over time</figcaption>
+<div id="fig-kal" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-369239ba8038de158d88" style="width:100%;height:325px;"></div>
+<script type="application/json" data-for="htmlwidget-369239ba8038de158d88">{"x":{"visdat":{"bb64269366b5":["function () ","plotlyVisDat"],"bb64173c08dc":["function () ","data"],"bb646669af6e":["function () ","data"],"bb64247c9349":["function () ","data"]},"cur_data":"bb64247c9349","attrs":{"bb64269366b5":{"x":{},"y":{},"mode":"lines+markers","name":"Capital growth rate","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"bb64173c08dc":{"x":0,"y":{},"mode":"lines","name":"gA + gL","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","xend":4,"yend":{},"line":{"dash":"dash"},"inherit":true},"bb646669af6e":{"x":{},"y":0,"mode":"lines","name":"K/AL steady state","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","xend":{},"yend":0.14999999999999999,"line":{"dash":"dash"},"inherit":true},"bb64247c9349":{"x":{},"y":0,"mode":"lines","name":"Initial K/AL","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","xend":{},"yend":0.14999999999999999,"line":{"dash":"dash"},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"title":"Capital growth rate","range":[0,0.14999999999999999]},"xaxis":{"domain":[0,1],"automargin":true,"title":"K/AL ratio","range":[0,4]},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[1,1.1187139412797193,1.2345600739074736,1.3471885461250002,1.4563518061306355,1.5618823406304176,1.663675742689521,1.7616775988585027,1.8558731861755076,1.946279282190748,2.0329375935045797,2.1159094434857804,2.1952714526435027,2.2711120103946771,2.3435283838562211,2.4126243436174644,2.4785082120059863,2.5412912586794287,2.6010863831794953,2.6580070355675365,2.7121663352676486,2.7636763553780597,2.8126475454149862,2.8591882700497879,2.9034044451322205,2.9453992553431654,2.985272940328739,3.0231226382420013,3.0590422773422228,3.0931225077405018,3.1254506665865009,3.1561107710054235,3.1851835339504913,3.2127463988607872,3.2388735896292098,3.2636361729083538,3.2871021302278942,3.3093364377776373,3.3304011520359023,3.3503554997014642,3.3692559706261256,3.3871564126498073,3.4041081274157903,3.4201599663946611,3.4353584264750365,3.4497477445904008,3.4633699909467386,3.4762651604975709,3.4884712623830243,3.5000244071095983,3.5109588912985363,3.5213072798743825,3.5311004856024866,3.540367845915712,3.549137196997294,3.5574349451091249,3.5652861351735985,3.5727145166326926,3.5797426066209326,3.5863917504993559],"y":[0.15000000000000002,0.13489563585210002,0.12257243868606578,0.11234171455908072,0.10372467606090625,0.096378123514013772,0.090049614131317526,0.084549315682249979,0.07973172347893491,0.075483430742802712,0.071714736371685434,0.068353755150129938,0.065342201066101765,0.06263231431264088,0.060184585728885645,0.057966047266896345,0.055948970763779332,0.054109865601583179,0.05242869811178591,0.050888277526614151,0.04947376844272286,0.048172300395479511,0.046972652699991943,0.045864998155325576,0.044840693170410437,0.043892104787160588,0.043012467245869088,0.042195762366927944,0.041436619256972396,0.040730229790260253,0.040072277041937512,0.039458874412865011,0.038886513625480332,0.038352020115996588,0.037852514621891042,0.037385379981464795,0.036948232336634718,0.036538896070470048,0.036155381924527261,0.035795867833343639,0.035458682088839955,0.035142288509234662,0.034845273338032126,0.034566333640806121,0.034304267002513211,0.034057962357259247,0.033826391806863393,0.033608603305065474,0.03340371410149269,0.033210904854094864,0.033029414331126591,0.032858534634271408,0.032697606883468039,0.03254601731166426,0.032403193724293206,0.03226860228391476,0.032141744585328078,0.032022154990663021,0.031909398197594252,0.031803067016977202],"mode":"lines+markers","name":"Capital growth rate","type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4,null,0,4],"y":[0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999,null,0.029999999999999999,0.029999999999999999],"mode":"lines","name":"gA + gL","type":"scatter","line":{"color":"rgba(255,127,14,1)","dash":"dash"},"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673,null,3.7024203699314673,3.7024203699314673],"y":[0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999],"mode":"lines","name":"K/AL steady state","type":"scatter","line":{"color":"rgba(44,160,44,1)","dash":"dash"},"marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1,null,1,1],"y":[0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999,null,0,0.14999999999999999],"mode":"lines","name":"Initial K/AL","type":"scatter","line":{"color":"rgba(214,39,40,1)","dash":"dash"},"marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: K/AL dynamics
+</figcaption>
 </figure>
 </div>
 </div>
+<p>We can do something different. Here’s an example of starting the model <em>at</em> steady state, and then running the code with a relatively high savings rate to see how the economy shifts to a higher BGP.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fig3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div id="fig-kal" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-c4cc5e476e143e0b4d5c" style="width:100%;height:325px;"></div>
-<script type="application/json" data-for="htmlwidget-c4cc5e476e143e0b4d5c">{"x":{"visdat":{"eb426c5e369e":["function () ","plotlyVisDat"]},"cur_data":"eb426c5e369e","attrs":{"eb426c5e369e":{"x":{},"y":{},"mode":"lines+markers","name":"Capital growth rate","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"eb426c5e369e.1":{"x":{},"y":0.029999999999999999,"mode":"lines","name":"gA + gL","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"KAL"},"yaxis":{"domain":[0,1],"automargin":true,"title":"gK"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[1,1.1187139412797193,1.2345600739074736,1.3471885461250002,1.4563518061306355,1.5618823406304176,1.663675742689521,1.7616775988585027,1.8558731861755076,1.946279282190748,2.0329375935045797,2.1159094434857804,2.1952714526435027,2.2711120103946771,2.3435283838562211,2.4126243436174644,2.4785082120059863,2.5412912586794287,2.6010863831794953,2.6580070355675365,2.7121663352676486,2.7636763553780597,2.8126475454149862,2.8591882700497879,2.9034044451322205,2.9453992553431654,2.985272940328739,3.0231226382420013,3.0590422773422228,3.0931225077405018],"y":[0.15000000000000002,0.13489563585210002,0.12257243868606578,0.11234171455908072,0.10372467606090625,0.096378123514013772,0.090049614131317526,0.084549315682249979,0.07973172347893491,0.075483430742802712,0.071714736371685434,0.068353755150129938,0.065342201066101765,0.06263231431264088,0.060184585728885645,0.057966047266896345,0.055948970763779332,0.054109865601583179,0.05242869811178591,0.050888277526614151,0.04947376844272286,0.048172300395479511,0.046972652699991943,0.045864998155325576,0.044840693170410437,0.043892104787160588,0.043012467245869088,0.042195762366927944,0.041436619256972396,0.040730229790260253],"mode":"lines+markers","name":"Capital growth rate","type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1,1.1187139412797193,1.2345600739074736,1.3471885461250002,1.4563518061306355,1.5618823406304176,1.663675742689521,1.7616775988585027,1.8558731861755076,1.946279282190748,2.0329375935045797,2.1159094434857804,2.1952714526435027,2.2711120103946771,2.3435283838562211,2.4126243436174644,2.4785082120059863,2.5412912586794287,2.6010863831794953,2.6580070355675365,2.7121663352676486,2.7636763553780597,2.8126475454149862,2.8591882700497879,2.9034044451322205,2.9453992553431654,2.985272940328739,3.0231226382420013,3.0590422773422228,3.0931225077405018],"y":[0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999,0.029999999999999999],"mode":"lines","name":"gA + gL","type":"scatter","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"line":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-<figcaption class="figure-caption">Figure&nbsp;3: K/AL dynamics</figcaption>
-</figure>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>years <span class="ot">=</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>,<span class="at">to =</span> <span class="dv">60</span>, <span class="at">by =</span> <span class="dv">1</span>) <span class="co"># run for this many periods</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> <span class="fu">f.solow</span>(<span class="at">t =</span> years) <span class="co"># run the model at baseline to get some parameters</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>From that model the value KAL_ss contains the SS K/Al ratio. With A = 1 and L =1 we’re going to set the initial capital stock K0 to the KAL_ss value so the model starts at steady state.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>s<span class="ot">=</span> <span class="fu">f.solow</span>(<span class="at">si =</span> .<span class="dv">4</span>, <span class="at">t =</span> years, <span class="at">k0 =</span> b<span class="sc">$</span>KAL_ss) <span class="co"># solve using the higher capital accum rate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now let’s go back and plot the path of GDP per capita. This figure includes a plot from the baseline of the <em>old</em> baseline BGP for comparison.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(s, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>lny, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'Log GDP pc'</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">add_trace</span>(fig1, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>lny_bgp, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'BGP'</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">add_trace</span>(fig1, <span class="at">data =</span> b, <span class="at">x=</span><span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>lny_bgp, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'Old BGP'</span> )</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>fig1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-43dbcb8632ae9d607993" style="width:100%;height:325px;"></div>
+<script type="application/json" data-for="htmlwidget-43dbcb8632ae9d607993">{"x":{"visdat":{"bb6410b0a457":["function () ","plotlyVisDat"],"bb643cf55450":["function () ","data"]},"cur_data":"bb643cf55450","attrs":{"bb6410b0a457":{"x":{},"y":{},"mode":"lines","name":"Log GDP pc","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"bb6410b0a457.1":{"x":{},"y":{},"mode":"lines","name":"BGP","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","inherit":true},"bb643cf55450":{"x":{},"y":{},"mode":"lines","name":"Old BGP","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"time"},"yaxis":{"domain":[0,1],"automargin":true,"title":"lny"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60],"y":[0.41269602794606652,0.45542300238666727,0.49585740786451538,0.53432200508716643,0.57107836309748994,0.60634137958115675,0.64028973289286106,0.6730735614155664,0.70482020865705453,0.73563859085565064,0.76562256542069274,0.79485356259763462,0.82340266571765119,0.85133227316876448,0.87869743916888643,0.90554696510990662,0.93192429520250353,0.95786825711468571,0.98341367875451546,1.0085919052795385,1.0334312351228103,1.0579572898216594,1.0821933293777632,1.1061605225213875,1.1298781794225647,1.1533639529591744,1.1766340135219147,1.1997032014388289,1.2225851603848663,1.2452924545652251,1.2678366719947334,1.2902285158161209,1.3124778852898757,1.3345939478335289,1.3565852032778376,1.3784595413329161,1.4002242931120779,1.421886277439695,1.443451842567419,1.4649269038371799,1.4863169777567391,1.5076272128919195,1.5288624179271593,1.5500270872012067,1.5711254239863957,1.5921613617469375,1.6131385835832552,1.6340605400448389,1.6549304654728205,1.675751393015013,1.6965261684400783,1.7172574628634547,1.7379477844854172,1.7585994894308834,1.7792147917711336,1.7997957727992955,1.8203443896241176,1.84086248314006,1.8613517854260042,1.8818139266197775],"mode":"lines","name":"Log GDP pc","type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60],"y":[0.70975910532890019,0.7297591053289002,0.74975910532890011,0.76975910532890013,0.78975910532890015,0.80975910532890016,0.82975910532890018,0.8497591053289002,0.86975910532890022,0.88975910532890023,0.90975910532890014,0.92975910532890016,0.94975910532890018,0.96975910532890019,0.9897591053289001,1.0097591053289001,1.0297591053289001,1.0497591053289002,1.0697591053289002,1.0897591053289002,1.1097591053289002,1.1297591053289002,1.1497591053289002,1.1697591053289003,1.1897591053289003,1.2097591053289003,1.2297591053289003,1.2497591053289003,1.2697591053289001,1.2897591053289001,1.3097591053289002,1.3297591053289002,1.3497591053289002,1.3697591053289002,1.3897591053289002,1.4097591053289,1.4297591053289,1.4497591053289001,1.4697591053289001,1.4897591053289001,1.5097591053289001,1.5297591053289001,1.5497591053289002,1.5697591053289002,1.5897591053289002,1.6097591053289002,1.6297591053289002,1.6497591053289002,1.6697591053289003,1.6897591053289003,1.7097591053289003,1.7297591053289003,1.7497591053289003,1.7697591053289004,1.7897591053289004,1.8097591053289004,1.8297591053289004,1.8497591053289,1.8697591053289,1.8897591053289],"mode":"lines","name":"BGP","type":"scatter","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"line":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60],"y":[0.41269602794606652,0.43269602794606649,0.4526960279460665,0.47269602794606652,0.49269602794606648,0.5126960279460665,0.53269602794606652,0.55269602794606654,0.57269602794606644,0.59269602794606646,0.61269602794606648,0.6326960279460665,0.65269602794606651,0.67269602794606653,0.69269602794606655,0.71269602794606657,0.73269602794606659,0.75269602794606649,0.77269602794606651,0.79269602794606653,0.81269602794606643,0.83269602794606645,0.85269602794606647,0.87269602794606649,0.89269602794606651,0.91269602794606652,0.93269602794606654,0.95269602794606656,0.97269602794606647,0.99269602794606648,1.0126960279460664,1.0326960279460664,1.0526960279460664,1.0726960279460664,1.0926960279460665,1.1126960279460665,1.1326960279460665,1.1526960279460665,1.1726960279460665,1.1926960279460666,1.2126960279460666,1.2326960279460666,1.2526960279460666,1.2726960279460666,1.2926960279460666,1.3126960279460667,1.3326960279460667,1.3526960279460665,1.3726960279460665,1.3926960279460665,1.4126960279460665,1.4326960279460665,1.4526960279460666,1.4726960279460666,1.4926960279460666,1.5126960279460666,1.5326960279460666,1.5526960279460664,1.5726960279460664,1.5926960279460665],"mode":"lines","name":"Old BGP","type":"scatter","marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"line":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <!-- -->
@@ -248,18 +284,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -291,7 +316,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
   const viewSource = window.document.getElementById('quarto-view-source') ||
                      window.document.getElementById('quarto-code-tools-source');
   if (viewSource) {
@@ -343,10 +388,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -356,8 +418,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -369,7 +440,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -413,6 +606,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -438,6 +632,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -497,111 +717,146 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Solow"</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-width: 8</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-height: 4</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: false</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true    </span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visualize changes to Solow model</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(plotly))</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>f.solow <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">alpha =</span> .<span class="dv">3</span>, <span class="at">si=</span>.<span class="dv">2</span>, <span class="at">delta=</span>.<span class="dv">05</span>, <span class="at">ga=</span>.<span class="dv">02</span>, <span class="at">gl=</span>.<span class="dv">01</span>, <span class="at">k0=</span><span class="dv">1</span>, <span class="at">a0=</span><span class="dv">1</span>, <span class="at">l0=</span><span class="dv">1</span>, <span class="at">t=</span><span class="dv">1</span>) {</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  kal_init <span class="ot">&lt;-</span> k0<span class="sc">/</span>(a0<span class="sc">*</span>l0) <span class="co"># initial K/AL ratio</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  ky_init <span class="ot">&lt;-</span> kal_init<span class="sc">^</span>(<span class="dv">1</span><span class="sc">-</span>alpha) <span class="co"># initial K/Y ratio</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  ky_ss <span class="ot">&lt;-</span> si<span class="sc">/</span>(delta<span class="sc">+</span>ga<span class="sc">+</span>gl) <span class="co"># K/Y steady state</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  kal_ss <span class="ot">&lt;-</span> ky_ss<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>alpha)) <span class="co"># K/AL steady state</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  gK_init <span class="ot">&lt;-</span> si<span class="sc">/</span>ky_init <span class="sc">-</span> delta <span class="co"># initial gK</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  gy_init <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">-</span>alpha)<span class="sc">*</span>(gK_init <span class="sc">-</span> ga <span class="sc">-</span> gl) <span class="sc">+</span> ga <span class="co"># initial gy</span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Manage time periods passed</span></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>  u <span class="ot">&lt;-</span> <span class="fu">tryCatch</span>(</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    {u <span class="ot">=</span> t <span class="sc">-</span> <span class="fu">min</span>(t)}, <span class="co"># reset any list of time periods to start at zero, for convergence calcs</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">error=</span><span class="cf">function</span>(cond) { <span class="co"># if above fails, just take t as-is (usually a single number)</span></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(t)</span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>  conv_term <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">-</span>alpha)<span class="sc">*</span>(delta<span class="sc">+</span>ga<span class="sc">+</span>gl) <span class="co"># convergence term for exact solution</span></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  ky_time <span class="ot">&lt;-</span> ky_ss<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">*</span>conv_term<span class="sc">*</span>u)) <span class="sc">+</span> ky_init<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">*</span>conv_term<span class="sc">*</span>u) <span class="co"># K/Y at each u</span></span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>  kal_time <span class="ot">&lt;-</span> ky_time<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>alpha)) <span class="co"># K/AL at each t</span></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>  lny_time <span class="ot">&lt;-</span> (alpha<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>alpha))<span class="sc">*</span><span class="fu">log</span>(ky_time) <span class="sc">+</span> <span class="fu">log</span>(a0) <span class="sc">+</span> ga<span class="sc">*</span>t <span class="co"># Log GDP pc at each t</span></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>  lny_bgp <span class="ot">&lt;-</span> (alpha<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>alpha))<span class="sc">*</span><span class="fu">log</span>(ky_ss) <span class="sc">+</span> <span class="fu">log</span>(a0) <span class="sc">+</span> ga<span class="sc">*</span>t <span class="co"># BGP of GDP pc at each t</span></span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>  gK_time <span class="ot">&lt;-</span> si<span class="sc">/</span>ky_time <span class="sc">-</span> delta <span class="co"># growth rate of K at each t</span></span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>  gy_time <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">-</span>alpha)<span class="sc">*</span>(gK_time <span class="sc">-</span> ga <span class="sc">-</span> gl) <span class="sc">+</span> ga <span class="co"># growth rate of GDP pc at each t </span></span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create list containing all results</span></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>  results <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"time"</span> <span class="ot">=</span> t, <span class="st">"KAL"</span> <span class="ot">=</span> kal_time, <span class="st">"KY"</span> <span class="ot">=</span> ky_time, <span class="st">"lny"</span> <span class="ot">=</span> lny_time, </span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"lny_bgp"</span> <span class="ot">=</span> lny_bgp, <span class="st">"gK"</span> <span class="ot">=</span> gK_time, <span class="st">"gy"</span> <span class="ot">=</span> gy_time, <span class="st">"KY_ss"</span> <span class="ot">=</span> ky_ss,</span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"KAL_ss"</span> <span class="ot">=</span> kal_ss, <span class="st">"KY_init"</span> <span class="ot">=</span> ky_init, <span class="st">"KAL_init"</span> <span class="ot">=</span> kal_init, </span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"gK_init"</span> <span class="ot">=</span> gK_init, <span class="st">"gy_init"</span> <span class="ot">=</span> gy_init)</span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>  solved <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(results) <span class="co"># convert to data frame to pass back</span></span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(solved) <span class="co"># return all results</span></span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>Let's use this function to map out some scenarios. This starts by telling R that we want to plot the function from year 1 to year 30. Then it calls the Solow function to calculate all the outcomes over those years.</span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>years <span class="ot">=</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>,<span class="at">to =</span> <span class="dv">30</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>s<span class="ot">=</span> <span class="fu">f.solow</span>(<span class="at">t =</span> years)</span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>Given that solution we can plot figures of what is going on</span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot figure of scenarios and their BGP's</span></span>
-<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(s, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>lny, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'Log GDP pc'</span>)</span>
-<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">add_trace</span>(fig1, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>lny_bgp, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'BGP'</span>)</span>
-<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>fig2 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(s, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>gy, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'Growth rate'</span>)</span>
-<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(s, <span class="at">x =</span> <span class="sc">~</span>KAL, <span class="at">y =</span> <span class="sc">~</span>gK, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines+markers'</span>, <span class="at">name=</span><span class="st">'Capital growth rate'</span>)</span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> <span class="fu">add_trace</span>(fig3, <span class="at">x =</span> <span class="sc">~</span>KAL, <span class="at">y =</span> .<span class="dv">03</span>, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'gA + gL'</span>)</span>
-<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-level</span></span>
-<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Log GDP per capita over time"</span></span>
-<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot figure of scenarios and their BGP's</span></span>
-<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(s, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>lny, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'Log GDP pc'</span>)</span>
-<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">add_trace</span>(fig1, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>lny_bgp, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'BGP'</span>)</span>
-<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>fig1</span>
-<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-growth</span></span>
-<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Growth rate over time"</span></span>
-<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>fig2</span>
-<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-kal</span></span>
-<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "K/AL dynamics"</span></span>
-<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a>fig3</span>
-<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Solow"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-width: 8</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-height: 4</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: false</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true    </span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visualize changes to Solow model</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>This page gives an example of code you can use to numerically solve the Solow model under various conditions and use that to plot figures. </span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>This first block of code is a function that solves the Solow model. The function takes parameters like the capital accumulation rate, sI, or the population growth rate, gL. It also takes initial conditions for capital, labor, and productivity. The last, and maybe most important, parameter is the time periods to solve for.</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>You can use the code "as-is". If you want to understand what's going on in the actual calculation, look at the Study Guide for the "An exact solution to the Solow model". This key code is the line starting "ky_time &lt;-". Solving the Solow is basically about solving for the exact K/Y ratio at each point in time given the parameters.</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(plotly))</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>f.solow <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">alpha =</span> .<span class="dv">3</span>, <span class="at">si=</span>.<span class="dv">2</span>, <span class="at">delta=</span>.<span class="dv">05</span>, <span class="at">ga=</span>.<span class="dv">02</span>, <span class="at">gl=</span>.<span class="dv">01</span>, <span class="at">k0=</span><span class="dv">1</span>, <span class="at">a0=</span><span class="dv">1</span>, <span class="at">l0=</span><span class="dv">1</span>, <span class="at">t=</span><span class="dv">1</span>) {</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>  kal_init <span class="ot">&lt;-</span> k0<span class="sc">/</span>(a0<span class="sc">*</span>l0) <span class="co"># initial K/AL ratio</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  ky_init <span class="ot">&lt;-</span> kal_init<span class="sc">^</span>(<span class="dv">1</span><span class="sc">-</span>alpha) <span class="co"># initial K/Y ratio</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>  ky_ss <span class="ot">&lt;-</span> si<span class="sc">/</span>(delta<span class="sc">+</span>ga<span class="sc">+</span>gl) <span class="co"># K/Y steady state</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>  kal_ss <span class="ot">&lt;-</span> ky_ss<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>alpha)) <span class="co"># K/AL steady state</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>  gK_init <span class="ot">&lt;-</span> si<span class="sc">/</span>ky_init <span class="sc">-</span> delta <span class="co"># initial gK</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>  gy_init <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">-</span>alpha)<span class="sc">*</span>(gK_init <span class="sc">-</span> ga <span class="sc">-</span> gl) <span class="sc">+</span> ga <span class="co"># initial gy</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Manage time periods passed</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>  u <span class="ot">&lt;-</span> <span class="fu">tryCatch</span>(</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>    {u <span class="ot">=</span> t <span class="sc">-</span> <span class="fu">min</span>(t)}, <span class="co"># reset any list of time periods to start at zero, for convergence calcs</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">error=</span><span class="cf">function</span>(cond) { <span class="co"># if above fails, just take t as-is (usually a single number)</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(t)</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>  conv_term <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">-</span>alpha)<span class="sc">*</span>(delta<span class="sc">+</span>ga<span class="sc">+</span>gl) <span class="co"># convergence term for exact solution</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>  ky_time <span class="ot">&lt;-</span> ky_ss<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">*</span>conv_term<span class="sc">*</span>u)) <span class="sc">+</span> ky_init<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">*</span>conv_term<span class="sc">*</span>u) <span class="co"># K/Y at each u</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>  kal_time <span class="ot">&lt;-</span> ky_time<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>alpha)) <span class="co"># K/AL at each t</span></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>  lny_time <span class="ot">&lt;-</span> (alpha<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>alpha))<span class="sc">*</span><span class="fu">log</span>(ky_time) <span class="sc">+</span> <span class="fu">log</span>(a0) <span class="sc">+</span> ga<span class="sc">*</span>t <span class="co"># Log GDP pc at each t</span></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>  lny_bgp <span class="ot">&lt;-</span> (alpha<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>alpha))<span class="sc">*</span><span class="fu">log</span>(ky_ss) <span class="sc">+</span> <span class="fu">log</span>(a0) <span class="sc">+</span> ga<span class="sc">*</span>t <span class="co"># BGP of GDP pc at each t</span></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>  gK_time <span class="ot">&lt;-</span> si<span class="sc">/</span>ky_time <span class="sc">-</span> delta <span class="co"># growth rate of K at each t</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>  gy_time <span class="ot">&lt;-</span> (<span class="dv">1</span><span class="sc">-</span>alpha)<span class="sc">*</span>(gK_time <span class="sc">-</span> ga <span class="sc">-</span> gl) <span class="sc">+</span> ga <span class="co"># growth rate of GDP pc at each t </span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create list containing all results</span></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>  results <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"time"</span> <span class="ot">=</span> t, <span class="st">"KAL"</span> <span class="ot">=</span> kal_time, <span class="st">"KY"</span> <span class="ot">=</span> ky_time, <span class="st">"lny"</span> <span class="ot">=</span> lny_time, </span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"lny_bgp"</span> <span class="ot">=</span> lny_bgp, <span class="st">"gK"</span> <span class="ot">=</span> gK_time, <span class="st">"gy"</span> <span class="ot">=</span> gy_time, <span class="st">"KY_ss"</span> <span class="ot">=</span> ky_ss,</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"KAL_ss"</span> <span class="ot">=</span> kal_ss, <span class="st">"KY_init"</span> <span class="ot">=</span> ky_init, <span class="st">"KAL_init"</span> <span class="ot">=</span> kal_init, </span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"gK_init"</span> <span class="ot">=</span> gK_init, <span class="st">"gy_init"</span> <span class="ot">=</span> gy_init,</span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"alpha"</span> <span class="ot">=</span> alpha, <span class="st">"si"</span> <span class="ot">=</span> si, <span class="st">"delta"</span> <span class="ot">=</span> delta, <span class="st">"gA"</span> <span class="ot">=</span> ga, <span class="st">"gL"</span> <span class="ot">=</span> gl)</span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>  solved <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(results) <span class="co"># convert to data frame to pass back</span></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(solved) <span class="co"># return all results</span></span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>Let's use this function to map out some scenarios. This starts by telling R that we want to plot the function from year 1 to year 60. Then it calls the Solow function to calculate all the outcomes over those years. An important point here is that you don't have to specify everything for the function. You can just specify the thing you think is interesting, letting the function set the other parameters.</span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>years <span class="ot">=</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>,<span class="at">to =</span> <span class="dv">60</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>s<span class="ot">=</span> <span class="fu">f.solow</span>(<span class="at">t =</span> years)</span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>Given that solution we can plot figures of what is going on</span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-level</span></span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Log GDP per capita over time"</span></span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot figure of scenarios and their BGP's</span></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(s, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>lny, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'Log GDP pc'</span>)</span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">add_trace</span>(fig1, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>lny_bgp, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'BGP'</span>)</span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a>fig1</span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-growth</span></span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Growth rate over time"</span></span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a>fig2 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(s, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>gy, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'Growth rate'</span>)</span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a>fig2 <span class="ot">&lt;-</span> <span class="fu">add_trace</span>(fig2, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>gA, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'gA'</span>)</span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a>fig2 <span class="ot">&lt;-</span> <span class="fu">layout</span>(fig2, <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title=</span><span class="st">"Growth rate"</span>,<span class="at">range=</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">1</span>)))</span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a>fig2</span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-kal</span></span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "K/AL dynamics"</span></span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(s, <span class="at">x =</span> <span class="sc">~</span>KAL, <span class="at">y =</span> <span class="sc">~</span>gK, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines+markers'</span>, <span class="at">name=</span><span class="st">'Capital growth rate'</span>)</span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> <span class="fu">add_segments</span>(fig3, <span class="at">data =</span> s, <span class="at">x =</span> <span class="dv">0</span>, <span class="at">xend =</span> <span class="dv">4</span>, <span class="at">y =</span> <span class="sc">~</span>(gA<span class="sc">+</span>gL), <span class="at">yend =</span> <span class="sc">~</span>(gA<span class="sc">+</span>gL), <span class="at">name=</span><span class="st">'gA + gL'</span>, <span class="at">line =</span> <span class="fu">list</span>(<span class="at">dash =</span> <span class="st">"dash"</span>))</span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> <span class="fu">add_segments</span>(fig3, <span class="at">data =</span> s, <span class="at">x =</span> <span class="sc">~</span>KAL_ss, <span class="at">xend =</span> <span class="sc">~</span>KAL_ss, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> .<span class="dv">15</span>, <span class="at">name =</span> <span class="st">'K/AL steady state'</span>, <span class="at">line =</span> <span class="fu">list</span>(<span class="at">dash =</span> <span class="st">"dash"</span>))</span>
+<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> <span class="fu">add_segments</span>(fig3, <span class="at">data =</span> s, <span class="at">x =</span> <span class="sc">~</span>KAL_init, <span class="at">xend =</span> <span class="sc">~</span>KAL_init, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> .<span class="dv">15</span>, <span class="at">name =</span> <span class="st">'Initial K/AL'</span>, <span class="at">line =</span> <span class="fu">list</span>(<span class="at">dash =</span> <span class="st">"dash"</span>))</span>
+<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> <span class="fu">layout</span>(fig3, <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title=</span><span class="st">"Capital growth rate"</span>,<span class="at">range=</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">15</span>)))</span>
+<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a>fig3 <span class="ot">&lt;-</span> <span class="fu">layout</span>(fig3, <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title=</span><span class="st">"K/AL ratio"</span>,<span class="at">range=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>)))</span>
+<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a>fig3</span>
+<span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-119"><a href="#cb9-119" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-121"><a href="#cb9-121" aria-hidden="true" tabindex="-1"></a>We can do something different. Here's an example of starting the model *at* steady state, and then running the code with a relatively high savings rate to see how the economy shifts to a higher BGP.</span>
+<span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a>years <span class="ot">=</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>,<span class="at">to =</span> <span class="dv">60</span>, <span class="at">by =</span> <span class="dv">1</span>) <span class="co"># run for this many periods</span></span>
+<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> <span class="fu">f.solow</span>(<span class="at">t =</span> years) <span class="co"># run the model at baseline to get some parameters</span></span>
+<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a>From that model the value KAL_ss contains the SS K/Al ratio. With A = 1 and L =1 we're going to set the initial capital stock K0 to the KAL_ss value so the model starts at steady state.</span>
+<span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a>s<span class="ot">=</span> <span class="fu">f.solow</span>(<span class="at">si =</span> .<span class="dv">4</span>, <span class="at">t =</span> years, <span class="at">k0 =</span> b<span class="sc">$</span>KAL_ss) <span class="co"># solve using the higher capital accum rate</span></span>
+<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-140"><a href="#cb9-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a>Now let's go back and plot the path of GDP per capita. This figure includes a plot from the baseline of the *old* baseline BGP for comparison.</span>
+<span id="cb9-142"><a href="#cb9-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-145"><a href="#cb9-145" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-146"><a href="#cb9-146" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb9-147"><a href="#cb9-147" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(s, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>lny, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'Log GDP pc'</span>)</span>
+<span id="cb9-148"><a href="#cb9-148" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">add_trace</span>(fig1, <span class="at">x =</span> <span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>lny_bgp, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'BGP'</span>)</span>
+<span id="cb9-149"><a href="#cb9-149" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">add_trace</span>(fig1, <span class="at">data =</span> b, <span class="at">x=</span><span class="sc">~</span>time, <span class="at">y =</span> <span class="sc">~</span>lny_bgp, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines'</span>, <span class="at">name=</span><span class="st">'Old BGP'</span> )</span>
+<span id="cb9-150"><a href="#cb9-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-151"><a href="#cb9-151" aria-hidden="true" tabindex="-1"></a>fig1</span>
+<span id="cb9-152"><a href="#cb9-152" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
+
 
 
 

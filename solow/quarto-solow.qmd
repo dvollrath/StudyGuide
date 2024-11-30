@@ -10,6 +10,11 @@ format:
 ---
 
 ## Visualize changes to Solow model
+This page gives an example of code you can use to numerically solve the Solow model under various conditions and use that to plot figures. 
+
+This first block of code is a function that solves the Solow model. The function takes parameters like the capital accumulation rate, sI, or the population growth rate, gL. It also takes initial conditions for capital, labor, and productivity. The last, and maybe most important, parameter is the time periods to solve for.
+
+You can use the code "as-is". If you want to understand what's going on in the actual calculation, look at the Study Guide for the "An exact solution to the Solow model". This key code is the line starting "ky_time <-". Solving the Solow is basically about solving for the exact K/Y ratio at each point in time given the parameters.
 
 ```{r}
 suppressMessages(library(plotly))
@@ -42,36 +47,25 @@ f.solow <- function(alpha = .3, si=.2, delta=.05, ga=.02, gl=.01, k0=1, a0=1, l0
   results <- list("time" = t, "KAL" = kal_time, "KY" = ky_time, "lny" = lny_time, 
                  "lny_bgp" = lny_bgp, "gK" = gK_time, "gy" = gy_time, "KY_ss" = ky_ss,
                  "KAL_ss" = kal_ss, "KY_init" = ky_init, "KAL_init" = kal_init, 
-                 "gK_init" = gK_init, "gy_init" = gy_init)
+                 "gK_init" = gK_init, "gy_init" = gy_init,
+                 "alpha" = alpha, "si" = si, "delta" = delta, "gA" = ga, "gL" = gl)
   solved <- as.data.frame(results) # convert to data frame to pass back
 
   return(solved) # return all results
 }
 ```
 
-Let's use this function to map out some scenarios. This starts by telling R that we want to plot the function from year 1 to year 30. Then it calls the Solow function to calculate all the outcomes over those years.
+Let's use this function to map out some scenarios. This starts by telling R that we want to plot the function from year 1 to year 60. Then it calls the Solow function to calculate all the outcomes over those years. An important point here is that you don't have to specify everything for the function. You can just specify the thing you think is interesting, letting the function set the other parameters.
+
 
 ```{r}
 #| code-fold: false
-years = seq(from = 1,to = 30, by = 1)
+years = seq(from = 1,to = 60, by = 1)
 s= f.solow(t = years)
+
 ```
 
 Given that solution we can plot figures of what is going on
-
-```{r}
-
-# Plot figure of scenarios and their BGP's
-fig1 <- plot_ly(s, x = ~time, y = ~lny, type = 'scatter', mode = 'lines', name='Log GDP pc')
-fig1 <- add_trace(fig1, x = ~time, y = ~lny_bgp, type = 'scatter', mode = 'lines', name='BGP')
-
-fig2 <- plot_ly(s, x = ~time, y = ~gy, type = 'scatter', mode = 'lines', name='Growth rate')
-
-fig3 <- plot_ly(s, x = ~KAL, y = ~gK, type = 'scatter', mode = 'lines+markers', name='Capital growth rate')
-fig3 <- add_trace(fig3, x = ~KAL, y = .03, type = 'scatter', mode = 'lines', name='gA + gL')
-
-```
-
 
 ```{r}
 #| label: fig-level
@@ -91,6 +85,10 @@ fig1
 #| fig-cap: "Growth rate over time"
 #| warning: false
 
+fig2 <- plot_ly(s, x = ~time, y = ~gy, type = 'scatter', mode = 'lines', name='Growth rate')
+fig2 <- add_trace(fig2, x = ~time, y = ~gA, type = 'scatter', mode = 'lines', name='gA')
+fig2 <- layout(fig2, yaxis = list(title="Growth rate",range=c(0,.1)))
+
 fig2
 ```
 
@@ -99,5 +97,40 @@ fig2
 #| fig-cap: "K/AL dynamics"
 #| warning: false
 
+fig3 <- plot_ly(s, x = ~KAL, y = ~gK, type = 'scatter', mode = 'lines+markers', name='Capital growth rate')
+fig3 <- add_segments(fig3, data = s, x = 0, xend = 4, y = ~(gA+gL), yend = ~(gA+gL), name='gA + gL', line = list(dash = "dash"))
+fig3 <- add_segments(fig3, data = s, x = ~KAL_ss, xend = ~KAL_ss, y = 0, yend = .15, name = 'K/AL steady state', line = list(dash = "dash"))
+fig3 <- add_segments(fig3, data = s, x = ~KAL_init, xend = ~KAL_init, y = 0, yend = .15, name = 'Initial K/AL', line = list(dash = "dash"))
+fig3 <- layout(fig3, yaxis = list(title="Capital growth rate",range=c(0,.15)))
+fig3 <- layout(fig3, xaxis = list(title="K/AL ratio",range=c(0,4)))
+
 fig3
+
+```
+
+We can do something different. Here's an example of starting the model *at* steady state, and then running the code with a relatively high savings rate to see how the economy shifts to a higher BGP.
+
+```{r}
+#| code-fold: false
+years = seq(from = 1,to = 60, by = 1) # run for this many periods
+b = f.solow(t = years) # run the model at baseline to get some parameters
+```
+
+From that model the value KAL_ss contains the SS K/Al ratio. With A = 1 and L =1 we're going to set the initial capital stock K0 to the KAL_ss value so the model starts at steady state.
+
+```{r}
+#| code-fold: false
+s= f.solow(si = .4, t = years, k0 = b$KAL_ss) # solve using the higher capital accum rate
+
+```
+
+Now let's go back and plot the path of GDP per capita. This figure includes a plot from the baseline of the *old* baseline BGP for comparison.
+
+```{r}
+#| code-fold: false
+fig1 <- plot_ly(s, x = ~time, y = ~lny, type = 'scatter', mode = 'lines', name='Log GDP pc')
+fig1 <- add_trace(fig1, x = ~time, y = ~lny_bgp, type = 'scatter', mode = 'lines', name='BGP')
+fig1 <- add_trace(fig1, data = b, x=~time, y = ~lny_bgp, type = 'scatter', mode = 'lines', name='Old BGP' )
+
+fig1
 ```

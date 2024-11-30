@@ -49,7 +49,7 @@ names(p) <- c("Country","GDP p.c.","K/Y","HC","L/N","A")
 p <- p[complete.cases(p), ]
 
 #########################################################################
-# Figure for level of R&D workers and level of productivity
+# Table of all dev accounting results
 #########################################################################
 
 
