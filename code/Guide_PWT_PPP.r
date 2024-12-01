@@ -1,9 +1,11 @@
 # PPP figure and data
 
 ##################################################################################
-# National accounts data - from CSV b/c no API to download
+# Import PWT
 ##################################################################################
-p <- read.csv("~/Dropbox/project/studyguide/data/pwt100.csv", header=TRUE)
+data("pwt10.01")
+
+p <- pwt10.01 # copy dataframe for manipulation
 
 p$ppp <- round(p$pl_gdpo*p$xr,digits=1) # PPP for display
 p$xrshow <- round(p$xr,digits=1) # XR for display

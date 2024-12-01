@@ -3,7 +3,7 @@
 ##################################################################################
 # National accounts data - from CSV b/c no API to download
 ##################################################################################
-p <- read.csv("~/Dropbox/project/studyguide/data/pwt91_na.csv", header=TRUE)
+p <- read.csv("~/Dropbox/project/studyguide/data/pwt1001_na_data.csv", header=TRUE)
 
 p$scon <- round(p$v_c/p$v_gdp,digits=2) # calculate consump share
 p$sgfcf <- round(p$v_i/p$v_gdp,digits=2) # calculate cap formation as share

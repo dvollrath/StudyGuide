@@ -3,6 +3,8 @@
 ##################################################################################
 # Get employee/pop ratio from PWT API
 ##################################################################################
+s <- read.csv("~/Dropbox/project/studyguide/data/pwt1001_labor_detail.csv", header=TRUE)
+
 data("pwt10.01")
 
 p <- pwt10.01 # copy dataframe for manipulation
@@ -23,9 +25,9 @@ saveWidget(partial_bundle(fig), "../plotly/pwt-catchup-emppop.html",selfcontaine
 ##################################################################################
 # Get labor detail from PWT CSV file
 ##################################################################################
-p <- read.csv("~/Dropbox/project/studyguide/data/pwt91_labor_detail.csv", header=TRUE)
-catchup <- p[ which(p$countrycode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
-test <- p[ which(p$countrycode %in% c("ETH", "ZAF", "BWA")),]
+
+catchup <- s[ which(s$countrycode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
+test <- s[ which(s$countrycode %in% c("ETH", "ZAF", "BWA")),]
 
 fig <- plot_ly(test, x = ~year, y = ~yr_sch, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Years of schooling by country', x=0),

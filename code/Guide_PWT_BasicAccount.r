@@ -2,12 +2,12 @@
 
 #########################################################################
 # Pull PWT into dataframe
-data("pwt10.0") # extract PWT data
+data("pwt10.01") # extract PWT data
 
 #########################################################################
 # Accounting calculation
 #########################################################################
-p <- pwt10.0 # copy dataframe for manipulation
+p <- pwt10.01 # copy dataframe for manipulation
 p$lngdppc <- round(log(p$rgdpna) - log(p$pop),digits=2) # create log GDP per capita
 p$lnK <- log(p$rnna)
 p$lnL <- log(p$pop)
