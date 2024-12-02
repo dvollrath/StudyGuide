@@ -28,12 +28,7 @@ The definition of a BGP is helpful because it allows us to focus on some key reg
 
 A BGP defines a hypothetical economy that our model will match. We can draw figures similar to those we saw using actual data, but now for this hypothetical BGP economy. They are not very exciting. In my defense, these figures were how I taught myself to use Plotly to embed figures on this site, so I'm just happy that they all work. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/41.embed"></iframe>
-
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/43.embed"></iframe>
-
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/45.embed"></iframe>
-
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/47.embed"></iframe>
-
-These figures are all boring, as mentioned, which is kind of the point of a BGP. It is a relatively boring hypothetical economy that ignores lots of of interesting short-run fluctuations in order to focus on (to me, *more* interesting) long-run trends. You should know what a BGP is (the four facts), and be aware that we'll be building models to try and replicate a BGP.
+<details> 
+  <summary>If a country is on a BGP, then is the level of GDP per capita, y, constant?  </summary>
+   A1: No. On a BGP a country has a constant growth rate of GDP per capita, gy, which means the level of GDP per capita is rising. 
+</details>

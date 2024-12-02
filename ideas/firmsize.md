@@ -19,7 +19,9 @@ Then you can listen to this anecdotal story of invention coming from someone who
 
 <iframe src="https://www.npr.org/player/embed/1179235807/1198987421" width="100%" height="290" frameborder="0" scrolling="no" title="NPR embedded audio player"></iframe>
 
-## Do firms do patent all their ideas?
+Last, it may be a problem to rely on patent statistics to tell us about rates of innovation, because not every new idea or good idea is patented. The recipe for Coca-Cola, for example, isn't patented, they just keep it a secret. The just-in-time inventory system Toyota invented isn't patented. You can't patent things like "this is a good location for a Starbucks" but that too is a productivity-enhancing innovation. 
 
-[Patents and ideas](https://mattsclancy.substack.com/p/how-many-inventions-are-patented?r=3s59a&utm_medium=ios&triedRedirect=true)
+Clancy has another post on this topic worth reading:
+
+[How many inventions are patented?](https://mattsclancy.substack.com/p/how-many-inventions-are-patented?r=3s59a&utm_medium=ios&triedRedirect=true)
 
