@@ -116,7 +116,7 @@ $$
 Which if we plug in gives us
 
 $$
-\text{Social Return} = \frac{y_0\left(\frac{1}{r-g_A} - \frac{1}{r}\right)}{\frac{w_0}{r-g_A}}
+\text{Social Return} = \frac{y_0\left(\frac{1}{r-g_A} - \frac{1}{r}\right)}{\frac{w_0s_R}{r-g_A}}
 $$
 
 Remember that $w_0 = (1-\alpha)y_0$ (wages are a fraction of GDP) and we can reduce that to
@@ -127,7 +127,7 @@ $$
 
 The numerator is the growth rate discounted at rate $r$, effectively a measure of the benefits. The denominator is the share of resources we spend on R&D, which is made up of wages for the R&D workers.
 
-Given this setup, Jones and Summers then provide various calculations of this social return under different assumptions. The value of $g_A \approx 0.018$, which we've seen before. They use a return on capital of $r \approx 0.05$, consistent with the evidence on returns to capital. Finally, they use a value of $(1-\alpha)s_R \approx 0.027$, or that the costs of R&D are equivalent to about 2.7\% of GDP. Jones and Summers consider a broader concept of the costs of R&D, which includes both wages and other costs. In practice this does not create a material difference in the outcomes. Thus the social return to innovation is
+Given this setup, Jones and Summers then provide various calculations of this social return under different assumptions. The value of $g_A \approx 0.018$, which we've seen before. They use a return on capital of $r \approx 0.05$, consistent with the evidence on returns to capital. Finally, they use a value of $(1-\alpha)s_R \approx 0.027$, or that the costs of R&D are equivalent to about 2.7% of GDP. Jones and Summers consider a broader concept of the costs of R&D, which includes both wages and other costs. In practice this does not create a material difference in the outcomes. Thus the social return to innovation is
 
 $$
 \text{Social Return} \approx \frac{0.018/0.05}{0.027} = 13.3. 

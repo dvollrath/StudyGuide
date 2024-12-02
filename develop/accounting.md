@@ -1,6 +1,7 @@
 ---
 title: Development accounting
 parent: Comparative Development
+has_children: true
 nav_order: 1
 ---
 
