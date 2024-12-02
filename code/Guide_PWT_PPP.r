@@ -14,7 +14,7 @@ p$xgdpopc <- round(p$cgdpopc*p$pl_gdpo,digits=0) # GDP per capita at exchange ra
 p$realxr <- round(p$pl_gdpo,digits=2) # Real exchange rate
 p$lncgdpopc <- round(log(p$cgdpopc),digits=2) # log GDP per capita for figure
 
-catchup <- p[ which(p$countrycode %in% c("USA", "MEX", "JPN", "KOR", "CHN", "NGA","KEN","IND")),]
+catchup <- p[ which(p$isocode %in% c("USA", "MEX", "JPN", "KOR", "CHN", "NGA","KEN","IND")),]
 
 figdata <- p[which(p$year %in% c("2017")),]
 figdata <- figdata[which(figdata$realxr < 5),]
