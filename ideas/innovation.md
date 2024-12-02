@@ -2,7 +2,7 @@
 title: Competition and Growth
 parent: Ideas and Productivity
 has_children: true
-nav_order: 6
+nav_order: 7
 ---
 
 # Competition and growth

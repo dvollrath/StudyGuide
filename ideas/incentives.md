@@ -2,7 +2,7 @@
 title: Incentives to innovate
 parent: Ideas and Productivity
 has_children: true
-nav_order: 5
+nav_order: 6
 ---
 
 # Incentives to innovate
@@ -120,7 +120,7 @@ Changes in IP laws or rules adjust the size of $s_{\pi}$ relative to $s_L$, and 
 
 This gives us one way of interpreting the growth of research effort over time in most developed countries, and in particular the growth in the fraction of workers involved in research. Our little model here suggests that this must have involved either an increase in the fruitfulness of research ($g_A$ going up) or in a larger payoff to innovation ($s_{\pi}$ going up). 
 
-### Rising research effort
+## Rising research effort
 The logic in this section gives us some insight into why the data show that the value of $s_R$ went up over time. One possibility is that the share of GDP going to profits rose relative to the share going to labor. If firms felt they were able to capture a bigger share of GDP then it makes more sense to try and innovate. 
 
 A second possibility is that the size of $g_A$ went up, which from the *firm* perspective just looks like a higher change of getting lucky with R&D. From the aggregate perspective we know that this is tied to the growth rate of population, $g_L$. 

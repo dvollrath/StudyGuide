@@ -2,7 +2,7 @@
 title: Case studies
 parent: Ideas and Productivity
 has_children: true
-nav_order: 7
+nav_order: 8
 ---
 
 # Case studies
@@ -20,7 +20,7 @@ How do we think about this in our model of innovation? First, be careful that th
 
 Next, go back to the interactive figure describing the dynamics of innovation, <a href="basic-romer.html" target="_blank">using this link</a> or play with it right here:
 
-<iframe height="900" width="100%" frameborder="no" src="basic-romer.html"> </iframe>
+<iframe height="600" width="100%" frameborder="no" src="basic-romer.html"> </iframe>
 
 Adjust the value of $L_0$ upwards, so the ratio of researchers to productivity goes up. We're faking the increase in research here by pretending it is an increase in population (which is also was). Once L is higher, what do the dynamics tell us? It tells us that L/A starts to fall, and eventually the economy will come back to rest at the same long-run growth rate as before, $g_A^{BGP} = g_L \lambda/(1-\phi)$. 
 
