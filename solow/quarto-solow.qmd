@@ -1,22 +1,25 @@
 ---
-title: "Solow"
+title: "Visualize changes to Solow model"
 format: 
   html:
     fig-width: 8
     fig-height: 4
     code-fold: true
-    toc: false
+    toc: true
     code-tools: true    
 ---
 
-## Visualize changes to Solow model
-This page gives an example of code you can use to numerically solve the Solow model under various conditions and use that to plot figures. 
+This page gives an example of code you can use to numerically solve the Solow model under various conditions and use that to plot figures. It's a Quarto document that you can edit in RStudio. You can [download the original Quarto doc here](quarto-solow.qmd), and once you open it in RStudio you can "Render" the document which will produce a webpage (in html) like this one. Or if all you want to do is copy the actual R *code* that is being run to create the figures, you can just cut/paste the code itself. 
 
+## Solving the Solow
 This first block of code is a function that solves the Solow model. The function takes parameters like the capital accumulation rate, sI, or the population growth rate, gL. It also takes initial conditions for capital, labor, and productivity. The last, and maybe most important, parameter is the time periods to solve for.
 
 You can use the code "as-is". If you want to understand what's going on in the actual calculation, look at the Study Guide for the "An exact solution to the Solow model". This key code is the line starting "ky_time <-". Solving the Solow is basically about solving for the exact K/Y ratio at each point in time given the parameters.
 
 ```{r}
+#| code-fold: false
+
+# You need this plotly library to do the figures. This just absorbs any messages about loading it when you render.
 suppressMessages(library(plotly))
 
 f.solow <- function(alpha = .3, si=.2, delta=.05, ga=.02, gl=.01, k0=1, a0=1, l0=1, t=1) {
@@ -55,6 +58,7 @@ f.solow <- function(alpha = .3, si=.2, delta=.05, ga=.02, gl=.01, k0=1, a0=1, l0
 }
 ```
 
+## Create basic figures
 Let's use this function to map out some scenarios. This starts by telling R that we want to plot the function from year 1 to year 60. Then it calls the Solow function to calculate all the outcomes over those years. An important point here is that you don't have to specify everything for the function. You can just specify the thing you think is interesting, letting the function set the other parameters.
 
 
@@ -79,6 +83,7 @@ fig1 <- add_trace(fig1, x = ~time, y = ~lny_bgp, type = 'scatter', mode = 'lines
 fig1
 ```
 
+Then do a figure of the growth rate of GDP per capita. Note how this matches up to the path for log GDP per capita.
 
 ```{r}
 #| label: fig-growth
@@ -91,6 +96,8 @@ fig2 <- layout(fig2, yaxis = list(title="Growth rate",range=c(0,.1)))
 
 fig2
 ```
+
+Last, you can visualize the path of K/AL and the growth rate of capital during this transition. 
 
 ```{r}
 #| label: fig-kal
@@ -108,6 +115,7 @@ fig3
 
 ```
 
+## Show a shift in the capital accumulation rate
 We can do something different. Here's an example of starting the model *at* steady state, and then running the code with a relatively high savings rate to see how the economy shifts to a higher BGP.
 
 ```{r}
@@ -163,6 +171,7 @@ p= f.solow(k0 = kal) # solve model for all values of K, which is =K/AL given A=1
 
 ```
 
+Now we can plot two relationships of gK to K/AL. The figure shows that the whole curve of capital growth rates, gK, shifted up when sI shifted to 0.4 (the blue line is above the orange). 
 
 ```{r}
 #| label: fig-kal-comp
@@ -181,4 +190,4 @@ fig3
 
 ```
 
-The figure shows that the whole curve of capital growth rates, gK, shifted up when sI shifted to 0.4 (the blue line is above the orange). 
+
