@@ -24,12 +24,15 @@ For a bunch of countries over time we can plot the share of GDP (also called val
 
 <iframe width="900" height="600" frameborder="0" scrolling="yes" src="../plotly/10SD-va-extract.html"></iframe>
 
-Things are different for Manufacturing. Here, you can see that in very poor countries manufacturing actually gets bigger as a share of GDP as they get richer, but that at a certain point (log GDP per capita of about 9.5) the manufacturing share starts to fall. Again, this doesn't mean very rich countries produce fewer manufacturing goods, they produce *more*. Those goods just make up a smaller *share* of GDP as they get very rich.
+Things are different for Manufacturing. Here, you can see that in very poor countries manufacturing actually gets bigger as a share of GDP as they get richer, but that at a certain point (log GDP per capita of about 9.5) the manufacturing share starts to fall. Again, this doesn't mean very rich countries produce fewer manufacturing goods, they produce *more*. Those goods just make up a smaller *share* of GDP as they get very rich. Note that there is no such thing as a very rich country that is heavily into manufacturing - even Japan and Germany has relatively small shares. 
 
 <iframe width="900" height="600" frameborder="0" scrolling="yes" src="../plotly/10SD-va-manuf.html"></iframe>
 
 Finally, Services almost invariably become more relevant to GDP as countries get rich. Note that even among poor countries Services account for between 20-40% of GDP. They are always important. But among rich countries they account for around 80% of all economic activity. In that sense rich countries are service economies, even though they still produce a lot of agriculture, mining, and manufacturing. 
 
 <iframe width="900" height="600" frameborder="0" scrolling="yes" src="../plotly/10SD-va-services.html"></iframe>
+
+{: .fact}
+> There are consistent patterns among countries in the composition of GDP. Extraction (agriculture, mining) *falls* as a share of GDP as countries get rich. Services (retain, finance, government, etc.) *rise* as a share of GDP as countries get rich. Manufacturing (including construction and utilities) tends to peak when countries are middle income (at around 40% of GDP) and then *falls* as a share of GDP as countries become very rich.
 
 ## Does this impact productivity?
