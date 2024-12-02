@@ -27,8 +27,3 @@ The US, for example, has data that conforms to these four facts. Because of that
 The definition of a BGP is helpful because it allows us to focus on some key regularities in the data. When we try to model the economy and how it grows, we're going to want that model to replicate the outcomes associated with a BGP, because we see so many countries with those characteristics. In addition, we'll want that model to help explain why countries that are "off" a BGP at some point (like South Korea, Germany, or Japan) all end up back "on" a BGP after some period of time. Finally, once we have that model, we'll use it to predict what might happen to places like Nigeria and China.
 
 A BGP defines a hypothetical economy that our model will match. We can draw figures similar to those we saw using actual data, but now for this hypothetical BGP economy. They are not very exciting. In my defense, these figures were how I taught myself to use Plotly to embed figures on this site, so I'm just happy that they all work. 
-
-<details> 
-  <summary>If a country is on a BGP, then is the level of GDP per capita, y, constant?  </summary>
-   A1: No. On a BGP a country has a constant growth rate of GDP per capita, gy, which means the level of GDP per capita is rising. 
-</details>
