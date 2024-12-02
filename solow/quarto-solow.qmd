@@ -153,4 +153,32 @@ fig2 <- layout(fig2, yaxis = list(title="Growth rate",range=c(0,.1)))
 fig2
 ```
 
+To try and plot the K/AL dynamics in the baseline and then in the alternative scenario, we want to run another Solow model to gather info on the growth rate of K under the baseline at various K/AL ratios.
 
+```{r}
+#| code-fold: false
+
+kal = seq(from = 0,to = 10, by = .1) # sequence of values for K
+p= f.solow(k0 = kal) # solve model for all values of K, which is =K/AL given A=1, L=1
+
+```
+
+
+```{r}
+#| label: fig-kal-comp
+#| fig-cap: "K/AL dynamics versus baseline"
+#| warning: false
+
+fig3 <- plot_ly(s, x = ~KAL, y = ~gK, type = 'scatter', mode = 'lines+markers', name='New capital growth')
+fig3 <- add_trace(fig3, data = p, x = ~KAL, y = ~gK, type = 'scatter', mode = 'lines+markers', name = 'Baseline capital growth')
+fig3 <- add_segments(fig3, data = s, x = 0, xend = 12, y = ~(gA+gL), yend = ~(gA+gL), name='gA + gL', line = list(dash = "dash"))
+fig3 <- add_segments(fig3, data = s, x = ~KAL_ss, xend = ~KAL_ss, y = 0, yend = .15, name = 'New steady state', line = list(dash = "dash"))
+fig3 <- add_segments(fig3, data = p, x = ~KAL_ss, xend = ~KAL_ss, y = 0, yend = .15, name = 'Baseline steady state', line = list(dash = "dash"))
+fig3 <- layout(fig3, yaxis = list(title="Capital growth rate",range=c(-.04,.15)))
+fig3 <- layout(fig3, xaxis = list(title="K/AL ratio",range=c(0,12)))
+
+fig3
+
+```
+
+The figure shows that the whole curve of capital growth rates, gK, shifted up when sI shifted to 0.4 (the blue line is above the orange). 
