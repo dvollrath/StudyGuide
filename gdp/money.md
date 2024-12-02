@@ -11,7 +11,10 @@ nav_order: 1
 1. TOC 
 {:toc}
 
-![Scale](https://imgs.xkcd.com/comics/million_billion_trillion.png)
+## Misunderstanding money
+![Misunderstanding Money](food.jpg)
+
+If you get why this is funny and wrong, then you get the distinction between money and real economic activity. "Free" in terms of what?
 
 ## Where did the dollars go?
 If you look back on how we calcuate real GDP, dollar prices were involved. You had to know the prices of each good in each year. But once we measure real GDP - regardless of which base year we use - we just get a unit-less ratio. The dollars cancel out, so to speak. 
