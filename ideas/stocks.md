@@ -1,6 +1,6 @@
 ---
 title: Stock market valuations
-parent: CCase studies
+parent: Case studies
 grand_parent: Ideas and Productivity
 nav_order: 5
 ---
