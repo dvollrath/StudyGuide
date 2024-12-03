@@ -5,7 +5,7 @@ data("pwt10.01")
 p <- pwt10.01 # copy dataframe for manipulation
 p$rgdpopc <- round(p$rgdpo/p$pop,digits=0) # GDP per capita at PPP
 p$lnrgdpopc <- round(log(p$rgdpopc),digits=2) # log GDP per capita for figure
-p <- p[,c("isocode","year","lnrgdpopc")]
+p <- p[,c("isocode","year","lnrgdpopc","pop")]
 colnames(p)[1] <- 'Country'
 colnames(p)[2] <- 'Year'
 
@@ -16,9 +16,11 @@ sd$Service <- (sd$WRT + sd$TRA + sd$FIRE + sd$GOV + sd$OTH)/sd$SUM
 
 va <- sd[which(sd$Variable %in% c('VA')),]
 emp <- sd[which(sd$Variable %in% c('EMP')),]
+q <- sd[which(sd$Variable %in% c('VA_Q05')),]
 
 va <- merge(va,p, by = c('Country','Year'))
 emp <- merge(emp,p, by = c('Country','Year'))
+q <- merge(q,p, by = c('Country','Year'))
 
 fig <- plot_ly(va, x = ~lnrgdpopc)
 fig <- fig %>% add_trace(y = ~Extract, name = 'Extraction', type = 'scatter', mode = 'markers',
@@ -49,3 +51,6 @@ fig <- layout(fig, title = list(text = 'Services and GDP per capita', x=0),
               yaxis = list(title = 'Services share of VA', range=c(0,1)))
 saveWidget(partial_bundle(fig), "../plotly/10SD-va-services.html",selfcontained = F, libdir = "lib")
 
+q$lnexpc <- log(q$Extract/q$pop)
+q$lnmfpc <- log(q$Manuf/q$pop)
+q$lnsvpc <- log(q$Service/q$pop)

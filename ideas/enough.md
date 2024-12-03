@@ -1,8 +1,8 @@
 ---
 title: Is there enough innovation?
-parent: Case studies
+parent: Competition and Growth
 grand_parent: Ideas and Productivity
-nav_order: 5
+nav_order: 3
 ---
 
 # What's the right amount of innovation?

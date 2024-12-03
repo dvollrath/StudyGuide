@@ -36,3 +36,4 @@ Finally, Services almost invariably become more relevant to GDP as countries get
 > There are consistent patterns among countries in the composition of GDP. Extraction (agriculture, mining) *falls* as a share of GDP as countries get rich. Services (retain, finance, government, etc.) *rise* as a share of GDP as countries get rich. Manufacturing (including construction and utilities) tends to peak when countries are middle income (at around 40% of GDP) and then *falls* as a share of GDP as countries become very rich.
 
 ## Does this impact productivity?
+One possibility the above data implies is that poor countries are poor because they are heavily into extraction of natural resources. That is, maybe their productivity is low because they are doing farming and mining, and not doing things like finance and making semiconductors. There is likely something to this, for several reasons. 
