@@ -40,7 +40,7 @@ One possibility the above data implies is that poor countries are poor because t
 
 Take a look at some data on the level of output per worker in each of the three main sectors: Extraction, Manufacturing, and Services. The figure here shows this data for three countries: India, Mexico, and France. The x-axis is log GDP per capita, showing you how rich overall a country is. The y-axis is log output per worker in the sector. The colors correspond to the sectors, and you can hover over points to see who is who. Roughly, though, India is the data with the lowest GDP per capita, Mexico is in the middle, and France has the higher values. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="yes" src=".../plotly/10SD-output-pw.html"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="yes" src="../plotly/10SD-output-pw.html"></iframe>
 
 What do we see? Not surprising, but output per worker in both services and manufacturing rises with GDP per capita. Rich countries are rich for a reason, and that's because their workers can produce more. We know that's because of more capital or better ideas. There are some jumps in the series between countries, yes, but in general output per worker in those two sectors rises with GDP per capita.
 
