@@ -21,6 +21,14 @@ q <- sd[which(sd$Variable %in% c('VA_Q05')),]
 va <- merge(va,p, by = c('Country','Year'))
 emp <- merge(emp,p, by = c('Country','Year'))
 q <- merge(q,p, by = c('Country','Year'))
+q <- q[,c("Country","Year","Extract","Manuf","Service")]
+colnames(q)[3] <- 'QExtract'
+colnames(q)[4] <- 'QManuf'
+colnames(q)[5] <- 'QService'
+q <- merge(q,emp, by = c('Country', 'Year'))
+q$qpwExtract <- log(q$QExtract/q$Extract)
+q$qpwManuf <- log(q$QManuf/q$Extract)
+q$qpwService <- log(q$QService/q$Extract)
 
 fig <- plot_ly(va, x = ~lnrgdpopc)
 fig <- fig %>% add_trace(y = ~Extract, name = 'Extraction', type = 'scatter', mode = 'markers',
@@ -51,6 +59,21 @@ fig <- layout(fig, title = list(text = 'Services and GDP per capita', x=0),
               yaxis = list(title = 'Services share of VA', range=c(0,1)))
 saveWidget(partial_bundle(fig), "../plotly/10SD-va-services.html",selfcontained = F, libdir = "lib")
 
-q$lnexpc <- log(q$Extract/q$pop)
-q$lnmfpc <- log(q$Manuf/q$pop)
-q$lnsvpc <- log(q$Service/q$pop)
+q <- q[which(q$Country %in% c('IND','FRA','MEX')),]
+fig <- plot_ly(q, x = ~lnrgdpopc)
+fig <- fig %>% add_trace(y = ~qpwExtract, name = 'Extraction', 
+                        type = 'scatter', mode = 'markers',
+                         hovertext = ~paste(Country, "<br>", Year, "<br>", round(Extract,2)),
+                         hoverinfo="text")
+fig <- fig %>% add_trace(y = ~qpwManuf, name = 'Manufacturing',
+                         type = 'scatter', mode = 'markers',
+                         hovertext = ~paste(Country, "<br>", Year, "<br>", round(Extract,2)),
+                         hoverinfo="text")
+fig <- fig %>% add_trace(y = ~qpwService, name = 'Services',
+                         type = 'scatter', mode = 'markers',
+                         hovertext = ~paste(Country, "<br>", Year, "<br>", round(Extract,2)),
+                         hoverinfo="text")
+fig <- layout(fig, title = list(text = 'Output per worker acros sectors', x=0),
+              xaxis = list(title = 'Log GDP per capita'),
+              yaxis = list(title = 'Log output per worker'))
+saveWidget(partial_bundle(fig), "../plotly/10SD-output-pw.html",selfcontained = F, libdir = "lib")
