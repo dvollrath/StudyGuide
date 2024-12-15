@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Solow Model</title>
+    <link href="https://kineticgraphs.org/css/kg.0.2.7.css" rel="stylesheet" type="text/css">
+    <script src="https://kineticgraphs.org/js/kg.0.2.7.js"></script>
+</head>
+<body>
+
+<div class="kg-container">
+params:
+- {name: sKset, value: 4, min: 3, max: 6, round: 0.01}
+- {name: gAset, value: 4, min: 3, max: 6, round: 0.01}
+- {name: gLset, value: 4, min: 3, max: 6, round: 0.01}
+- {name: delta, value: .05, min: 0, max: .15, round: 0.01}
+- {name: alpha, value: .3, min: .05, max: .95, round: 0.05}
+- {name: Ainit, value: 4, min: 3, max: 6, round: 0.1}
+- {name: Kinit, value: 4, min: 3, max: 6, round: 0.1}
+- {name: Linit, value: 4, min: 3, max: 6, round: 0.1}
+calcs:
+    Kscale: (params.Kinit)*10
+    sK: (params.sKset - 3)*.2
+    gA: (params.gAset - 3)*.01
+    gL: (params.gLset - 3)*.01
+    KALinit: (calcs.Kscale)/(params.Ainit*params.Linit)
+    KYinit: ((calcs.Kscale)/(params.Ainit*params.Linit))^(1-params.alpha)
+    KYss: (calcs.sK/(calcs.gL + calcs.gA + params.delta))
+    KALss: (calcs.sK/(calcs.gL + calcs.gA + params.delta))^(1/(1-params.alpha))
+    gK: (calcs.sK)*(1/calcs.KYinit) - (params.delta)
+    gy: (params.alpha)*(calcs.gK - calcs.gA - calcs.gL) + calcs.gA
+    a: (params.alpha)/(1-params.alpha)
+layout:
+  SquarePlusTwoVerticalGraphs:
+    bigGraph: 
+      xAxis:
+        title: K/AL ratio
+        max: 7
+        min: 0
+        intercept: 0
+      yAxis:
+        title: Growth rates
+        max: .10
+        min: -.03
+        intercept: 0
+      objects:
+        - Segment:
+            a: [3,.095]
+            b: [6,.095]
+            Linestyle: dotted
+            color: purple
+        - Segment:
+            a: [3,.09]
+            b: [6,.09]
+            Linestyle: dotted
+            color: purple
+        - Segment:
+            a: [3,.085]
+            b: [6,.085]
+            Linestyle: dotted
+            color: purple
+        - Segment:
+            a: [3,.08]
+            b: [6,.08]
+            Linestyle: dotted
+            color: purple
+        - Segment:
+            a: [3,.075]
+            b: [6,.075]
+            Linestyle: dotted
+            color: purple
+        - Segment:
+            a: [3,.07]
+            b: [6,.07]
+            Linestyle: dotted
+            color: purple
+        - Point:
+            coordinates: [params.Kinit,.095]
+            color: purple
+            label:
+                text: K_0
+            drag:
+            - horizontal: Kinit
+        - Point:
+            coordinates: [params.Ainit,.09]
+            color: purple
+            label:
+                text: A_0
+            drag:
+            - horizontal: Ainit
+        - Point:
+            coordinates: [params.Linit,.085]
+            color: purple
+            label:
+                text: L_0
+            drag:
+            - horizontal: Linit
+        - Point:
+            coordinates: [params.sKset,.08]
+            color: purple
+            label:
+                text: s_K
+            drag:
+            - horizontal: sKset
+        - Point:
+            coordinates: [params.gLset,.075]
+            color: purple
+            label:
+                text: g_L
+            drag:
+            - horizontal: gLset
+        - Point:
+            coordinates: [params.gAset,.07]
+            color: purple
+            label:
+                text: g_A
+            drag:
+            - horizontal: gAset
+        - Point:
+            coordinates: [calcs.KALss,(calcs.gA + calcs.gL)]
+            color: green
+            droplines:
+                vertical: (K/AL)_{ss}
+            label:
+                text: \text{Steady State}
+        - Point:
+            coordinates: [calcs.KALinit, calcs.gK]
+            droplines:
+                vertical: \text{Initial } K/AL
+                horizontal: g_K
+        - Arrow:
+            begin: [calcs.KALinit,.002]
+            end: [calcs.KALss,.002]
+            color: blue
+            trim: .1
+        - Curve: 
+            univariateFunction:
+                fn: (calcs.sK)*(1/(x))^(1-params.alpha) - (params.delta)
+                ind: x
+            color: blue
+            strokeWidth: 4
+            label:
+                text: g_K = s_K \left(\frac{AL}{K}\right)^{1-\alpha} - \delta
+                x: 6.5
+        - Line:
+            yIntercept: (calcs.gA + calcs.gL)
+            slope: 0
+            strokeWidth: 4
+            color: orange
+            label:
+                text: g_A + g_L
+                x: 6.5
+    topGraph:
+      xAxis:
+        max: 15
+        ticks: 15
+      yAxis:
+        title: Growth rate
+        max: .05
+        min: -.02
+      objects:
+      - Line: 
+          yIntercept: (calcs.gA)
+          slope: 0
+          color: green 
+          lineStyle: dashed
+          label:
+            text: g_A
+            x: 15
+      - Curve:
+          univariateFunction:
+            fn: (calcs.gA)+(params.alpha*calcs.sK)*(calcs.KYss*(1-(.9)^(x)) + calcs.KYinit*((.9)^(x)))^(-1) - (params.alpha)*(params.delta + calcs.gA + calcs.gL)
+            ind: x
+          color: black
+          label:
+            text: \alpha(g_K - g_A - g_L) + g_A
+            x: 5
+    bottomGraph:
+      xAxis:
+        title: Time
+        max: 15
+        ticks: 15     
+        intercept: .5   
+      yAxis:
+        title: Log GDP per capita
+        max: 1.5
+        min: .5
+      objects:
+      - Curve: 
+          univariateFunction:
+            fn: (calcs.a)log(calcs.KYss) + log(params.Ainit/2) + (calcs.gA)*(x)
+            ind: x
+          color: green
+          lineStyle: dashed
+          label:
+              text: \ln y_t^{BGP}
+              x: 15
+      - Curve:
+          univariateFunction:
+            fn: (calcs.a)*log(calcs.KYss*(1-(.9)^(x)) + calcs.KYinit*(.9)^(x)) + log(params.Ainit/2) + (calcs.gA)*(x)
+            ind: x
+          color: black
+          label:
+            text: \ln y_t
+            x: 10
+</div>
+
+</body>
+</html>
