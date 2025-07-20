@@ -47,7 +47,7 @@ $$
 \frac{4.691 - 4.605}{2024-2018} = \frac{0.086}{6} \approx 0.0143.
 $$
 
-0.0143 or 1.43% is exactly what we got for the annualized growth rate from 2018 to 2014. If you go back to the notes on [logs and percents](http://growthecon.com/StudyGuide/preliminaries/logs.html) and recall the equation for the annualized growth rate
+0.0143 or 1.43% is exactly what we got for the annualized growth rate from 2018 to 2024. If you go back to the notes on [logs and percents](http://growthecon.com/StudyGuide/preliminaries/logs.html) and recall the equation for the annualized growth rate
 
 $$
 g_{Y,t-s} \approx \frac{1}{s-t} \left(\ln Y_{s} - \ln Y_t \right).
