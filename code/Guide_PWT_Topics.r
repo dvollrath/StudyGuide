@@ -2,25 +2,23 @@
 
 #########################################################################
 # Pull PWT into dataframe
-data("pwt10.01")
-
-p <- pwt10.01 # copy dataframe for manipulation
+p <- read.csv("~/Dropbox/project/studyguide/data/pwt110.csv", header=TRUE)
 p$lngdppc <- round(log(p$rgdpna) - log(p$pop),digits=3) # create log GDP per capita
 p$lnpop <- round(log(p$pop),digits=3) # create log GDP per capita
 p$sgov<- round(p$csh_g,digits=3)
 p$lagyear <- p$year-10
 p <- 
   p %>%
-  group_by(isocode) %>%
+  group_by(countrycode) %>%
   mutate(lag10.lngdppc = dplyr::lag(lngdppc, n = 10, default = NA))
 p$g10.lngdppc <- (p$lngdppc - p$lag10.lngdppc)/10
 p <- 
   p %>%
-  group_by(isocode) %>%
+  group_by(countrycode) %>%
   mutate(lag10.lnpop = dplyr::lag(lnpop, n = 10, default = NA))
 p$g10.lnpop <- (p$lnpop - p$lag10.lnpop)/10
 
-all <- p[which(p$isocode %in% c("USA", "MEX", "DEU","JPN","KOR","CHN")),]
+all <- p[which(p$countrycode %in% c("USA", "MEX", "DEU","JPN","KOR","CHN")),]
 
 fig <- plot_ly(all, x = ~sgov, y = ~g10.lngdppc, color = ~country, type = 'scatter', mode='markers', colors = "Set1")
 fig <- layout(fig, title = list(text = 'Government and growth', x=0),
@@ -49,7 +47,7 @@ fig <- layout(fig, title = list(text = 'Imports and level of GDP per capita', x=
 #api_create(fig, filename = "pwt-all-imports-level")
 saveWidget(partial_bundle(fig), "../plotly/pwt-all-imports-level.html",selfcontained = F, libdir = "lib")
 
-us <- p[which(p$isocode %in% c("USA")),]
+us <- p[which(p$countrycode %in% c("USA")),]
 fig <- plot_ly(us, x = ~lagyear, y = ~g10.lngdppc, type = 'scatter', mode='lines+markers', colors = "Set1")
 fig <- layout(fig, title = list(text = '10-year growth rate', x=0),
               xaxis = list(title = 'Year'),

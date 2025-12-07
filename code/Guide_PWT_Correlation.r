@@ -2,23 +2,21 @@
 
 #########################################################################
 # Pull PWT into dataframe
-data("pwt10.01")
-
-p <- pwt10.01 # copy dataframe for manipulation
+p <- read.csv("~/Dropbox/project/studyguide/data/pwt110.csv", header=TRUE)
 p$lngdppc <- round(log(p$rgdpna) - log(p$pop),digits=2) # create log GDP per capita
 p$si<- round(p$csh_i,digits=2)
 
 # Create 10-year population growth rate
 p <- 
   p %>%
-  group_by(isocode) %>%
+  group_by(countrycode) %>%
   mutate(lag10.pop = dplyr::lag(pop, n = 10, default = NA))
 p$g10.pop <- (log(p$pop) - log(p$lag10.pop))/10
 
 # Eliminate outliers
 p <- p[which((p$g10.pop>-.01) & (p$g10.pop <.06)),]
 p <- p[which((p$si>0) & (p$si <.6)),]
-p <-  p[which(p$year %in% c(1950,1960,1970,1980,1990,2000,2010,2015)),]
+p <-  p[which(p$year %in% c(1950,1960,1970,1980,1990,2000,2010,2020)),]
 
 #########################################################################
 # Animated figure of correlation of GFCF share and GDP per capita over time

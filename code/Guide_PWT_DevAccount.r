@@ -1,14 +1,11 @@
 # Do development accounting and prepare table of results
 
 library(DT)
-#########################################################################
-# Pull PWT into dataframe
-data("pwt10.01") # extract PWT data
 
 #########################################################################
 # Accounting calculation
 #########################################################################
-p <- pwt10.01 # copy dataframe for manipulation
+p <- read.csv("~/Dropbox/project/studyguide/data/pwt110.csv", header=TRUE)
 p$gdppc <- p$rgdpna/p$pop # GDP per capita
 p$ky <- (p$rnna/p$rgdpna)**(.3/(1-.3)) #K/Y ratio
 p$lfp <- p$emp/p$pop # just the LFP ratio
@@ -26,11 +23,11 @@ s$emp <- round(s$emp,digits=2)
 names(s) <- c("Country","GDP","Pop.(N)","K","HC p.c.","Worker(L)")
 s <- s[complete.cases(s), ]
 
-usgdppc <- with(p,gdppc[isocode=="USA"])
-usky <- with(p,ky[isocode=="USA"])
-ushc <- with(p,hc[isocode=="USA"])
-uslfp <- with(p,lfp[isocode=="USA"])
-ustfp <- with(p,tfp[isocode=="USA"])
+usgdppc <- with(p,gdppc[countrycode=="USA"])
+usky <- with(p,ky[countrycode=="USA"])
+ushc <- with(p,hc[countrycode=="USA"])
+uslfp <- with(p,lfp[countrycode=="USA"])
+ustfp <- with(p,tfp[countrycode=="USA"])
 
 p$acctgdppc <- p$gdppc/usgdppc
 p$acctky <- p$ky/usky

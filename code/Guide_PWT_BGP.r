@@ -2,18 +2,17 @@
 
 ##################################################################################
 # Pull PWT into dataframe
-data("pwt10.01")
 
 ##################################################################################
 # Create variables for figures
 ##################################################################################
-p <- pwt10.01 # copy dataframe for manipulation
+p <- read.csv("~/Dropbox/project/studyguide/data/pwt110.csv", header=TRUE)
 p$lngdppc <- round(log(p$rgdpna) - log(p$pop),digits=2) # create log GDP per capita
 p$lnpop <- round(log(p$pop),digits=2) # create log population
 p$ky <- round(p$rnna/p$rgdpna,digits=2) # create K/Y ratio
 p$phil <- round(p$labsh*p$rgdpna/(p$labsh*p$rgdpna+.05*p$rnna),digits=2) # create kludge cost share of labor
-p <- p %>% group_by(isocode) %>% mutate(lag10.lngdppc = dplyr::lag(lngdppc, n = 10, default = NA)) # 10-year lagged log GDP p.c.
-p <- p %>% group_by(isocode) %>% mutate(lag10.lnpop = dplyr::lag(lnpop, n = 10, default = NA)) # 10-year lag log population
+p <- p %>% group_by(countrycode) %>% mutate(lag10.lngdppc = dplyr::lag(lngdppc, n = 10, default = NA)) # 10-year lagged log GDP p.c.
+p <- p %>% group_by(countrycode) %>% mutate(lag10.lnpop = dplyr::lag(lnpop, n = 10, default = NA)) # 10-year lag log population
 p$g10.lngdppc <- (p$lngdppc - p$lag10.lngdppc)/10 # 10-year growth rate of GDP p.c. 
 p$g10.lnpop <- (p$lnpop - p$lag10.lnpop)/10 # 10-year growth rate of population
 p$lagyear <- p$year-10 # initial year for plotting
@@ -23,11 +22,11 @@ p$csh_mabs <- -1*p$csh_m # absolute value of imports/GDP
 ##################################################################################
 # subset PWT into various groups for plotting
 ##################################################################################
-stable <- p[which(p$isocode %in% c("USA", "CAN", "MEX", "GBR", "AUS")),]
-catchup <- p[which(p$isocode %in% c("USA", "DEU", "JPN", "KOR", "CHN","NGA")),]
-test <- p[which(p$isocode %in% c("ETH", "ZAF","BWA")),]
-usa <- p[which(p$isocode %in% c("USA")),]
-mix <- p[which(p$isocode %in% c("USA", "MEX", "DEU","JPN","KOR","CHN")),]
+stable <- p[which(p$countrycode %in% c("USA", "CAN", "MEX", "GBR", "AUS")),]
+catchup <- p[which(p$countrycode %in% c("USA", "DEU", "JPN", "KOR", "CHN","BRA")),]
+test <- p[which(p$countrycode %in% c("ETH", "ZAF","BWA")),]
+usa <- p[which(p$countrycode %in% c("USA")),]
+mix <- p[which(p$countrycode %in% c("USA", "MEX", "DEU","JPN","KOR","CHN")),]
 
 ##################################################################################
 # US-only plots
@@ -170,7 +169,7 @@ saveWidget(partial_bundle(fig), "../plotly/pwt-catchup-phil.html",selfcontained 
 pal <- c('#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33')
 pal <- setNames(pal, c("CHN", "DEU", "JPN","KOR","NGA","USA"))
 fig <- plot_ly(catchup, x = ~lag10.lngdppc, y = ~g10.lngdppc, text=~year,
-               color = ~isocode, 
+               color = ~countrycode, 
                colors = pal, 
                type = 'scatter',
                mode = 'markers',

@@ -2,26 +2,25 @@
 
 #########################################################################
 # Pull PWT into dataframe
-data("pwt10.01") # extract PWT data
 
 #########################################################################
 # Accounting calculation
 #########################################################################
-p <- pwt10.01 # copy dataframe for manipulation
+p <- read.csv("~/Dropbox/project/studyguide/data/pwt110.csv", header=TRUE)
 p$lngdppc <- round(log(p$rgdpna) - log(p$pop),digits=2) # create log GDP per capita
 p$lnK <- log(p$rnna)
 p$lnL <- log(p$pop)
 p <- 
   p %>%
-  group_by(isocode) %>%
+  group_by(countrycode) %>%
   mutate(lag10.lnK = dplyr::lag(lnK, n = 10, default = NA))
 p <- 
   p %>%
-  group_by(isocode) %>%
+  group_by(countrycode) %>%
   mutate(lag10.lnL = dplyr::lag(lnL, n = 10, default = NA))
 p <- 
   p %>%
-  group_by(isocode) %>%
+  group_by(countrycode) %>%
   mutate(lag10.lngdppc = dplyr::lag(lngdppc, n = 10, default = NA))
 
 p$gK <- (p$lnK - p$lag10.lnK)/10
@@ -30,11 +29,11 @@ p$gy <- (p$lngdppc - p$lag10.lngdppc)/10
 p$ga <- (1/.7)*p$gy - (.3/.7)*(p$gK - p$gL)
 p$gcap <- .3*(p$gK - p$ga - p$gL)
 
-usa <- p[which(p$isocode %in% c("USA")),]
-deu <- p[which(p$isocode %in% c("DEU")),]
-kor <- p[which(p$isocode %in% c("KOR")),]
-jpn <- p[which(p$isocode %in% c("JPN")),]
-chn <- p[which(p$isocode %in% c("CHN")),]
+usa <- p[which(p$countrycode %in% c("USA")),]
+deu <- p[which(p$countrycode %in% c("DEU")),]
+kor <- p[which(p$countrycode %in% c("KOR")),]
+jpn <- p[which(p$countrycode %in% c("JPN")),]
+chn <- p[which(p$countrycode %in% c("CHN")),]
 
 #########################################################################
 # Figure for JPN showing growth rates of capital versus productivity
