@@ -2,6 +2,7 @@
 title: Accounting for growth
 parent: Solow and Balanced Growth
 nav_order: 2
+has_children: true
 ---
 
 # Accounting for the sources of growth
@@ -58,3 +59,38 @@ If you look at the US, the story is slightly different.
 Here, productivity growth is never as high as in Japan. But also note that the capital accumulation term is never that large. There is no burst like in Japan. For a country like the US that has experienced stable growth, the story is that the $\alpha(g_K - g_A - g_L)$ does not contribute a whole lot to the party. That won't mean that capital is unimportant, as we will see going forward. It's just that, on net, capital growth over and above productivity and labor growth is not a big contributor. 
 
 For Japan, there is a period in which capital grows very fast (faster than $g_A$ and $g_L$), which boosts growth. But note that this is temporary. We'll also study why that burst cannot last forever, and how it came to be that Japan got this boost. The short version is that when you start with very *little* capital, as after World War II, then there is the potential for a spike in growth as you catch up. 
+
+## What about affordability?
+Back in [the section on measuring GDP growth](afford.html) I spent a lot of time telling you that growth is about products getting more affordable. How does the idea of a production function and all this accounting for capital and productivity connect to that concept? The basic idea is that more capital, labor, and productivity lower the cost of making things, which in turn lowers their price (relative to nominal spending), and hence leads to affordability growth. 
+
+From that section we said that
+
+$$
+g_Y = \sum_i \left(g_{PY} - g_{Pi} \right)\frac{C_i P_i}{PY}
+$$
+
+and in per-capita terms this would still just be
+
+$$
+g_y = \sum_i \left(g_{Py} - g_{Pi} \right)\frac{C_i P_i}{PY}
+$$
+
+where the only difference is that $g_{Py}$ is the growth rate of per-capita nominal spending, which might be different than the aggregate growth in nominal spending. Regardless, growth in real GDP per capita depends on the expenditure-weighted sum of affordability growth of all the products.
+
+From the production side we established that real GDP growth occurs because 
+
+$$
+g_y = \alpha (g_K - g_A - g_L) + g_A
+$$
+
+or it depends on capital, productivity, and labor. Together, these things have to give the same answer for $g_y$, so that means
+
+$$
+\sum_i \left(g_{Py} - g_{Pi} \right)\frac{C_i P_i}{PY} = \alpha (g_K - g_A - g_L) + g_A
+$$
+
+and you can read this as saying that the affordability growth of products must arise from the accumulation of capital, labor, and productivity. The right-hand side isn't specific about which products, it just says that if you have more $K$ or $A$ then you can make at least some products more affordable, and/or you can make the products with relatively bigger expenditure shares a little more affordable. In other words, if $g_K - g_A - g_L >0$ and $g_A>0$, then it must be that at least some of the terms $g_{Py} - g_{Pi} >0$, or that some products are getting more affordable. 
+
+Can we pin down the growth in nominal GDP per capita, or the exact growth in the prices? No, all we can do studying growth is establish that the relative price goes down. The determination of $g_{Py}$ depends on things like the growth in the money supply and other things that we aren't worried about in this class. Regardless, real growth in per capita GDP occurs when the prices don't go up as fast as that nominal GDP. 
+
+

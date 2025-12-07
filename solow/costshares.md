@@ -60,4 +60,3 @@ What those two authors do is show how to find an aggregate elasticity of GDP wit
 
 In essence, the economy can be almost as complicated as we can imagine it. Really the only thing we need to assume is that each establishment is trying to minimize its costs. If we can swallow that assumption, then they show that you can still calculate the aggregate elasticity of GDP with respect to capital or labor. Those elasticities are a giant mix of all the different cost shares of different establishments, and not necessarily equal to the aggregate cost share numbers I showed you [earlier in the guide](http://growthecon.com/StudyGuide/facts/income.html#labors-share-of-costs).
 
-This is still a bleeding edge area of research, but preliminary results suggest that the aggregate elasticities are stable even if we do account for all this complexity. 

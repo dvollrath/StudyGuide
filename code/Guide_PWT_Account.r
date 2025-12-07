@@ -5,12 +5,12 @@
 
 #########################################################################
 # Pull PWT into dataframe
-data("pwt10.01") # extract PWT data
-
+#data("pwt10.01") # extract PWT data
+p <- read.csv("~/Dropbox/project/studyguide/data/pwt110.csv", header=TRUE)
 #########################################################################
 # Accounting calculation
 #########################################################################
-p <- pwt10.01 # copy dataframe for manipulation
+#p <- pwt10.01 # copy dataframe for manipulation
 p$lngdppc <- round(log(p$rgdpna) - log(p$pop),digits=2) # create log GDP per capita
 p$ky <- round(p$rnna/p$rgdpna,digits=2) # create K/Y ratio
 p$acctky <- (.3/(1-.3))*log(p$ky) # just the K/Y part
@@ -21,9 +21,9 @@ s <- p # save initial dataset for use later
 
 # Get initial values of TFP, HC, and KY terms from 1960
 p <- p[which(p$year>1959),]
-p$inittfp <- with(p, accttfp[year == "1960"][match(isocode, isocode[year == "1960"])])
-p$inithc <- with(p, accthc[year == "1960"][match(isocode, isocode[year == "1960"])])
-p$initky <- with(p, acctky[year == "1960"][match(isocode, isocode[year == "1960"])])
+p$inittfp <- with(p, accttfp[year == "1960"][match(countrycode, countrycode[year == "1960"])])
+p$inithc <- with(p, accthc[year == "1960"][match(countrycode, countrycode[year == "1960"])])
+p$initky <- with(p, acctky[year == "1960"][match(countrycode, countrycode[year == "1960"])])
 
 # Calcualte the counterfactual series of GDP p.c. with KY only, TFP only, HC only
 p$kyonly <- round(p$inittfp + p$inithc + p$acctky,digits=2)
@@ -32,11 +32,11 @@ p$tfponly <- round(p$accttfp + p$inithc + p$initky,digits=2)
 p$input <- round(p$inittfp + p$accthc + p$acctky,digits=2)
 
 # Grab data for only specific countries
-usa <- p[which(p$isocode %in% c("USA")),]
-deu <- p[which(p$isocode %in% c("DEU")),]
-kor <- p[which(p$isocode %in% c("KOR")),]
-jpn <- p[which(p$isocode %in% c("JPN")),]
-chn <- p[which(p$isocode %in% c("CHN")),]
+usa <- p[which(p$countrycode %in% c("USA")),]
+deu <- p[which(p$countrycode %in% c("DEU")),]
+kor <- p[which(p$countrycode %in% c("KOR")),]
+jpn <- p[which(p$countrycode %in% c("JPN")),]
+chn <- p[which(p$countrycode %in% c("CHN")),]
 
 #########################################################################
 # Figure for USA and KOR accounting showing CF log GDP per capita
@@ -77,19 +77,19 @@ saveWidget(partial_bundle(fig), "../plotly/pwt-account-kor.html",selfcontained =
 # Get 10-year lags for accounting terms
 s <- 
   s %>%
-  group_by(isocode) %>%
+  group_by(countrycode) %>%
   mutate(lag10.acctky = dplyr::lag(acctky, n = 10, default = NA))
 s <- 
   s %>%
-  group_by(isocode) %>%
+  group_by(countrycode) %>%
   mutate(lag10.accthc = dplyr::lag(accthc, n = 10, default = NA))
 s <- 
   s %>%
-  group_by(isocode) %>%
+  group_by(countrycode) %>%
   mutate(lag10.accttfp = dplyr::lag(accttfp, n = 10, default = NA))
 s <- 
   s %>%
-  group_by(isocode) %>%
+  group_by(countrycode) %>%
   mutate(lag10.lngdppc = dplyr::lag(lngdppc, n = 10, default = NA))
 
 # Calculate 10-year growth rate of accounting terms
@@ -98,8 +98,8 @@ s$g10.accthc <- round((s$accthc - s$lag10.accthc)/10,digits=4)
 s$g10.accttfp <- round((s$accttfp - s$lag10.accttfp)/10,digits=4)
 s$g10.lngdppc <- round((s$lngdppc - s$lag10.lngdppc)/10,digits=4)
 
-comp <- s[which(s$isocode %in% c("USA","CHN","KOR","JPN","DEU","GBR")),]
-s <- s[which(s$isocode %in% c("USA")),]
+comp <- s[which(s$countrycode %in% c("USA","CHN","KOR","JPN","DEU","GBR")),]
+s <- s[which(s$countrycode %in% c("USA")),]
 
 #########################################################################
 # Figure for US growth rate breakdown
@@ -120,7 +120,7 @@ saveWidget(partial_bundle(fig), "../plotly/pwt-growth-acct-usa.html",selfcontain
 #########################################################################
 # Figure of growth rate of productivity for set of countries
 #########################################################################
-fig <- plot_ly(comp, x = ~year, y = ~g10.accttfp, linetype = ~isocode, type = 'scatter', mode = 'lines+markers')
+fig <- plot_ly(comp, x = ~year, y = ~g10.accttfp, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Productivity growth', x=0),
               xaxis = list(title = 'Year'),
               yaxis = list(title = '10-year productivity growth rate'),
@@ -144,7 +144,7 @@ fte <-
 fte$g10.lnrdworker <- (fte$lnrdworker - fte$lag10.lnrdworker)/10
 
 # Join the R&D worker data to the productivity growth data for set of countries
-match <- data.frame(comp$isocode,comp$g10.accttfp,comp$year,comp$pop,comp$accttfp)
+match <- data.frame(comp$countrycode,comp$g10.accttfp,comp$year,comp$pop,comp$accttfp)
 colnames(match) <- c("COUNTRY","g10.accttfp","Time","pop","accttfp")
 match$lnpop <- log(match$pop)
 joined <- merge(match,fte,by=c('COUNTRY','Time'))
