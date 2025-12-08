@@ -18,4 +18,3 @@ $$
 g_y = \sum_i \left(g_{Py} - g_{Pi} \right)\frac{C_i P_i}{PY}
 $$
 
-## Structural change

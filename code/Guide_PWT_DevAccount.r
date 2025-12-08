@@ -12,7 +12,7 @@ p$lfp <- p$emp/p$pop # just the LFP ratio
 # HC is already pre-calculated
 p$tfp <- p$gdppc/(p$ky*p$hc*p$lfp) # just the TFP part
 
-p <- p[which(p$year == "2019"),] # just the 2019 data
+p <- p[which(p$year == "2022"),] # just the 2022 data
 
 s <- p[,c("country","rgdpna","pop","rnna","hc","emp")] # raw data
 s$rgdpna <- round(s$rgdpna,digits=2)

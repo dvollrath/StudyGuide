@@ -91,6 +91,6 @@ $$
 
 and you can read this as saying that the affordability growth of products must arise from the accumulation of capital, labor, and productivity. The right-hand side isn't specific about which products, it just says that if you have more $K$ or $A$ then you can make at least some products more affordable, and/or you can make the products with relatively bigger expenditure shares a little more affordable. In other words, if $g_K - g_A - g_L >0$ and $g_A>0$, then it must be that at least some of the terms $g_{Py} - g_{Pi} >0$, or that some products are getting more affordable. 
 
-Can we pin down the growth in nominal GDP per capita, or the exact growth in the prices? No, all we can do studying growth is establish that the relative price goes down. The determination of $g_{Py}$ depends on things like the growth in the money supply and other things that we aren't worried about in this class. Regardless, real growth in per capita GDP occurs when the prices don't go up as fast as that nominal GDP. 
+Can we pin down the growth in nominal GDP per capita, or the exact growth in the prices? No, all we can do studying growth is establish that the relative price goes down. The determination of $g_{Py}$ depends on things like the growth in the money supply and other things that we aren't worried about in this class. Regardless, real growth in per capita GDP occurs when the prices don't go up as fast as nominal GDP. 
 
 

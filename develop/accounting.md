@@ -70,7 +70,7 @@ $$
 That means we can use the raw data to calculate each ratio you see on the right-hand side. The combination of these gives us information on which component - capital, human capital, employment ratio, or productivity - is driving differences between countries.
 
 ## Results
-This will make more sense by looking at the actual data. This table gives you the results for every country with sufficient data from 2019. It uses the [Penn World Tables](https://www.rug.nl/ggdc/productivity/pwt/) which are a standard source for cross-country information because they have explicitly done the price adjustments we talked about in the [Measuring GDP](https://growthecon.com/StudyGuide/gdp/gdp.html) section so that GDP is comparable across countries.
+This will make more sense by looking at the actual data. This table gives you the results for every country with sufficient data from 2022. It uses the [Penn World Tables](https://www.rug.nl/ggdc/productivity/pwt/) which are a standard source for cross-country information because they have explicitly done the price adjustments we talked about in the [Measuring GDP](https://growthecon.com/StudyGuide/gdp/gdp.html) section so that GDP is comparable across countries.
 
 <iframe width="900" height="600" frameborder="0" scrolling="yes" src="../plotly/pwt-dev-acct.html"></iframe>
 
