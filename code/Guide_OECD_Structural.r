@@ -4,7 +4,7 @@
 # Affordability
 ##################################################################################
 all <- fread("~/Dropbox/project/studyguide/data/oecd_consumption_data.csv", header=TRUE)
-all[, ShareVA := valueN/totalN]
+all[, ShareVA := round(valueN/totalN,3)]
 setorder(all, countrycode, oecd_exp_code, year)
 all[, lnVA := log(totalN)]
 all[, lnP := log(valueP)]
@@ -46,7 +46,7 @@ fig <- layout(fig, title = list(text = 'Expenditure shares and affordability', x
 saveWidget(partial_bundle(fig), "../plotly/oecd-afford-share.html",selfcontained = F, libdir = "lib")
 
 s <- f[,c("countrycode","year","oecd_exp_text","oecd_exp_code","ShareVA","gAfford")] # raw data
-tab <- datatable(f,rownames = FALSE,  class = 'display', 
+tab <- datatable(s,rownames = FALSE,  class = 'display', 
                  extensions = c('Buttons','FixedHeader'), 
                  options=list(dom = 'lfrtBp',
                               buttons = c('csv')
