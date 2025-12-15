@@ -1,54 +1,47 @@
 ## Set up and plot hypothetical paths of productivity process
 
-## Set up scenarios
-# Each scenario has ID, theta, lambda, phi, gR, R0, A0
-scenario <- c('A','B','C','D','E')
-theta <- c(.01,.01,.01,.01,.01)
-lambda <- c(1,1,1,1,.8)
-phi <- c(0,.8,-.8,0,0)
-gR <- c(.02,.02,.01,.04,.02)
-R0 <- c(1,1,2,1,1)
-A0 <- c(1,10,1,.9,10)
-label <- c('C','B','D','E','A') # allows different label for test purposes
+f.romer <- function(theta = .01, lambda=1, phi=0, sR=.02, gL=.01, L0=1, A0=.02, t=1) {
+  # z is A^1-phi/R^lambda state variable, solved for first, then extract info
+  z_init <- A0^(1-phi)/((L0)^(lambda)) # exclude sR from initial calc
+  z_ss <- (1-phi)*theta*sR^(lambda)/(lambda*gL)
+ 
+  # Manage time periods passed
+  u <- tryCatch(
+    {u = t - min(t)}, # reset any list of time periods to start at zero, for convergence calcs
+    error=function(cond) { # if above fails, just take t as-is (usually a single number)
+      return(t)
+    }
+  )
+  conv <- lambda*gL # convergence parameter
+  z_time <- exp(-1*conv*u)*z_init + (1-exp(-1*conv*u))*z_ss # time path of z ratio
+  gA <- theta*sR^(lambda)/z_time # growth rate is gA = theta sR^lambda L^lambda/A^1-phi
+  L_time <- L0*exp(gL*u) # purely for use in graphing if necessary
+  # implied time path of log productivity given z and path of population
+  lnA_time <- lambda*log(sR)/(1-phi) + log(z_time)/(1-phi) + lambda*log(L_time)/(1-phi) 
+   
+  # create list containing all results
+  results <- list("time" = t, "ARratio" = z_time, "L" = L_time, "lnA" = lnA_time, "gA" = gA,
+                  "ARss" = z_ss, "L_init" = L0, "A_init" = A0)
+  solved <- as.data.frame(results) # convert to data frame to pass back
+  
+  return(solved) # return all results
+}
 
-# Year vector gives total periods to run over
-year <- c(0:400)
-s <- 0 # initializes vector
+time = seq(from = 1,to = 300, by = 1)
 
-# Merge year and scenario data to create scenario/year dataframe
-all_scenario <- data.frame(scenario,theta,lambda,phi,gR,R0,A0,label) # combine scenario parameters
-year_scenario <- expand.grid(year,scenario) # create year/scenario combinations
-names(year_scenario) <- c("year","scenario")
-s <- merge(year_scenario,all_scenario,by="scenario") # add parameters to year/scenario combos
+A <- f.romer(t = time)
+B <- f.romer(t = time, A0 = A$A_init, L0 = A$L_init,gL=.005)
+C <- f.romer(t = time, A0 = A$A_init, L0 = A$L_init,gL = 0.015)
+D <- f.romer(t = time, A0 = A$A_init, L0 = A$L_init*4)
+E <- f.romer(t = time, A0 = A$A_init, L0 = A$L_init*.25)
 
-# Make calculations of various values using theory
-# z is A^1-phi/R^lambda state variable, solved for first, then extract info
-s$conv <- 1-s$lambda*s$gR
-s$z <- (s$conv^s$year)*(s$A0^(1-s$phi))/(s$R0^(s$lambda)) + (1-s$conv^s$year)*(1-s$phi)*s$theta/(s$lambda*s$gR)
-s$RA <- 1/s$z # put this in R/A form
-s$gA <- s$theta/s$z # growth rate of A follows directly
-s$R <- s$R0*(1+s$gR)^(s$year) # constant growth of R
-s$lnA <- log(s$z)/(1-s$phi) + s$lambda*log(s$R)/(1-s$phi) # actual log of productivity
-
-# Plot figure of scenarios and their BGP's
-fig <- plot_ly(s, x = ~year, y = ~lnA, linetype = ~scenario, type = 'scatter', mode = 'lines')
-#fig <- add_trace(fig, x = ~year, y = ~lnystar, linetype = ~scenario, type = 'scatter', mode = 'lines')
-fig <- layout(fig, title = list(text = 'Log productivity', x=0),
-              xaxis = list(title = 'Year'),
-              yaxis = list (title = 'Log of productivity (A)'),
-              hovermode="x unified")
-#api_create(fig, filename = "sim-prod-lnA")
-
-fig <- plot_ly(s, x = ~year, y = ~gA, linetype = ~scenario, type = 'scatter', mode = 'lines')
-fig <- layout(fig, title = list(text = 'Growth rate of productivity', x=0),
-              xaxis = list(title = 'Year'),
-              yaxis = list (title = 'Growth rate of productivity'),
-              hovermode="x unified")
-#api_create(fig, filename = "sim-prod-gA")
-
-fig <- plot_ly(s, x = ~year, y = ~z, linetype = ~scenario, type = 'scatter', mode = 'lines')
-fig <- layout(fig, title = list(text = 'R/A ratio', x=0),
-              xaxis = list(title = 'Year'),
-              yaxis = list (title = 'R/A ratio'),
-              hovermode="x unified")
-#api_create(fig, filename = "sim-prod-RA")
+fig1 <- plot_ly(A, x = ~time, y = ~lnA, type = 'scatter', mode = 'lines', name='A')
+fig1 <- fig1 %>% add_trace(x = ~time, y = ~lnA, data = B, name = 'B', mode = 'lines',
+                          line = list(color = 'green',dash='dash'))
+fig1 <- fig1 %>% add_trace(x = ~time, y = ~lnA, data = C, name = 'C', mode = 'lines',
+                           line = list(color = 'red',dash='dash'))
+fig1 <- fig1 %>% add_trace(x = ~time, y = ~lnA, data = D, name = 'D', mode = 'lines',
+                           line = list(color = 'purple',dash='dash'))
+fig1 <- fig1 %>% add_trace(x = ~time, y = ~lnA, data = E, name = 'E', mode = 'lines',
+                           line = list(color = 'orange',dash='dash'))
+saveWidget(partial_bundle(fig), "../plotly/quiz-lnA-level.html",selfcontained = F, libdir = "lib")

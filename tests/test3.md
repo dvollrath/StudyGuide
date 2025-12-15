@@ -23,9 +23,4 @@ The following figure plots "energy intensity", or $E/Y$, for a set of countries.
 ### Productivity
 This is a figure of log productivity, $\ln A$, for several hypothetical economies. 
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/165.embed"></iframe>
-
-### Resources per capita
-This is a figure of log resources per capita, $\ln X/L$, for several hypothetical economies.
-
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/171.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/quiz-lnA-level.html"></iframe>

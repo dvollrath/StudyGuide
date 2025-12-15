@@ -5,6 +5,11 @@ nav_exclude: true
 ---
 
 
+### Resources per capita
+This is a figure of log resources per capita, $\ln X/L$, for several hypothetical economies.
+
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/171.embed"></iframe>
+
 ## Real GDP Calculation
 You will need the following table to calculate real GDP ratios for two questions. 
 
