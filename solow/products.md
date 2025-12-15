@@ -35,4 +35,4 @@ The figure shows that product categories with bigger expenditure shares tended t
 
 Below is a table which contains raw data on affordability growth ($gAfford$) and expenditure share ($ShareVA$) for each of the 12 main product groups in the data, for the United States. You can spin through there to see how things evolved for a specific product group, or look at a specific year to see how products compared. 
 
-<iframe width="900" height="600" frameborder="0" src="../plotly/pwt-dev-raw.html"></iframe>
+<iframe width="900" height="600" frameborder="0" src="../plotly/oecd-afford-data.html"></iframe>
