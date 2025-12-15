@@ -108,7 +108,7 @@ saveWidget(partial_bundle(fig), "../plotly/pwt-test-lngdppc.html",selfcontained 
 fig <- plot_ly(stable, x = ~year, y = ~lngdppc, linetype = ~country, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Log GDP per capita for stable growth countries', x=0),
                xaxis = list(title = 'Year'),
-               yaxis = list (title = 'Log GDP per capita', range=c(6,11)),
+               yaxis = list (title = 'Log GDP per capita'),
                hovermode="x unified")
 saveWidget(partial_bundle(fig), "../plotly/pwt-stable-lngdppc.html",selfcontained = F, libdir = "lib")
 
@@ -117,7 +117,7 @@ saveWidget(partial_bundle(fig), "../plotly/pwt-stable-lngdppc.html",selfcontaine
 fig <- plot_ly(catchup, x = ~year, y = ~lngdppc, linetype = ~country, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Log GDP per capita for catch-up growth countries', x=0), 
               xaxis = list(title = 'Year'),
-              yaxis = list (title = 'Log GDP per capita', range=c(6,11)),
+              yaxis = list (title = 'Log GDP per capita'),
               hovermode="x unified")
 saveWidget(partial_bundle(fig), "../plotly/pwt-catchup-lngdppc.html",selfcontained = F, libdir = "lib")
 

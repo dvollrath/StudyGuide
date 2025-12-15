@@ -51,7 +51,7 @@ fig <- plot_ly(deu, x = ~year, y = ~lngdppc, linetype = ~countrycode, type = 'sc
 fig <- fig %>% add_trace(y = ~fitted, name = 'BGP',mode = 'lines')
 fig <- layout(fig, title = list(text = 'Log GDP per capita for Germany', x=0),
               xaxis = list(title = 'Year', tick0=1950, dtick=10),
-              yaxis = list (title = 'Log GDP per capita', range=c(7,11)),
+              yaxis = list (title = 'Log GDP per capita'),
               hovermode="x unified")
 saveWidget(partial_bundle(fig), "../plotly/pwt-apply-deu.html",selfcontained = F, libdir = "lib")
 
@@ -60,7 +60,7 @@ saveWidget(partial_bundle(fig), "../plotly/pwt-apply-deu.html",selfcontained = F
 fig <- plot_ly(deu, x = ~year, y = ~ky, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Capital/output for Germany', x=0),
               xaxis = list(title = 'Year', tick0=1950, dtick=10),
-              yaxis = list (title = 'Capital/output ratio', range=c(3,5)),
+              yaxis = list (title = 'Capital/output ratio'),
               hovermode="x unified")
 saveWidget(partial_bundle(fig), "../plotly/pwt-apply-ky-deu.html",selfcontained = F, libdir = "lib")
 
@@ -79,7 +79,7 @@ fig <- fig %>% add_trace(y = ~fitted1, name = 'BGP before',mode = 'lines')
 fig <- fig %>% add_trace(y = ~fitted2, name = 'BGP after',mode = 'lines')
 fig <- layout(fig, title = list(text = 'Log GDP per capita for South Korea', x=0),
               xaxis = list(title = 'Year', tick0=1950, dtick=10),
-              yaxis = list (title = 'Log GDP per capita', range=c(6.5,11)),
+              yaxis = list (title = 'Log GDP per capita'),
               hovermode="x unified")
 saveWidget(partial_bundle(fig), "../plotly/pwt-apply-kor.html",selfcontained = F, libdir = "lib")
 
@@ -97,7 +97,7 @@ saveWidget(partial_bundle(fig), "../plotly/pwt-apply-si-kor.html",selfcontained 
 fig <- plot_ly(kor, x = ~year, y = ~g1.pop, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Population growth for South Korea', x=0),
               xaxis = list(title = 'Year', tick0=1950, dtick=10),
-              yaxis = list (title = 'Population growth rate', range=c(0,0.05)),
+              yaxis = list (title = 'Population growth rate', range=c(-.02,0.05)),
               hovermode="x unified")
 saveWidget(partial_bundle(fig), "../plotly/pwt-apply-gl-kor.html",selfcontained = F, libdir = "lib")
 
@@ -115,7 +115,7 @@ fig <- fig %>% add_trace(y = ~fitted1, name = 'BGP before',mode = 'lines')
 fig <- fig %>% add_trace(y = ~fitted2, name = 'S. Korea BGP',mode = 'lines')
 fig <- layout(fig, title = list(text = 'Log GDP per capita for China', x=0),
               xaxis = list(title = 'Year', tick0=1950, dtick=10),
-              yaxis = list (title = 'Log GDP per capita', range=c(6.5,11)),
+              yaxis = list (title = 'Log GDP per capita'),
               hovermode="x unified")
 saveWidget(partial_bundle(fig), "../plotly/pwt-apply-chn.html",selfcontained = F, libdir = "lib")
 
@@ -133,7 +133,7 @@ saveWidget(partial_bundle(fig), "../plotly/pwt-apply-si-chn.html",selfcontained 
 fig <- plot_ly(chn, x = ~year, y = ~g1.pop, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Population growth for China', x=0),
               xaxis = list(title = 'Year', tick0=1950, dtick=10),
-              yaxis = list (title = 'Population growth rate', range=c(-.01,0.05)),
+              yaxis = list (title = 'Population growth rate', range=c(-.02,0.05)),
               hovermode="x unified")
 saveWidget(partial_bundle(fig), "../plotly/pwt-apply-gl-chn.html",selfcontained = F, libdir = "lib")
 
@@ -145,7 +145,7 @@ saveWidget(partial_bundle(fig), "../plotly/pwt-apply-gl-chn.html",selfcontained 
 fig <- plot_ly(comp, x = ~year, y = ~lngdppc, linetype = ~countrycode, type = 'scatter', mode = 'lines+markers')
 fig <- layout(fig, title = list(text = 'Log GDP per capita ', x=0),
               xaxis = list(title = 'Year', tick0=1950, dtick=10),
-              yaxis = list (title = 'Log GDP per capita', range=c(6.5,12)),
+              yaxis = list (title = 'Log GDP per capita'),
               hovermode="x unified")
 saveWidget(partial_bundle(fig), "../plotly/pwt-apply-comp.html",selfcontained = F, libdir = "lib")
 
