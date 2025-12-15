@@ -1,10 +1,10 @@
 ---
-title: Test II
-parent: Test material
+title: Part II
+parent: Quiz material
 nav_order: 2
 ---
 
-# Test 2 Reference Material
+# Reference material for quizzes from Part II
 
 ## African economies
 These figures show select information for Ethiopia (ETH), Botswana (BWA), and South Africa (ZAF). 
