@@ -27,7 +27,8 @@ One of the reasons we use logs so much in economic growth is because it is going
 
 Let's take that log of GDP and plot it on a graph against the year. You can see in the figure that GDP ended up higher in 2024 than in 2018, but that there was the obvious dip in 2020 involved.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/25.embed"></iframe>
+
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/me-level-data.html"></iframe>
 
 We could calculate the slope of the line in the figure between 2018 and 2019, for example. How do you calculate the slope? Rise over run, or change in y variable over the change in x variable. Because y here is the log of GDP, and x is the year, the slope of the line from 2018 to 2019 is
 
@@ -39,7 +40,7 @@ Notice that the slope of the line in this figure is almost *exactly* the growth 
 
 The data do not follow a perfectly straight line, but there is no reason we cannot calculate the slope of a hypothetical staight line that runs from 2018 to 2024. The figure below plots this hypothetical line over the top of the actual data.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/27.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/me-level-hyp.html"></iframe>
 
 Notice the hypothetical line is perfectly straight, but is pinned down by the actual data in 2018 and 2024. What is the slope of this hypothetical line? Again, take change in y over change in x.
 
