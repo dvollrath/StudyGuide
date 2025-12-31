@@ -2,7 +2,7 @@
 title: Case studies
 parent: Ideas and Productivity
 has_children: true
-nav_order: 8
+nav_order: 9
 ---
 
 # Case studies

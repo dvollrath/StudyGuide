@@ -2,7 +2,7 @@
 title: Incentives to innovate
 parent: Ideas and Productivity
 has_children: true
-nav_order: 6
+nav_order: 7
 ---
 
 # Incentives to innovate
@@ -14,15 +14,19 @@ nav_order: 6
 ![Meme](meme_competition.png)
 
 ## Profits!
-This isn't hard. We think innovation occurs because people want to get *paid*. Companies get started with new products because the founders want to make money. Existing comparies hire R&D workers to invent or improve products so that they can make more money. Individual workers will generate new ideas and ways of doing things to get noticed by a boss and ... make more money. 
+We know a lot about the dynamics of productivity growth and how it must settle down in the long run to depend on population growth. That was consistent with the [simple model](fixed.html) we set up earlier. But that model was predicated on the idea that firms or ideas only get added if it there are profits to be had. Remember, we said that firms or products or ideas will only enter if
 
-The motivation is straightforward, but there are some subtleties to it, which in this clip the underpants gnomes don't quite get. Warning, salty language at the end:
+$$
+f \geq (\mu-1) \frac{L}{A}
+$$
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bxiCCZXhuRQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+or the fixed costs of entry are less than the operating profits they can earn from selling their product. This can only hold if the value of the markup $\mu > 1$. Remember, this markup is
 
-Let's generalize this. The first step, "collect underpants" is a highly specific activity that may or may not generate innovation (who knows?). Think of this first step instead as "do research and development", or even more generally "exert some effort to try and come up with a new idea". The gnomes are putting in that effort.
+$$
+\mu = \frac{p}{c}
+$$
 
-The second step is where things break down for these guys, and where we need to fill in more information. What allows the generator of a new idea get to stage 3 and profit from that idea? The answer is that they need some form of ownership. They need to make that idea *exclusive* to them, so they can force others to *pay* them for using that idea.
+so this means the firm has to charge a price higher than marginal cost. But as mentioned earlier, they cannot charge a price higher than marginal cost unless there is imperfect competition. In short, there have to be limits to entry by *other* firms who can *copy* these products. We need to *exclude* firms from entering and mimicking the exact idea or product of other firms to incent firms to come up with those new ideas or products.
 
 ## Excludable things
 This notion of exclusivity is the key to generating profits from innovation. If refers to a property of goods, services, or ideas. Something is *excludable* if you have some legal or physical way of preventing someone from using that something (i.e. excluding them). In practice, this means that you can force someone to *pay* your to use that something. In order for you to make money selling *anything*, it has to be excludable. Non-excludable means the opposite, and refers to things that it is hard or impossible to prevent people from using, and therefore hard or impossible to charge them for.
@@ -39,94 +43,159 @@ How do we do that? The most obvious answer is intellectual property (IP) law: pa
 
 We could go deep down the rabbit hole of IP and innovation. For the moment, though, we're just interested in the idea that IP creates the excludable characteristic of non-rival ideas. Note that nothing here says that *more* IP or *stronger* IP necessarily increases innovation. We probably need *some* IP to incent innovation, but it is an open question of how much. We'll come back to that later.
 
-## Economic implications
-Instead of getting into the weeds of IP here, let's work out some of the economic implications of having IP in order to generate growth. Here the Study Guide deviates from the textbook some, and tries to present a rough overview of the R&D decision process that firms use to capture the profits that come from IP. 
-
-First, from a pure accounting perspective, remember that we can always break GDP down into three income streams,
+## Effort on fixed costs
+For us, the shorthand way to explain the notion of excludability is going to be through the markup, $\mu$. The higher the markup, the more "protected" a firm or idea, and the more "excluded" competitors are from making exact or near copies of their products. At the same time, we are letting new products and firms enter into the economy that have *new* ideas (that get protected by the same IP laws and things). That new entry will continue until the marginal new firm/product/idea earns zero profits, or
 
 $$
-Y = wL + RK + \Pi
+f = (\mu-1) \frac{L}{A}.
 $$
 
-where $wL$ are the wages paid to labor, $RK$ are the returns paid to capital, and $\Pi$ are the total economic profits paid out. 
-
-Second, a constant returns to scale production function (like the Cobb-Douglas) has the [interesting property](marginal.html) that
+This is what the world looks like from the firm/product/idea level. But we know from [the dynamics](proddynamic.html) that the size of $f$ is determined by $L_R$ and $A$, as in 
 
 $$
-Y = MPK \times K + MPL \times L.
+f = \frac{L_R^{1-\lambda}}{A^{\phi}}.
 $$
 
-Third, we just said above that productivity growth could only occur if there were economic profits that got paid to innovators, or $\Pi >0$. 
+If we plug this in we get that
 
-Put all three of these together, and you get an intriguing result. It *must* be that $w \leq MPL$ and/or $R \leq MPK$. How do you find this? The first two properties imply that $wL + RK + \Pi = MPK \times K + MPL \times L$. If $\Pi>0$, then $wL + RK < MPK \times K + MPL \times L$, and the only way for that to work is if either (or both) the wage is less than the MPL or the rental rate is less than the MPK.
+$$
+\frac{L_R^{1-\lambda}}{A^{\phi}} = (\mu-1) \frac{L}{A}
+$$
 
-Growth requires innovation, which requires profits, which requires that rival inputs like labor and capital are paid *less* than their marginal product. This is important enough to warrant a little label
+or 
+
+$$
+\frac{L_R}{L}= (\mu-1) \frac{L_R^{\lambda}}{A^{1-\phi}}.
+$$
+
+What's that ratio on the right-hand side? That's just $g_A/\theta$, so we have
+
+$$
+\frac{L_R}{L}= \frac{(\mu-1)}{\theta} g_A.
+$$
+
+We already defined the ratio of $s_R = L_R/L$ so that gives us
 
 {: .important }
-Economic growth in a constant-returns to scale economy implies that rival inputs are not paid their marginal products.
+>If firms/ideas/products enter until profits are zero, then
+>$$
+>s_R = \frac{(\mu-1)}{\theta} g_A.
+>$$
+>is the share of labor used to pay the fixed costs associated with innovation/development. 
 
-Based on this, rival inputs like labor and capital need to be "underpaid" relative to their contribution to producing GDP so that we can provide incentives to innovators to come up with better ways to do things. That doesn't mean this must be unfair to labor or capital. It depends on their outlook. It may be that labor and capital are agreeing to take a smaller slice of the pie, in return for the pie growing even faster over time.
+That ratio holds give the current growth rate of $g_A$, which depends on the current ratio of $L$ to $A$, as that determines both the profits available to firms/ideas and the fixed costs associated with them. What we learn from this is that the higher the markup, $\mu$ - the more excludable the products or ideas are and the harder it is for competitors to enter - the more effort firms will put into the fixed costs associated with ideas/firms/products. That makes sense. They are after a profit, and being able to maintain a high markup is one determinant of that profit, the other being the scale of the market. 
 
-Don't endow this with some kind of mystic truth. It is a statement that *if* the economy is constant returns to scale, and *if* innovation requires profits, then rival inputs cannot be paid their marginal products. Those assumptions could be wrong. 
+We can see then that the choice of legal structures or other terms in the economy that influence excludability then dictate to some extent the level of productivity via $s_R$. As the value of $\mu$ gets bigger more and more labor gets used in developing new products. 
 
-But let's operate as if the assumptions are true, and think about more possible consequences. We've taken the supply of labor and capital to be fixed, for the most part. That is, we haven't provided any model of why people would supply labor or capital to the market, they just do. But it isn't hard to imagine that the supply of these rival inputs would depend on what they are paid. So if wages and capital rents are pushed *down* in order to make room for profits for innovators, then this would presumably push *down* the willingness of people to supply labor and capital. 
+## Is that a good thing?
+So is the right concept to push up $\mu$ as high as possible, and get $s_R$ as high as possible? Not necessarily. There are two costs we can think about in terms of the role of $\mu$ and the size of $s_R$. 
 
-If this is true, then allowing profits for innovations doesn't just change the size of the slices of pie, it makes the pie smaller today. Again, this might be worth it. We might accept a smaller pie today, and labor and capital might accept smaller slices of that smaller pie today, if in return we get more innovation and a rapidly growing pie over time. 
-
-## The amount of research
-The general result of the prior sub-section indicates that the profits behind innovation necessitate some deviation from perfect factor markets. But that general result doesn't inform us about how much research and development effort will be put in. We can try and be a little more specific about that by thinking about the incentives for innovators. In the textbook there are very specific models (Romer, Schumpeter) about how those profits arise, what the imperfect markets look like, and what this does to R&D choices. Here we're going to treat things from a slightly higher level.
-
-Think of things from the perspective of a firm deciding whether to employ some workers in R&D, in the hopes of generating an innovation that will in turn generate profits. Our basic economic intuition is that they will employ R&D workers until the marginal benefit of R&D (the extra profits they could earn from their innovations) is equal to the marginal cost of those R&D workers, which is their wage. 
-
-We can use that condition to come up with a rough idea of how many R&D workers, R, firms will employ relative to the number of regular workers, L. To do that we have to describe the marginal benefit, profits, and the marginal cost, the wage. 
-
-Start with the profits. Let $s_{\pi} = \Pi/Y$ be profit's share of total GDP. Those are the total profits available to earn given the market power granted to innovators through IP rules and/or other means of making ideas excludable. To keep our lives simple, let's also assume that the profit each separate idea earns is equal to the total profits divided by the level of productivity, A. This is like saying that the size of productivity is exactly equal to the number of ideas. That isn't true, of course, but as long as they are proportional in some way, we are good. Put that together and we have a profits per idea in some given period $t$ of $s_{\pi} Y_t/A_t$. 
-
-Hold onto that for a moment. Now, how many ideas would any given researcher - if hired - produce? Well, we modeled the total flow of ideas with $dA = \theta (s_R L_{t})^{\lambda} A_t^{\phi}$. First, I'm just using $s_R$ here to denote the share of R&D workers in the total stock of workers $L_t$. Second, that this isn't the growth rate of ideas, this is the raw change in ideas given some total number of researchers and an initial value for productivity. 
-
-The number of *new ideas per researcher* is this divided by $s_R L_t$, or $dA/s_R L_t$. How many ideas can a firm get from each R&D worker they employ.
-
-Now hold onto *that* for a moment. What is the wage rate that you have to pay a researcher? We're assuming they are similar to everyone else, so they earn the regular wage. The wage per person is the total share of GDP earned by labor divided by the number of workers, or $w_t = s_L Y_t/L_t$. Note that I'm ignoring here any effect of moving researchers out of the labor force (which would presumably lower the number of workers and push wages up), because the fraction of R&D workers relative to the workforce is so small that it cannot matter that much. When we use the Cobb-Douglas production function, we assert that $s_L = (1-\alpha)$, but here we're just keeping things more general.
-
-Okay, we've got three pieces of information to work with. Put them together into this equilibrium condition,
+First, consider that if $s_R$ is big that means a lot of labor is getting used developing new products, but that means *less* labor is getting used to produce existing products. GDP depends on the number of workers producing existing goods and services, not necessarily on the number working on coming up with the *next* good or service. In our standard Solow setting, then, the "production workers" are $L_Y = (1-s_R)L$, the fraction of workers not doing the fixed work. Then output is
 
 $$
-\frac{s_{\pi} Y_t}{A_t}\frac{d A}{s_R L_t}  = \frac{s_L Y_t}{L_t}.
+Y = K^{\alpha} (A (1-s_R)L)^{1-\alpha}
 $$
 
-The left-hand side has the profits-per-idea times the ideas-per-researcher, or profits-per-researcher. The right-hand side has wages per worker, and as we said above we expect these to be equal so that the marginal benefit to a firm (the left) is equal to the marginal cost (the right). This equation allows us to solve for the size of $s_R$. 
-
-Stary by noticing that the $Y_t$ terms cancel. This is a little bit of a fudge, by the way. Note that the profits you earn for a new idea probably only come in the *future* (and we should have something like $Y_{t+1}$ on the left side), but we're acting as if they arrive immediately. We can allow for that forward-looking behavior, and in some cases that will become interesting. But for starters we're ignoring it. 
-
-Cancel the $Y_t$ terms as well as the $L_t$ terms and then re-arrange the equation to
+and now the fraction $(1-s_R)$ acts a lot like the productivity term. The higher $s_R$, the *lower* is the effective level of productivity in the economy. We can solve things out as usual for the level of GDP per capita along the BGP, as in the [Solow model](level.html) and we'd get
 
 $$
-\frac{s_{\pi}}{s_L}\frac{dA}{A_t}  = s_R.
+\ln y_t^{BGP} = \frac{\alpha}{1-\alpha} \left(\ln s_I - \ln(\delta + g_A + g_L) \right) + \ln A_0 + \ln (1-s_R) + g_A t.
 $$
 
-We've got what we want on the right-hand side now, the ratio of researchers to workers. And we can make one more substitution on the left. Note that we have the ratio $d A/A_t$, which is just the growth rate of productivity. We can denote this $g_A$ to keep things simpler, and find that
+So changing excludability to raise $\mu$ will raise $s_R$, but lower GDP per capita in this sense. But we also know from [last section](prodlevel.html) that
 
 $$
-s_R = \frac{s_{\pi}}{s_L}g_A.
+\ln A_0 = \frac{1}{1-\phi}\ln \theta - \frac{1}{1-\phi} \ln \frac{\lambda}{1-\phi} - \frac{1}{1-\phi}\ln g_L + \frac{\lambda}{1-\phi}\ln s_R + \frac{\lambda}{1-\phi} \ln L_0,
 $$
 
-What does this tell us? It says that the number of people employed as researchers, relative to the labor force, depends on two things. 
+which means the level of $A_0$ depends *positively* on the size of $s_R$, because that determines how many new products we have. 
 
-1. Profits relative to the cost of labor. The ratio $s_{\pi}/s_L$ tells us about the benefits of innovation relative to the costs. The larger this ratio is, the more you get out of a researcher, in short. So the higher this ratio, the more researchers will be employed. 
+Thus there is a tension or trade-off in the economy in setting $\mu$ and making rules or legal protections too tight or too loose. There is a particular point for $s_R$ such that we can get the highest level of $\ln y_t^{BGP}$, and we could only hit that point if we get $\mu$ just right. That's hard to do because it isn't a number we can just pick, it's the outcome of all sorts of complex legal and institutional structures, and surely differs by product. 
 
-2. The growth rate of productivity. The $g_A$ term is telling us how fast ideas arrive. If this is high, then it pays to invest in researchers, as they are likely to deliver a lot of new ideas to you, and hence profits. But if this is low, why bother hiring them? 
+Second, consider that the level of $\mu$ has distributional implications. That is, if we set $\mu$ to a high level to get a high value of $s_R$, so that there is a lot of entry of new products and ideas, that same $\mu$ means a lot of the benefits of those new products and idea flow as profits to the producers, and not necessarily to customers. Those producers are also customers, so that money gets spent, but we're making a decision about who "wins" in some sense through those decisions. 
 
-Changes in IP laws or rules adjust the size of $s_{\pi}$ relative to $s_L$, and thus affect the size of the research effort over time. The argument for IP is that by protecting the profits of innovators, it induces more innovation (higher $s_R$). The counter-argument is that by raising $s_{\pi}$ relative to $s_L$, the share of GDP going to workers (or capital) is going down, and those workers are thus getting a smaller share of what may be a bigger pie. Whether that is good for the workers depends on whether the boost to innovation outweights the smaller slice.
+## Math solution
+We can establish all of this more in the math. Start with the level of $s_R$ that maximizes $\ln y_t^{BGP}$. Put everything together into
 
-This gives us one way of interpreting the growth of research effort over time in most developed countries, and in particular the growth in the fraction of workers involved in research. Our little model here suggests that this must have involved either an increase in the fruitfulness of research ($g_A$ going up) or in a larger payoff to innovation ($s_{\pi}$ going up). 
+$$
+\ln y_t^{BGP} = \ln (1-s_R) + \frac{\lambda}{1-\phi}\ln s_R + X + g_A t
+$$
 
-## Rising research effort
-The logic in this section gives us some insight into why the data show that the value of $s_R$ went up over time. One possibility is that the share of GDP going to profits rose relative to the share going to labor. If firms felt they were able to capture a bigger share of GDP then it makes more sense to try and innovate. 
+where $X$ collects all the additional stuff about capital/output ratios, $L_0$, and so forth. What value of $s_R$ maximizes GDP per capita? Take derivatives and we get
 
-A second possibility is that the size of $g_A$ went up, which from the *firm* perspective just looks like a higher change of getting lucky with R&D. From the aggregate perspective we know that this is tied to the growth rate of population, $g_L$. 
+$$
+\frac{-1}{1-s_R} + \frac{\lambda}{1-\phi}\frac{1}{s_R} = 0
+$$
 
-Now, over the last few decades we know that $g_L$ has slowed down across most major economies, while at the same time $s_R$ went up. One story is therefore that $s_R$ went up becaues profits went up relative to wages, which you can find some support for in the data. 
+which solves to
 
-On the other hand, as mentioned before on population, the "right" value of $g_L$ is probably some kind of worldwide growth rate related to all populations who produce research, and in that sense the arrival of China and India as major R&D producers is significant. $s_R$ might have gone up *everywhere* because the additional flow of smart people from China and India made it easier and cheaper to innovate. There isn't a clear answer on this, but the equations help us frame the question and narrow down the plausible answers.
+$$
+s_R^{\ast} = \frac{\lambda}{1-\phi +\lambda}
+$$
 
+as the choice of $s_R$ that maximizes GDP per capita. We know how to get there, because we know that $s_R = \frac{(\mu-1)}{\theta} g_A$, so if we set
+
+$$
+\mu^{\ast} = \frac{\theta}{g_A} \frac{\lambda}{1-\phi +\lambda} + 1
+$$
+
+we'd get the ratio $s_R^{\ast}$ that maximizes GDP per capita. That would require setting legal conditions just right so that we'd get this markup, but that is *hard* because it's political, legal, and institutional and we've oversimplified by considering there to be *one* markup, but different product markets would respond in different ways. 
+
+Now, what about the distributional implications? Let's figure out how big wages are. Knowing the markup is $\mu = p/c$, we could write
+
+$$
+\mu = \frac{pQ}{cQ} = \frac{Y}{cQ}.
+$$
+
+The first ratio just multiplies both price and marginal cost by the quantity of products sold, $Q$, and we're making a big assumption that this holds for the whole economy. The second ratio comes from observing that total spending on products, $pQ$, is necessarily equal to GDP, by definition. We can use this relationship to say that
+
+$$
+cQ = \frac{Y}{\mu},
+$$
+
+or total costs are equal to GDP divided by the markup. The higher the markup, the lower the total costs relative to GDP, and the bigger share of GDP that is earned by the firm/idea/product owners.
+
+From the section on [cost shares](costshares.html) we know (or you can believe me) that 
+
+$$
+wL_Y = (1-\alpha)cQ
+$$
+
+or that total wages paid to production workers is a fraction $1-\alpha$ of total costs. This means that we can write
+
+$$
+w = \frac{(1-\alpha)}{\mu} \frac{Y}{L} \frac{L}{L_Y} = \frac{(1-\alpha)}{\mu} \frac{y}{1-s_R}.
+$$
+
+Take logs of this and then along the BGP you get
+
+$$
+\ln w^{BGP}_t = \ln (1-\alpha) - \ln \mu + \frac{\lambda}{1-\phi}\ln s_R + X + g_A t
+$$
+
+using the same structure as above. Again, plug in what we know about how $s_R$ works, and we get
+
+$$
+\ln w^{BGP}_t = \ln (1-\alpha) - \ln \mu + \frac{\lambda}{1-\phi}\ln (\mu-1) - \frac{\lambda}{1-\phi} \ln \theta + \frac{\lambda}{1-\phi} \ln g_A + X + g_A t.
+$$
+
+There's a trade-off here again between the level of $\mu$. If $\mu$ is higher, then we get higher $s_R$, which means higher productivity, which means higher GDP per capita, which pushes up wages. But if $\mu$ is higher, labor earns a smaller share of GDP per capita, which pushes down on wages. What's the best possible answer for wages? Maximize this by taking the derivative
+
+$$
+\frac{-1}{\mu} + \frac{\lambda}{1-\phi} \frac{1}{\mu - 1} = 0
+$$
+
+which solves to
+
+$$
+\mu(1 - \frac{\lambda}{1-\phi} )  = 1 
+$$
+
+$$
+\mu = \frac{1}{1 - \frac{\lambda}{1-\phi}} = \frac{1-\phi}{1-\phi -\lambda}
+$$
+
+$$
+\mu^{\ast} = \frac{\theta}{g_A} \frac{\lambda}{1-\phi +\lambda} + 1
+$$
 
