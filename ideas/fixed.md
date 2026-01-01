@@ -48,7 +48,7 @@ you can see that this is declining with production. The bigger the size of $Q$ -
 That markup of price over marginal cost is what pays them back for incurring the fixed cost (and possibly providing them even more). Charging a price higher than marginal cost implies a market with imperfect competition, meaning that other firms cannot or do not enter to drive the price down to marginal cost (as with perfect competition). 
 
 {: .important }
-> Because firms have fixed costs to invent or implement ideas their average cost is higher than their marginal cost and they will only operate if they can charge a price higher than their *marginal* cost, and therefore firms will only invent or implement ideas if there is imperfect competition.
+> Because firms have fixed costs to invent or implement ideas their average cost is higher than their marginal cost and they will only operate if they can charge a price higher than their *marginal* cost, and therefore firms will only invent or implement new ideas if there is imperfect competition.
 
 Imperfect competition doesn't mean new firms cannot enter or will not enter, it just means entry won't drive the price down to *marginal* cost, just *average* cost. Think about situations where new entrpreneurs or firms are willing and able to enter. They will keep doing this until there aren't any profits to make anymore. Imperfect competition doesn't necessarily mean positive economic profits, either, it just means price greater than marginal cost.
 
@@ -72,7 +72,7 @@ $$
 F = w f.
 $$
 
-That means that if firms are entering until profits are zero, we have
+That means that if firms enter until profits are zero, we have
 
 $$
 w f = (p-c)Q
@@ -82,40 +82,49 @@ as the condition for entry. Now we'll see if we can rationalize this further by 
 
 None of the assumptions that follow are necessary, and there are plenty of different ways we could set this up. Different exact models of growth will make different assumptions. But for the most part these are a good indicator of what is presumed.
 
-1. The markup of price over marginal cost is fixed at $p/c = \mu$. That's a stark assumption about the pricing power that firms have. It's the kind of thing we might get in certain cases of monopolistic competition. It doesn't have to be strictly true, but it's a good starting point. 
+{: .assumption }
+The operating profit share is defined as $s_{\pi} = (pQ - cQ)/pQ$. It is the share of total revenues, $pQ$, that are earned by the firm over the variable costs of production, $cQ$. 
 
-Using this assumption we get that
+Using this we get that
 
 $$
-w f = (\mu-1)cQ
+w f = s_{\pi} pQ
 $$
 
-is our entry condition. Now, to take the next step we can think about this combined term $cQ$, which is the marginal cost times the total units of output. In other words, this is a measure of total variable costs (the costs of production itself, excluding the fixed costs). We'll make the following assumption:
+is our entry condition. Now, to take the next step we can think about this combined term $pQ$, which are the revenues of the entrant. We can make some assumptions about how those revenues will be determined
 
 {: .assumption }
-> Total variable costs $cQ$ are proportional to the scale of the economy, $L$, and inversely proportional to maginal cost, $w/A$,
+> Total revenues $pQ$ are proportional to total GDP, $PY$, and inversely proportional to the number of firms (or ideas or products) that already exist, $M$, so that
 > $$
-> cQ = \frac{wL}{A}
+> pQ = \frac{PY}{M}
 > $$
 
-You can think of this in a few ways. One, imagine that each person $L$ wants to buy one unit of the product, so $Q = L$, which might be a good assumption about something like a smartphone or a refrigerator. Producing that good requires hiring some labor at the rate $w$
+You can think of this in a few ways. One, you can think of total spending being split across all the $M$ possible products or firms or locations that exist. We aren't thinking of how much different entrants vary (e.g. Coca-Cola is a lot bigger than a local lawyers office, and both have more revenues than a taco truck) but just presuming that the more varieties or types of products there are, the lower the revenues of each. Second, you could imagine that it is only the best or top firms that sell products (e.g. Coca-Cola) but that the price they can charge is pushed down as more ideas or products (their own or possible competitors) enter. Either way, the important part is that revenues are proportional to the size of the economy (if people feel richer because PY is big, they'll spend more) and inversely related to the number of firms or ideas, $M$.
 
-XXXX
+{: .assumption }
+> The level of productivity, $A$, is proportional to the number of ideas or products or firms, $M$, such that $A = \theta M$. This means that the *change* in productivity is $dA = \theta dM$, or productivity goes up when new ideas or products or firms enter.
 
+This productivity terms, $A$, is the same one we introduced in the Solow model and is the thing that allows for an increase in living standards along a BGP. We're saying that this $A$ is in some ways determined by the entry of new ideas or firms or products. Why? Look at the stories about why revenues are related to $M$. As new entrants increase $M$, they are providing more types of goods to consumers, and if consumers are splitting up their consumption across those new goods, they must find them valuable, increasing the utility they get. Or, the new entrants are pushing down the price for products, directly creating affordability growth without requiring more capital or labor. Either way, the measured productivity of the economy is going up. 
 
-Given the assumption our entry condition is
-
-$$
-w f = (\mu-1)\frac{wL}{A},
-$$
-
-which reduces to
+Given the assumptions our entry condition for new ideas, products, or firms is
 
 $$
-f = (\mu-1) \frac{L}{A}.
+w f = s_{\pi} \theta \frac{PY}{A}.
 $$
 
-This gives us a clue that productivity, $A$, and scale, $L$, must be linked together somehow. 
+We have one last thing to add to this. That's that $wL = s_L PY$, or that total wages are a share, $s_L$, of total GDP, which we established already in the Solow model. That gives us
+
+$$
+w f = \frac{s_{\pi}}{s_L} \theta \frac{wL}{A}.
+$$
+
+What this does is allow us to cancel out the wage rate on both sides, meaning we can say that new products or firms or ideas enter the economy up to the point that
+
+$$
+f = \frac{s_{\pi}}{s_L} \theta \frac{L}{A}.
+$$
+
+If we assume that $f$ is fixed and the shares of GDP are fixed, then this says that $L$ and $A$ have to move together. This gives us a clue that productivity, $A$, and scale, $L$, must be linked together somehow. 
 
 ## How fixed costs and productivity connect
 The last thing we can do is think about how that fixed cost per firm, $f$, operates. The most obvious choice is to assume that this number is fixed at some level $\overline{f}$, or the number of workers it takes to do all the fixed work - R&D, scouting locations, setting up supplier networks, installing accounting software, etc. - of running a firm doesn't change with the state of the economy. 
@@ -123,10 +132,10 @@ The last thing we can do is think about how that fixed cost per firm, $f$, opera
 If that's true then
 
 $$
-A = (\mu-1)\frac{L}{\overline{f}},
+A = \frac{s_{\pi}}{s_L} \frac{\theta}{\overline{f}} L
 $$
 
-or productivity must be proportional to the size of population. What this also means is that the growth rate of firms (or products or ideas) is just
+or productivity must be proportional to the size of population. What this also means is that the growth rate of productivity is
 
 $$
 g_A \approx g_L
@@ -137,28 +146,8 @@ or the growth rate of productivity must be about the same as the growth rate of 
 {: .important }
 > Because firms have increasing returns to scale due to fixed costs, and assuming firms enter until profits equal zero, the level of productivity in the economy depends on the scale of the economy, and the growth rate of productivity depends on the growth rate of that scale.
 
-This is a pretty significant implication of two basic assumptions: fixed costs and free entry. We have not even, at this point, made a direct connection between firms and productivity. We never said entering firms used new or *better* ideas, or more productivity ideas, or anything. We just said firms would enter until the marginal firm earned zero profits. So how did we get from firms entering to the overall level of productivity depending on population size? 
+This is a pretty significant implication of a few basic assumptions: free entry and fixed costs. Those seem like reasonable assumptions about how firms (or ideas or products) would work. This connection works because the new entries are doing some combination of lowering prices (making existing things more affordable) or expanding the set of products (making more things affordable). Note that if new entrants didn't do this, then they wouldn't earn any revenues, and they wouldn't enter. We can allow that some entrants "guess wrong" and introduce new ideas or products that turn out to be unwanted, but so long as in expectation new entries are valued we're good.
 
-To answer that let's go back to an individual firm's perspective on the entry condition. Think of firm $i$. They will enter if
+The other big implication of these assumptions is that growth in productivity *requires* there to be imperfect competition of some kind. Growth means prices over marginal costs, which is not consistent with the perfect competition we talk about in intro Econ. 
 
-$$
-w f \leq (\mu - 1) c_i Q_i,
-$$
 
-meaning their fixed costs $w f$ are less than what they can earn selling $Q_i$ units of their product at a markup of price $\mu$ over marginal cost $c_i$. The fixed costs are not firm-specific (although we could play with that assumption), and the markup is not firm-specific (although we could play with that too).
-
-From the firm's perspective their marginal cost is going to be something like
-
-$$
-c_i = \frac{w}{A_i}
-$$
-
-so that their condition is now
-
-$$
-f \leq (\mu - 1) \frac{Q_i}{A_i}.
-$$
-
-Given the markup they can charge, a firm will enter if they either can sell a lot of units $Q_i$ or if they can charge a very low price because they have a high $A_i$. The only firms that *can* or *do* enter are those with very low costs or with very high demand for their product. 
-
-When we presume that firms enter until the marginal firm has zero profits, it only makes sense that the firms that do enter are those with relatively low costs or high demand. That is, firms that can generate a lot of economic value out of the factor inputs (labor in this case) available to the economy. In other words, entry must necessarily involve higher productivity, because if it did not, those firms would not have entered. 

@@ -80,21 +80,21 @@ The absolute number of workers and GDP spent on R&D has increased over time, and
 We can interpret this in terms of our toy model from earlier. There, we said that firms or new products enter until this condition is met, 
 
 $$
-f = (\mu-1) \frac{L}{A},
+f = \frac{s_{\pi}}{s_L} \theta \frac{L}{A}.
 $$
 
 and that productivity appeared to move in proportion to scale, which we saw if we just re-wrote this as
 
 $$
-A = (\mu-1) \frac{L}{f}.
+A = \frac{s_{\pi}}{s_L} \frac{\theta}{f} L
 $$
 
 This meant that productivity was proportional to $L$, and that productivity grew at around the same rate as population or scale. What we just saw in this data was that it looks like $f$ was going up for firms, at least the publicly traded ones or the ones doing formal R&D. That would suggest that there should have been a *drag* on productivity growth. If $f$ was going up, that should have lowered the growth rate of $A$. 
 
-One reason that may not have happened is that something *else* in this relationship could be changing too, and that is the markup. We can use the same Compustat data to look at what happened to a very crude measure of $\mu$. This is notoriously hard to measure with accuracy, but this is rough look at data that matches more sophisticated studies.
+One reason that may not have happened is that something *else* in this relationship could be changing too, and that is the markup. We can use the same Compustat data to look at what happened to a very crude measure of the markup of price over cost. This is notoriously hard to measure with accuracy, but this is rough look at data that matches more sophisticated studies.
 
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/computstat-markups.html"></iframe>
 
-The figure shows a clear increase in the markup. That's true whether we just average markups across firms (Raw) or whether we weight the firms by their total sales (Weighted). If $\mu$ was going up the same time that $f$ was going up, they could roughly cancel out, and we'd be left with the idea that $A$ rose at around the rate of $L$ throughout this whole time period. 
+The figure shows a clear increase in the markup. That's true whether we just average markups across firms (Raw) or whether we weight the firms by their total sales (Weighted). If the markup was going up the same time that $f$ was going up, then this means that profits must have been going up, or $s_{\pi}$ was increasing. 
 
-The good news from that analysis is that it means if ideas or products are getting harder to implement or invent - $f$ is getting bigger - then that doesn't have to mean that growth slows down. It does mean, though, that firms will probably charge higher markups, $\mu$, to cover those fixed costs. 
+The good news from that analysis is that it means if ideas or products are getting harder to implement or invent - $f$ is getting bigger - then that doesn't have to mean that growth slows down. It does mean, though, that firms will probably earn higher profits to cover those fixed costs. 

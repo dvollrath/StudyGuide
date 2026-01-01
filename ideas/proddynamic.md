@@ -19,15 +19,14 @@ What we can and will do now is embellish the basic structure we have in place to
 The basic concept was that firms (or products or ideas) enter the market until their fixed cost offsets the operating profits firms can earn selling the products. That looked like this
 
 $$
-f = (\mu-1) \frac{L}{A}.
+f = \frac{s_{\pi}}{s_L} \theta \frac{L}{A}.
 $$
-
 
 Want to allow for $f$ to vary depending on conditions, and want to establish what happens when L and A are such that fixed costs are less than operating profits, or more than. That is, how does the economy get to the point where there are zero profits from entry? 
 
 We also want to think about how $A$ evolves according to the entry of firms. That was a black box in the sense that we said A went up with more firms because it only made sense if new firms were entering if they could do something better than others. How many firms? How much of an effect on A will that entry have? 
 
-First, let's establish a few assumptions about how the world works.
+First, let's establish a few assumptions about how the world works. This first one makes more explicit how productivity is related to the number of entrants. 
 
 {: .assumption }
 > The change in productivity depends on the number of ideas/firms introduced, which depends in turn on the total amount of labor used for fixed costs, $L_R$, and the size of fixed costs per firm, $f$:
@@ -61,15 +60,7 @@ $$
 g_A = \theta \frac{L_R^{\lambda}}{A^{1-\phi}}. 
 $$
 
-The growth rate of productivity depends on the ratio of workers used to do all those fixed tasks associated with innovation, R&D, or building new firms relative to the level of productivity. This is a dynamic setup that tells us how $g_A$ reacts, and hence how that ratio will evolve. 
-
-Dynamics, everything gets us back to stable s.s. where
-
-$$
-g_A = \frac{\lambda}{1-\phi} g_R = \frac{\lambda}{1-\phi} g_L.
-$$
-
-That's similar to what we got in the simpler setup, where $g_A$ is proportional to $g_L$, but here modified by those parmaeters that dictate how fixed costs evolve. The last thing we'll do is define
+The growth rate of productivity depends on the ratio of workers used to do all those fixed tasks associated with innovation, R&D, or building new firms relative to the level of productivity. This is a dynamic setup that tells us how $g_A$ reacts, and hence how that ratio will evolve. That's similar to what we got in the simpler setup, where $g_A$ is proportional to $g_L$, but here modified by those parmaeters that dictate how fixed costs evolve. The last thing we'll do is define
 
 {: .assumption }
 >The fraction of total workers, $L$, doing fixed cost work, $L_R$, is $0<s_R<1$, or
@@ -136,7 +127,9 @@ I labelled this $g_A^{BGP}$ because this is the growth rate of productivity alon
 This gives us a pretty clean result in determining the productivity growth rate.
 
 {: .important }
-Along a BGP the growth rate of productivity depends on the growth rate of population according to $g_A^{BGP} = \frac{\lambda}{1-\phi} g_L$. The growth rate on the BGP does not depend on the absolute number of workers or the absolute size of productivity.
+Along a BGP the growth rate of productivity depends on the growth rate of population according to $g_A^{BGP} = \frac{\lambda}{1-\phi} g_L$.
+
+We should keep in mind that "population" here is a rough term meaning the scale of the economy, which is definitely influenced by population size, but might also depend on other things like transportation networks or institutional rules. But $L$ is a good proxy for scale.
 
 ## Some simple correlations
 More workers means more ideas, firms, and products that push up the growth rate of productivity. But recall that higher productivity tends to push down $g_A$, so those two forces are fighting against one another. The economy can sustain a higher growth rate of $g_A$ along the BGP if it has a faster growth rate of population to keep overcoming the drag from the higher *level* of productivity. But simply having more population does not, by itself, lead to faster growth in productivity along the BGP.
