@@ -91,7 +91,11 @@ $$
 
 This meant that productivity was proportional to $L$, and that productivity grew at around the same rate as population or scale. What we just saw in this data was that it looks like $f$ was going up for firms, at least the publicly traded ones or the ones doing formal R&D. That would suggest that there should have been a *drag* on productivity growth. If $f$ was going up, that should have lowered the growth rate of $A$. 
 
-One reason that may not have happened is that something *else* in this relationship could be changing too, and that is the markup. We can use the same Compustat data to look at what happened to a very crude measure of the markup of price over cost. This is notoriously hard to measure with accuracy, but this is rough look at data that matches more sophisticated studies.
+One reason that may not have happened is that something *else* in this relationship could be changing too, and that is profits. We can use the same Compustat data to look at what happened to a very crude measure of the *gross margin*, which in accounting terms is Revenues minus COGS, divided by COGS. This isn't accounting or economic profits, it's just a crude measure of how much revenue firms have left after they have paid for the obvious cost of their products. 
+
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/computstat-profits.html"></iframe>
+
+Because COGS/sales went down, it had to be that these gross profits went up, and they do. We can think of this margin in a slightly different way by thinking about the "markup" that firms change, which is the ratio of price to marginal cost. If the gross profit rate is going up then it makes sense that the price has to be higher than cost to some extent, but the "cost" of products isn't obvious. COGS measures total spending on inputs, not the marginal cost of making another unit. Anyway, using a naive way of measuring this markup, here is what you get
 
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/computstat-markups.html"></iframe>
 
