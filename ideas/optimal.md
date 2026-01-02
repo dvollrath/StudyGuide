@@ -11,53 +11,24 @@ nav_order: 5
 1. TOC 
 {:toc}
 
-We can establish in more detail what the implied "right" levels of $s_R$ and $s_{\pi}$ should be to maximize GDP per capita and/or the wage. 
+## GDP and $s_R$
+If we want to evaluate the "right" level of $s_R$, we want to think about the flow of goods and services that we care about. The problem is that to a large extent a lot of the activities we think about included in $s_R$ are also included in GDP. That is, the payments firms make to researchers or designers or whomever to come up with new products are themselves goods and services, so they add into total GDP. In that sense maximizing GDP would involve setting $s_R = 1$, and we should spend all of our time just coming up with new products. But then GDP would consist only of people designing things for tommorrow, and no one would ever, like, eat. 
 
-## The wage share and $s_R$
-To start, let's work out the value of $s_L$. We know that $s_{\pi}$ is the portion of GDP that are the profits earned by firms brining new ideas in. That means $1-s_{\pi}$ is the share of GDP they use to pay the factors of production they use, like labor and capital. Assuming they have the same Cobb-Douglas form as in the Solow, that means they spend $1-\alpha$ of the $1-s_{\pi}$ of GDP on wages. That $1-\alpha$ is from [the cost share section](costshares.html). 
+What we're interested in is maximizing the flow of consumption or current goods and services. If $s_R$ share of people are doing start-up or entry work, then $1-s_R$ of workers are making those current goods and services. So $(1-s_R)y_t$ is roughly the amount of current goods and services. We could adjust that a little because of how capital is used, but this is going to be the right approach. 
 
-But these are wages just paid to the production workers, even though that determines the overall wage rate. 
-
-$$
-w = (1-\alpha)(1-s_{\pi})\frac{Y}{L_Y} = \frac{(1-\alpha)(1-s_{\pi})}{1-s_R}\frac{Y}{L},
-$$
-
-This means that
+Let's call that consumption, and then 
 
 $$
-s_L = \frac{wL}{Y} = \frac{(1-\alpha)(1-s_{\pi})}{1-s_R},
+\ln c_t^{BGP} = \ln (1-s_R) + \ln y_t^{BGP}
 $$
 
-or that the wage share of GDP per capita is determined not just by how important it is in production, $1-\alpha$, but scaled by how much of GDP, $1-s_{\pi}$, gets distributed to factors relative to how many workers are in production, $1-s_R$. 
-
-Using that in the entry condition for $s_R$ we have
+is the path of consumption along the BGP. We know about GDP per capita along a BGP, and so we get
 
 $$
-s_R = \frac{s_{\pi}}{s_L} g_A
+\ln c_t^{BGP} = \ln (1-s_R) + \frac{\lambda}{1-\phi}\ln s_R + X + g_A t
 $$
 
-so that means
-
-$$
-s_R = s_{\pi}g_A \frac{1-s_R}{(1-\alpha)(1-s_{\pi})}
-$$
-
-which solves to
-
-$$
-\frac{s_R}{1-s_R} = \frac{s_{\pi}}{1-s_{\pi}}\frac{g_A}{1-\alpha}
-$$
-
-or the relative allocation of labor to production and entry depends on the relative share of profits and factor costs (not profits) in the economy. As usual, the higher $g_A$, the more it pays to allocate labor to entry. That holds no matter what. It's just cleaning up some math to make sense of things later.
-
-## Optimizing GDP per capita
-Start with the level of $s_R$ that maximizes $\ln y_t^{BGP}$. Put what we know together into
-
-$$
-\ln y_t^{BGP} = \ln (1-s_R) + \frac{\lambda}{1-\phi}\ln s_R + X + g_A t
-$$
-
-where $X$ collects all the additional stuff about capital/output ratios, $L_0$, and so forth. What value of $s_R$ maximizes GDP per capita? Take derivatives and we get
+where $X$ collects all the additional stuff about capital/output ratios, $L_0$, and so forth. What value of $s_R$ maximizes consumption per capita? Take derivatives and we get
 
 $$
 \frac{-1}{1-s_R} + \frac{\lambda}{1-\phi}\frac{1}{s_R} = 0
@@ -75,65 +46,38 @@ $$
 \frac{s_R^{\ast}}{1-s_R^{\ast}} = \frac{g_A}{g_L}
 $$
 
-or the ratio of workers doing work on new ideas, $s_R^{\ast}$, relative to the workers on goods and services, $1-s_R^{\ast}$, should be similar to the ratio of the growth rate of ideas to the growth rate of labor, to maximize the level of GDP per capita. If ideas grow fast, then it pays for the economy to focus labor on adding more. If the scale of the economy grows fast relative to ideas, then it pays to have more people focusing on goods and services. A different way to see this is that if $\lambda$ is big, that means there is not a lot of crowding or duplication in doing development of new ideas, so it pays to have more people do that. If $1-\phi$ is big, this indicates that new ideas tend to drag down the growth rate of new ideas, so it pays to just have people work on existing things. 
-
-Regardless, if $s_R^{\ast}$ is the best answer for GDP per capita, how do you achieve that? Use the condition from above on how profits and $s_R$ are related, an you can achieve this level of $s_R/1-s_R$ that maximizes GDP per capita if
+or
 
 $$
-\frac{g_A}{g_L} = \frac{s_{\pi}}{1-s_{\pi}}\frac{g_A}{1-\alpha}
+s_R^{\ast} = \frac{g_A}{g_A + g_L}.
 $$
 
-or if
+This says that we should allocate more workers to entry tasks if $g_A$ is high, or if it is relatively easy for entry work to generate new ideas. If the economy grows fast anyway because of scale, $g_L$, then we want fewer people doing entry things because the growth in scale will generate enough incentives for entrants anyway.
+
+Let's put some rough numbers on this. If $g_A \approx .02$ and $g_L \approx .01$, then $s_R^{\ast} \approx .67$. That seems like a *lot*. Does it make sense to have 2/3 of people working on *new* things? But it might be a reasonable number. Think of all the jobs, though, that are based on working on next years sales or products. Sales, marketing, advertising, branding, research, development, design, and all sorts of engineering work. We might not be at 2/3rds, but a lot of what labor gets done is not about current goods and services.
+
+How do we achieve this? We have that the choice of $s_R$ by *firms* is
 
 $$
-\frac{s_{\pi}}{1-s_{\pi}} = \frac{1-\alpha}{g_A}.
+s_R = \frac{s_{\pi}}{s_L} \frac{g_A}{r-g_L}.
 $$
 
-Taking this seriously, if you think $1-\alpha \approx 2/3$ and you think $g_A \approx 0.02$, then this says that 
+If we pick the right value of $s_{\pi}$ we can get the optimal level of $s_R$. But to do this we have to be a little careful about things. From the firms perspective $s_L$ is given, but it has to be the case that $s_L$ and $s_{\pi}$ involve a tradeoff. But we have to be careful about these shares. $s_L$ is the share of GDP paid to labor producing current goods and services. We're approximating here, but $1-s_{\pi}$ is the share of GDP paid for current goods and services, and $1-\alpha$ might be the share of that paid for labor services, so 
 
 $$
-\frac{s_{\pi}}{1-s_{\pi}} \approx .67/.02 \approx 33.5
+s_R = \frac{s_{\pi}}{(1-\alpha)(1-s_{\pi})} \frac{g_A}{r-g_L}.
 $$
 
-is the right ratio of profits to factor costs(!?). Why does the optimal number look so high? Because of non-rivalry. Every product or firm that enters is making the entire economy more productive. That expands the economy as a whole, which makes it more lucrative for *others* to enter, and so on. Because of these feedback effects there is implied to be a huge payoff to having more work done on entry than on production. And the only way to get that kind of entry is to pay a lot in profits. 
-
-A big implication here is that most economies are probably *below* the level of $s_R$ that would maximize GDP per capita, and plausibly below the level of $s_{\pi}$. But let's see about wages first, and then come back to this.
-
-## Wages
-What is the wage along a BGP? We know $s_L$ is the share of wages out of GDP, so we'd get that
+What's the right value of profit share to set to get to the "right" level of $s_R$?
 
 $$
-\ln w_t^{BGP} = \ln (1-\alpha) + \ln (1-s_{\pi}) - \ln (1-s_R) + \ln y_t^{BGP}
+\frac{s_{\pi}}{(1-s_{\pi})} = \frac{(1-\alpha)(r-g_L)}{g_A + g_L}.
 $$
 
-and applying what we know about GDP per capita we have
+Let's put some numbers on this again. If $1-\alpha \approx 0.7$ and $r \approx .05$, then we'd have
 
 $$
-\ln w_t^{BGP} = \ln (1-\alpha) + \ln (1-s_{\pi}) - \ln (1-s_R) + \ln (1-s_R) + \frac{\lambda}{1-\phi}\ln s_R + X + g_A t
+\frac{s_{\pi}}{(1-s_{\pi})} \approx 0.93
 $$
 
-which we can reduce to
-
-$$
-\ln w_t^{BGP} = \ln (1-s_{\pi}) + + \frac{\lambda}{1-\phi}\ln s_R + X + g_At
-$$
-
-after we move some things into the X term and cancel others. Notice how this compares to the expression just for GDP per capita, which had a tradeoff of $1-s_R$ and $s_R$. Here the trade off is between $1-s_{\pi}$ and $s_R$. The wage depends on the fraction of output they earn as well as the share $1-s_R$, so the tradeoff is a little different here. 
-
-At the same time, we have the relationship for entry which says
-
-$$
-\frac{s_R}{1-s_R} = \frac{s_{\pi}}{1-s_{\pi}}\frac{g_A}{1-\alpha}.
-$$
-
-Maximizing *wages* along the BGP has a more complex trade-off. If you want to lower $s_{\pi}$ to raise the wage, this will lower $s_R$ because of the entry condition, which lowers the wage. 
-
-
-
-
-## What counts as wages?
-A lot of the $s_{\pi}$ share, though, might end up accruing to people in the form of wages, though. So it depends on how we measure things. 
-
-
-
-
+which implies that $s_{\pi}^{\ast} \approx 0.48$. That seems like a *lot*. But remember, much of that is going to be paid out to workers doing the design work. But it does imply that a lot of the price of products would get marked up a bunch in order to cover that future entry work. It isn't best to think about this as pure profits in the sense we usually think. This is money over and above the cost of current goods and services that firms would use to pay for future product development. *Some* profits are definitely above that, and represent pure rents. 

@@ -40,13 +40,73 @@ How do we do that? The most obvious answer is intellectual property (IP) law: pa
 We could go deep down the rabbit hole of IP and innovation. For the moment, though, we're just interested in the idea that IP creates the excludable characteristic of non-rival ideas. Note that nothing here says that *more* IP or *stronger* IP necessarily increases innovation. We probably need *some* IP to incent innovation, but it is an open question of how much. We'll come back to that later.
 
 ## Effort on fixed costs
-For us, the shorthand way to explain the notion of excludability is going to be through the markup, $\mu$. The higher the markup, the more "protected" a firm or idea, and the more "excluded" competitors are from making exact or near copies of their products. At the same time, we are letting new products and firms enter into the economy that have *new* ideas (that get protected by the same IP laws and things). That new entry will continue until the marginal new firm/product/idea earns zero profits, or
+For us, the shorthand way to explain the notion of excludability is going to be through the profit rate, $s_{\pi}$. The higher this share, the more "protected" a firm or idea, and the more "excluded" competitors are from making exact or near copies of their products. We'd expect that the more protected each idea is, the more effort that firms or entrepreneurs will put into making them. That effort is measured by the share of labor that they use in working on those fixed R&D or start-up costs, $s_R = L_R/L$. 
+
+What we want to think about now is what dictates the choice of $s_R$ by firms/entrants and how that is related to the excludability and $s_{\pi}$. That in turn is going to tell us about the level of GDP per capita. Remember, that choice isn't going to change the *growth rate* of productivity or GDP per capita, which just depends on $g_L$. But the choice of $s_R$ will tell us about how productive the economy will be overall, $A_0$. 
+
+To do this we are going to be a little more sophisticated about how we view the entry decision. We had established that firms/ideas/products enter until,
 
 $$
-f = \frac{s_{\pi}}{s_L} \theta \frac{L}{A},
+w f = s_{\pi} pQ
 $$
 
-This is what the world looks like from the firm/product/idea level. But we know from [the dynamics](proddynamic.html) that the size of $f$ is determined by $L_R$ and $A$, as in 
+But this condition only relates the fixed costs, $wf$, to the *current* profits that a firm could earn introducing a new product. What is in reality more important is the entire future stream of profits that they could earn. 
+
+What we want is to replace $s_{\pi} pQ$ with a measure of the total present discounted value (PDV) of profits that the firm might earn from the invention. That PDV looks like this
+
+$$
+s_{\pi} p_0Q_0 + \frac{s_{\pi} p_1Q_1}{(1+r)} + \frac{s_{\pi} p_2Q_2}{(1+r)^2} + ...
+$$
+
+where $s_{\pi} p_0 Q_0$ are the profits they could earn immediately, $s_{\pi} p_1Q_1$ are the profits they could earn next period, $s_{\pi} p_2Q_2$ the profits two periods from now, and so on. Each of those terms is discounted at the rate $r>0$, meaning the future profits are not quite as valuable as immediate profits. What's $r$? It's the interest rate. 
+
+Recall that we said $pQ = PY/M$, so this summation is 
+
+$$
+s_{\pi} PY_0/M_0 + \frac{s_{\pi} PY_1/M_1}{(1+r)} + \frac{s_{\pi} PY_2/M_2}{(1+r)^2} + ...
+$$
+
+Nominal GDP is going to grow over time. Along a BGP we would have $PY_1 = (1+g_L + g_A)PY_0$ and $PY_2 = (1+g_L+g_A)^2 PY_0$, and so on. We also said that $M$ grew, so $M_1 = (1+g_A)M_0$ and $M_2 = (1+g_A)^2 M_0$, and so on. This means we can write this whole PDV of profits as
+
+$$
+s_{\pi} PY_0/M_0 + s_{\pi} PY_0/M_0\frac{(1+g_A+g_L)}{(1+g_A)(1+r)} + s_{\pi} PY_0/M_0\frac{(1+g_A+g_L)^2}{(1+g_A)^2(1+r)^2} + ...
+$$
+
+but this can be simplified in two ways. First, we can pull the $s_{\pi} PY_0/M_0$ out from each term. Second, $\frac{(1+g_A+g_L)}{(1+g_A)(1+r)} \approx 1/(1+r + g_A - g_A - g_L) \approx 1/(1+r - g_L)$. Notice that the $g_A$ cancels out. Revenues grow at $g_A$ because GDP goes up, but as $M$ goes up that means revenues go down as they are split across more products or the price gets competed down. 
+
+Regardless, we have the PDV of profits as
+
+$$
+s_{\pi} PY_0/M_0 \left(1 + \frac{1}{1+r-g_L}  + \frac{1}{(1+r-g_L)^2} + ...\right)
+$$
+
+and that can be written as
+
+$$
+s_{\pi} PY_0/M_0 \sum_{t=0}^{\infty} \frac{1}{(1+r-g_L)^t}.
+$$
+
+and that summation has known answer so long as $r > g_L$ of $1/(r-g_L)$. 
+
+$$
+\frac{s_{\pi} PY_0/M_0}{r-g_L}.
+$$
+
+Okay, so now we have an expression for the full PDV of profits an entrant could earn from their new idea. Let's take that back to the entry condition, and now we have
+
+$$
+w f = \frac{s_{\pi} PY_0/M_0}{r-g_L}.
+$$
+
+We can go forward the same way as before. We have $PY_0 = wL_0/s_L$ and we have that $A_0 = \theta M_0$, so the entry condition is
+
+$$
+f = \frac{s_{\pi}}{s_L}\theta\frac{L_0}{A_0}\frac{1}{r-g_L}.
+$$
+
+All we've done is add this additional discounting term $1/(r-g_L)$ to the mix. Notice that this *raises* the value of profits because $r-g_L < 1$. 
+
+This is a *lot*, but it is just what the world looks like from the firm/product/idea level. But we know from [the dynamics](proddynamic.html) that the size of $f$ is determined by $L_R$ and $A$, as in 
 
 $$
 f = \frac{L_R^{1-\lambda}}{A^{\phi}}.
@@ -55,19 +115,19 @@ $$
 If we plug this in we get that
 
 $$
-\frac{L_R^{1-\lambda}}{A^{\phi}} = \frac{s_{\pi}}{s_L} \theta \frac{L}{A}
+\frac{L_R^{1-\lambda}}{A^{\phi}} = \frac{s_{\pi}}{s_L}\theta\frac{L_0}{A_0}\frac{1}{r-g_L}.
 $$
 
 or 
 
 $$
-\frac{L_R}{L}= \frac{s_{\pi}}{s_L} \theta \frac{L_R^{\lambda}}{A^{1-\phi}}.
+\frac{L_R}{L}= \frac{s_{\pi}}{s_L} \theta \frac{L_R^{\lambda}}{A^{1-\phi}}\frac{1}{r-g_L}.
 $$
 
-What's that ratio on the right-hand side? That's just $g_A$, so we have
+We know on the right-hand side $g_A = \theta L_R^{\lambda}/A^{1-\phi}$, so we have 
 
 $$
-\frac{L_R}{L}= \frac{s_{\pi}}{s_L} g_A.
+\frac{L_R}{L}= \frac{s_{\pi}}{s_L} \frac{g_A}{r-g_L}.
 $$
 
 We already defined the ratio of $s_R = L_R/L$ so that gives us
@@ -75,40 +135,20 @@ We already defined the ratio of $s_R = L_R/L$ so that gives us
 {: .important }
 >If firms/ideas/products enter until profits are zero, then
 >$$
->s_R = \frac{s_{\pi}}{s_L} g_A
+>s_R = \frac{s_{\pi}}{s_L} \frac{g_A}{r-g_L}
 >$$
 >is the share of labor used to pay the fixed costs associated with innovation/development. 
 
-That ratio holds give the current growth rate of $g_A$, which depends on the current ratio of $L$ to $A$, as that determines both the profits available to firms/ideas and the fixed costs associated with them. What we learn from this is that the higher the profit share, $s_{\pi}$ - the more excludable the products or ideas are and the harder it is for competitors to enter - the more effort firms will put into the fixed costs associated with ideas/firms/products. That makes sense. They are after a profit, and being able to maintain a high markup is one determinant of that profit, the other being the scale of the market. 
+That ratio holds given the current growth rate of $g_A$, which depends on the current ratio of $L$ to $A$, as that determines both the profits available to firms/ideas and the fixed costs associated with them. What we learn from this is that the higher the profit share, $s_{\pi}$ - the more excludable the products or ideas are and the harder it is for competitors to enter - the more effort firms will put into the fixed costs associated with ideas/firms/products. That makes sense. They are after a profit, and being able to maintain a high markup is one determinant of that profit, the other being the scale of the market. The smaller the discounting, $r-g_L$, the *bigger* the value of $s_R$ because the future profits are that much more valuable. 
 
 We can see then that the choice of legal structures or other terms in the economy that influence excludability then dictate to some extent the level of productivity via $s_R$. As the value of $s_{\pi}$ gets bigger more and more labor gets used in developing new products. 
 
 ## Is that a good thing?
-So is the right concept to push up $s_{\pi}$ as high as possible, and get $s_R$ as high as possible? Not necessarily. There are two costs we can think about in terms of the role of $s_{\pi}$ and the size of $s_R$. 
+So is the right concept to push up $s_{\pi}$ as high as possible, and get $s_R$ as high as possible? Not necessarily. It affects the flow of actual goods and services. The trade-off is in having lots of new products in the future versus having lots of products today. A high value of $s_R$ raises $A_0$, and hence GDP per capita. But a high value of $s_R$ means that a lot of labor is being used to develop *new* products, and not to produce real goods and services *now*. It's a question of whether you want stuff immediately or whether you want stuff in the fugure, and we're sure that we want *some* stuff immediately, so we don't just want future new products, so we don't want $s_R = 1$. 
 
-First, consider that if $s_R$ is big that means a lot of labor is getting used developing new products, but that means *less* labor is getting used to produce existing products. GDP depends on the number of workers producing existing goods and services, not necessarily on the number working on coming up with the *next* good or service. In our standard Solow setting, then, the "production workers" are $L_Y = (1-s_R)L$, the fraction of workers not doing the fixed work. Then output is
-
-$$
-Y = K^{\alpha} (A (1-s_R)L)^{1-\alpha}
-$$
-
-and now the fraction $(1-s_R)$ acts a lot like the productivity term. The higher $s_R$, the *lower* is the effective level of productivity in the economy. We can solve things out as usual for the level of GDP per capita along the BGP, as in the [Solow model](level.html) and we'd get
-
-$$
-\ln y_t^{BGP} = \frac{\alpha}{1-\alpha} \left(\ln (K/Y)^{\ast} \right) + \ln A_0 + \ln (1-s_R) + g_A t.
-$$
-
-So changing excludability to raise $s_{\pi}$ will raise $s_R$, but lower GDP per capita by reducing the work done producing goods and services. But we also know from [last section](prodlevel.html) that
-
-$$
-\ln A_0 = \frac{1}{1-\phi}\ln \theta - \frac{1}{1-\phi} \ln \frac{\lambda}{1-\phi} - \frac{1}{1-\phi}\ln g_L + \frac{\lambda}{1-\phi}\ln s_R + \frac{\lambda}{1-\phi} \ln L_0,
-$$
-
-which means the level of $A_0$ depends *positively* on the size of $s_R$, because that determines how many new products we have. 
-
-Thus there is a tension or trade-off in the economy in setting $s_{\pi}$ and making rules or legal protections too tight or too loose. There is a particular point for $s_R$ such that we can get the highest level of $\ln y_t^{BGP}$, and we could only hit that point if we get $s_{\pi}$ just right. That's hard to do because it isn't a number we can just pick, it's the outcome of all sorts of complex legal and institutional structures, and surely differs by product. 
+You can look in this [subsection](optimal.html) to find some math for this, but the important point is that
 
 {: .important }
->There is an optimal level of $s_R$ less than one that maximizes GDP per capita along a BGP, because workers assigned to develop new firms/products/ideas are not producing current goods and services. That means there is an optimal level of the profit share, $s_{\pi}$, which maximizes GDP per capita, and that optimal level is bigger than zero (firms need incentives to enter) but is definitely less than one (which would mean no one produces goods or services).
+>There is an optimal level of $0< s_R < 1$ less than one that maximizes GDP per capita along a BGP, because workers assigned to develop new firms/products/ideas are not producing current goods and services. That means there is an optimal level of the profit share, $s_{\pi}$, which maximizes GDP per capita, and that optimal level is bigger than zero (firms need incentives to enter) but is definitely less than one (which would mean no one produces goods or services).
 
-Second, consider that the level of $s_{\pi}$ has distributional implications. The ratio $s_{\pi}/s_L$ is what really matters here for the share of labor introducing new products/ideas/firms. And $s_{\pi} + s_L + s_K = 1$, so in some sense there is a trade-off of $s_{\pi}$ versus $s_L$ (although it depends on $s_K$ too). If we raise $s_{\pi}$ to raise $s_R$, we are probably lowering $s_L$. That would get us a higher $s_R$ too, but it means labor is earning a lower share of a possibly bigger pie. The value of $s_{\pi}$ might increase GDP per capita, but it also going to determine who "wins" from this increase. 
+The very, very hard part is that there is no obvious answer on how to set $s_{\pi}$ to get the "right" $s_R$, even if you believed that our little equation was the right way to evaluate things. Excludability is not a choice we can make directly. It's a complex outcome of lots of laws, rules, and norms. 
