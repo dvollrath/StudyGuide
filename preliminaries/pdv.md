@@ -16,9 +16,9 @@ When we look at decisions of firms or people to build new capital goods (e.g. bu
 
 Those operating profits will, if the firm or person is lucky, arrive not just today (time $t$), but in future periods as well. Once you build an apartment building, for example, you expect to be able to rent out the units for many years. We want to come up with a single number that tells us the total value of that stream of operating profits that can be compared to the up-front cost. 
 
-To set terms, think of the up-front cost occurring at time zero. So we want to figure out how valuable a *future* payment is from the perspective of time zero, *today*. A more intuitive way to think about this is that we want to figure out how much you'd pay *today* for the rights to get that payment in the future. Let's say I come to you because I need money today, and I say that I can pay $100 back to you in 2030. How much would you give me today for that promise? (By the way, that's just how a bond works). 
+To set terms, think of the up-front cost occurring at time zero. So we want to figure out how valuable a *future* payment is from the perspective of time zero, *today*. A more intuitive way to think about this is that we want to figure out how much you'd pay *today* for the rights to get that payment in the future. Let's say I come to you because I need money today, and I say that I can pay 100 dollars back to you in 2030. How much would you give me today for that promise? (By the way, that's just how a bond works). 
 
-You'd give me less than $100, because you'd be giving up money *today*, and won't get back the $100 until 2030. We refer to this sometimes as *discounting* the $100 payment. Hence the amount that you'd pay for my promise is the *present discounted value* of $100 in 2030. "Present" because it's what you'd pay me today. "Discounted" because that's less than the $100. "Value" because, well, we're talking about money. 
+You'd give me less than 100 dollars, because you'd be giving up money *today*, and won't get back the 100 dollars until 2030. We refer to this sometimes as *discounting* the 100 dollar payment. Hence the amount that you'd pay for my promise is the *present discounted value* of 100 dollars in 2030. "Present" because it's what you'd pay me today. "Discounted" because that's less than the 100 dollars. "Value" because, well, we're talking about money. 
 
 Let's lay out this definition and then see what the pieces mean.
 
@@ -28,9 +28,9 @@ Let's lay out this definition and then see what the pieces mean.
 > PDV_0 = \frac{D}{(1+r)^N}
 > $$
 
-The $PDV_0$ is what you'd pay me now for the future payment, and $D$ is the future payment ($100) that occurs $N$ years from now (in 2030). The new piece here is the $(1+r)^N$ thing, and that $r$ is the *discount rate* you are, in effect, charging me. 
+The $PDV_0$ is what you'd pay me now for the future payment, and $D$ is the future payment (100) that occurs $N$ years from now (in 2030). The new piece here is the $(1+r)^N$ thing, and that $r$ is the *discount rate* you are, in effect, charging me. 
 
-Because $PDV_0 < D$ (you will give me less than $100) it must be that $r > 0$, or that the discount rate is positive. All we're doing with $r$ is taking the idea of "you will pay me less than D" and turning it into something that looks and feels like an interest rate. 
+Because $PDV_0 < D$ (you will give me less than 100) it must be that $r > 0$, or that the discount rate is positive. All we're doing with $r$ is taking the idea of "you will pay me less than D" and turning it into something that looks and feels like an interest rate. 
 
 There are a lot of ways to use or think about this definition, and they amount to solving for one of the variables in the formula given the other two.
 
