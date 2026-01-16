@@ -9,7 +9,7 @@ This contains links to code and datasets (either direct or pointers to the page 
 
 ## Penn World Tables
 - [PWT main site](https://www.rug.nl/ggdc/productivity/pwt/?lang=en)
-- [Main data](https://www.dropbox.com/scl/fi/6rrc8kizipa9zjrgmprph/pwt110.csv?rlkey=h3zonx7jiw0hpqffk1mj2442p&dl=0)
+- [Main data](https://www.dropbox.com/scl/fi/6rrc8kizipa9zjrgmprph/pwt110.csv?rlkey=h3zonx7jiw0hpqffk1mj2442p&st=t4xud953&dl=0)
 - [Nominal national account data](https://www.dropbox.com/scl/fi/9y61z5y0802z5unpwx0y2/pwt110_na_data.csv?rlkey=2jlj3iady46gctrv4c9m6fl7z&dl=0)
 - [Labor detail](https://www.dropbox.com/scl/fi/7cpgki1gkzd0vj452u8wf/pwt110_labor_detail.csv?rlkey=qjzvk9nmpz5z1eqem3pz6oh2f&dl=0)
 
