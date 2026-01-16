@@ -17,6 +17,8 @@ all[, .N, by = oecd_exp_code]
 all <-all[which(all$oecd_exp_level=="0")]
 
 f <- all[which(all$countrycode %in% c("USA")),]
+fwrite(f, "~/Dropbox/project/studyguide/data/usa_consumption_data.csv")
+
 #f <- f[which(f$oecd_exp_code %in% c("CP01","CP03","CP06","CP10")),]
 
 b = binsreg(gAfford,year,data = f,nbins=40,polyreg=1)
