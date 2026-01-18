@@ -64,3 +64,74 @@ fig.show()
 fig = px.line(subset_df, x="year", y="shareGovConsume", color='countrycode')
 fig.show()
 ```
+
+## Script for simple accounting
+```python
+import pandas as pd
+import plotly.express as px
+import numpy as np
+
+df = pd.read_csv('pwt110.csv') # Read the whole dataset
+df = df.sort_values(by=['countrycode', 'year']) # Sort everything by expenditure code and year first
+
+df['logGDPpc'] = np.log(df['rgdpna']) - np.log(df['pop']) # log GDP per capita
+df['laglogGDPpc'] = df.groupby('countrycode')['logGDPpc'].shift(10)
+df['gy'] = (df['logGDPpc'] - df['laglogGDPpc'])/10 # Ten year growth rate
+
+df['logK'] = np.log(df['rnna'])
+df['laglogK'] = df.groupby('countrycode')['logK'].shift(10)
+df['gK'] = (df['logK'] - df['laglogK'])/10
+
+df['logL'] = np.log(df['pop'])
+df['laglogL'] = df.groupby('countrycode')['logL'].shift(10)
+df['gL'] = (df['logL'] - df['laglogL'])/10
+
+alpha = .3
+
+df['gA'] = (1/(1-alpha))*df['gy'] - (alpha/(1-alpha))*(df['gK'] - df['gL']) 
+df['gKAL'] = alpha*(df['gK'] - df['gL'] - df['gA'])
+
+
+# Select and plot for a single country
+country_code = ['USA'] # Select a country to compare
+
+subset_df = df[df['countrycode'].isin(country_code)] # Get the data from just those countries
+
+fig = px.line(subset_df, x="year", y=['gy','gKAL','gA'])
+fig.show()
+```
+
+## Script for accounting with human capital
+```python
+import pandas as pd
+import plotly.express as px
+import numpy as np
+
+df = pd.read_csv('pwt110.csv') # Read the whole dataset
+df = df.sort_values(by=['countrycode', 'year']) # Sort everything by expenditure code and year first
+
+alpha = .3
+gap = 10
+
+df['logGDPpc'] = np.log(df['rgdpna']) - np.log(df['pop']) # log GDP per capita
+df['laglogGDPpc'] = df.groupby('countrycode')['logGDPpc'].shift(gap)
+df['gy'] = (df['logGDPpc'] - df['laglogGDPpc'])/gap # Ten year growth rate
+
+df['logKY'] = np.log(df['rnna']) - np.log(df['rgdpna']) # capital/output ratio
+df['laglogKY'] = df.groupby('countrycode')['logKY'].shift(gap)
+df['gKY'] = (alpha/(1-alpha))*(df['logKY'] - df['laglogKY'])/gap
+
+df['logHC'] = np.log(df['hc']) + np.log(df['emp']/df['pop']) # human capital level
+df['laglogHC'] = df.groupby('countrycode')['logHC'].shift(gap)
+df['gHC'] = (df['logHC'] - df['laglogHC'])/gap
+
+df['gA'] = df['gy'] - df['gKY'] - df['gHC'] # productivity growth
+
+# Select and plot for a single country
+country_code = ['USA'] # Select a country to compare
+
+subset_df = df[df['countrycode'].isin(country_code)] # Get the data from just those countries
+
+fig = px.line(subset_df, x="year", y=['gy','gHC','gA','gKY'])
+fig.show()
+```
