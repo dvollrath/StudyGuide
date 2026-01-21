@@ -15,3 +15,8 @@ The concept of the study guide is to provide the material in layers. The topics 
 All the material in this study guide, including data and code for custom figures, is available on Github. Hit the big old button here to see the repository. Feel free to clone this if you'd like to produce your own custom version. If you have suggestions for the study guide, either send me an e-mail or write up a Markdown file with the content and issue a pull request on Github. 
 
 [Source Code](https://github.com/dvollrath/StudyGuide)
+
+## My specific Spring 2026 course
+For information on my specific section teaching this course at the University of Houston (Econ 4335), see:
+
+[Syllabus](https://uh.simplesyllabus.com/doc/pzfu0m1nj/Spring-2026-ECON-4335-20527-Economic-Growth-Theory?mode=view)
