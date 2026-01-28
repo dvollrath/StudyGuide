@@ -1,6 +1,6 @@
 ---
 title: Class Material
-parent: Test material
+parent: Quiz material
 nav_order: 4
 ---
 
