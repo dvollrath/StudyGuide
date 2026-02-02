@@ -6,7 +6,6 @@ nav_order: 1
 
 # BEA consumption data
 - [Consumption data by product code](https://drive.google.com/uc?export=download&id=1aNAHiIbLItUNxCvUZ1ZXjwgzpbaCDpaD)
-- [Consumption data organized in hierarchy](https://www.dropbox.com/scl/fi/jbmcei35y3u35uq9e1v6z/bea_consumption_data.csv?rlkey=lbyvb2iaull9irhkawodk97w1&dl=1)
 
 ## Script to calculate expenditure growth and plot data
 ```python
