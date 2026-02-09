@@ -34,13 +34,11 @@ fig.show()
 fig = px.line(subset_df, x="year", y="gGDPpc", color='country')
 fig.show()
 
-fig = px.line(subset_df, x="year", y="labsh", color='country')
-fig.show()
 ```
 
 ## Script for shares of GDP
 ```python
-mport pandas as pd
+import pandas as pd
 import plotly.express as px
 import numpy as np
 
