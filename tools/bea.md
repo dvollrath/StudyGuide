@@ -6,6 +6,7 @@ nav_order: 1
 
 # BEA consumption data
 - [Consumption data by product code](https://drive.google.com/uc?export=download&id=1aNAHiIbLItUNxCvUZ1ZXjwgzpbaCDpaD)
+- [Bureau of Economic Analysis raw data](https://apps.bea.gov/iTable/?isuri=1&reqid=19&step=4&categories=flatfiles&nipa_table_list=1)
 
 ## Script to calculate expenditure growth and plot data
 ```python
