@@ -19,7 +19,6 @@ We'll use a few free online tools to do data analysis and plotting. At most you 
 There are a few spreadsheets we'll use to look at different concepts or models
 
 - [Present discounted value](https://docs.google.com/spreadsheets/d/10f4dyDSFZy6SfDpIn3uy1LtUYalMXtVOeu6MbEEjh3w/edit?usp=sharing)
-- [Full Solow simulation](https://docs.google.com/spreadsheets/d/1FGNybOjegvTZkxeNIjU42IvEUgqKO_WA2lZvybY3vgk/edit?usp=sharing)
-- [Feb 18th Solow spreadsheet](solow20260218.xlsx)
+- [Full Solow simulation](solowmodel.xlsx)
 
 
