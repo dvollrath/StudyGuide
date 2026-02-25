@@ -21,7 +21,7 @@ By "understand" I mean being able to answer questions like this:
 3. **Comparisons across economies**. If two countries differ on some dimension (e.g. initial capital, population growth rate) how do they differ in growth rate? Will that growth rate difference persist? How do they differ in initial GDP per capita? Will that difference persist? 
 
 ## Brute force
-The first way to approach this is to just calculate the result period by period. [This link](basicsolow.xlsx) will take you to an Excel spreadsheet where I've set up the Solow model this way. 
+The first way to approach this is to just calculate the result period by period. [This link](solowmodel.xlsx) will take you to an Excel spreadsheet where I've set up the Solow model this way. 
 
 You should be able to walk through period by period and see how the equations used in the Study Guide map to the formulas used in the spreadsheet. One advantage of the spreadsheet is that you can also play with the parameters and see how this changes the path of log GDP per capita, the growth rate of GDP per capita, and the relationship of K/Y and $g_{K/Y}$. 
 
