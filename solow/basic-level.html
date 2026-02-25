@@ -10,14 +10,14 @@
 
 <div class="kg-container">
 params:
-- {name: sK, value: .2, min: 0, max: .4, round: 0.01}
+- {name: sI, value: .2, min: 0, max: .4, round: 0.01}
 - {name: gA, value: .02, min: -.01, max: .05, round: 0.01}
 - {name: gL, value: .01, min: -.05, max: .15, round: 0.01}
 - {name: delta, value: .05, min: 0, max: .15, round: 0.01}
 - {name: alpha, value: .3, min: .05, max: .95, round: 0.05}
 - {name: Ainit, value: 2, min: 0, max: 7, round: 0.1}
 calcs:
-    KYss: (params.sK/(params.gL + params.gA + params.delta))
+    KYss: (params.sI/(params.gL + params.gA + params.delta))
 layout:
   OneGraphPlusSidebar:
     graph: 
@@ -49,15 +49,15 @@ layout:
         sliders:
         - {param: gL, label: g_L}
         - {param: gA, label: g_A}
-        - {param: sK, label: s_K}
+        - {param: sI, label: s_K}
         - {param: delta, label: \delta}
         - {param: alpha, label: \alpha}
         - {param: Ainit, label: A_0}
       - title: Calculations
         description: Given the parameters we can calculate these...
         divs:
-        - html: "`$$\\\\ln y_{BGP}= \\\\frac{\\\\alpha}{1-\\\\alpha}\\\\ln\\\\left(\\\\frac{s_K}{g_A+g_L+\\\\delta}\\\\right) + \\\\ln(A_0) + g_A t$$`"
-        - html: "`$$\\\\ln y_{BGP}= \\\\frac{${params.alpha.toFixed(2)}}{1-${params.alpha.toFixed(2)}}\\\\ln\\\\left(\\\\frac{${params.sK.toFixed(2)}}{${params.gA.toFixed(2)}+${params.gL.toFixed(2)}+${params.delta.toFixed(2)}}\\\\right) + \\\\ln(${params.Ainit.toFixed(2)}) + ${params.gA.toFixed(2)} t$$`"  
+        - html: "`$$\\\\ln y_{BGP}= \\\\frac{\\\\alpha}{1-\\\\alpha}\\\\ln\\\\left(\\\\frac{s_I}{g_A+g_L+\\\\delta}\\\\right) + \\\\ln(A_0) + g_A t$$`"
+        - html: "`$$\\\\ln y_{BGP}= \\\\frac{${params.alpha.toFixed(2)}}{1-${params.alpha.toFixed(2)}}\\\\ln\\\\left(\\\\frac{${params.sI.toFixed(2)}}{${params.gA.toFixed(2)}+${params.gL.toFixed(2)}+${params.delta.toFixed(2)}}\\\\right) + \\\\ln(${params.Ainit.toFixed(2)}) + ${params.gA.toFixed(2)} t$$`"  
 </div>
 
 </body>

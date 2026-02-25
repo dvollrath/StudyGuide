@@ -10,7 +10,7 @@
 
 <div class="kg-container">
 params:
-- {name: sK, value: .2, min: 0.01, max: 1, round: 0.01}
+- {name: sI, value: .2, min: 0.01, max: 1, round: 0.01}
 - {name: gA, value: .02, min: -.01, max: .05, round: 0.01}
 - {name: gL, value: .01, min: -.05, max: .15, round: 0.01}
 - {name: delta, value: .05, min: 0, max: .15, round: 0.01}
@@ -21,7 +21,7 @@ params:
 - {name: KYold, value: 2.5, min: 0, max: 4, round: 0.1}
 - {name: alpha, value: .3, min: .05, max: .95, round: 0.05}
 calcs:
-  KYss: (params.sK/(params.gL + params.gA + params.delta))
+  KYss: (params.sI/(params.gL + params.gA + params.delta))
   KALss: (calcs.KYss)^(1/(1-params.alpha))
   KYinit: (params.Kinit/(params.Ainit*params.Linit))
   a: (params.alpha)/(1-params.alpha)
@@ -55,7 +55,7 @@ layout:
             x: 15
       - Curve:
           univariateFunction:
-            fn: (params.gA)+(params.alpha*params.sK)*(calcs.KYss*(1-(.9)^(x)) + calcs.KYinit*((.9)^(x)))^(-1) - (params.alpha)*(params.delta + params.gA + params.gL)
+            fn: (params.gA)+(params.alpha*params.sI)*(calcs.KYss*(1-(.9)^(x)) + calcs.KYinit*((.9)^(x)))^(-1) - (params.alpha)*(params.delta + params.gA + params.gL)
             ind: x
           color: black
           label:
@@ -104,7 +104,7 @@ layout:
         sliders:
         - {param: gA, label: g_A}
         - {param: gL, label: g_L}
-        - {param: sK, label: s_K}
+        - {param: sI, label: s_I}
         - {param: delta, label: \delta}
         - {param: alpha, label: \alpha}
       - title: Initial conditions

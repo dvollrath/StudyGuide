@@ -10,7 +10,7 @@
 
 <div class="kg-container">
 params:
-- {name: sKset, value: 4, min: 3, max: 6, round: 0.01}
+- {name: sIset, value: 4, min: 3, max: 6, round: 0.01}
 - {name: gAset, value: 4, min: 3, max: 6, round: 0.01}
 - {name: gLset, value: 4, min: 3, max: 6, round: 0.01}
 - {name: delta, value: .05, min: 0, max: .15, round: 0.01}
@@ -20,14 +20,14 @@ params:
 - {name: Linit, value: 4, min: 3, max: 6, round: 0.1}
 calcs:
     Kscale: (params.Kinit)*10
-    sK: (params.sKset - 3)*.2
+    sI: (params.sIset - 3)*.2
     gA: (params.gAset - 3)*.01
     gL: (params.gLset - 3)*.01
     KALinit: (calcs.Kscale)/(params.Ainit*params.Linit)
     KYinit: ((calcs.Kscale)/(params.Ainit*params.Linit))^(1-params.alpha)
-    KYss: (calcs.sK/(calcs.gL + calcs.gA + params.delta))
-    KALss: (calcs.sK/(calcs.gL + calcs.gA + params.delta))^(1/(1-params.alpha))
-    gK: (calcs.sK)*(1/calcs.KYinit) - (params.delta)
+    KYss: (calcs.sI/(calcs.gL + calcs.gA + params.delta))
+    KALss: (calcs.sI/(calcs.gL + calcs.gA + params.delta))^(1/(1-params.alpha))
+    gK: (calcs.sI)*(1/calcs.KYinit) - (params.delta)
     gy: (params.alpha)*(calcs.gK - calcs.gA - calcs.gL) + calcs.gA
     a: (params.alpha)/(1-params.alpha)
 layout:
@@ -96,12 +96,12 @@ layout:
             drag:
             - horizontal: Linit
         - Point:
-            coordinates: [params.sKset,.08]
+            coordinates: [params.sIset,.08]
             color: purple
             label:
-                text: s_K
+                text: s_I
             drag:
-            - horizontal: sKset
+            - horizontal: sIset
         - Point:
             coordinates: [params.gLset,.075]
             color: purple
@@ -135,12 +135,12 @@ layout:
             trim: .1
         - Curve: 
             univariateFunction:
-                fn: (calcs.sK)*(1/(x))^(1-params.alpha) - (params.delta)
+                fn: (calcs.sI)*(1/(x))^(1-params.alpha) - (params.delta)
                 ind: x
             color: blue
             strokeWidth: 4
             label:
-                text: g_K = s_K \left(\frac{AL}{K}\right)^{1-\alpha} - \delta
+                text: g_K = s_I \left(\frac{AL}{K}\right)^{1-\alpha} - \delta
                 x: 6.5
         - Line:
             yIntercept: (calcs.gA + calcs.gL)
@@ -169,7 +169,7 @@ layout:
             x: 15
       - Curve:
           univariateFunction:
-            fn: (calcs.gA)+(params.alpha*calcs.sK)*(calcs.KYss*(1-(.9)^(x)) + calcs.KYinit*((.9)^(x)))^(-1) - (params.alpha)*(params.delta + calcs.gA + calcs.gL)
+            fn: (calcs.gA)+(params.alpha*calcs.sI)*(calcs.KYss*(1-(.9)^(x)) + calcs.KYinit*((.9)^(x)))^(-1) - (params.alpha)*(params.delta + calcs.gA + calcs.gL)
             ind: x
           color: black
           label:

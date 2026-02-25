@@ -10,16 +10,16 @@
 
 <div class="kg-container">
 params:
-- {name: sK, value: .2, min: 0, max: .4, round: 0.01}
+- {name: sI, value: .2, min: 0, max: .4, round: 0.01}
 - {name: gA, value: .02, min: -.01, max: .05, round: 0.01}
 - {name: gL, value: .01, min: -.05, max: .15, round: 0.01}
 - {name: delta, value: .05, min: 0, max: .15, round: 0.01}
 - {name: alpha, value: .3, min: .05, max: .95, round: 0.05}
 - {name: KALinit, value: 2, min: 0, max: 7, round: 0.1}
 calcs:
-    KYss: (params.sK/(params.gL + params.gA + params.delta))
+    KYss: (params.sI/(params.gL + params.gA + params.delta))
     KALss: (calcs.KYss)^(1/(1-params.alpha))
-    gK: (params.sK)*(1/params.KALinit)^(1-params.alpha) - (params.delta)
+    gK: (params.sI)*(1/params.KALinit)^(1-params.alpha) - (params.delta)
     gy: (params.alpha)*(calcs.gK - params.gA - params.gL) + params.gA
 layout:
   OneGraphPlusSidebar:
@@ -59,13 +59,13 @@ layout:
                 x: (params.KALinit + (calcs.KALss - params.KALinit)/2)                
         - Curve: 
             univariateFunction:
-                fn: (params.sK)*(1/(x))^(1-params.alpha) - (params.delta)
+                fn: (params.sI)*(1/(x))^(1-params.alpha) - (params.delta)
                 ind: x
             color: blue
             lineStyle: dashed
             strokeWidth: 4
             label:
-                text: g_K = s_K \left(\frac{AL}{K}\right)^{1-\alpha} - \delta
+                text: g_K = s_I \left(\frac{AL}{K}\right)^{1-\alpha} - \delta
                 x: 6.5
         - Line:
             yIntercept: (params.gA + params.gL)
@@ -87,7 +87,7 @@ layout:
         sliders:
         - {param: gL, label: g_L}
         - {param: gA, label: g_A}
-        - {param: sK, label: s_K}
+        - {param: sI, label: s_I}
         - {param: delta, label: \delta}
         - {param: alpha, label: \alpha}
       - title: Calculations
@@ -95,7 +95,7 @@ layout:
         divs:
         - html: "`$$(K/AL)_{ss} = ${calcs.KALss.toFixed(2)}$$`"
         - html: "`$$(K/Y)_{ss} = ${calcs.KYss.toFixed(2)}$$`"
-        - html: "`$$g_K = s_K (AL/K)^{1-\\\\alpha} - \\\\delta = ${calcs.gK.toFixed(4)}$$`"
+        - html: "`$$g_K = s_I (AL/K)^{1-\\\\alpha} - \\\\delta = ${calcs.gK.toFixed(4)}$$`"
         - html: "`$$g_y = \\\\alpha (g_K - g_A - g_L) + g_A = ${calcs.gy.toFixed(4)}$$`"   
 </div>
 
