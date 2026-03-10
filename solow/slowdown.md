@@ -16,13 +16,14 @@ nav_order: 2
 ## 21st century slow growth
 You may be vaguely aware of the complaint that the growth rate of GDP per capita (and of GDP) has slowed down. Here is the 10-year rolling growth rate of GDP per capita to illustrate when this really kicked in.
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/155.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-account-gy-usa.html"></iframe>
 
 From peaks of 2.5-3 percent per year in the 1960s, the growth rate of GDP per capita fell to below or around 1% during the 21st century. One thing to note here is that this predates the financial crisis of 2009 (or the coronavirus epidemic of 2020), and that growth was slowing down early in the 21st century. 
 
 You can also see this in the log GDP per capita plot. In the 21st century the path of log GDP per capita dropped below the BGP it was on in the 20th century, apparently. So far we haven't returned to the old BGP, and hence it is worth wondering if this represents a permanent shift to a lower growth rate. 
+pwt-apply-usa.html
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~dvollrath/61.embed"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pwt-apply-usa.html"></iframe>
 
 Let's think about what might be going on here. There are two possibilities, really. One, perhaps the growth rate of productivity, $g_A$, is now permanently lower. This might be the case if population growth slowed down (both in the US and around the world) meaning that the growth rate of researchers slowed down ($g_R$), and we are not innovating as quickly as before. Two, this might represent the beginnings of transitional growth to a lower BGP, but eventually we will return to a growth rate of GDP per capita around 1.8% once we get to that new, lower BGP.
 
@@ -100,13 +101,13 @@ The other contributor appears to be a slowdown in educational change, from 0.70 
 ## Demographic boom and bust
 The big story here is that demographics are fundamentally changing the growth rate of GDP per capita. This is really the consequence of the Baby Boom in the 1940s-1960s and then the subsequent collapse in fertility rates that followed. It led to a surge of workers into the population in the mid-20th century and then a drop in the 21st. 
 
-![Fertility](chi-vollrath-fig05001.png)
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pop-birth-rates-usa.html"></iframe>
 
 This figure shows two series on fertility. The dark line is the number of crude birth rate - children per 1,000 women - and you can see the Boom in the 1940s and 1950s. More relevant for the slowdown is the collapse in child/women into 1970 and afterwards. The dashed line is the total fertility rate, which accounts for age structure differences of women (e.g. crude births could be low if there are a lot of 5-15 year old girls). Even accounting for age structure, there is a distinc decline in fertility in the 1970s/1980s, and it has remained low. 
 
 Okay, what consequence did this have? It changed the age structure across years, and in particular changed the fraction of the population that was of working age in different decades. 
 
-![Age](chi-vollrath-fig05002.png)
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="../plotly/pop-age-levels-usa.html"></iframe>
 
 This second figure shows the age structure in three different years. In 1960 note that there are *tons* of kids relative to older people. But there is a dip in working ages 20-65. This is when the Baby Boom are kids, and the distinct drop around 20-25 reflects lives missing due to World War II. 
 

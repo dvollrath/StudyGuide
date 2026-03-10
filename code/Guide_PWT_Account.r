@@ -52,7 +52,7 @@ fig <- fig %>% add_trace(y = ~tfponly, name = 'Prod only',mode = 'lines')
 fig <- fig %>% add_trace(y = ~lngdppc, name = 'Actual GDP p.c.',mode = 'lines')
 fig <- layout(fig, title = list(text = 'Accounting for United States', x=0),
                xaxis = list(title = 'Year', tick0=1950, dtick=10),
-               yaxis = list (title = 'Log GDP per capita',range=c(9,11)),
+               yaxis = list (title = 'Log GDP per capita',range=c(9,11.5)),
                hovermode="x unified")
 saveWidget(partial_bundle(fig), "../plotly/pwt-account-usa.html",selfcontained = F, libdir = "lib")
 

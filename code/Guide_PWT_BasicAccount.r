@@ -63,3 +63,13 @@ fig <- layout(fig, title = list(text = 'Accounting for United States', x=0),
 saveWidget(partial_bundle(fig), "../plotly/pwt-account-basic-usa.html",selfcontained = F, libdir = "lib")
 
 #api_create(fig, filename = "pwt-account-basic-usa")
+
+
+fig <- plot_ly(usa, x = ~year, y = ~gy, name = 'Growth rate', type = 'scatter', 
+               mode = 'lines'
+)
+fig <- layout(fig, title = list(text = 'Growth rate for the United States', x=0),
+              xaxis = list(title = 'Year', tick0=1950, dtick=10),
+              yaxis = list (title = '10-year growth rate (looking backwards)'),
+              hovermode="x unified")
+saveWidget(partial_bundle(fig), "../plotly/pwt-account-gy-usa.html",selfcontained = F, libdir = "lib")
