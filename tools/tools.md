@@ -20,5 +20,6 @@ There are a few spreadsheets we'll use to look at different concepts or models
 
 - [Present discounted value](https://docs.google.com/spreadsheets/d/10f4dyDSFZy6SfDpIn3uy1LtUYalMXtVOeu6MbEEjh3w/edit?usp=sharing)
 - [Full Solow simulation](solowmodel.xlsx)
+- [Using Solow to understand slowdown](solowmodel20260311.xlsx)
 
 
