@@ -6,6 +6,7 @@ nav_order: 3
 
 # Compustat firm level data
 - [Main data file (huge)](https://www.dropbox.com/scl/fi/792oztozljj64rmp2t501/compustat.csv?rlkey=4gghkav9m8azf8wbp5zf901qf&dl=1)
+- [Limited data file to work with (small)](compustat_small.csv)
 
 ## Script to calculate ratios]
 ```python
