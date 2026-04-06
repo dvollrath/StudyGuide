@@ -8,7 +8,7 @@ nav_order: 3
 - [Main data file (huge)](https://www.dropbox.com/scl/fi/w495ar5u4z6n33sctvgei/compustat_us_data.csv?rlkey=gmjx49k85m5x93c3p9v92c1x9&dl=1)
 - [Limited data file to work with (small)](compustat_small_data.csv)
 
-## Script to calculate ratios]
+## Script to calculate ratios
 ```python
 import pandas as pd
 import plotly.express as px
@@ -64,6 +64,7 @@ fig = px.scatter(
     title='Yearly Average Ratios (Industry Adjusted)',
     labels={'value': 'Adjusted Ratio Value', 'year': 'Year', 'variable': 'Ratio Type'}
 )
+fig.write_html("yearly_ratios.html")
 
 # Display the plot once at the end
 fig.show()
@@ -76,6 +77,7 @@ fig = px.scatter(
     title='Yearly Average Ratios (Industry Adjusted)',
     labels={'value': 'Adjusted Ratio Value', 'year': 'Year', 'variable': 'Ratio Type'}
 )
+fig.write_html("profit_ratios.html")
 
 # Display the plot once at the end
 fig.show()
