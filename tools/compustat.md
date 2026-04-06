@@ -62,10 +62,11 @@ fig = px.scatter(
     x='year', 
     y=['cogs_sales_ratio_year', 'xsga_sales_ratio_year'],
     title='Yearly Average Ratios (Industry Adjusted)',
+    template = 'plotly_white',
     labels={'value': 'Adjusted Ratio Value', 'year': 'Year', 'variable': 'Ratio Type'}
 )
-fig.write_html("yearly_ratios.html")
 
+fig.write_html("yearly_ratios.html")
 # Display the plot once at the end
 fig.show()
 
@@ -75,10 +76,10 @@ fig = px.scatter(
     x='year', 
     y=['s_pi_year', 'net_pi_year'],
     title='Yearly Average Ratios (Industry Adjusted)',
+    template = 'plotly_white',
     labels={'value': 'Adjusted Ratio Value', 'year': 'Year', 'variable': 'Ratio Type'}
 )
 fig.write_html("profit_ratios.html")
-
 # Display the plot once at the end
 fig.show()
 ```
