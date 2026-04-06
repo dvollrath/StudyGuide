@@ -5,43 +5,78 @@ nav_order: 3
 ---
 
 # Compustat firm level data
-- [Main data file (huge)](https://www.dropbox.com/scl/fi/792oztozljj64rmp2t501/compustat.csv?rlkey=4gghkav9m8azf8wbp5zf901qf&dl=1)
-- [Limited data file to work with (small)](compustat_small.csv)
+- [Main data file (huge)](https://www.dropbox.com/scl/fi/w495ar5u4z6n33sctvgei/compustat_us_data.csv?rlkey=gmjx49k85m5x93c3p9v92c1x9&dl=1)
+- [Limited data file to work with (small)](compustat_small_data.csv)
 
 ## Script to calculate ratios]
 ```python
 import pandas as pd
 import plotly.express as px
 import numpy as np
-import statsmodels.formula.api as smf
 
-df = pd.read_csv('compustat.csv') # Read the whole dataset
+# Load the csv file into a DataFrame
+df = pd.read_csv('compustat_small_data.csv')
 
-df['cogs_sale_ratio'] = df['cogs']/df['sale']
-df['sga_sale_ratio'] = df['xsga']/df['sale']
-df['profit_ratio'] = (df['sale'] - df['cogs'] - df['xsga'])/df['sale']
+# Calculate ratios
+df['cogs_sales_ratio'] = df['cogs'] / df['sale']
+df['xsga_sales_ratio'] = df['xsga'] / df['sale']
 
-lower_limit = df['sga_sale_ratio'].quantile(0.01)
-upper_limit = df['sga_sale_ratio'].quantile(0.99)
+# Remove observations that have negative values for any of the three ratios
+df = df[
+    (df['cogs_sales_ratio'] >= 0) & 
+    (df['xsga_sales_ratio'] >= 0) & 
+    (df['sale'] >= 0)
+]
 
-df = df[(df['sga_sale_ratio'] >= lower_limit) & (df['sga_sale_ratio'] <= upper_limit) & (df['profit_ratio'] >= -2)]
+# Drop observations whose xsga_sales_ratio is above the 95th percentile
+xsga_95th = df['xsga_sales_ratio'].quantile(0.95)
+df = df[df['xsga_sales_ratio'] <= xsga_95th]
 
-# Use a regression to remove the country and industry fixed effects (averages)
-res_sga = smf.ols("sga_sale_ratio ~ C(countrycode) + C(nrind2)", data=df).fit().resid
-res_cogs = smf.ols("cogs_sale_ratio ~ C(countrycode) + C(nrind2)", data=df).fit().resid
-res_profit = smf.ols("profit_ratio ~ C(countrycode) + C(nrind2)", data=df).fit().resid
+# Basic operating profit calculations
+df['s_pi'] = (df['sale'] - df['cogs']) / df['sale']
+df['net_pi'] = (df['sale'] - df['cogs'] - df['xsga']) / df['sale']
 
-plot_df = pd.DataFrame({ # Add the overall mean to the residuals so the plot makes sense
-    'res_sga_scaled': res_sga + df['sga_sale_ratio'].mean(),
-    'res_cogs_scaled': res_cogs + df['cogs_sale_ratio'].mean(),
-    'res_profit_scaled': res_profit + df['profit_ratio'].mean(),
-    'year': df['year']
-})
+# Define the variables to analyze
+variables = ['s_pi', 'net_pi', 'cogs_sales_ratio', 'xsga_sales_ratio']
 
-bin_means = plot_df.groupby('year').mean().reset_index() # get the average by year of all the residuals
+# Loop to create deviations and annual averages
+for var in variables:
+    # 1. Industry Mean
+    df[f'{var}_ind'] = df.groupby('nrind2')[var].transform('mean')
+    
+    # 2. Global Mean
+    df[f'{var}_all'] = df[var].mean()
+    
+    # 3. Deviation (Adjusted value)
+    df[f'{var}_dev'] = df[var] - df[f'{var}_ind'] + df[f'{var}_all']
+    
+    # 4. Annual average of that deviation (aligned back to original df)
+    df[f'{var}_year'] = df.groupby('year')[f'{var}_dev'].transform('mean')
 
-fig = px.line(bin_means, x="year", y=['res_sga_scaled', 'res_cogs_scaled','res_profit_scaled'])
+# Create a figure showing the yearly averages for COGS and XSGA
+# We use a summarized version of the data for the plot to avoid overlapping points
+plot_data = df.groupby('year')[[f'{v}_year' for v in variables]].first().reset_index()
+
+fig = px.scatter(
+    plot_data, 
+    x='year', 
+    y=['cogs_sales_ratio_year', 'xsga_sales_ratio_year'],
+    title='Yearly Average Ratios (Industry Adjusted)',
+    labels={'value': 'Adjusted Ratio Value', 'year': 'Year', 'variable': 'Ratio Type'}
+)
+
+# Display the plot once at the end
 fig.show()
 
-bin_means.to_csv('compustat_plot_data.csv', index=False) # Save this limited dataset
+
+fig = px.scatter(
+    plot_data, 
+    x='year', 
+    y=['s_pi_year', 'net_pi_year'],
+    title='Yearly Average Ratios (Industry Adjusted)',
+    labels={'value': 'Adjusted Ratio Value', 'year': 'Year', 'variable': 'Ratio Type'}
+)
+
+# Display the plot once at the end
+fig.show()
 ```
