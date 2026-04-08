@@ -11,75 +11,87 @@ nav_order: 3
 ## Script to calculate ratios
 ```python
 import pandas as pd
-import plotly.express as px
 import numpy as np
+import plotly.express as px
 
-# Load the csv file into a DataFrame
-df = pd.read_csv('compustat_small_data.csv')
+df = pd.read_csv('compustat_us_data.csv')
 
-# Calculate ratios
-df['cogs_sales_ratio'] = df['cogs'] / df['sale']
-df['xsga_sales_ratio'] = df['xsga'] / df['sale']
+# Data Cleaning: Remove rows with negative values and zero sales to avoid division errors
+df = df[(df['sale'] > 0) & (df['xsga'] >= 0) & (df['cogs'] >= 0)].copy()
 
-# Remove observations that have negative values for any of the three ratios
-df = df[
-    (df['cogs_sales_ratio'] >= 0) & 
-    (df['xsga_sales_ratio'] >= 0) & 
-    (df['sale'] >= 0)
-]
+# Ratio Calculations
+df['cogs_sale_ratio'] = df['cogs'] / df['sale']
+df['xsga_sale_ratio'] = df['xsga'] / df['sale']
+df['ln_sale'] = np.log(df['sale'])
 
-# Drop observations whose xsga_sales_ratio is above the 95th percentile
-xsga_95th = df['xsga_sales_ratio'].quantile(0.95)
-df = df[df['xsga_sales_ratio'] <= xsga_95th]
+# Remove rows where xsga_sale_ratio is above the 95th percentile
+xsga_95th = df['xsga_sale_ratio'].quantile(0.95)
+df = df[df['xsga_sale_ratio'] <= xsga_95th].copy()
 
-# Basic operating profit calculations
-df['s_pi'] = (df['sale'] - df['cogs']) / df['sale']
-df['net_pi'] = (df['sale'] - df['cogs'] - df['xsga']) / df['sale']
+# Profitability Ratios
+df['spi'] = (df['sale'] - df['cogs']) / df['sale']
+df['netpi'] = (df['sale'] - df['cogs'] - df['xsga']) / df['sale']
+df['acctpi'] = df['oibdp'] / df['sale']
 
-# Define the variables to analyze
-variables = ['s_pi', 'net_pi', 'cogs_sales_ratio', 'xsga_sales_ratio']
+# Define the list of ratios for calculation
+ratios = ['cogs_sale_ratio', 'xsga_sale_ratio', 'spi', 'netpi', 'acctpi']
 
-# Loop to create deviations and annual averages
-for var in variables:
-    # 1. Industry Mean
-    df[f'{var}_ind'] = df.groupby('nrind2')[var].transform('mean')
-    
-    # 2. Global Mean
-    df[f'{var}_all'] = df[var].mean()
-    
-    # 3. Deviation (Adjusted value)
-    df[f'{var}_dev'] = df[var] - df[f'{var}_ind'] + df[f'{var}_all']
-    
-    # 4. Annual average of that deviation (aligned back to original df)
-    df[f'{var}_year'] = df.groupby('year')[f'{var}_dev'].transform('mean')
+# Calculate averages for adjustment
+industry_averages = df.groupby('nrind2')[ratios].transform('mean')
+overall_averages = df[ratios].mean()
 
-# Create a figure showing the yearly averages for COGS and XSGA
-# We use a summarized version of the data for the plot to avoid overlapping points
-plot_data = df.groupby('year')[[f'{v}_year' for v in variables]].first().reset_index()
+# Calculate the adjusted ratios: row_value - industry_avg + overall_avg
+adjusted_cols = []
+for ratio in ratios:
+    adj_col_name = f'{ratio}_adj'
+    df[adj_col_name] = df[ratio] - industry_averages[ratio] + overall_averages[ratio]
+    adjusted_cols.append(adj_col_name)
 
-fig = px.scatter(
-    plot_data, 
+# Calculate the average of each adjusted ratio by year
+annual_adjusted_averages = df.groupby('year')[adjusted_cols].mean().reset_index()
+
+# Create a figure plotting COGS and XSGA adjusted annual averages
+fig_cost = px.line(
+    annual_adjusted_averages, 
     x='year', 
-    y=['cogs_sales_ratio_year', 'xsga_sales_ratio_year'],
-    title='Yearly Average Ratios (Industry Adjusted)',
-    template = 'plotly_white',
-    labels={'value': 'Adjusted Ratio Value', 'year': 'Year', 'variable': 'Ratio Type'}
+    y=['cogs_sale_ratio_adj', 'xsga_sale_ratio_adj'],
+    title='Annual Averages of Adjusted COGS and XSGA Ratios (Outliers and Negative Values Removed)',
+    labels={'value': 'Adjusted Ratio', 'variable': 'Metric'}
 )
+fig_cost.write_html("annual_ratios_chart.html")
+fig_cost.show()
 
-fig.write_html("yearly_ratios.html")
-# Display the plot once at the end
-fig.show()
-
-
-fig = px.scatter(
-    plot_data, 
+# Profitability ratio figure
+fig_profit = px.line(
+    annual_adjusted_averages, 
     x='year', 
-    y=['s_pi_year', 'net_pi_year'],
-    title='Yearly Average Ratios (Industry Adjusted)',
-    template = 'plotly_white',
-    labels={'value': 'Adjusted Ratio Value', 'year': 'Year', 'variable': 'Ratio Type'}
+    y=['spi_adj', 'netpi_adj', 'acctpi_adj'],
+    title='Annual Averages of Profitability Ratios (Outliers and Negative Values Removed)',
+    labels={'value': 'Adjusted Ratio', 'variable': 'Metric'}
 )
-fig.write_html("profit_ratios.html")
-# Display the plot once at the end
-fig.show()
+fig_profit.write_html("annual_profit_chart.html")
+fig_profit.show()
+
+df['bin_sale'] = pd.qcut(df['ln_sale'], 50, duplicates='drop')
+binned = df.groupby('bin_sale', observed=True).agg({'netpi_adj': 'mean', 'spi_adj': 'mean', 'ln_sale': 'mean'}).reset_index(drop=True)
+fig_size = px.scatter(
+    binned, 
+    x='ln_sale', 
+    y=['spi_adj','netpi_adj'],
+    title='Average profitability by size',
+    labels={'value': 'Adjusted Ratio', 'variable': 'Metric'}
+)
+fig_size.show()
+fig_size.write_html("size_profit_chart.html")
+
+binned = df.groupby('bin_sale', observed=True).agg({'cogs_sale_ratio_adj': 'mean', 'xsga_sale_ratio_adj': 'mean', 'ln_sale': 'mean'}).reset_index(drop=True)
+fig_size = px.scatter(
+    binned, 
+    x='ln_sale', 
+    y=['cogs_sale_ratio_adj','xsga_sale_ratio_adj'],
+    title='Average costs by size',
+    labels={'value': 'Adjusted Ratio', 'variable': 'Metric'}
+)
+fig_size.show()
+fig_size.write_html("size_cost_chart.html")
 ```

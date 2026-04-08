@@ -108,7 +108,7 @@ $$
 
 and there is really no reason to enter because at no point will fixed costs be less than zero. No one is earning as profits *now*, and no one can earn any profits if they innovate or introduce a new product. It might just be too easy to copy things, so why bother? Or the product we're talking about it is just so plain and boring that no one really wants a new and updated kind no matter what. Very competitive doesn't mean very dynamic, necessarily, it just means "close to zero profits can be earned".
 
-Flip over to the other end and a very un-competitive industry, which would be like one where a monopoly runs things. They do have high profits already, so $s^{Exist}_{\pi}$ is big. And since they are the monopoly or something like it, they would also earn big $s_{\pi}$ if they innovated. The problem is then that
+Flip over to the other end and a very un-competitive industry, which would be like one where a monopoly runs things. They do have high profits already, so the existing profit share is big. And since they are the monopoly or something like it, they would also earn a big profit share if they innovated. The problem is then that
 
 $$
 s_{\pi} - s^{Exist}_{\pi} \approx 0
